@@ -727,3 +727,5 @@ footer.copy{margin-top:22px;padding-top:14px;border-top:1px solid var(--line);fo
 .practice .pbadge{font-size:.78rem;font-weight:700;opacity:.8;margin-top:-2px}
 .practice p + p{margin-top:2px}
 .practice .plegal{font-size:.78rem;opacity:.7}
+.ws-note{border:1.5px dashed var(--line)}
+.ws-note h3{margin:2px 0 6px}
