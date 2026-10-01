@@ -287,7 +287,7 @@ ul.clean > li:first-child{border-top:none;padding-top:2px}
 .role .ri b{line-height:1.2}
 .swiss-guide .invite-links a{background:#6E4F3C}
 
-/* ---------- «Восемь ступеней к дому» (stupeni) ---------- */
+/* ---------- «Ступени устойчивости» (stupeni) ---------- */
 .st-tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 @media (max-width:620px){.st-tiles{grid-template-columns:repeat(2,1fr)}}
 .st-tile{border-radius:12px;padding:12px;background:var(--s);border:1.5px solid var(--l);display:flex;flex-direction:column;gap:4px;color:#2F2924;min-width:0}
