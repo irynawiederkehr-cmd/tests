@@ -34,7 +34,7 @@
       btn.addEventListener('click', function(){ if (l === lang) return; try { localStorage.setItem(KEY, l); } catch(e){} location.hash = 'lang=' + l; location.reload(); });
       bar.appendChild(btn);
     });
-    document.body.appendChild(bar);
+    if (LANGS.length > 1) document.body.appendChild(bar);
   };
 })();
 </script>
@@ -42,6 +42,7 @@
 <body>
 <div id="app"></div>
 
+<script>window.HUB_IMG = {"roza-lyubvi": "roza-lyubvi/preview/1.jpg", "kompas": "kompas/preview/1.jpg", "stupeni": "stupeni/preview/1.jpg"};</script>
 <script>(function(){var s=document.createElement("script");s.src=LANG+".js";s.onload=function(){__runBundle(window.__BUNDLE);};document.body.appendChild(s);})();</script>
 </body>
 </html>
