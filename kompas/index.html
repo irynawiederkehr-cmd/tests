@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Компас адаптации</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Forum&family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="../assets/brand.css">
+<style>
+.langbar{position:fixed;top:10px;right:10px;z-index:50;display:flex;gap:2px;background:rgba(255,255,255,.88);border:1px solid rgba(0,0,0,.08);border-radius:999px;padding:3px;font:600 12px Manrope,system-ui,sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.langbar button{font:inherit;border:0;background:transparent;color:#5d554d;padding:5px 9px;border-radius:999px;cursor:pointer}
+.langbar button[aria-pressed="true"]{background:#2f2924;color:#fff}
+@media print{.langbar{display:none!important}}
+</style>
+<script>
+(function(){
+  var LANGS = ["ru", "uk", "de", "en"], LABELS = {"ru": "RU", "uk": "UA", "de": "DE", "en": "EN"}, KEY = 'irinaTestsLang';
+  function pick(){
+    var m = (location.hash || '').match(/lang=(ru|uk|de|en)/); if (m) return m[1];
+    try { var s = localStorage.getItem(KEY); if (LANGS.indexOf(s) >= 0) return s; } catch(e){}
+    var nav = (navigator.languages || [navigator.language || 'ru']);
+    for (var i = 0; i < nav.length; i++){ var c = String(nav[i]).slice(0, 2).toLowerCase(); if (c === 'ua') c = 'uk'; if (LANGS.indexOf(c) >= 0) return c; }
+    return 'ru';
+  }
+  var lang = window.LANG = pick();
+  document.documentElement.lang = lang;
+  document.title = {"ru": "Компас адаптации", "uk": "Компас адаптації", "de": "Kompass der Anpassung", "en": "Adaptation Compass"}[lang];
+  window.__runBundle = function(b){
+    document.getElementById('app').innerHTML = b.body;
+    b.scripts.forEach(function(code){ var s = document.createElement('script'); s.textContent = code; document.body.appendChild(s); });
+    var bar = document.createElement('div'); bar.className = 'langbar'; bar.setAttribute('role', 'group'); bar.setAttribute('aria-label', 'Language');
+    LANGS.forEach(function(l){
+      var btn = document.createElement('button'); btn.type = 'button'; btn.textContent = LABELS[l]; btn.setAttribute('aria-pressed', l === lang ? 'true' : 'false');
+      btn.addEventListener('click', function(){ if (l === lang) return; try { localStorage.setItem(KEY, l); } catch(e){} location.hash = 'lang=' + l; location.reload(); });
+      bar.appendChild(btn);
+    });
+    document.body.appendChild(bar);
+  };
+})();
+</script>
+</head>
+<body>
+<div id="app"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>(function(){var s=document.createElement("script");s.src=LANG+".js";s.onload=function(){__runBundle(window.__BUNDLE);};document.body.appendChild(s);})();</script>
+</body>
+</html>
