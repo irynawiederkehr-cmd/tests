@@ -282,3 +282,4 @@ ul.clean{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:7px}
 .ka0{border-color:var(--a0)} .ka1{border-color:var(--a1)} .ka2{border-color:var(--a2)} .ka3{border-color:var(--a3)} .ka4{border-color:var(--a4)} .ka5{border-color:var(--a5)}
 .role .ri{display:flex;align-items:center;gap:10px}
 .role .ri svg{flex:none;width:26px;height:26px}
+.swiss-guide .invite-links a{background:#6E4F3C}
