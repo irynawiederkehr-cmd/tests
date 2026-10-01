@@ -692,3 +692,8 @@ footer.copy{margin-top:22px;padding-top:14px;border-top:1px solid var(--line);fo
 .hub-link span:not(.ttag){font-size:.88rem}
 .hub-link i{font-style:normal;font-weight:700;font-size:.85rem;margin-top:auto}
 @media (prefers-reduced-motion: reduce){.hub-fan img{animation:none}}
+
+/* слоган под названием теста — обязателен везде */
+.slogan{font-family:var(--display);font-size:clamp(1.25rem,3.6vw,1.55rem);line-height:1.25;color:var(--ink);opacity:.85;margin:-4px 0 4px}
+.tslogan{font-family:var(--display);font-size:1.08rem !important;line-height:1.3;opacity:.85;margin-top:-2px}
+.cover-slogan{font-family:var(--display);font-size:1rem;line-height:1.3;opacity:.8;margin:2px 0 6px}
