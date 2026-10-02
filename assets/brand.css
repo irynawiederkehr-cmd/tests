@@ -803,3 +803,4 @@ footer.copy .del-answers{margin-top:10px}
 .bz-help p{margin:4px 0 0}
 .bz-cover-art{max-width:260px;width:100%}
 .bz-sources li{font-size:.85rem}
+.exp-note{margin:10px 0 14px;padding:12px 14px;border-radius:12px;background:var(--brand-soft,#F2F6FB);font-size:.95rem;line-height:1.55}
