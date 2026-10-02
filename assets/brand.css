@@ -804,3 +804,9 @@ footer.copy .del-answers{margin-top:10px}
 .bz-cover-art{max-width:260px;width:100%}
 .bz-sources li{font-size:.85rem}
 .exp-note{margin:10px 0 14px;padding:12px 14px;border-radius:12px;background:var(--brand-soft,#F2F6FB);font-size:.95rem;line-height:1.55}
+.bz-acts{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+.bz-acts>b{font-family:var(--display);font-weight:400;font-size:1.1rem}
+.bz-act{border-left:3px solid var(--l);background:var(--s);border-radius:0 12px 12px 0;padding:10px 14px}
+.bz-act p{margin:0}
+.bz-act>span{display:block;font-size:.76rem;letter-spacing:.04em;text-transform:uppercase;color:var(--l);margin-top:4px}
+.bz-act .bz-try{margin-top:8px;padding-top:8px;border-top:1px dashed var(--l)}
