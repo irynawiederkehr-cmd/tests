@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Компас адаптации</title>
+<title>Выходные данные</title>
 <link rel="stylesheet" href="../assets/fonts.css">
 <link rel="stylesheet" href="../assets/brand.css">
 <style>
@@ -24,7 +24,7 @@
   }
   var lang = window.LANG = pick();
   document.documentElement.lang = lang;
-  document.title = {"ru": "Компас адаптации", "uk": "Компас адаптації", "de": "Kompass der Anpassung", "en": "Adaptation Compass"}[lang];
+  document.title = {"ru": "Выходные данные", "uk": "Вихідні дані", "de": "Impressum", "en": "Legal notice"}[lang];
   window.__runBundle = function(b){
     document.getElementById('app').innerHTML = b.body;
     b.scripts.forEach(function(code){ var s = document.createElement('script'); s.textContent = code; document.body.appendChild(s); });
@@ -41,8 +41,7 @@
 </head>
 <body>
 <div id="app"></div>
-<script src="../assets/lib/html2canvas.min.js"></script><script src="../assets/lib/jspdf.umd.min.js"></script>
-<script>window.RP_IMG = ["preview/1.jpg", "preview/2.jpg", "preview/3.jpg", "preview/4.jpg", "preview/5.jpg", "preview/6.jpg"];</script>
+
 <script>(function(){var s=document.createElement("script");s.src=LANG+".js";s.onload=function(){__runBundle(window.__BUNDLE);};document.body.appendChild(s);})();</script>
 </body>
 </html>
