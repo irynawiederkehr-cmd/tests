@@ -810,3 +810,13 @@ footer.copy .del-answers{margin-top:10px}
 .bz-act p{margin:0}
 .bz-act>span{display:block;font-size:.76rem;letter-spacing:.04em;text-transform:uppercase;color:var(--l);margin-top:4px}
 .bz-act .bz-try{margin-top:8px;padding-top:8px;border-top:1px dashed var(--l)}
+
+/* ---------- главная тестов: коротко об авторе со ссылкой на главную сайта ---------- */
+.hub-me-mini{display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:18px 20px}
+.hub-me-mini .mono{width:48px;height:48px;border-radius:50%;background:var(--plum);color:var(--paper);display:grid;place-items:center;font-family:var(--display);font-size:1.2rem;flex:none}
+.hub-me-mini .mini-txt{flex:1 1 260px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.hub-me-mini .mini-txt b{font-family:var(--display);font-weight:400;font-size:1.25rem}
+.hub-me-mini .mini-txt span{font-size:.9rem;color:var(--muted)}
+.hub-back{margin:0 0 6px;font-size:.9rem;font-weight:600}
+.hub-back a{color:var(--muted);text-decoration:none}
+.hub-back a:hover{color:var(--ink)}

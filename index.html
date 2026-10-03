@@ -3,46 +3,569 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Тесты Ирины Вознесенской</title>
+<title>Ирина Вознесенская · коучинг</title>
 <link rel="stylesheet" href="assets/fonts.css">
-<link rel="stylesheet" href="assets/brand.css">
 <style>
-.langbar{position:fixed;top:10px;right:10px;z-index:50;display:flex;gap:2px;background:rgba(255,255,255,.88);border:1px solid rgba(0,0,0,.08);border-radius:999px;padding:3px;font:600 12px Manrope,system-ui,sans-serif;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-.langbar button{font:inherit;border:0;background:transparent;color:#5d554d;padding:5px 9px;border-radius:999px;cursor:pointer}
-.langbar button[aria-pressed="true"]{background:#2f2924;color:#fff}
-@media print{.langbar{display:none!important}}
+[hidden]{display:none!important}
+/* Layout: тёплая страница-письмо. Слева слово, справа шерстяная картина; дальше «двери» — фразы, в которых она узнаёт себя */
+:root{
+  --bg:#F4EDE3;       /* бежевый фон коучинга, как в тестах */
+  --paper:#FFFCF8;
+  --ink:#2F2924;
+  --muted:#7A6E62;
+  --line:#E5D9C9;
+  --brown:#6E4F3C;    /* главный акцент, как в тестах */
+  --mustard:#B98324;  /* шарф героини */
+  --mustard-soft:#F3E3C2;
+  --sage:#66704F;     /* пальто героини */
+  --sage-soft:#E3E6D6;
+  --soft:#EADFCF;
+  --blue:#2E5A88;     /* тесты о паре — голубой, как в тестах */
+  --blue-soft:#EAF2FA;
+  --blue-line:#D3E1EE;
+  --display:"Forum","Cormorant Garamond",Georgia,serif;
+  --body:"Manrope","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#221D19; --paper:#2C2621; --ink:#F1E9DF; --muted:#B4A796; --line:#3E362F; --brown:#E1C2A6;
+  --mustard:#E2B45C; --mustard-soft:#3D321F; --sage:#B4BF97; --sage-soft:#2E3226; --soft:#3A3129; --blue:#9CC2EA; --blue-soft:#1D2733; --blue-line:#2C3A4A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#221D19; --paper:#2C2621; --ink:#F1E9DF; --muted:#B4A796; --line:#3E362F; --brown:#E1C2A6;
+  --mustard:#E2B45C; --mustard-soft:#3D321F; --sage:#B4BF97; --sage-soft:#2E3226; --soft:#3A3129; --blue:#9CC2EA; --blue-soft:#1D2733; --blue-line:#2C3A4A; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.65;margin:0}
+.page{max-width:1120px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.12;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+.eyebrow{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+:focus-visible{outline:3px solid var(--mustard);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .page{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none}
+.mono{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--brown);display:grid;place-items:center;font-family:var(--display);font-size:1.05rem;color:var(--brown);letter-spacing:.02em}
+.mark b{font-family:var(--display);font-weight:400;font-size:1.25rem;line-height:1}
+.mark small{display:block;font-size:.72rem;color:var(--muted);letter-spacing:.04em;margin-top:3px}
+nav{display:flex;gap:22px;font-size:.88rem;font-weight:600}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.navcta{font-size:.86rem;font-weight:700;text-decoration:none;border:1.5px solid var(--brown);color:var(--brown);border-radius:999px;padding:8px 16px;white-space:nowrap}
+@media (max-width:860px){nav{display:none}}
+@media (max-width:420px){.mark small{display:none}.navcta{padding:7px 12px}}
+
+/* ---------- первый экран ---------- */
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center;padding-block:48px 40px}
+.hero-text{display:flex;flex-direction:column;gap:22px;min-width:0}
+.hero h1{font-size:clamp(2.5rem,6.2vw,4.4rem);color:var(--ink)}
+.hero h1 em{font-style:normal;color:var(--brown)}
+.hero .lead{font-size:1.14rem;max-width:34ch;color:var(--ink)}
+.who{font-size:.86rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 14px}
+.who span+span::before{content:"·";margin-right:14px;color:var(--line)}
+@media (max-width:520px){.who span+span::before{content:none}.who{gap:4px 12px}}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{font:inherit;font-weight:700;font-size:.95rem;border:none;border-radius:999px;padding:14px 24px;cursor:pointer;background:var(--brown);color:var(--paper);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--brown);border:1.5px solid var(--brown)}
+.hero-art{position:relative;min-width:0}
+.hero-art img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:941/1672;border-radius:26px;box-shadow:0 24px 50px -24px rgba(60,40,20,.45)}
+.hero-art figcaption{margin-top:14px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px 16px;font-size:.84rem}
+.hero-art figcaption b{display:block;font-family:var(--display);font-weight:400;font-size:1.1rem;color:var(--brown)}
+@media (max-width:860px){.hero{grid-template-columns:1fr;gap:28px;padding-block:32px 24px}.hero-art{max-width:360px;margin:0 auto;width:100%}}
+
+/* ---------- двери ---------- */
+section{padding-block:56px}
+.sec-head{display:flex;flex-direction:column;gap:10px;max-width:640px;margin-bottom:28px}
+.sec-head h2{font-size:clamp(2rem,4.6vw,2.9rem)}
+.sec-head p{color:var(--muted);font-size:1.02rem}
+.doors{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.door-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media (max-width:980px){.door-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.door-grid{grid-template-columns:1fr}}
+.door{font:inherit;text-align:left;cursor:pointer;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:18px;padding:22px 20px 18px;display:flex;flex-direction:column;gap:14px;min-height:150px;transition:border-color .15s,transform .15s,background .15s;min-width:0}
+.door:hover{border-color:var(--brown);transform:translateY(-2px)}
+.door q{font-family:var(--display);font-size:1.5rem;line-height:1.15;quotes:"«" "»"}
+.door small{margin-top:auto;font-size:.8rem;color:var(--muted);display:flex;justify-content:space-between;gap:8px}
+.door[aria-expanded="true"]{background:var(--mustard-soft);border-color:var(--mustard)}
+.door[aria-expanded="true"] small span:last-child{transform:rotate(90deg)}
+.door small span:last-child{transition:transform .2s}
+.more-link{margin-top:22px;font:inherit;font-weight:700;color:var(--brown);background:none;border:none;padding:6px 0;cursor:pointer;font-size:.98rem;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
+.spheres{margin-top:18px}
+.sphere-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media (max-width:820px){.sphere-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.sphere-grid{grid-template-columns:1fr}}
+.sphere{font:inherit;text-align:left;cursor:pointer;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;font-weight:600;font-size:.98rem;display:flex;justify-content:space-between;gap:10px;align-items:center;min-width:0}
+.sphere:hover{border-color:var(--brown)}
+.sphere[aria-expanded="true"]{background:var(--sage-soft);border-color:var(--sage)}
+.panel{margin-top:18px;background:var(--bg);border:1.5px solid var(--mustard);border-radius:20px;padding:28px;display:grid;grid-template-columns:1.1fr 1fr;gap:28px;animation:rise .25s ease-out}
+.panel.sage{border-color:var(--sage)}
+@keyframes rise{from{transform:translateY(8px)}}
+@media (max-width:820px){.panel{grid-template-columns:1fr;padding:22px 18px;gap:20px}}
+.panel h3{font-size:1.75rem;margin-bottom:12px}
+.panel .say{display:flex;flex-direction:column;gap:12px;min-width:0}
+.panel .say p{max-width:60ch}
+.todo{display:flex;flex-direction:column;gap:10px;min-width:0}
+.todo .eyebrow{margin-bottom:2px}
+.act{display:flex;flex-direction:column;gap:4px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px;text-decoration:none;color:var(--ink);transition:border-color .15s}
+a.act:hover{border-color:var(--brown)}
+.act b{font-weight:700;font-size:.98rem;display:flex;justify-content:space-between;gap:10px}
+.act span{font-size:.88rem;color:var(--muted)}
+.edge{font-size:.86rem;color:var(--muted);border-left:3px solid var(--line);padding-left:12px}
+.next{font-size:.92rem}
+.next b{color:var(--brown)}
+.notme{font-size:.86rem;color:var(--muted)}
+.notme button{font:inherit;color:var(--brown);background:none;border:none;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+
+
+/* ---------- всплывающее окно ---------- */
+dialog.qm{border:0;padding:0;background:transparent;width:min(100% - 24px,1080px);max-height:92vh;color:var(--ink)}
+dialog.qm[open]{animation:qmIn .28s cubic-bezier(.2,.8,.2,1)}
+@keyframes qmIn{from{opacity:0;transform:translateY(14px) scale(.98)}}
+dialog.qm::backdrop{background:rgba(47,41,36,.62);backdrop-filter:blur(3px)}
+.qm-card{background:var(--paper);border-radius:28px;padding:clamp(20px,3.4vw,40px);display:flex;flex-direction:column;gap:clamp(18px,2.6vw,28px);max-height:92vh;overflow-y:auto;box-shadow:0 30px 80px -30px rgba(40,25,10,.6)}
+.qm-top{display:flex;align-items:flex-start;gap:16px}
+.qm-head{flex:1;display:flex;flex-direction:column;gap:6px;min-width:0}
+.qm-title{font-size:clamp(1.8rem,4.4vw,3.2rem);line-height:1.04}
+.qm-close{flex:none;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);font-size:1.05rem;cursor:pointer;display:grid;place-items:center;transition:background .15s,border-color .15s}
+.qm-close:hover{background:var(--mustard-soft);border-color:var(--mustard)}
+.qm-panel{background:var(--mustard-soft);border-radius:20px;padding:clamp(18px,2.8vw,32px);display:grid;grid-template-columns:.9fr 1.2fr 1fr;gap:clamp(18px,2.6vw,32px)}
+.qm-panel.sage{background:var(--sage-soft)}
+@media (max-width:900px){.qm-panel{grid-template-columns:1fr}}
+.qm-col{display:flex;flex-direction:column;gap:12px;min-width:0}
+.qm-col h3{font-size:1.4rem;line-height:1.15}
+.qm-col p{font-size:.95rem}
+.pain{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.pain li{font-family:var(--display);font-size:1.12rem;line-height:1.3;padding-left:16px;border-left:2px solid var(--mustard)}
+.qm-panel.sage .pain li{border-color:var(--sage)}
+.qm-col .act{background:var(--paper)}
+.qm-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;align-items:baseline}
+.qm-foot .next{max-width:60ch}
+.qm-foot .notme button{font:inherit;color:var(--brown);background:none;border:none;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- обо мне ---------- */
+.about{display:grid;grid-template-columns:.75fr 1.25fr;gap:56px;align-items:center}
+@media (max-width:860px){.about{grid-template-columns:1fr;gap:28px}.about img{max-width:360px;margin:0 auto}}
+.about img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:941/1672;border-radius:26px;box-shadow:0 24px 50px -24px rgba(60,40,20,.4)}
+.about-text{display:flex;flex-direction:column;gap:16px;min-width:0}
+.about-text h2{font-size:clamp(2rem,4.6vw,2.9rem)}
+.about-text p{max-width:60ch}
+.creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.creds span{font-size:.8rem;font-weight:600;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+.how-i{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:6px}
+@media (max-width:520px){.how-i{grid-template-columns:1fr}}
+.how-i div{background:var(--paper);border-radius:14px;padding:14px 16px;font-size:.9rem;color:var(--muted)}
+.how-i b{display:block;font-family:var(--display);font-weight:400;font-size:1.2rem;color:var(--ink);margin-bottom:2px}
+
+.two{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.two-lead{font-weight:600}
+.two-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:560px){.two-grid{grid-template-columns:1fr}}
+.prac{border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:6px;min-width:0;border:1.5px solid var(--line);background:var(--paper)}
+.prac.psy{background:var(--blue-soft);border-color:var(--blue-line)}
+.prac .tag{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sage)}
+.prac.psy .tag{color:var(--blue)}
+.prac b{font-family:var(--display);font-weight:400;font-size:1.3rem;line-height:1.2}
+.prac p{font-size:.9rem;color:var(--muted)}
+.prac .links{font-size:.86rem;font-weight:700;margin-top:auto}
+.prac .links a{color:var(--brown)}
+.prac.psy .links a{color:var(--blue)}
+.two-note{font-size:.82rem;color:var(--muted)}
+
+.ic{flex:none;display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:var(--paper);border:1.5px solid var(--line)}
+.ic.sm{width:46px;height:46px}
+.tcard .ic{width:56px;height:56px}
+.door .ic{background:var(--paper)}
+.door-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.sphere .lbl{display:flex;align-items:center;gap:12px}
+.step-top{display:flex;align-items:center;gap:14px}
+.tcard .t-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.prac .p-top{display:flex;align-items:center;gap:10px}
+.limits .l-top{display:flex;align-items:center;gap:14px}
+.clist .c-l{display:flex;align-items:center;gap:10px}
+
+/* ---------- как начать ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1.5px solid var(--brown)}
+@media (max-width:820px){.steps{grid-template-columns:1fr}}
+.step{padding:22px 24px 6px 0;display:flex;flex-direction:column;gap:8px;min-width:0}
+.step+.step{padding-left:24px;border-left:1px solid var(--line)}
+@media (max-width:820px){.step+.step{padding-left:0;border-left:none;border-top:1px solid var(--line)}}
+.step i{font-style:normal;font-family:var(--display);font-size:2.6rem;line-height:1;color:var(--mustard)}
+.step h3{font-size:1.4rem}
+.step p{color:var(--muted);font-size:.95rem}
+.codeword{display:inline-block;font-weight:700;letter-spacing:.12em;color:var(--brown);background:var(--mustard-soft);border-radius:6px;padding:0 6px}
+
+/* ---------- бесплатно ---------- */
+.free{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.free-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media (max-width:980px){.free-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.free-grid{grid-template-columns:1fr}}
+.fcard{display:flex;flex-direction:column;gap:10px;text-decoration:none;color:var(--ink);background:var(--bg);border-radius:18px;padding:20px;border:1.5px solid transparent;transition:border-color .15s;min-width:0}
+.fcard:hover{border-color:var(--brown)}
+.fcard .tag{font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sage)}
+.fcard h3{font-size:1.45rem}
+.fcard p{font-size:.9rem;color:var(--muted)}
+.fcard .go{margin-top:auto;font-weight:700;font-size:.88rem;color:var(--brown)}
+
+
+.tgroup{display:flex;flex-direction:column;gap:12px;margin-bottom:26px}
+.tgroup-h{font-size:1.3rem;color:var(--muted)}
+.test-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media (max-width:700px){.test-grid{grid-template-columns:1fr}}
+.tcard{display:flex;flex-direction:column;gap:8px;text-decoration:none;color:var(--ink);background:var(--bg);border-radius:20px;padding:22px 22px 18px;border:1.5px solid var(--line);transition:border-color .15s,transform .15s;min-width:0}
+.tcard:hover{border-color:var(--brown);transform:translateY(-2px)}
+.tcard.pair{background:var(--blue-soft);border-color:var(--blue-line)}
+.tcard.pair:hover{border-color:var(--blue)}
+.tcard .tag{font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sage)}
+.tcard.pair .tag,.tcard.pair .go{color:var(--blue)}
+.tcard h3{font-size:1.65rem}
+.tcard .slog{font-family:var(--display);font-size:1.08rem;color:var(--brown);line-height:1.3}
+.tcard.pair .slog{color:var(--blue)}
+.tcard p{font-size:.92rem;color:var(--muted)}
+.tcard .go{margin-top:auto;padding-top:6px;font-weight:700;font-size:.9rem;color:var(--brown)}
+.also{display:grid;grid-template-columns:auto 1fr 1fr;gap:12px;align-items:stretch}
+@media (max-width:820px){.also{grid-template-columns:1fr}}
+.also .btn{justify-content:center;align-self:center}
+.mini{display:flex;flex-direction:column;gap:2px;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:12px 16px;min-width:0}
+.mini:hover{border-color:var(--brown)}
+.mini b{font-size:.95rem}
+.mini span{font-size:.84rem;color:var(--muted)}
+/* ---------- граница и контакт ---------- */
+.limits{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:start}
+@media (max-width:820px){.limits{grid-template-columns:1fr;gap:16px}}
+.limits h2{font-size:clamp(1.7rem,3.6vw,2.2rem)}
+.limits p{color:var(--muted);max-width:62ch}
+.contact{background:linear-gradient(160deg,var(--soft) 0%,var(--bg) 100%);border-radius:28px;padding:44px 40px;display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+@media (max-width:820px){.contact{grid-template-columns:1fr;padding:30px 22px}}
+.contact h2{font-size:clamp(2rem,4.6vw,2.9rem);margin-bottom:12px}
+.contact p{max-width:46ch}
+.clist{display:flex;flex-direction:column;gap:10px}
+.clist a,.clist div{display:flex;justify-content:space-between;gap:12px;align-items:center;background:var(--paper);border-radius:14px;padding:14px 16px;text-decoration:none;color:var(--ink);font-weight:600;font-size:.95rem;min-width:0}
+.clist span{color:var(--muted);font-weight:500;font-size:.85rem;overflow-wrap:anywhere;text-align:right}
+footer{padding-block:28px 40px;font-size:.82rem;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+footer a{color:var(--muted)}
 </style>
-<script>
-(function(){
-  var LANGS = ["ru", "uk", "de", "en"], LABELS = {"ru": "RU", "uk": "UA", "de": "DE", "en": "EN"}, KEY = 'irinaTestsLang';
-  function pick(){
-    var m = (location.hash || '').match(/lang=(ru|uk|de|en)/); if (m) return m[1];
-    try { var s = localStorage.getItem(KEY); if (LANGS.indexOf(s) >= 0) return s; } catch(e){}
-    var nav = (navigator.languages || [navigator.language || 'ru']);
-    for (var i = 0; i < nav.length; i++){ var c = String(nav[i]).slice(0, 2).toLowerCase(); if (c === 'ua') c = 'uk'; if (LANGS.indexOf(c) >= 0) return c; }
-    return 'ru';
-  }
-  var lang = window.LANG = pick();
-  document.documentElement.lang = lang;
-  document.title = {"ru": "Тесты Ирины Вознесенской", "uk": "Тести Ірини Вознесенської", "de": "Tests von Iryna Voznesenskaya", "en": "Tests by Iryna Voznesenskaya"}[lang];
-  window.__runBundle = function(b){
-    document.getElementById('app').innerHTML = b.body;
-    b.scripts.forEach(function(code){ var s = document.createElement('script'); s.textContent = code; document.body.appendChild(s); });
-    var bar = document.createElement('div'); bar.className = 'langbar'; bar.setAttribute('role', 'group'); bar.setAttribute('aria-label', 'Language');
-    LANGS.forEach(function(l){
-      var btn = document.createElement('button'); btn.type = 'button'; btn.textContent = LABELS[l]; btn.setAttribute('aria-pressed', l === lang ? 'true' : 'false');
-      btn.addEventListener('click', function(){ if (l === lang) return; try { localStorage.setItem(KEY, l); } catch(e){} location.hash = 'lang=' + l; location.reload(); });
-      bar.appendChild(btn);
-    });
-    if (LANGS.length > 1) document.body.appendChild(bar);
-  };
-})();
-</script>
 </head>
 <body>
-<div id="app"></div>
 
-<script>window.HUB_IMG = {"roza-lyubvi": "roza-lyubvi/preview/1.jpg", "kompas": "kompas/preview/1.jpg", "stupeni": "stupeni/preview/1.jpg", "blizost": "blizost/preview/1.jpg"};</script>
-<script>(function(){var s=document.createElement("script");s.src=LANG+".js";s.onload=function(){__runBundle(window.__BUNDLE);};document.body.appendChild(s);})();</script>
+<header class="top">
+  <div class="page">
+    <a class="mark" href="#start" aria-label="Ирина Вознесенская — в начало">
+      <span class="mono" aria-hidden="true">ИВ</span>
+      <span><b>Ирина Вознесенская</b><small>коуч ICF · Цюрих</small></span>
+    </a>
+    <nav aria-label="Разделы">
+      <a href="#doors">С чего начать</a>
+      <a href="#about">Обо мне</a>
+      <a href="#how">Как проходит</a>
+      <a href="#tests">Тесты</a>
+      <a href="#contact">Контакт</a>
+    </nav>
+    <a class="navcta" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">Знакомство</a>
+  </div>
+</header>
+
+<main class="page" id="start">
+  <section class="hero" aria-labelledby="h1">
+    <div class="hero-text">
+      <div class="eyebrow">Коучинг для тех, кто переехал</div>
+      <h1 id="h1">Твоя жизнь, <em>а не пауза</em> между странами</h1>
+      <p class="lead">Помогаю построить в новой стране свою жизнь и своё дело и снова почувствовать, что ты дома.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#doors">С чего начать</a>
+        <a class="btn ghost" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">Знакомство · 30 минут</a>
+      </div>
+      <div class="who"><span>Ирина Вознесенская</span><span>коуч ICF, Level 2</span><span>нейрокоуч</span><span>Цюрих · онлайн</span></div>
+    </div>
+    <figure class="hero-art" style="margin:0">
+      <img src="home/img/hero1.jpg" alt="Женщина в зелёном пальто и жёлтом шарфе с чашкой у окна смотрит на горы и озеро в тумане; рядом на пледе спит спаниель">
+      <figcaption><b>Первые 30 минут бесплатно</b>Познакомимся и поймём, чем я могу быть полезна.</figcaption>
+    </figure>
+  </section>
+</main>
+
+<section class="doors" id="doors" aria-labelledby="doors-h">
+  <div class="page">
+    <div class="sec-head">
+      <div class="eyebrow">С чего начать</div>
+      <h2 id="doors-h">С чем ты пришла?</h2>
+      <p>Выбери фразу, в которой узнаёшь себя. Правильного ответа нет, и выбрать можно любую.</p>
+    </div>
+    <div class="door-grid" id="doorGrid"></div>
+    <button class="more-link" id="moreBtn" aria-expanded="false" aria-controls="spheres">Я знаю, что именно у меня болит →</button>
+    <dialog class="qm" id="qm" aria-labelledby="qmTitle"><div class="qm-card" id="qmCard"></div></dialog>
+    <div class="spheres" id="spheres" hidden>
+      <div class="sphere-grid" id="sphereGrid"></div>
+    </div>
+  </div>
+</section>
+
+<div class="page">
+  <section id="about" aria-labelledby="about-h">
+    <div class="about">
+      <img src="home/img/hero2.jpg" alt="Женщина в жёлтом шарфе с рюкзаком идёт по горной тропе на закате, впереди бежит спаниель">
+      <div class="about-text">
+        <div class="eyebrow">Обо мне</div>
+        <h2 id="about-h">Привет! Меня зовут Ирина</h2>
+        <p>Я трансформационный коуч и нейрокоуч ICF. Живу в Швейцарии и сама знаю, каково это — начинать жизнь заново в чужой стране.</p>
+        <p>Трансформационный значит, что мы не ограничимся советами и планом на бумаге. Мы спустимся глубже, туда, где живут привычные реакции, страхи и старые правила, которые здесь больше не работают. Когда меняется что-то внутри, решения снаружи начинают находиться сами.</p>
+        <p>Как нейрокоуч я понимаю, как мозг реагирует на перемены и незнакомую среду. Почему в новой стране так быстро кончаются силы. Почему простое письмо из ведомства вдруг кажется горой. И почему всё это не про слабость. Одно это понимание снимает с плеч много лишней вины.</p>
+        <p>Я не тороплю и не тяну за руку. Иду рядом, в твоём темпе.</p>
+        <div class="two">
+          <p class="two-lead">У меня две отдельные практики, с разными людьми и разными запросами. Объединяет их одно: в обеих я работаю на глубине.</p>
+          <div class="two-grid">
+            <div class="prac coach">
+              <span class="p-top"><span class="ic sm" data-ico="sprout" data-c="#66704F"></span><span class="tag">Коучинг · Швейцария</span></span>
+              <b>Глубинный коучинг</b>
+              <p>Для тех, кто живёт в Швейцарии и строит здесь свою жизнь. Помогаю найти опору в себе, своё место и своё дело. Онлайн можно и тем, кто переехал в другую страну.</p>
+              <span class="links"><a href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">Telegram</a> · <a href="https://www.instagram.com/iryna.voznesenskaya/" target="_blank" rel="noopener">Instagram</a></span>
+            </div>
+            <div class="prac psy">
+              <span class="p-top"><span class="ic sm" data-ico="hands" data-c="#2E5A88"></span><span class="tag">Психолог · Украина</span></span>
+              <b>Отношения между людьми и в паре</b>
+              <p>Для тех, кто живёт в Украине. С ними я работаю как психолог по украинской квалификации.</p>
+              <span class="links"><a href="https://t.me/IrynaVoznesenska_psy" target="_blank" rel="noopener">Telegram-канал</a> · <a href="https://www.instagram.com/voznesenskayairyna.psy/" target="_blank" rel="noopener">Instagram</a></span>
+            </div>
+          </div>
+          <p class="two-note">В Швейцарии я работаю только как коуч. Коучинг не заменяет психотерапию и помощь врача.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" aria-labelledby="how-h">
+    <div class="sec-head">
+      <div class="eyebrow">Как проходит</div>
+      <h2 id="how-h">Как начать работу</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-top"><span class="ic" data-ico="pen" data-c="#B98324"></span><i>1</i></div><h3>Напиши мне</h3><p>В Telegram слово <span class="codeword">ВСТРЕЧА</span>. Можно добавить пару строк о том, с чем ты пришла, но это не обязательно.</p></div>
+      <div class="step"><div class="step-top"><span class="ic" data-ico="cup" data-c="#6E4F3C"></span><i>2</i></div><h3>Знакомство, 30 минут</h3><p>Онлайн и бесплатно. Мы познакомимся, проговорим твой запрос и поймём, насколько я могу быть тебе полезна.</p></div>
+      <div class="step"><div class="step-top"><span class="ic" data-ico="path" data-c="#66704F"></span><i>3</i></div><h3>Выбираем формат</h3><p>Если мы решим работать вместе, я предложу формат под твой запрос: разовую работу или программу. Если нет, подскажу, куда идти дальше.</p></div>
+    </div>
+  </section>
+</div>
+
+<section class="free" id="tests" aria-labelledby="tests-h">
+  <div class="page">
+    <div class="sec-head">
+      <div class="eyebrow">Мои тесты · бесплатно</div>
+      <h2 id="tests-h">Можно начать самой</h2>
+      <p>Тесты-рефлексии с подробным разбором, PDF и бланком для записей. Ответы остаются только у тебя: я их не вижу.</p>
+    </div>
+    <div class="tgroup">
+      <h3 class="tgroup-h">Жизнь в новой стране</h3>
+      <div class="test-grid">
+        <a class="tcard" href="kompas/"><span class="t-top"><span class="tag">10 минут · разбор на 11 страниц</span><span class="ic sm" data-ico="compass" data-c="#6E4F3C"></span></span><h3>Компас адаптации</h3><p class="slog">Где ты сейчас в новой стране и куда идти дальше</p><p>Шесть сфер новой жизни: язык, быт, работа, люди, силы и смысл. Покажет, что уже стало опорой, где пока пусто и как ты живёшь между двумя культурами.</p><span class="go">Пройти тест →</span></a>
+        <a class="tcard" href="stupeni/"><span class="t-top"><span class="tag">20 минут · путеводитель и тест</span><span class="ic sm" data-ico="hill" data-c="#66704F"></span></span><h3>Ступени устойчивости</h3><p class="slog">Чтобы стать своей и чувствовать себя в новой стране как дома</p><p>Семь ступеней: от земли под ногами и своих людей до своего дела и смысла. Покажет, какие ступени уже держат тебя, какая поскрипывает и с чего начать.</p><span class="go">Пройти тест →</span></a>
+      </div>
+    </div>
+    <div class="tgroup">
+      <h3 class="tgroup-h">Отношения в паре</h3>
+      <div class="test-grid">
+        <a class="tcard pair" href="blizost/"><span class="t-top"><span class="tag">20 минут · для себя о своей паре</span><span class="ic sm" data-ico="bridge" data-c="#2E5A88"></span></span><h3>Быть рядом и быть собой</h3><p class="slog">Близость, в которой не нужно терять себя</p><p>Покажет, насколько вы близки на самом деле, по четырём опорам пары: близость, страсть, обязательство и умение оставаться собой.</p><span class="go">Пройти тест →</span></a>
+        <a class="tcard pair" href="roza-lyubvi/"><span class="t-top"><span class="tag">15 минут · можно пройти вдвоём</span><span class="ic sm" data-ico="heart" data-c="#2E5A88"></span></span><h3>Роза любви</h3><p class="slog">Чтобы снова услышать друг друга и вернуть в пару тепло</p><p>Три роли в паре: он — любовник, муж и отец, она — любовница, жена и мать. Покажет, какие роли звучат ярко, а какие стали тише.</p><span class="go">Пройти тест →</span></a>
+      </div>
+    </div>
+    <div class="also">
+      <a href="testy/" class="btn ghost">Все тесты на одной странице</a>
+      <a class="mini" href="https://t.me/swisscompass_bot" target="_blank" rel="noopener"><b>Гайд по Швейцарии</b><span>Telegram-бот: бумаги, страховка, школа, врачи — по шагам и на русском</span></a>
+      <a class="mini" href="https://t.me/IrynaNeuroCoach_channel" target="_blank" rel="noopener"><b>Мой Telegram-канал</b><span>Полезное о жизни в новой стране и место, где можно найти своих</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="page">
+  <section aria-labelledby="lim-h">
+    <div class="limits">
+      <div class="l-top"><span class="ic" data-ico="shield" data-c="#6E4F3C"></span><h2 id="lim-h">Когда нужен не коуч</h2></div>
+      <p>Я не врач и не психотерапевт. Если сил нет месяцами, болит тело, не спится, если есть мысли о том, чтобы не жить, или ты в опасности, пожалуйста, обратись к врачу, психотерапевту или в экстренные службы своей страны. Это не стыдно. Коучинг подключается, когда есть силы двигаться дальше, и я всегда подскажу, к кому обратиться.</p>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-h">
+    <div class="contact">
+      <div>
+        <h2 id="contact-h">Давай познакомимся</h2>
+        <p>Напиши мне в Telegram слово <span class="codeword">ВСТРЕЧА</span>, и мы найдём время для первых 30 минут. Это бесплатно и ни к чему не обязывает.</p>
+      </div>
+      <div class="clist">
+        <a href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener"><span class="c-l"><span class="ic sm" data-ico="speech" data-c="#B98324"></span>Telegram</span> <span>@IrynaNeuroCoach</span></a>
+        <a href="https://www.instagram.com/iryna.voznesenskaya/" target="_blank" rel="noopener"><span class="c-l"><span class="ic sm" data-ico="eye" data-c="#6E4F3C"></span>Instagram</span> <span>@iryna.voznesenskaya</span></a>
+        <div><span class="c-l"><span class="ic sm" data-ico="pen" data-c="#66704F"></span>E-mail</span> <span>voznesenskaya.iryna@gmail.com</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Ирина Вознесенская · коуч ICF · Цюрих</span>
+    <span><a href="privacy/">Политика конфиденциальности</a> · <a href="impressum/">Выходные данные</a></span>
+  </footer>
+</div>
+
+<script>
+/* =====================================================================
+   Библиотека значков — общая для всех тестов (с 02.10.2026).
+   Один стиль: сетка 24×24, мягкая заливка светлым тоном + тонкий контур глубоким тоном того же цвета
+   (как акварель с контуром в утверждённой палитре), линия 1.8, скруглённые концы.
+   Использование: ico('flame', '#C25468', '#EEA9B3', 26) — имя, цвет контура, цвет заливки, размер.
+   Если заливка не задана, берётся очень светлый тон контура.
+   Каталог с картинками всех значков — файл «Библиотека значков.html».
+   ===================================================================== */
+const ICONS = {
+  /* ступени, дом, опоры */
+  earth:    (c, f, s) => `<circle cx="12" cy="8" r="3.2" fill="${f}" stroke="${c}" ${s}/><path d="M3 15c3-2 6-2 9 0s6 2 9 0M3 19.5c3-2 6-2 9 0s6 2 9 0" fill="none" stroke="${c}" ${s}/>`,
+  hearth:   (c, f, s) => `<path d="M12 3c3 4 6.5 6 6.5 10.5a6.5 6.5 0 0 1-13 0c0-3 2-4.5 3-6.5 1 2 2 3 3 3 0-3-1-5 .5-7z" fill="${f}" stroke="${c}" ${s}/><path d="M9 21h6" stroke="${c}" ${s}/>`,
+  door:     (c, f, s) => `<rect x="6" y="3" width="12" height="18" rx="1.5" fill="${f}" stroke="${c}" ${s}/><circle cx="14.8" cy="12.5" r="1.2" fill="${c}"/><path d="M3 21h18" stroke="${c}" ${s}/>`,
+  key:      (c, f, s) => `<circle cx="8" cy="12" r="4.2" fill="${f}" stroke="${c}" ${s}/><path d="M12.2 12H21M18 12v3M21 12v3" fill="none" stroke="${c}" ${s}/>`,
+  workshop: (c, f, s) => `<path d="M13.5 4.5l6 6-3 3-6-6z" fill="${f}" stroke="${c}" ${s}/><path d="M12 9l-8 8 3 3 8-8" fill="none" stroke="${c}" ${s}/>`,
+  sprout:   (c, f, s) => `<path d="M12 21v-9" stroke="${c}" ${s}/><path d="M12 13c-4.5 0-7-3-7-7 4.5 0 7 3 7 7zM12 11c0-4.5 3-7 7.5-7 0 4.5-3 7-7.5 7z" fill="${f}" stroke="${c}" ${s}/>`,
+  hill:     (c, f, s) => `<path d="M2 19.5l7-9.5 4 5 3-3.5 6 8z" fill="${f}" stroke="${c}" ${s}/><circle cx="17" cy="5.5" r="2" fill="none" stroke="${c}" ${s}/>`,
+  sky:      (c, f, s) => `<path d="M12 3l1.9 5.6L19.5 10.5l-5.6 1.9L12 18l-1.9-5.6L4.5 10.5l5.6-1.9z" fill="${f}" stroke="${c}" ${s}/><circle cx="19" cy="19" r="1.4" fill="${c}"/><circle cx="5" cy="19.5" r="1" fill="${c}"/>`,
+  home:     (c, f, s) => `<path d="M3.5 11 12 4l8.5 7v9.5h-17z" fill="${f}" stroke="${c}" ${s}/><path d="M10 20.5v-5h4v5" fill="none" stroke="${c}" ${s}/>`,
+  homeLight:(c, f, s) => `<path d="M3.5 11 12 4l8.5 7v9.5h-17z" fill="none" stroke="${c}" ${s}/><rect x="9" y="11.5" width="6" height="5" rx="1" fill="${f}" stroke="${c}" ${s}/><path d="M12 11.5v5M9 14h6" stroke="${c}" stroke-width="1.2"/>`,
+  /* отношения */
+  flame:    (c, f, s) => `<path d="M12 3c3 4 6.5 6 6.5 10.5a6.5 6.5 0 0 1-13 0c0-3 2-4.5 3-6.5 1 2 2 3 3 3 0-3-1-5 .5-7z" fill="${f}" stroke="${c}" ${s}/><path d="M12 20a2.6 2.6 0 0 1-2.6-2.6c0-1.6 1.4-2.4 2.6-4 1.2 1.6 2.6 2.4 2.6 4A2.6 2.6 0 0 1 12 20z" fill="${c}" fill-opacity=".35"/>`,
+  rings:    (c, f, s) => `<circle cx="9" cy="12" r="5.2" fill="${f}" stroke="${c}" ${s}/><circle cx="15" cy="12" r="5.2" fill="none" stroke="${c}" ${s}/>`,
+  heart:    (c, f, s) => `<path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z" fill="${f}" stroke="${c}" ${s}/>`,
+  bridge:   (c, f, s) => `<path d="M2.5 15.5C5 9.5 19 9.5 21.5 15.5z" fill="${f}" stroke="${c}" ${s}/><path d="M2.5 15.5h19M7 12v3.5M12 10.7v4.8M17 12v3.5" fill="none" stroke="${c}" ${s}/><path d="M2.5 19.5c2-1.2 4-1.2 6 0s4 1.2 6 0 4-1.2 6 0" fill="none" stroke="${c}" ${s}/>`,
+  trees:    (c, f, s) => `<path d="M7.5 21v-5M16.5 21v-5" stroke="${c}" ${s}/><path d="M7.5 16.5c-2.6 0-4.3-2-4.3-4.6S5 6 7.5 4c2.5 2 4.3 5.3 4.3 7.9s-1.7 4.6-4.3 4.6z" fill="${f}" stroke="${c}" ${s}/><path d="M16.5 16.5c-2.6 0-4.3-2-4.3-4.6S14 6 16.5 4c2.5 2 4.3 5.3 4.3 7.9s-1.7 4.6-4.3 4.6z" fill="none" stroke="${c}" ${s}/><path d="M3 21h18" stroke="${c}" ${s}/>`,
+  hands:    (c, f, s) => `<path d="M3 13.5l4.5-4 4 2.5 4-2.5 5.5 4-6 5.5h-6z" fill="${f}" stroke="${c}" ${s}/><path d="M11.5 12l2.5 2.5M9.5 14l2 2" fill="none" stroke="${c}" ${s}/>`,
+  speech:   (c, f, s) => `<path d="M4 5.5h16v10H10l-5 4v-4H4z" fill="${f}" stroke="${c}" ${s}/><path d="M8 9.5h8M8 12.5h5" fill="none" stroke="${c}" ${s}/>`,
+  people:   (c, f, s) => `<circle cx="8.5" cy="8.5" r="3" fill="${f}" stroke="${c}" ${s}/><circle cx="16" cy="9.5" r="2.6" fill="none" stroke="${c}" ${s}/><path d="M3 19.5c.6-3.4 2.9-5.3 5.5-5.3s4.9 1.9 5.5 5.3M13.5 15c.8-.5 1.6-.7 2.5-.7 2.3 0 4.3 1.7 4.9 4.6" fill="none" stroke="${c}" ${s}/>`,
+  shield:   (c, f, s) => `<path d="M12 3l7.5 3v5.5c0 4.6-3.2 8-7.5 9.5-4.3-1.5-7.5-4.9-7.5-9.5V6z" fill="${f}" stroke="${c}" ${s}/><path d="M9 12l2.2 2.2L15.5 10" fill="none" stroke="${c}" ${s}/>`,
+  anchor:   (c, f, s) => `<circle cx="12" cy="5.5" r="2.3" fill="${f}" stroke="${c}" ${s}/><path d="M12 7.8V20M8 11h8M4.5 14c.5 3.5 3.6 6 7.5 6s7-2.5 7.5-6" fill="none" stroke="${c}" ${s}/>`,
+  /* путь, рефлексия, эксперимент */
+  compass:  (c, f, s) => `<circle cx="12" cy="12" r="8.5" fill="${f}" stroke="${c}" ${s}/><path d="M14.8 9.2l-1.8 4.8-4.8 1.8 1.8-4.8z" fill="${c}" fill-opacity=".85" stroke="${c}" stroke-width="1.2" stroke-linejoin="round"/>`,
+  path:     (c, f, s) => `<path d="M5 20.5c0-4 4-4.5 6-7s1.5-6 7-8.5" fill="none" stroke="${c}" ${s} stroke-dasharray="2.5 3"/><circle cx="5" cy="20" r="2" fill="${f}" stroke="${c}" ${s}/><path d="M18 3.5v5M18 3.5l3 1.4-3 1.4" fill="${f}" stroke="${c}" ${s}/>`,
+  eye:      (c, f, s) => `<path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" fill="${f}" stroke="${c}" ${s}/><circle cx="12" cy="12" r="3" fill="none" stroke="${c}" ${s}/><circle cx="12" cy="12" r="1" fill="${c}"/>`,
+  explore:  (c, f, s) => `<circle cx="10.5" cy="10.5" r="6" fill="${f}" stroke="${c}" ${s}/><path d="M15 15l5.5 5.5" stroke="${c}" ${s}/><path d="M8 9.5a2.8 2.8 0 0 1 2.5-2" fill="none" stroke="${c}" ${s}/>`,
+  flask:    (c, f, s) => `<path d="M9.5 3.5v5.5L4.5 18a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3l-5-9V3.5" fill="none" stroke="${c}" ${s}/><path d="M6.8 15h10.4l1.6 3a1.2 1.2 0 0 1-1.1 1.8H6.3A1.2 1.2 0 0 1 5.2 18z" fill="${f}" stroke="${c}" stroke-width="1.2"/><path d="M8 3.5h8" stroke="${c}" ${s}/>`,
+  mirror:   (c, f, s) => `<ellipse cx="12" cy="9.5" rx="5.5" ry="6.5" fill="${f}" stroke="${c}" ${s}/><path d="M12 16v5M8.5 21h7M9.5 7a3 3 0 0 1 2-1.6" fill="none" stroke="${c}" ${s}/>`,
+  pen:      (c, f, s) => `<path d="M15.5 4.5l4 4L9 19l-5 1 1-5z" fill="${f}" stroke="${c}" ${s}/><path d="M13.5 6.5l4 4" stroke="${c}" ${s}/>`,
+  book:     (c, f, s) => `<path d="M3.5 5.5c3-1 5.8-.8 8.5 1 2.7-1.8 5.5-2 8.5-1v13c-3-1-5.8-.8-8.5 1-2.7-1.8-5.5-2-8.5-1z" fill="${f}" stroke="${c}" ${s}/><path d="M12 6.5v13" stroke="${c}" ${s}/>`,
+  seed:     (c, f, s) => `<path d="M12 20c-3.6 0-6-2.6-6-6.3C6 9.5 9 6 12 4c3 2 6 5.5 6 9.7 0 3.7-2.4 6.3-6 6.3z" fill="${f}" stroke="${c}" ${s}/><path d="M12 20v-7.5" stroke="${c}" ${s}/>`,
+  sun:      (c, f, s) => `<circle cx="12" cy="12" r="4.2" fill="${f}" stroke="${c}" ${s}/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7" stroke="${c}" ${s}/>`,
+  moon:     (c, f, s) => `<path d="M19 15.5A8 8 0 0 1 8.5 5a8 8 0 1 0 10.5 10.5z" fill="${f}" stroke="${c}" ${s}/>`,
+  lantern:  (c, f, s) => `<path d="M9 6h6l1.5 3v8L15 20H9l-1.5-3V9z" fill="${f}" stroke="${c}" ${s}/><path d="M10 3.5h4M12 3.5V6M12 11v4" stroke="${c}" ${s}/>`,
+  cup:      (c, f, s) => `<path d="M4.5 9h12v5a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5z" fill="${f}" stroke="${c}" ${s}/><path d="M16.5 10.5h1.5a2.3 2.3 0 0 1 0 4.6h-1.8M8 3.5c-.8 1 .8 2-.1 3M12 3.5c-.8 1 .8 2-.1 3" fill="none" stroke="${c}" ${s}/>`,
+  mask:     (c, f, s) => `<path d="M4 6.5c5-2 11-2 16 0v5.5c0 4.5-3.6 8-8 8s-8-3.5-8-8z" fill="${f}" stroke="${c}" ${s}/><path d="M7.5 11c1-.8 2.5-.8 3.5 0M13 11c1-.8 2.5-.8 3.5 0M9 15.5c1.8 1.2 4.2 1.2 6 0" fill="none" stroke="${c}" ${s}/>`,
+  lock:     (c, f, s) => `<rect x="5" y="10.5" width="14" height="10" rx="2" fill="${f}" stroke="${c}" ${s}/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5M12 14.5v2.5" fill="none" stroke="${c}" ${s}/>`
+};
+/* светлый тон цвета для заливки по умолчанию */
+const icoSoft = c => { const h = String(c).replace('#', ''); if (h.length !== 6) return 'none';
+  return '#' + [0, 2, 4].map(i => Math.round(parseInt(h.substr(i, 2), 16) * .3 + 255 * .7).toString(16).padStart(2, '0')).join(''); };
+function ico(name, line = '#2E5A88', fill, size = 24){
+  const draw = ICONS[name] || ICONS.seed;
+  const s = 'stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"';
+  return `<svg viewBox="0 0 24 24" width="${size}" height="${size}" aria-hidden="true">${draw(line, fill || icoSoft(line), s)}</svg>`;
+}
+
+const T = '';
+const MEET = { t: 'Знакомство, 30 минут', d: 'Онлайн, бесплатно. Напиши в Telegram слово ВСТРЕЧА.', h: 'https://t.me/IrynaNeuroCoach' };
+const KOMPAS = { t: 'Тест «Компас адаптации», 10 минут', d: 'Покажет, какая сфера новой жизни просела и куда идти дальше.', h: T + 'kompas/' };
+const STUPENI = { t: 'Тест «Ступени устойчивости», 20 минут', d: 'Путеводитель и тест: на что ты опираешься сейчас и с какой ступени начинать.', h: T + 'stupeni/' };
+const BOT = { t: 'Бот «Гайд по Швейцарии»', d: 'Ответы на практические вопросы по шагам и на русском. @swisscompass_bot', h: 'https://t.me/swisscompass_bot' };
+const CHANNEL = { t: 'Мой Telegram-канал', d: 'Полезное о жизни в новой стране и люди, которые проходят через то же самое.', h: 'https://t.me/IrynaNeuroCoach_channel' };
+const EDGE_HEALTH = 'Если сил нет месяцами, если болит тело, если не спится, это к врачу, и это не стыдно. Здесь мы про другое: как вернуть ритм и перестать требовать от себя невозможного, пока всё вокруг чужое.';
+
+const DOORS = [
+  { q: 'Я не понимаю, как здесь жить', pain: ["Каждое письмо из ведомства — как экзамен", "Не знаю, куда звонить и что спросить", "Страховка, школа, врачи — всё по новым правилам", "Боюсь ошибиться и что-то пропустить"], ic: 'key', c: '#B98324', hint: 'бумаги, школа, врачи',
+    h: 'Сначала разберёмся с правилами',
+    say: ['Разрешения, страховка, школа, врачи, налоги: в первые месяцы всё это наваливается разом, и каждое письмо требует сил. Это нормально, и это решается по шагам.',
+          'Если ты живёшь в Швейцарии, начни с бота: в нём собраны ответы на самые частые вопросы. Если в другой стране, начни с «Компаса адаптации».'],
+    acts: [BOT, KOMPAS],
+    next: 'Когда быт налажен, часто приходит другой вопрос: а что дальше со мной? Об этом можно поговорить на знакомстве.' },
+  { q: 'Мне здесь тяжело', pain: ["Всё время в напряжении, как будто иду по тонкому льду", "Здесь всё требует втрое больше сил", "«У нас всё нормально», а внутри пусто", "Не с кем поговорить по-настоящему"], ic: 'earth', c: '#66704F', hint: 'тоска, нет сил, одиноко',
+    h: 'Это не ты слабая. Это этап',
+    say: ['Тоска, усталость, одиночество и ощущение, что здесь на всё уходит втрое больше сил. Через это проходят почти все, кто переехал. С тобой всё в порядке, просто ты сейчас на трудном отрезке пути.',
+          'Сначала всегда опора: тело, сон, ритм, свои люди. Тест «Ступени устойчивости» покажет, на что ты уже опираешься и где пусто.'],
+    acts: [STUPENI, MEET], edge: EDGE_HEALTH,
+    next: 'Когда земля под ногами появится, обычно приходит другой вопрос: кто я теперь? Об этом поговорим на знакомстве.' },
+  { q: 'Я тут никто', pain: ["Смотрю в зеркало и не узнаю себя", "Здесь я просто «мама Софии» или «жена такого-то»", "Мои дипломы не признают, опыт никому не нужен", "На вопрос «чем вы занимаетесь?» больно отвечать «пока ничем»"], ic: 'mirror', c: '#6E4F3C', hint: 'моя цена обнулилась',
+    h: 'Твоя цена никуда не делась',
+    say: ['Дома тебя знали по делу, а здесь будто пришлось начинать с нуля.',
+          'Но то, что ты умеешь, никуда не делось. Просто здесь этого пока никто не видит, и ты сама тоже. С этого и начнём: что у тебя есть и куда это приложить.'],
+    acts: [MEET, KOMPAS],
+    next: 'Следующий шаг после знакомства — большой разбор ценностей «Куда идти»: что для тебя по-настоящему важно и какое дело может стать твоим здесь.' },
+  { q: 'Я здесь давно, но так и не дома', pain: ["Как будто стою на остановке и жду, когда начнётся настоящая жизнь", "Быт налажен, язык есть, а я всё ещё чужая", "Оправданий больше нет, а легче не становится", "Уже пробовала психолога, курсы и «возьми себя в руки»"], ic: 'homeLight', c: '#B98324', hint: 'годы идут, а жизнь всё «потом»',
+    h: 'Когда «потом» тянется годами',
+    say: ['Быт налажен, язык есть, дети выросли или почти. А ощущение, что настоящая жизнь вот-вот начнётся, не проходит. И объяснить его уже нечем: ты давно здесь освоилась.',
+          'Тебе не нужны объяснения, как здесь всё устроено, и, скорее всего, ты уже многое пробовала. Нужен метод и честный разговор о том, чего ты ждёшь и сколько ещё готова ждать.'],
+    acts: [MEET],
+    next: 'После знакомства обычно идём в большой разбор ценностей «Куда идти»: он показывает, чего ты на самом деле хочешь и с чего начать уже сейчас.' }
+];
+
+const SPHERES = [
+  { q: 'У меня нет сил', pain: ["Утром нет сил встать", "Серая зима тянется бесконечно", "Стыдно, что устаю от «простых» дел"], ic: 'hearth', c: '#B98324', h: 'Вернуть силы и ритм',
+    say: ['Работаем с режимом, сном, светом, ритмом и разрешением себе отдыхать. И разбираемся, как устроен стресс адаптации, чтобы ты перестала винить себя за усталость.'],
+    acts: [STUPENI, MEET], edge: EDGE_HEALTH },
+  { q: 'Дома всё разладилось', pain: ["Мы команда или соседи?", "Каждый сам по себе", "Боюсь начать разговор: опять поссоримся"], ic: 'home', c: '#6E4F3C', h: 'Снова стать командой, а не соседями',
+    say: ['Разберём, что ты можешь сделать со своей стороны, как начать разговор без упрёков и что ты перестала говорить вслух.'],
+    acts: [MEET], edge: 'Я работаю с тобой, а не с вашей парой. Если нужна работа вдвоём, это к семейному терапевту, подскажу к кому.' },
+  { q: 'Мне здесь не с кем', pain: ["Некому позвонить ночью", "Меня не слышат и проходят мимо", "Старые друзья далеко, новых пока нет"], ic: 'people', c: '#66704F', h: 'Найти своих',
+    say: ['Для начала не нужно десять подруг. Нужен один свой человек и место, где можно быть собой. Начни с канала: там собираются те, кто проходит через то же самое.'],
+    acts: [CHANNEL, MEET] },
+  { q: 'Я до сих пор боюсь говорить', pain: ["Знаю слова, но молчу", "Со мной говорят медленно и громко, как с маленькой", "Не могу сама решить простой вопрос по телефону"], ic: 'speech', c: '#B98324', h: 'Язык без стыда',
+    say: ['С практическими вопросами поможет бот. А страх ошибиться, стыд за акцент и привычку молчать мы разбираем на сессиях. Дело здесь не в грамматике, а в праве говорить.'],
+    acts: [BOT, MEET] },
+  { q: 'У меня нет своих денег', pain: ["Живу на деньги мужа и чувствую себя нахлебницей", "Нет ничего своего", "Не знаю, сколько я стою здесь"], ic: 'seed', c: '#66704F', h: 'Вернуть себе свою цену',
+    say: ['Разберёмся, почему жизнь без своих денег так бьёт по достоинству, что ты умеешь на самом деле, что из этого нужно здесь и как назвать свою цену.'],
+    acts: [MEET], edge: 'Это не про то, куда вложить деньги. Это про то, как перестать чувствовать себя нахлебницей и вернуть себе свою цену, в деньгах и не только.' },
+  { q: 'Не знаю, чем здесь заниматься', pain: ["Спросят, чем я занимаюсь, — и нечего ответить", "Старая профессия здесь не работает", "Идей много, а куда идти — непонятно"], ic: 'compass', c: '#6E4F3C', h: 'Найти своё дело здесь',
+    say: ['Разберёмся, что для тебя по-настоящему важно, какие умения остаются с тобой в любой стране и какое дело может стать твоим здесь.'],
+    acts: [KOMPAS, MEET] }
+];
+
+const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+function actHtml(a){ const ext = /^https?:/.test(a.h); return `<a class="act" href="${a.h}"${ext ? ' target="_blank" rel="noopener"' : ''}><b>${esc(a.t)}<span aria-hidden="true">→</span></b><span>${esc(a.d)}</span></a>`; }
+function modalHtml(x, kind){
+  const sage = kind === 'sphere';
+  return `<div class="qm-top">
+      <span class="ic">${ico(x.ic, x.c, null, 34)}</span>
+      <div class="qm-head"><div class="eyebrow">${sage ? 'Я знаю, что болит' : 'С чем ты пришла'}</div><h2 class="qm-title" id="qmTitle">«${esc(x.q)}»</h2></div>
+      <button class="qm-close" type="button" data-close aria-label="Закрыть">✕</button>
+    </div>
+    <div class="qm-panel${sage ? ' sage' : ''}">
+      <div class="qm-col"><h3>Как это звучит</h3><ul class="pain">${x.pain.map(p => `<li>${esc(p)}</li>`).join('')}</ul></div>
+      <div class="qm-col"><h3>${esc(x.h)}</h3>${x.say.map(p => `<p>${esc(p)}</p>`).join('')}${x.edge ? `<p class="edge">${esc(x.edge)}</p>` : ''}</div>
+      <div class="qm-col"><h3>С чего начать сегодня</h3>${x.acts.map(actHtml).join('')}</div>
+    </div>
+    <div class="qm-foot">${x.next ? `<p class="next"><b>Дальше.</b> ${esc(x.next)}</p>` : '<span></span>'}
+      <p class="notme">${kind === 'door' ? 'Не про тебя? <button type="button" data-close>Выбери другую фразу</button> или <button type="button" data-more>назови, что именно болит</button>.' : 'Не про тебя? <button type="button" data-close>Выбери другую строку</button> или <button type="button" data-doors>вернись к четырём фразам</button>.'}</p></div>`;
+}
+const qm = document.getElementById('qm'), qmCard = document.getElementById('qmCard');
+function openModal(x, kind){
+  qmCard.innerHTML = modalHtml(x, kind);
+  if (typeof qm.showModal === 'function'){ try { qm.showModal(); } catch (e) { qm.setAttribute('open', ''); } } else qm.setAttribute('open', '');
+  qmCard.scrollTop = 0;
+}
+function closeModal(){ if (qm.open){ typeof qm.close === 'function' ? qm.close() : qm.removeAttribute('open'); } }
+qm.addEventListener('click', e => { if (e.target === qm || e.target.closest('[data-close]')) closeModal(); });
+function setup(list, gridId, cls){
+  const grid = document.getElementById(gridId);
+  grid.innerHTML = list.map((x, i) => cls === 'door'
+    ? `<button class="door" id="${gridId}-${i}" aria-haspopup="dialog"><span class="door-top"><q>${esc(x.q)}</q><span class="ic">${ico(x.ic, x.c, null, 32)}</span></span><small><span>${esc(x.hint)}</span><span aria-hidden="true">→</span></small></button>`
+    : `<button class="sphere" id="${gridId}-${i}" aria-haspopup="dialog"><span class="lbl"><span class="ic sm">${ico(x.ic, x.c, null, 26)}</span><span>${esc(x.q)}</span></span><span aria-hidden="true">→</span></button>`).join('');
+  grid.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    openModal(list[+b.id.split('-').pop()], cls);
+  });
+}
+document.querySelectorAll('[data-ico]').forEach(e => { e.innerHTML = ico(e.dataset.ico, e.dataset.c, null, e.classList.contains('sm') && !e.closest('.tcard') ? 26 : 32); });
+setup(DOORS, 'doorGrid', 'door');
+setup(SPHERES, 'sphereGrid', 'sphere');
+const moreBtn = document.getElementById('moreBtn'), spheres = document.getElementById('spheres');
+function openSpheres(){ spheres.hidden = false; moreBtn.setAttribute('aria-expanded', 'true'); moreBtn.textContent = 'Скрыть список ↑'; spheres.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
+moreBtn.addEventListener('click', () => { if (spheres.hidden) openSpheres(); else { spheres.hidden = true; moreBtn.setAttribute('aria-expanded', 'false'); moreBtn.textContent = 'Я знаю, что именно у меня болит →'; } });
+document.addEventListener('click', e => {
+  if (e.target.matches('[data-more]')){ closeModal(); openSpheres(); }
+  if (e.target.matches('[data-doors]')){ closeModal(); document.getElementById('doors').scrollIntoView({ behavior: 'smooth' }); }
+});
+</script>
+
 </body>
 </html>
