@@ -820,3 +820,5 @@ footer.copy .del-answers{margin-top:10px}
 .hub-back{margin:0 0 6px;font-size:.9rem;font-weight:600}
 .hub-back a{color:var(--muted);text-decoration:none}
 .hub-back a:hover{color:var(--ink)}
+.greet-more{margin:0;font-size:.9rem;font-weight:600}
+.greet-more a{color:var(--plum)}
