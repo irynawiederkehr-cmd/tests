@@ -846,3 +846,7 @@ footer.copy .del-answers{margin-top:10px}
 }
 @media print{.sitebar{display:none!important}}
 .hub-back{display:none}
+
+/* знак-аватар: цветок-мандала */
+.mono.av,.sb-mono.av{background:none!important;border:none!important;padding:0;overflow:visible}
+.mono.av svg,.sb-mono.av svg{width:100%;height:100%;display:block}
