@@ -266,6 +266,16 @@ footer a{color:var(--muted)}
 .mono.av{border:none;padding:0}
 .mono.av svg{width:100%;height:100%;display:block}
 
+.act b{align-items:center}
+.act-ic{flex:none;width:32px;height:32px;border-radius:50%;background:var(--bg);display:grid;place-items:center;margin-right:2px}
+.act b > .act-ic + *{flex:1}
+.mini{flex-direction:row;flex-wrap:wrap;align-items:center;column-gap:10px}
+.mini .ic.sm{width:38px;height:38px}
+.mini b{flex:1 1 auto}
+.mini span:not(.ic){flex-basis:100%}
+.act-t{flex:1;min-width:0}
+.act b{justify-content:flex-start;gap:10px}
+
 </style>
 </head>
 <body>
@@ -398,8 +408,8 @@ footer a{color:var(--muted)}
     </div>
     <div class="also">
       <a href="testy/" class="btn ghost">Все тесты на одной странице</a>
-      <a class="mini" href="https://t.me/swisscompass_bot" target="_blank" rel="noopener"><b>Гайд по Швейцарии</b><span>Telegram-бот: бумаги, страховка, школа, врачи — по шагам и на русском</span></a>
-      <a class="mini" href="https://t.me/IrynaNeuroCoach_channel" target="_blank" rel="noopener"><b>Мой Telegram-канал</b><span>Полезное о жизни в новой стране и место, где можно найти своих</span></a>
+      <a class="mini" href="https://t.me/swisscompass_bot" target="_blank" rel="noopener"><span class="ic sm" data-ico="chatbot" data-c="#B98324"></span><b>Гайд по Швейцарии</b><span>Telegram-бот: бумаги, страховка, школа, врачи — по шагам и на русском</span></a>
+      <a class="mini" href="https://t.me/IrynaNeuroCoach_channel" target="_blank" rel="noopener"><span class="ic sm" data-ico="megaphone" data-c="#3F6FBF"></span><b>Мой Telegram-канал</b><span>Полезное о жизни в новой стране и место, где можно найти своих</span></a>
     </div>
   </div>
 </section>
@@ -419,9 +429,9 @@ footer a{color:var(--muted)}
         <p>Напиши мне в Telegram слово <span class="codeword">ВСТРЕЧА</span>, и мы найдём время для первых 30 минут. Это бесплатно и ни к чему не обязывает.</p>
       </div>
       <div class="clist">
-        <a href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener"><span class="c-l"><span class="ic sm" data-ico="speech" data-c="#B98324"></span>Telegram</span> <span>@IrynaNeuroCoach</span></a>
-        <a href="https://www.instagram.com/iryna.voznesenskaya/" target="_blank" rel="noopener"><span class="c-l"><span class="ic sm" data-ico="eye" data-c="#6E4F3C"></span>Instagram</span> <span>@iryna.voznesenskaya</span></a>
-        <div><span class="c-l"><span class="ic sm" data-ico="pen" data-c="#66704F"></span>E-mail</span> <span>voznesenskaya.iryna@gmail.com</span></div>
+        <a href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener"><span class="c-l"><span class="ic sm" data-ico="telegram" data-c="#3F6FBF"></span>Telegram</span> <span>@IrynaNeuroCoach</span></a>
+        <a href="https://www.instagram.com/iryna.voznesenskaya/" target="_blank" rel="noopener"><span class="c-l"><span class="ic sm" data-ico="instagram" data-c="#C25468"></span>Instagram</span> <span>@iryna.voznesenskaya</span></a>
+        <div><span class="c-l"><span class="ic sm" data-ico="mail" data-c="#66704F"></span>E-mail</span> <span>voznesenskaya.iryna@gmail.com</span></div>
       </div>
     </div>
   </section>
@@ -467,6 +477,11 @@ const ICONS = {
   /* путь, рефлексия, эксперимент */
   compass:  (c, f, s) => `<circle cx="12" cy="12" r="8.5" fill="${f}" stroke="${c}" ${s}/><path d="M14.8 9.2l-1.8 4.8-4.8 1.8 1.8-4.8z" fill="${c}" fill-opacity=".85" stroke="${c}" stroke-width="1.2" stroke-linejoin="round"/>`,
   path:     (c, f, s) => `<path d="M3 20.5H8V16.5H12V12.5H16V8.5H21V20.5Z" fill="${f}" stroke="none"/><path d="M3 20.5H8V16.5H12V12.5H16V8.5H21" fill="none" stroke="${c}" ${s}/><path d="M18.5 8.5V3" stroke="${c}" ${s}/><path d="M18.5 3.2H22L21 4.6L22 6H18.5" fill="#fff" stroke="${c}" stroke-width="1.6" stroke-linejoin="round"/><circle cx="5.5" cy="17.3" r="1.3" fill="${c}"/>`,
+  telegram: (c, f, s) => `<path d="M3.2 11.4L20.2 4.3C20.8 4.1 21.3 4.6 21.2 5.2L18.4 19C18.3 19.6 17.6 19.9 17.1 19.5L12.6 16.2L10.2 18.6C9.9 18.9 9.4 18.7 9.4 18.3V14.8L17 7.8L7.6 13.4L3.4 12.2C2.8 12 2.7 11.6 3.2 11.4Z" fill="${f}" stroke="${c}" ${s}/>`,
+  instagram:(c, f, s) => `<rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="${f}" stroke="${c}" ${s}/><circle cx="12" cy="12" r="4" fill="#fff" stroke="${c}" ${s}/><circle cx="16.9" cy="7.1" r="1.1" fill="${c}"/>`,
+  mail:     (c, f, s) => `<rect x="3" y="5.5" width="18" height="13" rx="2.5" fill="${f}" stroke="${c}" ${s}/><path d="M3.8 7L12 12.8L20.2 7" fill="none" stroke="${c}" ${s}/>`,
+  megaphone:(c, f, s) => `<path d="M4 10V14H7L15 18.5V5.5L7 10Z" fill="${f}" stroke="${c}" ${s}/><path d="M7 14L8.2 19H10.4L9.6 14" fill="none" stroke="${c}" ${s}/><path d="M18 9.5C19 10.2 19.5 11 19.5 12S19 13.8 18 14.5" fill="none" stroke="${c}" ${s}/>`,
+  chatbot:  (c, f, s) => `<path d="M5 5H19A2 2 0 0 1 21 7V15A2 2 0 0 1 19 17H11L6.5 20.5V17H5A2 2 0 0 1 3 15V7A2 2 0 0 1 5 5Z" fill="${f}" stroke="${c}" ${s}/><circle cx="8.5" cy="11" r="1.2" fill="${c}"/><circle cx="12" cy="11" r="1.2" fill="${c}"/><circle cx="15.5" cy="11" r="1.2" fill="${c}"/>`,
   signpost: (c, f, s) => `<path d="M12 3v18M8.5 21h7" stroke="${c}" ${s}/><path d="M12 5h6.3l2.2 2.2-2.2 2.2H12z" fill="${f}" stroke="${c}" ${s}/><path d="M12 11.5H5.7l-2.2 2.2 2.2 2.2H12z" fill="${f}" stroke="${c}" ${s}/>`,
   eye:      (c, f, s) => `<path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" fill="${f}" stroke="${c}" ${s}/><circle cx="12" cy="12" r="3" fill="none" stroke="${c}" ${s}/><circle cx="12" cy="12" r="1" fill="${c}"/>`,
   explore:  (c, f, s) => `<circle cx="10.5" cy="10.5" r="6" fill="${f}" stroke="${c}" ${s}/><path d="M15 15l5.5 5.5" stroke="${c}" ${s}/><path d="M8 9.5a2.8 2.8 0 0 1 2.5-2" fill="none" stroke="${c}" ${s}/>`,
@@ -495,11 +510,11 @@ function ico(name, line = '#2E5A88', fill, size = 24){
 const AVATAR_SVG = '<svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#FFFCF8" stroke="#6E4F3C" stroke-width="3"/><g transform="rotate(22.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(67.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(112.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(157.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(202.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(247.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(292.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(337.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(0.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(45.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(90.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(135.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(180.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(225.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(270.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(315.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><circle cx="50" cy="50" r="7" fill="#B98324"/></svg>';
 
 const T = '';
-const MEET = { t: 'Знакомство, 30 минут', d: 'Онлайн, бесплатно. Напиши в Telegram слово ВСТРЕЧА.', h: 'https://t.me/IrynaNeuroCoach' };
-const KOMPAS = { t: 'Тест «Компас адаптации», 10 минут', d: 'Покажет, какая сфера новой жизни просела и куда идти дальше.', h: T + 'kompas/' };
-const STUPENI = { t: 'Тест «Ступени устойчивости», 20 минут', d: 'Путеводитель и тест: на что ты опираешься сейчас и с какой ступени начинать.', h: T + 'stupeni/' };
-const BOT = { t: 'Бот «Гайд по Швейцарии»', d: 'Ответы на практические вопросы по шагам и на русском. @swisscompass_bot', h: 'https://t.me/swisscompass_bot' };
-const CHANNEL = { t: 'Мой Telegram-канал', d: 'Полезное о жизни в новой стране и люди, которые проходят через то же самое.', h: 'https://t.me/IrynaNeuroCoach_channel' };
+const MEET = { ic: 'telegram', c: '#3F6FBF', t: 'Знакомство, 30 минут', d: 'Онлайн, бесплатно. Напиши в Telegram слово ВСТРЕЧА.', h: 'https://t.me/IrynaNeuroCoach' };
+const KOMPAS = { ic: 'compass', c: '#6E4F3C', t: 'Тест «Компас адаптации», 10 минут', d: 'Покажет, какая сфера новой жизни просела и куда идти дальше.', h: T + 'kompas/' };
+const STUPENI = { ic: 'path', c: '#66704F', t: 'Тест «Ступени устойчивости», 20 минут', d: 'Путеводитель и тест: на что ты опираешься сейчас и с какой ступени начинать.', h: T + 'stupeni/' };
+const BOT = { ic: 'chatbot', c: '#B98324', t: 'Бот «Гайд по Швейцарии»', d: 'Ответы на практические вопросы по шагам и на русском. @swisscompass_bot', h: 'https://t.me/swisscompass_bot' };
+const CHANNEL = { ic: 'megaphone', c: '#3F6FBF', t: 'Мой Telegram-канал', d: 'Полезное о жизни в новой стране и люди, которые проходят через то же самое.', h: 'https://t.me/IrynaNeuroCoach_channel' };
 const EDGE_HEALTH = 'Если сил нет месяцами, если болит тело, если не спится, это к врачу, и это не стыдно. Здесь мы про другое: как вернуть ритм и перестать требовать от себя невозможного, пока всё вокруг чужое.';
 
 const DOORS = [
@@ -551,7 +566,7 @@ const SPHERES = [
 ];
 
 const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-function actHtml(a){ const ext = /^https?:/.test(a.h); return `<a class="act" href="${a.h}"${ext ? ' target="_blank" rel="noopener"' : ''}><b>${esc(a.t)}<span aria-hidden="true">→</span></b><span>${esc(a.d)}</span></a>`; }
+function actHtml(a){ const ext = /^https?:/.test(a.h); return `<a class="act" href="${a.h}"${ext ? ' target="_blank" rel="noopener"' : ''}><b>${a.ic ? `<span class="act-ic">${ico(a.ic, a.c, null, 20)}</span>` : ''}<span class="act-t">${esc(a.t)}</span><span aria-hidden="true">→</span></b><span>${esc(a.d)}</span></a>`; }
 function modalHtml(x, kind){
   const sage = kind === 'sphere';
   return `<div class="qm-top">
