@@ -282,16 +282,16 @@ footer a{color:var(--muted)}
 .stop.l .card{grid-column:1}
 .stop.r .card{grid-column:3}
 .stop .node{grid-column:2;grid-row:1;justify-self:center;position:relative;z-index:1}
-.stop .rail{grid-column:2;grid-row:1;justify-self:center;align-self:stretch;width:16px;background:var(--soft);position:relative}
-.stop .rail::after{content:"";position:absolute;left:50%;top:0;bottom:0;border-left:2.6px dashed var(--brown);opacity:.7;transform:translateX(-50%)}
 .node{width:84px;height:84px;border-radius:50%;background:var(--paper);display:grid;place-items:center;border:2.5px solid var(--lc);box-shadow:0 0 0 8px var(--bg)}
 .node i{position:absolute;top:-6px;right:-6px;font-style:normal;width:30px;height:30px;border-radius:50%;background:var(--lc);color:#fff;font-weight:700;font-size:.85rem;display:grid;place-items:center}
-.between{min-height:96px}
-.between svg{grid-column:2;grid-row:1;width:140px;height:110px;display:block;justify-self:center;overflow:visible}
-.between svg .road{fill:none;stroke:var(--soft);stroke-width:16;stroke-linecap:round;vector-effect:non-scaling-stroke}
-.between .tip{grid-column:2;grid-row:1;justify-self:center;align-self:end;width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-top:10px solid var(--brown);opacity:.75;margin-bottom:6px;position:relative;z-index:1}
-.between svg .dash{fill:none;stroke:var(--brown);stroke-width:2.6;stroke-dasharray:9 8;stroke-linecap:round;opacity:.7;vector-effect:non-scaling-stroke}
-.between svg .arr{fill:none;stroke:var(--brown);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;opacity:.8}
+.between{min-height:110px}
+.trail-start,.trail-end,#trail{position:relative;z-index:1}
+.road-svg{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;overflow:visible}
+.road-svg .road{fill:none;stroke:var(--soft);stroke-width:18;stroke-linecap:round;stroke-linejoin:round}
+.road-svg .edge{fill:none;stroke:color-mix(in srgb,var(--brown) 18%,transparent);stroke-width:20;stroke-linecap:round;stroke-linejoin:round}
+.road-svg .dash{fill:none;stroke:var(--brown);stroke-width:2.4;stroke-dasharray:10 9;stroke-linecap:round;opacity:.75}
+.road-svg .arr{fill:var(--brown);opacity:.8}
+.trail-start .ic,.trail-end .ic{position:relative;z-index:1}
 .between p{grid-row:1;font-size:.88rem;color:var(--muted);font-style:italic;max-width:34ch;line-height:1.45}
 .between.l p{grid-column:1;justify-self:end;text-align:right;padding-right:14px}
 .between.r p{grid-column:3;justify-self:start;padding-left:14px}
@@ -306,12 +306,10 @@ footer a{color:var(--muted)}
 @media (max-width:760px){
   .stop,.between{grid-template-columns:64px 1fr;column-gap:14px}
   .stop.l .card,.stop.r .card{grid-column:2}
-  .stop .node,.stop .rail{grid-column:1}
+  .stop .node{grid-column:1}
   .node{width:58px;height:58px;box-shadow:0 0 0 6px var(--bg)}
   .node svg{width:26px;height:26px}
   .node i{width:24px;height:24px;font-size:.75rem;top:-5px;right:-5px}
-  .between svg{grid-column:1;width:64px;height:90px}
-  .between .tip{grid-column:1}
   .between.l p,.between.r p{grid-column:2;justify-self:start;text-align:left;padding:0}
   .trail-start,.trail-end{align-items:flex-start;text-align:left}
 }
@@ -367,7 +365,8 @@ footer a{color:var(--muted)}
     <div class="rule"><b>Спуститься — нормально</b><span>После поездки домой или болезни ребёнка снова становится трудно. Это часть пути.</span></div>
   </div>
 
-  <section class="trail" aria-label="Восемь стоянок пути">
+  <section class="trail" id="trailWrap" aria-label="Восемь стоянок пути">
+    <svg class="road-svg" id="road" aria-hidden="true"></svg>
     <div class="trail-start"><span class="ic" data-ico="path" data-c="#6E4F3C"></span><b>Ты переехала</b><span>Чемоданы распакованы, документы поданы. Отсюда начинается тропа.</span></div>
     <div id="trail"></div>
     <div class="trail-end"><span class="ic" data-ico="homeLight" data-c="#2894A0"></span><b>Одна жизнь</b><span class="note" style="color:var(--muted);font-size:.9rem;max-width:40ch">«Здесь» и «там» больше не два лагеря, а одна жизнь.</span></div>
@@ -520,7 +519,6 @@ const WIG = ['M70 0 C 70 40, 120 50, 110 70 S 70 90, 70 110', 'M70 0 C 70 40, 20
 document.getElementById('trail').innerHTML = STEPS.map((s, k) => {
   const side = k % 2 ? 'r' : 'l';
   const stop = `<div class="stop ${side}" style="${vars(k)}">
-    <span class="rail" aria-hidden="true"></span>
     <span class="node">${ico(ICN[k], COL[k][0], COL[k][1], 36)}<i>${k + 1}</i></span>
     <button class="card" type="button" data-k="${k}" aria-haspopup="dialog">
       <span class="sub">${k + 1} · ${esc(s.sub)}</span><h3>${esc(s.name)}</h3><span class="teaser">${esc(s.teaser)}</span>
@@ -528,9 +526,9 @@ document.getElementById('trail').innerHTML = STEPS.map((s, k) => {
       <span class="more">Что на этой стоянке →</span>
     </button></div>`;
   const prev = k ? STEPS[k - 1].next : '';
-  const between = `<div class="between ${side === 'l' ? 'r' : 'l'}"><svg viewBox="0 0 140 110" preserveAspectRatio="none" aria-hidden="true"><path class="road" d="${WIG[k % 2]}"/><path class="dash" d="${WIG[k % 2]}"/></svg><span class="tip" aria-hidden="true"></span>${prev ? `<p>${esc(prev)}</p>` : ''}</div>`;
+  const between = `<div class="between ${side === 'l' ? 'r' : 'l'}">${prev ? `<p>${esc(prev)}</p>` : ''}</div>`;
   return between + stop;
-}).join('') + `<div class="between l"><svg viewBox="0 0 140 110" preserveAspectRatio="none" aria-hidden="true"><path class="road" d="M70 0 V 70"/><path class="dash" d="M70 0 V 74"/></svg><span class="tip" aria-hidden="true" style="align-self:center"></span></div>`;
+}).join('') + `<div class="between l"></div>`;
 
 const qm = document.getElementById('qm'), qmCard = document.getElementById('qmCard');
 function openStep(k){
@@ -560,6 +558,49 @@ qm.addEventListener('click', e => {
 });
 document.getElementById('whereActs').innerHTML = actHtml(STUPENI) + actHtml(MEET);
 document.querySelectorAll('[data-ico]').forEach(e => { e.innerHTML = ico(e.dataset.ico, e.dataset.c, null, 32); });
+/* одна волнистая дорога через всю тропу: проходит через все стоянки, волны неравные */
+const WAVES = [[[0.42, 0.75]], [[0.3, -0.95], [0.72, 0.5]], [[0.55, -0.7]], [[0.25, 0.6], [0.62, -1]], [[0.48, 0.9]], [[0.35, -0.55], [0.8, 0.85]], [[0.6, -0.8]], [[0.28, 0.95], [0.68, -0.45]], [[0.5, 0.65]]];
+function drawRoad(){
+  const wrap = document.getElementById('trailWrap'), svg = document.getElementById('road');
+  const W = wrap.clientWidth, H = wrap.clientHeight, box = wrap.getBoundingClientRect();
+  const c = el => { const r = el.getBoundingClientRect(); return [r.left - box.left + r.width / 2, r.top - box.top + r.height / 2, r.height / 2, r.bottom - box.top]; };
+  const icS = c(wrap.querySelector('.trail-start .ic')), blS = c(wrap.querySelector('.trail-start'));
+  const en = c(wrap.querySelector('.trail-end .ic'));
+  const nodes = [...wrap.querySelectorAll('.node')].map(c);
+  const narrow = innerWidth <= 760, amp = narrow ? 18 : 50;
+  const pts = [[icS[0], blS[3] + 6]];
+  const stops = nodes.concat([[en[0], en[1] - en[2] - 4, 0]]);
+  let prev = pts[0];
+  stops.forEach((n, si) => {
+    const dy = n[1] - prev[1];
+    WAVES[si % WAVES.length].forEach(([t, a]) => pts.push([prev[0] + (n[0] - prev[0]) * t + a * amp, prev[1] + dy * t]));
+    pts.push([n[0], n[1]]); prev = n;
+  });
+  // сглаживание: Catmull-Rom → кривые Безье
+  let d = `M${pts[0][0]},${pts[0][1]}`;
+  for (let i = 0; i < pts.length - 1; i++){
+    const p0 = pts[i - 1] || pts[i], p1 = pts[i], p2 = pts[i + 1], p3 = pts[i + 2] || p2;
+    const c1 = [p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6], c2 = [p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6];
+    d += ` C${c1[0].toFixed(1)},${c1[1].toFixed(1)} ${c2[0].toFixed(1)},${c2[1].toFixed(1)} ${p2[0].toFixed(1)},${p2[1].toFixed(1)}`;
+  }
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  svg.innerHTML = `<path class="edge" d="${d}"/><path class="road" d="${d}"/><path class="dash" id="roadDash" d="${d}"/>`;
+  // указатели: маленькие стрелки по ходу дороги, перед каждой стоянкой
+  const path = document.getElementById('roadDash'), L = path.getTotalLength();
+  const arrows = [];
+  const marks = stops.map(n => { let lo = 0, hi = L; for (let k = 0; k < 24; k++){ const m = (lo + hi) / 2; path.getPointAtLength(m).y < n[1] ? lo = m : hi = m; } return lo; });
+  marks.forEach((m, i) => {
+    const at = Math.max(0, m - (i < nodes.length ? (narrow ? 44 : 62) : 30)); const p = path.getPointAtLength(at), q = path.getPointAtLength(Math.min(L, at + 2));
+    const ang = Math.atan2(q.y - p.y, q.x - p.x) * 180 / Math.PI;
+    arrows.push(`<path class="arr" d="M7,0 L-5,-6 L-2,0 L-5,6 Z" transform="translate(${p.x.toFixed(1)},${p.y.toFixed(1)}) rotate(${ang.toFixed(1)})"/>`);
+  });
+  svg.insertAdjacentHTML('beforeend', arrows.join(''));
+}
+drawRoad();
+addEventListener('resize', () => { clearTimeout(drawRoad.t); drawRoad.t = setTimeout(drawRoad, 120); });
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawRoad);
+addEventListener('load', drawRoad);
+
 </script>
 
 </body>
