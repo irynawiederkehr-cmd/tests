@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Путь в новой стране · Ирина Вознесенская</title>
+<title>Твой путь в новой стране · Ирина Вознесенская</title>
 <link rel="stylesheet" href="../assets/fonts.css">
 <style>
 [hidden]{display:none!important}
@@ -282,12 +282,16 @@ footer a{color:var(--muted)}
 .stop.l .card{grid-column:1}
 .stop.r .card{grid-column:3}
 .stop .node{grid-column:2;grid-row:1;justify-self:center;position:relative;z-index:1}
-.stop .rail{grid-column:2;grid-row:1;justify-self:center;align-self:stretch;width:0;border-left:2.2px dotted color-mix(in srgb,var(--brown) 60%,transparent)}
+.stop .rail{grid-column:2;grid-row:1;justify-self:center;align-self:stretch;width:16px;background:var(--soft);position:relative}
+.stop .rail::after{content:"";position:absolute;left:50%;top:0;bottom:0;border-left:2.6px dashed var(--brown);opacity:.7;transform:translateX(-50%)}
 .node{width:84px;height:84px;border-radius:50%;background:var(--paper);display:grid;place-items:center;border:2.5px solid var(--lc);box-shadow:0 0 0 8px var(--bg)}
 .node i{position:absolute;top:-6px;right:-6px;font-style:normal;width:30px;height:30px;border-radius:50%;background:var(--lc);color:#fff;font-weight:700;font-size:.85rem;display:grid;place-items:center}
 .between{min-height:96px}
 .between svg{grid-column:2;grid-row:1;width:140px;height:110px;display:block;justify-self:center;overflow:visible}
-.between svg path{fill:none;stroke:var(--brown);stroke-width:2.2;stroke-dasharray:2 9;stroke-linecap:round;opacity:.6}
+.between svg .road{fill:none;stroke:var(--soft);stroke-width:16;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.between .tip{grid-column:2;grid-row:1;justify-self:center;align-self:end;width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-top:10px solid var(--brown);opacity:.75;margin-bottom:6px;position:relative;z-index:1}
+.between svg .dash{fill:none;stroke:var(--brown);stroke-width:2.6;stroke-dasharray:9 8;stroke-linecap:round;opacity:.7;vector-effect:non-scaling-stroke}
+.between svg .arr{fill:none;stroke:var(--brown);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;opacity:.8}
 .between p{grid-row:1;font-size:.88rem;color:var(--muted);font-style:italic;max-width:34ch;line-height:1.45}
 .between.l p{grid-column:1;justify-self:end;text-align:right;padding-right:14px}
 .between.r p{grid-column:3;justify-self:start;padding-left:14px}
@@ -307,6 +311,7 @@ footer a{color:var(--muted)}
   .node svg{width:26px;height:26px}
   .node i{width:24px;height:24px;font-size:.75rem;top:-5px;right:-5px}
   .between svg{grid-column:1;width:64px;height:90px}
+  .between .tip{grid-column:1}
   .between.l p,.between.r p{grid-column:2;justify-self:start;text-align:left;padding:0}
   .trail-start,.trail-end{align-items:flex-start;text-align:left}
 }
@@ -335,7 +340,7 @@ footer a{color:var(--muted)}
     </a>
     <nav aria-label="Разделы">
       <a href="../#doors">С чего начать</a>
-      <a href="./" aria-current="page" style="color:var(--ink)">Путь</a>
+      <a href="./" aria-current="page" style="color:var(--ink)">Твой путь</a>
       <a href="../#about">Обо мне</a>
       <a href="../testy/">Тесты</a>
       <a href="../#contact">Контакт</a>
@@ -347,7 +352,7 @@ footer a{color:var(--muted)}
 <main class="page">
   <section class="p-hero" aria-labelledby="h1">
     <div class="p-hero-text">
-      <div class="eyebrow">Путь в новой стране</div>
+      <div class="eyebrow">Твой путь в новой стране</div>
       <h1 id="h1">Дом, который <em>строится заново</em></h1>
       <p class="lead">Переезжая, ты оставляешь не только квартиру. Остаётся привычный ритм, люди, которым можно позвонить ночью, язык, на котором ты шутишь, работа, за которую тебя уважали. На новом месте этот невидимый дом приходится строить заново, снизу вверх.</p>
       <p class="lead">Вот как обычно проходит этот путь. Восемь стоянок, и на каждой свои трудности, свои вопросы и то, что помогает идти дальше. Нажми на стоянку, чтобы узнать о ней больше.</p>
@@ -365,7 +370,7 @@ footer a{color:var(--muted)}
   <section class="trail" aria-label="Восемь стоянок пути">
     <div class="trail-start"><span class="ic" data-ico="path" data-c="#6E4F3C"></span><b>Ты переехала</b><span>Чемоданы распакованы, документы поданы. Отсюда начинается тропа.</span></div>
     <div id="trail"></div>
-    <div class="trail-end"><b>Одна жизнь</b><span class="note" style="color:var(--muted);font-size:.9rem;max-width:40ch">«Здесь» и «там» больше не два лагеря, а одна жизнь.</span></div>
+    <div class="trail-end"><span class="ic" data-ico="homeLight" data-c="#2894A0"></span><b>Одна жизнь</b><span class="note" style="color:var(--muted);font-size:.9rem;max-width:40ch">«Здесь» и «там» больше не два лагеря, а одна жизнь.</span></div>
   </section>
 
   <section class="where" aria-labelledby="where-h">
@@ -418,7 +423,7 @@ const ICONS = {
   anchor:   (c, f, s) => `<circle cx="12" cy="5.5" r="2.3" fill="${f}" stroke="${c}" ${s}/><path d="M12 7.8V20M8 11h8M4.5 14c.5 3.5 3.6 6 7.5 6s7-2.5 7.5-6" fill="none" stroke="${c}" ${s}/>`,
   /* путь, рефлексия, эксперимент */
   compass:  (c, f, s) => `<circle cx="12" cy="12" r="8.5" fill="${f}" stroke="${c}" ${s}/><path d="M14.8 9.2l-1.8 4.8-4.8 1.8 1.8-4.8z" fill="${c}" fill-opacity=".85" stroke="${c}" stroke-width="1.2" stroke-linejoin="round"/>`,
-  path:     (c, f, s) => `<path d="M5 20.5c0-4 4-4.5 6-7s1.5-6 7-8.5" fill="none" stroke="${c}" ${s} stroke-dasharray="2.5 3"/><circle cx="5" cy="20" r="2" fill="${f}" stroke="${c}" ${s}/><path d="M18 3.5v5M18 3.5l3 1.4-3 1.4" fill="${f}" stroke="${c}" ${s}/>`,
+  path:     (c, f, s) => `<path d="M7.6 18.2c2.4-.6 3.4-2.2 3.9-4.2s1.6-3.6 4-4.4" fill="none" stroke="${c}" ${s} stroke-dasharray="1.6 2.8"/><circle cx="5.5" cy="19" r="2.3" fill="${f}" stroke="${c}" ${s}/><path d="M16.8 10.5V3.2" stroke="${c}" ${s}/><path d="M16.8 3.4l4.2 1.7-4.2 1.7z" fill="${f}" stroke="${c}" ${s}/>`,
   eye:      (c, f, s) => `<path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" fill="${f}" stroke="${c}" ${s}/><circle cx="12" cy="12" r="3" fill="none" stroke="${c}" ${s}/><circle cx="12" cy="12" r="1" fill="${c}"/>`,
   explore:  (c, f, s) => `<circle cx="10.5" cy="10.5" r="6" fill="${f}" stroke="${c}" ${s}/><path d="M15 15l5.5 5.5" stroke="${c}" ${s}/><path d="M8 9.5a2.8 2.8 0 0 1 2.5-2" fill="none" stroke="${c}" ${s}/>`,
   flask:    (c, f, s) => `<path d="M9.5 3.5v5.5L4.5 18a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3l-5-9V3.5" fill="none" stroke="${c}" ${s}/><path d="M6.8 15h10.4l1.6 3a1.2 1.2 0 0 1-1.1 1.8H6.3A1.2 1.2 0 0 1 5.2 18z" fill="${f}" stroke="${c}" stroke-width="1.2"/><path d="M8 3.5h8" stroke="${c}" ${s}/>`,
@@ -523,9 +528,9 @@ document.getElementById('trail').innerHTML = STEPS.map((s, k) => {
       <span class="more">Что на этой стоянке →</span>
     </button></div>`;
   const prev = k ? STEPS[k - 1].next : '';
-  const between = `<div class="between ${side === 'l' ? 'r' : 'l'}"><svg viewBox="0 0 140 110" preserveAspectRatio="none" aria-hidden="true"><path d="${WIG[k % 2]}"/></svg>${prev ? `<p>${esc(prev)}</p>` : ''}</div>`;
+  const between = `<div class="between ${side === 'l' ? 'r' : 'l'}"><svg viewBox="0 0 140 110" preserveAspectRatio="none" aria-hidden="true"><path class="road" d="${WIG[k % 2]}"/><path class="dash" d="${WIG[k % 2]}"/></svg><span class="tip" aria-hidden="true"></span>${prev ? `<p>${esc(prev)}</p>` : ''}</div>`;
   return between + stop;
-}).join('') + `<div class="between l"><svg viewBox="0 0 140 110" preserveAspectRatio="none" aria-hidden="true"><path d="${WIG[0]}"/></svg></div>`;
+}).join('') + `<div class="between l"><svg viewBox="0 0 140 110" preserveAspectRatio="none" aria-hidden="true"><path class="road" d="M70 0 V 70"/><path class="dash" d="M70 0 V 74"/></svg><span class="tip" aria-hidden="true" style="align-self:center"></span></div>`;
 
 const qm = document.getElementById('qm'), qmCard = document.getElementById('qmCard');
 function openStep(k){
