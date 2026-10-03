@@ -282,15 +282,16 @@ footer a{color:var(--muted)}
 .stop.l .card{grid-column:1}
 .stop.r .card{grid-column:3}
 .stop .node{grid-column:2;grid-row:1;justify-self:center;position:relative;z-index:1}
-.node{width:84px;height:84px;border-radius:50%;background:var(--paper);display:grid;place-items:center;border:2.5px solid var(--lc);box-shadow:0 0 0 8px var(--bg)}
+.node{width:84px;height:84px;border-radius:50%;background:var(--paper);display:grid;place-items:center;border:2.5px solid var(--lc);box-shadow:0 6px 16px -8px color-mix(in srgb,var(--lc) 60%,transparent)}
 .node i{position:absolute;top:-6px;right:-6px;font-style:normal;width:30px;height:30px;border-radius:50%;background:var(--lc);color:#fff;font-weight:700;font-size:.85rem;display:grid;place-items:center}
 .between{min-height:110px}
 .trail-start,.trail-end,#trail{position:relative;z-index:1}
 .road-svg{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;overflow:visible}
 .road-svg .road{fill:none;stroke:var(--soft);stroke-width:18;stroke-linecap:round;stroke-linejoin:round}
 .road-svg .edge{fill:none;stroke:color-mix(in srgb,var(--brown) 18%,transparent);stroke-width:20;stroke-linecap:round;stroke-linejoin:round}
-.road-svg .dash{fill:none;stroke:var(--brown);stroke-width:2.4;stroke-dasharray:10 9;stroke-linecap:round;opacity:.75}
-.road-svg .arr{fill:var(--brown);opacity:.8}
+.road-svg .dash{fill:none;stroke-width:2.8;stroke-dasharray:10 9;stroke-linecap:round;opacity:.9}
+.road-svg .glow{fill:none;stroke:color-mix(in srgb,var(--brown) 14%,transparent);stroke-width:30;stroke-linecap:round}
+.road-svg .arr{opacity:.95}
 .trail-start .ic,.trail-end .ic{position:relative;z-index:1}
 .between p{grid-row:1;font-size:.88rem;color:var(--muted);font-style:italic;max-width:34ch;line-height:1.45}
 .between.l p{grid-column:1;justify-self:end;text-align:right;padding-right:14px}
@@ -307,7 +308,7 @@ footer a{color:var(--muted)}
   .stop,.between{grid-template-columns:64px 1fr;column-gap:14px}
   .stop.l .card,.stop.r .card{grid-column:2}
   .stop .node{grid-column:1}
-  .node{width:58px;height:58px;box-shadow:0 0 0 6px var(--bg)}
+  .node{width:58px;height:58px}
   .node svg{width:26px;height:26px}
   .node i{width:24px;height:24px;font-size:.75rem;top:-5px;right:-5px}
   .between.l p,.between.r p{grid-column:2;justify-self:start;text-align:left;padding:0}
@@ -584,7 +585,14 @@ function drawRoad(){
     d += ` C${c1[0].toFixed(1)},${c1[1].toFixed(1)} ${c2[0].toFixed(1)},${c2[1].toFixed(1)} ${p2[0].toFixed(1)},${p2[1].toFixed(1)}`;
   }
   svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
-  svg.innerHTML = `<path class="edge" d="${d}"/><path class="road" d="${d}"/><path class="dash" id="roadDash" d="${d}"/>`;
+  // цвет пунктира меняется по пути: от первой стоянки к восьмой
+  const y0 = pts[0][1], y1 = pts[pts.length - 1][1], span = Math.max(1, y1 - y0);
+  const gstops = [`<stop offset="0" stop-color="#8E7A62"/>`].concat(nodes.map((n, k) => `<stop offset="${((n[1] - y0) / span).toFixed(3)}" stop-color="${COL[k][0]}"/>`)).concat([`<stop offset="1" stop-color="${COL[7][0]}"/>`]).join('');
+  svg.innerHTML = `<defs><linearGradient id="roadGrad" gradientUnits="userSpaceOnUse" x1="0" y1="${y0}" x2="0" y2="${y1}">${gstops}</linearGradient>
+    <filter id="roadSoft" x="-20%" y="-5%" width="140%" height="110%"><feGaussianBlur stdDeviation="3"/></filter></defs>
+    <path class="glow" d="${d}" filter="url(#roadSoft)"/><path class="edge" d="${d}"/><path class="road" d="${d}"/><path class="dash" id="roadDash" d="${d}" stroke="url(#roadGrad)"/>
+    ${nodes.map((n, k) => `<circle cx="${n[0].toFixed(1)}" cy="${n[1].toFixed(1)}" r="${(n[2] + (narrow ? 9 : 13)).toFixed(1)}" fill="${COL[k][1]}" opacity=".9"/>`).join('')}
+    <circle cx="${pts[0][0].toFixed(1)}" cy="${(pts[0][1]).toFixed(1)}" r="5" fill="#8E7A62"/>`;
   // указатели: маленькие стрелки по ходу дороги, перед каждой стоянкой
   const path = document.getElementById('roadDash'), L = path.getTotalLength();
   const arrows = [];
@@ -592,7 +600,7 @@ function drawRoad(){
   marks.forEach((m, i) => {
     const at = Math.max(0, m - (i < nodes.length ? (narrow ? 44 : 62) : 30)); const p = path.getPointAtLength(at), q = path.getPointAtLength(Math.min(L, at + 2));
     const ang = Math.atan2(q.y - p.y, q.x - p.x) * 180 / Math.PI;
-    arrows.push(`<path class="arr" d="M7,0 L-5,-6 L-2,0 L-5,6 Z" transform="translate(${p.x.toFixed(1)},${p.y.toFixed(1)}) rotate(${ang.toFixed(1)})"/>`);
+    arrows.push(`<path class="arr" fill="${COL[Math.min(i, 7)][0]}" d="M7,0 L-5,-6 L-2,0 L-5,6 Z" transform="translate(${p.x.toFixed(1)},${p.y.toFixed(1)}) rotate(${ang.toFixed(1)})"/>`);
   });
   svg.insertAdjacentHTML('beforeend', arrows.join(''));
 }
