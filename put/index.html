@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Путь в новой стране · Ирина Вознесенская</title>
+<link rel="stylesheet" href="../assets/fonts.css">
+<style>
+[hidden]{display:none!important}
+
+[hidden]{display:none!important}
+/* Layout: тёплая страница-письмо. Слева слово, справа шерстяная картина; дальше «двери» — фразы, в которых она узнаёт себя */
+:root{
+  --bg:#F4EDE3;       /* бежевый фон коучинга, как в тестах */
+  --paper:#FFFCF8;
+  --ink:#2F2924;
+  --muted:#7A6E62;
+  --line:#E5D9C9;
+  --brown:#6E4F3C;    /* главный акцент, как в тестах */
+  --mustard:#B98324;  /* шарф героини */
+  --mustard-soft:#F3E3C2;
+  --sage:#66704F;     /* пальто героини */
+  --sage-soft:#E3E6D6;
+  --soft:#EADFCF;
+  --blue:#2E5A88;     /* тесты о паре — голубой, как в тестах */
+  --blue-soft:#EAF2FA;
+  --blue-line:#D3E1EE;
+  --display:"Forum","Cormorant Garamond",Georgia,serif;
+  --body:"Manrope","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#221D19; --paper:#2C2621; --ink:#F1E9DF; --muted:#B4A796; --line:#3E362F; --brown:#E1C2A6;
+  --mustard:#E2B45C; --mustard-soft:#3D321F; --sage:#B4BF97; --sage-soft:#2E3226; --soft:#3A3129; --blue:#9CC2EA; --blue-soft:#1D2733; --blue-line:#2C3A4A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#221D19; --paper:#2C2621; --ink:#F1E9DF; --muted:#B4A796; --line:#3E362F; --brown:#E1C2A6;
+  --mustard:#E2B45C; --mustard-soft:#3D321F; --sage:#B4BF97; --sage-soft:#2E3226; --soft:#3A3129; --blue:#9CC2EA; --blue-soft:#1D2733; --blue-line:#2C3A4A; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.65;margin:0}
+.page{max-width:1120px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.12;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+.eyebrow{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+:focus-visible{outline:3px solid var(--mustard);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .page{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none}
+.mono{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--brown);display:grid;place-items:center;font-family:var(--display);font-size:1.05rem;color:var(--brown);letter-spacing:.02em}
+.mark b{font-family:var(--display);font-weight:400;font-size:1.25rem;line-height:1}
+.mark small{display:block;font-size:.72rem;color:var(--muted);letter-spacing:.04em;margin-top:3px}
+nav{display:flex;gap:22px;font-size:.88rem;font-weight:600}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.navcta{font-size:.86rem;font-weight:700;text-decoration:none;border:1.5px solid var(--brown);color:var(--brown);border-radius:999px;padding:8px 16px;white-space:nowrap}
+@media (max-width:860px){nav{display:none}}
+@media (max-width:420px){.mark small{display:none}.navcta{padding:7px 12px}}
+
+/* ---------- первый экран ---------- */
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center;padding-block:48px 40px}
+.hero-text{display:flex;flex-direction:column;gap:22px;min-width:0}
+.hero h1{font-size:clamp(2.5rem,6.2vw,4.4rem);color:var(--ink)}
+.hero h1 em{font-style:normal;color:var(--brown)}
+.hero .lead{font-size:1.14rem;max-width:34ch;color:var(--ink)}
+.who{font-size:.86rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 14px}
+.who span+span::before{content:"·";margin-right:14px;color:var(--line)}
+@media (max-width:520px){.who span+span::before{content:none}.who{gap:4px 12px}}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{font:inherit;font-weight:700;font-size:.95rem;border:none;border-radius:999px;padding:14px 24px;cursor:pointer;background:var(--brown);color:var(--paper);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--brown);border:1.5px solid var(--brown)}
+.hero-art{position:relative;min-width:0}
+.hero-art img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:941/1672;border-radius:26px;box-shadow:0 24px 50px -24px rgba(60,40,20,.45)}
+.hero-art figcaption{margin-top:14px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px 16px;font-size:.84rem}
+.hero-art figcaption b{display:block;font-family:var(--display);font-weight:400;font-size:1.1rem;color:var(--brown)}
+@media (max-width:860px){.hero{grid-template-columns:1fr;gap:28px;padding-block:32px 24px}.hero-art{max-width:360px;margin:0 auto;width:100%}}
+
+/* ---------- двери ---------- */
+section{padding-block:56px}
+.sec-head{display:flex;flex-direction:column;gap:10px;max-width:640px;margin-bottom:28px}
+.sec-head h2{font-size:clamp(2rem,4.6vw,2.9rem)}
+.sec-head p{color:var(--muted);font-size:1.02rem}
+.doors{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.door-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media (max-width:980px){.door-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.door-grid{grid-template-columns:1fr}}
+.door{font:inherit;text-align:left;cursor:pointer;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:18px;padding:22px 20px 18px;display:flex;flex-direction:column;gap:14px;min-height:150px;transition:border-color .15s,transform .15s,background .15s;min-width:0}
+.door:hover{border-color:var(--brown);transform:translateY(-2px)}
+.door q{font-family:var(--display);font-size:1.5rem;line-height:1.15;quotes:"«" "»"}
+.door small{margin-top:auto;font-size:.8rem;color:var(--muted);display:flex;justify-content:space-between;gap:8px}
+.door[aria-expanded="true"]{background:var(--mustard-soft);border-color:var(--mustard)}
+.door[aria-expanded="true"] small span:last-child{transform:rotate(90deg)}
+.door small span:last-child{transition:transform .2s}
+.more-link{margin-top:22px;font:inherit;font-weight:700;color:var(--brown);background:none;border:none;padding:6px 0;cursor:pointer;font-size:.98rem;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
+.spheres{margin-top:18px}
+.sphere-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media (max-width:820px){.sphere-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.sphere-grid{grid-template-columns:1fr}}
+.sphere{font:inherit;text-align:left;cursor:pointer;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;font-weight:600;font-size:.98rem;display:flex;justify-content:space-between;gap:10px;align-items:center;min-width:0}
+.sphere:hover{border-color:var(--brown)}
+.sphere[aria-expanded="true"]{background:var(--sage-soft);border-color:var(--sage)}
+.panel{margin-top:18px;background:var(--bg);border:1.5px solid var(--mustard);border-radius:20px;padding:28px;display:grid;grid-template-columns:1.1fr 1fr;gap:28px;animation:rise .25s ease-out}
+.panel.sage{border-color:var(--sage)}
+@keyframes rise{from{transform:translateY(8px)}}
+@media (max-width:820px){.panel{grid-template-columns:1fr;padding:22px 18px;gap:20px}}
+.panel h3{font-size:1.75rem;margin-bottom:12px}
+.panel .say{display:flex;flex-direction:column;gap:12px;min-width:0}
+.panel .say p{max-width:60ch}
+.todo{display:flex;flex-direction:column;gap:10px;min-width:0}
+.todo .eyebrow{margin-bottom:2px}
+.act{display:flex;flex-direction:column;gap:4px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px;text-decoration:none;color:var(--ink);transition:border-color .15s}
+a.act:hover{border-color:var(--brown)}
+.act b{font-weight:700;font-size:.98rem;display:flex;justify-content:space-between;gap:10px}
+.act span{font-size:.88rem;color:var(--muted)}
+.edge{font-size:.86rem;color:var(--muted);border-left:3px solid var(--line);padding-left:12px}
+.next{font-size:.92rem}
+.next b{color:var(--brown)}
+.notme{font-size:.86rem;color:var(--muted)}
+.notme button{font:inherit;color:var(--brown);background:none;border:none;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+
+
+/* ---------- всплывающее окно ---------- */
+dialog.qm{border:0;padding:0;background:transparent;width:min(100% - 24px,1080px);max-height:92vh;color:var(--ink)}
+dialog.qm[open]{animation:qmIn .28s cubic-bezier(.2,.8,.2,1)}
+@keyframes qmIn{from{opacity:0;transform:translateY(14px) scale(.98)}}
+dialog.qm::backdrop{background:rgba(47,41,36,.62);backdrop-filter:blur(3px)}
+.qm-card{background:var(--paper);border-radius:28px;padding:clamp(20px,3.4vw,40px);display:flex;flex-direction:column;gap:clamp(18px,2.6vw,28px);max-height:92vh;overflow-y:auto;box-shadow:0 30px 80px -30px rgba(40,25,10,.6)}
+.qm-top{display:flex;align-items:flex-start;gap:16px}
+.qm-head{flex:1;display:flex;flex-direction:column;gap:6px;min-width:0}
+.qm-title{font-size:clamp(1.8rem,4.4vw,3.2rem);line-height:1.04}
+.qm-close{flex:none;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);font-size:1.05rem;cursor:pointer;display:grid;place-items:center;transition:background .15s,border-color .15s}
+.qm-close:hover{background:var(--mustard-soft);border-color:var(--mustard)}
+.qm-panel{background:var(--mustard-soft);border-radius:20px;padding:clamp(18px,2.8vw,32px);display:grid;grid-template-columns:.9fr 1.2fr 1fr;gap:clamp(18px,2.6vw,32px)}
+.qm-panel.sage{background:var(--sage-soft)}
+@media (max-width:900px){.qm-panel{grid-template-columns:1fr}}
+.qm-col{display:flex;flex-direction:column;gap:12px;min-width:0}
+.qm-col h3{font-size:1.4rem;line-height:1.15}
+.qm-col p{font-size:.95rem}
+.pain{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.pain li{font-family:var(--display);font-size:1.12rem;line-height:1.3;padding-left:16px;border-left:2px solid var(--mustard)}
+.qm-panel.sage .pain li{border-color:var(--sage)}
+.qm-col .act{background:var(--paper)}
+.qm-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;align-items:baseline}
+.qm-foot .next{max-width:60ch}
+.qm-foot .notme button{font:inherit;color:var(--brown);background:none;border:none;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- обо мне ---------- */
+.about{display:grid;grid-template-columns:.75fr 1.25fr;gap:56px;align-items:center}
+@media (max-width:860px){.about{grid-template-columns:1fr;gap:28px}.about img{max-width:360px;margin:0 auto}}
+.about img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:941/1672;border-radius:26px;box-shadow:0 24px 50px -24px rgba(60,40,20,.4)}
+.about-text{display:flex;flex-direction:column;gap:16px;min-width:0}
+.about-text h2{font-size:clamp(2rem,4.6vw,2.9rem)}
+.about-text p{max-width:60ch}
+.creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.creds span{font-size:.8rem;font-weight:600;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+.how-i{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:6px}
+@media (max-width:520px){.how-i{grid-template-columns:1fr}}
+.how-i div{background:var(--paper);border-radius:14px;padding:14px 16px;font-size:.9rem;color:var(--muted)}
+.how-i b{display:block;font-family:var(--display);font-weight:400;font-size:1.2rem;color:var(--ink);margin-bottom:2px}
+
+.two{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.two-lead{font-weight:600}
+.two-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:560px){.two-grid{grid-template-columns:1fr}}
+.prac{border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:6px;min-width:0;border:1.5px solid var(--line);background:var(--paper)}
+.prac.psy{background:var(--blue-soft);border-color:var(--blue-line)}
+.prac .tag{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sage)}
+.prac.psy .tag{color:var(--blue)}
+.prac b{font-family:var(--display);font-weight:400;font-size:1.3rem;line-height:1.2}
+.prac p{font-size:.9rem;color:var(--muted)}
+.prac .links{font-size:.86rem;font-weight:700;margin-top:auto}
+.prac .links a{color:var(--brown)}
+.prac.psy .links a{color:var(--blue)}
+.two-note{font-size:.82rem;color:var(--muted)}
+
+.ic{flex:none;display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:var(--paper);border:1.5px solid var(--line)}
+.ic.sm{width:46px;height:46px}
+.tcard .ic{width:56px;height:56px}
+.door .ic{background:var(--paper)}
+.door-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.sphere .lbl{display:flex;align-items:center;gap:12px}
+.step-top{display:flex;align-items:center;gap:14px}
+.tcard .t-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.prac .p-top{display:flex;align-items:center;gap:10px}
+.limits .l-top{display:flex;align-items:center;gap:14px}
+.clist .c-l{display:flex;align-items:center;gap:10px}
+
+/* ---------- как начать ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1.5px solid var(--brown)}
+@media (max-width:820px){.steps{grid-template-columns:1fr}}
+.step{padding:22px 24px 6px 0;display:flex;flex-direction:column;gap:8px;min-width:0}
+.step+.step{padding-left:24px;border-left:1px solid var(--line)}
+@media (max-width:820px){.step+.step{padding-left:0;border-left:none;border-top:1px solid var(--line)}}
+.step i{font-style:normal;font-family:var(--display);font-size:2.6rem;line-height:1;color:var(--mustard)}
+.step h3{font-size:1.4rem}
+.step p{color:var(--muted);font-size:.95rem}
+.codeword{display:inline-block;font-weight:700;letter-spacing:.12em;color:var(--brown);background:var(--mustard-soft);border-radius:6px;padding:0 6px}
+
+/* ---------- бесплатно ---------- */
+.free{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.free-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media (max-width:980px){.free-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.free-grid{grid-template-columns:1fr}}
+.fcard{display:flex;flex-direction:column;gap:10px;text-decoration:none;color:var(--ink);background:var(--bg);border-radius:18px;padding:20px;border:1.5px solid transparent;transition:border-color .15s;min-width:0}
+.fcard:hover{border-color:var(--brown)}
+.fcard .tag{font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sage)}
+.fcard h3{font-size:1.45rem}
+.fcard p{font-size:.9rem;color:var(--muted)}
+.fcard .go{margin-top:auto;font-weight:700;font-size:.88rem;color:var(--brown)}
+
+
+.tgroup{display:flex;flex-direction:column;gap:12px;margin-bottom:26px}
+.tgroup-h{font-size:1.3rem;color:var(--muted)}
+.test-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media (max-width:700px){.test-grid{grid-template-columns:1fr}}
+.tcard{display:flex;flex-direction:column;gap:8px;text-decoration:none;color:var(--ink);background:var(--bg);border-radius:20px;padding:22px 22px 18px;border:1.5px solid var(--line);transition:border-color .15s,transform .15s;min-width:0}
+.tcard:hover{border-color:var(--brown);transform:translateY(-2px)}
+.tcard.pair{background:var(--blue-soft);border-color:var(--blue-line)}
+.tcard.pair:hover{border-color:var(--blue)}
+.tcard .tag{font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sage)}
+.tcard.pair .tag,.tcard.pair .go{color:var(--blue)}
+.tcard h3{font-size:1.65rem}
+.tcard .slog{font-family:var(--display);font-size:1.08rem;color:var(--brown);line-height:1.3}
+.tcard.pair .slog{color:var(--blue)}
+.tcard p{font-size:.92rem;color:var(--muted)}
+.tcard .go{margin-top:auto;padding-top:6px;font-weight:700;font-size:.9rem;color:var(--brown)}
+.also{display:grid;grid-template-columns:auto 1fr 1fr;gap:12px;align-items:stretch}
+@media (max-width:820px){.also{grid-template-columns:1fr}}
+.also .btn{justify-content:center;align-self:center}
+.mini{display:flex;flex-direction:column;gap:2px;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:12px 16px;min-width:0}
+.mini:hover{border-color:var(--brown)}
+.mini b{font-size:.95rem}
+.mini span{font-size:.84rem;color:var(--muted)}
+/* ---------- граница и контакт ---------- */
+.limits{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:start}
+@media (max-width:820px){.limits{grid-template-columns:1fr;gap:16px}}
+.limits h2{font-size:clamp(1.7rem,3.6vw,2.2rem)}
+.limits p{color:var(--muted);max-width:62ch}
+.contact{background:linear-gradient(160deg,var(--soft) 0%,var(--bg) 100%);border-radius:28px;padding:44px 40px;display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+@media (max-width:820px){.contact{grid-template-columns:1fr;padding:30px 22px}}
+.contact h2{font-size:clamp(2rem,4.6vw,2.9rem);margin-bottom:12px}
+.contact p{max-width:46ch}
+.clist{display:flex;flex-direction:column;gap:10px}
+.clist a,.clist div{display:flex;justify-content:space-between;gap:12px;align-items:center;background:var(--paper);border-radius:14px;padding:14px 16px;text-decoration:none;color:var(--ink);font-weight:600;font-size:.95rem;min-width:0}
+.clist span{color:var(--muted);font-weight:500;font-size:.85rem;overflow-wrap:anywhere;text-align:right}
+footer{padding-block:28px 40px;font-size:.82rem;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+footer a{color:var(--muted)}
+
+/* ---------- полоса-ссылка на страницу «Путь» ---------- */
+.pathband{margin-top:40px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;text-decoration:none;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:22px;padding:20px 24px;transition:border-color .15s}
+.pathband:hover{border-color:var(--brown)}
+.pb-txt{flex:1 1 300px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.pb-txt b{font-family:var(--display);font-weight:400;font-size:1.5rem;line-height:1.15}
+.pb-txt span{font-size:.92rem;color:var(--muted)}
+.pb-go{font-weight:700;color:var(--brown);white-space:nowrap}
+
+/* ---------- страница «Путь»: тропа из восьми стоянок ---------- */
+.p-hero{display:grid;grid-template-columns:1.3fr .7fr;gap:56px;align-items:center;padding-block:48px 24px}
+@media (max-width:860px){.p-hero{grid-template-columns:1fr;gap:24px;padding-block:28px 12px}.p-hero img{max-width:320px;margin:0 auto}}
+.p-hero h1{font-size:clamp(2.4rem,5.6vw,4rem)}
+.p-hero h1 em{font-style:normal;color:var(--brown)}
+.p-hero .lead{font-size:1.1rem;max-width:52ch}
+.p-hero-text{display:flex;flex-direction:column;gap:18px;min-width:0}
+.p-hero img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:941/1672;border-radius:26px;box-shadow:0 24px 50px -24px rgba(60,40,20,.45)}
+.rules{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding-block:8px 24px}
+@media (max-width:900px){.rules{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.rules{grid-template-columns:1fr}}
+.rule{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.rule b{font-family:var(--display);font-weight:400;font-size:1.2rem;line-height:1.2}
+.rule span{font-size:.9rem;color:var(--muted)}
+
+.trail{position:relative;padding-block:12px 0}
+.trail-start,.trail-end{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px}
+.trail-start b,.trail-end b{font-family:var(--display);font-weight:400;font-size:1.5rem}
+.trail-start span{font-size:.9rem;color:var(--muted);max-width:40ch}
+.stop,.between{display:grid;grid-template-columns:1fr 140px 1fr;align-items:center}
+.stop .card{grid-row:1;min-width:0}
+.stop.l .card{grid-column:1}
+.stop.r .card{grid-column:3}
+.stop .node{grid-column:2;grid-row:1;justify-self:center;position:relative;z-index:1}
+.stop .rail{grid-column:2;grid-row:1;justify-self:center;align-self:stretch;width:0;border-left:2.2px dotted color-mix(in srgb,var(--brown) 60%,transparent)}
+.node{width:84px;height:84px;border-radius:50%;background:var(--paper);display:grid;place-items:center;border:2.5px solid var(--lc);box-shadow:0 0 0 8px var(--bg)}
+.node i{position:absolute;top:-6px;right:-6px;font-style:normal;width:30px;height:30px;border-radius:50%;background:var(--lc);color:#fff;font-weight:700;font-size:.85rem;display:grid;place-items:center}
+.between{min-height:96px}
+.between svg{grid-column:2;grid-row:1;width:140px;height:110px;display:block;justify-self:center;overflow:visible}
+.between svg path{fill:none;stroke:var(--brown);stroke-width:2.2;stroke-dasharray:2 9;stroke-linecap:round;opacity:.6}
+.between p{grid-row:1;font-size:.88rem;color:var(--muted);font-style:italic;max-width:34ch;line-height:1.45}
+.between.l p{grid-column:1;justify-self:end;text-align:right;padding-right:14px}
+.between.r p{grid-column:3;justify-self:start;padding-left:14px}
+.card{background:var(--paper);border:1.5px solid var(--line);border-radius:22px;padding:22px 22px 18px;display:flex;flex-direction:column;gap:10px;text-align:left;font:inherit;color:var(--ink);cursor:pointer;transition:border-color .15s,transform .15s}
+.card:hover{border-color:var(--lc);transform:translateY(-2px)}
+.card .sub{font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lc)}
+.card h3{font-size:1.75rem;line-height:1.1}
+.card .teaser{font-family:var(--display);font-size:1.12rem;color:var(--brown);line-height:1.3}
+.card .says{display:flex;flex-wrap:wrap;gap:6px}
+.card .says span{font-size:.82rem;background:var(--lf);border-radius:999px;padding:5px 11px;color:var(--ink)}
+.card .more{margin-top:2px;font-weight:700;font-size:.88rem;color:var(--lc)}
+@media (max-width:760px){
+  .stop,.between{grid-template-columns:64px 1fr;column-gap:14px}
+  .stop.l .card,.stop.r .card{grid-column:2}
+  .stop .node,.stop .rail{grid-column:1}
+  .node{width:58px;height:58px;box-shadow:0 0 0 6px var(--bg)}
+  .node svg{width:26px;height:26px}
+  .node i{width:24px;height:24px;font-size:.75rem;top:-5px;right:-5px}
+  .between svg{grid-column:1;width:64px;height:90px}
+  .between.l p,.between.r p{grid-column:2;justify-self:start;text-align:left;padding:0}
+  .trail-start,.trail-end{align-items:flex-start;text-align:left}
+}
+.where{margin-block:40px 8px;background:linear-gradient(160deg,var(--soft) 0%,var(--bg) 100%);border-radius:28px;padding:40px;display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center}
+@media (max-width:820px){.where{grid-template-columns:1fr;padding:28px 20px}}
+.where h2{font-size:clamp(2rem,4.4vw,2.8rem);margin-bottom:10px}
+.where p{max-width:52ch}
+.where .acts{display:flex;flex-direction:column;gap:10px}
+.qm-panel .needs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.qm-panel .needs li{font-size:.92rem;line-height:1.4}
+.qm-panel .needs b{font-weight:700}
+.vals{display:flex;flex-wrap:wrap;gap:6px}
+.vals span{font-size:.82rem;background:var(--paper);border-radius:999px;padding:5px 11px}
+.check{background:var(--paper);border-radius:14px;padding:14px 16px;font-family:var(--display);font-size:1.15rem;line-height:1.35}
+.qm-panel.lv{background:var(--lf)}
+.qm-panel.lv .pain li{border-color:var(--lc)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="page">
+    <a class="mark" href="../" aria-label="Ирина Вознесенская — на главную">
+      <span class="mono" aria-hidden="true">ИВ</span>
+      <span><b>Ирина Вознесенская</b><small>коуч ICF · Цюрих</small></span>
+    </a>
+    <nav aria-label="Разделы">
+      <a href="../#doors">С чего начать</a>
+      <a href="./" aria-current="page" style="color:var(--ink)">Путь</a>
+      <a href="../#about">Обо мне</a>
+      <a href="../testy/">Тесты</a>
+      <a href="../#contact">Контакт</a>
+    </nav>
+    <a class="navcta" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">Знакомство</a>
+  </div>
+</header>
+
+<main class="page">
+  <section class="p-hero" aria-labelledby="h1">
+    <div class="p-hero-text">
+      <div class="eyebrow">Путь в новой стране</div>
+      <h1 id="h1">Дом, который <em>строится заново</em></h1>
+      <p class="lead">Переезжая, ты оставляешь не только квартиру. Остаётся привычный ритм, люди, которым можно позвонить ночью, язык, на котором ты шутишь, работа, за которую тебя уважали. На новом месте этот невидимый дом приходится строить заново, снизу вверх.</p>
+      <p class="lead">Вот как обычно проходит этот путь. Восемь стоянок, и на каждой свои трудности, свои вопросы и то, что помогает идти дальше. Нажми на стоянку, чтобы узнать о ней больше.</p>
+    </div>
+    <img src="../home/img/hero2.jpg" alt="Женщина в жёлтом шарфе с рюкзаком идёт по горной тропе на закате, впереди бежит спаниель">
+  </section>
+
+  <div class="rules">
+    <div class="rule"><b>Снизу вверх</b><span>Нижние ступени держат верхние. Пока не высыпаешься, трудно думать о своём деле.</span></div>
+    <div class="rule"><b>Это не оценка</b><span>Первая ступень не хуже восьмой, так же как фундамент не хуже крыши.</span></div>
+    <div class="rule"><b>Переезд сдвигает вниз</b><span>Дома ты могла стоять высоко. Здесь многое приходится строить сначала, и это не слабость.</span></div>
+    <div class="rule"><b>Спуститься — нормально</b><span>После поездки домой или болезни ребёнка снова становится трудно. Это часть пути.</span></div>
+  </div>
+
+  <section class="trail" aria-label="Восемь стоянок пути">
+    <div class="trail-start"><span class="ic" data-ico="path" data-c="#6E4F3C"></span><b>Ты переехала</b><span>Чемоданы распакованы, документы поданы. Отсюда начинается тропа.</span></div>
+    <div id="trail"></div>
+    <div class="trail-end"><b>Одна жизнь</b><span class="note" style="color:var(--muted);font-size:.9rem;max-width:40ch">«Здесь» и «там» больше не два лагеря, а одна жизнь.</span></div>
+  </section>
+
+  <section class="where" aria-labelledby="where-h">
+    <div>
+      <h2 id="where-h">Где ты сейчас на этом пути?</h2>
+      <p>Чаще всего кажется, что надо сразу на пятую ступень: работа, деньги, своё дело. А по-настоящему поскрипывает одна из нижних. Тест покажет, какая ступень держит тебя, а какая просит внимания. На знакомстве разберёмся вместе, с чего начать именно тебе.</p>
+    </div>
+    <div class="acts" id="whereActs"></div>
+  </section>
+
+  <footer>
+    <span>© 2026 Ирина Вознесенская · коуч ICF · Цюрих</span>
+    <span><a href="../">Главная</a> · <a href="../testy/">Все тесты</a> · <a href="../privacy/">Политика конфиденциальности</a> · <a href="../impressum/">Выходные данные</a></span>
+  </footer>
+</main>
+
+<dialog class="qm" id="qm" aria-labelledby="qmTitle"><div class="qm-card" id="qmCard"></div></dialog>
+
+<script>
+/* =====================================================================
+   Библиотека значков — общая для всех тестов (с 02.10.2026).
+   Один стиль: сетка 24×24, мягкая заливка светлым тоном + тонкий контур глубоким тоном того же цвета
+   (как акварель с контуром в утверждённой палитре), линия 1.8, скруглённые концы.
+   Использование: ico('flame', '#C25468', '#EEA9B3', 26) — имя, цвет контура, цвет заливки, размер.
+   Если заливка не задана, берётся очень светлый тон контура.
+   Каталог с картинками всех значков — файл «Библиотека значков.html».
+   ===================================================================== */
+const ICONS = {
+  /* ступени, дом, опоры */
+  earth:    (c, f, s) => `<circle cx="12" cy="8" r="3.2" fill="${f}" stroke="${c}" ${s}/><path d="M3 15c3-2 6-2 9 0s6 2 9 0M3 19.5c3-2 6-2 9 0s6 2 9 0" fill="none" stroke="${c}" ${s}/>`,
+  hearth:   (c, f, s) => `<path d="M12 3c3 4 6.5 6 6.5 10.5a6.5 6.5 0 0 1-13 0c0-3 2-4.5 3-6.5 1 2 2 3 3 3 0-3-1-5 .5-7z" fill="${f}" stroke="${c}" ${s}/><path d="M9 21h6" stroke="${c}" ${s}/>`,
+  door:     (c, f, s) => `<rect x="6" y="3" width="12" height="18" rx="1.5" fill="${f}" stroke="${c}" ${s}/><circle cx="14.8" cy="12.5" r="1.2" fill="${c}"/><path d="M3 21h18" stroke="${c}" ${s}/>`,
+  key:      (c, f, s) => `<circle cx="8" cy="12" r="4.2" fill="${f}" stroke="${c}" ${s}/><path d="M12.2 12H21M18 12v3M21 12v3" fill="none" stroke="${c}" ${s}/>`,
+  workshop: (c, f, s) => `<path d="M13.5 4.5l6 6-3 3-6-6z" fill="${f}" stroke="${c}" ${s}/><path d="M12 9l-8 8 3 3 8-8" fill="none" stroke="${c}" ${s}/>`,
+  sprout:   (c, f, s) => `<path d="M12 21v-9" stroke="${c}" ${s}/><path d="M12 13c-4.5 0-7-3-7-7 4.5 0 7 3 7 7zM12 11c0-4.5 3-7 7.5-7 0 4.5-3 7-7.5 7z" fill="${f}" stroke="${c}" ${s}/>`,
+  hill:     (c, f, s) => `<path d="M2 19.5l7-9.5 4 5 3-3.5 6 8z" fill="${f}" stroke="${c}" ${s}/><circle cx="17" cy="5.5" r="2" fill="none" stroke="${c}" ${s}/>`,
+  sky:      (c, f, s) => `<path d="M12 3l1.9 5.6L19.5 10.5l-5.6 1.9L12 18l-1.9-5.6L4.5 10.5l5.6-1.9z" fill="${f}" stroke="${c}" ${s}/><circle cx="19" cy="19" r="1.4" fill="${c}"/><circle cx="5" cy="19.5" r="1" fill="${c}"/>`,
+  home:     (c, f, s) => `<path d="M3.5 11 12 4l8.5 7v9.5h-17z" fill="${f}" stroke="${c}" ${s}/><path d="M10 20.5v-5h4v5" fill="none" stroke="${c}" ${s}/>`,
+  homeLight:(c, f, s) => `<path d="M3.5 11 12 4l8.5 7v9.5h-17z" fill="none" stroke="${c}" ${s}/><rect x="9" y="11.5" width="6" height="5" rx="1" fill="${f}" stroke="${c}" ${s}/><path d="M12 11.5v5M9 14h6" stroke="${c}" stroke-width="1.2"/>`,
+  /* отношения */
+  flame:    (c, f, s) => `<path d="M12 3c3 4 6.5 6 6.5 10.5a6.5 6.5 0 0 1-13 0c0-3 2-4.5 3-6.5 1 2 2 3 3 3 0-3-1-5 .5-7z" fill="${f}" stroke="${c}" ${s}/><path d="M12 20a2.6 2.6 0 0 1-2.6-2.6c0-1.6 1.4-2.4 2.6-4 1.2 1.6 2.6 2.4 2.6 4A2.6 2.6 0 0 1 12 20z" fill="${c}" fill-opacity=".35"/>`,
+  rings:    (c, f, s) => `<circle cx="9" cy="12" r="5.2" fill="${f}" stroke="${c}" ${s}/><circle cx="15" cy="12" r="5.2" fill="none" stroke="${c}" ${s}/>`,
+  heart:    (c, f, s) => `<path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z" fill="${f}" stroke="${c}" ${s}/>`,
+  bridge:   (c, f, s) => `<path d="M2.5 15.5C5 9.5 19 9.5 21.5 15.5z" fill="${f}" stroke="${c}" ${s}/><path d="M2.5 15.5h19M7 12v3.5M12 10.7v4.8M17 12v3.5" fill="none" stroke="${c}" ${s}/><path d="M2.5 19.5c2-1.2 4-1.2 6 0s4 1.2 6 0 4-1.2 6 0" fill="none" stroke="${c}" ${s}/>`,
+  trees:    (c, f, s) => `<path d="M7.5 21v-5M16.5 21v-5" stroke="${c}" ${s}/><path d="M7.5 16.5c-2.6 0-4.3-2-4.3-4.6S5 6 7.5 4c2.5 2 4.3 5.3 4.3 7.9s-1.7 4.6-4.3 4.6z" fill="${f}" stroke="${c}" ${s}/><path d="M16.5 16.5c-2.6 0-4.3-2-4.3-4.6S14 6 16.5 4c2.5 2 4.3 5.3 4.3 7.9s-1.7 4.6-4.3 4.6z" fill="none" stroke="${c}" ${s}/><path d="M3 21h18" stroke="${c}" ${s}/>`,
+  hands:    (c, f, s) => `<path d="M3 13.5l4.5-4 4 2.5 4-2.5 5.5 4-6 5.5h-6z" fill="${f}" stroke="${c}" ${s}/><path d="M11.5 12l2.5 2.5M9.5 14l2 2" fill="none" stroke="${c}" ${s}/>`,
+  speech:   (c, f, s) => `<path d="M4 5.5h16v10H10l-5 4v-4H4z" fill="${f}" stroke="${c}" ${s}/><path d="M8 9.5h8M8 12.5h5" fill="none" stroke="${c}" ${s}/>`,
+  people:   (c, f, s) => `<circle cx="8.5" cy="8.5" r="3" fill="${f}" stroke="${c}" ${s}/><circle cx="16" cy="9.5" r="2.6" fill="none" stroke="${c}" ${s}/><path d="M3 19.5c.6-3.4 2.9-5.3 5.5-5.3s4.9 1.9 5.5 5.3M13.5 15c.8-.5 1.6-.7 2.5-.7 2.3 0 4.3 1.7 4.9 4.6" fill="none" stroke="${c}" ${s}/>`,
+  shield:   (c, f, s) => `<path d="M12 3l7.5 3v5.5c0 4.6-3.2 8-7.5 9.5-4.3-1.5-7.5-4.9-7.5-9.5V6z" fill="${f}" stroke="${c}" ${s}/><path d="M9 12l2.2 2.2L15.5 10" fill="none" stroke="${c}" ${s}/>`,
+  anchor:   (c, f, s) => `<circle cx="12" cy="5.5" r="2.3" fill="${f}" stroke="${c}" ${s}/><path d="M12 7.8V20M8 11h8M4.5 14c.5 3.5 3.6 6 7.5 6s7-2.5 7.5-6" fill="none" stroke="${c}" ${s}/>`,
+  /* путь, рефлексия, эксперимент */
+  compass:  (c, f, s) => `<circle cx="12" cy="12" r="8.5" fill="${f}" stroke="${c}" ${s}/><path d="M14.8 9.2l-1.8 4.8-4.8 1.8 1.8-4.8z" fill="${c}" fill-opacity=".85" stroke="${c}" stroke-width="1.2" stroke-linejoin="round"/>`,
+  path:     (c, f, s) => `<path d="M5 20.5c0-4 4-4.5 6-7s1.5-6 7-8.5" fill="none" stroke="${c}" ${s} stroke-dasharray="2.5 3"/><circle cx="5" cy="20" r="2" fill="${f}" stroke="${c}" ${s}/><path d="M18 3.5v5M18 3.5l3 1.4-3 1.4" fill="${f}" stroke="${c}" ${s}/>`,
+  eye:      (c, f, s) => `<path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" fill="${f}" stroke="${c}" ${s}/><circle cx="12" cy="12" r="3" fill="none" stroke="${c}" ${s}/><circle cx="12" cy="12" r="1" fill="${c}"/>`,
+  explore:  (c, f, s) => `<circle cx="10.5" cy="10.5" r="6" fill="${f}" stroke="${c}" ${s}/><path d="M15 15l5.5 5.5" stroke="${c}" ${s}/><path d="M8 9.5a2.8 2.8 0 0 1 2.5-2" fill="none" stroke="${c}" ${s}/>`,
+  flask:    (c, f, s) => `<path d="M9.5 3.5v5.5L4.5 18a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3l-5-9V3.5" fill="none" stroke="${c}" ${s}/><path d="M6.8 15h10.4l1.6 3a1.2 1.2 0 0 1-1.1 1.8H6.3A1.2 1.2 0 0 1 5.2 18z" fill="${f}" stroke="${c}" stroke-width="1.2"/><path d="M8 3.5h8" stroke="${c}" ${s}/>`,
+  mirror:   (c, f, s) => `<ellipse cx="12" cy="9.5" rx="5.5" ry="6.5" fill="${f}" stroke="${c}" ${s}/><path d="M12 16v5M8.5 21h7M9.5 7a3 3 0 0 1 2-1.6" fill="none" stroke="${c}" ${s}/>`,
+  pen:      (c, f, s) => `<path d="M15.5 4.5l4 4L9 19l-5 1 1-5z" fill="${f}" stroke="${c}" ${s}/><path d="M13.5 6.5l4 4" stroke="${c}" ${s}/>`,
+  book:     (c, f, s) => `<path d="M3.5 5.5c3-1 5.8-.8 8.5 1 2.7-1.8 5.5-2 8.5-1v13c-3-1-5.8-.8-8.5 1-2.7-1.8-5.5-2-8.5-1z" fill="${f}" stroke="${c}" ${s}/><path d="M12 6.5v13" stroke="${c}" ${s}/>`,
+  seed:     (c, f, s) => `<path d="M12 20c-3.6 0-6-2.6-6-6.3C6 9.5 9 6 12 4c3 2 6 5.5 6 9.7 0 3.7-2.4 6.3-6 6.3z" fill="${f}" stroke="${c}" ${s}/><path d="M12 20v-7.5" stroke="${c}" ${s}/>`,
+  sun:      (c, f, s) => `<circle cx="12" cy="12" r="4.2" fill="${f}" stroke="${c}" ${s}/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7" stroke="${c}" ${s}/>`,
+  moon:     (c, f, s) => `<path d="M19 15.5A8 8 0 0 1 8.5 5a8 8 0 1 0 10.5 10.5z" fill="${f}" stroke="${c}" ${s}/>`,
+  lantern:  (c, f, s) => `<path d="M9 6h6l1.5 3v8L15 20H9l-1.5-3V9z" fill="${f}" stroke="${c}" ${s}/><path d="M10 3.5h4M12 3.5V6M12 11v4" stroke="${c}" ${s}/>`,
+  cup:      (c, f, s) => `<path d="M4.5 9h12v5a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5z" fill="${f}" stroke="${c}" ${s}/><path d="M16.5 10.5h1.5a2.3 2.3 0 0 1 0 4.6h-1.8M8 3.5c-.8 1 .8 2-.1 3M12 3.5c-.8 1 .8 2-.1 3" fill="none" stroke="${c}" ${s}/>`,
+  mask:     (c, f, s) => `<path d="M4 6.5c5-2 11-2 16 0v5.5c0 4.5-3.6 8-8 8s-8-3.5-8-8z" fill="${f}" stroke="${c}" ${s}/><path d="M7.5 11c1-.8 2.5-.8 3.5 0M13 11c1-.8 2.5-.8 3.5 0M9 15.5c1.8 1.2 4.2 1.2 6 0" fill="none" stroke="${c}" ${s}/>`,
+  lock:     (c, f, s) => `<rect x="5" y="10.5" width="14" height="10" rx="2" fill="${f}" stroke="${c}" ${s}/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5M12 14.5v2.5" fill="none" stroke="${c}" ${s}/>`
+};
+/* светлый тон цвета для заливки по умолчанию */
+const icoSoft = c => { const h = String(c).replace('#', ''); if (h.length !== 6) return 'none';
+  return '#' + [0, 2, 4].map(i => Math.round(parseInt(h.substr(i, 2), 16) * .3 + 255 * .7).toString(16).padStart(2, '0')).join(''); };
+function ico(name, line = '#2E5A88', fill, size = 24){
+  const draw = ICONS[name] || ICONS.seed;
+  const s = 'stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"';
+  return `<svg viewBox="0 0 24 24" width="${size}" height="${size}" aria-hidden="true">${draw(line, fill || icoSoft(line), s)}</svg>`;
+}
+
+const T = '../';
+const MEET = { t: 'Знакомство, 30 минут', d: 'Онлайн, бесплатно. Напиши в Telegram слово ВСТРЕЧА.', h: 'https://t.me/IrynaNeuroCoach' };
+const STUPENI = { t: 'Тест «Ступени устойчивости», 20 минут', d: 'Покажет, какие ступени уже держат тебя, какая поскрипывает и с чего начать.', h: T + 'stupeni/' };
+const COL = [['#8E8470','#ECE7DD'],['#6A5FB8','#E7E4F7'],['#C25468','#F8E0E4'],['#3F6FBF','#E1EBFA'],['#C97E52','#FAE8DC'],['#4E9A70','#E1F1E7'],['#A99A2E','#F7F2D3'],['#2894A0','#DDF3F4']];
+const ICN = ['earth', 'hearth', 'door', 'key', 'workshop', 'sprout', 'hill', 'sky'];
+
+const STEPS = [
+  { name: 'Земля под ногами', sub: 'ступень тела', teaser: 'Когда главное — просто устоять на ногах',
+    says: ['Мне здесь тяжело', 'У меня нет сил', 'Я не сплю и держусь на нервах'],
+    pain: ['Всё требует втрое больше сил, а к вечеру кажется, что ничего особенного не сделано', 'Первыми сдают тело и сон: не спится, болит голова и спина, а врачи ничего не находят', 'Нет ощущения завтра: разрешение, работа, школа, деньги — всё «посмотрим, как сложится»'],
+    needs: [['Сон и отдых', 'выспаться и просыпаться с силами'], ['Тело', 'чтобы не болело, и врач, которому доверяешь'], ['Режим', 'есть нормально, а не на бегу'], ['Крыша и деньги на базовое', 'жильё, за которое не страшно'], ['Предсказуемость', 'хотя бы в общих чертах знать, что будет в ближайшие месяцы'], ['Свой угол', 'место, где можно закрыть дверь и выдохнуть']],
+    vals: ['Жизнь и здоровье', 'Безопасность', 'Покой и тишина', 'Право на отдых без вины', 'Одно дело за раз'],
+    check: 'Ты высыпаешься? Есть ли силы утром? Бывают дни, когда главное — досидеть до вечера?',
+    next: 'Когда появились сон и ритм, вдруг становится заметно, как одиноко.' },
+  { name: 'Очаг и свои за столом', sub: 'ступень «мы»', teaser: 'Когда хочется, чтобы кто-то ждал тебя вечером',
+    says: ['Мне здесь не с кем поговорить по душам', 'Некому позвонить в два часа ночи', 'Я одна даже в семье'],
+    pain: ['Вокруг люди, а поговорить по-настоящему не с кем', 'Знакомые есть, близких нет, а заводить дружбу взрослой долго и страшно', 'Дома уже не своя, здесь ещё не своя; выходные и праздники самые тяжёлые'],
+    needs: [['Свои люди', 'хотя бы один человек, которому можно позвонить ночью'], ['Принадлежность', 'место, где тебя узнают и ждут'], ['Близкие', 'живая связь с семьёй, с родителями и детьми'], ['Корни', 'свои праздники, свой язык, то, что передать детям'], ['Быть замеченной', 'чтобы кто-то заметил, если ты пропадёшь'], ['Защищённость', 'есть кому подсказать и заступиться']],
+    vals: ['Быть своей', 'Верность', 'Тепло и близость', 'Корни и память рода', 'Можно не притворяться'],
+    check: 'Есть кому позвонить, когда плохо? Была ли за последний месяц живая встреча не по делу?',
+    next: 'Когда появился хотя бы один свой человек, хочется сметь самой.' },
+  { name: 'Свой голос', sub: 'ступень силы', teaser: 'Когда хочется снова почувствовать: «я могу»',
+    says: ['Я даже к врачу записаться не могу', 'Я до сих пор боюсь говорить', 'Дома я потеряла голос'],
+    pain: ['Простые вопросы за тебя решают муж, подруга или ребёнок-переводчик', 'Не получается возразить и постоять за себя, а потом прокручиваешь это ночами', 'С тобой говорят как с непонимающей, и ты сама начинаешь в это верить'],
+    needs: [['Самостоятельность', 'решать свои вопросы без мужа и переводчика'], ['Голос', 'говорить вслух, когда с тобой несправедливы'], ['Границы', 'отказывать и не оправдываться'], ['Влияние', 'решаешь и выбираешь ты, а не обстоятельства'], ['Уважение', 'чтобы говорили на равных'], ['Маленькие победы', 'доказательства, что ты можешь']],
+    vals: ['Достоинство', 'Свобода', 'Смелость', 'Честность', '«Я справилась»'],
+    check: 'Можешь сама решить простой вопрос: записаться, позвонить, возразить? Есть то, чего ты избегаешь?',
+    next: 'Когда появилось «я смогла», хочется понять, как здесь всё устроено.' },
+  { name: 'Карта и ключи', sub: 'ступень порядка', teaser: 'Когда каждое письмо в ящике заставляет сердце биться чаще',
+    says: ['Я не понимаю, как здесь жить', 'Каждое письмо — и сердце колотится', 'Боюсь ошибиться и попасть'],
+    pain: ['Школа, страховки, налоги, разрешения: правила есть, но их никто не объясняет', 'Страшно сделать не так и получить штраф, отказ или пропустить срок', 'Двадцать чатов, двадцать советов, и непонятно, кому верить'],
+    needs: [['Ясность', 'понимать, как здесь всё устроено'], ['Надёжный источник', 'один проводник вместо двадцати чатов'], ['Порядок в делах', 'бумаги, сроки, папки, ничего не потеряно'], ['Спокойствие', 'уверенность, что тебе и детям ничего не грозит'], ['Понятные правила', 'что здесь принято, а что нет'], ['План', 'видеть дорогу, а не туман']],
+    vals: ['Ясность', 'Надёжность', 'Справедливость', 'Ответственность', 'Спокойствие'],
+    check: 'Знаешь, куда идти со своим вопросом? Письмо в ящике вызывает панику?',
+    next: 'Когда система стала понятной, приходит вопрос: а чего я хочу?' },
+  { name: 'Своя мастерская', sub: 'ступень дела', teaser: 'Когда на вопрос «чем вы занимаетесь?» внутри всё сжимается',
+    says: ['Я тут никто', 'У меня нет своих денег', 'Не знаю, чем здесь заниматься'],
+    pain: ['Диплом не признают, опыт не засчитывают, зовут ниже прежнего уровня или не зовут вовсе', 'Силы и идеи есть, а как устроен рынок, с чего начать и что законно, непонятно', 'Нет ни своих денег, ни своего имени, и вопрос «чем вы занимаетесь?» ранит'],
+    needs: [['Своё занятие', 'работа, новая профессия или своё дело, по силам и по уму'], ['Признание опыта', 'чтобы прежний опыт здесь что-то значил'], ['Свои деньги', 'не про сумму, а про свободу и голос в семье'], ['Рост', 'а не «лишь бы взяли»'], ['Правила рынка', 'как здесь ищут работу, нанимают и открывают дело'], ['Среда равных', 'люди, с которыми говорят о планах, а не жалуются']],
+    vals: ['Своя цена', 'Свобода выбора', 'Мастерство', 'Здоровая амбиция', 'Самоуважение'],
+    check: 'Есть ли у тебя здесь своё занятие: работа, дело или проект? Что ты отвечаешь на «чем вы занимаетесь?»',
+    next: 'Когда своё дело есть, приходит вопрос: ради чего всё это?' },
+  { name: 'Сад для других', sub: 'ступень вклада', teaser: 'Когда своё уже есть и хочется делиться',
+    says: ['Хочу быть здесь нужной', 'Добилась, а радости нет', 'Хочу, чтобы мой опыт пригодился'],
+    pain: ['Получается, работает, а ради чего — непонятно', 'Опыт есть, а кому он здесь нужен и в какой форме, неясно', 'Либо помогаешь всем подряд и опустошаешься, либо не решаешься предложить себя вовсе'],
+    needs: [['Смысл', 'понимать, ради чего всё это'], ['Быть нужной', 'чтобы опыт пригодился не только семье'], ['Адресат', 'кому именно и в какой форме ты можешь быть полезна'], ['Общее дело', 'круг, где ты соавтор, а не гостья'], ['Признание вклада', 'чтобы его называли, а не «ну ты же просто подсказала»'], ['Мера', 'отдавать по выбору и не опустошаться']],
+    vals: ['Польза', 'Сочувствие', 'Равенство', 'Общность', 'Щедрость с границами'],
+    check: 'Есть ли здесь то, что ты делаешь не только для себя? Понимаешь, ради чего всё это?',
+    next: 'Когда вклад есть, встаёт вопрос обо всей жизни.' },
+  { name: 'Вид с холма', sub: 'ступень целой жизни', teaser: 'Когда живёшь здесь давно, а будто всё ещё на чемоданах',
+    says: ['Я здесь давно, но так и не дома', 'Жду, когда начнётся настоящая жизнь', 'А что, если бы мы не уехали'],
+    pain: ['«Вот вернёмся», «вот выучу язык», «вот дети вырастут» — а годы идут', 'При каждой трудности возвращается «а если бы мы не уехали»', 'Там ты уже чужая, здесь ещё не совсем своя, и две половины не складываются'],
+    needs: [['Целостность', 'соединить «там» и «здесь», прежнюю себя и новую'], ['Свой сценарий', 'жить не как надо, а как твоё'], ['Смысл всей жизни', 'ради чего она и чем ты хочешь её закончить'], ['Гибкость', 'выдерживать, что одного правильного ответа нет'], ['Своя система', 'свои приоритеты вместо общих советов'], ['Время', 'распоряжаться им, а не догонять упущенное']],
+    vals: ['Не жалеть', 'Подлинность', 'Ответственность за свою жизнь', 'Широкий взгляд', 'Цельность'],
+    check: 'Знаешь, чем хочешь закончить? Если бы жизнь заканчивалась завтра, о чём бы ты жалела?',
+    next: 'Когда жизнь собрана в одно целое, появляется вопрос: а что больше меня?' },
+  { name: 'Небо над домом', sub: 'ступень «больше меня»', teaser: 'Когда «здесь» и «там» сливаются в одну жизнь',
+    says: ['Я больше не чужая, я просто живу', 'Хочу, чтобы после меня что-то осталось', 'Мне интересны те, кто идёт следом'],
+    pain: ['Не с кем говорить на своём уровне: прежний круг ты переросла, а нового пока нет', 'Прежние цели больше не тянут, а новые ещё не названы', 'Хочется, чтобы сделанное не закончилось вместе с тобой'],
+    needs: [['Быть частью большего', 'дела, идеи, потока жизни'], ['След', 'чтобы после тебя что-то осталось'], ['Передача', 'учить, наставлять, открывать двери другим'], ['Свой круг', 'люди, которые мыслят так же широко'], ['Одна жизнь', '«здесь» и «там» больше не два лагеря'], ['Тишина внутри', 'не доказывать, а просто быть']],
+    vals: ['Принадлежать миру', 'Служение', 'Целое и связи', 'Связь поколений', 'Свобода от гонки'],
+    check: 'Ты всё ещё делишь жизнь на «здесь» и «там»? Есть ли то, что ты делаешь для тех, кто придёт после?',
+    note: 'Это не ступень, которую чинят, а горизонт, к которому дорастают.' }
+];
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+function actHtml(a){ const ext = /^https?:/.test(a.h); return `<a class="act" href="${a.h}"${ext ? ' target="_blank" rel="noopener"' : ''}><b>${esc(a.t)}<span aria-hidden="true">→</span></b><span>${esc(a.d)}</span></a>`; }
+const vars = k => `--lc:${COL[k][0]};--lf:${COL[k][1]}`;
+const WIG = ['M70 0 C 70 40, 120 50, 110 70 S 70 90, 70 110', 'M70 0 C 70 40, 20 50, 30 70 S 70 90, 70 110'];
+
+document.getElementById('trail').innerHTML = STEPS.map((s, k) => {
+  const side = k % 2 ? 'r' : 'l';
+  const stop = `<div class="stop ${side}" style="${vars(k)}">
+    <span class="rail" aria-hidden="true"></span>
+    <span class="node">${ico(ICN[k], COL[k][0], COL[k][1], 36)}<i>${k + 1}</i></span>
+    <button class="card" type="button" data-k="${k}" aria-haspopup="dialog">
+      <span class="sub">${k + 1} · ${esc(s.sub)}</span><h3>${esc(s.name)}</h3><span class="teaser">${esc(s.teaser)}</span>
+      <span class="says">${s.says.map(q => `<span>«${esc(q)}»</span>`).join('')}</span>
+      <span class="more">Что на этой стоянке →</span>
+    </button></div>`;
+  const prev = k ? STEPS[k - 1].next : '';
+  const between = `<div class="between ${side === 'l' ? 'r' : 'l'}"><svg viewBox="0 0 140 110" preserveAspectRatio="none" aria-hidden="true"><path d="${WIG[k % 2]}"/></svg>${prev ? `<p>${esc(prev)}</p>` : ''}</div>`;
+  return between + stop;
+}).join('') + `<div class="between l"><svg viewBox="0 0 140 110" preserveAspectRatio="none" aria-hidden="true"><path d="${WIG[0]}"/></svg></div>`;
+
+const qm = document.getElementById('qm'), qmCard = document.getElementById('qmCard');
+function openStep(k){
+  const s = STEPS[k];
+  qmCard.innerHTML = `<div class="qm-top" style="${vars(k)}">
+      <span class="ic">${ico(ICN[k], COL[k][0], COL[k][1], 34)}</span>
+      <div class="qm-head"><div class="eyebrow">Стоянка ${k + 1} из 8 · ${esc(s.sub)}</div><h2 class="qm-title" id="qmTitle">${esc(s.name)}</h2></div>
+      <button class="qm-close" type="button" data-close aria-label="Закрыть">✕</button>
+    </div>
+    <div class="qm-panel lv" style="${vars(k)}">
+      <div class="qm-col"><h3>Что болит</h3><ul class="pain">${s.pain.map(p => `<li>${esc(p)}</li>`).join('')}</ul></div>
+      <div class="qm-col"><h3>Что тебе нужно</h3><ul class="needs">${s.needs.map(n => `<li><b>${esc(n[0])}</b> — ${esc(n[1])}</li>`).join('')}</ul></div>
+      <div class="qm-col"><h3>Что важно здесь</h3><div class="vals">${s.vals.map(v => `<span>${esc(v)}</span>`).join('')}</div>
+        <h3 style="margin-top:6px">Проверь себя</h3><p class="check">${esc(s.check)}</p></div>
+    </div>
+    <div class="qm-foot"><p class="next">${s.note ? esc(s.note) : `<b>Дальше.</b> ${esc(s.next)}`}</p>
+      <p class="notme"><button type="button" data-step="${k - 1}" ${k ? '' : 'hidden'}>← Стоянка ${k}</button> ${k < 7 ? `<button type="button" data-step="${k + 1}">Стоянка ${k + 2} →</button>` : ''}</p></div>
+    <div class="two-grid">${actHtml(STUPENI)}${actHtml(MEET)}</div>`;
+  if (!qm.open){ if (typeof qm.showModal === 'function'){ try { qm.showModal(); } catch (e) { qm.setAttribute('open', ''); } } else qm.setAttribute('open', ''); }
+  qmCard.scrollTop = 0;
+}
+function closeModal(){ if (qm.open){ typeof qm.close === 'function' ? qm.close() : qm.removeAttribute('open'); } }
+document.getElementById('trail').addEventListener('click', e => { const b = e.target.closest('[data-k]'); if (b) openStep(+b.dataset.k); });
+qm.addEventListener('click', e => {
+  if (e.target === qm || e.target.closest('[data-close]')) return closeModal();
+  const st = e.target.closest('[data-step]'); if (st) openStep(+st.dataset.step);
+});
+document.getElementById('whereActs').innerHTML = actHtml(STUPENI) + actHtml(MEET);
+document.querySelectorAll('[data-ico]').forEach(e => { e.innerHTML = ico(e.dataset.ico, e.dataset.c, null, 32); });
+</script>
+
+</body>
+</html>

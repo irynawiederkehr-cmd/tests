@@ -6,6 +6,7 @@
 <title>Ирина Вознесенская · коучинг</title>
 <link rel="stylesheet" href="assets/fonts.css">
 <style>
+
 [hidden]{display:none!important}
 /* Layout: тёплая страница-письмо. Слева слово, справа шерстяная картина; дальше «двери» — фразы, в которых она узнаёт себя */
 :root{
@@ -247,6 +248,15 @@ dialog.qm::backdrop{background:rgba(47,41,36,.62);backdrop-filter:blur(3px)}
 .clist span{color:var(--muted);font-weight:500;font-size:.85rem;overflow-wrap:anywhere;text-align:right}
 footer{padding-block:28px 40px;font-size:.82rem;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
 footer a{color:var(--muted)}
+
+/* ---------- полоса-ссылка на страницу «Путь» ---------- */
+.pathband{margin-top:40px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;text-decoration:none;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:22px;padding:20px 24px;transition:border-color .15s}
+.pathband:hover{border-color:var(--brown)}
+.pb-txt{flex:1 1 300px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.pb-txt b{font-family:var(--display);font-weight:400;font-size:1.5rem;line-height:1.15}
+.pb-txt span{font-size:.92rem;color:var(--muted)}
+.pb-go{font-weight:700;color:var(--brown);white-space:nowrap}
+
 </style>
 </head>
 <body>
@@ -259,6 +269,7 @@ footer a{color:var(--muted)}
     </a>
     <nav aria-label="Разделы">
       <a href="#doors">С чего начать</a>
+      <a href="put/">Путь</a>
       <a href="#about">Обо мне</a>
       <a href="#how">Как проходит</a>
       <a href="#tests">Тесты</a>
@@ -302,6 +313,14 @@ footer a{color:var(--muted)}
     </div>
   </div>
 </section>
+
+<div class="page">
+  <a class="pathband" href="put/">
+    <span class="ic" data-ico="path" data-c="#6E4F3C"></span>
+    <span class="pb-txt"><b>Весь путь в новой стране</b><span>Восемь стоянок: от земли под ногами до неба над домом. С чем сталкиваешься на каждой и что помогает идти дальше.</span></span>
+    <span class="pb-go">Посмотреть путь →</span>
+  </a>
+</div>
 
 <div class="page">
   <section id="about" aria-labelledby="about-h">
@@ -506,7 +525,7 @@ const SPHERES = [
   { q: 'Дома всё разладилось', pain: ["Мы команда или соседи?", "Каждый сам по себе", "Боюсь начать разговор: опять поссоримся"], ic: 'home', c: '#6E4F3C', h: 'Снова стать командой, а не соседями',
     say: ['Разберём, что ты можешь сделать со своей стороны, как начать разговор без упрёков и что ты перестала говорить вслух.'],
     acts: [MEET], edge: 'Я работаю с тобой, а не с вашей парой. Если нужна работа вдвоём, это к семейному терапевту, подскажу к кому.' },
-  { q: 'Мне здесь не с кем', pain: ["Некому позвонить ночью", "Меня не слышат и проходят мимо", "Старые друзья далеко, новых пока нет"], ic: 'people', c: '#66704F', h: 'Найти своих',
+  { q: 'Мне здесь не с кем поговорить по душам', pain: ["Некому позвонить ночью", "Меня не слышат и проходят мимо", "Старые друзья далеко, новых пока нет"], ic: 'people', c: '#66704F', h: 'Найти своих',
     say: ['Для начала не нужно десять подруг. Нужен один свой человек и место, где можно быть собой. Начни с канала: там собираются те, кто проходит через то же самое.'],
     acts: [CHANNEL, MEET] },
   { q: 'Я до сих пор боюсь говорить', pain: ["Знаю слова, но молчу", "Со мной говорят медленно и громко, как с маленькой", "Не могу сама решить простой вопрос по телефону"], ic: 'speech', c: '#B98324', h: 'Язык без стыда',
