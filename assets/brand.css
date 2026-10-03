@@ -851,3 +851,4 @@ footer.copy .del-answers{margin-top:10px}
 .mono.av,.sb-mono.av{background:none!important;border:none!important;padding:0;overflow:visible}
 .mono.av svg,.sb-mono.av svg{width:100%;height:100%;display:block}
 .practice a svg{vertical-align:-4px;margin-right:2px}
+.invite-links a svg,.st-swiss b svg{vertical-align:-4px;margin-right:4px}
