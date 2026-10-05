@@ -839,7 +839,7 @@ footer.copy .del-answers{margin-top:10px}
 @media (max-width:760px){
   .sitebar-in{flex-wrap:wrap;padding:8px 16px 6px;gap:6px 12px}
   .sb-mark small{display:none}
-  .sb-nav{order:3;width:100%;margin-left:0;gap:16px;padding-bottom:4px}
+  .sb-nav{order:3;width:100%;margin-left:0;gap:4px 16px;padding-bottom:4px;flex-wrap:wrap;overflow-x:visible}
   .sb-mark{max-width:calc(100% - 170px);min-width:0}
   .sb-mark b{font-size:.98rem;line-height:1.08}
   .sb-mark > span:last-child{min-width:0}

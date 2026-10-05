@@ -535,6 +535,8 @@ a.bot:hover{color:#B98324}
 .btn.off{animation:none;background:transparent !important;color:var(--muted) !important;border:1.5px solid var(--line) !important;box-shadow:none}
 .btn:hover,.navcta:hover{transform:translateY(-1px)}
 @media (prefers-reduced-motion: reduce){.btn,.navcta,.go-pill{animation:none}}
+section[id]{scroll-margin-top:96px}
+@media (max-width:640px){section[id]{scroll-margin-top:130px}}
 </style></head><body>
 <header class="top">
   <div class="page">
@@ -543,7 +545,8 @@ a.bot:hover{color:#B98324}
       <span><b>Ирина Вознесенская</b><small>специалист по адаптации · коуч</small></span>
     </a>
     <nav aria-label="Разделы">
-      <a href="./" aria-current="page" style="color:var(--ink)">Работа со мной</a>
+      <a href="./#who">Обо мне</a>
+      <a href="./#requests">Работа со мной</a>
       <a href="put/">Твой путь</a>
       <a href="testy/">Тесты</a>
       <a href="https://svoiludi.ch/" target="_blank" rel="noopener">Свои люди</a>
@@ -1063,4 +1066,10 @@ function pathInit(){
 }
 pathInit();
 </script><script src="assets/share.js" defer></script>
+<script>/* меню: подсвечивается раздел, который сейчас на экране */
+(function(){ var L = document.querySelectorAll('header nav a[href^="./#"]'); if (!('IntersectionObserver' in window) || !L.length) return;
+  var map = {}; L.forEach(function(a){ var s = document.getElementById(a.getAttribute('href').slice(3)); if (s) map[s.id] = a; });
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ var a = map[e.target.id]; if (!a) return; if (e.isIntersecting){ L.forEach(function(x){ x.removeAttribute('aria-current'); x.style.color = ''; }); a.setAttribute('aria-current', 'true'); a.style.color = 'var(--ink)'; } else if (a.getAttribute('aria-current')){ a.removeAttribute('aria-current'); a.style.color = ''; } }); }, { rootMargin: '-45% 0px -50% 0px' });
+  Object.keys(map).forEach(function(id){ io.observe(document.getElementById(id)); });
+})();</script>
 </body></html>
