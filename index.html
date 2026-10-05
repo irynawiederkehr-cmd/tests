@@ -615,6 +615,18 @@ section[id]{scroll-margin-top:96px}
 .rv-track .rv blockquote{font-size:1.12rem}
 span.rv-prod{cursor:default}
 span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
+
+.rv-track{align-items:flex-start}
+
+/* длинные отзывы: 8 строк и «Читать полностью» */
+.rv-track{align-items:stretch}
+.rv-track .rv blockquote{flex:0 1 auto;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:8;overflow:hidden}
+.rv-track .rv.open blockquote{-webkit-line-clamp:unset;display:block}
+.rv-more{align-self:flex-start;margin-top:auto;font:inherit;font-size:.86rem;font-weight:700;color:var(--brown);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.rv-track .rv-cta blockquote{display:block}
+
+.rv-track .rv figcaption{margin-top:auto}
+.rv-more{margin-top:0!important}
 </style></head><body>
 <header class="top">
   <div class="page">
@@ -1241,6 +1253,7 @@ pathInit();
 })();</script>
 <script>/* отзывы: стрелки листают, плашка продукта открывает его окно */
 (function(){ var t = document.getElementById('rvTrack'); if (!t) return;
+  t.querySelectorAll('.rv:not(.rv-cta)').forEach(function(c){ var q = c.querySelector('blockquote'); if (!q || q.scrollHeight <= q.clientHeight + 2) return; var m = document.createElement('button'); m.type = 'button'; m.className = 'rv-more'; m.textContent = 'Читать полностью'; q.insertAdjacentElement('afterend', m); m.addEventListener('click', function(){ var o = c.classList.toggle('open'); m.textContent = o ? 'Свернуть' : 'Читать полностью'; }); });
   document.querySelectorAll('[data-rv]').forEach(function(b){ b.addEventListener('click', function(){ var c = t.querySelector('.rv'); t.scrollBy({ left: (+b.dataset.rv) * ((c ? c.offsetWidth : 300) + 14), behavior: 'smooth' }); }); });
   t.addEventListener('click', function(e){ var p = e.target.closest('[data-open]'); if (!p) return; var c = document.querySelector('#pathThemes [data-p="' + p.dataset.open + '"]'); if (c) c.click(); });
 })();</script>
