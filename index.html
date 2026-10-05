@@ -236,7 +236,8 @@ dialog.qm::backdrop{background:rgba(47,41,36,.62);backdrop-filter:blur(3px)}
 .tcard.pair .slog{color:var(--blue)}
 .tcard p{font-size:.92rem;color:var(--muted)}
 .tcard .go{margin-top:auto;padding-top:6px;font-weight:700;font-size:.9rem;color:var(--brown)}
-.also{display:grid;grid-template-columns:auto 1fr 1fr;gap:12px;align-items:stretch}
+.also{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-items:stretch}
+.also .mini{align-content:start}
 @media (max-width:820px){.also{grid-template-columns:1fr}}
 .also .btn{justify-content:center;align-self:center}
 .mini{display:flex;flex-direction:column;gap:2px;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:12px 16px;min-width:0}
@@ -650,7 +651,7 @@ section[id]{scroll-margin-top:96px}
     <div id="pathThemes" class="themes"></div>
     <p class="path-note">* цены программ по письмам — черновик. Всё онлайн и на русском.</p>
     <div class="also" style="margin-top:28px">
-      <a href="https://voznesenskaya.ch/testy/" class="btn free" target="_blank" rel="noopener">Все тесты на одной странице</a>
+      <a class="mini" href="testy/"><span class="ic sm" data-ico="compass" data-c="#4F5E3E"></span><b>Все мои тесты</b><span>Четыре бесплатных теста, по 10–20 минут, с подробным разбором.</span></a>
       <a class="mini" href="https://t.me/swisscompass_bot" target="_blank" rel="noopener"><span class="ic sm" data-ico="swissguide" data-c="#6E4F3C"></span><b>Гайд по Швейцарии</b><span>Мой бесплатный Telegram-бот. Бумаги, страховка, школа и врачи по шагам и на русском.</span></a>
       <a class="mini" href="https://t.me/IrynaNeuroCoach_channel" target="_blank" rel="noopener"><span class="ic sm" data-ico="megaphone" data-c="#3F6FBF"></span><b>Мой Telegram-канал</b><span>Полезное для тебя о жизни в новой стране. И место, где можно найти своих.</span></a>
     </div>
