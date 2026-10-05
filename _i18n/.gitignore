@@ -1,1 +1,4 @@
 __pycache__/
+todo.json
+done.json
+missing_tests.json

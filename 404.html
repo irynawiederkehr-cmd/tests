@@ -26,6 +26,20 @@ a{font-weight:700;text-decoration:none;border-radius:999px;padding:11px 20px}
 <p>Возможно, ссылка устарела или в адресе опечатка. Начни с главной страницы или напиши мне в Telegram.</p>
 <div class="row"><a class="a1" href="/">На главную</a><a class="a2" href="https://t.me/IrynaNeuroCoach">Написать в Telegram</a></div>
 </main>
+<script>(function(){
+  var T = {
+    uk: ['Сторінку не знайдено · Ірина Вознесенська', 'Такої сторінки немає', 'Можливо, посилання застаріло або в адресі помилка. Почни з головної сторінки або напиши мені в Telegram.', 'На головну', 'Написати в Telegram'],
+    de: ['Seite nicht gefunden · Iryna Voznesenskaya', 'Diese Seite gibt es nicht', 'Vielleicht ist der Link veraltet oder die Adresse enthält einen Tippfehler. Fang auf der Startseite an oder schreib mir auf Telegram.', 'Zur Startseite', 'Auf Telegram schreiben'],
+    en: ['Page not found · Iryna Voznesenskaya', 'This page doesn’t exist', 'The link may be out of date, or there may be a typo in the address. Start from the home page or message me on Telegram.', 'To the home page', 'Message me on Telegram']
+  };
+  var m = location.pathname.match(/^\/(uk|de|en)(\/|$)/), l = m && m[1];
+  if (!l) { try { l = localStorage.getItem('irinaTestsLang'); } catch (e) {} }
+  if (!T[l]) return;
+  var t = T[l], a = document.querySelectorAll('.row a');
+  document.documentElement.lang = l; document.title = t[0];
+  document.querySelector('h1').textContent = t[1]; document.querySelector('main p').textContent = t[2];
+  a[0].textContent = t[3]; a[0].setAttribute('href', '/' + l + '/'); a[1].textContent = t[4];
+})();</script>
 <script src="/assets/samesite.js"></script>
 </body>
 </html>
