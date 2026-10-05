@@ -1259,4 +1259,5 @@ pathInit();
   document.querySelectorAll('[data-rv]').forEach(function(b){ b.addEventListener('click', function(){ var c = t.querySelector('.rv'); t.scrollBy({ left: (+b.dataset.rv) * ((c ? c.offsetWidth : 300) + 14), behavior: 'smooth' }); }); });
   t.addEventListener('click', function(e){ var p = e.target.closest('[data-open]'); if (!p) return; var c = document.querySelector('#pathThemes [data-p="' + p.dataset.open + '"]'); if (c) c.click(); });
 })();</script>
+<script src="/assets/samesite.js"></script>
 </body></html>
