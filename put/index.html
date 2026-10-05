@@ -352,6 +352,19 @@ footer a{color:var(--muted)}
 .check{background:var(--paper);border-radius:14px;padding:14px 16px;font-family:var(--display);font-size:1.15rem;line-height:1.35}
 .qm-panel.lv{background:var(--lf)}
 .qm-panel.lv .pain li{border-color:var(--lc)}
+
+/* телефон: шапка в две строки, все разделы видны */
+@media (max-width:860px){
+  nav{flex-wrap:wrap;overflow-x:visible;gap:2px 14px;padding-bottom:2px}
+}
+@media (max-width:420px){
+  .top .page{padding-block:8px;gap:8px}
+  .mono{width:32px;height:32px}
+  .mark{gap:8px}
+  .mark b{font-size:1.06rem}
+  .navcta{font-size:.8rem;padding:6px 11px}
+  nav{font-size:.82rem}
+}
 </style>
 </head>
 <body>

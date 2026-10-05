@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="icon" href="favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="https://voznesenskaya.ch/favicon.svg" type="image/svg+xml"><link rel="icon" href="https://voznesenskaya.ch/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="https://voznesenskaya.ch/apple-touch-icon.png">
 <title>Ирина Вознесенская · коучинг</title>
 <meta name="description" content="Помогаю построить в новой стране свою жизнь и своё дело и снова почувствовать, что ты дома. Коучинг на русском языке для тех, кто живёт в Швейцарии.">
 <link rel="canonical" href="https://voznesenskaya.ch/">
 <meta property="og:type" content="website"><meta property="og:locale" content="ru_RU"><meta property="og:site_name" content="Ирина Вознесенская · коучинг">
 <meta property="og:title" content="Ирина Вознесенская · коучинг"><meta property="og:description" content="Помогаю построить в новой стране свою жизнь и своё дело и снова почувствовать, что ты дома. Коучинг на русском языке для тех, кто живёт в Швейцарии.">
-<meta property="og:url" content="https://voznesenskaya.ch/"><meta property="og:image" content="https://voznesenskaya.ch/og-image.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:url" content="https://voznesenskaya.ch/"><meta property="og:image" content="https://voznesenskaya.ch/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="assets/fonts.css">
 <style>
@@ -282,19 +282,61 @@ footer a{color:var(--muted)}
 .act-t{flex:1;min-width:0}
 .act b{justify-content:flex-start;gap:10px}
 
+/* ---- бот: ссылка и всплывающая подсказка (data-tip) ---- */
+a.bot{color:inherit;font-weight:600;text-decoration:underline dotted;text-decoration-thickness:1.5px;text-underline-offset:3px}
+a.bot:hover{color:#B98324}
+[data-tip]{position:relative}
+[data-tip]::after{content:attr(data-tip);position:absolute;left:50%;bottom:calc(100% + 10px);transform:translate(-50%,4px);width:max-content;max-width:min(280px,80vw);padding:9px 13px;border-radius:12px;background:#3B2C22;color:#FFFCF8;font:500 13px/1.45 Manrope,system-ui,sans-serif;letter-spacing:0;text-align:left;text-transform:none;white-space:normal;box-shadow:0 10px 26px -10px rgba(40,25,10,.55);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .15s,transform .15s,visibility .15s;z-index:60}
+[data-tip]:not(:hover):not(:focus-visible)::after{display:none} /* скрытая подсказка не должна давать горизонтальную прокрутку */
+[data-tip]:hover::after,[data-tip]:focus-visible::after{opacity:1;visibility:visible;transform:translate(-50%,0)}
+@media (hover:none){[data-tip]::after{display:none!important}}
+@media print{[data-tip]::after{display:none}}
+
+
+/* телефон: шапка в две строки, все разделы видны */
+@media (max-width:860px){
+  nav{flex-wrap:wrap;overflow-x:visible;gap:2px 14px;padding-bottom:2px}
+}
+@media (max-width:420px){
+  .top .page{padding-block:8px;gap:8px}
+  .mono{width:32px;height:32px}
+  .mark{gap:8px}
+  .mark b{font-size:1.06rem}
+  .navcta{font-size:.8rem;padding:6px 11px}
+  nav{font-size:.82rem}
+}
+</style>
+<style>
+/* ===== Стиль кнопок Ирины (решено 04.10.2026) =====
+   Кнопки и плашки переливаются бликом, большие карточки — нет.
+   зелёная  — бесплатно, в подарок, бесплатные действия (знакомство, тесты, бот)
+   золотая  — цена, главный продукт, оплата
+   коричневая — остальные действия, «цена скоро»
+   При «уменьшить движение» в системе — без анимации. */
+@keyframes vipShine{0%{background-position:130% 0}60%,100%{background-position:-30% 0}}
+.btn,.navcta,.go-pill{border:0 !important;color:#fff !important;background:linear-gradient(110deg,#6E4F3C 38%,#C9A27E 50%,#6E4F3C 62%) !important;background-size:260% 100% !important;animation:vipShine 3.2s linear infinite;box-shadow:0 8px 18px -8px rgba(110,79,60,.6)}
+.btn.free,.navcta,.go-pill.free{background:linear-gradient(110deg,#4F5E3E 38%,#9DB07A 50%,#4F5E3E 62%) !important;background-size:260% 100% !important;box-shadow:0 8px 18px -8px rgba(79,94,62,.6)}
+.btn.gold,.go-pill.gold{background:linear-gradient(110deg,#B98324 38%,#F6DFA0 50%,#B98324 62%) !important;background-size:260% 100% !important;box-shadow:0 8px 18px -8px rgba(185,131,36,.7)}
+.navcta{padding:9px 18px}
+.go-pill{display:inline-flex;align-self:flex-start;align-items:center;gap:6px;border-radius:999px;padding:7px 14px;font-weight:700;font-size:.86rem;text-decoration:none}
+.btn.off{animation:none;background:transparent !important;color:var(--muted) !important;border:1.5px solid var(--line) !important;box-shadow:none}
+.btn:hover,.navcta:hover{transform:translateY(-1px)}
+@media (prefers-reduced-motion: reduce){.btn,.navcta,.go-pill{animation:none}}
+
+.copyband{background:#B98324;color:#fff;text-align:center;font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;padding:8px 16px}
+.tcard .go.go-pill{margin-top:auto}
 </style>
 </head>
 <body>
-
 <header class="top">
   <div class="page">
     <a class="mark" href="#start" aria-label="Ирина Вознесенская — в начало">
       <span class="mono av"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#FFFCF8" stroke="#6E4F3C" stroke-width="3"/><g transform="rotate(22.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(67.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(112.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(157.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(202.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(247.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(292.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(337.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(0.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(45.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(90.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(135.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(180.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(225.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(270.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(315.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><circle cx="50" cy="50" r="7" fill="#B98324"/></svg></span>
-      <span><b>Ирина Вознесенская</b><small>коуч ICF · Цюрих</small></span>
+      <span><b>Ирина Вознесенская</b><small>специалист по адаптации · коуч</small></span>
     </a>
     <nav aria-label="Разделы">
       <a href="#doors">С чего начать</a>
-      <a href="put/">Твой путь</a>
+      <a href="https://voznesenskaya.ch/put/">Твой путь</a>
       <a href="#about">Обо мне</a>
       <a href="#tests">Тесты</a>
       <a href="#contact">Контакт</a>
@@ -311,7 +353,7 @@ footer a{color:var(--muted)}
       <p class="lead">Помогаю построить в новой стране свою жизнь и своё дело и снова почувствовать, что ты дома.</p>
       <div class="hero-actions">
         <a class="btn" href="#doors">С чего начать</a>
-        <a class="btn ghost" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">Знакомство · 30 минут</a>
+        <a class="btn free" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">Знакомство · 30 минут</a>
       </div>
     </div>
     <figure class="hero-art" style="margin:0">
@@ -338,7 +380,7 @@ footer a{color:var(--muted)}
 </section>
 
 <div class="page">
-  <a class="pathband" href="put/">
+  <a class="pathband" href="https://voznesenskaya.ch/put/">
     <span class="ic" data-ico="path" data-c="#6E4F3C"></span>
     <span class="pb-txt"><b>Твой путь в новой стране</b><span>Восемь стоянок: от земли под ногами до неба над домом. С чем сталкиваешься на каждой и что помогает идти дальше.</span></span>
     <span class="pb-go">Посмотреть →</span>
@@ -401,20 +443,20 @@ footer a{color:var(--muted)}
     <div class="tgroup">
       <h3 class="tgroup-h">Жизнь в новой стране</h3>
       <div class="test-grid">
-        <a class="tcard" href="kompas/"><span class="t-top"><span class="tag">10 минут · разбор на 11 страниц</span><span class="ic sm" data-ico="compass" data-c="#6E4F3C"></span></span><h3>Компас адаптации</h3><p class="slog">Где ты сейчас в новой стране и куда идти дальше</p><p>Шесть сфер новой жизни: язык, быт, работа, люди, силы и смысл. Покажет, что уже стало опорой, где пока пусто и как ты живёшь между двумя культурами.</p><span class="go">Пройти тест →</span></a>
-        <a class="tcard" href="stupeni/"><span class="t-top"><span class="tag">20 минут · путеводитель и тест</span><span class="ic sm" data-ico="hill" data-c="#66704F"></span></span><h3>Ступени устойчивости</h3><p class="slog">Чтобы стать своей и чувствовать себя в новой стране как дома</p><p>Семь ступеней: от земли под ногами и своих людей до своего дела и смысла. Покажет, какие ступени уже держат тебя, какая поскрипывает и с чего начать.</p><span class="go">Пройти тест →</span></a>
+        <a class="tcard" href="https://voznesenskaya.ch/kompas/"><span class="t-top"><span class="tag">10 минут · разбор на 11 страниц</span><span class="ic sm" data-ico="compass" data-c="#6E4F3C"></span></span><h3>Компас адаптации</h3><p class="slog">Где ты сейчас в новой стране и куда идти дальше</p><p>Шесть сфер новой жизни: язык, быт, работа, люди, силы и смысл. Покажет, что уже стало опорой, где пока пусто и как ты живёшь между двумя культурами.</p><span class="go go-pill free">Пройти тест →</span></a>
+        <a class="tcard" href="https://voznesenskaya.ch/stupeni/"><span class="t-top"><span class="tag">20 минут · путеводитель и тест</span><span class="ic sm" data-ico="hill" data-c="#66704F"></span></span><h3>Ступени устойчивости</h3><p class="slog">Чтобы стать своей и чувствовать себя в новой стране как дома</p><p>Семь ступеней: от земли под ногами и своих людей до своего дела и смысла. Покажет, какие ступени уже держат тебя, какая поскрипывает и с чего начать.</p><span class="go go-pill free">Пройти тест →</span></a>
       </div>
     </div>
     <div class="tgroup">
       <h3 class="tgroup-h">Отношения в паре</h3>
       <div class="test-grid">
-        <a class="tcard pair" href="blizost/"><span class="t-top"><span class="tag">20 минут · для себя о своей паре</span><span class="ic sm" data-ico="together" data-c="#2E5A88"></span></span><h3>Быть рядом и быть собой</h3><p class="slog">Близость, в которой не нужно терять себя</p><p>Покажет, насколько вы близки на самом деле, по четырём опорам пары: близость, страсть, обязательство и умение оставаться собой.</p><span class="go">Пройти тест →</span></a>
-        <a class="tcard pair" href="roza-lyubvi/"><span class="t-top"><span class="tag">15 минут · можно пройти вдвоём</span><span class="ic sm" data-ico="heart" data-c="#2E5A88"></span></span><h3>Роза любви</h3><p class="slog">Чтобы снова услышать друг друга и вернуть в пару тепло</p><p>Три роли в паре: он — любовник, муж и отец, она — любовница, жена и мать. Покажет, какие роли звучат ярко, а какие стали тише.</p><span class="go">Пройти тест →</span></a>
+        <a class="tcard pair" href="https://voznesenskaya.ch/blizost/"><span class="t-top"><span class="tag">20 минут · для себя о своей паре</span><span class="ic sm" data-ico="together" data-c="#2E5A88"></span></span><h3>Быть рядом и быть собой</h3><p class="slog">Близость, в которой не нужно терять себя</p><p>Покажет, насколько вы близки на самом деле, по четырём опорам пары: близость, страсть, обязательство и умение оставаться собой.</p><span class="go go-pill free">Пройти тест →</span></a>
+        <a class="tcard pair" href="https://voznesenskaya.ch/roza-lyubvi/"><span class="t-top"><span class="tag">15 минут · можно пройти вдвоём</span><span class="ic sm" data-ico="heart" data-c="#2E5A88"></span></span><h3>Роза любви</h3><p class="slog">Чтобы снова услышать друг друга и вернуть в пару тепло</p><p>Три роли в паре: он — любовник, муж и отец, она — любовница, жена и мать. Покажет, какие роли звучат ярко, а какие стали тише.</p><span class="go go-pill free">Пройти тест →</span></a>
       </div>
     </div>
     <div class="also">
-      <a href="testy/" class="btn ghost">Все тесты на одной странице</a>
-      <a class="mini" href="https://t.me/swisscompass_bot" target="_blank" rel="noopener"><span class="ic sm" data-ico="swissguide" data-c="#6E4F3C"></span><b>Гайд по Швейцарии</b><span>Telegram-бот: бумаги, страховка, школа, врачи — по шагам и на русском</span></a>
+      <a href="https://voznesenskaya.ch/testy/" class="btn free">Все тесты на одной странице</a>
+      <a class="mini" href="https://t.me/swisscompass_bot" target="_blank" rel="noopener" data-tip="Swiss Guide — мой бесплатный Telegram-бот на русском. Ответы о жизни в Швейцарии по шагам: документы, страховки, налоги, школа, врачи. Откроется в Telegram."><span class="ic sm" data-ico="swissguide" data-c="#6E4F3C"></span><b>Гайд по Швейцарии</b><span>Telegram-бот: бумаги, страховка, школа, врачи — по шагам и на русском</span></a>
       <a class="mini" href="https://t.me/IrynaNeuroCoach_channel" target="_blank" rel="noopener"><span class="ic sm" data-ico="megaphone" data-c="#3F6FBF"></span><b>Мой Telegram-канал</b><span>Полезное о жизни в новой стране и место, где можно найти своих</span></a>
     </div>
   </div>
@@ -443,8 +485,8 @@ footer a{color:var(--muted)}
   </section>
 
   <footer>
-    <span>© 2026 Ирина Вознесенская · коуч ICF · Цюрих</span>
-    <span><a href="privacy/">Политика конфиденциальности</a> · <a href="impressum/">Выходные данные</a></span>
+    <span>© 2026 Ирина Вознесенская · специалист по адаптации · коуч</span>
+    <span><a href="https://voznesenskaya.ch/privacy/">Политика конфиденциальности</a> · <a href="https://voznesenskaya.ch/impressum/">Выходные данные</a></span>
   </footer>
 </div>
 
@@ -483,7 +525,7 @@ const ICONS = {
   anchor:   (c, f, s) => `<circle cx="12" cy="5.5" r="2.3" fill="${f}" stroke="${c}" ${s}/><path d="M12 7.8V20M8 11h8M4.5 14c.5 3.5 3.6 6 7.5 6s7-2.5 7.5-6" fill="none" stroke="${c}" ${s}/>`,
   /* путь, рефлексия, эксперимент */
   compass:  (c, f, s) => `<circle cx="12" cy="12" r="8.5" fill="${f}" stroke="${c}" ${s}/><path d="M14.8 9.2l-1.8 4.8-4.8 1.8 1.8-4.8z" fill="${c}" fill-opacity=".85" stroke="${c}" stroke-width="1.2" stroke-linejoin="round"/>`,
-  path:     (c, f, s) => `<path d="M3 20.5H8V16.5H12V12.5H16V8.5H21V20.5Z" fill="${f}" stroke="none"/><path d="M3 20.5H8V16.5H12V12.5H16V8.5H21" fill="none" stroke="${c}" ${s}/><path d="M18.5 8.5V3" stroke="${c}" ${s}/><path d="M18.5 3.2H22L21 4.6L22 6H18.5" fill="#fff" stroke="${c}" stroke-width="1.6" stroke-linejoin="round"/><circle cx="5.5" cy="17.3" r="1.3" fill="${c}"/>`,
+  path:     (c, f, s) => `<path d="M3.5 20.5V17H8v-3.8h4.5V9.5H17v11z" fill="${f}" stroke="${c}" ${s}/><path d="M4.5 12 13 4.5M10 4.5h3v3M20.5 20.5H3" fill="none" stroke="${c}" ${s}/>`,
   telegram: (c, f, s) => `<path d="M3.2 11.4L20.2 4.3C20.8 4.1 21.3 4.6 21.2 5.2L18.4 19C18.3 19.6 17.6 19.9 17.1 19.5L12.6 16.2L10.2 18.6C9.9 18.9 9.4 18.7 9.4 18.3V14.8L17 7.8L7.6 13.4L3.4 12.2C2.8 12 2.7 11.6 3.2 11.4Z" fill="${f}" stroke="${c}" ${s}/>`,
   instagram:(c, f, s) => `<rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="${f}" stroke="${c}" ${s}/><circle cx="12" cy="12" r="4" fill="#fff" stroke="${c}" ${s}/><circle cx="16.9" cy="7.1" r="1.1" fill="${c}"/>`,
   mail:     (c, f, s) => `<rect x="3" y="5.5" width="18" height="13" rx="2.5" fill="${f}" stroke="${c}" ${s}/><path d="M3.8 7L12 12.8L20.2 7" fill="none" stroke="${c}" ${s}/>`,
@@ -503,7 +545,22 @@ const ICONS = {
   lantern:  (c, f, s) => `<path d="M9 6h6l1.5 3v8L15 20H9l-1.5-3V9z" fill="${f}" stroke="${c}" ${s}/><path d="M10 3.5h4M12 3.5V6M12 11v4" stroke="${c}" ${s}/>`,
   cup:      (c, f, s) => `<path d="M4.5 9h12v5a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5z" fill="${f}" stroke="${c}" ${s}/><path d="M16.5 10.5h1.5a2.3 2.3 0 0 1 0 4.6h-1.8M8 3.5c-.8 1 .8 2-.1 3M12 3.5c-.8 1 .8 2-.1 3" fill="none" stroke="${c}" ${s}/>`,
   mask:     (c, f, s) => `<path d="M4 6.5c5-2 11-2 16 0v5.5c0 4.5-3.6 8-8 8s-8-3.5-8-8z" fill="${f}" stroke="${c}" ${s}/><path d="M7.5 11c1-.8 2.5-.8 3.5 0M13 11c1-.8 2.5-.8 3.5 0M9 15.5c1.8 1.2 4.2 1.2 6 0" fill="none" stroke="${c}" ${s}/>`,
-  lock:     (c, f, s) => `<rect x="5" y="10.5" width="14" height="10" rx="2" fill="${f}" stroke="${c}" ${s}/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5M12 14.5v2.5" fill="none" stroke="${c}" ${s}/>`
+  lock:     (c, f, s) => `<rect x="5" y="10.5" width="14" height="10" rx="2" fill="${f}" stroke="${c}" ${s}/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5M12 14.5v2.5" fill="none" stroke="${c}" ${s}/>`,
+  /* направления справочника «Свои люди в Швейцарии» (03.10.2026) */
+  dirStatus: (c, f, s) => `<rect x="5" y="3" width="14" height="18" rx="2" fill="${f}" stroke="${c}" ${s}/><circle cx="12" cy="10" r="3.3" fill="none" stroke="${c}" ${s}/><path d="M8.7 10h6.6M12 6.7c1.3 1.5 1.3 5.1 0 6.6M12 6.7c-1.3 1.5-1.3 5.1 0 6.6M9 17h6" fill="none" stroke="${c}" ${s}/>`,
+  dirLaw:    (c, f, s) => `<path d="M12 4v15.5M7.5 19.5h9M5 7h14M7 7l-3 6M7 7l3 6M17 7l-3 6M17 7l3 6" fill="none" stroke="${c}" ${s}/><path d="M4 13h6a3 3 0 0 1-6 0zM14 13h6a3 3 0 0 1-6 0z" fill="${f}" stroke="${c}" ${s}/><circle cx="12" cy="4" r="1.2" fill="${c}"/>`,
+  dirMoney:  (c, f, s) => `<path d="M3.5 6.5v4c0 1.3 2.5 2.3 5.5 2.3s5.5-1 5.5-2.3v-4" fill="${f}" stroke="${c}" ${s}/><ellipse cx="9" cy="6.5" rx="5.5" ry="2.3" fill="${f}" stroke="${c}" ${s}/><path d="M9.5 14.5v4c0 1.3 2.5 2.3 5.5 2.3s5.5-1 5.5-2.3v-4" fill="${f}" stroke="${c}" ${s}/><ellipse cx="15" cy="14.5" rx="5.5" ry="2.3" fill="${f}" stroke="${c}" ${s}/>`,
+  dirInsure: (c, f, s) => `<path d="M3 12.5a9 9 0 0 1 18 0c-1.5-1.2-3-1.2-4.5 0-1.5-1.2-3-1.2-4.5 0-1.5-1.2-3-1.2-4.5 0-1.5-1.2-3-1.2-4.5 0z" fill="${f}" stroke="${c}" ${s}/><path d="M12 12.5v6a2 2 0 0 1-4 0M12 3.5v-1" fill="none" stroke="${c}" ${s}/>`,
+  dirHealth: (c, f, s) => `<path d="M5.5 3h1.5M12 3h1.5M6.2 3v5a3.8 3.8 0 0 0 7.6 0V3M10 11.8v2.7a4.5 4.5 0 0 0 9 0v-2.3" fill="none" stroke="${c}" ${s}/><circle cx="19" cy="10" r="2.3" fill="${f}" stroke="${c}" ${s}/>`,
+  dirPsy:    (c, f, s) => `<path d="M14.5 21v-3h2a2 2 0 0 0 2-2v-2.5l1.6-.6-1.7-3A7 7 0 1 0 8 17.6V21" fill="${f}" stroke="${c}" ${s}/><path d="M11.6 13.8l-2.3-2.2a1.5 1.5 0 0 1 2.3-1.9 1.5 1.5 0 0 1 2.3 1.9z" fill="${c}" stroke="${c}" stroke-width="1" stroke-linejoin="round"/>`,
+  dirCoach:  (c, f, s) => `<path d="M12 6a5.2 5.2 0 0 0-3.1 9.4c.6.5.9 1.1.9 1.9v.7h4.4v-.7c0-.8.3-1.4.9-1.9A5.2 5.2 0 0 0 12 6z" fill="${f}" stroke="${c}" ${s}/><path d="M10.1 21h3.8M12 1.8v1.7M5.4 4.5l1.2 1.2M18.6 4.5l-1.2 1.2M3.2 11h1.7M19.1 11h1.7M10.4 13.4c.6-1 1-1.5 1.6-1.5s1 .5 1.6 1.5" fill="none" stroke="${c}" ${s}/>`,
+  target:    (c, f, s) => `<circle cx="11" cy="13" r="7.6" fill="${f}" stroke="${c}" ${s}/><circle cx="11" cy="13" r="4" fill="none" stroke="${c}" ${s}/><circle cx="11" cy="13" r="1.2" fill="${c}"/><path d="M11 13 19.7 4.3M16.6 4.3h3.1v3.1" fill="none" stroke="${c}" ${s}/>`,
+  drop:      (c, f, s) => `<path d="M12 3.2c3.6 4.3 6.2 7.6 6.2 10.7a6.2 6.2 0 0 1-12.4 0c0-3.1 2.6-6.4 6.2-10.7z" fill="${f}" stroke="${c}" ${s}/><path d="M12 18.5v-4.3c0-2 1.3-3.3 3.3-3.6-.1 2-1.3 3.3-3.3 3.6M12 15.5c0-1.4-.9-2.4-2.4-2.6" fill="none" stroke="${c}" ${s}/>`,
+dirBody:   (c, f, s) => `<circle cx="11" cy="9.5" r="6.2" fill="${f}" stroke="${c}" ${s}/><path d="M11 15.7v5.3M8.4 21h5.2M8 7.6a3.6 3.6 0 0 1 2.4-1.9" fill="none" stroke="${c}" ${s}/><path d="M19.3 1.8c.3 1.7 1 2.4 2.6 2.7-1.6.3-2.3 1-2.6 2.7-.3-1.7-1-2.4-2.6-2.7 1.6-.3 2.3-1 2.6-2.7z" fill="${c}" stroke="${c}" stroke-width="1" stroke-linejoin="round"/>`,
+  dirKids:   (c, f, s) => `<circle cx="8" cy="5" r="2.3" fill="${f}" stroke="${c}" ${s}/><path d="M5.5 21v-6l-1-1v-4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v4l-1 1v6" fill="${f}" stroke="${c}" ${s}/><circle cx="17" cy="11" r="1.9" fill="${f}" stroke="${c}" ${s}/><path d="M15.2 21v-3.8l-.8-.8v-2a1.5 1.5 0 0 1 1.5-1.5h2.2a1.5 1.5 0 0 1 1.5 1.5v2l-.8.8V21M11.5 13.5h2.9" fill="${f}" stroke="${c}" ${s}/>`,
+  dirLearn:  (c, f, s) => `<path d="M12 4 2.5 9 12 14l9.5-5z" fill="${f}" stroke="${c}" ${s}/><path d="M6.5 11.3V16c1.6 1.5 3.5 2.3 5.5 2.3s3.9-.8 5.5-2.3v-4.7M21.5 9v5.5" fill="none" stroke="${c}" ${s}/>`,
+  dirHome:   (c, f, s) => `<path d="M5.5 9.5V20h13V9.5" fill="${f}" stroke="${c}" ${s}/><path d="M3.5 11 12 4l8.5 7M10 20v-5h4v5M16 6.2V4.5h2v3.3" fill="none" stroke="${c}" ${s}/>`,
+  dirEvents: (c, f, s) => `<path d="M5.5 20.5v-6a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v6" fill="${f}" stroke="${c}" ${s}/><path d="M3.8 20.5h16.4M5.5 16.2c1.2 1 2.5 1 3.6 0 1.2 1 2.5 1 3.6 0 1.2 1 2.5 1 3.6 0 .7.6 1.4.8 2.2.6M12 12.5V9.3" fill="none" stroke="${c}" ${s}/><path d="M12 4.5c1.1 1.3 1.1 2.6 0 3.3-1.1-.7-1.1-2-0-3.3z" fill="${c}" stroke="${c}" stroke-width="1" stroke-linejoin="round"/>`
 };
 /* светлый тон цвета для заливки по умолчанию */
 const icoSoft = c => { const h = String(c).replace('#', ''); if (h.length !== 6) return 'none';
@@ -521,7 +578,8 @@ const T = '';
 const MEET = { ic: 'telegram', c: '#3F6FBF', t: 'Знакомство, 30 минут', d: 'Онлайн, бесплатно. Напиши в Telegram слово ВСТРЕЧА.', h: 'https://t.me/IrynaNeuroCoach' };
 const KOMPAS = { ic: 'compass', c: '#6E4F3C', t: 'Тест «Компас адаптации», 10 минут', d: 'Покажет, какая сфера новой жизни просела и куда идти дальше.', h: T + 'kompas/' };
 const STUPENI = { ic: 'path', c: '#66704F', t: 'Тест «Ступени устойчивости», 20 минут', d: 'Путеводитель и тест: на что ты опираешься сейчас и с какой ступени начинать.', h: T + 'stupeni/' };
-const BOT = { ic: 'swissguide', c: '#B98324', t: 'Бот «Гайд по Швейцарии»', d: 'Ответы на практические вопросы по шагам и на русском. @swisscompass_bot', h: 'https://t.me/swisscompass_bot' };
+const BOT_TIP = 'Swiss Guide — мой бесплатный Telegram-бот на русском. Ответы о жизни в Швейцарии по шагам: документы, страховки, налоги, школа, врачи. Откроется в Telegram.';
+const BOT = { tip: BOT_TIP, ic: 'swissguide', c: '#B98324', t: 'Бот «Гайд по Швейцарии»', d: 'Ответы на практические вопросы по шагам и на русском. @swisscompass_bot', h: 'https://t.me/swisscompass_bot' };
 const CHANNEL = { ic: 'megaphone', c: '#3F6FBF', t: 'Мой Telegram-канал', d: 'Полезное о жизни в новой стране и люди, которые проходят через то же самое.', h: 'https://t.me/IrynaNeuroCoach_channel' };
 const EDGE_HEALTH = 'Если сил нет месяцами, если болит тело, если не спится, это к врачу, и это не стыдно. Здесь мы про другое: как вернуть ритм и перестать требовать от себя невозможного, пока всё вокруг чужое.';
 
@@ -529,7 +587,7 @@ const DOORS = [
   { q: 'Я не понимаю, как здесь жить', pain: ["Каждое письмо из ведомства — как экзамен", "Не знаю, куда звонить и что спросить", "Страховка, школа, врачи — всё по новым правилам", "Боюсь ошибиться и что-то пропустить"], ic: 'key', c: '#B98324', hint: 'бумаги, школа, врачи',
     h: 'Сначала разберёмся с правилами',
     say: ['Разрешения, страховка, школа, врачи, налоги: в первые месяцы всё это наваливается разом, и каждое письмо требует сил. Это нормально, и это решается по шагам.',
-          'Если ты живёшь в Швейцарии, начни с бота: в нём собраны ответы на самые частые вопросы. Если в другой стране, начни с «Компаса адаптации».'],
+          'Если ты живёшь в Швейцарии, начни с [[бота]]: в нём собраны ответы на самые частые вопросы. Если в другой стране, начни с «Компаса адаптации».'],
     acts: [BOT, KOMPAS],
     next: 'Когда быт налажен, часто приходит другой вопрос: а что дальше со мной? Об этом можно поговорить на знакомстве.' },
   { q: 'Мне здесь тяжело', pain: ["Всё время в напряжении, как будто иду по тонкому льду", "Здесь всё требует втрое больше сил", "«У нас всё нормально», а внутри пусто", "Не с кем поговорить по-настоящему"], ic: 'earth', c: '#66704F', hint: 'тоска, нет сил, одиноко',
@@ -563,7 +621,7 @@ const SPHERES = [
     say: ['Для начала не нужно десять подруг. Нужен один свой человек и место, где можно быть собой. Начни с канала: там собираются те, кто проходит через то же самое.'],
     acts: [CHANNEL, MEET] },
   { q: 'Я до сих пор боюсь говорить', pain: ["Знаю слова, но молчу", "Со мной говорят медленно и громко, как с маленькой", "Не могу сама решить простой вопрос по телефону"], ic: 'speech', c: '#B98324', h: 'Язык без стыда',
-    say: ['С практическими вопросами поможет бот. А страх ошибиться, стыд за акцент и привычку молчать мы разбираем на сессиях. Дело здесь не в грамматике, а в праве говорить.'],
+    say: ['С практическими вопросами поможет [[бот]]. А страх ошибиться, стыд за акцент и привычку молчать мы разбираем на сессиях. Дело здесь не в грамматике, а в праве говорить.'],
     acts: [BOT, MEET] },
   { q: 'У меня нет своих денег', pain: ["Живу на деньги мужа и чувствую себя нахлебницей", "Нет ничего своего", "Не знаю, сколько я стою здесь"], ic: 'seed', c: '#66704F', h: 'Вернуть себе свою цену',
     say: ['Разберёмся, почему жизнь без своих денег так бьёт по достоинству, что ты умеешь на самом деле, что из этого нужно здесь и как назвать свою цену.'],
@@ -574,7 +632,8 @@ const SPHERES = [
 ];
 
 const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-function actHtml(a){ const ext = /^https?:/.test(a.h); return `<a class="act" href="${a.h}"${ext ? ' target="_blank" rel="noopener"' : ''}><b>${a.ic ? `<span class="act-ic">${ico(a.ic, a.c, null, 20)}</span>` : ''}<span class="act-t">${esc(a.t)}</span><span aria-hidden="true">→</span></b><span>${esc(a.d)}</span></a>`; }
+const botify = s => s.replace(/\[\[(.+?)\]\]/g, (m, w) => `<a class="bot" href="${BOT.h}" target="_blank" rel="noopener" data-tip="${BOT_TIP}">${w}</a>`);
+function actHtml(a){ const ext = /^https?:/.test(a.h); return `<a class="act" href="${a.h}"${ext ? ' target="_blank" rel="noopener"' : ''}${a.tip ? ` data-tip="${esc(a.tip)}"` : ''}><b>${a.ic ? `<span class="act-ic">${ico(a.ic, a.c, null, 20)}</span>` : ''}<span class="act-t">${esc(a.t)}</span><span aria-hidden="true">→</span></b><span>${esc(a.d)}</span></a>`; }
 function modalHtml(x, kind){
   const sage = kind === 'sphere';
   return `<div class="qm-top">
@@ -584,7 +643,7 @@ function modalHtml(x, kind){
     </div>
     <div class="qm-panel${sage ? ' sage' : ''}">
       <div class="qm-col"><h3>Как это звучит</h3><ul class="pain">${x.pain.map(p => `<li>${esc(p)}</li>`).join('')}</ul></div>
-      <div class="qm-col"><h3>${esc(x.h)}</h3>${x.say.map(p => `<p>${esc(p)}</p>`).join('')}${x.edge ? `<p class="edge">${esc(x.edge)}</p>` : ''}</div>
+      <div class="qm-col"><h3>${esc(x.h)}</h3>${x.say.map(p => `<p>${botify(esc(p))}</p>`).join('')}${x.edge ? `<p class="edge">${esc(x.edge)}</p>` : ''}</div>
       <div class="qm-col"><h3>С чего начать сегодня</h3>${x.acts.map(actHtml).join('')}</div>
     </div>
     <div class="qm-foot">${x.next ? `<p class="next"><b>Дальше.</b> ${esc(x.next)}</p>` : '<span></span>'}

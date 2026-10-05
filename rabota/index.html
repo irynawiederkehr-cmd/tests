@@ -1,0 +1,1064 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Работа со мной · Ирина Вознесенская</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="icon" href="../favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="description" content="Не готовые советы, а твой собственный путь в новой стране. С чем ко мне приходят, как проходит первая встреча и с чего можно начать бесплатно.">
+<link rel="canonical" href="https://voznesenskaya.ch/rabota/">
+<meta property="og:type" content="website"><meta property="og:locale" content="ru_RU"><meta property="og:site_name" content="Ирина Вознесенская · коучинг">
+<meta property="og:title" content="Работа со мной · Ирина Вознесенская"><meta property="og:description" content="Не готовые советы, а твой собственный путь в новой стране. С чем ко мне приходят, как проходит первая встреча и с чего можно начать бесплатно.">
+<meta property="og:url" content="https://voznesenskaya.ch/rabota/"><meta property="og:image" content="https://voznesenskaya.ch/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/fonts.css"><link rel="stylesheet" href="../assets/fonts.css">
+<style>
+
+
+[hidden]{display:none!important}
+/* Layout: тёплая страница-письмо. Слева слово, справа шерстяная картина; дальше «двери» — фразы, в которых она узнаёт себя */
+:root{
+  --bg:#F4EDE3;       /* бежевый фон коучинга, как в тестах */
+  --paper:#FFFCF8;
+  --ink:#2F2924;
+  --muted:#7A6E62;
+  --line:#E5D9C9;
+  --brown:#6E4F3C;    /* главный акцент, как в тестах */
+  --mustard:#B98324;  /* шарф героини */
+  --mustard-soft:#F3E3C2;
+  --sage:#66704F;     /* пальто героини */
+  --sage-soft:#E3E6D6;
+  --soft:#EADFCF;
+  --blue:#2E5A88;     /* тесты о паре — голубой, как в тестах */
+  --blue-soft:#EAF2FA;
+  --blue-line:#D3E1EE;
+  --display:"Forum","Cormorant Garamond",Georgia,serif;
+  --body:"Manrope","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#221D19; --paper:#2C2621; --ink:#F1E9DF; --muted:#B4A796; --line:#3E362F; --brown:#E1C2A6;
+  --mustard:#E2B45C; --mustard-soft:#3D321F; --sage:#B4BF97; --sage-soft:#2E3226; --soft:#3A3129; --blue:#9CC2EA; --blue-soft:#1D2733; --blue-line:#2C3A4A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#221D19; --paper:#2C2621; --ink:#F1E9DF; --muted:#B4A796; --line:#3E362F; --brown:#E1C2A6;
+  --mustard:#E2B45C; --mustard-soft:#3D321F; --sage:#B4BF97; --sage-soft:#2E3226; --soft:#3A3129; --blue:#9CC2EA; --blue-soft:#1D2733; --blue-line:#2C3A4A; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.65;margin:0}
+.page{max-width:1120px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.12;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+.eyebrow{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+:focus-visible{outline:3px solid var(--mustard);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .page{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none}
+.mono{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--brown);display:grid;place-items:center;font-family:var(--display);font-size:1.05rem;color:var(--brown);letter-spacing:.02em}
+.mark b{font-family:var(--display);font-weight:400;font-size:1.25rem;line-height:1}
+.mark small{display:block;font-size:.72rem;color:var(--muted);letter-spacing:.04em;margin-top:3px}
+nav{display:flex;gap:22px;font-size:.88rem;font-weight:600}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.navcta{font-size:.86rem;font-weight:700;text-decoration:none;border:1.5px solid var(--brown);color:var(--brown);border-radius:999px;padding:8px 16px;white-space:nowrap}
+@media (max-width:860px){
+  .top .page{flex-wrap:wrap;row-gap:6px}
+  nav{order:3;width:100%;gap:16px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+  nav::-webkit-scrollbar{display:none}
+  nav a{white-space:nowrap}
+}
+@media (max-width:420px){.mark small{display:none}.navcta{padding:7px 12px}}
+
+/* ---------- первый экран ---------- */
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center;padding-block:48px 40px}
+.hero-text{display:flex;flex-direction:column;gap:22px;min-width:0}
+.hero h1{font-size:clamp(2.5rem,6.2vw,4.4rem);color:var(--ink)}
+.hero h1 em{font-style:normal;color:var(--brown)}
+.hero .lead{font-size:1.14rem;max-width:34ch;color:var(--ink)}
+.who{font-size:.86rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 14px}
+.who span+span::before{content:"·";margin-right:14px;color:var(--line)}
+@media (max-width:520px){.who span+span::before{content:none}.who{gap:4px 12px}}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{font:inherit;font-weight:700;font-size:.95rem;border:none;border-radius:999px;padding:14px 24px;cursor:pointer;background:var(--brown);color:var(--paper);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--brown);border:1.5px solid var(--brown)}
+.hero-art{position:relative;min-width:0}
+.hero-art img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:941/1672;border-radius:26px;box-shadow:0 24px 50px -24px rgba(60,40,20,.45)}
+.hero-art figcaption{margin-top:14px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px 16px;font-size:.84rem}
+.hero-art figcaption b{display:block;font-family:var(--display);font-weight:400;font-size:1.1rem;color:var(--brown)}
+@media (max-width:860px){.hero{grid-template-columns:1fr;gap:28px;padding-block:32px 24px}.hero-art{max-width:360px;margin:0 auto;width:100%}}
+
+/* ---------- двери ---------- */
+section{padding-block:56px}
+.sec-head{display:flex;flex-direction:column;gap:10px;max-width:640px;margin-bottom:28px}
+.sec-head h2{font-size:clamp(2rem,4.6vw,2.9rem)}
+.sec-head p{color:var(--muted);font-size:1.02rem}
+.doors{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.door-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media (max-width:980px){.door-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.door-grid{grid-template-columns:1fr}}
+.door{font:inherit;text-align:left;cursor:pointer;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:18px;padding:22px 20px 18px;display:flex;flex-direction:column;gap:14px;min-height:150px;transition:border-color .15s,transform .15s,background .15s;min-width:0}
+.door:hover{border-color:var(--brown);transform:translateY(-2px)}
+.door q{font-family:var(--display);font-size:1.5rem;line-height:1.15;quotes:"«" "»"}
+.door small{margin-top:auto;font-size:.8rem;color:var(--muted);display:flex;justify-content:space-between;gap:8px}
+.door[aria-expanded="true"]{background:var(--mustard-soft);border-color:var(--mustard)}
+.door[aria-expanded="true"] small span:last-child{transform:rotate(90deg)}
+.door small span:last-child{transition:transform .2s}
+.more-link{margin-top:22px;font:inherit;font-weight:700;color:var(--brown);background:none;border:none;padding:6px 0;cursor:pointer;font-size:.98rem;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
+.spheres{margin-top:18px}
+.sphere-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media (max-width:820px){.sphere-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.sphere-grid{grid-template-columns:1fr}}
+.sphere{font:inherit;text-align:left;cursor:pointer;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;font-weight:600;font-size:.98rem;display:flex;justify-content:space-between;gap:10px;align-items:center;min-width:0}
+.sphere:hover{border-color:var(--brown)}
+.sphere[aria-expanded="true"]{background:var(--sage-soft);border-color:var(--sage)}
+.panel{margin-top:18px;background:var(--bg);border:1.5px solid var(--mustard);border-radius:20px;padding:28px;display:grid;grid-template-columns:1.1fr 1fr;gap:28px;animation:rise .25s ease-out}
+.panel.sage{border-color:var(--sage)}
+@keyframes rise{from{transform:translateY(8px)}}
+@media (max-width:820px){.panel{grid-template-columns:1fr;padding:22px 18px;gap:20px}}
+.panel h3{font-size:1.75rem;margin-bottom:12px}
+.panel .say{display:flex;flex-direction:column;gap:12px;min-width:0}
+.panel .say p{max-width:60ch}
+.todo{display:flex;flex-direction:column;gap:10px;min-width:0}
+.todo .eyebrow{margin-bottom:2px}
+.act{display:flex;flex-direction:column;gap:4px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px;text-decoration:none;color:var(--ink);transition:border-color .15s}
+a.act:hover{border-color:var(--brown)}
+.act b{font-weight:700;font-size:.98rem;display:flex;justify-content:space-between;gap:10px}
+.act span{font-size:.88rem;color:var(--muted)}
+.edge{font-size:.86rem;color:var(--muted);border-left:3px solid var(--line);padding-left:12px}
+.next{font-size:.92rem}
+.next b{color:var(--brown)}
+.notme{font-size:.86rem;color:var(--muted)}
+.notme button{font:inherit;color:var(--brown);background:none;border:none;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+
+
+/* ---------- всплывающее окно ---------- */
+dialog.qm{border:0;padding:0;background:transparent;width:min(100% - 24px,1080px);max-height:92vh;color:var(--ink)}
+dialog.qm[open]{animation:qmIn .28s cubic-bezier(.2,.8,.2,1)}
+@keyframes qmIn{from{opacity:0;transform:translateY(14px) scale(.98)}}
+dialog.qm::backdrop{background:rgba(47,41,36,.62);backdrop-filter:blur(3px)}
+.qm-card{background:var(--paper);border-radius:28px;padding:clamp(20px,3.4vw,40px);display:flex;flex-direction:column;gap:clamp(18px,2.6vw,28px);max-height:92vh;overflow-y:auto;box-shadow:0 30px 80px -30px rgba(40,25,10,.6)}
+.qm-top{display:flex;align-items:flex-start;gap:16px}
+.qm-head{flex:1;display:flex;flex-direction:column;gap:6px;min-width:0}
+.qm-title{font-size:clamp(1.8rem,4.4vw,3.2rem);line-height:1.04}
+.qm-close{flex:none;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);font-size:1.05rem;cursor:pointer;display:grid;place-items:center;transition:background .15s,border-color .15s}
+.qm-close:hover{background:var(--mustard-soft);border-color:var(--mustard)}
+.qm-panel{background:var(--mustard-soft);border-radius:20px;padding:clamp(18px,2.8vw,32px);display:grid;grid-template-columns:.9fr 1.2fr 1fr;gap:clamp(18px,2.6vw,32px)}
+.qm-panel.sage{background:var(--sage-soft)}
+@media (max-width:900px){.qm-panel{grid-template-columns:1fr}}
+.qm-col{display:flex;flex-direction:column;gap:12px;min-width:0}
+.qm-col h3{font-size:1.4rem;line-height:1.15}
+.qm-col p{font-size:.95rem}
+.pain{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.pain li{font-family:var(--display);font-size:1.12rem;line-height:1.3;padding-left:16px;border-left:2px solid var(--mustard)}
+.qm-panel.sage .pain li{border-color:var(--sage)}
+.qm-col .act{background:var(--paper)}
+.qm-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;align-items:baseline}
+.qm-foot .next{max-width:60ch}
+.qm-foot .notme button{font:inherit;color:var(--brown);background:none;border:none;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- обо мне ---------- */
+.about{display:grid;grid-template-columns:.75fr 1.25fr;gap:56px;align-items:center}
+@media (max-width:860px){.about{grid-template-columns:1fr;gap:28px}.about img{max-width:360px;margin:0 auto}}
+.about img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:941/1672;border-radius:26px;box-shadow:0 24px 50px -24px rgba(60,40,20,.4)}
+.about-text{display:flex;flex-direction:column;gap:16px;min-width:0}
+.about-text h2{font-size:clamp(2rem,4.6vw,2.9rem)}
+.about-text p{max-width:60ch}
+.creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.creds span{font-size:.8rem;font-weight:600;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+.how-i{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:6px}
+@media (max-width:520px){.how-i{grid-template-columns:1fr}}
+.how-i div{background:var(--paper);border-radius:14px;padding:14px 16px;font-size:.9rem;color:var(--muted)}
+.how-i b{display:block;font-family:var(--display);font-weight:400;font-size:1.2rem;color:var(--ink);margin-bottom:2px}
+
+.two{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.two-lead{font-weight:600}
+.two-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:560px){.two-grid{grid-template-columns:1fr}}
+.prac{border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:6px;min-width:0;border:1.5px solid var(--line);background:var(--paper)}
+.prac.psy{background:var(--blue-soft);border-color:var(--blue-line)}
+.prac .tag{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sage)}
+.prac.psy .tag{color:var(--blue)}
+.prac b{font-family:var(--display);font-weight:400;font-size:1.3rem;line-height:1.2}
+.prac p{font-size:.9rem;color:var(--muted)}
+.prac .links{font-size:.86rem;font-weight:700;margin-top:auto}
+.prac .links a{color:var(--brown)}
+.prac.psy .links a{color:var(--blue)}
+.two-note{font-size:.82rem;color:var(--muted)}
+
+.ic{flex:none;display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:var(--paper);border:1.5px solid var(--line)}
+.ic.sm{width:46px;height:46px}
+.tcard .ic{width:56px;height:56px}
+.door .ic{background:var(--paper)}
+.door-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.sphere .lbl{display:flex;align-items:center;gap:12px}
+.step-top{display:flex;align-items:center;gap:14px}
+.tcard .t-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.prac .p-top{display:flex;align-items:center;gap:10px}
+.limits .l-top{display:flex;align-items:center;gap:14px}
+.clist .c-l{display:flex;align-items:center;gap:10px}
+
+/* ---------- как начать ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1.5px solid var(--brown)}
+@media (max-width:820px){.steps{grid-template-columns:1fr}}
+.step{padding:22px 24px 6px 0;display:flex;flex-direction:column;gap:8px;min-width:0}
+.step+.step{padding-left:24px;border-left:1px solid var(--line)}
+@media (max-width:820px){.step+.step{padding-left:0;border-left:none;border-top:1px solid var(--line)}}
+.step i{font-style:normal;font-family:var(--display);font-size:2.6rem;line-height:1;color:var(--mustard)}
+.step h3{font-size:1.4rem}
+.step p{color:var(--muted);font-size:.95rem}
+.codeword{display:inline-block;font-weight:700;letter-spacing:.12em;color:var(--brown);background:var(--mustard-soft);border-radius:6px;padding:0 6px}
+
+/* ---------- бесплатно ---------- */
+.free{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.free-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media (max-width:980px){.free-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.free-grid{grid-template-columns:1fr}}
+.fcard{display:flex;flex-direction:column;gap:10px;text-decoration:none;color:var(--ink);background:var(--bg);border-radius:18px;padding:20px;border:1.5px solid transparent;transition:border-color .15s;min-width:0}
+.fcard:hover{border-color:var(--brown)}
+.fcard .tag{font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sage)}
+.fcard h3{font-size:1.45rem}
+.fcard p{font-size:.9rem;color:var(--muted)}
+.fcard .go{margin-top:auto;font-weight:700;font-size:.88rem;color:var(--brown)}
+
+
+.tgroup{display:flex;flex-direction:column;gap:12px;margin-bottom:26px}
+.tgroup-h{font-size:1.3rem;color:var(--muted)}
+.test-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media (max-width:700px){.test-grid{grid-template-columns:1fr}}
+.tcard{display:flex;flex-direction:column;gap:8px;text-decoration:none;color:var(--ink);background:var(--bg);border-radius:20px;padding:22px 22px 18px;border:1.5px solid var(--line);transition:border-color .15s,transform .15s;min-width:0}
+.tcard:hover{border-color:var(--brown);transform:translateY(-2px)}
+.tcard.pair{background:var(--blue-soft);border-color:var(--blue-line)}
+.tcard.pair:hover{border-color:var(--blue)}
+.tcard .tag{font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sage)}
+.tcard.pair .tag,.tcard.pair .go{color:var(--blue)}
+.tcard h3{font-size:1.65rem}
+.tcard .slog{font-family:var(--display);font-size:1.08rem;color:var(--brown);line-height:1.3}
+.tcard.pair .slog{color:var(--blue)}
+.tcard p{font-size:.92rem;color:var(--muted)}
+.tcard .go{margin-top:auto;padding-top:6px;font-weight:700;font-size:.9rem;color:var(--brown)}
+.also{display:grid;grid-template-columns:auto 1fr 1fr;gap:12px;align-items:stretch}
+@media (max-width:820px){.also{grid-template-columns:1fr}}
+.also .btn{justify-content:center;align-self:center}
+.mini{display:flex;flex-direction:column;gap:2px;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:12px 16px;min-width:0}
+.mini:hover{border-color:var(--brown)}
+.mini b{font-size:.95rem}
+.mini span{font-size:.84rem;color:var(--muted)}
+/* ---------- граница и контакт ---------- */
+.limits{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:start}
+@media (max-width:820px){.limits{grid-template-columns:1fr;gap:16px}}
+.limits h2{font-size:clamp(1.7rem,3.6vw,2.2rem)}
+.limits p{color:var(--muted);max-width:62ch}
+.contact{background:linear-gradient(160deg,var(--soft) 0%,var(--bg) 100%);border-radius:28px;padding:44px 40px;display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+@media (max-width:820px){.contact{grid-template-columns:1fr;padding:30px 22px}}
+.contact h2{font-size:clamp(2rem,4.6vw,2.9rem);margin-bottom:12px}
+.contact p{max-width:46ch}
+.clist{display:flex;flex-direction:column;gap:10px}
+.clist a,.clist div{display:flex;justify-content:space-between;gap:12px;align-items:center;background:var(--paper);border-radius:14px;padding:14px 16px;text-decoration:none;color:var(--ink);font-weight:600;font-size:.95rem;min-width:0}
+.clist span{color:var(--muted);font-weight:500;font-size:.85rem;overflow-wrap:anywhere;text-align:right}
+footer{padding-block:28px 40px;font-size:.82rem;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+footer a{color:var(--muted)}
+
+/* ---------- полоса-ссылка на страницу «Путь» ---------- */
+.pathband{margin-top:40px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;text-decoration:none;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:22px;padding:20px 24px;transition:border-color .15s}
+.pathband:hover{border-color:var(--brown)}
+.pb-txt{flex:1 1 300px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.pb-txt b{font-family:var(--display);font-weight:400;font-size:1.5rem;line-height:1.15}
+.pb-txt span{font-size:.92rem;color:var(--muted)}
+.pb-go{font-weight:700;color:var(--brown);white-space:nowrap}
+
+.mono.av{border:none;padding:0}
+.mono.av svg{width:100%;height:100%;display:block}
+
+.act b{align-items:center}
+.act-ic{flex:none;width:32px;height:32px;border-radius:50%;background:var(--bg);display:grid;place-items:center;margin-right:2px}
+.act b > .act-ic + *{flex:1}
+.mini{flex-direction:row;flex-wrap:wrap;align-items:center;column-gap:10px}
+.mini .ic.sm{width:38px;height:38px}
+.mini b{flex:1 1 auto}
+.mini span:not(.ic){flex-basis:100%}
+.act-t{flex:1;min-width:0}
+.act b{justify-content:flex-start;gap:10px}
+
+/* ---- бот: ссылка и всплывающая подсказка (data-tip) ---- */
+a.bot{color:inherit;font-weight:600;text-decoration:underline dotted;text-decoration-thickness:1.5px;text-underline-offset:3px}
+a.bot:hover{color:#B98324}
+[data-tip]{position:relative}
+[data-tip]::after{content:attr(data-tip);position:absolute;left:50%;bottom:calc(100% + 10px);transform:translate(-50%,4px);width:max-content;max-width:min(280px,80vw);padding:9px 13px;border-radius:12px;background:#3B2C22;color:#FFFCF8;font:500 13px/1.45 Manrope,system-ui,sans-serif;letter-spacing:0;text-align:left;text-transform:none;white-space:normal;box-shadow:0 10px 26px -10px rgba(40,25,10,.55);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .15s,transform .15s,visibility .15s;z-index:60}
+[data-tip]:not(:hover):not(:focus-visible)::after{display:none} /* скрытая подсказка не должна давать горизонтальную прокрутку */
+[data-tip]:hover::after,[data-tip]:focus-visible::after{opacity:1;visibility:visible;transform:translate(-50%,0)}
+@media (hover:none){[data-tip]::after{display:none!important}}
+@media print{[data-tip]::after{display:none}}
+
+
+/* телефон: шапка в две строки, все разделы видны */
+@media (max-width:860px){
+  nav{flex-wrap:wrap;overflow-x:visible;gap:2px 14px;padding-bottom:2px}
+}
+@media (max-width:420px){
+  .top .page{padding-block:8px;gap:8px}
+  .mono{width:32px;height:32px}
+  .mark{gap:8px}
+  .mark b{font-size:1.06rem}
+  .navcta{font-size:.8rem;padding:6px 11px}
+  nav{font-size:.82rem}
+}
+
+.clist .c-l{flex:none;color:var(--ink);font-weight:600;font-size:.95rem;text-align:left;overflow-wrap:normal}
+@media (max-width:520px){
+  .clist a,.clist div{flex-wrap:wrap;row-gap:4px}
+  .clist span:not(.c-l):not(.ic){text-align:left;flex:1 1 100%;padding-left:54px;font-size:.8rem}
+}
+@media (max-width:400px){.clist span:not(.c-l):not(.ic){padding-left:0}}
+
+/* ---------- страница «Работа со мной» ---------- */
+.copyband{background:var(--mustard);color:#fff;text-align:center;font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;padding:8px 16px}
+.w-hero{padding-block:56px 24px;display:flex;flex-direction:column;gap:20px;max-width:860px}
+.w-hero h1{font-size:clamp(2.4rem,6vw,4.2rem)}
+.w-hero h1 em{font-style:normal;color:var(--brown)}
+.w-hero .lead{font-size:1.14rem;max-width:58ch}
+.jump{display:flex;flex-wrap:wrap;gap:8px}
+.jump a{font-size:.86rem;font-weight:600;text-decoration:none;color:var(--brown);border:1.5px solid var(--line);background:var(--paper);border-radius:999px;padding:7px 14px}
+.jump a:hover{border-color:var(--brown)}
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+@media (max-width:980px){.pillars{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.pillars{grid-template-columns:1fr}}
+.pillar{background:var(--paper);border:1.5px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.pillar h3{font-size:1.45rem}
+.pillar p{font-size:.92rem;color:var(--muted)}
+.dialog{margin:22px 0 0;background:var(--mustard-soft);border-radius:20px;padding:clamp(20px,3vw,32px);display:flex;flex-direction:column;gap:10px}
+.dialog p{font-family:var(--display);font-size:1.25rem;line-height:1.35;max-width:60ch}
+.dialog .d-i{color:var(--brown);padding-left:22px}
+.dialog figcaption{font-size:.9rem;color:var(--muted);margin-top:6px}
+.steps.four{grid-template-columns:repeat(4,1fr)}
+@media (max-width:980px){.steps.four{grid-template-columns:repeat(2,1fr)}.steps.four .step:nth-child(3){padding-left:0;border-left:none}}
+@media (max-width:820px){.steps.four{grid-template-columns:1fr}.steps.four .step:nth-child(3){border-top:1px solid var(--line)}}
+.fmt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:900px){.fmt-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.fmt-grid{grid-template-columns:1fr}}
+.fmt{background:var(--bg);border:1.5px solid var(--line);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.fmt.main{border-color:var(--brown)}
+.fmt.soon{border-style:dashed}
+.fmt .tag{font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sage)}
+.fmt h3{font-size:1.6rem}
+.fmt .slog{font-family:var(--display);font-size:1.08rem;color:var(--brown)}
+.fmt p{font-size:.92rem;color:var(--muted)}
+.fmt .price{margin-top:auto;padding-top:10px;font-family:var(--display);font-size:1.7rem;color:var(--brown);line-height:1.1}
+.fmt .price small{display:block;font-family:var(--body);font-size:.82rem;color:var(--muted);margin-top:4px}
+.fmt .price.tbd{font-family:var(--body);font-size:.9rem;font-weight:700;color:var(--mustard)}
+.results{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:700px){.results{grid-template-columns:1fr}}
+.results li{display:flex;align-items:center;gap:14px;background:var(--paper);border-radius:14px;padding:14px 16px;font-size:1rem}
+.note{margin-top:14px;font-size:.86rem;color:var(--muted)}
+.faq{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line);padding:16px 0}
+.faq summary{cursor:pointer;font-family:var(--display);font-size:1.35rem;line-height:1.25;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--brown);font-family:var(--body);font-weight:700}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin-top:10px;color:var(--muted);max-width:70ch}
+.lim-body{display:flex;flex-direction:column;gap:12px}
+.lim-body ul{margin:0;padding-left:20px;color:var(--muted);display:flex;flex-direction:column;gap:4px}
+.rq-list{display:grid;grid-template-columns:1fr 1fr;column-gap:48px;border-top:1.5px solid var(--brown)}
+@media (max-width:860px){.rq-list{grid-template-columns:1fr}}
+.rq{font:inherit;text-align:left;cursor:pointer;color:var(--ink);background:none;border:0;border-bottom:1px solid var(--line);padding:24px 4px;display:grid;grid-template-columns:2.6rem 46px 1fr auto;gap:16px;align-items:center;min-width:0;transition:background .2s}
+.rq .n{font-family:var(--display);font-size:2.2rem;line-height:1;color:var(--mustard);align-self:start}
+.rq-t{display:flex;flex-direction:column;gap:6px;min-width:0}
+.rq-t b{font-family:var(--display);font-weight:400;font-size:clamp(1.35rem,2.2vw,1.7rem);line-height:1.2;transition:color .2s}
+.rq-t small{font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.rq .arr{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;color:var(--brown);transition:background .2s,border-color .2s,color .2s,transform .2s}
+.rq:hover .rq-t b{color:var(--brown)}
+.rq:hover .arr{background:var(--brown);border-color:var(--brown);color:var(--paper);transform:translateX(3px)}
+.rq-after{margin-top:32px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px;background:var(--mustard-soft);border-radius:20px;padding:22px 26px}
+.rq-after p{font-family:var(--display);font-size:1.35rem;line-height:1.3;color:var(--ink);flex:1 1 280px}
+.res{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.res li{font-size:.95rem;padding-left:22px;position:relative}
+.res li::before{content:"✓";position:absolute;left:0;color:var(--sage);font-weight:700}
+.qm-note{font-size:.84rem;color:var(--muted)}
+.rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:820px){.rv-grid{grid-template-columns:1fr}}
+.rv{margin:0;background:var(--paper);border:1.5px dashed var(--line);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.rv blockquote{margin:0;font-family:var(--display);font-size:1.2rem;line-height:1.35;color:var(--muted)}
+.rv blockquote::before{content:"«";color:var(--mustard);font-size:2rem;line-height:0;vertical-align:-.35em;margin-right:4px}
+.rv figcaption{font-size:.84rem;font-weight:700;color:var(--brown)}
+.fr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:820px){.fr-grid{grid-template-columns:1fr}}
+/* ---- кто я ---- */
+.who-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:start}
+@media (max-width:820px){.who-grid{grid-template-columns:1fr;gap:14px}}
+.who-text{display:flex;flex-direction:column;gap:12px;max-width:62ch}
+/* ---- твой путь ---- */
+.themes{display:flex;flex-direction:column;gap:30px}
+.theme-h{display:flex;gap:14px;align-items:flex-start;margin-bottom:12px}
+.theme-n{flex:none;width:40px;height:40px;border-radius:50%;background:var(--brown);color:var(--paper);display:grid;place-items:center;font-family:var(--display);font-size:1.3rem}
+.theme-h h3{font-size:1.6rem}
+.theme-h p{color:var(--muted);font-size:.95rem}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.pgrid.flowrow{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap}
+.pgrid.flowrow .pblock{flex:1 1 220px}
+.parr{align-self:center;color:var(--brown);font-weight:700;font-size:1.3rem}
+@media (max-width:700px){.parr{display:none}}
+/* Переливы в стиле «VIP-партнёр ТОП» с сайта «Свои люди»: золотистая карточка, мягкое золотое свечение, блик на плашке цены */
+.pblock{position:relative;overflow:hidden;font:inherit;text-align:left;cursor:pointer;color:var(--ink);border-radius:20px;padding:16px 16px 14px;display:flex;flex-direction:column;gap:6px;min-width:0;
+  background:color-mix(in srgb,var(--mustard-soft) 55%,var(--paper));border:1.5px solid color-mix(in srgb,var(--mustard) 45%,var(--line));
+  animation:vipGlow 3.2s ease-in-out infinite;transition:transform .2s,border-color .2s}
+.pgrid > :nth-child(2n) {animation-delay:-1.1s}
+.pgrid > :nth-child(3n) {animation-delay:-2.2s}
+.pblock::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(110deg,transparent 35%,color-mix(in srgb,#F6DFA0 75%,transparent) 50%,transparent 65%);background-size:260% 100%;background-position:130% 0;opacity:0;transition:opacity .2s}
+.pblock:hover{transform:translateY(-3px);border-color:var(--mustard)}
+.pblock:hover::after{opacity:1;animation:vipShine 1.4s ease}
+.pblock.main{background:var(--mustard-soft);border:2px solid var(--mustard)}
+.pb-price{display:inline-block;font-weight:700;font-size:.82rem;border-radius:999px;padding:4px 11px;color:var(--ink);background:var(--paper);border:1px solid var(--mustard)}
+.pblock.main .pb-price{color:var(--paper);border-color:var(--mustard);background:linear-gradient(110deg,var(--mustard) 38%,#F6DFA0 50%,var(--mustard) 62%);background-size:260% 100%;animation:vipShine 3.2s linear infinite}
+@keyframes vipGlow{0%,100%{box-shadow:0 14px 30px -20px color-mix(in srgb,var(--mustard) 70%,transparent),0 0 0 0 color-mix(in srgb,var(--mustard) 0%,transparent)}50%{box-shadow:0 18px 36px -18px color-mix(in srgb,var(--mustard) 80%,transparent),0 0 0 6px color-mix(in srgb,var(--mustard) 22%,transparent)}}
+@keyframes vipShine{0%{background-position:130% 0}60%,100%{background-position:-30% 0}}
+@media (prefers-reduced-motion: reduce){.pblock,.pblock.main .pb-price,.pblock:hover::after{animation:none}}
+.pb-top{display:flex;justify-content:space-between;align-items:center}
+.soon{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mustard);background:var(--mustard-soft);border-radius:999px;padding:3px 9px}
+.pblock b{font-family:var(--display);font-weight:400;font-size:1.3rem;line-height:1.15}
+.pb-slogan{font-size:.92rem;color:var(--brown);line-height:1.35}
+.pb-line{font-size:.8rem;color:var(--muted)}
+.pb-foot{margin-top:auto;padding-top:6px;display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.pb-more{font-size:.8rem;font-weight:700;color:var(--brown)}
+.path-note{margin-top:18px;font-size:.84rem;color:var(--muted)}
+.pd-slogan{font-family:var(--display);font-size:1.2rem;color:var(--brown)}
+.pd-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:700px){.pd-grid{grid-template-columns:1fr}}
+.pd-box{border-radius:18px;padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.pd-box.pdp{background:var(--mustard-soft)}
+.pd-box.pdr{background:var(--sage-soft)}
+.pd-box h3{font-size:1.3rem}
+.pd-box ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.pd-facts{display:flex;flex-direction:column;gap:6px;font-size:.95rem}
+.pd-note{font-size:.86rem;color:var(--muted)}
+.pd-act{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center}
+.btn.off{opacity:.55;cursor:default}
+.act-note{font-size:.86rem;color:var(--muted);flex-basis:100%}
+
+.rq-m{display:block;width:46px;height:46px;transition:transform .6s ease}
+.rq:hover .rq-m{transform:rotate(30deg)}
+.rq-mm{flex:none;display:block;width:64px;height:64px}
+@media (prefers-reduced-motion: reduce){.rq-m{transition:none}}
+/* --- Кто я: новая раскладка --- */
+.who2{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(28px,5vw,64px);align-items:start}
+@media (max-width:860px){.who2{grid-template-columns:1fr}}
+.who-pic{margin:0;display:flex;flex-direction:column;gap:16px;position:sticky;top:90px}
+@media (max-width:860px){.who-pic{position:static;max-width:380px;margin:0 auto;width:100%}}
+.who-pic img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:center 40%;border-radius:26px;box-shadow:0 24px 50px -24px rgba(60,40,20,.4)}
+.who-pic .creds{justify-content:flex-start}
+.who-body{display:flex;flex-direction:column;gap:14px;min-width:0}
+.who-body h2{font-size:clamp(2rem,4.6vw,2.9rem);margin-bottom:4px}
+.who-lead{font-family:var(--display);font-size:clamp(1.3rem,2.4vw,1.6rem);line-height:1.35;color:var(--ink);max-width:34ch}
+.who-ways{display:flex;flex-direction:column;gap:12px;margin-top:10px}
+.way{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;background:var(--paper);border:1.5px solid var(--line);border-radius:20px;padding:18px 20px}
+.way .ic{width:52px;height:52px}
+.way h3{font-family:var(--display);font-weight:400;font-size:1.3rem;line-height:1.2;margin:2px 0 6px}
+.way p{margin:0;font-size:.95rem;color:var(--muted)}
+.who-quote{margin:10px 0 0;padding:4px 0 4px 20px;border-left:3px solid var(--mustard,#B98324);font-family:var(--display);font-size:clamp(1.2rem,2.2vw,1.45rem);line-height:1.35;color:var(--brown)}
+.who-quote span{display:block;margin-top:6px;font-family:inherit;font-size:1rem;color:var(--muted)}
+@media (max-width:560px){.who-pic img{aspect-ratio:4/3;object-position:center 45%}.way{grid-template-columns:1fr;gap:10px}.way .ic{width:46px;height:46px}}
+/* цветы продуктов */
+.pb-fl,.pd-fl{display:inline-flex;flex:none;border-radius:50%;filter:drop-shadow(0 4px 8px rgba(110,79,60,.18))}
+.pb-fl svg,.pd-fl svg{display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.pblock:hover .pb-fl svg{transform:rotate(36deg) scale(1.06)}
+.pd-fl svg{animation:flOpen .9s cubic-bezier(.2,.7,.2,1)}
+@keyframes flOpen{from{transform:rotate(-60deg) scale(.6);opacity:.2}}
+@media (prefers-reduced-motion: reduce){.pb-fl svg,.pd-fl svg{transition:none;animation:none}}
+/* «бесплатно» и «в подарок» — заметная зелёная плашка с бликом */
+.pb-price.free{display:inline-flex;align-items:center;gap:6px;font-size:.88rem;letter-spacing:.02em;text-transform:uppercase;color:#fff;border:0;padding:6px 14px;box-shadow:0 6px 14px -6px rgba(79,94,62,.6);
+  background:linear-gradient(110deg,#4F5E3E 38%,#9DB07A 50%,#4F5E3E 62%);background-size:260% 100%;animation:vipShine 3.2s linear infinite}
+@media (prefers-reduced-motion: reduce){.pb-price.free{animation:none;background:#4F5E3E}}
+.pb-more{white-space:nowrap}
+.pb-foot{align-items:center;flex-wrap:wrap;row-gap:8px}
+.pb-price.free{font-size:.8rem;padding:6px 12px}
+/* 04.10: большие карточки без перелива — переливаются только кнопки-плашки цены */
+.pblock{animation:none;box-shadow:0 10px 24px -20px color-mix(in srgb,var(--mustard) 70%,transparent)}
+.pblock::after{display:none}
+/* цветы-мандалы у опор работы */
+.pl-fl{display:inline-flex;border-radius:50%;filter:drop-shadow(0 4px 8px rgba(110,79,60,.18))}
+.pl-fl svg{display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.pillar:hover .pl-fl svg{transform:rotate(36deg) scale(1.06)}
+@media (prefers-reduced-motion: reduce){.pl-fl svg{transition:none}}
+/* Как проходит работа — линия шагов без иконок */
+.tl{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0 28px;position:relative;counter-reset:none}
+.tl::before{content:"";position:absolute;left:36px;right:36px;top:35px;height:2px;background:linear-gradient(90deg,var(--mustard),color-mix(in srgb,var(--mustard) 35%,var(--line)))}
+.tl li{position:relative;display:flex;flex-direction:column;gap:10px;min-width:0}
+.tl-n{position:relative;z-index:1;width:72px;height:72px;border-radius:50%;display:grid;place-items:center;background:var(--paper);border:2px solid var(--mustard);font-family:var(--display);font-size:2.2rem;line-height:1;color:var(--mustard);box-shadow:0 0 0 8px var(--bg);margin-bottom:8px}
+.tl li:last-child .tl-n{background:var(--mustard);color:var(--paper)}
+.tl h3{font-family:var(--display);font-weight:400;font-size:1.45rem;line-height:1.2;margin:0}
+.tl p{margin:0;font-size:.95rem;color:var(--muted)}
+@media (max-width:860px){
+  .tl{grid-template-columns:1fr;gap:26px}
+  .tl::before{left:27px;right:auto;top:28px;bottom:28px;width:2px;height:auto;background:linear-gradient(180deg,var(--mustard),color-mix(in srgb,var(--mustard) 35%,var(--line)))}
+  .tl li{display:grid;grid-template-columns:56px 1fr;column-gap:18px;row-gap:6px}
+  .tl-n{width:56px;height:56px;font-size:1.7rem;grid-row:1 / span 2;margin:0;box-shadow:0 0 0 6px var(--bg)}
+}
+.tl::before{display:none}
+.tl li:not(:last-child)::after{content:"";position:absolute;left:80px;right:-20px;top:35px;height:2px;background:color-mix(in srgb,var(--mustard) 70%,var(--line))}
+@media (max-width:860px){.tl li:not(:last-child)::after{left:27px;right:auto;top:64px;bottom:-22px;width:2px;height:auto}}
+
+/* оригинальные маркеры списков вместо стандартных точек: бутон — с чем приходишь, раскрытый цветок — с чем уходишь, листик — прочие списки */
+.pd-box ul,.qm-col ul.pain,.qm-col ul.res,.lim-body ul{list-style:none;padding-left:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.pd-box li,.qm-col ul.pain li,.qm-col ul.res li,.lim-body li{position:relative;padding-left:30px;line-height:1.45}
+.pd-box li::before,.qm-col ul.pain li::before,.qm-col ul.res li::before,.lim-body li::before{content:"";position:absolute;left:0;top:.05em;width:20px;height:20px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20d%3D%22M4%2016C4%208%209%204%2016%204%2016%2011%2012%2016%204%2016Z%22%20fill%3D%22%23EADFCF%22%20stroke%3D%22%236E4F3C%22%20stroke-width%3D%221.4%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M4%2016%2012%208%22%20stroke%3D%22%236E4F3C%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E") center/contain no-repeat;color:transparent}
+.pd-box.pdp li::before,.qm-col ul.pain li::before{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20d%3D%22M10%202.5C13.5%206%2014%209.5%2010%2013.5%206%209.5%206.5%206%2010%202.5Z%22%20fill%3D%22%23F3E3C2%22%20stroke%3D%22%23B98324%22%20stroke-width%3D%221.5%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M10%2013.5C8%2013.5%206.2%2012.4%205.2%2010.6M10%2013.5c2%200%203.8-1.1%204.8-2.9M10%2013.5V18%22%20fill%3D%22none%22%20stroke%3D%22%2366704F%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E")}
+.pd-box.pdr li::before,.qm-col ul.res li::before{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2020%2020%22%3E%3Ccircle%20cx%3D%2210.00%22%20cy%3D%225.00%22%20r%3D%223.6%22%20fill%3D%22%23E3E6D6%22%20stroke%3D%22%2366704F%22%20stroke-width%3D%221.3%22/%3E%3Ccircle%20cx%3D%2214.76%22%20cy%3D%228.45%22%20r%3D%223.6%22%20fill%3D%22%23E3E6D6%22%20stroke%3D%22%2366704F%22%20stroke-width%3D%221.3%22/%3E%3Ccircle%20cx%3D%2212.94%22%20cy%3D%2214.05%22%20r%3D%223.6%22%20fill%3D%22%23E3E6D6%22%20stroke%3D%22%2366704F%22%20stroke-width%3D%221.3%22/%3E%3Ccircle%20cx%3D%227.06%22%20cy%3D%2214.05%22%20r%3D%223.6%22%20fill%3D%22%23E3E6D6%22%20stroke%3D%22%2366704F%22%20stroke-width%3D%221.3%22/%3E%3Ccircle%20cx%3D%225.24%22%20cy%3D%228.45%22%20r%3D%223.6%22%20fill%3D%22%23E3E6D6%22%20stroke%3D%22%2366704F%22%20stroke-width%3D%221.3%22/%3E%3Ccircle%20cx%3D%2210%22%20cy%3D%2210%22%20r%3D%222.6%22%20fill%3D%22%23B98324%22/%3E%3C/svg%3E")}
+/* настоящая цена — золотая плашка с бликом, как у «VIP-партнёр ТОП» */
+.pb-price.paid{color:#fff;border:0;padding:6px 13px;font-size:.84rem;box-shadow:0 6px 14px -6px color-mix(in srgb,var(--mustard) 80%,transparent);
+  background:linear-gradient(110deg,var(--mustard) 38%,#F6DFA0 50%,var(--mustard) 62%);background-size:260% 100%;animation:vipShine 3.2s linear infinite}
+@media (prefers-reduced-motion: reduce){.pb-price.paid{animation:none;background:var(--mustard)}}
+/* «цена скоро» — коричневая плашка с бликом */
+.pb-price.soonp{color:#fff;border:0;padding:6px 13px;font-size:.84rem;box-shadow:0 6px 14px -6px rgba(110,79,60,.6);
+  background:linear-gradient(110deg,#6E4F3C 38%,#C9A27E 50%,#6E4F3C 62%);background-size:260% 100%;animation:vipShine 3.2s linear infinite}
+.pblock.main .pb-price.soonp{background:linear-gradient(110deg,var(--mustard) 38%,#F6DFA0 50%,var(--mustard) 62%);background-size:260% 100%}
+@media (prefers-reduced-motion: reduce){.pb-price.soonp{animation:none;background:#6E4F3C}}
+.lim-fl svg{width:64px;height:64px}
+.pd-facts{display:flex;flex-direction:column;gap:12px}
+.pd-fact{display:flex;flex-direction:column;gap:3px}
+.pd-fact p{margin:0}
+.pd-lbl{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.pd-more{display:flex;flex-direction:column;gap:4px;text-decoration:none;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:16px;padding:14px 16px;transition:border-color .15s}
+.pd-more:hover{border-color:var(--brown)}
+.pd-more b{font-family:var(--display);font-weight:400;font-size:1.2rem;color:var(--brown)}
+.pd-more span:last-child{font-size:.9rem;color:var(--muted)}
+/* ===== Стиль кнопок Ирины (решено 04.10.2026) =====
+   Кнопки и плашки переливаются бликом, большие карточки — нет.
+   зелёная  — бесплатно, в подарок, бесплатные действия (знакомство, тесты, бот)
+   золотая  — цена, главный продукт, оплата
+   коричневая — остальные действия, «цена скоро»
+   При «уменьшить движение» в системе — без анимации. */
+@keyframes vipShine{0%{background-position:130% 0}60%,100%{background-position:-30% 0}}
+.btn,.navcta,.go-pill{border:0 !important;color:#fff !important;background:linear-gradient(110deg,#6E4F3C 38%,#C9A27E 50%,#6E4F3C 62%) !important;background-size:260% 100% !important;animation:vipShine 3.2s linear infinite;box-shadow:0 8px 18px -8px rgba(110,79,60,.6)}
+.btn.free,.navcta,.go-pill.free{background:linear-gradient(110deg,#4F5E3E 38%,#9DB07A 50%,#4F5E3E 62%) !important;background-size:260% 100% !important;box-shadow:0 8px 18px -8px rgba(79,94,62,.6)}
+.btn.gold,.go-pill.gold{background:linear-gradient(110deg,#B98324 38%,#F6DFA0 50%,#B98324 62%) !important;background-size:260% 100% !important;box-shadow:0 8px 18px -8px rgba(185,131,36,.7)}
+.navcta{padding:9px 18px}
+.go-pill{display:inline-flex;align-self:flex-start;align-items:center;gap:6px;border-radius:999px;padding:7px 14px;font-weight:700;font-size:.86rem;text-decoration:none}
+.btn.off{animation:none;background:transparent !important;color:var(--muted) !important;border:1.5px solid var(--line) !important;box-shadow:none}
+.btn:hover,.navcta:hover{transform:translateY(-1px)}
+@media (prefers-reduced-motion: reduce){.btn,.navcta,.go-pill{animation:none}}
+</style></head><body>
+<header class="top">
+  <div class="page">
+    <a class="mark" href="https://voznesenskaya.ch/" aria-label="Ирина Вознесенская — на главную">
+      <span class="mono av"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#FFFCF8" stroke="#6E4F3C" stroke-width="3"/><g transform="rotate(22.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(67.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(112.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(157.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(202.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(247.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(292.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(337.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(0.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(45.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(90.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(135.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(180.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(225.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(270.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(315.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><circle cx="50" cy="50" r="7" fill="#B98324"/></svg></span>
+      <span><b>Ирина Вознесенская</b><small>специалист по адаптации · коуч</small></span>
+    </a>
+    <nav aria-label="Разделы">
+      <a href="https://voznesenskaya.ch/#doors">С чего начать</a>
+      <a href="https://voznesenskaya.ch/put/">Твой путь</a>
+      <a href="#start" aria-current="page" style="color:var(--ink)">Работа со мной</a>
+      <a href="https://voznesenskaya.ch/testy/">Тесты</a>
+      <a href="https://svoiludi.ch/" target="_blank" rel="noopener">Свои люди</a>
+    </nav>
+    <a class="navcta" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">Знакомство</a>
+  </div>
+</header>
+
+<main class="page" id="start">
+  <section class="w-hero" aria-labelledby="h1">
+    <div class="eyebrow">Работа со мной</div>
+    <h1 id="h1">Не готовые советы, а <em>твой собственный</em> путь</h1>
+    <p class="lead">Ты переехала, и жизнь будто встала на паузу. Её можно снова запустить, и не обязательно сразу большим шагом. Здесь есть разные пути, лёгкие и глубокие. Каждый из них помогает тебе увидеть больше, чем ты видишь сейчас, и перевести внимание с того, чего не хватает, на то, что ты уже можешь. Так твоя жизнь начинает меняться.</p>
+    <div class="jump">
+      <a href="#who">Кто я и почему понимаю тебя</a><a href="#requests">С чем ко мне приходят</a><a href="#approach">На чём держится наша работа</a><a href="#session">Как проходит первая встреча</a><a href="#path">Твой путь и программы для тебя</a><a href="#reviews">Что говорят клиенты</a><a href="#faq">Ответы на частые вопросы</a>
+    </div>
+  </section>
+
+  <!-- КТО Я -->
+  <section id="who" aria-labelledby="who-h">
+    <div class="who2">
+      <figure class="who-pic">
+        <img src="who.jpg" alt="Женщина в жёлтом шарфе с чашкой в руках смотрит в окно на озеро и горы, рядом спит спаниель">
+        <figcaption class="creds"><span>трансформационный коуч</span><span>нейрокоуч</span><span>в эмиграции с 2010 года</span><span>онлайн · на русском</span></figcaption>
+      </figure>
+      <div class="who-body">
+        <div class="eyebrow">Кто я и почему понимаю тебя</div>
+        <h2 id="who-h">Привет! Меня зовут Ирина</h2>
+        <p class="who-lead">Я трансформационный коуч и нейрокоуч. Живу в Швейцарии и сама знаю, каково это — начинать жизнь заново в чужой стране.</p>
+        <p>Поэтому в нашей работе в центре всегда ты. Твоя жизнь, твои силы и твоё благополучие.</p>
+        <div class="who-ways">
+          <div class="way"><span class="ic" data-ico="sprout" data-c="#66704F"></span><div><h3>Мы идём глубже советов</h3><p>Мы не ограничимся планом на бумаге. Мы бережно спустимся туда, где живут твои привычные реакции, страхи и старые правила, которые здесь больше не работают. Когда меняется что-то внутри тебя, решения снаружи начинают находиться сами.</p></div></div>
+          <div class="way"><span class="ic" data-ico="lantern" data-c="#2E5A88"></span><div><h3>Ты перестаёшь винить себя</h3><p>Я понимаю, как твой мозг реагирует на перемены и незнакомую среду. Почему в новой стране так быстро кончаются силы и простое письмо из ведомства кажется горой. Это не про слабость. Одно это понимание снимает с твоих плеч много лишней вины.</p></div></div>
+          <div class="way"><span class="ic" data-ico="explore" data-c="#B98324"></span><div><h3>Твоё внимание возвращается к тебе</h3><p>Я работаю с твоим мышлением и фокусом внимания. Куда смотрит внимание, туда уходят и силы. Вместе мы найдём мысли, которые ходят по кругу, и научимся переводить взгляд с «почему у меня не получается» на «что я могу сделать для себя уже сегодня». Тогда в голове становится тише, и появляется место для твоих решений.</p></div></div>
+        </div>
+        <blockquote class="who-quote">Я не тороплю и не тяну за руку. Иду рядом — в твоём темпе и ради тебя.<span>Ирина</span></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- С ЧЕМ ПРИХОДЯТ -->
+  <section id="requests" aria-labelledby="rq-h">
+    <div class="sec-head">
+      <div class="eyebrow">С чем ко мне приходят</div>
+      <h2 id="rq-h">Узнаёшь себя в одной из этих фраз?</h2>
+      <p>Это не диагноз и не ярлык. Это точка, с которой начнётся разговор о тебе. Нажми на свою фразу, и ты увидишь, как мы можем с этим работать.</p>
+    </div>
+    <div class="rq-list" id="rqList"></div>
+    <div class="rq-after"><p>Узнала себя? Значит, пора уделить время себе. Начнём со знакомства. Это 30 минут онлайн, и это бесплатно.</p><a class="btn free" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">Написать «ВСТРЕЧА» в Telegram</a></div>
+    <dialog class="qm" id="qm" aria-labelledby="qmTitle"><div class="qm-card" id="qmCard"></div></dialog>
+  </section>
+
+  <!-- ССЫЛКА НА СТРАНИЦУ «ТВОЙ ПУТЬ» -->
+  <a class="pathband" href="https://voznesenskaya.ch/put/" target="_blank" rel="noopener">
+    <span class="ic" data-ico="path" data-c="#6E4F3C"></span>
+    <span class="pb-txt"><b>Твой путь в новой стране</b><span>Восемь стоянок, от земли под ногами до неба над домом. Посмотри, с чем ты сталкиваешься на каждой из них и что поможет тебе идти дальше.</span></span>
+    <span class="pb-go">Посмотреть →</span>
+  </a>
+
+  <!-- ПОДХОД -->
+  <section id="approach" aria-labelledby="ap-h">
+    <div class="sec-head">
+      <div class="eyebrow">Как я работаю</div>
+      <h2 id="ap-h">На чём держится наша работа</h2>
+      <p>Я не даю советов и не знаю за тебя, как правильно. Правильно так, как подходит именно тебе. Моя работа — задавать вопросы, которые ты себе не задаёшь, и помогать тебе услышать собственные ответы.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar"><span class="pl-fl" data-mandala="0"></span><h3>Эмоциональный интеллект</h3><p>Ты учишься замечать, что чувствуешь, и понимать, о чём говорят твои чувства. Эмоции перестают управлять твоими решениями и начинают подсказывать.</p></div>
+      <div class="pillar"><span class="pl-fl" data-mandala="1"></span><h3>Спиральная динамика</h3><p>Помогает увидеть, какие ценности ведут тебя сейчас и почему в новой стране твои старые правила вдруг перестали работать. Так становится ясно, что важно именно тебе.</p></div>
+      <div class="pillar"><span class="pl-fl" data-mandala="5"></span><h3>Мышление и фокус внимания</h3><p>Твоё мышление и твоё внимание — главный ресурс. Замечаем мысли, которые ходят по кругу, и направляем внимание туда, где есть решение, а не туда, где страшно. Меняется фокус — и сил у тебя становится больше.</p></div>
+      <div class="pillar"><span class="pl-fl" data-mandala="2"></span><h3>Как работает мозг</h3><p>Инсайт — только половина дела. Вторая половина — закрепить новое в твоей жизни. Для этого есть повторение, телесный якорь и маленький выполнимый шаг между встречами.</p></div>
+    </div>
+
+  </section>
+
+  <!-- КАК ПРОХОДИТ -->
+  <section id="session" aria-labelledby="se-h">
+    <div class="sec-head">
+      <div class="eyebrow">Как проходит работа</div>
+      <h2 id="se-h">Первая встреча — это не экзамен</h2>
+      <p>Если ты никогда не была у коуча, вот что произойдёт. Всё устроено так, чтобы тебе было спокойно и безопасно.</p>
+    </div>
+    <ol class="tl">
+      <li><span class="tl-n">1</span><h3>Ты пишешь мне</h3><p>Напиши в Telegram слово <span class="codeword">ВСТРЕЧА</span>. Можно добавить пару строк о себе и о том, что сейчас происходит. Красиво формулировать не нужно, это моя работа.</p></li>
+      <li><span class="tl-n">2</span><h3>Мы знакомимся</h3><p>Это 30 минут онлайн, и это бесплатно. Я задам несколько вопросов о тебе и честно скажу, смогу ли помочь. Если нет, подскажу, к кому лучше обратиться.</p></li>
+      <li><span class="tl-n">3</span><h3>Сессия — время только для тебя</h3><p>Мы встречаемся по видеосвязи, и всё моё внимание принадлежит тебе. Готовиться и приносить ничего не нужно. Всё, что ты скажешь, остаётся между нами.</p></li>
+      <li><span class="tl-n">4</span><h3>Ты делаешь шаг для себя</h3><p>Каждая встреча заканчивается не только осознанием. В конце мы находим маленькое конкретное действие ради тебя, которое ты правда сделаешь до следующей встречи.</p></li>
+    </ol>
+  </section>
+</main>
+
+<!-- ТВОЙ ПУТЬ -->
+<section class="free" id="path" aria-labelledby="path-h">
+  <div class="page">
+    <div class="sec-head">
+      <div class="eyebrow">Твой путь со мной</div>
+      <h2 id="path-h">Шаг за шагом — с того места, где ты сейчас</h2>
+      <p>Не обязательно идти по всем ступеням. Начни с той, которая про тебя сейчас. Каждый шаг — это забота о себе. Нажми на любой блок — увидишь, с чем ты можешь прийти и с чем уйдёшь.</p>
+    </div>
+    <div id="pathThemes" class="themes"></div>
+    <p class="path-note">* цены программ по письмам — черновик. Всё онлайн и на русском.</p>
+    <div class="also" style="margin-top:28px">
+      <a href="https://voznesenskaya.ch/testy/" class="btn free" target="_blank" rel="noopener">Все тесты на одной странице</a>
+      <a class="mini" href="https://t.me/swisscompass_bot" target="_blank" rel="noopener"><span class="ic sm" data-ico="swissguide" data-c="#6E4F3C"></span><b>Гайд по Швейцарии</b><span>Мой бесплатный Telegram-бот. Бумаги, страховка, школа и врачи по шагам и на русском.</span></a>
+      <a class="mini" href="https://t.me/IrynaNeuroCoach_channel" target="_blank" rel="noopener"><span class="ic sm" data-ico="megaphone" data-c="#3F6FBF"></span><b>Мой Telegram-канал</b><span>Полезное для тебя о жизни в новой стране. И место, где можно найти своих.</span></a>
+    </div>
+  </div>
+  <dialog class="qm" id="pdlg" aria-labelledby="pdlgTitle"><div class="qm-card" id="pdlgCard"></div></dialog>
+</section>
+
+<div class="page">
+  <!-- РЕЗУЛЬТАТ -->
+  <section id="result" aria-labelledby="re-h">
+    <div class="sec-head">
+      <div class="eyebrow">Результат работы</div>
+      <h2 id="re-h">Что меняется для тебя</h2>
+    </div>
+    <ul class="results">
+      <li><span class="ic sm" data-ico="sprout" data-c="#66704F"></span>У тебя появляется своя формулировка вместо чужих советов</li>
+      <li><span class="ic sm" data-ico="key" data-c="#B98324"></span>Решение, которое ты откладывала месяцами, становится сделанным</li>
+      <li><span class="ic sm" data-ico="sun" data-c="#B98324"></span>Возвращается твоя энергия — ты перестаёшь тратить её на внутренний спор</li>
+      <li><span class="ic sm" data-ico="compass" data-c="#6E4F3C"></span>Появляется твоё «зачем» в новой стране, а не только «надо»</li>
+      <li><span class="ic sm" data-ico="signpost" data-c="#2E5A88"></span>Ты видишь свой следующий шаг, а не только всю гору целиком</li>
+    </ul>
+    <p class="note">Коучинг — это партнёрская работа. Результат появляется, когда мы работаем вместе, ты и я.</p>
+  </section>
+
+  <!-- ОТЗЫВЫ -->
+  <section id="reviews" aria-labelledby="rv-h">
+    <div class="sec-head">
+      <div class="eyebrow">Отзывы клиентов</div>
+      <h2 id="rv-h">Что говорят клиенты</h2>
+    </div>
+    <div class="rv-grid">
+      <figure class="rv"><blockquote>Место для реального отзыва. С чем человек пришёл и что изменилось после работы.</blockquote><figcaption>Имя или инициалы, возраст, город</figcaption></figure>
+      <figure class="rv"><blockquote>Достаточно трёх коротких отзывов. Можно анонимно — «Мария, 41, Базель» — с разрешения клиентки.</blockquote><figcaption>Имя или инициалы, возраст, город</figcaption></figure>
+      <figure class="rv"><blockquote>Сильнее всего работают отзывы с конкретикой. Что было до и что человек сделал после.</blockquote><figcaption>Имя или инициалы, возраст, город</figcaption></figure>
+    </div>
+  </section>
+</div>
+
+
+
+<div class="page">
+
+  <!-- FAQ -->
+  <section id="faq" aria-labelledby="fq-h">
+    <div class="sec-head">
+      <div class="eyebrow">Частые вопросы</div>
+      <h2 id="fq-h">Что обычно спрашивают</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Чем коучинг отличается от психотерапии?</summary><p>Терапия чаще работает с прошлым и с тем, что болит. Коучинг — с настоящим и с тем, куда ты хочешь. Я не лечу и не ставлю диагнозов; я помогаю тебе найти собственное решение и дойти до действия.</p></details>
+      <details><summary>Сколько сессий нужно?</summary><p>Для конкретного вопроса часто хватает одной-трёх. Для перемен уровня «кем мне быть здесь» — от трёх месяцев. Точнее скажу после знакомства.</p></details>
+      <details><summary>Мне нечего сказать, я даже не могу сформулировать запрос</summary><p>Это нормальное начало, а не препятствие. Сформулировать запрос — часть моей работы. Тебе достаточно прийти с фразой «что-то не так».</p></details>
+      <details><summary>Это конфиденциально?</summary><p>Да. Всё, что происходит на сессии, остаётся между нами — так требует профессиональная этика коуча, и я её соблюдаю.</p></details>
+      <details><summary>Я живу не в Швейцарии. Это работает?</summary><p>Да, все встречи проходят онлайн. Разницу во времени учтём при записи.</p></details>
+      <details><summary>А если после первой сессии не пойдёт?</summary><p>Тогда мы не продолжаем — и это нормальный исход. Знакомство на 30 минут как раз для того, чтобы проверить это до оплаты.</p></details>
+    </div>
+  </section>
+
+  <!-- ГРАНИЦА -->
+  <section aria-labelledby="lim-h">
+    <div class="limits">
+      <div class="l-top"><span class="pl-fl lim-fl"><svg viewBox="0 0 100 100" width="64" height="64" aria-hidden="true">  <circle cx="50" cy="50" r="46" fill="#FFFCF8" stroke="#6E4F3C" stroke-width="3"/>  <path d="M50 78 V52" stroke="#66704F" stroke-width="2.4" stroke-linecap="round"/>  <path d="M50 76 C34 76 20 66 18 46 C30 46 44 54 50 70" fill="#E3E6D6" stroke="#66704F" stroke-width="2.2" stroke-linejoin="round"/>  <path d="M50 76 C66 76 80 66 82 46 C70 46 56 54 50 70" fill="#E3E6D6" stroke="#66704F" stroke-width="2.2" stroke-linejoin="round"/>  <path d="M28 52 C36 58 42 63 47 70 M72 52 C64 58 58 63 53 70" fill="none" stroke="#A7B484" stroke-width="1.5" stroke-linecap="round"/>  <path d="M50 54 C40 52 36 42 38 30 C42 34 46 34 50 24 C54 34 58 34 62 30 C64 42 60 52 50 54Z" fill="#F5DDD3" stroke="#A0523D" stroke-width="2.2" stroke-linejoin="round"/>  <path d="M50 54 C46 46 46 38 50 30 C54 38 54 46 50 54Z" fill="#D99A84" stroke="#A0523D" stroke-width="1.6" stroke-linejoin="round"/>  <circle cx="50" cy="20" r="2" fill="#B98324"/><circle cx="41" cy="24" r="1.4" fill="#B98324"/><circle cx="59" cy="24" r="1.4" fill="#B98324"/></svg></span><h2 id="lim-h">Когда коучинг не подходит</h2></div>
+      <div class="lim-body">
+        <p>Коучинг работает, когда у тебя есть силы двигаться. Бывают состояния, когда тебе нужнее врач или психотерапевт, — и я скажу об этом прямо, потому что твоё благополучие важнее.</p>
+        <ul>
+          <li>Острое состояние, когда тяжело выдерживать обычный день</li>
+          <li>Свежая утрата или травма, которая ещё не прожита</li>
+          <li>Запрос «поставьте мне диагноз» или «назначьте лечение»</li>
+          <li>Желание, чтобы изменился кто-то другой, а не ты</li>
+          <li>Ожидание готового плана и инструкций — это к консультанту</li>
+        </ul>
+        <p>Если есть мысли о том, чтобы не жить, или ты в опасности, пожалуйста, обратись к врачу или в экстренные службы своей страны. Это не стыдно. Я всегда подскажу, к кому обратиться.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-h">
+    <div class="contact">
+      <div>
+        <h2 id="contact-h">Давай познакомимся</h2>
+        <p>Напиши мне в Telegram слово <span class="codeword">ВСТРЕЧА</span>, и мы найдём время для первых 30 минут о тебе. Это бесплатно и ни к чему не обязывает.</p>
+      </div>
+      <div class="clist">
+        <a href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener"><span class="c-l"><span class="ic sm" data-ico="telegram" data-c="#3F6FBF"></span>Telegram</span> <span>@IrynaNeuroCoach</span></a>
+        <a href="https://www.instagram.com/iryna.voznesenskaya/" target="_blank" rel="noopener"><span class="c-l"><span class="ic sm" data-ico="instagram" data-c="#C25468"></span>Instagram</span> <span>@iryna.voznesenskaya</span></a>
+        <div><span class="c-l"><span class="ic sm" data-ico="mail" data-c="#66704F"></span>E-mail</span> <span>voznesenskaya.iryna@gmail.com</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Ирина Вознесенская · специалист по адаптации · коуч</span>
+    <span><a href="https://voznesenskaya.ch/privacy/" target="_blank" rel="noopener">Политика конфиденциальности</a> · <a href="https://voznesenskaya.ch/impressum/" target="_blank" rel="noopener">Выходные данные</a></span>
+  </footer>
+</div>
+<script>
+/* =====================================================================
+   Библиотека значков — общая для всех тестов (с 02.10.2026).
+   Один стиль: сетка 24×24, мягкая заливка светлым тоном + тонкий контур глубоким тоном того же цвета
+   (как акварель с контуром в утверждённой палитре), линия 1.8, скруглённые концы.
+   Использование: ico('flame', '#C25468', '#EEA9B3', 26) — имя, цвет контура, цвет заливки, размер.
+   Если заливка не задана, берётся очень светлый тон контура.
+   Каталог с картинками всех значков — файл «Библиотека значков.html».
+   ===================================================================== */
+const ICONS = {
+  /* спиральная динамика (новый, 04.10.2026) */
+  spiral:   (c, f, s) => `<circle cx="12" cy="12" r="9" fill="${f}" stroke="none"/><path d="M11.37 11.22 L11.12 11.30 L10.87 11.45 L10.65 11.68 L10.48 11.98 L10.38 12.33 L10.37 12.73 L10.47 13.14 L10.66 13.55 L10.97 13.91 L11.37 14.22 L11.86 14.43 L12.41 14.53 L13.00 14.50 L13.59 14.33 L14.16 14.02 L14.66 13.57 L15.06 13.00 L15.33 12.33 L15.45 11.58 L15.40 10.80 L15.17 10.02 L14.76 9.29 L14.18 8.65 L13.45 8.13 L12.59 7.78 L11.65 7.62 L10.67 7.68 L9.70 7.96 L8.79 8.45 L7.99 9.16 L7.35 10.04 L6.91 11.07 L6.70 12.21 L6.74 13.38 L7.05 14.55 L7.62 15.64 L8.44 16.61 L9.47 17.39 L10.67 17.94 L11.99 18.22 L13.36 18.20 L14.73 17.88 L16.02 17.25 L17.16 16.34 L18.09 15.17 L18.76 13.81" fill="none" stroke="${c}" ${s}/><path d="M19.94 15.50 L19.38 12.56 L16.70 13.92" fill="none" stroke="${c}" ${s}/>`,
+  /* ступени, дом, опоры */
+  earth:    (c, f, s) => `<circle cx="12" cy="8" r="3.2" fill="${f}" stroke="${c}" ${s}/><path d="M3 15c3-2 6-2 9 0s6 2 9 0M3 19.5c3-2 6-2 9 0s6 2 9 0" fill="none" stroke="${c}" ${s}/>`,
+  hearth:   (c, f, s) => `<path d="M12 3c3 4 6.5 6 6.5 10.5a6.5 6.5 0 0 1-13 0c0-3 2-4.5 3-6.5 1 2 2 3 3 3 0-3-1-5 .5-7z" fill="${f}" stroke="${c}" ${s}/><path d="M9 21h6" stroke="${c}" ${s}/>`,
+  door:     (c, f, s) => `<rect x="6" y="3" width="12" height="18" rx="1.5" fill="${f}" stroke="${c}" ${s}/><circle cx="14.8" cy="12.5" r="1.2" fill="${c}"/><path d="M3 21h18" stroke="${c}" ${s}/>`,
+  key:      (c, f, s) => `<circle cx="8" cy="12" r="4.2" fill="${f}" stroke="${c}" ${s}/><path d="M12.2 12H21M18 12v3M21 12v3" fill="none" stroke="${c}" ${s}/>`,
+  workshop: (c, f, s) => `<path d="M4.5 11V20.5H19.5V11" fill="#fff" stroke="${c}" ${s}/><path d="M3 7.2L4.6 3.5H19.4L21 7.2V8.6A2.25 2.25 0 0 1 16.5 8.6A2.25 2.25 0 0 1 12 8.6A2.25 2.25 0 0 1 7.5 8.6A2.25 2.25 0 0 1 3 8.6Z" fill="${f}" stroke="${c}" ${s}/><path d="M7.5 7.2V8.6M12 7.2V8.6M16.5 7.2V8.6M3 7.2H21" stroke="${c}" stroke-width="1.4" stroke-linecap="round"/><path d="M8 20.5V15.2H11.5V20.5" fill="${f}" stroke="${c}" ${s}/><rect x="13.6" y="13.6" width="3.6" height="3.2" rx=".6" fill="${f}" stroke="${c}" stroke-width="1.5"/>`,
+  sprout:   (c, f, s) => `<path d="M12 21v-9" stroke="${c}" ${s}/><path d="M12 13c-4.5 0-7-3-7-7 4.5 0 7 3 7 7zM12 11c0-4.5 3-7 7.5-7 0 4.5-3 7-7.5 7z" fill="${f}" stroke="${c}" ${s}/>`,
+  hill:     (c, f, s) => `<path d="M2 19.5l7-9.5 4 5 3-3.5 6 8z" fill="${f}" stroke="${c}" ${s}/><circle cx="17" cy="5.5" r="2" fill="none" stroke="${c}" ${s}/>`,
+  sky:      (c, f, s) => `<path d="M12 3l1.9 5.6L19.5 10.5l-5.6 1.9L12 18l-1.9-5.6L4.5 10.5l5.6-1.9z" fill="${f}" stroke="${c}" ${s}/><circle cx="19" cy="19" r="1.4" fill="${c}"/><circle cx="5" cy="19.5" r="1" fill="${c}"/>`,
+  home:     (c, f, s) => `<path d="M3.5 11 12 4l8.5 7v9.5h-17z" fill="${f}" stroke="${c}" ${s}/><path d="M10 20.5v-5h4v5" fill="none" stroke="${c}" ${s}/>`,
+  homeLight:(c, f, s) => `<path d="M3.5 11 12 4l8.5 7v9.5h-17z" fill="none" stroke="${c}" ${s}/><rect x="9" y="11.5" width="6" height="5" rx="1" fill="${f}" stroke="${c}" ${s}/><path d="M12 11.5v5M9 14h6" stroke="${c}" stroke-width="1.2"/>`,
+  /* отношения */
+  flame:    (c, f, s) => `<path d="M12 3c3 4 6.5 6 6.5 10.5a6.5 6.5 0 0 1-13 0c0-3 2-4.5 3-6.5 1 2 2 3 3 3 0-3-1-5 .5-7z" fill="${f}" stroke="${c}" ${s}/><path d="M12 20a2.6 2.6 0 0 1-2.6-2.6c0-1.6 1.4-2.4 2.6-4 1.2 1.6 2.6 2.4 2.6 4A2.6 2.6 0 0 1 12 20z" fill="${c}" fill-opacity=".35"/>`,
+  rings:    (c, f, s) => `<circle cx="9" cy="12" r="5.2" fill="${f}" stroke="${c}" ${s}/><circle cx="15" cy="12" r="5.2" fill="none" stroke="${c}" ${s}/>`,
+  heart:    (c, f, s) => `<path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z" fill="${f}" stroke="${c}" ${s}/>`,
+  bridge:   (c, f, s) => `<path d="M2.5 16.5V13.2C7 9.2 17 9.2 21.5 13.2V16.5H18.4C17.4 14.2 15 13 12 13S6.6 14.2 5.6 16.5Z" fill="${f}" stroke="${c}" ${s}/><path d="M2.5 10.4C7 6.4 17 6.4 21.5 10.4" fill="none" stroke="${c}" ${s}/><path d="M6 8.3V11.2M10 7.2V10.2M14 7.2V10.2M18 8.3V11.2" stroke="${c}" stroke-width="1.5" stroke-linecap="round"/><path d="M2.5 20.2C4.5 19.1 6.5 19.1 8.5 20.2S12.5 21.3 14.5 20.2 18.5 19.1 21.5 20.2" fill="none" stroke="${c}" ${s}/>`,
+  together: (c, f, s) => `<path d="M12 6.8A6 6 0 0 1 12 17.2A6 6 0 0 1 12 6.8Z" fill="${f}"/><circle cx="9" cy="12" r="6" fill="none" stroke="${c}" ${s}/><circle cx="15" cy="12" r="6" fill="none" stroke="${c}" ${s}/>`,
+  trees:    (c, f, s) => `<path d="M7.5 21v-5M16.5 21v-5" stroke="${c}" ${s}/><path d="M7.5 16.5c-2.6 0-4.3-2-4.3-4.6S5 6 7.5 4c2.5 2 4.3 5.3 4.3 7.9s-1.7 4.6-4.3 4.6z" fill="${f}" stroke="${c}" ${s}/><path d="M16.5 16.5c-2.6 0-4.3-2-4.3-4.6S14 6 16.5 4c2.5 2 4.3 5.3 4.3 7.9s-1.7 4.6-4.3 4.6z" fill="none" stroke="${c}" ${s}/><path d="M3 21h18" stroke="${c}" ${s}/>`,
+  hands:    (c, f, s) => `<path d="M3 13.5l4.5-4 4 2.5 4-2.5 5.5 4-6 5.5h-6z" fill="${f}" stroke="${c}" ${s}/><path d="M11.5 12l2.5 2.5M9.5 14l2 2" fill="none" stroke="${c}" ${s}/>`,
+  speech:   (c, f, s) => `<path d="M4 5.5h16v10H10l-5 4v-4H4z" fill="${f}" stroke="${c}" ${s}/><path d="M8 9.5h8M8 12.5h5" fill="none" stroke="${c}" ${s}/>`,
+  people:   (c, f, s) => `<circle cx="8.5" cy="8.5" r="3" fill="${f}" stroke="${c}" ${s}/><circle cx="16" cy="9.5" r="2.6" fill="none" stroke="${c}" ${s}/><path d="M3 19.5c.6-3.4 2.9-5.3 5.5-5.3s4.9 1.9 5.5 5.3M13.5 15c.8-.5 1.6-.7 2.5-.7 2.3 0 4.3 1.7 4.9 4.6" fill="none" stroke="${c}" ${s}/>`,
+  shield:   (c, f, s) => `<path d="M12 3l7.5 3v5.5c0 4.6-3.2 8-7.5 9.5-4.3-1.5-7.5-4.9-7.5-9.5V6z" fill="${f}" stroke="${c}" ${s}/><path d="M9 12l2.2 2.2L15.5 10" fill="none" stroke="${c}" ${s}/>`,
+  anchor:   (c, f, s) => `<circle cx="12" cy="5.5" r="2.3" fill="${f}" stroke="${c}" ${s}/><path d="M12 7.8V20M8 11h8M4.5 14c.5 3.5 3.6 6 7.5 6s7-2.5 7.5-6" fill="none" stroke="${c}" ${s}/>`,
+  /* путь, рефлексия, эксперимент */
+  compass:  (c, f, s) => `<circle cx="12" cy="12" r="8.5" fill="${f}" stroke="${c}" ${s}/><path d="M14.8 9.2l-1.8 4.8-4.8 1.8 1.8-4.8z" fill="${c}" fill-opacity=".85" stroke="${c}" stroke-width="1.2" stroke-linejoin="round"/>`,
+  path:     (c, f, s) => `<path d="M3.5 20.5V17H8v-3.8h4.5V9.5H17v11z" fill="${f}" stroke="${c}" ${s}/><path d="M4.5 12 13 4.5M10 4.5h3v3M20.5 20.5H3" fill="none" stroke="${c}" ${s}/>`,
+  telegram: (c, f, s) => `<path d="M3.2 11.4L20.2 4.3C20.8 4.1 21.3 4.6 21.2 5.2L18.4 19C18.3 19.6 17.6 19.9 17.1 19.5L12.6 16.2L10.2 18.6C9.9 18.9 9.4 18.7 9.4 18.3V14.8L17 7.8L7.6 13.4L3.4 12.2C2.8 12 2.7 11.6 3.2 11.4Z" fill="${f}" stroke="${c}" ${s}/>`,
+  instagram:(c, f, s) => `<rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="${f}" stroke="${c}" ${s}/><circle cx="12" cy="12" r="4" fill="#fff" stroke="${c}" ${s}/><circle cx="16.9" cy="7.1" r="1.1" fill="${c}"/>`,
+  mail:     (c, f, s) => `<rect x="3" y="5.5" width="18" height="13" rx="2.5" fill="${f}" stroke="${c}" ${s}/><path d="M3.8 7L12 12.8L20.2 7" fill="none" stroke="${c}" ${s}/>`,
+  megaphone:(c, f, s) => `<path d="M4 10V14H7L15 18.5V5.5L7 10Z" fill="${f}" stroke="${c}" ${s}/><path d="M7 14L8.2 19H10.4L9.6 14" fill="none" stroke="${c}" ${s}/><path d="M18 9.5C19 10.2 19.5 11 19.5 12S19 13.8 18 14.5" fill="none" stroke="${c}" ${s}/>`,
+  chatbot:  (c, f, s) => `<path d="M5 5H19A2 2 0 0 1 21 7V15A2 2 0 0 1 19 17H11L6.5 20.5V17H5A2 2 0 0 1 3 15V7A2 2 0 0 1 5 5Z" fill="${f}" stroke="${c}" ${s}/><circle cx="8.5" cy="11" r="1.2" fill="${c}"/><circle cx="12" cy="11" r="1.2" fill="${c}"/><circle cx="15.5" cy="11" r="1.2" fill="${c}"/>`,
+  swissguide:(c, f, s) => `<path d="M2.8 10.6L19.6 3.4C20.3 3.1 20.9 3.7 20.7 4.4L17.2 18.2C17 18.9 16.2 19.1 15.7 18.6L11.4 14.8L9 17.5C8.6 17.9 8 17.6 8 17.1V13.6L16.4 6.2L6.7 12.4L3 11.6C2.4 11.4 2.3 10.8 2.8 10.6Z" fill="${f}" stroke="${c}" ${s}/><path d="M18 22.4C18 22.4 13.4 19.7 13.4 16.9A2.3 2.3 0 0 1 18 15.9A2.3 2.3 0 0 1 22.6 16.9C22.6 19.7 18 22.4 18 22.4Z" fill="#D52B1E" stroke="#fff" stroke-width="1"/><path d="M18 16.6V20M16.3 18.3H19.7" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/>`,
+  signpost: (c, f, s) => `<path d="M12 3v18M8.5 21h7" stroke="${c}" ${s}/><path d="M12 5h6.3l2.2 2.2-2.2 2.2H12z" fill="${f}" stroke="${c}" ${s}/><path d="M12 11.5H5.7l-2.2 2.2 2.2 2.2H12z" fill="${f}" stroke="${c}" ${s}/>`,
+  eye:      (c, f, s) => `<path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" fill="${f}" stroke="${c}" ${s}/><circle cx="12" cy="12" r="3" fill="none" stroke="${c}" ${s}/><circle cx="12" cy="12" r="1" fill="${c}"/>`,
+  explore:  (c, f, s) => `<circle cx="10.5" cy="10.5" r="6" fill="${f}" stroke="${c}" ${s}/><path d="M15 15l5.5 5.5" stroke="${c}" ${s}/><path d="M8 9.5a2.8 2.8 0 0 1 2.5-2" fill="none" stroke="${c}" ${s}/>`,
+  flask:    (c, f, s) => `<path d="M9.5 3.5v5.5L4.5 18a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3l-5-9V3.5" fill="none" stroke="${c}" ${s}/><path d="M6.8 15h10.4l1.6 3a1.2 1.2 0 0 1-1.1 1.8H6.3A1.2 1.2 0 0 1 5.2 18z" fill="${f}" stroke="${c}" stroke-width="1.2"/><path d="M8 3.5h8" stroke="${c}" ${s}/>`,
+  mirror:   (c, f, s) => `<ellipse cx="12" cy="9.5" rx="5.5" ry="6.5" fill="${f}" stroke="${c}" ${s}/><path d="M12 16v5M8.5 21h7M9.5 7a3 3 0 0 1 2-1.6" fill="none" stroke="${c}" ${s}/>`,
+  pen:      (c, f, s) => `<path d="M15.5 4.5l4 4L9 19l-5 1 1-5z" fill="${f}" stroke="${c}" ${s}/><path d="M13.5 6.5l4 4" stroke="${c}" ${s}/>`,
+  book:     (c, f, s) => `<path d="M3.5 5.5c3-1 5.8-.8 8.5 1 2.7-1.8 5.5-2 8.5-1v13c-3-1-5.8-.8-8.5 1-2.7-1.8-5.5-2-8.5-1z" fill="${f}" stroke="${c}" ${s}/><path d="M12 6.5v13" stroke="${c}" ${s}/>`,
+  seed:     (c, f, s) => `<path d="M12 20c-3.6 0-6-2.6-6-6.3C6 9.5 9 6 12 4c3 2 6 5.5 6 9.7 0 3.7-2.4 6.3-6 6.3z" fill="${f}" stroke="${c}" ${s}/><path d="M12 20v-7.5" stroke="${c}" ${s}/>`,
+  sun:      (c, f, s) => `<circle cx="12" cy="12" r="4.2" fill="${f}" stroke="${c}" ${s}/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7" stroke="${c}" ${s}/>`,
+  moon:     (c, f, s) => `<path d="M19 15.5A8 8 0 0 1 8.5 5a8 8 0 1 0 10.5 10.5z" fill="${f}" stroke="${c}" ${s}/>`,
+  lantern:  (c, f, s) => `<path d="M9 6h6l1.5 3v8L15 20H9l-1.5-3V9z" fill="${f}" stroke="${c}" ${s}/><path d="M10 3.5h4M12 3.5V6M12 11v4" stroke="${c}" ${s}/>`,
+  cup:      (c, f, s) => `<path d="M4.5 9h12v5a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5z" fill="${f}" stroke="${c}" ${s}/><path d="M16.5 10.5h1.5a2.3 2.3 0 0 1 0 4.6h-1.8M8 3.5c-.8 1 .8 2-.1 3M12 3.5c-.8 1 .8 2-.1 3" fill="none" stroke="${c}" ${s}/>`,
+  mask:     (c, f, s) => `<path d="M4 6.5c5-2 11-2 16 0v5.5c0 4.5-3.6 8-8 8s-8-3.5-8-8z" fill="${f}" stroke="${c}" ${s}/><path d="M7.5 11c1-.8 2.5-.8 3.5 0M13 11c1-.8 2.5-.8 3.5 0M9 15.5c1.8 1.2 4.2 1.2 6 0" fill="none" stroke="${c}" ${s}/>`,
+  lock:     (c, f, s) => `<rect x="5" y="10.5" width="14" height="10" rx="2" fill="${f}" stroke="${c}" ${s}/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5M12 14.5v2.5" fill="none" stroke="${c}" ${s}/>`,
+  /* направления справочника «Свои люди в Швейцарии» (03.10.2026) */
+  dirStatus: (c, f, s) => `<rect x="5" y="3" width="14" height="18" rx="2" fill="${f}" stroke="${c}" ${s}/><circle cx="12" cy="10" r="3.3" fill="none" stroke="${c}" ${s}/><path d="M8.7 10h6.6M12 6.7c1.3 1.5 1.3 5.1 0 6.6M12 6.7c-1.3 1.5-1.3 5.1 0 6.6M9 17h6" fill="none" stroke="${c}" ${s}/>`,
+  dirLaw:    (c, f, s) => `<path d="M12 4v15.5M7.5 19.5h9M5 7h14M7 7l-3 6M7 7l3 6M17 7l-3 6M17 7l3 6" fill="none" stroke="${c}" ${s}/><path d="M4 13h6a3 3 0 0 1-6 0zM14 13h6a3 3 0 0 1-6 0z" fill="${f}" stroke="${c}" ${s}/><circle cx="12" cy="4" r="1.2" fill="${c}"/>`,
+  dirMoney:  (c, f, s) => `<path d="M3.5 6.5v4c0 1.3 2.5 2.3 5.5 2.3s5.5-1 5.5-2.3v-4" fill="${f}" stroke="${c}" ${s}/><ellipse cx="9" cy="6.5" rx="5.5" ry="2.3" fill="${f}" stroke="${c}" ${s}/><path d="M9.5 14.5v4c0 1.3 2.5 2.3 5.5 2.3s5.5-1 5.5-2.3v-4" fill="${f}" stroke="${c}" ${s}/><ellipse cx="15" cy="14.5" rx="5.5" ry="2.3" fill="${f}" stroke="${c}" ${s}/>`,
+  dirInsure: (c, f, s) => `<path d="M3 12.5a9 9 0 0 1 18 0c-1.5-1.2-3-1.2-4.5 0-1.5-1.2-3-1.2-4.5 0-1.5-1.2-3-1.2-4.5 0-1.5-1.2-3-1.2-4.5 0z" fill="${f}" stroke="${c}" ${s}/><path d="M12 12.5v6a2 2 0 0 1-4 0M12 3.5v-1" fill="none" stroke="${c}" ${s}/>`,
+  dirHealth: (c, f, s) => `<path d="M5.5 3h1.5M12 3h1.5M6.2 3v5a3.8 3.8 0 0 0 7.6 0V3M10 11.8v2.7a4.5 4.5 0 0 0 9 0v-2.3" fill="none" stroke="${c}" ${s}/><circle cx="19" cy="10" r="2.3" fill="${f}" stroke="${c}" ${s}/>`,
+  dirPsy:    (c, f, s) => `<path d="M14.5 21v-3h2a2 2 0 0 0 2-2v-2.5l1.6-.6-1.7-3A7 7 0 1 0 8 17.6V21" fill="${f}" stroke="${c}" ${s}/><path d="M11.6 13.8l-2.3-2.2a1.5 1.5 0 0 1 2.3-1.9 1.5 1.5 0 0 1 2.3 1.9z" fill="${c}" stroke="${c}" stroke-width="1" stroke-linejoin="round"/>`,
+  dirCoach:  (c, f, s) => `<path d="M12 6a5.2 5.2 0 0 0-3.1 9.4c.6.5.9 1.1.9 1.9v.7h4.4v-.7c0-.8.3-1.4.9-1.9A5.2 5.2 0 0 0 12 6z" fill="${f}" stroke="${c}" ${s}/><path d="M10.1 21h3.8M12 1.8v1.7M5.4 4.5l1.2 1.2M18.6 4.5l-1.2 1.2M3.2 11h1.7M19.1 11h1.7M10.4 13.4c.6-1 1-1.5 1.6-1.5s1 .5 1.6 1.5" fill="none" stroke="${c}" ${s}/>`,
+  target:    (c, f, s) => `<circle cx="11" cy="13" r="7.6" fill="${f}" stroke="${c}" ${s}/><circle cx="11" cy="13" r="4" fill="none" stroke="${c}" ${s}/><circle cx="11" cy="13" r="1.2" fill="${c}"/><path d="M11 13 19.7 4.3M16.6 4.3h3.1v3.1" fill="none" stroke="${c}" ${s}/>`,
+  drop:      (c, f, s) => `<path d="M12 3.2c3.6 4.3 6.2 7.6 6.2 10.7a6.2 6.2 0 0 1-12.4 0c0-3.1 2.6-6.4 6.2-10.7z" fill="${f}" stroke="${c}" ${s}/><path d="M12 18.5v-4.3c0-2 1.3-3.3 3.3-3.6-.1 2-1.3 3.3-3.3 3.6M12 15.5c0-1.4-.9-2.4-2.4-2.6" fill="none" stroke="${c}" ${s}/>`,
+dirBody:   (c, f, s) => `<circle cx="11" cy="9.5" r="6.2" fill="${f}" stroke="${c}" ${s}/><path d="M11 15.7v5.3M8.4 21h5.2M8 7.6a3.6 3.6 0 0 1 2.4-1.9" fill="none" stroke="${c}" ${s}/><path d="M19.3 1.8c.3 1.7 1 2.4 2.6 2.7-1.6.3-2.3 1-2.6 2.7-.3-1.7-1-2.4-2.6-2.7 1.6-.3 2.3-1 2.6-2.7z" fill="${c}" stroke="${c}" stroke-width="1" stroke-linejoin="round"/>`,
+  dirKids:   (c, f, s) => `<circle cx="8" cy="5" r="2.3" fill="${f}" stroke="${c}" ${s}/><path d="M5.5 21v-6l-1-1v-4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v4l-1 1v6" fill="${f}" stroke="${c}" ${s}/><circle cx="17" cy="11" r="1.9" fill="${f}" stroke="${c}" ${s}/><path d="M15.2 21v-3.8l-.8-.8v-2a1.5 1.5 0 0 1 1.5-1.5h2.2a1.5 1.5 0 0 1 1.5 1.5v2l-.8.8V21M11.5 13.5h2.9" fill="${f}" stroke="${c}" ${s}/>`,
+  dirLearn:  (c, f, s) => `<path d="M12 4 2.5 9 12 14l9.5-5z" fill="${f}" stroke="${c}" ${s}/><path d="M6.5 11.3V16c1.6 1.5 3.5 2.3 5.5 2.3s3.9-.8 5.5-2.3v-4.7M21.5 9v5.5" fill="none" stroke="${c}" ${s}/>`,
+  dirHome:   (c, f, s) => `<path d="M5.5 9.5V20h13V9.5" fill="${f}" stroke="${c}" ${s}/><path d="M3.5 11 12 4l8.5 7M10 20v-5h4v5M16 6.2V4.5h2v3.3" fill="none" stroke="${c}" ${s}/>`,
+  dirEvents: (c, f, s) => `<path d="M5.5 20.5v-6a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v6" fill="${f}" stroke="${c}" ${s}/><path d="M3.8 20.5h16.4M5.5 16.2c1.2 1 2.5 1 3.6 0 1.2 1 2.5 1 3.6 0 1.2 1 2.5 1 3.6 0 .7.6 1.4.8 2.2.6M12 12.5V9.3" fill="none" stroke="${c}" ${s}/><path d="M12 4.5c1.1 1.3 1.1 2.6 0 3.3-1.1-.7-1.1-2-0-3.3z" fill="${c}" stroke="${c}" stroke-width="1" stroke-linejoin="round"/>`
+};
+/* светлый тон цвета для заливки по умолчанию */
+const icoSoft = c => { const h = String(c).replace('#', ''); if (h.length !== 6) return 'none';
+  return '#' + [0, 2, 4].map(i => Math.round(parseInt(h.substr(i, 2), 16) * .3 + 255 * .7).toString(16).padStart(2, '0')).join(''); };
+function ico(name, line = '#2E5A88', fill, size = 24){
+  const draw = ICONS[name] || ICONS.seed;
+  const s = 'stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"';
+  return `<svg viewBox="0 0 24 24" width="${size}" height="${size}" aria-hidden="true">${draw(line, fill || icoSoft(line), s)}</svg>`;
+}
+
+/* знак-аватар Ирины: цветок-мандала (с 03.10.2026) */
+const AVATAR_SVG = '<svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#FFFCF8" stroke="#6E4F3C" stroke-width="3"/><g transform="rotate(22.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(67.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(112.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(157.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(202.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(247.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(292.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(337.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(0.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(45.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(90.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(135.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(180.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(225.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(270.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(315.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><circle cx="50" cy="50" r="7" fill="#B98324"/></svg>';
+/* ===== Цветы-мандалы для запросов (в стиле аватара, 04.10.2026) ===== */
+const MANDALAS = [
+  {n:6,  outer:['#B98324','#F3E3C2'], inner:['#6E4F3C','#EADFCF'], core:'#B98324', w:8,  l:35, wi:5, li:22},
+  {n:8,  outer:['#66704F','#E3E6D6'], inner:['#B98324','#F3E3C2'], core:'#66704F', w:7,  l:35, wi:5, li:24},
+  {n:5,  outer:['#2E5A88','#EAF2FA'], inner:['#66704F','#E3E6D6'], core:'#2E5A88', w:10, l:34, wi:6, li:21},
+  {n:7,  outer:['#6E4F3C','#EADFCF'], inner:['#2E5A88','#EAF2FA'], core:'#6E4F3C', w:8,  l:36, wi:5, li:23},
+  {n:9,  outer:['#66704F','#E3E6D6'], inner:['#6E4F3C','#EADFCF'], core:'#B98324', w:6,  l:35, wi:4, li:22},
+  {n:10, outer:['#B98324','#F3E3C2'], inner:['#2E5A88','#EAF2FA'], core:'#6E4F3C', w:5.5,l:36, wi:4, li:24},
+];
+function mandala(i, size){
+  const m = MANDALAS[i % MANDALAS.length];
+  const petal = (len, w) => `M50 50 C${50-w} ${50-len*0.35} ${50-w*0.9} ${50-len*0.8} 50 ${50-len} C${50+w*0.9} ${50-len*0.8} ${50+w} ${50-len*0.35} 50 50Z`;
+  let g = `<circle cx="50" cy="50" r="46" fill="#FFFCF8" stroke="${m.outer[0]}" stroke-width="3"/>`;
+  for (let k = 0; k < m.n; k++) g += `<path d="${petal(m.l, m.w)}" transform="rotate(${(360/m.n)*k + 180/m.n} 50 50)" fill="${m.outer[1]}" stroke="${m.outer[0]}" stroke-width="2"/>`;
+  for (let k = 0; k < m.n; k++) g += `<path d="${petal(m.li, m.wi)}" transform="rotate(${(360/m.n)*k} 50 50)" fill="${m.inner[1]}" stroke="${m.inner[0]}" stroke-width="2"/>`;
+  g += `<circle cx="50" cy="50" r="6" fill="${m.core}"/><circle cx="50" cy="50" r="2.4" fill="#FFFCF8"/>`;
+  return `<svg viewBox="0 0 100 100" width="${size}" height="${size}" aria-hidden="true">${g}</svg>`;
+}
+document.querySelectorAll('[data-ico]').forEach(e => { e.innerHTML = ico(e.dataset.ico, e.dataset.c, null, e.classList.contains('sm') ? 26 : 32); });
+document.querySelectorAll('[data-mandala]').forEach(e => { e.innerHTML = mandala(+e.dataset.mandala, 60); });
+const RQ = [
+ {q:'Как найти и разобрать свои внутренние запреты?', t:'Мне всё время кажется, что мне нельзя', ic:'key', c:'#B98324',
+  pain:['«Мне нельзя» звучит раньше, чем «я хочу»','Страшно занять место, попросить, назвать свою цену','Постоянно сравниваю себя с теми, у кого «получилось»','Одни и те же сценарии повторяются в разных странах и работах','Много объяснений, почему именно сейчас не время'],
+  res:['Услышишь, чей это на самом деле голос и когда он появился','Отделишь свои правила от унаследованных','Переформулируешь запрет в условие, с которым можно работать','Сделаешь то, что раньше было «нельзя», — сначала по чуть-чуть']},
+ {q:'Как понять, кем быть здесь и в какую сторону идти?', t:'Не понимаю, куда мне идти дальше', ic:'signpost', c:'#66704F',
+  pain:['Прежняя профессия здесь не считается или больше не греет','Вариантов много, а своего среди них нет','Диплом, язык, признание требуют лет — и непонятно, ради чего','Советы вокруг противоречат друг другу','Ощущение, что время уходит впустую'],
+  res:['Соберёшь то, что умеешь, в формулировку, понятную здешнему рынку','Отличишь «надо» от «хочу» и увидишь, где они совпадают','Выберешь одно направление и попробуешь его без больших рисков','Получишь план на ближайшие три месяца, а не на всю жизнь']},
+ {q:'Как перестать откладывать и начать действовать?', t:'Знаю, чего хочу, но не могу начать', ic:'path', c:'#2E5A88',
+  pain:['Цель понятна, а первый шаг всё время переносится','Страх ошибки, осуждения, неудачи','Хочется заранее знать, что получится','Сомнения, неуверенность, перфекционизм','Много переживаний и мало действий'],
+  res:['Поймёшь, что именно тебя останавливает — это редко лень','Разберёшься со страхами, сомнениями и тем, во что веришь и что тебя держит','Найдёшь внутреннюю опору и смелость действовать','Начнёшь делать реальные шаги уже во время работы']},
+ {q:'Как вернуть себе себя после переезда?', t:'Я перестала узнавать себя', ic:'mirror', c:'#6E4F3C',
+  pain:['Роли «жена», «мама», «сопровождающая супруга» вытеснили остальные','На вопрос «а чего хочешь ты» — пустота','То, что раньше радовало, здесь почему-то не работает','На «кто ты» отвечаешь через мужа, детей или прошлую профессию','Свои желания кажутся неуместными и несвоевременными'],
+  res:['Вернёшь себе своё «я хочу», а не только «я должна»','Отделишь себя от ролей, не отказываясь от них','Решишь, что из прежней жизни забрать с собой, а что отпустить','Дашь своим желаниям место в реальном расписании']},
+ {q:'Как начать делать своё в новой стране?', t:'Хочу делать своё, но не знаю, с какого конца', ic:'sprout', c:'#66704F',
+  pain:['Идея есть, но непонятно, как это вообще устроено здесь','Кажется, что сначала нужно доучиться, дождаться языка, получить признание','Страшно, что здесь это никому не нужно','Опыт из прошлой страны не переносится напрямую','Много подготовки и ни одного клиента'],
+  res:['Отделишь настоящие препятствия от воображаемых','Найдёшь формат, который можно проверить за несколько недель','Определишь первого человека, которому это нужно','Сделаешь первый реальный шаг — не идеальный, а сделанный']},
+ {q:'', t:'Боюсь ошибиться с выбором', ic:'compass', c:'#B98324',
+  pain:['Хожу по кругу. За и против, и снова за и против','Спрашиваю совета у всех, а решить не могу','Кажется, что ошибку здесь уже не исправить','Пока думаю, возможность уходит','После решения ещё долго сомневаюсь'],
+  res:['Поймёшь, что для тебя по-настоящему важно в этом выборе','Отделишь свой голос от чужих советов и страхов','Увидишь варианты, которых раньше не замечала','Примешь решение и сделаешь первый шаг — без месяцев сомнений']}
+];
+const esc = s => String(s).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+const rqList = document.getElementById('rqList');
+const HINTS = ["внутренние запреты", "направление и профессия", "откладывание", "себя после переезда", "своё дело", "решения и выбор"];
+rqList.innerHTML = RQ.map((x,i) => `<button class="rq" data-i="${i}" aria-haspopup="dialog"><span class="n">0${i+1}</span><span class="rq-m">${mandala(i,46)}</span><span class="rq-t"><b>${esc(x.t)}</b></span><span class="arr" aria-hidden="true">→</span></button>`).join('');
+const qm = document.getElementById('qm'), qmCard = document.getElementById('qmCard');
+function openRq(x){
+  qmCard.innerHTML = `<div class="qm-top"><span class="rq-mm">${mandala(RQ.indexOf(x),64)}</span>
+    <div class="qm-head"><div class="eyebrow">С чем ко мне приходят</div><h2 class="qm-title" id="qmTitle">«${esc(x.t)}»</h2></div>
+    <button class="qm-close" type="button" data-close aria-label="Закрыть">✕</button></div>
+    <div class="qm-panel">
+      <div class="qm-col"><h3>Что происходит</h3><ul class="pain">${x.pain.map(p=>`<li>${esc(p)}</li>`).join('')}</ul></div>
+      <div class="qm-col"><h3>Что меняется в работе</h3><ul class="res">${x.res.map(p=>`<li>${esc(p)}</li>`).join('')}</ul><p class="qm-note">Коучинг — это партнёрская работа. Результат появляется, когда мы работаем вместе. Количество сессий определяется индивидуально.</p></div>
+      <div class="qm-col"><h3>С чего начать</h3>
+        <a class="act" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener"><b>Знакомство, 30 минут <span>→</span></b><span>Это 30 минут онлайн, и это бесплатно. Напиши мне в Telegram слово ВСТРЕЧА.</span></a>
+        <a class="act" href="#path" data-close><b>Твой путь и программы <span>→</span></b><span>Посмотри шаги и программы. Подходящую выберем вместе на знакомстве.</span></a>
+      </div>
+    </div>`;
+  if (typeof qm.showModal === 'function') { try { qm.showModal(); } catch(e){ qm.setAttribute('open',''); } } else qm.setAttribute('open','');
+  qmCard.scrollTop = 0;
+}
+function closeRq(){ if (qm.open) { typeof qm.close === 'function' ? qm.close() : qm.removeAttribute('open'); } }
+rqList.addEventListener('click', e => { const b = e.target.closest('.rq'); if (b) openRq(RQ[+b.dataset.i]); });
+qm.addEventListener('click', e => { if (e.target === qm || e.target.closest('[data-close]')) closeRq(); });
+/* ===== Цветы для продуктов: у каждой линейки свой цветок и свой цвет (04.10.2026) =====
+   1 Начать бесплатно — ромашка, золото
+   2 Навести порядок  — клевер, шалфей
+   3 Найти опору      — лотос, синий
+   4 Работать с целью — роза, терракота
+   5 Идти дальше      — эдельвейс, слива
+*/
+const LANES = [
+  {flower:'daisy',     line:'#B98324', soft:'#F6E7C6', mid:'#E2B45C', core:'#6E4F3C'},
+  {flower:'clover',    line:'#5E6B45', soft:'#E3E8D3', mid:'#A7B484', core:'#B98324'},
+  {flower:'lotus',     line:'#2E5A88', soft:'#E4EEF8', mid:'#9DBBDD', core:'#B98324'},
+  {flower:'rose',      line:'#A0523D', soft:'#F5DDD3', mid:'#D99A84', core:'#6E4F3C'},
+  {flower:'edelweiss', line:'#6B5A8E', soft:'#ECE6F4', mid:'#B6A6D3', core:'#B98324'},
+];
+function flower(lane, k, size){
+  const L = LANES[lane], R = (a) => `rotate(${a} 50 50)`;
+  const pet = (len, w, tip) => tip
+    ? `M50 50 C${50-w} ${50-len*0.3} ${50-w*0.7} ${50-len*0.75} 50 ${50-len} C${50+w*0.7} ${50-len*0.75} ${50+w} ${50-len*0.3} 50 50Z`
+    : `M50 50 C${50-w} ${50-len*0.35} ${50-w*1.05} ${50-len*0.95} 50 ${50-len} C${50+w*1.05} ${50-len*0.95} ${50+w} ${50-len*0.35} 50 50Z`;
+  let g = `<circle cx="50" cy="50" r="47" fill="#FFFCF8" stroke="${L.line}" stroke-width="2.5"/>`;
+  const ring = (n, d, fill, stroke, off = 0, sw = 1.8) => { for (let i = 0; i < n; i++) g += `<path d="${d}" transform="${R(360/n*i + off)}" fill="${fill}" stroke="${stroke}" stroke-width="${sw}" stroke-linejoin="round"/>`; };
+  if (L.flower === 'daisy') {                 // ромашка: много длинных лепестков, крупная серединка
+    const n = [12, 14, 16, 18, 11, 20][k % 6];
+    ring(n, pet(38, 5.2, false), L.soft, L.line);
+    if (k % 2) ring(n, pet(24, 3.2, false), L.mid, L.line, 180/n, 1.4);
+    g += `<circle cx="50" cy="50" r="12" fill="${L.mid}" stroke="${L.line}" stroke-width="1.8"/>`;
+    for (let i = 0; i < 8; i++) { const a = i * Math.PI / 4; g += `<circle cx="${50 + 6.5*Math.cos(a)}" cy="${50 + 6.5*Math.sin(a)}" r="1.4" fill="${L.core}"/>`; }
+    g += `<circle cx="50" cy="50" r="2" fill="${L.core}"/>`;
+  }
+  if (L.flower === 'clover') {                // клевер: округлые лепестки-сердечки, строгая геометрия
+    const n = [4, 5, 6, 8][k % 4], rr = [17, 15, 13, 10.5][k % 4], d = [20, 21, 23, 25][k % 4];
+    for (let i = 0; i < n; i++) {
+      const a = (360/n*i - 90) * Math.PI / 180, x = 50 + d*Math.cos(a), y = 50 + d*Math.sin(a);
+      g += `<circle cx="${x}" cy="${y}" r="${rr}" fill="${L.soft}" stroke="${L.line}" stroke-width="1.8"/>`;
+      g += `<path d="M50 50 L${50 + (d+rr*0.6)*Math.cos(a)} ${50 + (d+rr*0.6)*Math.sin(a)}" stroke="${L.mid}" stroke-width="1.6" stroke-linecap="round"/>`;
+    }
+    g += `<circle cx="50" cy="50" r="7.5" fill="${L.mid}" stroke="${L.line}" stroke-width="1.8"/><circle cx="50" cy="50" r="2.6" fill="${L.core}"/>`;
+  }
+  if (L.flower === 'lotus') {                 // лотос: острые лепестки в два-три яруса
+    const n = [6, 7, 8, 5, 9, 6, 8][k % 7];
+    ring(n, pet(41, 11, true), L.soft, L.line, 180/n);
+    ring(n, pet(29, 8, true), L.mid, L.line, 0, 1.6);
+    if (k % 2 === 0) ring(n, pet(17, 5, true), '#FFFCF8', L.line, 180/n, 1.4);
+    g += `<circle cx="50" cy="50" r="5.5" fill="${L.core}"/><circle cx="50" cy="50" r="2" fill="#FFFCF8"/>`;
+  }
+  if (L.flower === 'rose') {                  // роза: округлые лепестки, закручиваются к центру
+    const n = [5, 6, 7][k % 3];
+    ring(n, pet(42, 15, false), L.soft, L.line, 0);
+    ring(n, pet(31, 12, false), L.mid, L.line, 180/n + 8, 1.6);
+    ring(n, pet(20, 8.5, false), L.soft, L.line, 18, 1.4);
+    g += `<circle cx="50" cy="50" r="9" fill="${L.mid}" stroke="${L.line}" stroke-width="1.6"/>`;
+    let sp = ''; for (let t = 0; t <= 4.2*Math.PI; t += 0.25) { const r = 0.6 + 0.52*t; sp += (sp ? ' L' : 'M') + (50 + r*Math.cos(t + k)).toFixed(2) + ' ' + (50 + r*Math.sin(t + k)).toFixed(2); }
+    g += `<path d="${sp}" fill="none" stroke="${L.core}" stroke-width="1.6" stroke-linecap="round"/>`;
+  }
+  if (L.flower === 'edelweiss') {             // эдельвейс: звезда из пушистых лепестков, в центре соцветия
+    const n = [6, 7, 8][k % 3];
+    ring(n, pet(42, 9, true), L.soft, L.line, 0);
+    ring(n, pet(27, 5.5, true), '#FFFCF8', L.mid, 180/n, 1.4);
+    const c = [3, 4, 5][k % 3];
+    for (let i = 0; i < c; i++) { const a = (360/c*i - 90) * Math.PI / 180; g += `<circle cx="${50 + 5.5*Math.cos(a)}" cy="${50 + 5.5*Math.sin(a)}" r="4" fill="${L.mid}" stroke="${L.line}" stroke-width="1.3"/>`; }
+    g += `<circle cx="50" cy="50" r="2.4" fill="${L.core}"/>`;
+  }
+  return `<svg viewBox="0 0 100 100" width="${size}" height="${size}" aria-hidden="true">${g}</svg>`;
+}
+
+/* ===== Путь клиентки: данные (из карты линейки 04.10.2026) ===== */
+const TG = 'https://t.me/IrynaNeuroCoach';
+const T = 'https://voznesenskaya.ch/';
+const PR = {
+  kompas:{name:'«Компас адаптации»', ic:'compass', c:'#6E4F3C', slogan:'Где ты сейчас в новой стране и куда идти дальше', line:'тест · 10 минут · разбор на 11 страниц', price:'бесплатно', ready:true, type:'test', href:T+'kompas/',
+    inside:'шесть сфер новой жизни — язык, быт, работа, люди, силы и смысл', pain:['вроде всё нормально, а что-то не так','непонятно, какая сфера просела'], res:['видишь, что уже стало опорой и где пусто','знаешь, с какой сферы начать']},
+  stupeni:{name:'«Ступени устойчивости»', ic:'hill', c:'#66704F', slogan:'Чтобы стать своей и чувствовать себя как дома', line:'путеводитель и тест · 20 минут', price:'бесплатно', ready:true, type:'test', href:T+'stupeni/', more:{h:T+'put/', b:'Твой путь в новой стране', t:'Через какие стоянки проходит каждая, кто переехала. От земли под ногами до неба над домом. Посмотри, где ты сейчас и что поможет тебе идти дальше.'},
+    inside:'семь ступеней, от земли под ногами и своих людей до своего дела и смысла', pain:['не на что опереться, всё шатается','непонятно, с чего начинать'], res:['знаешь, какие ступени держат, а какая проседает','понимаешь, с какой ступени начинать']},
+  blizost:{name:'«Быть рядом и быть собой»', ic:'together', c:'#2E5A88', slogan:'Близость, в которой не нужно терять себя', line:'тест о паре · 20 минут', price:'бесплатно', ready:true, type:'test', href:T+'blizost/',
+    inside:'четыре опоры пары — близость, страсть, обязательство и умение оставаться собой', note:'Этот тест про пару. Работа с отношениями — моя отдельная практика психолога для тех, кто живёт в Украине.', pain:['в отношениях ты потерялась и растворилась в паре','рядом вроде близко, а внутри одиноко'], res:['ты видишь, какие опоры вашей пары держат, а какие ослабли','понимаешь, где можно оставаться собой рядом с ним']},
+  roza:{name:'«Роза любви»', ic:'heart', c:'#2E5A88', slogan:'Чтобы снова услышать друг друга и вернуть в пару тепло', line:'тест о паре · 15 минут · можно вдвоём', price:'бесплатно', ready:true, type:'test', href:T+'roza-lyubvi/',
+    inside:'три роли в паре — он любовник, муж и отец, она любовница, жена и мать', note:'Этот тест про пару. Работа с отношениями — моя отдельная практика психолога для тех, кто живёт в Украине.', pain:['тепло ушло, и вы живёте как соседи','не получается поговорить о главном'], res:['ты видишь, какие роли звучат ярко, а какие стали тише','у вас есть повод для разговора вдвоём']},
+  bot:{name:'Бот «Гайд по Швейцарии»', ic:'signpost', c:'#B98324', slogan:'Бумаги, страховка, школа, врачи — по шагам и на русском', line:'Telegram-бот', price:'бесплатно', ready:true, type:'bot', href:'https://t.me/swisscompass_bot',
+    inside:'разделы по темам, пошаговые ответы на практические вопросы', pain:['каждое письмо из ведомства — как экзамен','не знаешь, куда звонить и что спросить'], res:['знаешь, что делать в конкретном вопросе','меньше паники, больше уверенности в быту']},
+  emo:{name:'«Мои эмоции»', ic:'heart', c:'#D81B78', slogan:'Понимать, что ты чувствуешь, и выбирать, что с этим делать', line:'дневник эмоций · PDF и PNG', price:'бесплатно', ready:true, type:'tool', href:'https://svoiludi.ch/instrumenty/moi-emocii/', btn:'Открыть дневник', ask:'«Мои эмоции»',
+    inside:'несколько раз в день ты отмечаешь эмоцию, её силу, где она в теле, что произошло и что помогло. Внизу видно твои недели, а ещё есть минута дыхания и десять шагов к своим эмоциям', note:'Дневник бесплатный, записи хранятся только у тебя. Если захочешь разобраться в своих эмоциях вместе со мной, начнём со знакомства.', pain:['эмоции накрывают, и непонятно, что с тобой','тревога, раздражение или тоска по дому без видимой причины'], res:['ты видишь, какие эмоции повторяются и что их вызывает','знаешь, что помогает тебе вернуться к себе']},
+  meet:{name:'«Знакомство»', ic:'cup', c:'#6E4F3C', slogan:'30 минут, чтобы понять, куда тебе идти', line:'30 минут · онлайн', price:'бесплатно', ready:true, type:'session',
+    inside:'твой запрос, результат теста и выбор следующего шага', pain:['страшно начать, непонятно, нужен ли коуч','не знаешь, что из этого тебе подходит'], res:['понятный следующий шаг, выбранный вместе','понимаешь, подходим ли мы друг другу']},
+
+  day:{name:'Мой день', ic:'sun', c:'#B98324', slogan:'Время для главного и для себя', line:'план дня · PDF и PNG', price:'бесплатно', ready:true, type:'tool', href:'https://svoiludi.ch/instrumenty/moj-den/', btn:'Открыть план дня', ask:'«Мой день»',
+    inside:'твой день по часам цветными блоками, энергия по часам, три главных дела, важно и срочно, стоп-лист, таймер на 25 минут, вечерний итог и десять техник управления временем в новой стране', note:'План дня бесплатный. Если захочешь разобрать свой день вместе со мной, это встреча 30 минут.', pain:['бегу весь день, а главное так и не сделано','школа заканчивается в обед, и на своё времени не остаётся'], res:['день, в котором есть время на главное и на себя','знаешь, что можно отложить, отдать или не делать']},
+  year:{name:'Мой год', ic:'book', c:'#66704F', slogan:'Весь год перед глазами, и ничего не забыто', line:'онлайн-календарь · PDF и PNG', price:'бесплатно', ready:true, type:'tool', href:'https://svoiludi.ch/instrumenty/moj-god/',
+    inside:'годовой календарь для твоей рутины. Спорт, курсы немецкого, встречи, отпуск, налоги и праздники твоего кантона на одном листе', note:'Календарь бесплатный. Если захочешь разобрать свой год вместе со мной, это встреча 30 минут.', pain:['сроки сваливаются внезапно','планы не дальше месяца'], res:['год на одной странице со всеми важными датами','видно, когда ты закончишь курс и где в году есть место для тебя']},
+  budget:{name:'Мой бюджет', ic:'key', c:'#6E4F3C', slogan:'Все обязательные расходы на одном листе, и никаких сюрпризов', line:'онлайн-бюджет · Excel и PDF', price:'бесплатно', ready:true, type:'tool', href:'https://svoiludi.ch/instrumenty/moj-budget/', btn:'Открыть бюджет', ask:'«Мой бюджет»',
+    inside:'все обязательные расходы в Швейцарии по выпадающим спискам. Жильё, страховки, абонементы, транспорт, связь, налоги и дети. Видно, сколько уходит в месяц и в год и в какие месяцы приходят большие счета. Скачивается в Excel с формулами и красивым отчётом в PDF', note:'Бюджет бесплатный. Если захочешь разобрать свои деньги вместе со мной, это встреча 30 минут.', pain:['деньги утекают, непонятно куда','крупные счета приходят неожиданно'], res:['видишь все обязательные расходы на год вперёд','знаешь, сколько откладывать каждый месяц на большие счета']},
+  tax:{name:'Декларация', ic:'pen', c:'#2E5A88', slogan:'Налоги вовремя и без паники', line:'материал для самостоятельной работы + встреча 30 минут', price:'цена скоро', ready:false, type:'kit',
+    inside:'папка документов, календарь сбора и чек-лист подачи', note:'Это не налоговая консультация. Я помогаю навести порядок, а налоги считает специалист.', pain:['налоговая пугает, документы разбросаны','каждый год всё собираешь заново в последний момент'], res:['папка документов в порядке','есть чек-лист и сроки, и ты подаёшь вовремя и спокойно']},
+
+  mentor:{name:'Менторская встреча', ic:'speech', c:'#B98324', slogan:'Спросить ту, кто уже прошла этот путь', line:'1 час · онлайн', price:'цена скоро', ready:false, type:'session',
+    inside:'живой разговор с той, кто сама в эмиграции с 2010 года', note:'Это не коучинг. Это поддержка и опыт, когда в работу идти ещё рано.', pain:['ты на переходе, в коучинг рано, а одной тяжело','хочется поговорить с той, кто это уже прошла'], res:['поддержка и ощущение «так бывает у всех, это пройдёт»','2–3 конкретных шага на ближайшие недели']},
+  m1:{name:'«Две недели, чтобы вернуть пол под ногами»', ic:'moon', c:'#2E5A88', slogan:'Сначала — сон, горизонт и свой угол', line:'PDF-тетрадь · 14 дней', price:'бесплатно', ready:false, type:'free',
+    inside:'вечерний протокол сна, карта ближайших шести месяцев, свой угол дома и слова для разговора с семьёй', pain:['нет сил, не спится, держишься на нервах','непонятно, что будет в ближайшие месяцы'], res:['спишь и просыпаешься с силами','неопределённость разложена по датам — есть горизонт']},
+  enough:{name:'«Я достаточна и я достойна»', ic:'mirror', c:'#6E4F3C', slogan:'Опора — в том, что у меня уже есть', line:'рассылка · 14 писем', letters:14, price:'29 CHF*', ready:false, type:'series',
+    inside:'что у тебя уже есть, твои сильные стороны глазами близких, дневник «я смогла», своя формула «я достаточна»', pain:['сравниваешь себя с теми, у кого «получилось»','кажется, что без статуса и работы ты «ничего не стоишь»'], res:['видишь свои сильные стороны и то, что уже есть','опора в себе, а не в статусе']},
+  borders:{name:'«Я хозяйка своей жизни»', ic:'shield', c:'#66704F', slogan:'Моё «нет» — тоже забота', line:'рассылка · 21 письмо', letters:21, price:'29 CHF*', ready:false, type:'series',
+    inside:'карта твоих границ, формулы отказа на русском и немецком, что делать с виной, договорённости дома', pain:['соглашаешься, а потом злишься и устаёшь','вина за любое «нет»'], res:['понимаешь, где твои границы','говоришь «нет» спокойно и без вины']},
+  price5:{name:'«Своя цена»', ic:'workshop', c:'#B98324', slogan:'Твоя цена никуда не делась', line:'рассылка · 4 письма-блока на 30 дней', letters:4, price:'39 CHF*', ready:false, type:'series',
+    inside:'банк умений, проверочные разговоры, три дорожки — работа, своё дело или проект, задание «первый франк»', pain:['«я тут никто», диплом не считается','больно отвечать «чем вы занимаетесь»'], res:['видишь свои умения, нужные здесь','получаешь первые деньги за то, что умеешь']},
+  exp:{name:'«Кому нужен мой опыт»', ic:'hands', c:'#2E5A88', slogan:'Отдавать с радостью, а не из пустоты', line:'рассылка · 14 писем', letters:14, price:'29 CHF*', ready:false, type:'series',
+    inside:'учёт своей помощи, «нет» без вины, правило равенства, первая цена за то, что делаешь хорошо', pain:['раздаёшь себя бесплатно и выдыхаешься','помогаешь всем, а своего нет'], res:['помогаешь в радость, а не в тягость','есть своё дело и первая цена за опыт']},
+  draft:{name:'«Моя жизнь не черновик»', ic:'homeLight', c:'#6E4F3C', slogan:'Помириться с решением и начать жить здесь', line:'рассылка · 21 письмо', letters:21, price:'29 CHF*', ready:false, type:'series',
+    inside:'ревизия отложенного, письменный разбор решения уехать, «дом, а не съём», горизонт в три года', pain:['ждёшь, когда начнётся настоящая жизнь','решение о переезде переигрывается при каждой трудности'], res:['помирилась с решением уехать','ближайшие годы видны и радуют']},
+
+  snimok:{name:'«Снимок жизни»', ic:'eye', c:'#B98324', slogan:'Где у меня хаос, а где порядок', line:'разбор по колесу сфер жизни · 3 часа', price:'249 CHF', ready:false, type:'deep', page:true,
+    inside:'снимок того, как ты живёшь сейчас, и приоритеты по сферам', note:'Предоплата. Отчёт — за доплату. Встреча записывается для отчёта, затем запись удаляется.', pain:['живёшь «как-то не так», но не понимаешь, где именно','сил уходит много, а результата не видно'], res:['ясная картина своей жизни сейчас','понимаешь, куда направить внимание в первую очередь','сфера, где поставим цель']},
+  fund:{name:'«Мой фундамент»', ic:'anchor', c:'#6E4F3C', slogan:'Что мной движет и что держит', line:'разбор ценностей в контексте цели · 3 часа', price:'249 CHF', ready:true, type:'deep', page:true,
+    inside:'ценности и потребности, что тормозит движение к цели, рабочая карта', note:'Предоплата. Отчёт — за доплату. Встреча записывается для отчёта, затем запись удаляется.', pain:['знаешь, чего хочешь, может быть давно, — но ни шага не сделала','не понимаешь, почему стоишь на месте'], res:['честно понимаешь свои ценности и потребности','видишь, что мешает. Это может быть страх, стыд, вина или старые правила','план работы и рабочая карта']},
+  flag:{name:'«Моя цель — мой путь»', ic:'path', c:'#6E4F3C', slogan:'От цели — к сделанным шагам', line:'личный коучинг · 10 сессий', price:'цена скоро', ready:false, type:'deep', page:true, main:true,
+    inside:'первая сессия — разбор твоей цели; дальше работа с тем, что останавливает, и реальные шаги', note:'После «Моего фундамента». Расписание всех встреч фиксируем сразу. Оплата сразу или частями.', pain:['есть цель — своё дело, больше зарабатывать, расти в профессии — и что-то останавливает','между «хочу» и «есть» — пропасть'], res:['цель описана и проверена твоими ценностями','разобрано то, что мешало','сделаны реальные шаги к цели']},
+
+  support:{name:'Сопровождение', ic:'lantern', c:'#B98324', slogan:'Чтобы не сбиться с пути', line:'пакет сессий или разовые встречи', price:'цена скоро', ready:false, type:'session',
+    inside:'поддержка после программы, чтобы держать курс и поддерживать себя', pain:['страшно откатиться к старому','нужна опора, чтобы держать курс'], res:['держишь выбранный курс','умеешь поддерживать себя сама']},
+  life:{name:'«Жизнь без сожалений»', ic:'sky', c:'#2E5A88', slogan:'Как прожить свою жизнь и ни о чём не жалеть', line:'стратегия на жизнь с обратным отсчётом · 3 часа', price:'цена скоро', ready:false, type:'deep', page:true,
+    inside:'стратегия на большой горизонт. Смотрим из будущего обратно в сегодня', note:'Предоплата. Отчёт — за доплату.', pain:['«сколько ещё лет я собираюсь ждать?»','всё есть, но нет большого горизонта'], res:['стратегия на годы вперёд','понятно, что делать уже в этом году']},
+  gift:{name:'Подарок «Свои люди»', ic:'people', c:'#66704F', slogan:'Обрасти своими людьми и клиентами', line:'за полное прохождение «Моя цель — мой путь»', price:'в подарок', ready:false, type:'gift',
+    inside:'полгода бесплатно в справочнике «Свои люди в Швейцарии» и доступ в Telegram-чат «Свои люди»', pain:['после программы страшно остаться одной','своё дело есть, а клиентов и знакомств мало'], res:['поддержка и единомышленницы в чате','видимость в справочнике, новые клиенты и знакомства']},
+};
+const THEMES = [
+  {h:'Начать бесплатно', sub:'Мои тесты и дневник эмоций покажут, где ты сейчас, а на знакомстве мы вместе выберем твой следующий шаг.', ids:['kompas','stupeni','blizost','roza','emo','bot','meet']},
+  {h:'Навести порядок', sub:'Для твоего спокойствия в быту. Инструменты для самостоятельной работы, часть из них бесплатно. Разобрать всё вместе можно на встрече 30 минут.', ids:['day','year','budget','tax']},
+  {h:'Найти опору', sub:'Когда в коучинг ещё рано, а поддержка нужна тебе уже сейчас. Разговор с той, кто прошла этот путь, и программы по письмам.', ids:['mentor','m1','enough','borders','price5','exp','draft']},
+  {h:'Работать с целью', sub:'Личная работа ради твоей цели, от снимка жизни к сделанным шагам.', ids:['snimok','fund','flag'], flow:true},
+  {h:'Идти дальше', sub:'Чтобы ты не сбилась с пути и обросла своими людьми.', ids:['support','life','gift']},
+];
+const FL = {}; THEMES.forEach((t, ti) => t.ids.forEach((id, k) => FL[id] = [ti, k]));
+const pflower = (id, size) => flower(FL[id][0], FL[id][1], size);
+const cap = s => String(s).charAt(0).toUpperCase() + String(s).slice(1);
+function pathInit(){
+  const esc2 = s => String(s).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+  const box = document.getElementById('pathThemes');
+  box.innerHTML = THEMES.map((t, ti) => `<div class="theme"><div class="theme-h"><span class="theme-n" style="background:${LANES[ti].line}">${ti+1}</span><div><h3>${esc2(t.h)}</h3><p>${esc2(t.sub)}</p></div></div>
+    <div class="pgrid${t.flow ? ' flowrow' : ''}">` + t.ids.map((id, k) => { const p = PR[id];
+      return (t.flow && k ? '<span class="parr" aria-hidden="true">→</span>' : '') + `<button class="pblock${p.main ? ' main' : ''}" data-p="${id}" aria-haspopup="dialog">
+        <span class="pb-top"><span class="pb-fl">${pflower(id, 48)}</span>${p.ready ? '' : '<span class="soon">скоро</span>'}</span>
+        <b>${esc2(p.name)}</b><span class="pb-slogan">${esc2(p.slogan)}</span><span class="pb-line">${esc2(p.line)}</span>
+        <span class="pb-foot"><span class="pb-price${/^(бесплатно|в подарок)$/.test(p.price) ? ' free' : /\d/.test(p.price) ? ' paid' : ' soonp'}">${/^(бесплатно|в подарок)$/.test(p.price) ? '<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 3l2.3 5.6 6 .5-4.6 3.9 1.4 5.9L12 15.8 6.9 18.9l1.4-5.9L3.7 9.1l6-.5z" fill="currentColor"/></svg>' : ''}${esc2(p.price)}</span><span class="pb-more">подробнее →</span></span></button>`; }).join('') + '</div></div>').join('');
+  const pm = document.getElementById('pdlg'), pc = document.getElementById('pdlgCard');
+  function actions(p){
+    const a = [];
+    if (p.type === 'test') a.push(`<a class="btn free" href="${p.href}" target="_blank" rel="noopener">Пройти тест</a>`);
+    if (p.type === 'bot') a.push(`<a class="btn free" href="${p.href}" target="_blank" rel="noopener">Открыть бота</a>`);
+    if (p.type === 'free') a.push(p.ready ? `<a class="btn free" href="#">Скачать бесплатно</a>` : `<span class="btn off" aria-disabled="true">Скачать бесплатно · скоро</span>`);
+    if (p.type === 'series') a.push(`<a class="btn gold" href="${TG}" target="_blank" rel="noopener">Заказать рассылку</a><span class="act-note">Напиши в Telegram слово <span class="codeword">РАССЫЛКА</span> и название программы. Придёт ${p.letters} ${p.letters===4?'письма':p.letters===21?'письмо':'писем'}.</span>`);
+    if (p.type === 'tool') a.push(`<a class="btn free" href="${p.href}" target="_blank" rel="noopener">${p.btn || 'Открыть календарь'}</a>${p.ask === '«Мои эмоции»' ? `<span class="act-note">Хочешь разобраться в своих эмоциях вместе со мной? Напиши в Telegram слово <span class="codeword">ВСТРЕЧА</span>.</span>` : `<span class="act-note">Хочешь разобрать ${p.ask === '«Мой день»' ? 'свой день' : p.ask === '«Мой бюджет»' ? 'свой бюджет' : 'свой год'} вместе со мной? Напиши в Telegram слово <span class="codeword">ПОРЯДОК</span> и ${p.ask || '«Мой год»'}.</span>`}`);
+    if (p.type === 'kit') a.push(`<a class="btn" href="${TG}" target="_blank" rel="noopener">Заказать</a><span class="act-note">Напиши в Telegram слово <span class="codeword">ПОРЯДОК</span> и название.</span>`);
+    if (p.type === 'session' || p.type === 'deep') a.push(`<a class="btn${p.price === 'бесплатно' ? ' free' : ''}" href="${TG}" target="_blank" rel="noopener">Записаться</a><span class="act-note">Напиши в Telegram слово <span class="codeword">ВСТРЕЧА</span>.</span>`);
+    if (p.page) a.push(`<span class="btn ghost off" aria-disabled="true">Страница программы · скоро</span>`);
+    return a.join('');
+  }
+  function open(id){
+    const p = PR[id];
+    pc.innerHTML = `<div class="qm-top"><span class="pd-fl">${pflower(id, 68)}</span>
+      <div class="qm-head"><div class="eyebrow">${esc2(p.line)}</div><h2 class="qm-title" id="pdlgTitle">${esc2(p.name)}</h2><p class="pd-slogan">${esc2(p.slogan)}</p></div>
+      <button class="qm-close" type="button" data-pclose aria-label="Закрыть">✕</button></div>
+      <div class="pd-grid"><div class="pd-box pdp"><h3>С чем приходишь</h3><ul>${p.pain.map(x=>`<li>${esc2(x)}</li>`).join('')}</ul></div>
+      <div class="pd-box pdr"><h3>С чем уходишь</h3><ul>${p.res.map(x=>`<li>${esc2(x)}</li>`).join('')}</ul></div></div>
+      <div class="pd-facts"><div class="pd-fact"><span class="pd-lbl">Что внутри</span><p>${esc2(cap(p.inside))}.</p></div>${p.note ? `<p class="pd-note">${esc2(p.note)}</p>` : ''}${p.more ? `<a class="pd-more" href="${p.more.h}" target="_blank" rel="noopener"><span class="pd-lbl">Читай также</span><b>${esc2(p.more.b)} →</b><span>${esc2(p.more.t)}</span></a>` : ''}<div class="pd-fact"><span class="pd-lbl">Сколько стоит</span><p>${esc2(cap(p.price))}${/\*/.test(p.price) ? ' <span class="pd-note">(черновик цены)</span>' : ''}</p></div></div>
+      <div class="pd-act">${actions(p)}</div>`;
+    if (typeof pm.showModal === 'function') { try { pm.showModal(); } catch(e){ pm.setAttribute('open',''); } } else pm.setAttribute('open','');
+    pc.scrollTop = 0;
+  }
+  box.addEventListener('click', e => { const b = e.target.closest('[data-p]'); if (b) open(b.dataset.p); });
+  pm.addEventListener('click', e => { if (e.target === pm || e.target.closest('[data-pclose]')) { typeof pm.close === 'function' ? pm.close() : pm.removeAttribute('open'); } });
+}
+pathInit();
+</script></body></html>
