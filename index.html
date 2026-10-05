@@ -590,6 +590,22 @@ section[id]{scroll-margin-top:96px}
 .pd-report{background:var(--sage-soft);border-radius:18px;padding:16px 18px;display:flex;flex-direction:column;gap:6px}
 .pd-report .pd-lbl{color:var(--sage)}
 .pd-report p{margin:0;font-size:.95rem;line-height:1.6}
+
+/* отзывы листаются вбок (05.10.2026) */
+.rv-wrap{display:flex;flex-direction:column;gap:12px}
+.rv-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 10px;scrollbar-width:none;outline:none}
+.rv-track::-webkit-scrollbar{display:none}
+.rv-track .rv{flex:0 0 min(86%,380px);scroll-snap-align:start;border-style:solid;border-color:color-mix(in srgb,var(--mustard) 35%,var(--line))}
+.rv-track .rv blockquote{color:var(--ink);flex:1}
+.rv-prod{align-self:flex-start;font:inherit;font-size:.74rem;font-weight:700;letter-spacing:.04em;color:var(--sage);background:var(--sage-soft);border:0;border-radius:999px;padding:5px 12px;cursor:pointer}
+.rv-prod:hover{background:var(--sage);color:var(--paper)}
+.rv-cta{background:var(--mustard-soft)!important}
+.rv-cta .btn{align-self:flex-start}
+.rv-cta figcaption{font-weight:400;color:var(--muted)}
+.rv-nav{display:flex;gap:10px;justify-content:flex-end}
+.rv-nav button{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:var(--paper);color:var(--brown);font-size:1.05rem;cursor:pointer}
+.rv-nav button:hover{border-color:var(--brown)}
+@media (hover:none){.rv-nav{display:none}}
 </style></head><body>
 <header class="top">
   <div class="page">
@@ -735,11 +751,16 @@ section[id]{scroll-margin-top:96px}
     <div class="sec-head">
       <div class="eyebrow">Отзывы клиентов</div>
       <h2 id="rv-h">Что говорят клиенты</h2>
+      <p>Эти слова мне говорили лично, после встреч и после работы.</p>
     </div>
-    <div class="rv-grid">
-      <figure class="rv"><blockquote>Место для реального отзыва. С чем человек пришёл и что изменилось после работы.</blockquote><figcaption>Имя или инициалы, возраст, город</figcaption></figure>
-      <figure class="rv"><blockquote>Достаточно трёх коротких отзывов. Можно анонимно — «Мария, 41, Базель» — с разрешения клиентки.</blockquote><figcaption>Имя или инициалы, возраст, город</figcaption></figure>
-      <figure class="rv"><blockquote>Сильнее всего работают отзывы с конкретикой. Что было до и что человек сделал после.</blockquote><figcaption>Имя или инициалы, возраст, город</figcaption></figure>
+    <div class="rv-wrap">
+      <div class="rv-track" id="rvTrack" tabindex="0" aria-label="Отзывы, листаются вбок">
+        <figure class="rv"><button type="button" class="rv-prod" data-open="bot">Бот «Гайд по Швейцарии»</button><blockquote>Спасибо, что ботом можно пользоваться бесплатно. Он очень выручает, когда нужно быстро понять, что делать здесь, в Швейцарии, и не у кого спросить.</blockquote><figcaption>Клиентка, бот «Гайд по Швейцарии»</figcaption></figure>
+        <figure class="rv"><button type="button" class="rv-prod" data-open="flag">«Моя цель — мой путь»</button><blockquote>Спасибо за нашу долгую работу. Она перевернула моё сознание. Я на себе поняла, что когда меняешь мышление, меняется и жизнь.</blockquote><figcaption>Клиентка, личная работа</figcaption></figure>
+        <figure class="rv"><button type="button" class="rv-prod" data-open="flag">«Моя цель — мой путь»</button><blockquote>У меня получилось начать строить своё дело. Пока с малого, но оно уже моё, и я иду дальше.</blockquote><figcaption>Клиентка, личная работа</figcaption></figure>
+        <figure class="rv rv-cta"><blockquote>Ты тоже была у меня на встрече, пользовалась ботом или тестом? Мне будет очень ценно услышать, что изменилось.</blockquote><a class="btn free" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">Оставить отзыв</a><figcaption>Напиши в Telegram слово <span class="codeword">ОТЗЫВ</span></figcaption></figure>
+      </div>
+      <div class="rv-nav"><button type="button" data-rv="-1" aria-label="Предыдущий отзыв">←</button><button type="button" data-rv="1" aria-label="Следующий отзыв">→</button></div>
     </div>
   </section>
 </div>
@@ -1204,5 +1225,10 @@ pathInit();
   var map = {}; L.forEach(function(a){ var s = document.getElementById(a.getAttribute('href').slice(3)); if (s) map[s.id] = a; });
   var io = new IntersectionObserver(function(es){ es.forEach(function(e){ var a = map[e.target.id]; if (!a) return; if (e.isIntersecting){ L.forEach(function(x){ x.removeAttribute('aria-current'); x.style.color = ''; }); a.setAttribute('aria-current', 'true'); a.style.color = 'var(--ink)'; } else if (a.getAttribute('aria-current')){ a.removeAttribute('aria-current'); a.style.color = ''; } }); }, { rootMargin: '-45% 0px -50% 0px' });
   Object.keys(map).forEach(function(id){ io.observe(document.getElementById(id)); });
+})();</script>
+<script>/* отзывы: стрелки листают, плашка продукта открывает его окно */
+(function(){ var t = document.getElementById('rvTrack'); if (!t) return;
+  document.querySelectorAll('[data-rv]').forEach(function(b){ b.addEventListener('click', function(){ var c = t.querySelector('.rv'); t.scrollBy({ left: (+b.dataset.rv) * ((c ? c.offsetWidth : 300) + 14), behavior: 'smooth' }); }); });
+  t.addEventListener('click', function(e){ var p = e.target.closest('[data-open]'); if (!p) return; var c = document.querySelector('#pathThemes [data-p="' + p.dataset.open + '"]'); if (c) c.click(); });
 })();</script>
 </body></html>
