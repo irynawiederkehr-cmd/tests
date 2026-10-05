@@ -606,6 +606,11 @@ section[id]{scroll-margin-top:96px}
 .rv-nav button{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:var(--paper);color:var(--brown);font-size:1.05rem;cursor:pointer}
 .rv-nav button:hover{border-color:var(--brown)}
 @media (hover:none){.rv-nav{display:none}}
+
+/* кавычки в отзывах: обычные «ёлочки» в строке, без смещения (05.10.2026) */
+.rv blockquote::before{content:"«";font-size:inherit;line-height:inherit;vertical-align:baseline;margin:0;color:var(--mustard)}
+.rv blockquote::after{content:"»";color:var(--mustard)}
+.rv-cta blockquote::before,.rv-cta blockquote::after{content:none}
 </style></head><body>
 <header class="top">
   <div class="page">
