@@ -405,10 +405,10 @@ a.bot:hover{color:#B98324}
 .pgrid > :nth-child(3n) {animation-delay:-2.2s}
 .pblock::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(110deg,transparent 35%,color-mix(in srgb,#F6DFA0 75%,transparent) 50%,transparent 65%);background-size:260% 100%;background-position:130% 0;opacity:0;transition:opacity .2s}
 .pblock:hover{transform:translateY(-3px);border-color:var(--mustard)}
-.pblock:hover::after{opacity:1;animation:vipShine 1.4s ease}
+.pblock:hover::after{opacity:0}
 .pblock.main{background:var(--mustard-soft);border:2px solid var(--mustard)}
 .pb-price{display:inline-block;font-weight:700;font-size:.82rem;border-radius:999px;padding:4px 11px;color:var(--ink);background:var(--paper);border:1px solid var(--mustard)}
-.pblock.main .pb-price{color:var(--paper);border-color:var(--mustard);background:linear-gradient(110deg,var(--mustard) 38%,#F6DFA0 50%,var(--mustard) 62%);background-size:260% 100%;animation:vipShine 3.2s linear infinite}
+.pblock.main .pb-price{color:var(--paper);border-color:var(--mustard);background:linear-gradient(110deg,var(--mustard) 38%,#F6DFA0 50%,var(--mustard) 62%);background-size:260% 100%;animation:none}
 @keyframes vipGlow{0%,100%{box-shadow:0 14px 30px -20px color-mix(in srgb,var(--mustard) 70%,transparent),0 0 0 0 color-mix(in srgb,var(--mustard) 0%,transparent)}50%{box-shadow:0 18px 36px -18px color-mix(in srgb,var(--mustard) 80%,transparent),0 0 0 6px color-mix(in srgb,var(--mustard) 22%,transparent)}}
 @keyframes vipShine{0%{background-position:130% 0}60%,100%{background-position:-30% 0}}
 @media (prefers-reduced-motion: reduce){.pblock,.pblock.main .pb-price,.pblock:hover::after{animation:none}}
@@ -465,7 +465,7 @@ a.bot:hover{color:#B98324}
 @media (prefers-reduced-motion: reduce){.pb-fl svg,.pd-fl svg{transition:none;animation:none}}
 /* «бесплатно» и «в подарок» — заметная зелёная плашка с бликом */
 .pb-price.free{display:inline-flex;align-items:center;gap:6px;font-size:.88rem;letter-spacing:.02em;text-transform:uppercase;color:#fff;border:0;padding:6px 14px;box-shadow:0 6px 14px -6px rgba(79,94,62,.6);
-  background:linear-gradient(110deg,#4F5E3E 38%,#9DB07A 50%,#4F5E3E 62%);background-size:260% 100%;animation:vipShine 3.2s linear infinite}
+  background:linear-gradient(110deg,#4F5E3E 38%,#9DB07A 50%,#4F5E3E 62%);background-size:260% 100%;animation:none}
 @media (prefers-reduced-motion: reduce){.pb-price.free{animation:none;background:#4F5E3E}}
 .pb-more{white-space:nowrap}
 .pb-foot{align-items:center;flex-wrap:wrap;row-gap:8px}
@@ -504,11 +504,11 @@ a.bot:hover{color:#B98324}
 .pd-box.pdr li::before,.qm-col ul.res li::before{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2020%2020%22%3E%3Ccircle%20cx%3D%2210.00%22%20cy%3D%225.00%22%20r%3D%223.6%22%20fill%3D%22%23E3E6D6%22%20stroke%3D%22%2366704F%22%20stroke-width%3D%221.3%22/%3E%3Ccircle%20cx%3D%2214.76%22%20cy%3D%228.45%22%20r%3D%223.6%22%20fill%3D%22%23E3E6D6%22%20stroke%3D%22%2366704F%22%20stroke-width%3D%221.3%22/%3E%3Ccircle%20cx%3D%2212.94%22%20cy%3D%2214.05%22%20r%3D%223.6%22%20fill%3D%22%23E3E6D6%22%20stroke%3D%22%2366704F%22%20stroke-width%3D%221.3%22/%3E%3Ccircle%20cx%3D%227.06%22%20cy%3D%2214.05%22%20r%3D%223.6%22%20fill%3D%22%23E3E6D6%22%20stroke%3D%22%2366704F%22%20stroke-width%3D%221.3%22/%3E%3Ccircle%20cx%3D%225.24%22%20cy%3D%228.45%22%20r%3D%223.6%22%20fill%3D%22%23E3E6D6%22%20stroke%3D%22%2366704F%22%20stroke-width%3D%221.3%22/%3E%3Ccircle%20cx%3D%2210%22%20cy%3D%2210%22%20r%3D%222.6%22%20fill%3D%22%23B98324%22/%3E%3C/svg%3E")}
 /* настоящая цена — золотая плашка с бликом, как у «VIP-партнёр ТОП» */
 .pb-price.paid{color:#fff;border:0;padding:6px 13px;font-size:.84rem;box-shadow:0 6px 14px -6px color-mix(in srgb,var(--mustard) 80%,transparent);
-  background:linear-gradient(110deg,var(--mustard) 38%,#F6DFA0 50%,var(--mustard) 62%);background-size:260% 100%;animation:vipShine 3.2s linear infinite}
+  background:linear-gradient(110deg,var(--mustard) 38%,#F6DFA0 50%,var(--mustard) 62%);background-size:260% 100%;animation:none}
 @media (prefers-reduced-motion: reduce){.pb-price.paid{animation:none;background:var(--mustard)}}
 /* «цена скоро» — коричневая плашка с бликом */
 .pb-price.soonp{color:#fff;border:0;padding:6px 13px;font-size:.84rem;box-shadow:0 6px 14px -6px rgba(110,79,60,.6);
-  background:linear-gradient(110deg,#6E4F3C 38%,#C9A27E 50%,#6E4F3C 62%);background-size:260% 100%;animation:vipShine 3.2s linear infinite}
+  background:linear-gradient(110deg,#6E4F3C 38%,#C9A27E 50%,#6E4F3C 62%);background-size:260% 100%;animation:none}
 .pblock.main .pb-price.soonp{background:linear-gradient(110deg,var(--mustard) 38%,#F6DFA0 50%,var(--mustard) 62%);background-size:260% 100%}
 @media (prefers-reduced-motion: reduce){.pb-price.soonp{animation:none;background:#6E4F3C}}
 .lim-fl svg{width:64px;height:64px}
@@ -527,7 +527,7 @@ a.bot:hover{color:#B98324}
    коричневая — остальные действия, «цена скоро»
    При «уменьшить движение» в системе — без анимации. */
 @keyframes vipShine{0%{background-position:130% 0}60%,100%{background-position:-30% 0}}
-.btn,.navcta,.go-pill{border:0 !important;color:#fff !important;background:linear-gradient(110deg,#6E4F3C 38%,#C9A27E 50%,#6E4F3C 62%) !important;background-size:260% 100% !important;animation:vipShine 3.2s linear infinite;box-shadow:0 8px 18px -8px rgba(110,79,60,.6)}
+.btn,.navcta,.go-pill{border:0 !important;color:#fff !important;background:linear-gradient(110deg,#6E4F3C 38%,#C9A27E 50%,#6E4F3C 62%) !important;background-size:260% 100% !important;animation:none;box-shadow:0 8px 18px -8px rgba(110,79,60,.6)}
 .btn.free,.navcta,.go-pill.free{background:linear-gradient(110deg,#4F5E3E 38%,#9DB07A 50%,#4F5E3E 62%) !important;background-size:260% 100% !important;box-shadow:0 8px 18px -8px rgba(79,94,62,.6)}
 .btn.gold,.go-pill.gold{background:linear-gradient(110deg,#B98324 38%,#F6DFA0 50%,#B98324 62%) !important;background-size:260% 100% !important;box-shadow:0 8px 18px -8px rgba(185,131,36,.7)}
 .navcta{padding:9px 18px}
