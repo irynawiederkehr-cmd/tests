@@ -21,7 +21,7 @@
 </style>
 <script>
 (function(){
-  var LANGS = ["ru"], LABELS = {"ru": "RU", "uk": "UA", "de": "DE", "en": "EN"}, KEY = 'irinaTestsLang';
+  var LANGS = ["ru", "uk", "de", "en"], LABELS = {"ru": "RU", "uk": "UA", "de": "DE", "en": "EN"}, KEY = 'irinaTestsLang';
   function pick(){
     var m = (location.hash || '').match(/lang=(ru|uk|de|en)/); if (m) { try { localStorage.setItem(KEY, m[1]); } catch(e){} return m[1]; }
     try { var s = localStorage.getItem(KEY); if (LANGS.indexOf(s) >= 0) return s; } catch(e){}
@@ -31,7 +31,7 @@
   }
   var lang = window.LANG = pick();
   document.documentElement.lang = lang;
-  document.title = {"ru": "Ступени устойчивости", "uk": "Ступени устойчивости", "de": "Ступени устойчивости", "en": "Ступени устойчивости"}[lang];
+  document.title = {"ru": "Ступени устойчивости", "uk": "Сходинки стійкості", "de": "Stufen der Stabilität", "en": "Steps of Stability"}[lang];
   window.__runBundle = function(b){
     document.getElementById('app').innerHTML = b.body;
     b.scripts.forEach(function(code){ var s = document.createElement('script'); s.textContent = code; document.body.appendChild(s); });
@@ -49,8 +49,8 @@
 <body>
 <div id="app"></div>
 <script src="../assets/lib/html2canvas.min.js"></script><script src="../assets/lib/jspdf.umd.min.js"></script>
-<script>window.RP_IMG = ["preview/1.jpg", "preview/2.jpg", "preview/3.jpg", "preview/4.jpg", "preview/5.jpg", "preview/6.jpg"];</script>
-<script>(function(){var s=document.createElement("script");s.src=LANG+".js?v=989e7a9f";s.onload=function(){__runBundle(window.__BUNDLE);};document.body.appendChild(s);})();</script>
+<script>window.RP_IMG = LANG === 'ru' ? ["preview/1.jpg", "preview/2.jpg", "preview/3.jpg", "preview/4.jpg", "preview/5.jpg", "preview/6.jpg"] : [];  /* примеры страниц разбора пока только русские */</script>
+<script>(function(){var s=document.createElement("script");s.src=LANG+".js?v=f85e8142";s.onload=function(){__runBundle(window.__BUNDLE);};document.body.appendChild(s);})();</script>
 <script src="/assets/samesite.js"></script>
 </body>
 </html>
