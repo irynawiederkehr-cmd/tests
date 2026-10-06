@@ -14,10 +14,10 @@ const TEST_LINKS = {
 // address — строки через \n, например 'Musterstrasse 1\n8000 Zürich'.
 const LEGAL = {
   address: {
-    ru: 'проспект Бажана, 5-Г\n02121 Киев, Украина',
-    uk: 'просп. Миколи Бажана, 5-Г\n02121 Київ, Україна',
-    de: 'Mykoly-Bazhana-Prospekt 5-H\n02121 Kyjiw, Ukraine',
-    en: '5-H Mykoly Bazhana Avenue\n02121 Kyiv, Ukraine'
+    ru: 'c/o Alonira.ch AG\nPoststrasse 6\n6302 Zug, Швейцария',
+    uk: 'c/o Alonira.ch AG\nPoststrasse 6\n6302 Zug, Швейцарія',
+    de: 'c/o Alonira.ch AG\nPoststrasse 6\n6302 Zug, Schweiz',
+    en: 'c/o Alonira.ch AG\nPoststrasse 6\n6302 Zug, Switzerland'
   },
-  email: 'voznesenskaya.iryna@gmail.com', since: '02.10.2026'
+  email: 'voznesenskaya.iryna@gmail.com', since: '06.10.2026'
 };
