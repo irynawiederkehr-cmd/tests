@@ -2,6 +2,7 @@
 // Правило Ирины (07.10.2026): у КАЖДОЙ страницы своя картинка-превью 1200×630, на языке страницы.
 //   Без фотографий (Ирина будет менять фото на сайте). Рисунок «Пустить корни» (выбран Ириной 07.10.2026):
 //   эдельвейс из логотипа на стебле, под землёй расходятся корни. Слева текст страницы.
+//   «Путь» (решение Ирины 07.10.2026): тропа из восьми стоянок, восьмая стоянка — эдельвейс из логотипа.
 //   Пишет {папка}/og-image.jpg (русский) и og-image.{uk,de,en}.jpg; pages.py сам ставит их в языковые страницы.
 //   Тесты (kompas, stupeni, …) открываются на всех языках по одному адресу — у них своя картинка с веером разбора.
 //   `node _i18n/og.js check` — найдёт страницы без превью.
@@ -14,7 +15,7 @@ const CARDS = [
     uk: ['Не готові поради, а <em>твій власний</em> шлях', 'Ти переїхала, і життя ніби стало на паузу. Його можна знову запустити.'],
     de: ['Keine fertigen Ratschläge, sondern <em>dein eigener</em> Weg', 'Du bist umgezogen, und das Leben scheint auf Pause zu stehen. Du kannst es wieder in Gang bringen.'],
     en: ['Not ready-made advice, but <em>your own</em> path', 'You moved, and life seems to have been put on pause. You can start it again.'] },
-  { out: 'put/og-image',
+  { out: 'put/og-image', art: trail,
     ru: ['Твой путь <em>в новой стране</em>', 'Восемь стоянок от первых дней до чувства дома. Посмотри, где ты сейчас.'],
     uk: ['Твій шлях <em>у новій країні</em>', 'Вісім зупинок від перших днів до відчуття дому. Подивися, де ти зараз.'],
     de: ['Dein Weg <em>im neuen Land</em>', 'Acht Stationen von den ersten Tagen bis zum Gefühl, zu Hause zu sein. Schau, wo du gerade stehst.'],
@@ -43,7 +44,18 @@ function art() {
 <path d="M640 ${ground} C740 ${ground - 10} 840 ${ground + 6} 930 ${ground - 2} S1120 ${ground + 8} 1200 ${ground - 4}" fill="none" stroke="#6E4F3C" stroke-width="3" stroke-linecap="round"/>${roots}
 <path d="M${gx} ${ground + 4} C${gx - 8} 360 ${gx + 10} 300 ${gx} 250" stroke="#66704F" stroke-width="6" fill="none" stroke-linecap="round"/>${leaves}${logo(gx, 180, 190)}`;
 }
-function html(eb, h, p) {
+function trail() {   // «Путь»: тропа из восьми стоянок, восьмая — эдельвейс
+  const pts = [[650, 600], [745, 560], [870, 575], [985, 520], [930, 450], [800, 430], [840, 360], [960, 330], [1040, 250]];
+  let d = `M${pts[0][0]} ${pts[0][1]}`;
+  for (let i = 0; i < pts.length - 1; i++) { const p0 = pts[i - 1] || pts[i], p1 = pts[i], p2 = pts[i + 1], p3 = pts[i + 2] || p2;
+    d += ` C${(p1[0] + (p2[0] - p0[0]) / 6).toFixed(0)} ${(p1[1] + (p2[1] - p0[1]) / 6).toFixed(0)} ${(p2[0] - (p3[0] - p1[0]) / 6).toFixed(0)} ${(p2[1] - (p3[1] - p1[1]) / 6).toFixed(0)} ${p2[0]} ${p2[1]}`; }
+  const hills = `<path d="M560 630 C620 520 720 450 820 450 S1050 390 1200 400 L1200 630Z" fill="#EADFCF"/><path d="M620 630 C680 580 780 560 900 555 S1120 520 1200 530 L1200 630Z" fill="#E3E6D6"/>`;
+  const stops = pts.slice(1, 8).map(([x, y], i) => `<circle cx="${x}" cy="${y}" r="15" fill="#FFFCF8" stroke="#6E4F3C" stroke-width="2.5"/><text x="${x}" y="${y + 6}" text-anchor="middle" font-family="Manrope" font-weight="800" font-size="15" fill="#6E4F3C">${i + 1}</text>`).join('');
+  const [lx, ly] = pts[8];
+  return `<circle cx="${lx}" cy="${ly - 40}" r="150" fill="#EFE5D6"/>${hills}<path d="${d}" fill="none" stroke="#B98324" stroke-width="4" stroke-dasharray="2 11" stroke-linecap="round"/>${stops}
+<circle cx="${lx}" cy="${ly - 40}" r="104" fill="none" stroke="#B98324" stroke-width="2" stroke-dasharray="4 6"/>${logo(lx, ly - 40, 170)}<circle cx="${lx + 62}" cy="${ly + 18}" r="19" fill="#B98324"/><text x="${lx + 62}" y="${ly + 25}" text-anchor="middle" font-family="Manrope" font-weight="800" font-size="18" fill="#fff">8</text>`;
+}
+function html(eb, h, p, drawing = art) {
   const plain = h.replace(/<[^>]+>/g, ''); const fs_ = plain.length > 48 ? 54 : plain.length > 30 ? 62 : 68;
   return `<html><head><meta charset="utf-8"><link rel="stylesheet" href="file://${ROOT}/assets/fonts.css"><style>*{margin:0;box-sizing:border-box}
 body{width:1200px;height:630px;overflow:hidden;position:relative;font-family:Manrope,sans-serif;background:#F4EDE3;color:#2F2924}em{font-style:normal;color:#6E4F3C}
@@ -51,7 +63,7 @@ body{width:1200px;height:630px;overflow:hidden;position:relative;font-family:Man
 .tx{position:absolute;left:62px;top:128px;width:600px}h1{width:600px;font-family:Forum,Georgia,serif;font-weight:400;font-size:${fs_}px;line-height:1.08}
 p{margin:26px 0 0 2px;width:540px;font-size:23px;line-height:1.45;color:#5D554D;font-weight:500}
 .u{position:absolute;left:64px;bottom:44px;display:flex;align-items:center;gap:14px;font-size:19px;font-weight:700;color:#4F5E3E}.u:before{content:"";width:46px;height:4px;border-radius:2px;background:#B98324}</style></head>
-<body><svg style="position:absolute;left:0;top:0" width="1200" height="630">${art()}</svg><div class="eb">${eb}</div><div class="tx"><h1>${h}</h1><p>${p}</p></div><div class="u">voznesenskaya.ch</div></body></html>`;
+<body><svg style="position:absolute;left:0;top:0" width="1200" height="630">${drawing()}</svg><div class="eb">${eb}</div><div class="tx"><h1>${h}</h1><p>${p}</p></div><div class="u">voznesenskaya.ch</div></body></html>`;
 }
 function check() {
   const miss = []; const walk = d => { for (const f of fs.readdirSync(d, { withFileTypes: true })) { const p = path.join(d, f.name);
@@ -68,7 +80,7 @@ function check() {
   const tmp = path.join(ROOT, '_i18n', '.og_tmp.html');
   for (const c of CARDS) for (const l of ['ru', 'uk', 'de', 'en']) {
     const out = c.out + (l === 'ru' ? '.jpg' : `.${l}.jpg`);
-    fs.writeFileSync(tmp, html(EB[l], ...c[l])); await pg.goto('file://' + tmp); await pg.evaluate(() => document.fonts.ready); await pg.waitForTimeout(300);
+    fs.writeFileSync(tmp, html(EB[l], c[l][0], c[l][1], c.art || art)); await pg.goto('file://' + tmp); await pg.evaluate(() => document.fonts.ready); await pg.waitForTimeout(300);
     await pg.screenshot({ path: path.join(ROOT, out), type: 'jpeg', quality: 88 }); console.log('ok', out);
   }
   fs.rmSync(tmp, { force: true }); await b.close();
