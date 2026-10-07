@@ -2,7 +2,7 @@
 // Правило Ирины (07.10.2026): у КАЖДОЙ страницы своя картинка-превью 1200×630, на языке страницы.
 //   Без фотографий (Ирина будет менять фото на сайте). Рисунок «Пустить корни» (выбран Ириной 07.10.2026):
 //   эдельвейс из логотипа на стебле, под землёй расходятся корни. Слева текст страницы.
-//   «Путь» (решение Ирины 07.10.2026): тропа из восьми стоянок, восьмая стоянка — эдельвейс из логотипа.
+//   «Путь» тоже с корнями (решение Ирины 07.10.2026). trail() — запасной рисунок «тропа из восьми стоянок», сейчас не используется.
 //   Пишет {папка}/og-image.jpg (русский) и og-image.{uk,de,en}.jpg; pages.py сам ставит их в языковые страницы.
 //   Тесты (kompas, stupeni, …) открываются на всех языках по одному адресу — у них своя картинка с веером разбора.
 //   `node _i18n/og.js check` — найдёт страницы без превью.
@@ -15,7 +15,7 @@ const CARDS = [
     uk: ['Не готові поради, а <em>твій власний</em> шлях', 'Ти переїхала, і життя ніби стало на паузу. Його можна знову запустити.'],
     de: ['Keine fertigen Ratschläge, sondern <em>dein eigener</em> Weg', 'Du bist umgezogen, und das Leben scheint auf Pause zu stehen. Du kannst es wieder in Gang bringen.'],
     en: ['Not ready-made advice, but <em>your own</em> path', 'You moved, and life seems to have been put on pause. You can start it again.'] },
-  { out: 'put/og-image', art: trail,
+  { out: 'put/og-image',
     ru: ['Твой путь <em>в новой стране</em>', 'Восемь стоянок от первых дней до чувства дома. Посмотри, где ты сейчас.'],
     uk: ['Твій шлях <em>у новій країні</em>', 'Вісім зупинок від перших днів до відчуття дому. Подивися, де ти зараз.'],
     de: ['Dein Weg <em>im neuen Land</em>', 'Acht Stationen von den ersten Tagen bis zum Gefühl, zu Hause zu sein. Schau, wo du gerade stehst.'],
