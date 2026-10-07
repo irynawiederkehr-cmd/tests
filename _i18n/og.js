@@ -1,32 +1,57 @@
-// Картинки-превью ссылок (og:image) voznesenskaya.ch на UK, DE, EN: NODE_PATH=$(npm root -g) node _i18n/og.js [check]
+// Картинки-превью ссылок (og:image) voznesenskaya.ch: NODE_PATH=$(npm root -g) node _i18n/og.js [check]
 // Правило Ирины (07.10.2026): у КАЖДОЙ страницы своя картинка-превью 1200×630, на языке страницы.
-//   Русские картинки — оригиналы ({папка}/og-image.jpg). Отсюда собираются {папка}/og-image.{uk,de,en}.jpg:
-//   справа та же фотография из русской картинки, слева текст на языке. pages.py сам ставит их в языковые страницы.
-//   Тесты (kompas, stupeni, …) открываются на всех языках по одному адресу — у них одна русская картинка.
+//   Без фотографий (Ирина будет менять фото на сайте). Рисунок «Пустить корни» (выбран Ириной 07.10.2026):
+//   эдельвейс из логотипа на стебле, под землёй расходятся корни. Слева текст страницы.
+//   Пишет {папка}/og-image.jpg (русский) и og-image.{uk,de,en}.jpg; pages.py сам ставит их в языковые страницы.
+//   Тесты (kompas, stupeni, …) открываются на всех языках по одному адресу — у них своя картинка с веером разбора.
 //   `node _i18n/og.js check` — найдёт страницы без превью.
 const { chromium } = require('playwright'); const path = require('path'); const fs = require('fs');
 const ROOT = path.resolve(__dirname, '..');
-const EB = { uk: 'ІРИНА ВОЗНЕСЕНСЬКА · КОУЧИНГ', de: 'IRYNA VOZNESENSKAYA · COACHING', en: 'IRYNA VOZNESENSKAYA · COACHING' };
+const EB = { ru: 'ИРИНА ВОЗНЕСЕНСКАЯ · КОУЧ', uk: 'ІРИНА ВОЗНЕСЕНСЬКА · КОУЧ', de: 'IRYNA VOZNESENSKAYA · COACH', en: 'IRYNA VOZNESENSKAYA · COACH' };
 const CARDS = [
-  { src: 'og-image.jpg',
-    uk: ['Не готові поради, а твій власний шлях', 'Ти переїхала, і життя ніби стало на паузу. Його можна знову запустити.'],
-    de: ['Keine fertigen Ratschläge, sondern dein eigener Weg', 'Du bist umgezogen, und das Leben scheint auf Pause zu stehen. Du kannst es wieder in Gang bringen.'],
-    en: ['Not ready-made advice, but your own path', 'You moved, and life seems to have been put on pause. You can start it again.'] },
-  { src: 'put/og-image.jpg',
-    uk: ['Твій шлях у новій країні', 'Вісім зупинок від перших днів до відчуття дому. Подивися, де ти зараз.'],
-    de: ['Dein Weg im neuen Land', 'Acht Stationen von den ersten Tagen bis zum Gefühl, zu Hause zu sein. Schau, wo du gerade stehst.'],
-    en: ['Your path in a new country', 'Eight stops from the first days to the feeling of being home. See where you are now.'] },
+  { out: 'og-image',
+    ru: ['Не готовые советы, а <em>твой собственный</em> путь', 'Ты переехала, и жизнь будто встала на паузу. Её можно снова запустить.'],
+    uk: ['Не готові поради, а <em>твій власний</em> шлях', 'Ти переїхала, і життя ніби стало на паузу. Його можна знову запустити.'],
+    de: ['Keine fertigen Ratschläge, sondern <em>dein eigener</em> Weg', 'Du bist umgezogen, und das Leben scheint auf Pause zu stehen. Du kannst es wieder in Gang bringen.'],
+    en: ['Not ready-made advice, but <em>your own</em> path', 'You moved, and life seems to have been put on pause. You can start it again.'] },
+  { out: 'put/og-image',
+    ru: ['Твой путь <em>в новой стране</em>', 'Восемь стоянок от первых дней до чувства дома. Посмотри, где ты сейчас.'],
+    uk: ['Твій шлях <em>у новій країні</em>', 'Вісім зупинок від перших днів до відчуття дому. Подивися, де ти зараз.'],
+    de: ['Dein Weg <em>im neuen Land</em>', 'Acht Stationen von den ersten Tagen bis zum Gefühl, zu Hause zu sein. Schau, wo du gerade stehst.'],
+    en: ['Your path <em>in a new country</em>', 'Eight stops from the first days to the feeling of being home. See where you are now.'] },
 ];
-function html(photo, eb, h, p) {
+// эдельвейс из логотипа (favicon.svg)
+const OUT = 'M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z', INN = 'M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z';
+function logo(cx, cy, size) {
+  let g = `<g transform="translate(${cx - size / 2},${cy - size / 2}) scale(${size / 100})"><circle cx="50" cy="50" r="46" fill="#FFFCF8" stroke="#6E4F3C" stroke-width="3"/>`;
+  for (let i = 0; i < 8; i++) g += `<g transform="rotate(${22.5 + i * 45} 50 50)"><path d="${OUT}" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g>`;
+  for (let i = 0; i < 8; i++) g += `<g transform="rotate(${i * 45} 50 50)"><path d="${INN}" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g>`;
+  return g + '<circle cx="50" cy="50" r="7" fill="#B98324"/></g>';
+}
+function art() {
+  let seed = 3; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647, U = (a, b) => a + (b - a) * rnd();
+  const gx = 930, ground = 420; let roots = '';
+  const root = (x, y, ang, len, w, d) => {
+    if (!d || len < 12) return;
+    const x2 = x + len * Math.cos(ang * Math.PI / 180), y2 = y + len * Math.sin(ang * Math.PI / 180);
+    roots += `<path d="M${x.toFixed(0)} ${y.toFixed(0)} Q${((x + x2) / 2 + U(-10, 10)).toFixed(0)} ${((y + y2) / 2 + U(-6, 6)).toFixed(0)} ${x2.toFixed(0)} ${y2.toFixed(0)}" stroke="#8B6A52" stroke-width="${w.toFixed(1)}" fill="none" stroke-linecap="round"/>`;
+    for (const da of [-28, 25]) root(x2, y2, ang + da + U(-10, 10), len * U(.62, .75), w * .7, d - 1);
+  };
+  for (const a of [55, 80, 105, 130]) root(gx, ground + 4, a, 70, 5, 5);
+  const leaves = [[380, 1], [340, -1], [305, 1]].map(([y, s]) => `<g transform="translate(${gx + (s > 0 ? 2 : -2)},${y}) rotate(${s > 0 ? -35 : 215})"><path d="M0 0 C16 -11 48 -12 72 -2 C48 7 16 7 0 0Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2.4"/></g>`).join('');
+  return `<circle cx="${gx}" cy="190" r="150" fill="#EFE5D6"/><ellipse cx="${gx}" cy="${ground + 170}" rx="300" ry="175" fill="#EADFCF"/>
+<path d="M640 ${ground} C740 ${ground - 10} 840 ${ground + 6} 930 ${ground - 2} S1120 ${ground + 8} 1200 ${ground - 4}" fill="none" stroke="#6E4F3C" stroke-width="3" stroke-linecap="round"/>${roots}
+<path d="M${gx} ${ground + 4} C${gx - 8} 360 ${gx + 10} 300 ${gx} 250" stroke="#66704F" stroke-width="6" fill="none" stroke-linecap="round"/>${leaves}${logo(gx, 180, 190)}`;
+}
+function html(eb, h, p) {
+  const plain = h.replace(/<[^>]+>/g, ''); const fs_ = plain.length > 48 ? 54 : plain.length > 30 ? 62 : 68;
   return `<html><head><meta charset="utf-8"><link rel="stylesheet" href="file://${ROOT}/assets/fonts.css"><style>*{margin:0;box-sizing:border-box}
-body{width:1200px;height:630px;overflow:hidden;background:#F4EDE3;position:relative;font-family:Manrope,sans-serif}
-.eb{position:absolute;left:64px;top:96px;font-size:19px;font-weight:600;color:#7A6E62}
-.tx{position:absolute;left:64px;top:150px;width:590px}
-h1{font-family:Forum,Georgia,serif;font-weight:400;font-size:${h.length < 44 ? 58 : 52}px;line-height:1.2;color:#2F2924;width:580px}
-p{font-size:23px;line-height:1.5;color:#6E4F3C;font-weight:600;margin-top:22px}
-.bar{position:absolute;left:64px;top:538px;width:64px;height:6px;border-radius:3px;background:#B98324}.u{position:absolute;left:64px;top:563px;font-size:19px;color:#7A6E62;font-weight:500}
-.ph{position:absolute;left:728px;top:0;width:472px;height:630px;background:url("data:image/jpeg;base64,${photo}") right top/auto 630px no-repeat}</style></head>
-<body><div class="eb">${eb}</div><div class="tx"><h1>${h}</h1><p>${p}</p></div><div class="bar"></div><div class="u">voznesenskaya.ch</div><div class="ph"></div></body></html>`;
+body{width:1200px;height:630px;overflow:hidden;position:relative;font-family:Manrope,sans-serif;background:#F4EDE3;color:#2F2924}em{font-style:normal;color:#6E4F3C}
+.eb{position:absolute;left:64px;top:62px;font-size:18px;font-weight:700;letter-spacing:.14em;color:#7A6E62}
+.tx{position:absolute;left:62px;top:128px;width:600px}h1{width:600px;font-family:Forum,Georgia,serif;font-weight:400;font-size:${fs_}px;line-height:1.08}
+p{margin:26px 0 0 2px;width:540px;font-size:23px;line-height:1.45;color:#5D554D;font-weight:500}
+.u{position:absolute;left:64px;bottom:44px;display:flex;align-items:center;gap:14px;font-size:19px;font-weight:700;color:#4F5E3E}.u:before{content:"";width:46px;height:4px;border-radius:2px;background:#B98324}</style></head>
+<body><svg style="position:absolute;left:0;top:0" width="1200" height="630">${art()}</svg><div class="eb">${eb}</div><div class="tx"><h1>${h}</h1><p>${p}</p></div><div class="u">voznesenskaya.ch</div></body></html>`;
 }
 function check() {
   const miss = []; const walk = d => { for (const f of fs.readdirSync(d, { withFileTypes: true })) { const p = path.join(d, f.name);
@@ -40,9 +65,11 @@ function check() {
   const exe = ['/opt/pw-browsers/chromium-1194/chrome-linux/chrome'].find(f => fs.existsSync(f));
   const b = await chromium.launch(exe ? { executablePath: exe } : {});
   const pg = await (await b.newContext({ viewport: { width: 1200, height: 630 } })).newPage();
-  for (const c of CARDS) { const photo = fs.readFileSync(path.join(ROOT, c.src)).toString('base64');
-    for (const l of ['uk', 'de', 'en']) { const out = c.src.replace(/\.jpg$/, `.${l}.jpg`);
-      const tmp = path.join(ROOT, '_i18n', '.og_tmp.html'); fs.writeFileSync(tmp, html(photo, EB[l], ...c[l])); await pg.goto('file://' + tmp); await pg.evaluate(() => document.fonts.ready); await pg.waitForTimeout(400);
-      await pg.screenshot({ path: path.join(ROOT, out), type: 'jpeg', quality: 88 }); console.log('ok', out); } }
-  fs.rmSync(path.join(ROOT, '_i18n', '.og_tmp.html'), { force: true }); await b.close();
+  const tmp = path.join(ROOT, '_i18n', '.og_tmp.html');
+  for (const c of CARDS) for (const l of ['ru', 'uk', 'de', 'en']) {
+    const out = c.out + (l === 'ru' ? '.jpg' : `.${l}.jpg`);
+    fs.writeFileSync(tmp, html(EB[l], ...c[l])); await pg.goto('file://' + tmp); await pg.evaluate(() => document.fonts.ready); await pg.waitForTimeout(300);
+    await pg.screenshot({ path: path.join(ROOT, out), type: 'jpeg', quality: 88 }); console.log('ok', out);
+  }
+  fs.rmSync(tmp, { force: true }); await b.close();
 })();
