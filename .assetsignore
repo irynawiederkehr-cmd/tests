@@ -1,0 +1,8 @@
+# Не выкладывать на сайт: служебные файлы и инструменты перевода
+.git
+.github
+_i18n
+wrangler.jsonc
+.assetsignore
+.nojekyll
+CNAME

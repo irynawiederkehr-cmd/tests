@@ -1,0 +1,11 @@
+// Настройки хостинга Cloudflare (с 07.10.2026). Сайт — обычные файлы, сборки нет.
+// Cloudflare берёт файлы из этой папки при каждом изменении в GitHub.
+{
+  "name": "tests",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": ".",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}
