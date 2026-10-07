@@ -115,6 +115,8 @@ def build():
             out = out.replace(f'content="https://voznesenskaya.ch{path}"', f'content="https://voznesenskaya.ch/{l}{path}"')
             out = out.replace(f'data-url="https://voznesenskaya.ch{path}"', f'data-url="https://voznesenskaya.ch/{l}{path}"')
             out = fix_links(out, path, l)
+            # картинка-превью ссылки на языке страницы, если есть (_i18n/og.js): og-image.jpg → og-image.{l}.jpg
+            out = re.sub(r'(content="https://voznesenskaya\.ch/)([\w/.-]*?og-image)\.jpg(?=")', lambda m: m.group(1) + m.group(2) + (f'.{l}.jpg' if os.path.exists(os.path.join(ROOT, m.group(2) + f'.{l}.jpg')) else '.jpg'), out)
             out = localize_assets(out, l, TM, missing)
             out = head_inject(out, MARK + alternates(path) + MARK)
             out = body_inject(out, MARK + switcher(l, path) + MARK)
