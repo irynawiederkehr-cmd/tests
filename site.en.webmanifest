@@ -1,0 +1,63 @@
+{
+  "id": "/en/",
+  "name": "Iryna Voznesenskaya — Coach",
+  "short_name": "Iryna",
+  "description": "Coaching for people who have moved abroad: tests, “Your path in a new country”, work with me.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "/en/?source=app",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
+  "orientation": "any",
+  "background_color": "#F4EDE3",
+  "theme_color": "#6E4F3C",
+  "categories": [
+    "lifestyle",
+    "health",
+    "education"
+  ],
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Home",
+      "url": "/en/"
+    },
+    {
+      "name": "Your path",
+      "url": "/en/put/"
+    },
+    {
+      "name": "Tests",
+      "url": "/testy/#lang=en"
+    }
+  ]
+}
