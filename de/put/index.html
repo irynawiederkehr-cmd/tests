@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<title>Dein Weg im neuen Land · Iryna Voznesenskaya</title>
-<meta name="description" content="Acht Stationen auf dem Weg in einem neuen Land. Schau, was dir an jeder von ihnen begegnet und was dir hilft weiterzugehen.">
+<title>Stufen. Dein Weg im neuen Land · Iryna Voznesenskaya</title>
+<meta name="description" content="Acht Stufen auf dem Weg in einem neuen Land — die Geschichte einer Schale, die zerbrochen ist und sich mit Gold neu zusammensetzt. Schau, was dir auf jeder Stufe begegnet und was dir hilft weiterzugehen.">
 <link rel="canonical" href="https://voznesenskaya.ch/de/put/">
 <meta property="og:type" content="website"><meta property="og:locale" content="de_CH"><meta property="og:site_name" content="Iryna Voznesenskaya · Coaching">
-<meta property="og:title" content="Dein Weg im neuen Land"><meta property="og:description" content="Acht Stationen auf dem Weg in einem neuen Land. Schau, was dir an jeder von ihnen begegnet und was dir hilft weiterzugehen.">
+<meta property="og:title" content="Stufen. Dein Weg im neuen Land"><meta property="og:description" content="Acht Stufen auf dem Weg in einem neuen Land — die Geschichte einer Schale, die zerbrochen ist und sich mit Gold neu zusammensetzt. Schau, was dir auf jeder Stufe begegnet und was dir hilft weiterzugehen.">
 <meta property="og:url" content="https://voznesenskaya.ch/de/put/"><meta property="og:image" content="https://voznesenskaya.ch/put/og-image.de.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="/assets/fonts.css">
@@ -290,7 +290,14 @@ footer a{color:var(--muted)}
 .p-hero h1 em{font-style:normal;color:var(--brown)}
 .p-hero .lead{font-size:1.1rem;max-width:52ch}
 .p-hero-text{display:flex;flex-direction:column;gap:18px;min-width:0}
-.p-hero img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:941/1672;border-radius:26px;box-shadow:0 24px 50px -24px rgba(60,40,20,.45)}
+.p-hero img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:900/1205}
+/* картинки чаш (акварель на белой бумаге): белое сливается с фоном страницы */
+.bowl{display:block}.bowl img{display:block;width:100%;height:auto;mix-blend-mode:multiply}
+.card .bowl{margin:-8px -6px 0;height:200px;overflow:hidden}.card .bowl img{height:100%;object-fit:cover;object-position:50% 72%}
+.qm-pic{flex:none;width:clamp(96px,16vw,150px)}
+@media (max-width:640px){.qm-pic{display:none}}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bowl img{mix-blend-mode:normal;border-radius:16px;opacity:.92}}
+:root[data-theme="dark"] .bowl img{mix-blend-mode:normal;border-radius:16px;opacity:.92}
 .rules{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding-block:8px 24px}
 @media (max-width:900px){.rules{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:520px){.rules{grid-template-columns:1fr}}
@@ -327,7 +334,7 @@ footer a{color:var(--muted)}
 .card h3{font-size:1.75rem;line-height:1.1}
 .card .teaser{font-family:var(--display);font-size:1.12rem;color:var(--brown);line-height:1.3}
 .card .says{display:flex;flex-wrap:wrap;gap:6px}
-.card .says span{font-size:.82rem;background:var(--lf);border-radius:999px;padding:5px 11px;color:var(--ink)}
+.card .says span{font-size:.82rem;background:var(--lf);border-radius:999px;padding:5px 11px;color:#2F2924}
 .card .more{margin-top:2px;font-weight:700;font-size:.88rem;color:var(--lc)}
 @media (max-width:760px){
   .stop,.between{grid-template-columns:64px 1fr;column-gap:14px}
@@ -366,7 +373,7 @@ footer a{color:var(--muted)}
   nav{font-size:.82rem}
 }
 </style>
-<meta name="theme-color" content="#6E4F3C"><!--shape--><style id="shape">:is(.navcta,.btn,.jump a,.pb-price,.go-pill,.rv-prod,.rvs-btn,.shr-btn,.invite-links a,.share-btns button,.share-btns a,.inv-copy,.inv-btn,.sb-cta,.langbar,#langbar.langbar){border-radius:12px!important}:is(.langbar button,.langbar a,#langbar.langbar a,.bz-pills button){border-radius:9px!important}html header.top nav a .pa-ni{display:none}@media (max-width:1100px){html header.top .page{flex-wrap:wrap;row-gap:8px}html header.top nav{order:3;width:100%;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px!important;overflow:visible!important;padding:4px 0 12px!important;margin:0}html header.top nav a{display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:62px;padding:9px 6px;border-radius:14px;background:var(--paper,#FFFCF8);border:1px solid color-mix(in srgb,var(--brown,#6E4F3C) 22%,transparent);box-shadow:0 3px 10px -6px rgba(80,55,35,.45);color:var(--ink,#2F2924)!important;font:600 .78rem/1.18 var(--body,system-ui);text-align:center;white-space:normal!important;text-decoration:none;-webkit-tap-highlight-color:transparent}html header.top nav a .pa-ni{display:block;width:22px;height:22px;fill:none;stroke:var(--brown,#6E4F3C);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}html header.top nav a[aria-current]:not([aria-current=false]){background:var(--brown,#6E4F3C);border-color:var(--brown,#6E4F3C);color:var(--paper,#FFFCF8)!important}html header.top nav a[aria-current]:not([aria-current=false]) .pa-ni{stroke:var(--paper,#FFFCF8)}html header.top nav a:active{transform:scale(.97)}}</style><script>(function(){function run(){var n=document.querySelector('header.top nav');if(!n)return;var I={who:'<circle cx="12" cy="8" r="3.6"/><path d="M5 20c.7-3.8 3.4-6 7-6s6.3 2.2 7 6"/>',req:'<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',path:'<path d="M12 3.5 20.5 8 12 12.5 3.5 8z"/><path d="M3.5 12 12 16.5 20.5 12M3.5 16 12 20.5 20.5 16"/>',put:'<circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8 18h6a3.5 3.5 0 0 0 0-7h-4a3.5 3.5 0 0 1 0-7h6"/>',tests:'<rect x="5" y="3.5" width="14" height="17" rx="2.5"/><path d="m8.5 9 1.5 1.5L13 7.5M8.5 15l1.5 1.5 3-3M15 9.5h1M15 15.5h1"/>',svoi:'<circle cx="12" cy="12" r="2.4"/><circle cx="12" cy="4.5" r="1.8"/><circle cx="12" cy="19.5" r="1.8"/><circle cx="5.5" cy="8.3" r="1.8"/><circle cx="18.5" cy="8.3" r="1.8"/><circle cx="5.5" cy="15.7" r="1.8"/><circle cx="18.5" cy="15.7" r="1.8"/>'};n.querySelectorAll('a').forEach(function(a){if(a.querySelector('.pa-ni'))return;var h=a.getAttribute('href')||'',k=/svoiludi/.test(h)?'svoi':/#who/.test(h)?'who':/#requests/.test(h)?'req':/#path/.test(h)?'path':/put\/?$/.test(h)?'put':/testy/.test(h)?'tests':null;if(!k)return;a.insertAdjacentHTML('afterbegin','<svg class="pa-ni" viewBox="0 0 24 24" aria-hidden="true">'+I[k]+'</svg>');a.style.removeProperty('color');});}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();})();</script><link rel="manifest" href="/site.webmanifest"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Iryna"><meta name="apple-mobile-web-app-status-bar-style" content="default"><script src="/assets/vz-app.js" defer></script><!--shape--><!--i18n--><link rel="alternate" hreflang="ru" href="https://voznesenskaya.ch/put/"><link rel="alternate" hreflang="uk" href="https://voznesenskaya.ch/uk/put/"><link rel="alternate" hreflang="de" href="https://voznesenskaya.ch/de/put/"><link rel="alternate" hreflang="en" href="https://voznesenskaya.ch/en/put/"><!--i18n--></head>
+<meta name="theme-color" content="#6E4F3C"><!--shape--><style id="shape">:is(.navcta,.btn,.jump a,.pb-price,.go-pill,.rv-prod,.rvs-btn,.shr-btn,.invite-links a,.share-btns button,.share-btns a,.inv-copy,.inv-btn,.sb-cta,.langbar,#langbar.langbar){border-radius:12px!important}:is(.langbar button,.langbar a,#langbar.langbar a,.bz-pills button){border-radius:9px!important}html header.top nav a .pa-ni{display:none}@media (max-width:1100px){html header.top .page{flex-wrap:wrap;row-gap:8px}html header.top nav{order:3;width:100%;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px!important;overflow:visible!important;padding:4px 0 12px!important;margin:0}html header.top nav a{display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:62px;padding:9px 6px;border-radius:14px;background:var(--paper,#FFFCF8);border:1px solid color-mix(in srgb,var(--brown,#6E4F3C) 22%,transparent);box-shadow:0 3px 10px -6px rgba(80,55,35,.45);color:var(--ink,#2F2924)!important;font:600 .78rem/1.18 var(--body,system-ui);text-align:center;white-space:normal!important;text-decoration:none;-webkit-tap-highlight-color:transparent}html header.top nav a .pa-ni{display:block;width:22px;height:22px;fill:none;stroke:var(--brown,#6E4F3C);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}html header.top nav a[aria-current]:not([aria-current=false]){background:var(--brown,#6E4F3C);border-color:var(--brown,#6E4F3C);color:var(--paper,#FFFCF8)!important}html header.top nav a[aria-current]:not([aria-current=false]) .pa-ni{stroke:var(--paper,#FFFCF8)}html header.top nav a:active{transform:scale(.97)}}.pa-mini{display:none}@media (max-width:1100px){html header.top:not(.pa-mini){position:relative!important;top:auto!important}html header.top.pa-mini{display:block;position:fixed!important;left:0;right:0;top:0;z-index:55;padding-top:env(safe-area-inset-top,0px);transform:translateY(-105%);visibility:hidden;transition:transform .22s ease,visibility 0s .22s;box-shadow:0 8px 20px -14px rgba(60,40,20,.5)}html header.top.pa-mini.on{transform:none;visibility:visible;transition:transform .22s ease}html header.top.pa-mini .page{padding-block:8px;flex-wrap:wrap}html header.top.pa-mini .mark small{display:none}html header.top.pa-mini .mark b{font-size:1.05rem}html header.top.pa-mini .mono{width:32px;height:32px}html header.top.pa-mini:not(.open) nav{display:none!important}.pa-mbtn{margin-left:auto;display:flex;align-items:center;gap:6px;padding:7px 12px;border-radius:12px;border:1.5px solid color-mix(in srgb,var(--brown,#6E4F3C) 35%,transparent);background:var(--paper,#FFFCF8);color:var(--ink,#2F2924);font:700 .84rem/1 var(--body,Manrope,system-ui);cursor:pointer;-webkit-tap-highlight-color:transparent}.pa-mbtn svg{width:18px;height:18px;flex:none;fill:none;stroke:var(--brown,#6E4F3C);stroke-width:2;stroke-linecap:round}}@media (max-width:480px){html header.top.pa-mini .mark span:not(.mono){display:none}}</style><script>(function(){function run(){var n=document.querySelector('header.top nav');if(!n)return;var I={who:'<circle cx="12" cy="8" r="3.6"/><path d="M5 20c.7-3.8 3.4-6 7-6s6.3 2.2 7 6"/>',req:'<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',path:'<path d="M12 3.5 20.5 8 12 12.5 3.5 8z"/><path d="M3.5 12 12 16.5 20.5 12M3.5 16 12 20.5 20.5 16"/>',put:'<circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8 18h6a3.5 3.5 0 0 0 0-7h-4a3.5 3.5 0 0 1 0-7h6"/>',tests:'<rect x="5" y="3.5" width="14" height="17" rx="2.5"/><path d="m8.5 9 1.5 1.5L13 7.5M8.5 15l1.5 1.5 3-3M15 9.5h1M15 15.5h1"/>',svoi:'<circle cx="12" cy="12" r="2.4"/><circle cx="12" cy="4.5" r="1.8"/><circle cx="12" cy="19.5" r="1.8"/><circle cx="5.5" cy="8.3" r="1.8"/><circle cx="18.5" cy="8.3" r="1.8"/><circle cx="5.5" cy="15.7" r="1.8"/><circle cx="18.5" cy="15.7" r="1.8"/>'};n.querySelectorAll('a').forEach(function(a){if(a.querySelector('.pa-ni'))return;var h=a.getAttribute('href')||'',k=/svoiludi/.test(h)?'svoi':/#who/.test(h)?'who':/#requests/.test(h)?'req':/#path/.test(h)?'path':/put\/?$/.test(h)?'put':/testy/.test(h)?'tests':null;if(!k)return;a.insertAdjacentHTML('afterbegin','<svg class="pa-ni" viewBox="0 0 24 24" aria-hidden="true">'+I[k]+'</svg>');a.style.removeProperty('color');});}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();})();(function(){function mini(){var h=document.querySelector('header.top');if(!h||document.querySelector('.pa-mini')||!('IntersectionObserver' in window))return;var lg=(document.documentElement.lang||'ru').slice(0,2),L={ru:['Menü','Einklappen'],uk:['Menü','Zuklappen'],de:['Menü','Zuklappen'],en:['Menu','Close']}[lg]||['Menü','Einklappen'];var m=document.createElement('header');m.className='top pa-mini';var pg=document.createElement('div');pg.className='page';var mk=h.querySelector('.mark');if(mk)pg.appendChild(mk.cloneNode(true));var b=document.createElement('button');b.type='button';b.className='pa-mbtn';b.setAttribute('aria-expanded','false');b.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span></span>';b.lastChild.textContent=L[0];pg.appendChild(b);var c=h.querySelector('.navcta');if(c)pg.appendChild(c.cloneNode(true));var n=h.querySelector('nav');if(n)pg.appendChild(n.cloneNode(true));m.appendChild(pg);document.body.appendChild(m);function set(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');b.lastChild.textContent=o?L[1]:L[0];}b.addEventListener('click',function(){set(!m.classList.contains('open'));});m.addEventListener('click',function(e){if(e.target.closest('nav a'))set(false);});new IntersectionObserver(function(es){var v=es[0].isIntersecting;m.classList.toggle('on',!v);if(v)set(false);}).observe(h);}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mini);else mini();})();</script><link rel="manifest" href="/site.webmanifest"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Iryna"><meta name="apple-mobile-web-app-status-bar-style" content="default"><script src="/assets/vz-app.js" defer></script><!--shape--><!--i18n--><link rel="alternate" hreflang="ru" href="https://voznesenskaya.ch/put/"><link rel="alternate" hreflang="uk" href="https://voznesenskaya.ch/uk/put/"><link rel="alternate" hreflang="de" href="https://voznesenskaya.ch/de/put/"><link rel="alternate" hreflang="en" href="https://voznesenskaya.ch/en/put/"><!--i18n--></head>
 <body>
 
 <header class="top">
@@ -390,22 +397,22 @@ footer a{color:var(--muted)}
 <main class="page">
   <section class="p-hero" aria-labelledby="h1">
     <div class="p-hero-text">
-      <div class="eyebrow">Dein Weg im neuen Land</div>
-      <h1 id="h1">Ein Zuhause, das <em>neu entsteht</em></h1>
-      <p class="lead">Wenn du umziehst, lässt du nicht nur eine Wohnung zurück. Zurück bleiben der vertraute Rhythmus, Menschen, die du nachts anrufen kannst, die Sprache, in der du Witze machst, die Arbeit, für die man dich geschätzt hat. Am neuen Ort musst du dieses unsichtbare Zuhause neu bauen, von unten nach oben.</p>
-      <p class="lead">So verläuft dieser Weg meistens. Acht Rastplätze, und jeder hat seine eigenen Schwierigkeiten, seine eigenen Fragen und das, was beim Weitergehen hilft. Tippe auf einen Rastplatz, um mehr darüber zu erfahren.</p>
+      <div class="eyebrow">Stufen. Dein Weg im neuen Land</div>
+      <h1 id="h1">Eine Schale, die sich <em>neu zusammensetzt</em></h1>
+      <p class="lead">Wenn du umziehst, lässt du nicht nur eine Wohnung zurück. Es bleiben der vertraute Rhythmus, Menschen, die du nachts anrufen kannst, die Sprache, in der du Witze machst, die Arbeit, für die man dich respektiert hat. Am neuen Ort zerbricht vieles davon, und du musst dich von unten nach oben neu zusammensetzen. Wie eine Schale in der japanischen Kunst Kintsugi: Die Risse werden nicht versteckt, sondern mit Gold gefüllt, und sie werden zu ihrer Geschichte.</p>
+      <p class="lead">So verläuft dieser Weg meistens. Acht Stufen, ein und dieselbe Schale, und auf jeder Stufe eigene Schwierigkeiten, eigene Fragen und das, was dir hilft weiterzugehen. Tippe auf eine Stufe, um mehr darüber zu erfahren.</p>
     </div>
-    <img src="/home/img/hero2.jpg" alt="Eine Frau mit gelbem Schal und Rucksack geht bei Sonnenuntergang einen Bergpfad entlang, vorne läuft ein Spaniel">
+    <picture class="bowl hero-bowl"><source srcset="/put/img/07-zolotye-shvy.webp" type="image/webp"><img src="/put/img/07-zolotye-shvy.jpg" width="900" height="1205" alt="Aquarell: eine helle Schale, mit leuchtenden goldenen Nähten gekittet, auf zartgelbem Grund"></picture>
   </section>
 
   <div class="rules">
     <div class="rule"><b>Von unten nach oben</b><span>Die unteren Stufen tragen die oberen. Solange du nicht ausgeschlafen bist, ist es schwer, an ein eigenes Geschäft zu denken.</span></div>
-    <div class="rule"><b>Das ist keine Bewertung</b><span>Die erste Stufe ist nicht schlechter als die achte, so wie das Fundament nicht schlechter ist als das Dach.</span></div>
-    <div class="rule"><b>Ein Umzug schiebt dich nach unten</b><span>Zu Hause standest du vielleicht weit oben. Hier musst du vieles von vorne aufbauen, und das ist keine Schwäche.</span></div>
-    <div class="rule"><b>Absteigen ist normal</b><span>Nach einer Reise nach Hause oder wenn das Kind krank ist, wird es wieder schwer. Das gehört zum Weg.</span></div>
+    <div class="rule"><b>Das ist keine Bewertung</b><span>Die erste Stufe ist nicht schlechter als die achte. Auf jeder Stufe bist du dieselbe Schale, nur an einer anderen Stelle des Weges.</span></div>
+    <div class="rule"><b>Ein Umzug schiebt dich nach unten</b><span>Zu Hause standest du vielleicht weit oben. Hier musst du vieles von vorne zusammensetzen, und das ist keine Schwäche.</span></div>
+    <div class="rule"><b>Absteigen ist normal</b><span>Nach einer Reise nach Hause oder wenn das Kind krank ist, wird es wieder schwer. Ein neuer Riss ist auch ein Platz für Gold.</span></div>
   </div>
 
-  <section class="trail" id="trailWrap" aria-label="Acht Stationen des Weges">
+  <section class="trail" id="trailWrap" aria-label="Acht Stufen des Weges">
     <svg class="road-svg" id="road" aria-hidden="true"></svg>
     <div class="trail-start"><span class="ic" data-ico="path" data-c="#6E4F3C"></span><b>Du bist umgezogen</b><span>Die Koffer sind ausgepackt, die Unterlagen eingereicht. Hier beginnt der Pfad.</span></div>
     <div id="trail"></div>
@@ -422,7 +429,7 @@ footer a{color:var(--muted)}
 
   <div class="reviews-slot"></div>
 
-  <div class="share-slot" data-url="https://voznesenskaya.ch/de/put/" data-lead="Kennst du jemanden, der diesen Weg gerade geht? Leite die Seite weiter, die Nachricht ist schon fertig." data-text="Hallo! Hier ist sehr genau beschrieben, was man nach einem Umzug durchmacht. Acht Stationen, von den ersten Tagen bis zum Gefühl «ich bin zu Hause». Schau mal, wo du gerade stehst, ich fand es spannend, das über mich herauszufinden."></div>
+  <div class="share-slot" data-url="https://voznesenskaya.ch/de/put/" data-lead="Kennst du jemanden, der diesen Weg gerade geht? Leite die Seite weiter, die Nachricht ist schon fertig." data-text="Hallo! Hier ist sehr genau beschrieben, was man nach einem Umzug durchmacht. Acht Stufen, von den ersten Tagen bis zum Gefühl «ich bin zu Hause». Schau mal, wo du gerade stehst, ich fand es spannend, das über mich herauszufinden."></div>
 
   <footer>
     <span>© 2026 Iryna Voznesenskaya · Spezialistin für Anpassung · Coach</span>
@@ -505,59 +512,81 @@ const T = '../';
 const MEET = { ic: 'telegram', c: '#3F6FBF', t: 'Kennenlernen, 30 Minuten', d: 'Online, kostenlos. Schreib auf Telegram das Wort ВСТРЕЧА.', h: 'https://t.me/IrynaNeuroCoach' };
 const STUPENI = { ic: 'path', c: '#66704F', t: 'Test «Stufen der Stabilität», 20 Minuten', d: 'Zeigt, welche Stufen dich schon tragen, welche knarrt und womit du anfangen kannst.', h: T + '/put/stupeni/' };
 const COL = [['#8E8470','#ECE7DD'],['#6A5FB8','#E7E4F7'],['#C25468','#F8E0E4'],['#3F6FBF','#E1EBFA'],['#C97E52','#FAE8DC'],['#4E9A70','#E1F1E7'],['#A99A2E','#F7F2D3'],['#2894A0','#DDF3F4']];
-const ICN = ['earth', 'hearth', 'door', 'key', 'workshop', 'sprout', 'hill', 'sky'];
+/* значки истории чаши (10.10.2026, метод «Ступени») — стиль библиотеки icons.js: сетка 24×24, заливка светлым тоном, контур глубоким, линия 1.8; золото швов — #C9971F */
+const ICONS_CHASHA = (() => {
+  const G = '#C9971F';
+  const bowl = (c, f, s, notch) => notch
+    ? `<path d="M3.5 9.5h9l1.2 2.2 1.6-2.2h5.2c0 4.9-3.7 8.4-8.5 8.4S3.5 14.4 3.5 9.5z" fill="${f}" stroke="${c}" ${s}/><path d="M9.6 17.9h4.8v1.6H9.6z" fill="${f}" stroke="${c}" stroke-width="1.4" stroke-linejoin="round"/>`
+    : `<path d="M3.5 9.5h17c0 4.9-3.7 8.4-8.5 8.4S3.5 14.4 3.5 9.5z" fill="${f}" stroke="${c}" ${s}/><path d="M9.6 17.9h4.8v1.6H9.6z" fill="${f}" stroke="${c}" stroke-width="1.4" stroke-linejoin="round"/>`;
+  const mini = (x, y, w, c, f, s) => { const h = w * .72, fx = x + w * .34, fw = w * .32;
+    return `<path d="M${x} ${y}H${x + w}C${x + w} ${y + h * .9} ${x + w * .74} ${y + h} ${x + w / 2} ${y + h}S${x} ${y + h * .9} ${x} ${y}z" fill="${f}" stroke="${c}" ${s}/><path d="M${fx} ${y + h}h${fw}v1.1h-${fw}z" fill="${f}" stroke="${c}" stroke-width="1.2" stroke-linejoin="round"/>`; };
+  return {
+    razbita: (c, f, s) => bowl(c, f, s, true) + `<path d="M8.6 9.7l1 2.7-1.3 2.6" fill="none" stroke="${c}" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.6 20.6l2.6-.9-.4 1.9z" fill="${f}" stroke="${c}" stroke-width="1.3" stroke-linejoin="round"/>`,
+    svoi: (c, f, s) => mini(1.5, 7.5, 9.2, c, f, s) + `<path d="M4.8 7.7l1.4 2.4-.9 2.4" fill="none" stroke="${G}" stroke-width="1.6" stroke-linecap="round"/>` + mini(13.3, 9.5, 9.2, c, f, s) + `<path d="M18.9 9.6l.8 2 1.1-2" fill="none" stroke="${c}" stroke-width="1.3" stroke-linejoin="round"/>`,
+    sobirayu: (c, f, s) => bowl(c, f, s, true) + `<path d="M13.7 11.7l-.6 2.4.9 2.4" fill="none" stroke="${G}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.6 5.2l3.4-1.4 1.1 2.4-3.3 1.2z" fill="${f}" stroke="${c}" stroke-width="1.3" stroke-linejoin="round"/><path d="M13.2 7.3l2.5-.9" stroke="${G}" stroke-width="1.4" stroke-linecap="round"/>`,
+    ryad: (c, f, s) => mini(1.4, 9, 6.4, c, f, s) + mini(8.8, 9, 6.4, c, f, s) + mini(16.2, 9, 6.4, c, f, s) + `<path d="M3.4 9.2l.8 1.7-.5 1.4M11.9 9.2l-.6 1.6.6 1.6M18.3 9.2l.7 1.5" fill="none" stroke="${G}" stroke-width="1.3" stroke-linecap="round"/><path d="M1.3 16.9h21.4" stroke="${c}" ${s}/>`,
+    polnaya: (c, f, s) => bowl(c, f, s, false) + `<path d="M5.2 11.2c2.2.9 11.4.9 13.6 0" fill="none" stroke="${c}" stroke-width="1.2" stroke-linecap="round"/><path d="M8.2 12.6l1 2.2-.6 1.9" fill="none" stroke="${G}" stroke-width="1.5" stroke-linecap="round"/><path d="M10 6.8c-1-1.2 1-2 0-3.3M14 6.8c-1-1.2 1-2 0-3.3" fill="none" stroke="${c}" stroke-width="1.3" stroke-linecap="round"/>`,
+    krug: (c, f, s) => `<circle cx="12" cy="12" r="8.6" fill="none" stroke="${G}" stroke-width="1.2" stroke-dasharray="1.6 2.2"/>` + mini(8.4, 10.2, 7.2, c, f, s) + `<circle cx="12" cy="3.4" r="1.7" fill="${f}" stroke="${c}" stroke-width="1.3"/><circle cx="20.6" cy="12" r="1.7" fill="${f}" stroke="${c}" stroke-width="1.3"/><circle cx="12" cy="20.6" r="1.7" fill="${f}" stroke="${c}" stroke-width="1.3"/><circle cx="3.4" cy="12" r="1.7" fill="${f}" stroke="${c}" stroke-width="1.3"/>`,
+    shvy: (c, f, s) => bowl(c, f, s, false) + `<path d="M7 9.8l1.4 2.5-1 2.4M8.4 12.3l2.6.6M13.6 9.8l-.7 2.8 1.6 2.3 2.3-.5M12.9 12.6l-2.2 1.9" fill="none" stroke="${G}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>`,
+    zoloto: (c, f, s) => mini(1.4, 6.5, 10, c, f, s) + `<path d="M4.4 6.8l1.2 2.3-.8 2.1" fill="none" stroke="${G}" stroke-width="1.5" stroke-linecap="round"/>` + mini(15.2, 11.8, 7.2, c, f, s) + `<path d="M19.6 12l.8 1.6.8-1.6" fill="none" stroke="${c}" stroke-width="1.2" stroke-linejoin="round"/><path d="M8.5 14.4c1.5 3.6 4.4 5.3 7.6 4.6" fill="none" stroke="${G}" stroke-width="1.6" stroke-linecap="round"/>`
+  };
+})();
+Object.assign(ICONS, ICONS_CHASHA);
+const ICN = ['razbita', 'svoi', 'sobirayu', 'ryad', 'polnaya', 'krug', 'shvy', 'zoloto'];
+const IMG = ['01-razbitaya-chasha', '02-svoi-chashi', '03-sobirayu-sebya', '04-v-odnom-ryadu', '05-polnaya-chasha', '06-chasha-po-krugu', '07-zolotye-shvy', '08-zoloto-dlya-novoj'];
+const bowl = (k, cls) => `<picture class="bowl${cls ? ' ' + cls : ''}"><source srcset="/put/img/${IMG[k]}.webp" type="image/webp"><img src="/put/img/${IMG[k]}.jpg" width="900" height="1205" loading="lazy" alt=""></picture>`;
 
 const STEPS = [
-  { name: 'Boden unter den Füssen', sub: 'Stufe des Körpers', teaser: 'Wenn es vor allem darum geht, auf den Beinen zu bleiben',
+  { name: 'Die zerbrochene Schale', sub: 'Stufe des Körpers', teaser: 'Wenn es vor allem darum geht, auf den Beinen zu bleiben',
     says: ['Es ist schwer für mich hier', 'Ich habe keine Kraft', 'Ich schlafe nicht und halte mich nur mit den Nerven aufrecht'],
     pain: ['Alles kostet dreimal so viel Kraft, und am Abend scheint es, als hättest du nichts Besonderes geschafft', 'Zuerst geben Körper und Schlaf nach: du kannst nicht schlafen, Kopf und Rücken tun weh, doch die Ärzte finden nichts', 'Kein Gefühl für ein Morgen: Bewilligung, Arbeit, Schule, Geld — alles «mal sehen, wie es kommt»'],
     needs: [['Schlaf und Erholung', 'ausgeschlafen sein und mit Kraft aufwachen'], ['Körper', 'dass nichts wehtut, und ein Arzt, dem du vertraust'], ['Rhythmus', 'richtig essen statt zwischen Tür und Angel'], ['Ein Dach und Geld fürs Nötigste', 'eine Wohnung, um die du nicht bangen musst'], ['Vorhersehbarkeit', 'wenigstens grob wissen, was in den nächsten Monaten kommt'], ['Eine eigene Ecke', 'ein Ort, an dem du die Tür schliessen und durchatmen kannst']],
     vals: ['Leben und Gesundheit', 'Sicherheit', 'Ruhe und Stille', 'Das Recht auf Erholung ohne Schuldgefühl', 'Eins nach dem anderen'],
     check: 'Schläfst du genug? Hast du morgens Kraft? Gibt es Tage, an denen es vor allem darum geht, bis zum Abend durchzuhalten?',
     next: 'Wenn Schlaf und Rhythmus wieder da sind, merkst du plötzlich, wie einsam es ist.' },
-  { name: 'Der Herd und die eigenen Leute am Tisch', sub: 'Stufe des «Wir»', teaser: 'Wenn du dir wünschst, dass abends jemand auf dich wartet',
+  { name: 'Dein Kreis', sub: 'Stufe des «Wir»', teaser: 'Wenn du dir wünschst, dass abends jemand auf dich wartet',
     says: ['Ich habe hier niemanden für ein offenes Gespräch', 'Niemand, den ich um zwei Uhr nachts anrufen kann', 'Ich bin allein, sogar in der Familie'],
     pain: ['Um dich herum sind Menschen, aber niemand, mit dem du wirklich reden kannst', 'Bekannte gibt es, Vertraute nicht, und als Erwachsene Freundschaften zu schliessen dauert lange und macht Angst', 'Zu Hause gehörst du nicht mehr dazu, hier noch nicht; Wochenenden und Feiertage sind am schwersten'],
     needs: [['Die eigenen Leute', 'wenigstens ein Mensch, den du nachts anrufen kannst'], ['Zugehörigkeit', 'ein Ort, an dem man dich kennt und auf dich wartet'], ['Die Liebsten', 'eine lebendige Verbindung zur Familie, zu Eltern und Kindern'], ['Wurzeln', 'die eigenen Feste, die eigene Sprache, das, was du an die Kinder weitergibst'], ['Gesehen werden', 'dass jemand merkt, wenn du verschwindest'], ['Schutz', 'jemand, der dir rät und für dich einsteht']],
     vals: ['Dazugehören', 'Treue', 'Wärme und Nähe', 'Wurzeln und das Gedächtnis der Familie', 'Sich nicht verstellen müssen'],
     check: 'Hast du jemanden, den du anrufen kannst, wenn es dir schlecht geht? Gab es im letzten Monat ein echtes Treffen, bei dem es nicht um Erledigungen ging?',
     next: 'Wenn es wenigstens einen Menschen gibt, der zu dir gehört, willst du selbst etwas wagen.' },
-  { name: 'Die eigene Stimme', sub: 'Stufe der Kraft', teaser: 'Wenn du wieder spüren willst: «ich kann das»',
+  { name: 'Ich kann es selbst', sub: 'Stufe der Kraft', teaser: 'Wenn du wieder spüren willst: «ich kann das»',
     says: ['Ich schaffe es nicht einmal, einen Arzttermin zu vereinbaren', 'Ich habe immer noch Angst zu sprechen', 'Zu Hause habe ich meine Stimme verloren'],
     pain: ['Einfache Dinge regeln für dich der Mann, eine Freundin oder das Kind als Übersetzer', 'Es gelingt dir nicht, zu widersprechen und für dich einzustehen, und nachts geht es dir dann immer wieder durch den Kopf', 'Man spricht mit dir, als würdest du nichts verstehen, und du beginnst selbst, es zu glauben'],
     needs: [['Selbstständigkeit', 'deine Angelegenheiten ohne Mann und Übersetzer regeln'], ['Stimme', 'etwas sagen, wenn man dich ungerecht behandelt'], ['Grenzen', 'Nein sagen, ohne dich zu rechtfertigen'], ['Einfluss', 'du entscheidest und wählst, nicht die Umstände'], ['Respekt', 'dass man auf Augenhöhe mit dir spricht'], ['Kleine Siege', 'Beweise, dass du es kannst']],
     vals: ['Würde', 'Freiheit', 'Mut', 'Ehrlichkeit', '«Ich habe es geschafft»'],
     check: 'Kannst du eine einfache Sache selbst regeln: einen Termin machen, anrufen, widersprechen? Gibt es etwas, dem du ausweichst?',
     next: 'Wenn das «ich habe es gekonnt» da ist, willst du verstehen, wie hier alles funktioniert.' },
-  { name: 'Karte und Schlüssel', sub: 'Stufe der Ordnung', teaser: 'Wenn jeder Brief im Briefkasten dein Herz schneller schlagen lässt',
+  { name: 'Verständliche Regeln', sub: 'Stufe der Ordnung', teaser: 'Wenn jeder Brief im Briefkasten dein Herz schneller schlagen lässt',
     says: ['Ich verstehe nicht, wie man hier lebt', 'Jeder Brief — und das Herz rast', 'Ich habe Angst, einen Fehler zu machen und Ärger zu bekommen'],
     pain: ['Schule, Versicherungen, Steuern, Bewilligungen: Regeln gibt es, aber niemand erklärt sie', 'Du hast Angst, etwas falsch zu machen und eine Busse oder eine Absage zu bekommen oder eine Frist zu verpassen', 'Zwanzig Chats, zwanzig Ratschläge, und unklar, wem man glauben soll'],
     needs: [['Klarheit', 'verstehen, wie hier alles funktioniert'], ['Eine verlässliche Quelle', 'ein Wegweiser statt zwanzig Chats'], ['Ordnung in deinen Angelegenheiten', 'Papiere, Fristen, Ordner, nichts geht verloren'], ['Gelassenheit', 'die Gewissheit, dass dir und den Kindern nichts droht'], ['Verständliche Regeln', 'was hier üblich ist und was nicht'], ['Ein Plan', 'den Weg sehen, nicht den Nebel']],
     vals: ['Klarheit', 'Verlässlichkeit', 'Gerechtigkeit', 'Verantwortung', 'Gelassenheit'],
     check: 'Weisst du, wohin du mit deiner Frage gehen kannst? Löst ein Brief im Briefkasten Panik aus?',
     next: 'Wenn das System verständlich geworden ist, kommt die Frage: Was will ich eigentlich?' },
-  { name: 'Die eigene Werkstatt', sub: 'Stufe des eigenen Tuns', teaser: 'Wenn sich bei der Frage «Was machen Sie beruflich?» innerlich alles zusammenzieht',
+  { name: 'Meine eigene Arbeit', sub: 'Stufe des eigenen Tuns', teaser: 'Wenn sich bei der Frage «Was machen Sie beruflich?» innerlich alles zusammenzieht',
     says: ['Ich bin hier niemand', 'Ich habe kein eigenes Geld', 'Ich weiss nicht, was ich hier machen soll'],
     pain: ['Das Diplom wird nicht anerkannt, die Erfahrung nicht angerechnet, man bietet dir Stellen unter deinem früheren Niveau an oder gar keine', 'Kraft und Ideen sind da, aber wie der Markt funktioniert, womit man anfängt und was legal ist, ist unklar', 'Weder eigenes Geld noch ein eigener Name, und die Frage «Was machen Sie beruflich?» tut weh'],
     needs: [['Eine eigene Tätigkeit', 'Arbeit, ein neuer Beruf oder das eigene Geschäft, passend zu deiner Kraft und deinem Können'], ['Anerkennung der Erfahrung', 'dass deine bisherige Erfahrung hier etwas zählt'], ['Eigenes Geld', 'nicht wegen der Summe, sondern wegen Freiheit und Mitsprache in der Familie'], ['Wachstum', 'statt «Hauptsache, sie nehmen mich»'], ['Regeln des Marktes', 'wie man hier Arbeit sucht, Leute einstellt und ein Geschäft gründet'], ['Ein Umfeld auf Augenhöhe', 'Menschen, mit denen man über Pläne spricht statt zu klagen']],
     vals: ['Mein eigener Preis', 'Wahlfreiheit', 'Meisterschaft', 'Gesunder Ehrgeiz', 'Selbstachtung'],
     check: 'Hast du hier eine eigene Tätigkeit: eine Arbeit, ein Geschäft oder ein Projekt? Was antwortest du auf «Was machen Sie beruflich?»',
     next: 'Wenn das eigene Tun da ist, kommt die Frage: Wofür das alles?' },
-  { name: 'Ein Garten für andere', sub: 'Stufe des Beitrags', teaser: 'Wenn das Eigene schon da ist und du teilen möchtest',
+  { name: 'Mein Beitrag', sub: 'Stufe des Beitrags', teaser: 'Wenn das Eigene schon da ist und du teilen möchtest',
     says: ['Ich möchte hier gebraucht werden', 'Ich habe es erreicht, doch die Freude fehlt', 'Ich möchte, dass meine Erfahrung jemandem nützt'],
     pain: ['Es gelingt, es läuft, aber wofür — unklar', 'Erfahrung ist da, aber wer sie hier braucht und in welcher Form, ist unklar', 'Entweder hilfst du allen und bist danach leer, oder du traust dich gar nicht, dich anzubieten'],
     needs: [['Sinn', 'verstehen, wofür das alles ist'], ['Gebraucht werden', 'dass deine Erfahrung nicht nur der Familie nützt'], ['Für wen', 'wem genau und in welcher Form du nützlich sein kannst'], ['Eine gemeinsame Sache', 'ein Kreis, in dem du Mitgestalterin bist, nicht Gast'], ['Anerkennung des Beitrags', 'dass er benannt wird, statt «du hast doch nur einen Tipp gegeben»'], ['Das richtige Mass', 'geben, weil du es wählst, ohne dich zu erschöpfen']],
     vals: ['Nutzen', 'Mitgefühl', 'Gleichwertigkeit', 'Gemeinschaft', 'Grosszügigkeit mit Grenzen'],
     check: 'Gibt es hier etwas, das du nicht nur für dich tust? Verstehst du, wofür das alles ist?',
     next: 'Wenn der Beitrag da ist, stellt sich die Frage nach dem ganzen Leben.' },
-  { name: 'Blick vom Hügel', sub: 'Stufe des ganzen Lebens', teaser: 'Wenn du schon lange hier lebst und doch wie auf gepackten Koffern sitzt',
+  { name: 'Mein ganzes Leben', sub: 'Stufe des ganzen Lebens', teaser: 'Wenn du schon lange hier lebst und doch wie auf gepackten Koffern sitzt',
     says: ['Ich bin schon lange hier, aber immer noch nicht zu Hause', 'Ich warte darauf, dass das echte Leben beginnt', 'Und was, wenn wir nicht weggegangen wären'],
     pain: ['«Wenn wir erst zurück sind», «wenn ich erst die Sprache kann», «wenn die Kinder erst gross sind» — und die Jahre vergehen', 'Bei jeder Schwierigkeit kehrt das «Und wenn wir nicht weggegangen wären» zurück', 'Dort bist du schon fremd, hier noch nicht ganz zu Hause, und die zwei Hälften passen nicht zusammen'],
     needs: [['Ganzheit', '«dort» und «hier» verbinden, dein früheres und dein neues Ich'], ['Dein eigenes Drehbuch', 'leben nicht, wie man soll, sondern wie es zu dir gehört'], ['Der Sinn des ganzen Lebens', 'wofür es da ist und womit du es abschliessen willst'], ['Flexibilität', 'aushalten, dass es nicht die eine richtige Antwort gibt'], ['Dein eigenes System', 'eigene Prioritäten statt allgemeiner Ratschläge'], ['Zeit', 'über sie verfügen, statt Verpasstes nachzuholen']],
     vals: ['Nichts bereuen', 'Echtheit', 'Verantwortung für das eigene Leben', 'Weiter Blick', 'Stimmigkeit'],
     check: 'Weisst du, womit du abschliessen willst? Wenn das Leben morgen enden würde, was würdest du bereuen?',
     next: 'Wenn das Leben zu einem Ganzen zusammengefunden hat, taucht die Frage auf: Was ist grösser als ich?' },
-  { name: 'Der Himmel über dem Zuhause', sub: 'Stufe «grösser als ich»', teaser: 'Wenn «hier» und «dort» zu einem Leben verschmelzen',
+  { name: 'Hier und dort — ein Leben', sub: 'Stufe «grösser als ich»', teaser: 'Wenn «hier» und «dort» zu einem Leben verschmelzen',
     says: ['Ich bin nicht mehr fremd, ich lebe einfach', 'Ich möchte, dass nach mir etwas bleibt', 'Mich interessieren die, die nach mir kommen'],
     pain: ['Niemand, mit dem du auf deiner Ebene reden kannst: Aus dem alten Kreis bist du herausgewachsen, und einen neuen gibt es noch nicht', 'Die alten Ziele ziehen nicht mehr, und die neuen sind noch nicht benannt', 'Du möchtest, dass das, was du geschaffen hast, nicht mit dir endet'],
     needs: [['Teil von etwas Grösserem sein', 'einer Sache, einer Idee, des Lebensflusses'], ['Spuren', 'dass nach dir etwas bleibt'], ['Weitergeben', 'lehren, begleiten, anderen Türen öffnen'], ['Dein Kreis', 'Menschen, die genauso weit denken'], ['Ein Leben', '«hier» und «dort» sind keine zwei Lager mehr'], ['Stille im Inneren', 'nichts beweisen, einfach sein']],
@@ -576,9 +605,10 @@ document.getElementById('trail').innerHTML = STEPS.map((s, k) => {
   const stop = `<div class="stop ${side}" style="${vars(k)}">
     <span class="node">${ico(ICN[k], COL[k][0], COL[k][1], 36)}<i>${k + 1}</i></span>
     <button class="card" type="button" data-k="${k}" aria-haspopup="dialog">
+      ${bowl(k)}
       <span class="sub">${k + 1} · ${esc(s.sub)}</span><h3>${esc(s.name)}</h3><span class="teaser">${esc(s.teaser)}</span>
       <span class="says">${s.says.map(q => `<span>«${esc(q)}»</span>`).join('')}</span>
-      <span class="more">Was dich an dieser Station erwartet →</span>
+      <span class="more">Was dich auf dieser Stufe erwartet →</span>
     </button></div>`;
   const prev = k ? STEPS[k - 1].next : '';
   const between = `<div class="between ${side === 'l' ? 'r' : 'l'}">${prev ? `<p>${esc(prev)}</p>` : ''}</div>`;
@@ -590,7 +620,8 @@ function openStep(k){
   const s = STEPS[k];
   qmCard.innerHTML = `<div class="qm-top" style="${vars(k)}">
       <span class="ic">${ico(ICN[k], COL[k][0], COL[k][1], 34)}</span>
-      <div class="qm-head"><div class="eyebrow">Station ${k + 1} von 8 · ${esc(s.sub)}</div><h2 class="qm-title" id="qmTitle">${esc(s.name)}</h2></div>
+      <div class="qm-head"><div class="eyebrow">Stufe ${k + 1} von 8 · ${esc(s.sub)}</div><h2 class="qm-title" id="qmTitle">${esc(s.name)}</h2></div>
+      ${bowl(k, 'qm-pic')}
       <button class="qm-close" type="button" data-close aria-label="Schliessen">✕</button>
     </div>
     <div class="qm-panel lv" style="${vars(k)}">
@@ -600,7 +631,7 @@ function openStep(k){
         <h3 style="margin-top:6px">Prüf dich selbst</h3><p class="check">${esc(s.check)}</p></div>
     </div>
     <div class="qm-foot"><p class="next">${s.note ? esc(s.note) : `<b>Weiter.</b> ${esc(s.next)}`}</p>
-      <p class="notme"><button type="button" data-step="${k - 1}" ${k ? '' : 'hidden'}>← Station ${k}</button> ${k < 7 ? `<button type="button" data-step="${k + 1}">Station ${k + 2} →</button>` : ''}</p></div>
+      <p class="notme"><button type="button" data-step="${k - 1}" ${k ? '' : 'hidden'}>← Stufe ${k}</button> ${k < 7 ? `<button type="button" data-step="${k + 1}">Stufe ${k + 2} →</button>` : ''}</p></div>
     <div class="two-grid">${actHtml(STUPENI)}${actHtml(MEET)}</div>`;
   if (!qm.open){ if (typeof qm.showModal === 'function'){ try { qm.showModal(); } catch (e) { qm.setAttribute('open', ''); } } else qm.setAttribute('open', ''); }
   qmCard.scrollTop = 0;
