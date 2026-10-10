@@ -353,6 +353,7 @@ a.bot:hover{color:#B98324}
 .jump{display:flex;flex-wrap:wrap;gap:8px}
 .jump a{font-size:.86rem;font-weight:600;text-decoration:none;color:var(--brown);border:1.5px solid var(--line);background:var(--paper);border-radius:999px;padding:7px 14px}
 .jump a:hover{border-color:var(--brown)}
+.pl-lead{margin:26px 0 14px;display:flex;flex-direction:column;gap:6px}.pl-lead h3{font-size:1.45rem;margin:0}.pl-lead p{margin:0;color:var(--muted);max-width:62ch}
 .pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
 @media (max-width:980px){.pillars{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:520px){.pillars{grid-template-columns:1fr}}
@@ -502,6 +503,18 @@ a.bot:hover{color:#B98324}
 .pblock:hover .pb-fl svg{transform:rotate(36deg) scale(1.06)}
 .pd-fl svg{animation:flOpen .9s cubic-bezier(.2,.7,.2,1)}
 @keyframes flOpen{from{transform:rotate(-60deg) scale(.6);opacity:.2}}
+/* программы по методу «Ступени. Твой путь в новой стране» (10.10.2026): цветок программы (вид цветка = шаг метода), точки ступеней, три шага.
+   Значки-чаши ступеней на главной не используем: они для «Твой путь» и теста, от 40 px и всегда с номером ступени (концепция значков, 10.10.2026) */
+.pb-steps{display:flex;align-items:center;gap:8px;font-size:.76rem;color:var(--muted);line-height:1.3}
+.pdots{display:inline-flex;gap:3px;flex:none}
+.pdots i{width:7px;height:7px;border-radius:50%;background:var(--line)}
+.theme-n svg{display:block}
+.theme-q{font-family:var(--display);font-size:1.12rem;color:var(--brown);margin:2px 0 4px}
+.theme-more{margin:14px 0 10px;font-size:.92rem;color:var(--muted)}
+.pd-steps{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 6px}
+.pd-steps span{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:600;background:var(--lf);color:#2F2924;border:1px solid color-mix(in srgb,var(--lc) 45%,transparent);border-radius:999px;padding:3px 10px 3px 4px}
+.pd-steps i{font-style:normal;width:18px;height:18px;border-radius:50%;background:var(--lc);color:#FFFCF8;display:grid;place-items:center;font-size:.7rem;font-weight:700}
+.pd-stlink{font-size:.85rem;font-weight:700}
 @media (prefers-reduced-motion: reduce){.pb-fl svg,.pd-fl svg{transition:none;animation:none}}
 /* «бесплатно» и «в подарок» — заметная зелёная плашка с бликом */
 .pb-price.free{display:inline-flex;align-items:center;gap:6px;font-size:.88rem;letter-spacing:.02em;text-transform:uppercase;color:#fff;border:0;padding:6px 14px;box-shadow:0 6px 14px -6px rgba(79,94,62,.6);
@@ -711,12 +724,12 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
         <h2 id="who-h">Hallo! Ich heisse Iryna</h2>
         <p class="who-lead">Ich bin Transformations-Coach, Neurocoach und Mentorin, Autorin der Methode «Stufen. Dein Weg im neuen Land». Ich lebe in der Schweiz und weiss selbst, wie es ist, das Leben in einem fremden Land neu zu beginnen.</p>
         <p>Deshalb stehst in unserer Arbeit immer du im Mittelpunkt. Dein Leben, deine Kräfte und dein Wohlbefinden.</p>
+        <p class="who-bowl">Alles, was ich über diesen Weg weiss, habe ich in der Methode «Stufen. Dein Weg im neuen Land» zusammengefasst. Es sind acht Stufen, auf denen sich das Leben nach dem Umzug neu zusammensetzt, so wie man eine zerbrochene Schale mit Gold wieder zusammenfügt. Die Risse auf diesem Weg musst du nicht verstecken. Mit der Zeit werden sie zu goldenen Nähten, und deine Erfahrung mit dem Umzug wird zu deiner Stärke.</p>
         <div class="who-ways">
-          <div class="way"><span class="ic" data-ico="sprout" data-c="#66704F"></span><div><h3>Wir gehen tiefer als Ratschläge</h3><p>Wir bleiben nicht bei einem Plan auf Papier stehen. Wir steigen behutsam dorthin hinab, wo deine gewohnten Reaktionen, Ängste und alten Regeln wohnen, die hier nicht mehr funktionieren. Wenn sich in dir etwas verändert, finden sich die Lösungen draussen wie von selbst.</p></div></div>
-          <div class="way"><span class="ic" data-ico="lantern" data-c="#2E5A88"></span><div><h3>Du hörst auf, dir Vorwürfe zu machen</h3><p>Ich verstehe, wie dein Gehirn auf Veränderungen und eine fremde Umgebung reagiert. Warum in einem neuen Land die Kräfte so schnell zu Ende gehen und ein einfacher Brief vom Amt wie ein Berg wirkt. Das hat nichts mit Schwäche zu tun. Allein dieses Verständnis nimmt dir viel unnötige Schuld von den Schultern.</p></div></div>
-          <div class="way"><span class="ic" data-ico="explore" data-c="#B98324"></span><div><h3>Deine Aufmerksamkeit kehrt zu dir zurück</h3><p>Ich arbeite mit deinem Denken und dem Fokus deiner Aufmerksamkeit. Wohin die Aufmerksamkeit schaut, dorthin fliessen auch die Kräfte. Gemeinsam finden wir die Gedanken, die sich im Kreis drehen, und lernen, den Blick von «warum klappt es bei mir nicht» auf «was kann ich schon heute für mich tun» zu lenken. Dann wird es im Kopf ruhiger, und es entsteht Raum für deine Entscheidungen.</p></div></div>
+          <div class="way"><span class="ic" data-ico="sprout" data-c="#66704F"></span><div><h3>Wir gehen tiefer als Ratschläge</h3><p>Wir bleiben nicht bei einem Plan auf Papier stehen. Die wichtigste Frage nach dem Umzug lautet: «Wer bin ich hier?» Wir schauen behutsam dorthin, wo deine gewohnten Reaktionen, Ängste und alten Regeln wohnen. Zu Hause haben sie geholfen, hier funktionieren sie nicht mehr. Wenn du dich neu zusammensetzt und verstehst, was dir jetzt wichtig ist, finden sich die Lösungen draussen wie von selbst.</p></div></div>
+          <div class="way"><span class="ic" data-ico="lantern" data-c="#2E5A88"></span><div><h3>Du hörst auf, dir Vorwürfe zu machen</h3><p>Nach dem Umzug steigen fast alle auf die unteren Stufen hinab, auch wer zu Hause weit oben stand. Die Kräfte gehen schnell zu Ende, und ein einfacher Brief vom Amt wirkt wie ein Berg. Ich verstehe, wie das Gehirn auf Veränderungen und eine fremde Umgebung reagiert. Das ist keine Schwäche. So setzt sich das Leben neu zusammen: zuerst die unteren Stufen, dann die oberen. Allein dieses Verständnis nimmt dir viel unnötige Schuld von den Schultern.</p></div></div>
+          <div class="way"><span class="ic" data-ico="explore" data-c="#B98324"></span><div><h3>Deine Aufmerksamkeit kehrt zu dir zurück</h3><p>Nach dem Umzug geht die ganze Aufmerksamkeit nach aussen: Papiere, Fristen, eine fremde Sprache, die Sorgen der Familie. Für dich selbst bleibt kaum etwas übrig. Gemeinsam holen wir die Aufmerksamkeit zu dir und zu deiner Stufe zurück: was du jetzt brauchst und welchen kleinen Schritt du schon heute für dich tun kannst. Dann wird es im Kopf ruhiger, und es entsteht Raum für deine Entscheidungen.</p></div></div>
         </div>
-        <p class="who-bowl">Alles, was ich über diesen Weg weiss, habe ich in der Methode «Stufen. Dein Weg im neuen Land» zusammengefasst. Es sind acht Stufen, auf denen sich das Leben nach dem Umzug neu zusammensetzt. Die Risse auf diesem Weg musst du nicht verstecken. Mit der Zeit werden sie zu goldenen Nähten, und deine Erfahrung mit dem Umzug wird zu deiner Stärke.</p>
         <blockquote class="who-quote">Ich dränge nicht und ziehe dich nicht an der Hand. Ich gehe neben dir — in deinem Tempo und für dich.<span>Iryna</span></blockquote>
       </div>
     </div>
@@ -772,11 +785,12 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
         <a class="plm-go" href="/de/put/">Die acht Stufen ansehen →</a>
       </div>
     </div>
+    <div class="pl-lead"><h3>Wie wir die Stufen gehen</h3><p>Die Methode zeigt, wo du gerade stehst und welcher Schritt als Nächstes kommt. Den Weg gehen wir mit dem, was ich als Coach und Neurocoach gelernt habe.</p></div>
     <div class="pillars">
-      <div class="pillar"><span class="pl-fl" data-mandala="0"></span><h3>Emotionale Intelligenz</h3><p>Du lernst wahrzunehmen, was du fühlst, und zu verstehen, was deine Gefühle dir sagen. Emotionen hören auf, deine Entscheidungen zu steuern, und beginnen, dir Hinweise zu geben.</p></div>
-      <div class="pillar"><span class="pl-fl" data-mandala="1"></span><h3>Spiral Dynamics</h3><p>Hilft zu sehen, welche Werte dich gerade leiten und warum deine alten Regeln im neuen Land plötzlich nicht mehr funktionieren. So wird klar, was genau dir wichtig ist.</p></div>
-      <div class="pillar"><span class="pl-fl" data-mandala="5"></span><h3>Denken und Fokus der Aufmerksamkeit</h3><p>Dein Denken und deine Aufmerksamkeit sind die wichtigste Ressource. Wir bemerken Gedanken, die sich im Kreis drehen, und lenken die Aufmerksamkeit dorthin, wo es eine Lösung gibt, und nicht dorthin, wo es Angst macht. Der Fokus ändert sich — und du hast mehr Kraft.</p></div>
-      <div class="pillar"><span class="pl-fl" data-mandala="2"></span><h3>Wie das Gehirn funktioniert</h3><p>Eine Einsicht ist nur die halbe Sache. Die andere Hälfte ist, das Neue in deinem Leben zu verankern. Dafür gibt es Wiederholung, einen Körperanker und einen kleinen machbaren Schritt zwischen den Treffen.</p></div>
+      <div class="pillar"><span class="pl-fl" data-mandala="0"></span><h3>Emotionale Intelligenz</h3><p>Du lernst wahrzunehmen, was du fühlst, und zu verstehen, was deine Gefühle dir sagen. Sie zeigen dir, wo du gerade Fürsorge brauchst: Müdigkeit spricht von Kraft und Schlaf, Einsamkeit von deinem Kreis, die Angst vor einem Brief vom Amt von verständlichen Regeln. Emotionen hören auf, deine Entscheidungen zu steuern, und beginnen, dir Hinweise zu geben.</p></div>
+      <div class="pillar"><span class="pl-fl" data-mandala="1"></span><h3>Clean Language und Metaphern</h3><p>Clean Language heisst: Fragen mit deinen eigenen Worten, ohne meine Vorschläge und Bewertungen. Ausserdem arbeite ich mit Metaphernkarten: Auf dem Bild sieht jede etwas Eigenes. Manchmal ist es leichter zu sagen «ich bin wie eine zerbrochene Schale», als alles der Reihe nach zu erklären. In deinem Bild zeigt sich, was man direkt nur schwer sieht, und du findest deine eigenen Worte für das, was mit dir geschieht.</p></div>
+      <div class="pillar"><span class="pl-fl" data-mandala="5"></span><h3>Denken und Fokus der Aufmerksamkeit</h3><p>Dein Denken und deine Aufmerksamkeit sind die wichtigste Ressource. Wir bemerken Gedanken, die sich im Kreis drehen, und lenken die Aufmerksamkeit dorthin, wo es eine Lösung gibt, und nicht dorthin, wo es Angst macht. Wir schauen nicht auf den ganzen Berg, sondern auf deine Stufe und den nächsten Schritt darauf. Der Fokus ändert sich — und du hast mehr Kraft.</p></div>
+      <div class="pillar"><span class="pl-fl" data-mandala="2"></span><h3>Wie das Gehirn funktioniert</h3><p>Eine Einsicht ist nur die halbe Sache. Die andere Hälfte ist, das Neue in deinem Leben zu verankern. Dafür braucht das Gehirn Wiederholung, einen Körperanker und einen kleinen machbaren Schritt zwischen den Treffen. So wird aus «Fuss fassen» nach und nach «Fest stehen», und das Neue hält dich, wie eine goldene Naht die Schale hält.</p></div>
     </div>
 
   </section>
@@ -805,7 +819,7 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
     <div class="sec-head">
       <div class="eyebrow">Dein Weg mit mir</div>
       <h2 id="path-h">Schritt für Schritt — von dort aus, wo du gerade stehst</h2>
-      <p>Du musst nicht alles der Reihe nach durchgehen. Fang mit dem an, was dich gerade betrifft. Wenn du nicht weisst, wo du anfangen sollst, schau auf der Seite <a href="/de/put/">«Dein Weg im neuen Land»</a>, auf welcher Stufe du stehst. Jeder Schritt ist Fürsorge für dich selbst. Tippe auf einen beliebigen Block — du siehst, womit du kommen kannst und womit du gehst.</p>
+      <p>Die Programme sind nach der Methode «Stufen. Dein Weg im neuen Land» geordnet. Jede Stufe hat drei Schritte: «Fuss fassen», «Fest stehen», «Höher hinaus». Du musst nicht alles der Reihe nach durchlaufen, beginne mit dem, was jetzt zu dir passt. Die farbigen Punkte auf der Karte zeigen, auf welchen Stufen das Programm hilft. Wenn du nicht weisst, wo du stehst, mach den Test «Stufen der Stabilität» oder schau dir <a href="/de/put/">«Dein Weg im neuen Land»</a> an. Tippe auf einen Block — du siehst, womit du kommen kannst und womit du gehst.</p>
     </div>
     <div id="pathThemes" class="themes"></div>
     <p class="path-note">Alles online und auf Russisch. Wo «den Preis erfährst du persönlich» steht, wird der Preis noch festgelegt, schreib mir, und ich erzähle dir mehr.</p>
@@ -827,11 +841,11 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
     </div>
     <ul class="results">
       <li><span class="ic sm" data-ico="sprout" data-c="#B98324"></span>Die Risse des Umzugs werden zu goldenen Nähten — deine Erfahrung wird zu deiner Stärke</li>
-      <li><span class="ic sm" data-ico="sprout" data-c="#66704F"></span>Du findest deine eigenen Worte statt fremder Ratschläge</li>
+      <li><span class="ic sm" data-ico="sprout" data-c="#66704F"></span>Auf die Frage «Wer bin ich hier?» hast du deine eigene Antwort statt fremder Ratschläge</li>
       <li><span class="ic sm" data-ico="key" data-c="#B98324"></span>Die Entscheidung, die du monatelang aufgeschoben hast, ist endlich getroffen</li>
       <li><span class="ic sm" data-ico="sun" data-c="#B98324"></span>Deine Energie kehrt zurück — du verbrauchst sie nicht mehr für den inneren Streit</li>
       <li><span class="ic sm" data-ico="compass" data-c="#6E4F3C"></span>Du findest dein «Wozu» im neuen Land, nicht nur ein «Ich muss»</li>
-      <li><span class="ic sm" data-ico="signpost" data-c="#2E5A88"></span>Du siehst deinen nächsten Schritt und nicht nur den ganzen Berg</li>
+      <li><span class="ic sm" data-ico="signpost" data-c="#2E5A88"></span>Du siehst deine Stufe und den nächsten Schritt darauf, nicht den ganzen Berg</li>
     </ul>
     <p class="note">Coaching ist partnerschaftliche Arbeit. Das Ergebnis entsteht, wenn wir zusammenarbeiten, du und ich.</p>
   </section>
@@ -906,7 +920,7 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
   <section id="novoe" aria-labelledby="nv-h">
     <h2 id="nv-h">Neu</h2>
     <p class="nv-lead">Was es Neues auf der Website und im Projekt «Svoi ludi» gibt.</p>
-    <div class="nv-grid"><article class="nv-item"><div class="nv-meta"><span class="nv-k">Auf der Website</span><time datetime="2026-10-10">10. Oktober 2026</time></div><h3>Vor dem Herunterladen der Auswertung: ein Häkchen</h3><p>Bevor du die Auswertung oder das Arbeitsblatt eines Tests herunterlädst, setzt du ein Häkchen: Der Test ist ein Werkzeug zum Nachdenken, keine Diagnose und keine Beratung, und wie du das Ergebnis nutzt, entscheidest du selbst. Jede Datei hat unten eine eigene Nummer. Deine Antworten erhalten wir dabei nicht.</p><a href="/testy/">Test wählen →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">Auf der Website</span><time datetime="2026-10-10">10. Oktober 2026</time></div><h3>Was auf jeder Stufe hilft</h3><p>Tippe auf der Seite «Dein Weg» auf eine beliebige Stufe: Dort gibt es drei Schritte — «Fuss fassen», «Fest stehen», «Höher hinaus». Finde den Satz, in dem du dich wiedererkennst, und daneben siehst du, was dir gerade jetzt hilft: Artikel und kostenlose Tools von «Svoi ludi», Programme und Treffen mit mir.</p><a href="/de/put/">Ansehen →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">Auf der Website</span><time datetime="2026-10-10">10. Oktober 2026</time></div><h3>Was du auf jeder Stufe in dir zusammenfügst</h3><p>Auf der Seite «Dein Weg» steht jetzt bei jeder Stufe, was du in dir zusammenfügst, wenn du sie erreichst: von «Ich bin in Sicherheit, mein Körper ist bei mir» bis «Hier und dort — ein Leben, mein Leben». Und auf der ersten Seite der Auswertung des Tests «Stufen der Stabilität» siehst du, was jetzt dein erstes Bedürfnis ist.</p><a href="/de/put/">Ansehen →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">Auf der Website</span><time datetime="2026-10-10">10. Oktober 2026</time></div><h3>Die Website fragt, in welcher Sprache du dich wohlfühlst</h3><p>Wenn du die Website zum ersten Mal öffnest, erscheint unten eine Frage mit vier Schaltflächen: Ukrainisch, Russisch, Deutsch und English. Tippe auf deine Sprache, dann öffnet sich die Website sofort in dieser Sprache und bleibt künftig so. Auch die Tests öffnen sich in der gewählten Sprache.</p><a href="/testy/#lang=de">Zu den Tests →</a></article></div>
+    <div class="nv-grid"><article class="nv-item"><div class="nv-meta"><span class="nv-k">Auf der Website</span><time datetime="2026-10-10">10. Oktober 2026</time></div><h3>Programme nach den Schritten der Methode</h3><p>Meine Programme sind jetzt nach der Methode «Stufen. Dein Weg im neuen Land» geordnet: «Wo du jetzt stehst» und drei Schritte auf jeder Stufe — «Fuss fassen», «Fest stehen», «Höher hinaus». Finde deinen Schritt und beginne mit dem, was jetzt zu dir passt. Die farbigen Punkte auf der Karte zeigen, auf welchen Stufen das Programm hilft.</p><a href="#path">Programme ansehen →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">Auf der Website</span><time datetime="2026-10-10">10. Oktober 2026</time></div><h3>Vor dem Herunterladen der Auswertung: ein Häkchen</h3><p>Bevor du die Auswertung oder das Arbeitsblatt eines Tests herunterlädst, setzt du ein Häkchen: Der Test ist ein Werkzeug zum Nachdenken, keine Diagnose und keine Beratung, und wie du das Ergebnis nutzt, entscheidest du selbst. Jede Datei hat unten eine eigene Nummer. Deine Antworten erhalten wir dabei nicht.</p><a href="/testy/">Test wählen →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">Auf der Website</span><time datetime="2026-10-10">10. Oktober 2026</time></div><h3>Was auf jeder Stufe hilft</h3><p>Tippe auf der Seite «Dein Weg» auf eine beliebige Stufe: Dort gibt es drei Schritte — «Fuss fassen», «Fest stehen», «Höher hinaus». Finde den Satz, in dem du dich wiedererkennst, und daneben siehst du, was dir gerade jetzt hilft: Artikel und kostenlose Tools von «Svoi ludi», Programme und Treffen mit mir.</p><a href="/de/put/">Ansehen →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">Auf der Website</span><time datetime="2026-10-10">10. Oktober 2026</time></div><h3>Was du auf jeder Stufe in dir zusammenfügst</h3><p>Auf der Seite «Dein Weg» steht jetzt bei jeder Stufe, was du in dir zusammenfügst, wenn du sie erreichst: von «Ich bin in Sicherheit, mein Körper ist bei mir» bis «Hier und dort — ein Leben, mein Leben». Und auf der ersten Seite der Auswertung des Tests «Stufen der Stabilität» siehst du, was jetzt dein erstes Bedürfnis ist.</p><a href="/de/put/">Ansehen →</a></article></div>
     <div class="nv-bridge"><p><b>Praktische Fragen zum Leben in der Schweiz</b> — Bewilligung, Steuern, Versicherungen, Schule, Wohnen — findest du in meinem Projekt «Svoi ludi». Dort gibt es auch Fachleute, die deine Sprache sprechen, und kostenlose Tools.</p><a class="btn ghost" href="https://svoiludi.ch/" target="_blank" rel="noopener">«Svoi ludi» öffnen</a></div>
     <div class="nv-sub"><div><b>Neues abonnieren</b><p>Neue Beiträge, Gedanken zur Anpassung und Ankündigungen — in meinem Telegram-Kanal. Abmelden kannst du dich jederzeit.</p></div><a class="btn" href="https://t.me/IrynaNeuroCoach_channel" target="_blank" rel="noopener">In Telegram abonnieren</a></div>
   </section>
@@ -943,7 +957,7 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
    Каталог с картинками всех значков — файл «Библиотека значков.html».
    ===================================================================== */
 const ICONS = {
-  /* спиральная динамика (новый, 04.10.2026) */
+  /* спираль (значок, 04.10.2026) */
   spiral:   (c, f, s) => `<circle cx="12" cy="12" r="9" fill="${f}" stroke="none"/><path d="M11.37 11.22 L11.12 11.30 L10.87 11.45 L10.65 11.68 L10.48 11.98 L10.38 12.33 L10.37 12.73 L10.47 13.14 L10.66 13.55 L10.97 13.91 L11.37 14.22 L11.86 14.43 L12.41 14.53 L13.00 14.50 L13.59 14.33 L14.16 14.02 L14.66 13.57 L15.06 13.00 L15.33 12.33 L15.45 11.58 L15.40 10.80 L15.17 10.02 L14.76 9.29 L14.18 8.65 L13.45 8.13 L12.59 7.78 L11.65 7.62 L10.67 7.68 L9.70 7.96 L8.79 8.45 L7.99 9.16 L7.35 10.04 L6.91 11.07 L6.70 12.21 L6.74 13.38 L7.05 14.55 L7.62 15.64 L8.44 16.61 L9.47 17.39 L10.67 17.94 L11.99 18.22 L13.36 18.20 L14.73 17.88 L16.02 17.25 L17.16 16.34 L18.09 15.17 L18.76 13.81" fill="none" stroke="${c}" ${s}/><path d="M19.94 15.50 L19.38 12.56 L16.70 13.92" fill="none" stroke="${c}" ${s}/>`,
   /* ступени, дом, опоры */
   earth:    (c, f, s) => `<circle cx="12" cy="8" r="3.2" fill="${f}" stroke="${c}" ${s}/><path d="M3 15c3-2 6-2 9 0s6 2 9 0M3 19.5c3-2 6-2 9 0s6 2 9 0" fill="none" stroke="${c}" ${s}/>`,
@@ -1081,12 +1095,7 @@ function openRq(x){
 function closeRq(){ if (qm.open) { typeof qm.close === 'function' ? qm.close() : qm.removeAttribute('open'); } }
 rqList.addEventListener('click', e => { const b = e.target.closest('.rq'); if (b) openRq(RQ[+b.dataset.i]); });
 qm.addEventListener('click', e => { if (e.target === qm || e.target.closest('[data-close]')) closeRq(); });
-/* ===== Цветы для продуктов: у каждой линейки свой цветок и свой цвет (04.10.2026) =====
-   1 Начать бесплатно — ромашка, золото
-   2 Навести порядок  — клевер, шалфей
-   3 Найти опору      — лотос, синий
-   4 Работать с целью — роза, терракота
-   5 Идти дальше      — эдельвейс, слива
+/* ===== Цветы-мандалы (04.10.2026): с 10.10.2026 только в списке запросов и опорах; у программ — чаши ступеней (см. ниже). =====
 */
 const LANES = [
   {flower:'daisy',     line:'#B98324', soft:'#F6E7C6', mid:'#E2B45C', core:'#6E4F3C'},
@@ -1258,26 +1267,49 @@ const PR = {
     inside:'ein halbes Jahr kostenlos im Verzeichnis «Svoi ludi in der Schweiz» und Zugang zum Telegram-Chat «Svoi ludi»', note:'Im Verzeichnis sind Fachpersonen eingetragen, die offiziell in der Schweiz arbeiten und Menschen auf Russisch oder Ukrainisch helfen.', pain:['nach dem Programm hast du Angst, allein dazustehen','du hast dein eigenes Geschäft, aber wenig Kundschaft und Kontakte'], res:['Unterstützung und Gleichgesinnte im Chat','Sichtbarkeit im Verzeichnis, neue Kundschaft und Kontakte'],
     next:[SVJ,['support','Nach dem Programm Kurs halten']]},
 };
+/* ===== Программы по методу «Ступени. Твой путь в новой стране» (10.10.2026, решение Ирины) =====
+   Группы — «Где ты сейчас» и три шага внутри каждой ступени: Ставлю ногу · Стою твёрдо · Тянусь выше.
+   Значок карточки — цветок программы (вид цветка = группа), точки — на каких ступенях программа помогает. */
+const STEPN = ['Die zerbrochene Schale', 'Dein Kreis', 'Ich kann es selbst', 'Verständliche Regeln', 'Meine eigene Arbeit', 'Mein Beitrag', 'Mein ganzes Leben', 'Hier und dort — ein Leben'];
+const STEPC = [['#8E8470','#ECE7DD'],['#6A5FB8','#E7E4F7'],['#C25468','#F8E0E4'],['#3F6FBF','#E1EBFA'],['#C97E52','#FAE8DC'],['#4E9A70','#E1F1E7'],['#A99A2E','#F7F2D3'],['#2894A0','#DDF3F4']];
+const ALL8 = [1, 2, 3, 4, 5, 6, 7, 8];
+/* на каких ступенях помогает программа (метод, разделы 4 и 9; «Что поможет на этой ступени» на «Твой путь») */
+const PSTEPS = { kompas: ALL8, stupeni: ALL8, blizost: [2], roza: [2], meet: ALL8,
+  mentor: [1, 2, 3], m1: [1], enough: [3, 5], borders: [3], price5: [5], exp: [6, 8], draft: [7], emo: [1], bot: [1, 4],
+  day: [1, 4], year: [4, 7], budget: [1, 4], tax: [4],
+  snimok: [4, 5, 6, 7, 8], fund: [5, 6, 7], flag: [5, 6, 7], life: [7, 8], support: [6, 7, 8], gift: [6, 8] };
+const stepsText = s => s.length === 8 ? 'für alle acht Stufen'
+  : s.length === 1 ? `Stufe ${s[0]} · ${STEPN[s[0] - 1]}`
+  : s.every((v, i) => !i || v === s[i - 1] + 1) ? `Stufen ${s[0]}–${s[s.length - 1]}`
+  : `Stufen ${s.slice(0, -1).join(', ')} und ${s[s.length - 1]}`;
+// значок программы — цветок-мандала, как на живой главной. Вид цветка = группа (шаг метода):
+// «Где ты сейчас» — ромашка, «Ставлю ногу» — клевер, «Стою твёрдо» — лотос, «Тянусь выше» — роза
+const FLK = {};
+function picon(id, size){ const f = FLK[id] || [0, 0]; return flower(f[0], f[1], size); }
+const pdots = id => { const s = PSTEPS[id] || ALL8; return `<span class="pdots" aria-hidden="true">${ALL8.map(n => `<i style="${s.includes(n) ? `background:${STEPC[n - 1][0]}` : ''}"></i>`).join('')}</span>`; };
+const SUBBARS = n => `<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">${[0, 1, 2].map(i => `<rect x="${4 + i * 6}" y="${16 - i * 5}" width="4" height="${4 + i * 5}" rx="1.5" fill="${i < n ? '#FFFCF8' : 'rgba(255,252,248,.35)'}"/>`).join('')}</svg>`;
 const THEMES = [
-  {h:'Kostenlos starten', sub:'Meine Tests und das Gefühlstagebuch zeigen, wo du gerade stehst, und beim Kennenlernen wählen wir gemeinsam deinen nächsten Schritt.', ids:['kompas','stupeni','blizost','roza','emo','bot','meet']},
-  {h:'Ordnung schaffen', sub:'Für deine Ruhe im Alltag. Werkzeuge, mit denen du selbst arbeiten kannst, einige davon kostenlos. Gemeinsam durchgehen können wir alles in einem Gespräch von 30 Minuten.', ids:['day','year','budget','tax']},
-  {h:'Halt finden', sub:'Wenn es für Coaching noch zu früh ist, du aber schon jetzt Unterstützung brauchst. Ein Gespräch mit einer, die diesen Weg selbst gegangen ist, und Programme, die als E-Mails zu dir kommen.', ids:['mentor','m1','enough','borders','price5','exp','draft']},
-  {h:'Mit einem Ziel arbeiten', sub:'Persönliche Arbeit für dein Ziel, von der Momentaufnahme deines Lebens bis zu den gegangenen Schritten.', ids:['snimok','fund','flag'], flow:true},
-  {h:'Weitergehen', sub:'Damit du nicht vom Weg abkommst und dir ein eigenes Netz aus Menschen aufbaust.', ids:['support','life','gift']},
+  {h:'Wo du jetzt stehst', sub:'Beginne kostenlos. Der Test zeigt, auf welcher Stufe du stehst und welche knarrt, und beim Kennenlernen wählen wir gemeinsam deinen nächsten Schritt.', ids:['stupeni','kompas','blizost','roza','meet']},
+  {h:'Fuss fassen', q:'«Ich lerne noch, alles kostet Kraft»', sub:'Wenn du dich zurechtfindest und alles viel Kraft kostet, helfen Informationen und Halt. Ein Gespräch mit jemandem, der diesen Weg gegangen ist, Programme per E-Mail und kostenlose Helfer.', ids:['mentor','m1','enough','borders','price5','exp','draft','emo','bot']},
+  {h:'Fest stehen', q:'«Das gelingt mir»', sub:'Wenn es schon gelingt, helfen Ordnung und Rhythmus, damit die Kraft nicht ins Chaos fliesst. Werkzeuge für den Alltag, einige davon kostenlos. Gemeinsam besprechen können wir alles in einem Treffen von 30 Minuten.', ids:['day','year','budget','tax']},
+  {h:'Höher hinaus', q:'«Das reicht mir nicht mehr, es wird mir zu eng»', sub:'Wenn es eng geworden ist, du mehr willst, aber der Schritt nicht gelingt, ist es Zeit für persönliche Arbeit für dein Ziel. Vom Lebensbild zu den getanen Schritten.', ids:['snimok','fund','flag'], flow:true,
+   more:'Und danach — damit du nicht vom Weg abkommst und deine eigenen Leute um dich hast.', ids2:['life','support','gift']},
 ];
-const FL = {}; THEMES.forEach((t, ti) => t.ids.forEach((id, k) => FL[id] = [ti, k]));
-const pflower = (id, size) => flower(FL[id][0], FL[id][1], size);
+THEMES.forEach((t, ti) => [...t.ids, ...(t.ids2 || [])].forEach((id, k) => FLK[id] = [ti, k]));
 const cap = s => String(s).charAt(0).toUpperCase() + String(s).slice(1);
 const isFree = p => /^(бесплатно|в подарок)$/.test(p.price);
 function pathInit(){
   const esc2 = s => String(s).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
   const box = document.getElementById('pathThemes');
-  box.innerHTML = THEMES.map((t, ti) => `<div class="theme"><div class="theme-h"><span class="theme-n" style="background:${LANES[ti].line}">${ti+1}</span><div><h3>${esc2(t.h)}</h3><p>${esc2(t.sub)}</p></div></div>
-    <div class="pgrid${t.flow ? ' flowrow' : ''}">` + t.ids.map((id, k) => { const p = PR[id];
+  const card = (t, id, k) => { const p = PR[id];
       return (t.flow && k ? '<span class="parr" aria-hidden="true">→</span>' : '') + `<button class="pblock${p.main ? ' main' : ''}" data-p="${id}" aria-haspopup="dialog">
-        <span class="pb-top"><span class="pb-fl">${pflower(id, 48)}</span>${p.ready ? '' : '<span class="soon">in Arbeit</span>'}</span>
+        <span class="pb-top"><span class="pb-fl">${picon(id, 48)}</span>${p.ready ? '' : '<span class="soon">in Arbeit</span>'}</span>
         <b>${esc2(p.name)}</b><span class="pb-slogan">${esc2(p.slogan)}</span><span class="pb-line">${esc2(p.line)}</span>
-        <span class="pb-foot"><span class="pb-price${isFree(p) ? ' free' : /\d/.test(p.price) ? ' paid' : ' soonp'}">${isFree(p) ? '<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 3l2.3 5.6 6 .5-4.6 3.9 1.4 5.9L12 15.8 6.9 18.9l1.4-5.9L3.7 9.1l6-.5z" fill="currentColor"/></svg>' : ''}${esc2(p.price)}</span><span class="pb-more" aria-hidden="true">→</span></span></button>`; }).join('') + '</div></div>').join('');
+        <span class="pb-steps">${pdots(id)}<span>${esc2(stepsText(PSTEPS[id] || ALL8))}</span></span>
+        <span class="pb-foot"><span class="pb-price${isFree(p) ? ' free' : /\d/.test(p.price) ? ' paid' : ' soonp'}">${isFree(p) ? '<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 3l2.3 5.6 6 .5-4.6 3.9 1.4 5.9L12 15.8 6.9 18.9l1.4-5.9L3.7 9.1l6-.5z" fill="currentColor"/></svg>' : ''}${esc2(p.price)}</span><span class="pb-more" aria-hidden="true">→</span></span></button>`; };
+  box.innerHTML = THEMES.map((t, ti) => `<div class="theme"><div class="theme-h"><span class="theme-n${ti ? '' : ' where'}">${ti ? SUBBARS(ti) : ico('path', '#FFFCF8', 'rgba(255,252,248,.25)', 22)}</span><div><h3>${esc2(t.h)}</h3>${t.q ? `<p class="theme-q">${esc2(t.q)}</p>` : ''}<p>${esc2(t.sub)}</p></div></div>
+    <div class="pgrid${t.flow ? ' flowrow' : ''}">` + t.ids.map((id, k) => card(t, id, k)).join('') + '</div>'
+    + (t.ids2 ? `<p class="theme-more">${esc2(t.more)}</p><div class="pgrid">` + t.ids2.map((id, k) => card({}, id, k)).join('') + '</div>' : '') + '</div>').join('');
   const pm = document.getElementById('pdlg'), pc = document.getElementById('pdlgCard');
   const note = t => `<span class="act-note">${t}</span>`;
   function actions(p){
@@ -1300,13 +1332,13 @@ function pathInit(){
   function nextBox(p){
     if (!p.next) return '';
     return `<div class="pd-next"><span class="pd-lbl">Wie weiter</span><div class="pd-next-grid">` + p.next.map(n => {
-      if (Array.isArray(n)){ const q = PR[n[0]]; return `<button type="button" class="pd-nx" data-p="${n[0]}"><span class="pd-nx-fl">${pflower(n[0], 34)}</span><span><b>${esc2(q.name)}</b><span>${esc2(n[1])}</span><em>${esc2(cap(q.price))}</em></span></button>`; }
+      if (Array.isArray(n)){ const q = PR[n[0]]; return `<button type="button" class="pd-nx" data-p="${n[0]}"><span class="pd-nx-fl">${picon(n[0], 34)}</span><span><b>${esc2(q.name)}</b><span>${esc2(n[1])}</span><em>${esc2(cap(q.price))}</em></span></button>`; }
       return `<a class="pd-nx" href="${n.h}" target="_blank" rel="noopener"><span class="pd-nx-fl pd-nx-sv" aria-hidden="true">↗</span><span><b>${esc2(n.b)}</b><span>${esc2(n.t)}</span></span></a>`;
     }).join('') + `</div></div>`;
   }
   function open(id){
     const p = PR[id];
-    pc.innerHTML = `<div class="qm-top"><span class="pd-fl">${pflower(id, 68)}</span>
+    pc.innerHTML = `<div class="qm-top"><span class="pd-fl">${picon(id, 68)}</span>
       <div class="qm-head"><div class="eyebrow">${esc2(p.line)}${p.ready ? '' : ' · in Arbeit'}</div><h2 class="qm-title" id="pdlgTitle">${esc2(p.name)}</h2><p class="pd-slogan">${esc2(p.slogan)}</p></div>
       <button class="qm-close" type="button" data-pclose aria-label="Schliessen">✕</button></div>
       ${p.about ? `<p class="pd-about">${esc2(p.about)}</p>` : ''}
@@ -1315,6 +1347,7 @@ function pathInit(){
       ${p.phases ? `<div class="pd-phases"><span class="pd-lbl">Wie sich dein Leben verändert</span><ol>${p.phases.map((x, k) => `<li><span class="ph-n">${k+1}</span><b>${esc2(x[0])}</b><p>${esc2(x[1])}</p></li>`).join('')}</ol></div>` : ''}
       ${p.bonus ? `<div class="pd-bonus"><span class="pd-lbl">${esc2(p.bonus.b)}</span><p>${esc2(p.bonus.t)}</p><a href="${p.bonus.h}" target="_blank" rel="noopener">${esc2(p.bonus.l)}</a></div>` : ''}
       <div class="pd-facts"><div class="pd-fact"><span class="pd-lbl">Was drin ist</span><p>${esc2(cap(p.inside))}.</p></div>${p.note ? `<p class="pd-note">${esc2(p.note)}</p>` : ''}${p.more ? `<a class="pd-more" href="${p.more.h}" target="_blank" rel="noopener"><span class="pd-lbl">Lies auch</span><b>${esc2(p.more.b)} →</b><span>${esc2(p.more.t)}</span></a>` : ''}
+      <div class="pd-fact"><span class="pd-lbl">Auf welchen Stufen es hilft</span><p class="pd-steps">${(PSTEPS[id] || ALL8).map(n => `<span style="--lc:${STEPC[n - 1][0]};--lf:${STEPC[n - 1][1]}"><i>${n}</i>${esc2(STEPN[n - 1])}</span>`).join('')}</p><a class="pd-stlink" href="/de/put/">Was sind diese Stufen? →</a></div>
       <div class="pd-fact"><span class="pd-lbl">Was es kostet</span><p>${esc2(cap(p.price))}${p.price === ASK ? '. Der endgültige Preis erscheint hier, sobald ich ihn festgelegt habe.' : ''}</p></div>${p.report ? `<div class="pd-report"><span class="pd-lbl">Bericht als PDF · 29 CHF zusätzlich</span><p>${esc2(REPORT)}</p></div>` : ''}</div>
       <div class="pd-act">${actions(p)}</div>
       ${nextBox(p)}`;
