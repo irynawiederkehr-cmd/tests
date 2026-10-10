@@ -293,7 +293,7 @@ footer a{color:var(--muted)}
 .p-hero img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:900/1205}
 /* картинки чаш (акварель на белой бумаге): белое сливается с фоном страницы */
 .bowl{display:block}.bowl img{display:block;width:100%;height:auto;mix-blend-mode:multiply}
-.card .bowl{margin:-8px -6px 0;height:200px;overflow:hidden}.card .bowl img{height:100%;object-fit:cover;object-position:50% 72%}
+.card .bowl{margin:-8px -6px 0;aspect-ratio:4/3;overflow:hidden}.card .bowl img{height:100%;object-fit:cover;object-position:50% 78%}  /* чаша — главное на картинке: показываем её целиком (10.10.2026) */
 .qm-pic{flex:none;width:clamp(96px,16vw,150px)}
 @media (max-width:640px){.qm-pic{display:none}}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bowl img{mix-blend-mode:normal;border-radius:16px;opacity:.92}}
@@ -340,8 +340,34 @@ footer a{color:var(--muted)}
 .inside{display:flex;flex-direction:column;gap:3px;border-left:3px solid #C9971F;padding:2px 0 2px 11px}
 .inside small{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .inside q{quotes:"«" "»";font-family:var(--display);font-size:1.08rem;line-height:1.3;color:var(--ink)}
-:lang(en) .inside q{quotes:"“" "”"}
+.help-q q{quotes:"«" "»"}
+:lang(en) .inside q,:lang(en) .help-q q{quotes:"“" "”"}
 .qm-head .inside{margin-top:6px}
+/* «Что поможет на этой ступени» — три подуровня (10.10.2026) */
+.qm-help{border:1.5px solid var(--line);border-radius:20px;padding:clamp(16px,2.6vw,28px);display:flex;flex-direction:column;gap:16px}
+.help-top h3{font-size:1.5rem;line-height:1.15;margin-bottom:4px}
+.help-top p{font-size:.92rem;color:var(--muted);max-width:70ch}
+.help-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:900px){.help-grid{grid-template-columns:1fr}}
+.help-col{background:var(--bg);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:8px;border-top:4px solid color-mix(in srgb,var(--lc) 45%,transparent)}
+.help-col.hl2{border-top-color:color-mix(in srgb,var(--lc) 72%,transparent)}
+.help-col.hl3{border-top-color:var(--lc)}
+.help-head{display:flex;align-items:center;gap:8px}
+.help-head b{font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--lc)}
+.help-bars{display:inline-flex;align-items:flex-end;gap:2px;height:14px}
+.help-bars i{width:5px;border-radius:2px;background:color-mix(in srgb,var(--lc) 25%,transparent)}
+.help-bars i:nth-child(1){height:6px}.help-bars i:nth-child(2){height:10px}.help-bars i:nth-child(3){height:14px}
+.hl1 .help-bars i:nth-child(1),.hl2 .help-bars i:nth-child(-n+2),.hl3 .help-bars i{background:var(--lc)}
+.help-q{font-family:var(--display);font-size:1.12rem;line-height:1.3;margin:0}
+.help-h{font-size:.82rem;color:var(--muted);margin:0}
+.help-list{display:flex;flex-direction:column;gap:8px;margin-top:4px}
+.help-a{display:flex;flex-direction:column;gap:2px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 12px;text-decoration:none;color:var(--ink);transition:border-color .15s}
+.help-a:hover{border-color:var(--lc)}
+.help-a b{font-size:.9rem;font-weight:700;line-height:1.3}
+.help-a b span{color:var(--lc)}
+.help-a span{font-size:.82rem;color:var(--muted);line-height:1.35}
+.help-a em{font-style:normal;font-size:.72rem;font-weight:700;color:var(--lc);letter-spacing:.02em}
+
 .qm-head .inside q{font-size:clamp(1.1rem,2vw,1.3rem)}
 @media (max-width:760px){
   .stop,.between{grid-template-columns:64px 1fr;column-gap:14px}
@@ -602,6 +628,51 @@ const STEPS = [
     note: 'Це не сходинка, яку лагодять, а горизонт, до якого доростають.' }
 ];
 
+/* «Что поможет на этой ступени» по трём подуровням (метод, разделы 4 и 9; выложено 10.10.2026 по «Размещай» Ирины).
+   Только то, что уже есть: статьи и инструменты svoiludi.ch, программы с главной (у тех, что в разработке, так и написано). */
+const SV = 'https://svoiludi.ch/' + (document.documentElement.lang === 'uk' ? 'uk/' : '');
+const SVF = 'svoiludi.ch · безкоштовно';
+const SUBL = [
+  { n: 'Ставлю ногу', q: 'Я тільки вчуся, усе потребує сил', h: 'Допомагають інформація та опора' },
+  { n: 'Стою твердо', q: 'Це в мене виходить', h: 'Допомагають порядок і ритм' },
+  { n: 'Тягнуся вище', q: 'Мені цього вже мало, тісно', h: 'Допомагає розмова й особиста робота' }
+];
+const sv = (u, t, d) => ({ h: SV + u, t, d, m: SVF });
+const pr = (id, t, d, m) => ({ h: T + '#p-' + id, t, d, m });
+const MEETP = { h: 'https://t.me/IrynaNeuroCoach', t: '«Знайомство»', d: '30 хвилин онлайн, слово ВСТРЕЧА в Telegram', m: 'безкоштовно' };
+const HELP = [
+  [[sv('situacii/tolko-priehala/', 'Тільки приїхала до Швейцарії', 'перші кроки по черзі'), sv('instrumenty/ekstrennye-nomera/', 'Картка екстрених номерів', 'лікар, швидка, чергова аптека'), sv('shveycariya/psihoterapiya/', 'Психотерапія через страховку', 'якщо сну й сил немає тижнями')],
+   [sv('instrumenty/moj-den/', 'План дня по годинах', 'сон, їжа й відпочинок в одному ритмі'), sv('instrumenty/moi-emocii/', 'Щоденник емоцій', 'помітити, що забирає сили'), sv('instrumenty/moj-budget/', 'Бюджет', 'усі обов’язкові витрати на одному аркуші')],
+   [pr('m1', '«Два тижні, щоб повернути ґрунт під ногами»', 'зошит на 14 днів', 'у розробці · безкоштовно'), MEETP]],
+  [[sv('events/', 'Зустрічі поруч із тобою', 'події своєю мовою'), sv('shveycariya/vereine/', 'Ферайни, волонтерство і свої люди', 'де тут знаходять своє коло'), sv('', 'Довідник «Свої люди»', 'категорії довідника, де шукати фахівця')],
+   [sv('kursy/', 'Вчитися й займатися своєю мовою', 'регулярні заняття, щоб бачитися не раз на рік'), sv('instrumenty/moj-god/', 'Річний календар', 'свята й зустрічі з близькими перед очима')],
+   [pr('mentor', 'Менторська зустріч', '1 година онлайн', 'у розробці · 150 CHF'), MEETP]],
+  [[sv('instrumenty/srok-pisma/', 'До якого числа відповісти на лист', 'строк зі святами кантону'), sv('shveycariya/pisma-sroki/', 'Листи від відомств і строки', 'що робити з листом і коли'), sv('instrumenty/yazyk-trebovaniya/', 'Який рівень мови потрібен', 'для дозволу, паспорта й роботи')],
+   [sv('instrumenty/pisma-arenda/', 'Листи керуючій компанії', 'готові листи німецькою'), sv('instrumenty/pisma-prodavcu/', 'Листи продавцю', 'дефект, підписка, відкликання договору'), pr('enough', '«Я достатня і я гідна»', '14 листів на e-mail', 'у розробці · 59 CHF')],
+   [pr('borders', '«Я господиня свого життя»', '21 лист на e-mail', 'у розробці'), MEETP]],
+  [[sv('shveycariya/', 'Як тут усе влаштовано', 'дозволи, податки, страховки, школа, житло'), sv('instrumenty/nalogi-shema/', 'Як влаштовані податки', 'схема на одному аркуші'), sv('instrumenty/strahovki-obyazatelnye/', 'Які страховки обов’язкові', 'схема на одному аркуші')],
+   [sv('instrumenty/moj-god/', 'Річний календар справ і строків', 'усі строки року в одному місці'), sv('instrumenty/sroki-goda/', 'Обов’язкові строки року', 'нагадування у твій календар'), pr('tax', 'Декларація', 'матеріал і зустріч 30 хвилин', 'у розробці')],
+   [pr('snimok', '«Знімок життя»', 'розбір за сферами життя, 3 години', 'у розробці · 249 CHF'), MEETP]],
+  [[sv('shveycariya/rabota/', 'Робота у Швейцарії', 'де шукати і як тут наймають'), sv('shveycariya/samozanyatost/', 'Як відкрити ФОП у Швейцарії', 'перші кроки, AHV, страховки'), sv('instrumenty/diplomy-shema/', 'Як визнати іноземний диплом', 'схема на одному аркуші')],
+   [sv('instrumenty/rezyume/', 'Резюме для Швейцарії', 'Lebenslauf за місцевими правилами'), sv('instrumenty/schet-qr/', 'Рахунок клієнту з QR-квитанцією', 'для перших клієнтів'), pr('price5', '«Своя ціна»', '30 днів, листи на e-mail', 'у розробці')],
+   [pr('fund', '«Мій фундамент»', 'цінності поруч із метою, 3 години', '249 CHF'), pr('flag', '«Моя мета — мій шлях»', '10 особистих зустрічей', 'у розробці')]],
+  [[sv('join/', 'Розміститися в довіднику', 'щоб тебе знайшли ті, кому ти потрібна'), sv('shveycariya/vereine/', 'Ферайни й волонтерство', 'де досвід потрібен іншим')],
+   [sv('instrumenty/statuty-fereyna/', 'Статут ферайну', 'зразок, щоб зібрати свою спільноту'), pr('exp', '«Кому потрібен мій досвід»', '14 листів на e-mail', 'у розробці · 59 CHF')],
+   [pr('fund', '«Мій фундамент»', 'цінності поруч із метою, 3 години', '249 CHF'), pr('flag', '«Моя мета — мій шлях»', '10 особистих зустрічей', 'у розробці')]],
+  [[sv('instrumenty/pensiya-shema/', 'Як влаштована пенсія', 'три стовпи на одному аркуші'), sv('instrumenty/grazhdanstvo-shema/', 'Шлях до швейцарського паспорта', 'схема на одному аркуші'), sv('instrumenty/ipoteka-raschet/', 'Розрахунок іпотеки', 'скільки коштує житло, яке я потягну')],
+   [sv('instrumenty/moj-god/', 'Річний календар', 'рік за своїми пріоритетами'), pr('draft', '«Моє життя не чернетка»', '21 лист на e-mail', 'у розробці')],
+   [pr('life', '«Життя без жалю»', 'стратегія на життя, 3 години', 'у розробці · 249 CHF'), pr('flag', '«Моя мета — мій шлях»', '10 особистих зустрічей', 'у розробці')]],
+  [[sv('join/', 'Розміститися в довіднику', 'ділитися досвідом із тими, хто йде слідом'), sv('events/', 'Зустрічі поруч із тобою', 'приходити й проводити свої зустрічі')],
+   [pr('exp', '«Кому потрібен мій досвід»', '14 листів на e-mail', 'у розробці · 59 CHF')],
+   [pr('life', '«Життя без жалю»', 'стратегія на життя, 3 години', 'у розробці · 249 CHF'), pr('support', 'Супровід', 'зустрічі у твоєму ритмі', 'у розробці')]]
+];
+function helpHtml(k){
+  return `<div class="qm-help" style="${vars(k)}"><div class="help-top"><h3>Що допоможе на цій сходинці</h3><p>На кожній сходинці є три кроки. Знайди фразу, у якій упізнаєш себе зараз, і почни з того, що поруч із нею.</p></div>
+    <div class="help-grid">${SUBL.map((u, j) => `<div class="help-col hl${j + 1}"><div class="help-head"><span class="help-bars" aria-hidden="true"><i></i><i></i><i></i></span><b>${esc(u.n)}</b></div>
+      <p class="help-q"><q>${esc(u.q)}</q></p><p class="help-h">${esc(u.h)}</p>
+      <div class="help-list">${HELP[k][j].map(a => `<a class="help-a" href="${a.h}" target="_blank" rel="noopener"><b>${esc(a.t)} <span aria-hidden="true">→</span></b><span>${esc(a.d)}</span><em>${esc(a.m)}</em></a>`).join('')}</div></div>`).join('')}</div></div>`;
+}
+
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 function actHtml(a){ const ext = /^https?:/.test(a.h); return `<a class="act" href="${a.h}"${ext ? ' target="_blank" rel="noopener"' : ''}><b>${a.ic ? `<span class="act-ic">${ico(a.ic, a.c, null, 20)}</span>` : ''}<span class="act-t">${esc(a.t)}</span><span aria-hidden="true">→</span></b><span>${esc(a.d)}</span></a>`; }
 const vars = k => `--lc:${COL[k][0]};--lf:${COL[k][1]}`;
@@ -639,6 +710,7 @@ function openStep(k){
       <div class="qm-col"><h3>Що важливо тут</h3><div class="vals">${s.vals.map(v => `<span>${esc(v)}</span>`).join('')}</div>
         <h3 style="margin-top:6px">Перевір себе</h3><p class="check">${esc(s.check)}</p></div>
     </div>
+    ${helpHtml(k)}
     <div class="qm-foot"><p class="next">${s.note ? esc(s.note) : `<b>Далі.</b> ${esc(s.next)}`}</p>
       <p class="notme"><button type="button" data-step="${k - 1}" ${k ? '' : 'hidden'}>← Сходинка ${k}</button> ${k < 7 ? `<button type="button" data-step="${k + 1}">Сходинка ${k + 2} →</button>` : ''}</p></div>
     <div class="two-grid">${actHtml(STUPENI)}${actHtml(MEET)}</div>`;
