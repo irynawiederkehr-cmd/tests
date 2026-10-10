@@ -861,3 +861,5 @@ footer.copy .del-answers{margin-top:10px}
 @media (max-width:520px){.st-card picture,.st-card img{width:84px}}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .st-card img{mix-blend-mode:normal;border-radius:10px}}
 :root[data-theme="dark"] .st-card img{mix-blend-mode:normal;border-radius:10px}
+/* длинная строка под именем в шапке тестов (метод «Ступени. Твой путь в новой стране», 10.10.2026): переносится в две строки, меню не сжимается */
+.sb-mark small{max-width:235px;line-height:1.35}@media (min-width:821px) and (max-width:1280px){.sb-nav{gap:13px}}
