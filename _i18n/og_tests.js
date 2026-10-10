@@ -14,6 +14,13 @@ const CARDS = {
   'karta-opor.uk': { out: 'karta-opor/og-image.uk.jpg', eb: 'РОБОЧИЙ АРКУШ ІРИНИ ВОЗНЕСЕНСЬКОЇ', h: 'Карта опор', p: 'Що тримає тебе в новій країні і що зміцнити першим.', pill: 'Безкоштовно · 10–15 хвилин · PDF', pages: [1, 2, 3].map(n => `file://${ROOT}/karta-opor/preview/uk/${n}.jpg`) },
   'karta-opor.de': { out: 'karta-opor/og-image.de.jpg', eb: 'ARBEITSBLATT VON IRYNA VOZNESENSKAYA', h: 'Karte der Stützen', p: 'Was dich im neuen Land hält und was du als Erstes stärkst.', pill: 'Kostenlos · 10–15 Minuten · PDF', pages: [1, 2, 3].map(n => `file://${ROOT}/karta-opor/preview/de/${n}.jpg`) },
   'karta-opor.en': { out: 'karta-opor/og-image.en.jpg', eb: 'A WORKSHEET BY IRYNA VOZNESENSKAYA', h: 'Anchor map', p: 'What holds you in a new country and what to strengthen first.', pill: 'Free · 10–15 minutes · PDF', pages: [1, 2, 3].map(n => `file://${ROOT}/karta-opor/preview/en/${n}.jpg`) },
+  // «Договор о коучинге» (10.10.2026): свой адрес на каждом языке, веер — страницы подписанного договора-примера (dogovor/preview/)
+  'dogovor': { out: 'dogovor/og-image.jpg', eb: 'КОУЧИНГ ИРИНЫ ВОЗНЕСЕНСКОЙ', h: 'Договор о коучинге', p: 'Заполни и подпиши онлайн, без бумаги и сканов.', pill: 'Alonira.ch AG · 4 языка · онлайн', pages: [1, 2, 3].map(n => `file://${ROOT}/dogovor/preview/${n}.jpg`) },
+  'dogovor.uk': { out: 'dogovor/og-image.uk.jpg', eb: 'КОУЧИНГ ІРИНИ ВОЗНЕСЕНСЬКОЇ', h: 'Договір про коучинг', p: 'Заповни й підпиши онлайн, без паперу та сканів.', pill: 'Alonira.ch AG · 4 мови · онлайн', pages: [1, 2, 3].map(n => `file://${ROOT}/dogovor/preview/uk/${n}.jpg`) },
+  'dogovor.de': { out: 'dogovor/og-image.de.jpg', eb: 'COACHING MIT IRYNA VOZNESENSKAYA', h: 'Coaching-Vertrag', p: 'Online ausfüllen und unterschreiben, ohne Papier.', pill: 'Alonira.ch AG · 4 Sprachen · online', pages: [1, 2, 3].map(n => `file://${ROOT}/dogovor/preview/de/${n}.jpg`) },
+  'dogovor.en': { out: 'dogovor/og-image.en.jpg', eb: 'COACHING WITH IRYNA VOZNESENSKAYA', h: 'Coaching agreement', p: 'Fill in and sign online, no paper and no scans.', pill: 'Alonira.ch AG · 4 languages · online', pages: [1, 2, 3].map(n => `file://${ROOT}/dogovor/preview/en/${n}.jpg`) },
+  // «Условия работы со мной» — один адрес на все языки (переключатель внутри), превью русское
+  'usloviya': { out: 'usloviya/og-image.jpg', eb: 'КОУЧИНГ ИРИНЫ ВОЗНЕСЕНСКОЙ', h: 'Условия работы со мной', p: 'Запись, оплата, перенос встречи и как остановиться.', pill: 'Alonira.ch AG · договор онлайн', pages: [1, 2, 3].map(n => `file://${ROOT}/dogovor/preview/${n}.jpg`) },
 };
 function html(c) {
   const n = c.pages.length, four = n === 4;
