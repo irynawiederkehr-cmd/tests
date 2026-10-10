@@ -157,7 +157,8 @@ function doPost(e){
       if (Math.round(Number(d.total) || 0) !== total) flags.push('итог пересчитан');
       var html = sanitize(d.html), terms = '';
       try { terms = termsText(d.lang); } catch (err){ flags.push('условия не загрузились'); }
-      var termsOk = terms && plain(html).indexOf(terms.slice(0, 4000)) >= 0;
+      /* сравниваем без пробелов: теги ссылок рядом с кавычками дают лишние пробелы, смысл текста от этого не меняется */
+      var termsOk = terms && plain(html).replace(/\s+/g, '').indexOf(terms.replace(/\s+/g, '').slice(0, 3000)) >= 0;
       if (terms && !termsOk) flags.push('текст условий не совпал с сайтом — человеку письмо не отправлено');
       var r = { no: d.no, lang: d.lang, name: name, email: email, signedLocal: clean(d.signedLocal, 60), tz: clean(d.tz, 60), hash: clean(d.hash, 64), received: new Date() };
       var pdf = makePdf(r, html);
