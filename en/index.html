@@ -502,6 +502,21 @@ a.bot:hover{color:#B98324}
 .pblock:hover .pb-fl svg{transform:rotate(36deg) scale(1.06)}
 .pd-fl svg{animation:flOpen .9s cubic-bezier(.2,.7,.2,1)}
 @keyframes flOpen{from{transform:rotate(-60deg) scale(.6);opacity:.2}}
+/* программы по методу «Ступени. Твой путь в новой стране» (10.10.2026): значок-чаша ступени, точки ступеней, три шага */
+.pic{display:grid;place-items:center;border-radius:50%;background:var(--lf);border:2px solid var(--lc);flex:none}
+.pic svg{display:block}
+.pblock:hover .pb-fl svg{transform:scale(1.08)}
+@keyframes picIn{from{transform:scale(.6);opacity:.2}}
+.pd-fl svg{animation:picIn .6s cubic-bezier(.2,.7,.2,1)}
+.pb-steps{display:flex;align-items:center;gap:8px;font-size:.76rem;color:var(--muted);line-height:1.3}
+.pdots{display:inline-flex;gap:3px;flex:none}
+.pdots i{width:7px;height:7px;border-radius:50%;background:var(--line)}
+.theme-n svg{display:block}
+.theme-q{font-family:var(--display);font-size:1.12rem;color:var(--brown);margin:2px 0 4px}
+.theme-more{margin:14px 0 10px;font-size:.92rem;color:var(--muted)}
+.pd-steps{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 6px}
+.pd-steps span{display:inline-flex;align-items:center;gap:5px;font-size:.8rem;font-weight:600;background:var(--lf);color:#2F2924;border:1px solid color-mix(in srgb,var(--lc) 45%,transparent);border-radius:999px;padding:3px 10px 3px 6px}
+.pd-stlink{font-size:.85rem;font-weight:700}
 @media (prefers-reduced-motion: reduce){.pb-fl svg,.pd-fl svg{transition:none;animation:none}}
 /* «бесплатно» и «в подарок» — заметная зелёная плашка с бликом */
 .pb-price.free{display:inline-flex;align-items:center;gap:6px;font-size:.88rem;letter-spacing:.02em;text-transform:uppercase;color:#fff;border:0;padding:6px 14px;box-shadow:0 6px 14px -6px rgba(79,94,62,.6);
@@ -805,7 +820,7 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
     <div class="sec-head">
       <div class="eyebrow">Your path with me</div>
       <h2 id="path-h">Step by step — from where you are now</h2>
-      <p>You don’t have to go through everything in order. Start with what is about you right now. If you don’t know where to begin, see which step you’re on at <a href="/en/put/">“Your path in a new country”</a>. Every step is a way of caring for yourself. Tap any block to see what you can come with and what you’ll leave with.</p>
+      <p>The programmes are arranged by the “Steps. Your path in a new country” method. Each step has three stages: “Finding my feet”, “Standing firm”, “Reaching higher”. You don’t have to go through everything in order; start with what fits you right now. The coloured dots on each card show which steps the programme helps with. If you don’t know where you are, take the “Steps of Stability” test or look at <a href="/en/put/">“Your path in a new country”</a>. Tap any block to see what you can come with and what you leave with.</p>
     </div>
     <div id="pathThemes" class="themes"></div>
     <p class="path-note">Everything is online and in Russian. Where it says “ask me about the price personally”, the price is still being confirmed, write to me and I’ll tell you.</p>
@@ -1081,12 +1096,7 @@ function openRq(x){
 function closeRq(){ if (qm.open) { typeof qm.close === 'function' ? qm.close() : qm.removeAttribute('open'); } }
 rqList.addEventListener('click', e => { const b = e.target.closest('.rq'); if (b) openRq(RQ[+b.dataset.i]); });
 qm.addEventListener('click', e => { if (e.target === qm || e.target.closest('[data-close]')) closeRq(); });
-/* ===== Цветы для продуктов: у каждой линейки свой цветок и свой цвет (04.10.2026) =====
-   1 Начать бесплатно — ромашка, золото
-   2 Навести порядок  — клевер, шалфей
-   3 Найти опору      — лотос, синий
-   4 Работать с целью — роза, терракота
-   5 Идти дальше      — эдельвейс, слива
+/* ===== Цветы-мандалы (04.10.2026): с 10.10.2026 только в списке запросов и опорах; у программ — чаши ступеней (см. ниже). =====
 */
 const LANES = [
   {flower:'daisy',     line:'#B98324', soft:'#F6E7C6', mid:'#E2B45C', core:'#6E4F3C'},
@@ -1258,26 +1268,69 @@ const PR = {
     inside:'six months free in the Svoi ludi in Switzerland directory and access to the Svoi ludi Telegram chat', note:'The directory lists specialists who work officially in Switzerland and help people in Russian or Ukrainian.', pain:['after the programme you’re afraid of being left on your own','you have your own business, but few clients and contacts'], res:['support and like-minded women in the chat','visibility in the directory, new clients and contacts'],
     next:[SVJ,['support','Stay on course after the programme']]},
 };
+/* ===== Программы по методу «Ступени. Твой путь в новой стране» (10.10.2026, решение Ирины) =====
+   Группы — «Где ты сейчас» и три шага внутри каждой ступени: Ставлю ногу · Стою твёрдо · Тянусь выше.
+   Значок карточки — чаша ступени (как на «Твой путь» и в тесте), точки — на каких ступенях программа помогает. */
+const ICONS_CHASHA = (() => {
+  const G = '#C9971F';
+  const bowl = (c, f, s, notch) => notch
+    ? `<path d="M3.5 9.5h9l1.2 2.2 1.6-2.2h5.2c0 4.9-3.7 8.4-8.5 8.4S3.5 14.4 3.5 9.5z" fill="${f}" stroke="${c}" ${s}/><path d="M9.6 17.9h4.8v1.6H9.6z" fill="${f}" stroke="${c}" stroke-width="1.4" stroke-linejoin="round"/>`
+    : `<path d="M3.5 9.5h17c0 4.9-3.7 8.4-8.5 8.4S3.5 14.4 3.5 9.5z" fill="${f}" stroke="${c}" ${s}/><path d="M9.6 17.9h4.8v1.6H9.6z" fill="${f}" stroke="${c}" stroke-width="1.4" stroke-linejoin="round"/>`;
+  const mini = (x, y, w, c, f, s) => { const h = w * .72, fx = x + w * .34, fw = w * .32;
+    return `<path d="M${x} ${y}H${x + w}C${x + w} ${y + h * .9} ${x + w * .74} ${y + h} ${x + w / 2} ${y + h}S${x} ${y + h * .9} ${x} ${y}z" fill="${f}" stroke="${c}" ${s}/><path d="M${fx} ${y + h}h${fw}v1.1h-${fw}z" fill="${f}" stroke="${c}" stroke-width="1.2" stroke-linejoin="round"/>`; };
+  return {
+    razbita: (c, f, s) => bowl(c, f, s, true) + `<path d="M8.6 9.7l1 2.7-1.3 2.6" fill="none" stroke="${c}" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.6 20.6l2.6-.9-.4 1.9z" fill="${f}" stroke="${c}" stroke-width="1.3" stroke-linejoin="round"/>`,
+    svoi: (c, f, s) => mini(1.5, 7.5, 9.2, c, f, s) + `<path d="M4.8 7.7l1.4 2.4-.9 2.4" fill="none" stroke="${G}" stroke-width="1.6" stroke-linecap="round"/>` + mini(13.3, 9.5, 9.2, c, f, s) + `<path d="M18.9 9.6l.8 2 1.1-2" fill="none" stroke="${c}" stroke-width="1.3" stroke-linejoin="round"/>`,
+    sobirayu: (c, f, s) => bowl(c, f, s, true) + `<path d="M13.7 11.7l-.6 2.4.9 2.4" fill="none" stroke="${G}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.6 5.2l3.4-1.4 1.1 2.4-3.3 1.2z" fill="${f}" stroke="${c}" stroke-width="1.3" stroke-linejoin="round"/><path d="M13.2 7.3l2.5-.9" stroke="${G}" stroke-width="1.4" stroke-linecap="round"/>`,
+    ryad: (c, f, s) => mini(1.4, 9, 6.4, c, f, s) + mini(8.8, 9, 6.4, c, f, s) + mini(16.2, 9, 6.4, c, f, s) + `<path d="M3.4 9.2l.8 1.7-.5 1.4M11.9 9.2l-.6 1.6.6 1.6M18.3 9.2l.7 1.5" fill="none" stroke="${G}" stroke-width="1.3" stroke-linecap="round"/><path d="M1.3 16.9h21.4" stroke="${c}" ${s}/>`,
+    polnaya: (c, f, s) => bowl(c, f, s, false) + `<path d="M5.2 11.2c2.2.9 11.4.9 13.6 0" fill="none" stroke="${c}" stroke-width="1.2" stroke-linecap="round"/><path d="M8.2 12.6l1 2.2-.6 1.9" fill="none" stroke="${G}" stroke-width="1.5" stroke-linecap="round"/><path d="M10 6.8c-1-1.2 1-2 0-3.3M14 6.8c-1-1.2 1-2 0-3.3" fill="none" stroke="${c}" stroke-width="1.3" stroke-linecap="round"/>`,
+    krug: (c, f, s) => `<circle cx="12" cy="12" r="8.6" fill="none" stroke="${G}" stroke-width="1.2" stroke-dasharray="1.6 2.2"/>` + mini(8.4, 10.2, 7.2, c, f, s) + `<circle cx="12" cy="3.4" r="1.7" fill="${f}" stroke="${c}" stroke-width="1.3"/><circle cx="20.6" cy="12" r="1.7" fill="${f}" stroke="${c}" stroke-width="1.3"/><circle cx="12" cy="20.6" r="1.7" fill="${f}" stroke="${c}" stroke-width="1.3"/><circle cx="3.4" cy="12" r="1.7" fill="${f}" stroke="${c}" stroke-width="1.3"/>`,
+    shvy: (c, f, s) => bowl(c, f, s, false) + `<path d="M7 9.8l1.4 2.5-1 2.4M8.4 12.3l2.6.6M13.6 9.8l-.7 2.8 1.6 2.3 2.3-.5M12.9 12.6l-2.2 1.9" fill="none" stroke="${G}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>`,
+    zoloto: (c, f, s) => mini(1.4, 6.5, 10, c, f, s) + `<path d="M4.4 6.8l1.2 2.3-.8 2.1" fill="none" stroke="${G}" stroke-width="1.5" stroke-linecap="round"/>` + mini(15.2, 11.8, 7.2, c, f, s) + `<path d="M19.6 12l.8 1.6.8-1.6" fill="none" stroke="${c}" stroke-width="1.2" stroke-linejoin="round"/><path d="M8.5 14.4c1.5 3.6 4.4 5.3 7.6 4.6" fill="none" stroke="${G}" stroke-width="1.6" stroke-linecap="round"/>`
+  };
+})();
+Object.assign(ICONS, ICONS_CHASHA);
+const ICN = ['razbita', 'svoi', 'sobirayu', 'ryad', 'polnaya', 'krug', 'shvy', 'zoloto'];
+const STEPN = ['The broken bowl', 'Your circle', 'I can do it myself', 'Clear rules', 'Work of my own', 'My contribution', 'My whole life', 'Here and there — one life'];
+const STEPC = [['#8E8470','#ECE7DD'],['#6A5FB8','#E7E4F7'],['#C25468','#F8E0E4'],['#3F6FBF','#E1EBFA'],['#C97E52','#FAE8DC'],['#4E9A70','#E1F1E7'],['#A99A2E','#F7F2D3'],['#2894A0','#DDF3F4']];
+const ALL8 = [1, 2, 3, 4, 5, 6, 7, 8];
+/* на каких ступенях помогает программа (метод, разделы 4 и 9; «Что поможет на этой ступени» на «Твой путь») */
+const PSTEPS = { kompas: ALL8, stupeni: ALL8, blizost: [2], roza: [2], meet: ALL8,
+  mentor: [1, 2, 3], m1: [1], enough: [3, 5], borders: [3], price5: [5], exp: [6, 8], draft: [7], emo: [1], bot: [1, 4],
+  day: [1, 4], year: [4, 7], budget: [1, 4], tax: [4],
+  snimok: [4, 5, 6, 7, 8], fund: [5, 6, 7], flag: [5, 6, 7], life: [7, 8], support: [6, 7, 8], gift: [6, 8] };
+const stepsText = s => s.length === 8 ? 'for all eight steps'
+  : s.length === 1 ? `step ${s[0]} · ${STEPN[s[0] - 1]}`
+  : s.every((v, i) => !i || v === s[i - 1] + 1) ? `steps ${s[0]}–${s[s.length - 1]}`
+  : `steps ${s.slice(0, -1).join(', ')} and ${s[s.length - 1]}`;
+function picon(id, size){            // значок программы: чаша первой ступени, для всех ступеней — лестница
+  const s = PSTEPS[id] || ALL8, k = s[0] - 1, all = s.length === 8;
+  const c = all ? ['#6E4F3C', '#EADFCF'] : STEPC[k];
+  return `<span class="pic" style="--lc:${c[0]};--lf:${c[1]};width:${size}px;height:${size}px">${ico(all ? 'path' : ICN[k], c[0], c[1], Math.round(size * .6))}</span>`;
+}
+const pdots = id => { const s = PSTEPS[id] || ALL8; return `<span class="pdots" aria-hidden="true">${ALL8.map(n => `<i style="${s.includes(n) ? `background:${STEPC[n - 1][0]}` : ''}"></i>`).join('')}</span>`; };
+const SUBBARS = n => `<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">${[0, 1, 2].map(i => `<rect x="${4 + i * 6}" y="${16 - i * 5}" width="4" height="${4 + i * 5}" rx="1.5" fill="${i < n ? '#FFFCF8' : 'rgba(255,252,248,.35)'}"/>`).join('')}</svg>`;
 const THEMES = [
-  {h:'Start for free', sub:'My tests and the emotions diary will show where you are now, and at the introductory meeting we will choose your next step together.', ids:['kompas','stupeni','blizost','roza','emo','bot','meet']},
-  {h:'Get organised', sub:'For your peace of mind in everyday life. Tools to work with on your own, some of them free. We can go through everything together in a 30-minute meeting.', ids:['day','year','budget','tax']},
-  {h:'Find an anchor', sub:'When it is too early for coaching, but you need support right now. A conversation with someone who has walked this path, and programmes that arrive as e-mails.', ids:['mentor','m1','enough','borders','price5','exp','draft']},
-  {h:'Work towards a goal', sub:'Personal work towards your goal, from a snapshot of your life to steps taken.', ids:['snimok','fund','flag'], flow:true},
-  {h:'Keep going', sub:'So that you stay on your path and build your own circle of people.', ids:['support','life','gift']},
+  {h:'Where you are now', sub:'Start for free. The test shows which step you are on and which one creaks, and at the introductory meeting we choose your next step together.', ids:['stupeni','kompas','blizost','roza','meet']},
+  {h:'Finding my feet', q:'“I’m still learning, everything takes effort”', sub:'When you are finding your way and everything takes a lot of effort, information and something to lean on help. A conversation with someone who has walked this path, programmes by e-mail and free helpers.', ids:['mentor','m1','enough','borders','price5','exp','draft','emo','bot']},
+  {h:'Standing firm', q:'“This is working for me”', sub:'When things are already working, order and rhythm help so your energy doesn’t go into chaos. Tools for everyday life, some of them free. We can go through everything together in a 30-minute meeting.', ids:['day','year','budget','tax']},
+  {h:'Reaching higher', q:'“This is no longer enough, it feels too tight”', sub:'When things feel too tight and you want more, but the step doesn’t happen, it’s time for personal work towards your goal. From a snapshot of your life to steps actually taken.', ids:['snimok','fund','flag'], flow:true,
+   more:'And after that — so you don’t lose your way and you gather your own people around you.', ids2:['life','support','gift']},
 ];
-const FL = {}; THEMES.forEach((t, ti) => t.ids.forEach((id, k) => FL[id] = [ti, k]));
-const pflower = (id, size) => flower(FL[id][0], FL[id][1], size);
 const cap = s => String(s).charAt(0).toUpperCase() + String(s).slice(1);
 const isFree = p => /^(бесплатно|в подарок)$/.test(p.price);
 function pathInit(){
   const esc2 = s => String(s).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
   const box = document.getElementById('pathThemes');
-  box.innerHTML = THEMES.map((t, ti) => `<div class="theme"><div class="theme-h"><span class="theme-n" style="background:${LANES[ti].line}">${ti+1}</span><div><h3>${esc2(t.h)}</h3><p>${esc2(t.sub)}</p></div></div>
-    <div class="pgrid${t.flow ? ' flowrow' : ''}">` + t.ids.map((id, k) => { const p = PR[id];
+  const card = (t, id, k) => { const p = PR[id];
       return (t.flow && k ? '<span class="parr" aria-hidden="true">→</span>' : '') + `<button class="pblock${p.main ? ' main' : ''}" data-p="${id}" aria-haspopup="dialog">
-        <span class="pb-top"><span class="pb-fl">${pflower(id, 48)}</span>${p.ready ? '' : '<span class="soon">in development</span>'}</span>
+        <span class="pb-top"><span class="pb-fl">${picon(id, 48)}</span>${p.ready ? '' : '<span class="soon">in development</span>'}</span>
         <b>${esc2(p.name)}</b><span class="pb-slogan">${esc2(p.slogan)}</span><span class="pb-line">${esc2(p.line)}</span>
-        <span class="pb-foot"><span class="pb-price${isFree(p) ? ' free' : /\d/.test(p.price) ? ' paid' : ' soonp'}">${isFree(p) ? '<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 3l2.3 5.6 6 .5-4.6 3.9 1.4 5.9L12 15.8 6.9 18.9l1.4-5.9L3.7 9.1l6-.5z" fill="currentColor"/></svg>' : ''}${esc2(p.price)}</span><span class="pb-more" aria-hidden="true">→</span></span></button>`; }).join('') + '</div></div>').join('');
+        <span class="pb-steps">${pdots(id)}<span>${esc2(stepsText(PSTEPS[id] || ALL8))}</span></span>
+        <span class="pb-foot"><span class="pb-price${isFree(p) ? ' free' : /\d/.test(p.price) ? ' paid' : ' soonp'}">${isFree(p) ? '<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 3l2.3 5.6 6 .5-4.6 3.9 1.4 5.9L12 15.8 6.9 18.9l1.4-5.9L3.7 9.1l6-.5z" fill="currentColor"/></svg>' : ''}${esc2(p.price)}</span><span class="pb-more" aria-hidden="true">→</span></span></button>`; };
+  box.innerHTML = THEMES.map((t, ti) => `<div class="theme"><div class="theme-h"><span class="theme-n${ti ? '' : ' where'}">${ti ? SUBBARS(ti) : ico('path', '#FFFCF8', 'rgba(255,252,248,.25)', 22)}</span><div><h3>${esc2(t.h)}</h3>${t.q ? `<p class="theme-q">${esc2(t.q)}</p>` : ''}<p>${esc2(t.sub)}</p></div></div>
+    <div class="pgrid${t.flow ? ' flowrow' : ''}">` + t.ids.map((id, k) => card(t, id, k)).join('') + '</div>'
+    + (t.ids2 ? `<p class="theme-more">${esc2(t.more)}</p><div class="pgrid">` + t.ids2.map((id, k) => card({}, id, k)).join('') + '</div>' : '') + '</div>').join('');
   const pm = document.getElementById('pdlg'), pc = document.getElementById('pdlgCard');
   const note = t => `<span class="act-note">${t}</span>`;
   function actions(p){
@@ -1300,13 +1353,13 @@ function pathInit(){
   function nextBox(p){
     if (!p.next) return '';
     return `<div class="pd-next"><span class="pd-lbl">Where next</span><div class="pd-next-grid">` + p.next.map(n => {
-      if (Array.isArray(n)){ const q = PR[n[0]]; return `<button type="button" class="pd-nx" data-p="${n[0]}"><span class="pd-nx-fl">${pflower(n[0], 34)}</span><span><b>${esc2(q.name)}</b><span>${esc2(n[1])}</span><em>${esc2(cap(q.price))}</em></span></button>`; }
+      if (Array.isArray(n)){ const q = PR[n[0]]; return `<button type="button" class="pd-nx" data-p="${n[0]}"><span class="pd-nx-fl">${picon(n[0], 34)}</span><span><b>${esc2(q.name)}</b><span>${esc2(n[1])}</span><em>${esc2(cap(q.price))}</em></span></button>`; }
       return `<a class="pd-nx" href="${n.h}" target="_blank" rel="noopener"><span class="pd-nx-fl pd-nx-sv" aria-hidden="true">↗</span><span><b>${esc2(n.b)}</b><span>${esc2(n.t)}</span></span></a>`;
     }).join('') + `</div></div>`;
   }
   function open(id){
     const p = PR[id];
-    pc.innerHTML = `<div class="qm-top"><span class="pd-fl">${pflower(id, 68)}</span>
+    pc.innerHTML = `<div class="qm-top"><span class="pd-fl">${picon(id, 68)}</span>
       <div class="qm-head"><div class="eyebrow">${esc2(p.line)}${p.ready ? '' : ' · in development'}</div><h2 class="qm-title" id="pdlgTitle">${esc2(p.name)}</h2><p class="pd-slogan">${esc2(p.slogan)}</p></div>
       <button class="qm-close" type="button" data-pclose aria-label="Close">✕</button></div>
       ${p.about ? `<p class="pd-about">${esc2(p.about)}</p>` : ''}
@@ -1315,6 +1368,7 @@ function pathInit(){
       ${p.phases ? `<div class="pd-phases"><span class="pd-lbl">How your life changes</span><ol>${p.phases.map((x, k) => `<li><span class="ph-n">${k+1}</span><b>${esc2(x[0])}</b><p>${esc2(x[1])}</p></li>`).join('')}</ol></div>` : ''}
       ${p.bonus ? `<div class="pd-bonus"><span class="pd-lbl">${esc2(p.bonus.b)}</span><p>${esc2(p.bonus.t)}</p><a href="${p.bonus.h}" target="_blank" rel="noopener">${esc2(p.bonus.l)}</a></div>` : ''}
       <div class="pd-facts"><div class="pd-fact"><span class="pd-lbl">What’s inside</span><p>${esc2(cap(p.inside))}.</p></div>${p.note ? `<p class="pd-note">${esc2(p.note)}</p>` : ''}${p.more ? `<a class="pd-more" href="${p.more.h}" target="_blank" rel="noopener"><span class="pd-lbl">Also read</span><b>${esc2(p.more.b)} →</b><span>${esc2(p.more.t)}</span></a>` : ''}
+      <div class="pd-fact"><span class="pd-lbl">Which steps it helps with</span><p class="pd-steps">${(PSTEPS[id] || ALL8).map(n => `<span style="--lc:${STEPC[n - 1][0]};--lf:${STEPC[n - 1][1]}">${ico(ICN[n - 1], STEPC[n - 1][0], STEPC[n - 1][1], 18)}${n} · ${esc2(STEPN[n - 1])}</span>`).join('')}</p><a class="pd-stlink" href="/en/put/">What are these steps? →</a></div>
       <div class="pd-fact"><span class="pd-lbl">How much it costs</span><p>${esc2(cap(p.price))}${p.price === ASK ? '. The final price will appear here as soon as I confirm it.' : ''}</p></div>${p.report ? `<div class="pd-report"><span class="pd-lbl">PDF report · 29 CHF extra</span><p>${esc2(REPORT)}</p></div>` : ''}</div>
       <div class="pd-act">${actions(p)}</div>
       ${nextBox(p)}`;
