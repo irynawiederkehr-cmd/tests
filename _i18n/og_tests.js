@@ -9,7 +9,11 @@ const CARDS = {
   stupeni: { eb: 'ТЕСТ ИРИНЫ ВОЗНЕСЕНСКОЙ', h: 'Ступени устойчивости', p: 'Чтобы стать своей и чувствовать себя в новой стране как дома.',
     pill: 'Бесплатно · 20 минут · путеводитель и тест', pages: [P('stupeni', 1), P('stupeni', 2), P('stupeni', 3)] },
   testy: { eb: 'ТЕСТЫ ИРИНЫ ВОЗНЕСЕНСКОЙ', h: 'Бесплатные тесты для жизни в новой стране', p: '10–20 минут, а в конце подробный разбор на русском.',
-    pill: 'Бесплатно · 4 теста', pages: [P('kompas', 1), P('stupeni', 1), P('blizost', 1), P('roza-lyubvi', 1)] },
+    pill: 'Бесплатно · 4 теста', pages: [P('kompas', 1), P('stupeni', 1), P('blizost', 1), P('roza-lyubvi', 1)] },  // «Карта опор» (10.10.2026) — у страницы свой адрес на каждом языке, поэтому четыре картинки: og-image.jpg и og-image.{uk,de,en}.jpg
+  'karta-opor': { out: 'karta-opor/og-image.jpg', eb: 'РАБОЧИЙ ЛИСТ ИРИНЫ ВОЗНЕСЕНСКОЙ', h: 'Карта опор', p: 'Что держит тебя в новой стране и что укрепить первым.', pill: 'Бесплатно · 10–15 минут · PDF', pages: [1, 2, 3].map(n => `file://${ROOT}/karta-opor/preview/${n}.jpg`) },
+  'karta-opor.uk': { out: 'karta-opor/og-image.uk.jpg', eb: 'РОБОЧИЙ АРКУШ ІРИНИ ВОЗНЕСЕНСЬКОЇ', h: 'Карта опор', p: 'Що тримає тебе в новій країні і що зміцнити першим.', pill: 'Безкоштовно · 10–15 хвилин · PDF', pages: [1, 2, 3].map(n => `file://${ROOT}/karta-opor/preview/uk/${n}.jpg`) },
+  'karta-opor.de': { out: 'karta-opor/og-image.de.jpg', eb: 'ARBEITSBLATT VON IRYNA VOZNESENSKAYA', h: 'Karte der Stützen', p: 'Was dich im neuen Land hält und was du als Erstes stärkst.', pill: 'Kostenlos · 10–15 Minuten · PDF', pages: [1, 2, 3].map(n => `file://${ROOT}/karta-opor/preview/de/${n}.jpg`) },
+  'karta-opor.en': { out: 'karta-opor/og-image.en.jpg', eb: 'A WORKSHEET BY IRYNA VOZNESENSKAYA', h: 'Anchor map', p: 'What holds you in a new country and what to strengthen first.', pill: 'Free · 10–15 minutes · PDF', pages: [1, 2, 3].map(n => `file://${ROOT}/karta-opor/preview/en/${n}.jpg`) },
 };
 function html(c) {
   const n = c.pages.length, four = n === 4;
@@ -27,14 +31,15 @@ img{position:absolute;object-fit:cover;object-position:top;border-radius:10px;bo
 <body><div class="eb">${c.eb}</div><h1>${c.h}</h1><p>${c.p}</p><div class="pill">${c.pill}</div><div class="u">voznesenskaya.ch</div>${fan}</body></html>`;
 }
 (async () => {
-  const which = process.argv[2] ? [process.argv[2]] : Object.keys(CARDS);
+  const which = process.argv[2] ? Object.keys(CARDS).filter(k => k === process.argv[2] || k.startsWith(process.argv[2] + '.')) : Object.keys(CARDS);
   const exe = ['/opt/pw-browsers/chromium-1194/chrome-linux/chrome'].find(f => fs.existsSync(f));
   const b = await chromium.launch(exe ? { executablePath: exe } : {});
   const pg = await (await b.newContext({ viewport: { width: 1200, height: 630 } })).newPage();
   const tmp = path.join(ROOT, '_i18n', '.og_tmp.html');
   for (const t of which) {
     fs.writeFileSync(tmp, html(CARDS[t])); await pg.goto('file://' + tmp); await pg.evaluate(() => document.fonts.ready); await pg.waitForTimeout(400);
-    await pg.screenshot({ path: path.join(ROOT, t, 'og-image.jpg'), type: 'jpeg', quality: 88 }); console.log('ok', t + '/og-image.jpg');
+    const out = CARDS[t].out || t + '/og-image.jpg';
+    await pg.screenshot({ path: path.join(ROOT, out), type: 'jpeg', quality: 88 }); console.log('ok', out);
   }
   fs.rmSync(tmp, { force: true }); await b.close();
 })();

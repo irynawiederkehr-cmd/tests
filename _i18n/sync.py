@@ -8,7 +8,7 @@ import sys, os, re, json
 sys.path.insert(0, os.path.dirname(__file__))
 import pages, tests
 ROOT = tests.ROOT; I18N = tests.I18N; LANGS = tests.LANGS
-KNOWN_DIRS = {'put', 'uk', 'de', 'en', 'home', 'rabota', 'assets', '_i18n'} | set(tests.TESTS)
+KNOWN_DIRS = {'put', 'karta-opor', 'uk', 'de', 'en', 'home', 'rabota', 'assets', '_i18n'} | set(tests.TESTS)
 
 def new_pages():
     """русские страницы, для которых ещё нет механизма перевода"""

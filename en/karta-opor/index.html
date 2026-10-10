@@ -1,0 +1,1154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Anchor map · Iryna Voznesenskaya</title>
+<meta name="description" content="A 10–15 minute worksheet: eight anchors in a new country — what holds you outside and inside, where it’s empty and which anchor to strengthen first. One small step for the week and a PDF, free.">
+<link rel="canonical" href="https://voznesenskaya.ch/en/karta-opor/">
+<meta property="og:type" content="website"><meta property="og:locale" content="en_GB"><meta property="og:site_name" content="Iryna Voznesenskaya · coaching">
+<meta property="og:title" content="Anchor map: what holds you in a new country"><meta property="og:description" content="A 10–15 minute worksheet: eight anchors in a new country — what holds you outside and inside, where it’s empty and which anchor to strengthen first. One small step for the week and a PDF, free.">
+<meta property="og:url" content="https://voznesenskaya.ch/en/karta-opor/"><meta property="og:image" content="https://voznesenskaya.ch/karta-opor/og-image.en.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/fonts.css">
+<style>
+/* «Карта опор» — рабочий лист метода «Ступени. Твой путь в новой стране» (решение Ирины 09.10.2026, «публикуй» 10.10.2026).
+   Один спокойный столбец: вступление → восемь опор по одной → куда утекают силы → первая опора и маленький шаг → карта и PDF.
+   Цвета и шрифты — система voznesenskaya.ch (коучинг, бежевый); цвета восьми ступеней — палитра тестов. */
+[hidden]{display:none!important}
+.page{max-width:1120px;margin:0 auto;padding-inline:20px}
+.mono.av{border:none;padding:0}
+.mono.av svg{width:100%;height:100%;display:block}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.12;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+.eyebrow{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+:focus-visible{outline:3px solid var(--mustard);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .page{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none}
+.mono{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--brown);display:grid;place-items:center;font-family:var(--display);font-size:1.05rem;color:var(--brown);letter-spacing:.02em}
+.mark b{font-family:var(--display);font-weight:400;font-size:1.25rem;line-height:1}
+.mark small{display:block;font-size:.72rem;color:var(--muted);letter-spacing:.04em;margin-top:3px}
+nav{display:flex;gap:22px;font-size:.88rem;font-weight:600}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.navcta{font-size:.86rem;font-weight:700;text-decoration:none;border:1.5px solid var(--brown);color:var(--brown);border-radius:999px;padding:8px 16px;white-space:nowrap}
+@media (max-width:860px){
+  .top .page{flex-wrap:wrap;row-gap:6px}
+  nav{order:3;width:100%;gap:16px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+  nav::-webkit-scrollbar{display:none}
+  nav a{white-space:nowrap}
+}
+@media (max-width:420px){.mark small{display:none}.navcta{padding:7px 12px}}
+/* телефон: шапка в две строки, все разделы видны */
+@media (max-width:860px){
+  nav{flex-wrap:wrap;overflow-x:visible;gap:2px 14px;padding-bottom:2px}
+}
+@media (max-width:420px){
+  .top .page{padding-block:8px;gap:8px}
+  .mono{width:32px;height:32px}
+  .mark{gap:8px}
+  .mark b{font-size:1.06rem}
+  .navcta{font-size:.8rem;padding:6px 11px}
+  nav{font-size:.82rem}
+}
+/* ---------- «Карта опор» ---------- */
+/* Один спокойный столбец, как рабочий лист коуча: вступление → восемь опор по одной → карта-лестница → один маленький шаг.
+   Цвета и шрифты — система voznesenskaya.ch (коучинг, бежевый); цвета восьми ступеней — утверждённая палитра тестов. */
+:root{
+  --bg:#F4EDE3; --paper:#FFFCF8; --ink:#2F2924; --muted:#7A6E62; --line:#E5D9C9; --soft:#EADFCF;
+  --brown:#6E4F3C; --green:#4F5E3E; --gold:#B98324; --on:#FFFCF8; --warn:#D32F2F; --warn-bg:#FDECEA;
+  --display:"Forum","Cormorant Garamond",Georgia,serif; --body:"Manrope","Segoe UI",system-ui,sans-serif;
+  --r:12px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#221D19; --paper:#2C2621; --ink:#F1E9DF; --muted:#B4A796; --line:#3E362F; --soft:#3A3129;
+  --brown:#E1C2A6; --green:#A9BB8E; --gold:#E2B45C; --on:#221D19; --warn:#FF8A80; --warn-bg:#3A2422; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#221D19; --paper:#2C2621; --ink:#F1E9DF; --muted:#B4A796; --line:#3E362F; --soft:#3A3129;
+  --brown:#E1C2A6; --green:#A9BB8E; --gold:#E2B45C; --on:#221D19; --warn:#FF8A80; --warn-bg:#3A2422; color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:18px 64px;display:flex;flex-direction:column;gap:22px}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:clamp(2.4rem,8vw,3.4rem);color:var(--brown)}
+h2{font-size:clamp(1.55rem,5vw,2rem)}
+h3{font-size:1.25rem}
+p{margin:0}
+a{color:var(--brown)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2.5px solid var(--gold);outline-offset:2px}
+.eyebrow{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.muted{color:var(--muted)}
+.note{font-size:.88rem;color:var(--muted)}
+.lead{font-size:1.07rem;max-width:62ch}
+.slogan{font-family:var(--display);font-size:1.35rem;line-height:1.3;color:var(--ink)}
+.stack{display:flex;flex-direction:column;gap:14px}
+.blk{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+/* кнопки: зелёная — бесплатное действие, золотая — главное, коричневая — остальное */
+.btn{font-weight:700;border:none;border-radius:var(--r);padding:13px 20px;cursor:pointer;background:var(--brown);color:var(--on);display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;line-height:1.2;text-align:center;min-height:48px}
+.btn.green{background:var(--green)}
+.btn.gold{background:var(--gold)}
+.btn.ghost{background:transparent;color:var(--brown);border:1.5px solid var(--brown)}
+.btn.small{padding:9px 14px;min-height:40px;font-size:.9rem}
+.btn:disabled{opacity:.5;cursor:default}
+.btns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.btns .wide{grid-column:1/-1}
+@media (max-width:420px){.btns{grid-template-columns:minmax(0,1fr)}}
+
+/* приветствие */
+.greet{display:flex;gap:14px;align-items:center}
+.greet .av{width:54px;height:54px;flex:none}
+.greet .av svg{width:100%;height:100%}
+.greet b{font-family:var(--display);font-weight:400;font-size:1.35rem;display:block;line-height:1.2}
+.greet a{font-size:.9rem}
+
+/* точка А → Б */
+.ab{display:grid;grid-template-columns:minmax(0,1fr) 34px minmax(0,1fr);gap:10px;align-items:stretch}
+.ab > div{border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.ab .a{border:1.5px dashed var(--line);color:var(--muted)}
+.ab .b{background:var(--soft)}
+.ab .arr{display:flex;align-items:center;justify-content:center;color:var(--brown);padding:0}
+.ab-l{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+.ab-key{border-left:3px solid var(--brown);padding:4px 0 4px 16px;display:flex;flex-direction:column;gap:4px}
+@media (max-width:600px){.ab{grid-template-columns:minmax(0,1fr)}.ab .arr{transform:rotate(90deg);height:24px}}
+
+/* как устроено */
+.how{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.how > div{border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:6px;background:var(--paper);min-width:0}
+.how .num{font-family:var(--display);font-size:1.6rem;color:var(--gold);line-height:1}
+.how b{font-size:.98rem}
+.how span{font-size:.88rem;color:var(--muted)}
+@media (max-width:600px){.how{grid-template-columns:minmax(0,1fr)}}
+
+/* выбор */
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field > label,.qlabel{font-weight:700;font-size:.98rem;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.field input[type=text]{font:inherit;border:1.5px solid var(--line);border-radius:var(--r);padding:11px 13px;background:var(--paper);color:var(--ink);width:100%;min-width:0}
+.field input[type=text]:focus{border-color:var(--brown);outline:none}
+.seg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+@media (max-width:420px){.seg{grid-template-columns:minmax(0,1fr)}}
+.seg button,.opt{cursor:pointer;border:1.5px solid var(--line);background:var(--paper);border-radius:var(--r);padding:11px 12px;text-align:left;line-height:1.3;min-height:46px}
+.seg button[aria-pressed="true"],.opt[aria-pressed="true"]{border-color:var(--brown);background:var(--soft);box-shadow:inset 0 0 0 1px var(--brown)}
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (max-width:460px){.opts{grid-template-columns:minmax(0,1fr)}}
+.opt{display:flex;flex-direction:column;gap:3px;padding:13px 14px}
+.opt b{font-size:1rem}
+.opt small{font-size:.84rem;color:var(--muted)}
+.opt .dots{display:flex;gap:4px;margin-bottom:2px}
+.dots{display:inline-flex;gap:4px;align-items:center}
+.dots i{width:10px;height:10px;border-radius:50%;border:1.5px solid currentColor;display:block}
+.dots i.on{background:currentColor}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{cursor:pointer;border:1.5px solid var(--line);background:var(--paper);border-radius:999px;padding:8px 13px;font-size:.92rem;line-height:1.25;text-align:left}
+.chip[aria-pressed="true"]{background:var(--chip-bg,var(--soft));border-color:var(--chip-c,var(--brown));color:var(--ink)}
+.chip[aria-pressed="true"]::before{content:"✓ ";font-weight:800;color:var(--chip-c,var(--brown))}
+.own{display:flex;gap:8px;flex-wrap:wrap}
+.own input{flex:1 1 200px}
+
+/* подсказки «?» */
+.qh{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--muted);background:transparent;color:var(--muted);font-weight:800;font-size:.78rem;line-height:1;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0;flex:none}
+.qh[aria-expanded="true"]{background:var(--brown);border-color:var(--brown);color:var(--on)}
+.hbub{position:relative;background:var(--paper);border:1.5px solid var(--brown);border-radius:14px;padding:12px 38px 12px 14px;font-size:.9rem;font-weight:400;color:var(--ink);line-height:1.5;width:100%}
+.hbub .x{position:absolute;top:6px;right:6px;width:28px;height:28px;border:none;background:transparent;cursor:pointer;font-size:1rem;color:var(--muted)}
+
+/* прогресс и опора */
+.prog{display:flex;flex-direction:column;gap:8px}
+.bar{height:6px;background:var(--line);border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--brown);transition:width .3s}
+.ohead{display:flex;gap:14px;align-items:center}
+.oico{width:58px;height:58px;border-radius:16px;display:flex;align-items:center;justify-content:center;flex:none;border:1.5px solid}
+.oico svg{width:34px;height:34px}
+.err{color:var(--warn);font-weight:600;font-size:.92rem}
+.nav{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap}
+.nav .btn{flex:1 1 150px}
+
+/* лестница опор */
+.ladder{display:flex;flex-direction:column;gap:4px;border-left:4px solid var(--line);border-right:4px solid var(--line);padding:6px;border-radius:6px}
+.lrow{display:flex;align-items:center;gap:10px;border-radius:10px;padding:7px 12px;border:1.5px solid;min-height:46px;min-width:0}
+.lrow .li{width:26px;height:26px;flex:none}
+.lrow .li svg{width:100%;height:100%}
+.lrow .ln{flex:1;min-width:0;font-weight:600;font-size:.95rem;line-height:1.25}
+.lrow .ln small{display:block;font-weight:500;font-size:.78rem;color:var(--muted)}
+.lrow .ls{font-weight:500;font-size:.82em;color:var(--muted)}
+.lrow .lr{flex:none}
+.lrow .lt{display:block;font-size:.76rem;font-weight:700;margin-top:1px}
+.lrow.empty{border-style:dashed}
+.lrow .flag{font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:6px;padding:2px 6px;color:#FFFCF8;background:#B98324;white-space:nowrap}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.8rem;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+
+/* отчёт */
+.hero-top{display:flex;gap:14px;align-items:flex-start;justify-content:space-between}
+.hero-top .av{width:56px;height:56px;flex:none}
+.hero-top .av svg{width:100%;height:100%}
+@media (max-width:480px){.hero-top .av{width:40px;height:40px}}
+.portrait{font-size:1.04rem}
+.pills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.pill{border:1px solid var(--line);border-radius:14px;padding:10px 12px;display:flex;flex-direction:column;gap:2px;min-width:0;font-size:.82rem;color:var(--muted)}
+.pill b{font-family:var(--display);font-weight:400;font-size:1.3rem;color:var(--ink);line-height:1.15}
+@media (max-width:520px){.pills{grid-template-columns:minmax(0,1fr)}}
+.io{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.io > div{border-radius:14px;padding:12px 14px;background:var(--soft);display:flex;flex-direction:column}
+.io b{font-family:var(--display);font-weight:400;font-size:2rem;line-height:1}
+.ocard{border:1.5px solid;border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.ocard .oh{display:flex;align-items:center;gap:10px}
+.ocard .oh svg{width:24px;height:24px;flex:none}
+.ocard .oh b{flex:1;min-width:0}
+.ocard .oh small{display:block;font-weight:700;font-size:.78rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font-size:.84rem;border-radius:999px;padding:4px 10px;background:var(--soft)}
+.tags .tl{background:transparent;padding:4px 2px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.lines{display:flex;flex-direction:column}
+.lines > div{padding:10px 0;border-top:1px solid var(--line);display:flex;gap:10px;align-items:flex-start}
+.lines > div:first-child{border-top:none;padding-top:2px}
+.lines .lk{flex:none;width:20px;height:20px;margin-top:2px}
+.lines .lk svg{width:100%;height:100%}
+.links{display:flex;flex-direction:column;gap:8px}
+.links a{display:flex;flex-direction:column;gap:1px;text-decoration:none;border:1px solid var(--line);border-radius:12px;padding:10px 14px;color:var(--ink);background:var(--paper)}
+.links a b{color:var(--brown)}
+.links a span{font-size:.86rem;color:var(--muted)}
+.stepbig{font-family:var(--display);font-size:1.6rem;line-height:1.25;color:var(--brown)}
+.exp{font-size:.9rem;color:var(--muted);border-left:3px solid var(--line);padding-left:12px}
+.cmp{width:100%;border-collapse:collapse;font-size:.9rem}
+.cmp th,.cmp td{padding:7px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.cmp th{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.cmp td.ar{font-weight:800;white-space:nowrap}
+.tblw{overflow-x:auto}
+.warnline{background:var(--warn-bg);border-radius:12px;padding:10px 12px;font-size:.92rem}
+.wi{display:inline-block;width:1.1em;height:1em;vertical-align:-.12em;margin-right:.3em;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 22'%3E%3Cpath d='M10.27 2.5a2 2 0 0 1 3.46 0l8.66 15a2 2 0 0 1-1.73 3H3.34a2 2 0 0 1-1.73-3z' fill='%23FDECEA' stroke='%23D32F2F' stroke-width='1.8' stroke-linejoin='round'/%3E%3Cpath d='M12 7.8v5.2' stroke='%23D32F2F' stroke-width='2.4' stroke-linecap='round'/%3E%3Ccircle cx='12' cy='16.5' r='1.35' fill='%23D32F2F'/%3E%3C/svg%3E") center/contain no-repeat}
+.next{display:flex;flex-direction:column;gap:10px}
+.next > a,.next > div{border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:3px;text-decoration:none;color:var(--ink);background:var(--paper)}
+.next b{color:var(--brown)}
+.next span{font-size:.88rem;color:var(--muted)}
+.next .st{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--green)}
+.next .st.dev{color:var(--gold)}
+
+/* приглашение */
+.invite{padding:0;overflow:hidden;gap:0;background:linear-gradient(160deg,#EFE3D3 0%,#FBF7F1 100%);color:#2F2924;border:none}
+.invite .letter{padding:22px 24px 16px;display:flex;flex-direction:column;gap:12px}
+.invite .eyebrow{color:#7A6E62}
+.invite .open{font-family:var(--display);font-size:1.35rem;line-height:1.4;color:#6E4F3C}
+.invite .human{font-size:.95rem;border-left:3px solid #6E4F3C;padding-left:12px}
+.invite .sign{font-family:var(--display);font-style:italic;font-size:1.6rem;color:#6E4F3C;align-self:flex-end}
+.invite .ticket{background:#F3EADF;border-top:2px dashed #6E4F3C;padding:18px 24px;display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center}
+.invite .facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;width:100%}
+.invite .facts span{display:flex;flex-direction:column;font-size:.82rem;color:#7A6E62}
+.invite .facts b{font-family:var(--display);font-weight:400;font-size:1.5rem;color:#2F2924;line-height:1.1}
+.invite .word{font-family:var(--display);font-size:1.9rem;color:#6E4F3C;letter-spacing:.06em}
+.invite .ilinks{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.invite .ilinks a{display:inline-flex;align-items:center;gap:6px;padding:11px 16px;border-radius:12px;border:1.5px solid #6E4F3C;color:#6E4F3C;font-weight:700;text-decoration:none;background:#FFFCF8}
+.invite .legal{font-size:.8rem;color:#7A6E62}
+.swiss{background:var(--soft)}
+
+/* веер готового файла */
+.fan{display:flex;flex-direction:column;gap:10px;align-items:center;overflow:hidden;padding-top:8px}
+.fan .stage{position:relative;width:100%;max-width:560px;height:min(86vw,420px);touch-action:pan-y;overflow:hidden}
+.fan .pg{position:absolute;top:0;left:50%;width:min(52vw,272px);aspect-ratio:210/297;transform-origin:50% 120%;border-radius:6px;box-shadow:0 8px 24px -10px rgba(60,40,25,.45);background:#fff;transition:transform .45s ease,opacity .45s ease;cursor:pointer;overflow:hidden;border:1px solid var(--line)}
+.fan .pg img{width:100%;height:100%;object-fit:cover;display:block}
+.fan .cap{text-align:center;max-width:48ch;min-height:3.2em}
+.fan .cap b{display:block}
+.fan .cap span{font-size:.88rem;color:var(--muted)}
+.fan .ctr{display:flex;gap:10px;align-items:center}
+.fan .ctr button{width:40px;height:40px;border-radius:var(--r);border:1.5px solid var(--line);background:var(--paper);cursor:pointer;font-size:1.1rem}
+.fan .dots2{display:flex;gap:6px}
+.fan .dots2 i{width:8px;height:8px;border-radius:50%;background:var(--line);display:block}
+.fan .dots2 i.on{background:var(--brown)}
+.fan .badge{position:absolute;top:-6px;right:calc(50% - min(26vw,136px) - 18px);z-index:20;background:var(--gold);color:#fff;border-radius:999px;padding:6px 11px;font-size:.8rem;font-weight:800}
+@media (prefers-reduced-motion: reduce){.fan .pg{transition:none}}
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(20,15,10,.82);display:flex;align-items:center;justify-content:center;padding:16px}
+.lightbox img{max-height:92vh;max-width:100%;border-radius:6px;background:#fff}
+.lightbox button{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:12px;width:44px;height:44px;border-radius:12px;border:none;background:#FFFCF8;color:#2F2924;font-size:1.2rem;cursor:pointer}
+
+/* резервная копия, удалить, подвал */
+.backup.old{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold) inset}
+.inapp{border:1.5px solid var(--warn);background:var(--warn-bg);border-radius:var(--r);padding:12px 14px;font-size:.92rem}
+.confirm{border:1.5px solid var(--warn);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:10px}
+.hist{display:flex;flex-direction:column;gap:8px}
+.hist button{cursor:pointer;text-align:left;border:1px solid var(--line);border-radius:12px;padding:10px 14px;background:var(--paper);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.hist button[aria-current="true"]{border-color:var(--brown);box-shadow:inset 0 0 0 1px var(--brown)}
+.hist small{color:var(--muted)}
+.disclaimer{border:1px dashed var(--line);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;font-size:.84rem;color:var(--muted)}
+.disclaimer b{color:var(--ink)}
+footer.copy{font-size:.8rem;color:var(--muted);display:flex;flex-direction:column;gap:6px;align-items:center;text-align:center;padding-top:8px}
+footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.status{font-size:.9rem;color:var(--green);font-weight:600}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:.95rem;cursor:pointer}
+.check input{width:20px;height:20px;margin-top:2px;accent-color:var(--brown);flex:none}
+.share-btns{display:flex;flex-wrap:wrap;gap:8px}
+.toast{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#2F2924;color:#FFFCF8;padding:10px 16px;border-radius:12px;font-size:.92rem;z-index:120;max-width:calc(100% - 32px)}
+
+/* страницы PDF: всегда светлые и белые */
+.pdf-stage{position:fixed;left:-12000px;top:0;width:794px}
+.pdf-page{--bg:#FFFFFF;--paper:#FFFFFF;--ink:#2F2924;--muted:#7A6E62;--line:#E5D9C9;--soft:#F3EADF;--brown:#6E4F3C;--green:#4F5E3E;--gold:#B98324;--on:#FFFCF8;--warn:#D32F2F;--warn-bg:#FDECEA;
+  width:794px;height:1123px;position:relative;background:#fff;color:#2F2924;font-family:var(--body);font-size:13px;line-height:1.5;overflow:hidden;color-scheme:light}
+.pdf-page .strip{height:8px;background:linear-gradient(90deg,#8E8470,#6A5FB8,#C25468,#3F6FBF,#C97E52,#4E9A70,#A99A2E,#2894A0)}
+.pdf-page .pbody{position:absolute;top:36px;left:44px;right:44px;bottom:58px;display:flex;flex-direction:column;gap:12px;overflow:hidden}
+.pdf-page .pfoot{position:absolute;left:44px;right:44px;bottom:20px;display:flex;justify-content:space-between;gap:12px;font-size:10px;color:#7A6E62}
+.pdf-page .blk{padding:15px 18px;gap:8px;border-radius:14px;border-color:#E5D9C9}
+.pdf-page h1{font-size:34px}
+.pdf-page h2{font-size:22px}
+.pdf-page h3{font-size:16px}
+.pdf-page .lead,.pdf-page .portrait{font-size:13.5px}
+.pdf-page .slogan{font-size:17px}
+.pdf-page .stepbig{font-size:21px}
+.pdf-page .noprint{display:none!important}
+.pdf-page .pills{grid-template-columns:repeat(3,minmax(0,1fr))}
+.pdf-page .lrow{min-height:36px;padding:6px 12px}
+.pdf-page .invite .letter{padding:16px 18px 12px}
+.pdf-page .invite .ticket{padding:14px 18px}
+.pdf-page .wline{border-bottom:1px solid #CDBFAE;height:22px}
+.pdf-page .wtbl{width:100%;border-collapse:collapse;font-size:12px}
+.pdf-page .wtbl th,.pdf-page .wtbl td{border:1px solid #D9CCBB;padding:6px 7px;text-align:left;vertical-align:top}
+.pdf-page .wtbl td{height:33px}
+.pdf-page .wtbl th{background:#F3EADF;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase}
+.pdf-page .box{display:inline-block;width:14px;height:14px;border:1.5px solid #6E4F3C;border-radius:3px;vertical-align:-2px}
+.pdf-page .disclaimer{font-size:9.5px;line-height:1.45;gap:3px;padding:9px 12px}
+.pdf-page .credit{font-size:10px;color:#7A6E62;text-align:right}
+</style>
+<meta name="theme-color" content="#6E4F3C">
+<!--shape--><style id="shape">:is(.navcta,.btn,.jump a,.pb-price,.go-pill,.rv-prod,.rvs-btn,.shr-btn,.invite-links a,.share-btns button,.share-btns a,.inv-copy,.inv-btn,.sb-cta,.langbar,#langbar.langbar){border-radius:12px!important}:is(.langbar button,.langbar a,#langbar.langbar a,.bz-pills button){border-radius:9px!important}html header.top nav a .pa-ni{display:none}@media (max-width:1100px){html header.top .page{flex-wrap:wrap;row-gap:8px}html header.top nav{order:3;width:100%;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px!important;overflow:visible!important;padding:4px 0 12px!important;margin:0}html header.top nav a{display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:62px;padding:9px 6px;border-radius:14px;background:var(--paper,#FFFCF8);border:1px solid color-mix(in srgb,var(--brown,#6E4F3C) 22%,transparent);box-shadow:0 3px 10px -6px rgba(80,55,35,.45);color:var(--ink,#2F2924)!important;font:600 .78rem/1.18 var(--body,system-ui);text-align:center;white-space:normal!important;text-decoration:none;-webkit-tap-highlight-color:transparent}html header.top nav a .pa-ni{display:block;width:22px;height:22px;fill:none;stroke:var(--brown,#6E4F3C);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}html header.top nav a[aria-current]:not([aria-current=false]){background:var(--brown,#6E4F3C);border-color:var(--brown,#6E4F3C);color:var(--paper,#FFFCF8)!important}html header.top nav a[aria-current]:not([aria-current=false]) .pa-ni{stroke:var(--paper,#FFFCF8)}html header.top nav a:active{transform:scale(.97)}}/* длинная строка под именем (метод «Ступени. Твой путь в новой стране», 10.10.2026): переносится сама, меню в одну строку */@media (min-width:1101px){html header.top nav a{white-space:nowrap}html header.top .mark small{display:block;max-width:300px;line-height:1.35}}.pa-mini{display:none}@media (max-width:1100px){html header.top:not(.pa-mini){position:relative!important;top:auto!important}html header.top.pa-mini{display:block;position:fixed!important;left:0;right:0;top:0;z-index:55;padding-top:env(safe-area-inset-top,0px);transform:translateY(-105%);visibility:hidden;transition:transform .22s ease,visibility 0s .22s;box-shadow:0 8px 20px -14px rgba(60,40,20,.5)}html header.top.pa-mini.on{transform:none;visibility:visible;transition:transform .22s ease}html header.top.pa-mini .page{padding-block:8px;flex-wrap:wrap}html header.top.pa-mini .mark small{display:none}html header.top.pa-mini .mark b{font-size:1.05rem}html header.top.pa-mini .mono{width:32px;height:32px}html header.top.pa-mini:not(.open) nav{display:none!important}.pa-mbtn{margin-left:auto;display:flex;align-items:center;gap:6px;padding:7px 12px;border-radius:12px;border:1.5px solid color-mix(in srgb,var(--brown,#6E4F3C) 35%,transparent);background:var(--paper,#FFFCF8);color:var(--ink,#2F2924);font:700 .84rem/1 var(--body,Manrope,system-ui);cursor:pointer;-webkit-tap-highlight-color:transparent}.pa-mbtn svg{width:18px;height:18px;flex:none;fill:none;stroke:var(--brown,#6E4F3C);stroke-width:2;stroke-linecap:round}}@media (max-width:480px){html header.top.pa-mini .mark span:not(.mono){display:none}}</style><script>(function(){function run(){var n=document.querySelector('header.top nav');if(!n)return;var I={who:'<circle cx="12" cy="8" r="3.6"/><path d="M5 20c.7-3.8 3.4-6 7-6s6.3 2.2 7 6"/>',req:'<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',path:'<path d="M12 3.5 20.5 8 12 12.5 3.5 8z"/><path d="M3.5 12 12 16.5 20.5 12M3.5 16 12 20.5 20.5 16"/>',put:'<circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8 18h6a3.5 3.5 0 0 0 0-7h-4a3.5 3.5 0 0 1 0-7h6"/>',tests:'<rect x="5" y="3.5" width="14" height="17" rx="2.5"/><path d="m8.5 9 1.5 1.5L13 7.5M8.5 15l1.5 1.5 3-3M15 9.5h1M15 15.5h1"/>',svoi:'<circle cx="12" cy="12" r="2.4"/><circle cx="12" cy="4.5" r="1.8"/><circle cx="12" cy="19.5" r="1.8"/><circle cx="5.5" cy="8.3" r="1.8"/><circle cx="18.5" cy="8.3" r="1.8"/><circle cx="5.5" cy="15.7" r="1.8"/><circle cx="18.5" cy="15.7" r="1.8"/>'};n.querySelectorAll('a').forEach(function(a){if(a.querySelector('.pa-ni'))return;var h=a.getAttribute('href')||'',k=/svoiludi/.test(h)?'svoi':/#who/.test(h)?'who':/#requests/.test(h)?'req':/#path/.test(h)?'path':/put\/?$/.test(h)?'put':/testy/.test(h)?'tests':null;if(!k)return;a.insertAdjacentHTML('afterbegin','<svg class="pa-ni" viewBox="0 0 24 24" aria-hidden="true">'+I[k]+'</svg>');a.style.removeProperty('color');});}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();})();(function(){function mini(){var h=document.querySelector('header.top');if(!h||document.querySelector('.pa-mini')||!('IntersectionObserver' in window))return;var lg=(document.documentElement.lang||'ru').slice(0,2),L={ru:['Menu','Show less'],uk:['Menu','Close'],de:['Menü','Zuklappen'],en:['Menu','Close']}[lg]||['Menu','Show less'];var m=document.createElement('header');m.className='top pa-mini';var pg=document.createElement('div');pg.className='page';var mk=h.querySelector('.mark');if(mk)pg.appendChild(mk.cloneNode(true));var b=document.createElement('button');b.type='button';b.className='pa-mbtn';b.setAttribute('aria-expanded','false');b.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span></span>';b.lastChild.textContent=L[0];pg.appendChild(b);var c=h.querySelector('.navcta');if(c)pg.appendChild(c.cloneNode(true));var n=h.querySelector('nav');if(n)pg.appendChild(n.cloneNode(true));m.appendChild(pg);document.body.appendChild(m);function set(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');b.lastChild.textContent=o?L[1]:L[0];}b.addEventListener('click',function(){set(!m.classList.contains('open'));});m.addEventListener('click',function(e){if(e.target.closest('nav a'))set(false);});new IntersectionObserver(function(es){var v=es[0].isIntersecting;m.classList.toggle('on',!v);if(v)set(false);}).observe(h);}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mini);else mini();})();</script><link rel="manifest" href="/site.webmanifest"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Iryna"><meta name="apple-mobile-web-app-status-bar-style" content="default"><script src="/assets/vz-app.js" defer></script><!--shape--><!--i18n--><link rel="alternate" hreflang="ru" href="https://voznesenskaya.ch/karta-opor/"><link rel="alternate" hreflang="uk" href="https://voznesenskaya.ch/uk/karta-opor/"><link rel="alternate" hreflang="de" href="https://voznesenskaya.ch/de/karta-opor/"><link rel="alternate" hreflang="en" href="https://voznesenskaya.ch/en/karta-opor/"><!--i18n--></head>
+<body>
+
+<header class="top">
+  <div class="page">
+    <a class="mark" href="/en/" aria-label="Ирина Вознесенская — на главную">
+      <span class="mono av"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#FFFCF8" stroke="#6E4F3C" stroke-width="3"/><g transform="rotate(22.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(67.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(112.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(157.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(202.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(247.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(292.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(337.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(0.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(45.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(90.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(135.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(180.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(225.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(270.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(315.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><circle cx="50" cy="50" r="7" fill="#B98324"/></svg></span>
+      <span><b>Iryna Voznesenskaya</b><small>coach, mentor, author of the “Steps. Your path in a new country” method</small></span>
+    </a>
+    <nav aria-label="Sections">
+      <a href="/en/#who">About me</a>
+      <a href="/en/#requests">Work with me</a>
+      <a href="/en/#path">Products</a>
+      <a href="/en/put/">Your path</a>
+      <a href="/testy/#lang=en">Tests</a>
+      <a href="https://svoiludi.ch/" target="_blank" rel="noopener">Svoi ludi</a>
+    </nav>
+    <a class="navcta" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">Introductory meeting</a>
+  </div>
+</header>
+
+<div class="wrap" id="app">
+
+
+  <!-- 1. Вступление -->
+  <section id="sStart" class="stack" style="gap:22px">
+    <div class="greet"><span class="av" data-avatar></span><div><b id="greetHead">Hello! I’m Iryna Voznesenskaya</b><p class="note">ICF coach in Switzerland and psychologist in Ukraine. <a href="/en/#who">More about me and how I work →</a></p></div></div>
+    <div class="stack" style="gap:10px">
+      <div class="eyebrow">For yourself · a 10–15 minute worksheet · free</div>
+      <h1>Anchor map</h1>
+      <p class="slogan">What holds you in a new country and what to strengthen first</p>
+      <p class="lead">After a move, much of what you leaned on stayed behind there. Your familiar home, your language, your work, people who had known you for many years. Here life has to be put back together, from old and new, outside and inside — like a bowl mended with gold. This map will help you see what already holds you, what wobbles and which anchor to strengthen first. With one small step.</p>
+    </div>
+
+    <div class="blk" id="resume" hidden></div>
+
+    <div class="fan" id="fan" data-n="4"></div>
+
+    <div class="ab">
+      <div class="a"><span class="ab-l">Point A · where you start</span><p>It feels as if there is nothing to hold on to. Your energy is low, everything wobbles, and it’s unclear where to begin.</p></div>
+      <div class="arr" aria-hidden="true"><svg viewBox="0 0 40 24" width="34" height="22"><path d="M2 12h32M26 4l8 8-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="b"><span class="ab-l">Point B · what you leave with</span><p>A map of the eight anchors on one page, in your own words. You see what already holds you, where it’s empty and which anchor to strengthen first. And you have one small step for this week.</p></div>
+    </div>
+    <div class="ab-key"><b>The key insight</b><p>You have more anchors than it seems. And it’s worth starting not with the loudest trouble or the biggest dream, but with the lowest anchor that wobbles. Everything holds from the bottom: the lower steps hold up the higher ones.</p></div>
+
+    <div class="stack" style="gap:10px">
+      <h2>How it works</h2>
+      <div class="how">
+        <div><span class="num">8</span><b>Eight anchors, one at a time</b><span>From the broken bowl to the gold you pass on. For each one, mark how firmly it holds and what holds you outside and inside.</span></div>
+        <div><span class="num">1</span><b>The map on one page</b><span>Your staircase of anchors, step by step. Where it’s firm, where it wobbles, where it’s empty for now, and where your energy drains away.</span></div>
+        <div><span class="num">5′</span><b>One small step</b><span>You choose the anchor you’ll strengthen first, and a 5–15 minute step for this week. In a month you can fill in the map again and compare.</span></div>
+      </div>
+    </div>
+
+    <div class="blk">
+      <div class="field">
+        <div class="qlabel">Where do you live now? <button type="button" class="qh" data-help="country" aria-expanded="false" aria-label="Hint">?</button></div>
+        <div class="seg" id="country">
+          <button type="button" data-v="ch" aria-pressed="false">Switzerland</button>
+          <button type="button" data-v="ua" aria-pressed="false">Ukraine</button>
+          <button type="button" data-v="other" aria-pressed="false">Another country</button>
+        </div>
+      </div>
+      <div class="field">
+        <label for="fName">What is your name? <span class="muted" style="font-weight:500">optional, for the PDF</span></label>
+        <input type="text" id="fName" autocomplete="given-name" maxlength="40" placeholder="For example, Anna">
+      </div>
+      <p class="note">Your answers stay with you alone, on this device. I can’t see them.</p>
+      <div class="btns"><button type="button" class="btn green wide" id="goStart">Make my anchor map →</button></div>
+    </div>
+
+    <div class="share-slot" data-url="https://voznesenskaya.ch/en/karta-opor/" data-lead="Know someone who could use this? Forward the link, the message is ready." data-text="Have a look, here you can make a map of your anchors in 10–15 minutes: what holds you in a new country and what to strengthen first. It’s free, and your answers stay with you alone."></div>
+  </section>
+
+  <!-- 2. Восемь опор -->
+  <section id="sFill" class="stack" hidden>
+    <div class="prog"><div class="row" style="justify-content:space-between"><span class="eyebrow" id="progT">Anchor 1 of 8</span><span class="note" id="progN"></span></div><div class="bar"><i id="progI" style="width:0"></i></div></div>
+    <div class="blk" id="oCard"></div>
+    <p class="err" id="fillErr" role="alert" hidden></p>
+    <div class="nav"><button type="button" class="btn ghost" id="fBack">← Back</button><button type="button" class="btn" id="fNext">Next →</button></div>
+  </section>
+
+  <!-- 3. Куда утекают силы -->
+  <section id="sLeaks" class="stack" hidden>
+    <div class="prog"><span class="eyebrow">Almost done</span><div class="bar"><i style="width:92%"></i></div></div>
+    <div class="blk">
+      <div class="eyebrow">Where your energy drains away</div>
+      <h2>What is taking the most energy from you right now?</h2>
+      <p>Mark up to three. You can skip this. <button type="button" class="qh" data-help="leaks" aria-expanded="false" aria-label="Hint">?</button></p>
+      <div class="chips" id="leakChips"></div>
+      <div class="own"><input type="text" id="leakOwn" maxlength="80" placeholder="Your own, if you like" aria-label="Your own: where your energy drains away"></div>
+      <p class="err" id="leakErr" role="alert" hidden></p>
+    </div>
+    <div class="nav"><button type="button" class="btn ghost" id="lBack">← Back</button><button type="button" class="btn" id="lNext">Next →</button></div>
+  </section>
+
+  <!-- 4. Первая опора и маленький шаг -->
+  <section id="sChoose" class="stack" hidden>
+    <div class="prog"><span class="eyebrow">The last step</span><div class="bar"><i style="width:97%"></i></div></div>
+    <div class="blk" id="chooseBlk"></div>
+    <div class="blk" id="stepBlk"></div>
+    <p class="err" id="chooseErr" role="alert" hidden></p>
+    <div class="nav"><button type="button" class="btn ghost" id="cBack">← Back</button><button type="button" class="btn green" id="cDone">Show my map →</button></div>
+  </section>
+
+  <!-- 5. Карта -->
+  <section id="sResult" class="stack" hidden>
+    <div id="report" class="stack"></div>
+
+    <div class="blk" id="actions">
+      <div class="eyebrow">Save the map</div>
+      <h2>Download the map as a PDF</h2>
+      <p>The file contains your staircase of anchors, your words, your first anchor and your small step. On the last page there is a sheet for ticking off your steps by hand for four weeks.</p>
+      <label class="check"><input type="checkbox" id="bw"> <span>No colour, for cheap printing</span></label>
+      <div class="btns"><button type="button" class="btn green wide" id="pdfBtn">Download PDF</button></div>
+      <div class="stack" id="calBox" style="gap:8px" hidden></div>
+      <p class="status" id="pdfStatus" role="status"></p>
+    </div>
+
+    <div class="share-slot" data-url="https://voznesenskaya.ch/en/karta-opor/" data-lead="Which of your friends could also use an anchor right now? Forward the map to them, the message is ready." data-text="Anchor map: what holds you in a new country and where to begin. Eight anchors and one small step for the week. Takes 10–15 minutes to fill in, free, and your answers stay with you alone."></div>
+
+    <div class="blk" id="histBlk"></div>
+
+    <div class="blk backup" id="backupBlk"></div>
+
+    <div class="btns"><button type="button" class="btn ghost" id="again">Fill in the map again</button><button type="button" class="btn ghost" id="editMap">Change the answers on this map</button><button type="button" class="btn ghost wide" id="toStart">Back to the start</button></div>
+  </section>
+
+  <div class="inapp" id="inapp" hidden><span class="wi"></span>You opened this page inside an app (Instagram, Telegram or another one). Your entries may get lost there. Open it in a browser, Safari or Chrome, via the “…” menu → “Open in browser”.</div>
+
+  <div class="disclaimer" id="disc"></div>
+  <div id="delWrap"><button type="button" class="btn ghost small" id="delBtn">Delete my answers</button><div class="confirm" id="delAsk" hidden><p>Delete all answers and all maps from this device? If you want to keep them, download the PDF or a backup first.</p><div class="row"><button type="button" class="btn small" id="delYes">Yes, delete</button><button type="button" class="btn ghost small" id="delNo">No, keep them</button></div></div></div>
+
+  <footer class="copy"><nav><a href="/en/">Home</a><a href="/testy/#lang=en">All tests</a><a href="/en/put/">Your path</a><a href="/privacy/#lang=en">Privacy policy</a><a href="/impressum/#lang=en">Legal notice</a></nav><span>© 2026 Iryna Voznesenskaya · coach, mentor, author of the “Steps. Your path in a new country” method</span></footer>
+</div>
+<div class="pdf-stage" id="stage" aria-hidden="true"></div>
+<script>window.SVLDOC_SITE = 'vz'; window.SVLDOC_SELF = true; window.SVLDOC_SEL = '#icsBtn';</script><script defer src="/assets/skachivanie.js"></script>
+<script src="/assets/lib/html2canvas.min.js"></script>
+<script src="/assets/lib/jspdf.umd.min.js"></script>
+<script>
+const ICONS = {
+  earth: (c, f, s) => `<circle cx="12" cy="8" r="3.2" fill="${f}" stroke="${c}" ${s}/><path d="M3 15c3-2 6-2 9 0s6 2 9 0M3 19.5c3-2 6-2 9 0s6 2 9 0" fill="none" stroke="${c}" ${s}/>`,
+  hearth: (c, f, s) => `<path d="M12 3c3 4 6.5 6 6.5 10.5a6.5 6.5 0 0 1-13 0c0-3 2-4.5 3-6.5 1 2 2 3 3 3 0-3-1-5 .5-7z" fill="${f}" stroke="${c}" ${s}/><path d="M9 21h6" stroke="${c}" ${s}/>`,
+  door: (c, f, s) => `<rect x="6" y="3" width="12" height="18" rx="1.5" fill="${f}" stroke="${c}" ${s}/><circle cx="14.8" cy="12.5" r="1.2" fill="${c}"/><path d="M3 21h18" stroke="${c}" ${s}/>`,
+  key: (c, f, s) => `<circle cx="8" cy="12" r="4.2" fill="${f}" stroke="${c}" ${s}/><path d="M12.2 12H21M18 12v3M21 12v3" fill="none" stroke="${c}" ${s}/>`,
+  workshop: (c, f, s) => `<path d="M4.5 11V20.5H19.5V11" fill="#fff" stroke="${c}" ${s}/><path d="M3 7.2L4.6 3.5H19.4L21 7.2V8.6A2.25 2.25 0 0 1 16.5 8.6A2.25 2.25 0 0 1 12 8.6A2.25 2.25 0 0 1 7.5 8.6A2.25 2.25 0 0 1 3 8.6Z" fill="${f}" stroke="${c}" ${s}/><path d="M7.5 7.2V8.6M12 7.2V8.6M16.5 7.2V8.6M3 7.2H21" stroke="${c}" stroke-width="1.4" stroke-linecap="round"/><path d="M8 20.5V15.2H11.5V20.5" fill="${f}" stroke="${c}" ${s}/><rect x="13.6" y="13.6" width="3.6" height="3.2" rx=".6" fill="${f}" stroke="${c}" stroke-width="1.5"/>`,
+  sprout: (c, f, s) => `<path d="M12 21v-9" stroke="${c}" ${s}/><path d="M12 13c-4.5 0-7-3-7-7 4.5 0 7 3 7 7zM12 11c0-4.5 3-7 7.5-7 0 4.5-3 7-7.5 7z" fill="${f}" stroke="${c}" ${s}/>`,
+  hill: (c, f, s) => `<path d="M2 19.5l7-9.5 4 5 3-3.5 6 8z" fill="${f}" stroke="${c}" ${s}/><circle cx="17" cy="5.5" r="2" fill="none" stroke="${c}" ${s}/>`,
+  sky: (c, f, s) => `<path d="M12 3l1.9 5.6L19.5 10.5l-5.6 1.9L12 18l-1.9-5.6L4.5 10.5l5.6-1.9z" fill="${f}" stroke="${c}" ${s}/><circle cx="19" cy="19" r="1.4" fill="${c}"/><circle cx="5" cy="19.5" r="1" fill="${c}"/>`,
+  telegram: (c, f, s) => `<path d="M3.2 11.4L20.2 4.3C20.8 4.1 21.3 4.6 21.2 5.2L18.4 19C18.3 19.6 17.6 19.9 17.1 19.5L12.6 16.2L10.2 18.6C9.9 18.9 9.4 18.7 9.4 18.3V14.8L17 7.8L7.6 13.4L3.4 12.2C2.8 12 2.7 11.6 3.2 11.4Z" fill="${f}" stroke="${c}" ${s}/>`,
+  instagram: (c, f, s) => `<rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="${f}" stroke="${c}" ${s}/><circle cx="12" cy="12" r="4" fill="#fff" stroke="${c}" ${s}/><circle cx="16.9" cy="7.1" r="1.1" fill="${c}"/>`,
+  swissguide: (c, f, s) => `<path d="M2.8 10.6L19.6 3.4C20.3 3.1 20.9 3.7 20.7 4.4L17.2 18.2C17 18.9 16.2 19.1 15.7 18.6L11.4 14.8L9 17.5C8.6 17.9 8 17.6 8 17.1V13.6L16.4 6.2L6.7 12.4L3 11.6C2.4 11.4 2.3 10.8 2.8 10.6Z" fill="${f}" stroke="${c}" ${s}/><path d="M18 22.4C18 22.4 13.4 19.7 13.4 16.9A2.3 2.3 0 0 1 18 15.9A2.3 2.3 0 0 1 22.6 16.9C22.6 19.7 18 22.4 18 22.4Z" fill="#D52B1E" stroke="#fff" stroke-width="1"/><path d="M18 16.6V20M16.3 18.3H19.7" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/>`,
+  seed: (c, f, s) => `<path d="M12 20c-3.6 0-6-2.6-6-6.3C6 9.5 9 6 12 4c3 2 6 5.5 6 9.7 0 3.7-2.4 6.3-6 6.3z" fill="${f}" stroke="${c}" ${s}/><path d="M12 20v-7.5" stroke="${c}" ${s}/>`,
+  sun: (c, f, s) => `<circle cx="12" cy="12" r="4.2" fill="${f}" stroke="${c}" ${s}/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7" stroke="${c}" ${s}/>`,
+  shield: (c, f, s) => `<path d="M12 3l7.5 3v5.5c0 4.6-3.2 8-7.5 9.5-4.3-1.5-7.5-4.9-7.5-9.5V6z" fill="${f}" stroke="${c}" ${s}/><path d="M9 12l2.2 2.2L15.5 10" fill="none" stroke="${c}" ${s}/>`,
+  anchor: (c, f, s) => `<circle cx="12" cy="5.5" r="2.3" fill="${f}" stroke="${c}" ${s}/><path d="M12 7.8V20M8 11h8M4.5 14c.5 3.5 3.6 6 7.5 6s7-2.5 7.5-6" fill="none" stroke="${c}" ${s}/>`,
+  path: (c, f, s) => `<path d="M3.5 20.5V17H8v-3.8h4.5V9.5H17v11z" fill="${f}" stroke="${c}" ${s}/><path d="M4.5 12 13 4.5M10 4.5h3v3M20.5 20.5H3" fill="none" stroke="${c}" ${s}/>`,
+  lantern: (c, f, s) => `<path d="M9 6h6l1.5 3v8L15 20H9l-1.5-3V9z" fill="${f}" stroke="${c}" ${s}/><path d="M10 3.5h4M12 3.5V6M12 11v4" stroke="${c}" ${s}/>`,
+  pen: (c, f, s) => `<path d="M15.5 4.5l4 4L9 19l-5 1 1-5z" fill="${f}" stroke="${c}" ${s}/><path d="M13.5 6.5l4 4" stroke="${c}" ${s}/>`,
+  heart: (c, f, s) => `<path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z" fill="${f}" stroke="${c}" ${s}/>`,
+  home: (c, f, s) => `<path d="M3.5 11 12 4l8.5 7v9.5h-17z" fill="${f}" stroke="${c}" ${s}/><path d="M10 20.5v-5h4v5" fill="none" stroke="${c}" ${s}/>`,
+};
+function ico(name, line = '#2E5A88', fill, size = 24){
+  const draw = ICONS[name] || ICONS.seed;
+  const s = 'stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"';
+  return `<svg viewBox="0 0 24 24" width="${size}" height="${size}" aria-hidden="true">${draw(line, fill || icoSoft(line), s)}</svg>`;
+}
+const icoSoft = c => { const h = String(c).replace('#', ''); if (h.length !== 6) return 'none';
+  return '#' + [0, 2, 4].map(i => Math.round(parseInt(h.substr(i, 2), 16) * .3 + 255 * .7).toString(16).padStart(2, '0')).join(''); };
+
+/* значки истории чаши (10.10.2026) — стиль библиотеки icons.js: сетка 24×24, заливка светлым тоном, контур глубоким, линия 1.8; золото швов — #C9971F */
+const ICONS_CHASHA = (() => {
+  const G = '#C9971F';
+  const bowl = (c, f, s, notch) => notch
+    ? `<path d="M3.5 9.5h9l1.2 2.2 1.6-2.2h5.2c0 4.9-3.7 8.4-8.5 8.4S3.5 14.4 3.5 9.5z" fill="${f}" stroke="${c}" ${s}/><path d="M9.6 17.9h4.8v1.6H9.6z" fill="${f}" stroke="${c}" stroke-width="1.4" stroke-linejoin="round"/>`
+    : `<path d="M3.5 9.5h17c0 4.9-3.7 8.4-8.5 8.4S3.5 14.4 3.5 9.5z" fill="${f}" stroke="${c}" ${s}/><path d="M9.6 17.9h4.8v1.6H9.6z" fill="${f}" stroke="${c}" stroke-width="1.4" stroke-linejoin="round"/>`;
+  const mini = (x, y, w, c, f, s) => { const h = w * .72, fx = x + w * .34, fw = w * .32;
+    return `<path d="M${x} ${y}H${x + w}C${x + w} ${y + h * .9} ${x + w * .74} ${y + h} ${x + w / 2} ${y + h}S${x} ${y + h * .9} ${x} ${y}z" fill="${f}" stroke="${c}" ${s}/><path d="M${fx} ${y + h}h${fw}v1.1h-${fw}z" fill="${f}" stroke="${c}" stroke-width="1.2" stroke-linejoin="round"/>`; };
+  return {
+    razbita: (c, f, s) => bowl(c, f, s, true) + `<path d="M8.6 9.7l1 2.7-1.3 2.6" fill="none" stroke="${c}" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.6 20.6l2.6-.9-.4 1.9z" fill="${f}" stroke="${c}" stroke-width="1.3" stroke-linejoin="round"/>`,
+    svoi: (c, f, s) => mini(1.5, 7.5, 9.2, c, f, s) + `<path d="M4.8 7.7l1.4 2.4-.9 2.4" fill="none" stroke="${G}" stroke-width="1.6" stroke-linecap="round"/>` + mini(13.3, 9.5, 9.2, c, f, s) + `<path d="M18.9 9.6l.8 2 1.1-2" fill="none" stroke="${c}" stroke-width="1.3" stroke-linejoin="round"/>`,
+    sobirayu: (c, f, s) => bowl(c, f, s, true) + `<path d="M13.7 11.7l-.6 2.4.9 2.4" fill="none" stroke="${G}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.6 5.2l3.4-1.4 1.1 2.4-3.3 1.2z" fill="${f}" stroke="${c}" stroke-width="1.3" stroke-linejoin="round"/><path d="M13.2 7.3l2.5-.9" stroke="${G}" stroke-width="1.4" stroke-linecap="round"/>`,
+    ryad: (c, f, s) => mini(1.4, 9, 6.4, c, f, s) + mini(8.8, 9, 6.4, c, f, s) + mini(16.2, 9, 6.4, c, f, s) + `<path d="M3.4 9.2l.8 1.7-.5 1.4M11.9 9.2l-.6 1.6.6 1.6M18.3 9.2l.7 1.5" fill="none" stroke="${G}" stroke-width="1.3" stroke-linecap="round"/><path d="M1.3 16.9h21.4" stroke="${c}" ${s}/>`,
+    polnaya: (c, f, s) => bowl(c, f, s, false) + `<path d="M5.2 11.2c2.2.9 11.4.9 13.6 0" fill="none" stroke="${c}" stroke-width="1.2" stroke-linecap="round"/><path d="M8.2 12.6l1 2.2-.6 1.9" fill="none" stroke="${G}" stroke-width="1.5" stroke-linecap="round"/><path d="M10 6.8c-1-1.2 1-2 0-3.3M14 6.8c-1-1.2 1-2 0-3.3" fill="none" stroke="${c}" stroke-width="1.3" stroke-linecap="round"/>`,
+    krug: (c, f, s) => `<circle cx="12" cy="12" r="8.6" fill="none" stroke="${G}" stroke-width="1.2" stroke-dasharray="1.6 2.2"/>` + mini(8.4, 10.2, 7.2, c, f, s) + `<circle cx="12" cy="3.4" r="1.7" fill="${f}" stroke="${c}" stroke-width="1.3"/><circle cx="20.6" cy="12" r="1.7" fill="${f}" stroke="${c}" stroke-width="1.3"/><circle cx="12" cy="20.6" r="1.7" fill="${f}" stroke="${c}" stroke-width="1.3"/><circle cx="3.4" cy="12" r="1.7" fill="${f}" stroke="${c}" stroke-width="1.3"/>`,
+    shvy: (c, f, s) => bowl(c, f, s, false) + `<path d="M7 9.8l1.4 2.5-1 2.4M8.4 12.3l2.6.6M13.6 9.8l-.7 2.8 1.6 2.3 2.3-.5M12.9 12.6l-2.2 1.9" fill="none" stroke="${G}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>`,
+    zoloto: (c, f, s) => mini(1.4, 6.5, 10, c, f, s) + `<path d="M4.4 6.8l1.2 2.3-.8 2.1" fill="none" stroke="${G}" stroke-width="1.5" stroke-linecap="round"/>` + mini(15.2, 11.8, 7.2, c, f, s) + `<path d="M19.6 12l.8 1.6.8-1.6" fill="none" stroke="${c}" stroke-width="1.2" stroke-linejoin="round"/><path d="M8.5 14.4c1.5 3.6 4.4 5.3 7.6 4.6" fill="none" stroke="${G}" stroke-width="1.6" stroke-linecap="round"/>`
+  };
+})();
+
+Object.assign(ICONS, ICONS_CHASHA);
+const AVATAR_SVG = '<svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#FFFCF8" stroke="#6E4F3C" stroke-width="3"/><g transform="rotate(22.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(67.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(112.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(157.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(202.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(247.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(292.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(337.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(0.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(45.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(90.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(135.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(180.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(225.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(270.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(315.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><circle cx="50" cy="50" r="7" fill="#B98324"/></svg>';
+
+</script>
+<script>
+'use strict';
+/* =====================================================================
+   «Карта опор» — рабочий лист метода «Ступени. Твой путь в новой стране» (внутренняя сторона ступеней, «Кто я здесь»).
+   Данные только в браузере (localStorage), ключ kartaOpor.v1. Ничего никуда не отправляется.
+   ===================================================================== */
+const KEY = 'kartaOpor.v1';
+/* язык страницы: русский исходник, украинская, немецкая и английская версии собираются _i18n/pages.py */
+const LANG = (document.documentElement.lang || 'ru').slice(0, 2);
+const LP = LANG === 'ru' ? '' : LANG + '/';
+const SITE = 'https://voznesenskaya.ch/' + LP + '/karta-opor/karta-opor/';
+const VZ = h => 'https://voznesenskaya.ch/' + LP + h;                                   // главная на языке страницы (#path, #who)
+const VZT = t => 'https://voznesenskaya.ch/' + t + '/' + (LANG === 'ru' ? '' : '#lang=' + LANG); // тест на языке страницы
+const SVL = u => LANG === 'uk' ? u.replace('https://svoiludi.ch/', 'https://svoiludi.ch/uk/') : u; // svoiludi.ch есть по-русски и по-украински
+const TOOL = 'Anchor map';
+const YEAR = new Date().getFullYear();
+
+const R = [
+  { t:'Empty for now',           d:'There is no anchor here yet. After a move this happens very often.' },
+  { t:'Barely holds',      d:'There is something, but it’s still hard to lean on.' },
+  { t:'Holds, but wobbles',  d:'The anchor is there, but when you’re tired or on a hard day it lets you down.' },
+  { t:'Holds firmly',        d:'You can lean on it even on a hard day.' }
+];
+
+const O = [
+ { name:'The broken bowl', sub:'body, sleep and a roof', ico:'razbita', c:'#8E8470', f:'#E2DCD0', rgb:'142,132,112',
+   about:'After a move a lot has broken, and that is not weakness. Here your anchor is your body, sleep, a roof over your head and money to live on: the things without which it’s hard to think about anything else.',
+   out:['a place of my own to live, even if temporary','money for the coming month','health insurance','a clear status and documents','a doctor I can turn to','a quiet place where I can rest'],
+   inn:['I get enough sleep at least sometimes','I have the energy for the day','I can calm myself when I’m scared','I remember that I have coped before','I allow myself to rest','I notice what my body needs'],
+   helps:['Rhythm before big decisions. Go to bed and get up at roughly the same time, eat something hot at least once a day, go outside in daylight.','A corner of your own at home, even a very small one. A cup, a blanket, a photo, one thing that is yours alone.','A list of “what I have already done”. A move is a huge piece of work in itself, and it deserves to be seen.'],
+   steps:['Go to bed 20 minutes earlier three evenings in a row','Go outside for 15 minutes in daylight','Write down three things I have already done since the move','Make myself a corner at home with one thing of my own'],
+   links:[['“My day”','Day plan, sleep and time techniques.','https://svoiludi.ch/instrumenty/moj-den/'],['“My budget”','Mandatory expenses in Switzerland on one page.','https://svoiludi.ch/instrumenty/moj-budget/'],['“Emergency numbers”','A card with the numbers of your doctor, the ambulance and your loved ones.','https://svoiludi.ch/instrumenty/ekstrennye-nomera/'],['Social assistance','Where to turn if you don’t have enough money to live on.','https://svoiludi.ch/shveycariya/sozialhilfe/']],
+   prog:[['m1','“Two weeks to get the ground back under your feet”','A 14-day workbook for the hardest time. Sleep, your own corner, a horizon for the coming months.'],['mentor','Mentoring session','An hour of conversation with someone who has lived in a new country herself since 2010.']] },
+ { name:'Your circle', sub:'people around you', ico:'svoi', c:'#6A5FB8', f:'#C4BDEA', rgb:'106,95,184',
+   about:'Other bowls stand nearby, each with its own golden seams: they, too, once broke. People you can be yourself with, loved ones here and there, your own traditions and the feeling “I belong”.',
+   out:['I have someone to call in a hard moment','family or a partner by my side','a friend here','contact with my loved ones there','a group, an association, a church or a hobby club','neighbours I say hello to'],
+   inn:['I feel that I matter to someone','I keep my traditions and holidays','I can ask for help','I’m not ashamed of my accent and my roots','I have someone to hug','I feel I belong at least somewhere'],
+   helps:['Don’t wait for your people to turn up on their own. One place you go to every week: a class, a choir, sport, a meet-up of your own people.','Your own celebration at your own table, even if there are only two guests.','One person you can call at two in the morning matters more than ten acquaintances.'],
+   steps:['Write to one person I miss','Find one meet-up or class nearby and sign up','Invite someone round for tea','Cook a dish from home and share it with a neighbour'],
+   links:[['The Svoi ludi directory','Doctors, psychologists and specialists who speak Russian and Ukrainian.','https://svoiludi.ch/'],['Events and courses','Meet-ups, courses and celebrations near you.','https://svoiludi.ch/events/'],['Vereine, volunteering and your own people','How to find your circle in Switzerland.','https://svoiludi.ch/shveycariya/vereine/']],
+   prog:[['mentor','Mentoring session','An hour of conversation with someone who has walked this path herself.']] },
+ { name:'I can do it myself', sub:'voice and boundaries', ico:'sobirayu', c:'#C25468', f:'#EEA9B3', rgb:'194,84,104',
+   about:'You put yourself back together, and gold fills the cracks. The right to say “yes” and “no”, your own boundaries and the courage to speak — in the new language, at work and at home.',
+   out:['I can make myself understood in the local language','I can book an appointment with a doctor or an authority myself','I have money of my own','at home they ask for my opinion','there is someone who will back me if I say “no”'],
+   inn:['I can say “no” without long justifications','I know what is unacceptable to me','I notice when something feels unpleasant to me','I have the right to my own opinion','I’m not afraid of making mistakes in the language','I can ask for what I need'],
+   helps:['Start with a small “no” where it’s safe. A boundary grows like a muscle.','Phrases prepared in advance. One or two phrases in the local language for the doctor, the municipality or the school, learnt out loud.','Notice where in your body “this is unpleasant for me” lives. It is the first signal of your boundary.'],
+   steps:['Say one small “no” where it’s safe','Learn one phrase for the doctor or an authority and say it out loud','Write three lines about what is unacceptable to me','Make one call I’ve been putting off'],
+   links:[['Language and fide','Courses, levels and the fide exam.','https://svoiludi.ch/shveycariya/fide/'],['What language level you need','For a permit, a passport and work, on one page.','https://svoiludi.ch/instrumenty/yazyk-trebovaniya/']],
+   prog:[['borders','“I am in charge of my life”','An e-mail series about boundaries and the right to what is yours.'],['enough','“I am enough and I am worthy”','An e-mail series of 14 letters about the anchor within yourself.']],
+   safety:true },
+ { name:'Clear rules', sub:'order and deadlines', ico:'ryad', c:'#3F6FBF', f:'#A6C4F0', rgb:'63,111,191',
+   about:'You stand in the row with others and know your place. The rules of the new country and your own rhythm: letters, deadlines, paperwork, your week.',
+   out:['I know where to go with a question','my papers are in order and in one folder','I know my deadlines: taxes, insurance, permit','I have someone to ask about the rules','I have a weekly schedule'],
+   inn:['letters no longer scare me','I know what to do if I’ve made a mistake','I feel there is order in my life','I can plan at least a month ahead','I trust myself when making decisions'],
+   helps:['One folder for all your papers and one day of the week for letters and bills.','Separate “what I know for sure” from “what I’m imagining”. Fear lives in the second.','Deadlines in the calendar in advance, not in your head.'],
+   steps:['Put all letters and papers into one folder','Choose one day of the week for letters and bills','Write down three deadlines that await me this year','Put a question that has long been troubling me to someone who knows'],
+   links:[['“How Switzerland works”','Permits, taxes, insurance, work and housing in plain words.','https://svoiludi.ch/shveycariya/'],['Letters from authorities and deadlines','What a letter means and by what date to reply.','https://svoiludi.ch/shveycariya/pisma-sroki/'],['“My year”','All your deadlines on one calendar.','https://svoiludi.ch/instrumenty/moj-god/']],
+   prog:[['snimok','“Life snapshot”','A review of all areas of your life, 3 hours with me.']] },
+ { name:'Work of my own', sub:'work, money, your own price', ico:'polnaya', c:'#C97E52', f:'#F2C6A8', rgb:'201,126,82',
+   about:'The bowl is filling up. Your own work, a job or studies, your own money and your own price — what you create and what others can see.',
+   out:['a job, studies or my own business','my own income, even if it’s small','a recognised diploma or a path towards one','there’s somewhere to use my skills','I have clients or colleagues'],
+   inn:['I know what I can do','I can name my price','I believe my experience is worth something','I try new things without waiting for everything to be perfect','I find what I do interesting'],
+   helps:['A list of “what I can do”, not only what your diploma says. Languages, people, practical skills, organisation, everything.','A small trial instead of a big plan. One consultation, one trial day, one course.','Your own price starts with saying your worth out loud.'],
+   steps:['Write down ten things I can do','Ask two people what they value about my help','Find out one step towards getting my diploma recognised or towards a job','Update my CV'],
+   links:[['“A Swiss-style CV”','A Lebenslauf in the canton’s language in one evening.','https://svoiludi.ch/instrumenty/rezyume/'],['Recognition of diplomas','Where to apply and how long to wait.','https://svoiludi.ch/shveycariya/diplomy/'],['Work in Switzerland','Where to look and how the market works.','https://svoiludi.ch/shveycariya/rabota/'],['How to start your own business','Self-employment in plain words.','https://svoiludi.ch/shveycariya/samozanyatost/']],
+   prog:[['price5','“My own price”','A written workshop about your work, money and your own price.']] },
+ { name:'My contribution', sub:'where I’m needed', ico:'krug', c:'#4E9A70', f:'#B0DCC0', rgb:'78,154,112',
+   about:'You have enough warmth to pass it around the circle. Your contribution: where you’re needed, whom your experience helps and what you give.',
+   out:['I help someone regularly','there’s someone I can pass my experience on to','I take part in a community','people come to me for advice','there’s a shared cause I’m part of'],
+   inn:['I feel that I’m needed','my experience can be useful to others','I give with joy, not just because I “have to”','I see meaning in what I do for others'],
+   helps:['A contribution starts small. Answer a newcomer in a chat, tell them how you coped.','Give from fullness, not from your last strength.','Your path is already experience that those who arrived later need.'],
+   steps:['Answer one question from a newcomer in a chat or group','Write down which of my experiences could help others','Offer help to one person','Thank someone who once helped me'],
+   links:[['Vereine, volunteering and your own people','Where your experience is needed right now.','https://svoiludi.ch/shveycariya/vereine/'],['How to get listed in Svoi ludi','For those who help people as a specialist.','https://svoiludi.ch/join/']],
+   prog:[['exp','“Who needs my experience”','An e-mail series of 14 letters about your contribution.']] },
+ { name:'My whole life', sub:'happiness and meaning', ico:'shvy', c:'#A99A2E', f:'#EEE29E', rgb:'169,154,46',
+   about:'Your whole life shows in the seams, and it is they that make the bowl beautiful. What happiness means to you, what you want from life, peace with the decision you made.',
+   out:['I have time for what I love','I have plans for the year and beyond','there’s a place where I feel beauty and calm','life here is coming together as a whole'],
+   inn:['I know what happiness is for me','I know what I want from life','I’ve made peace with the decision to move','I live now, not “later, when…”','I know my core values'],
+   helps:['Remember three moments when you were happy and find what they have in common. Those are your values.','Stop waiting for “real life”. It’s already happening, here.','Once a month, look at your life from the hill. Not at tasks, but at the direction.'],
+   steps:['Write down three moments when I was truly happy','Do one thing I keep putting off “until later”','Write down how I want my life to look in three years','Spend one hour the way I want to'],
+   links:[['The path to a Swiss passport','Deadlines and steps on one page.','https://svoiludi.ch/instrumenty/grazhdanstvo-shema/'],['Pension: the three pillars','So you can look ahead calmly.','https://svoiludi.ch/shveycariya/pensiya/']],
+   prog:[['draft','“My life is not a draft”','An e-mail series of 21 letters about the life that is already happening.'],['fund','“My foundation”','Your values in the context of your goal, 3 hours with me.']] },
+ { name:'Here and there — one life', sub:'what remains afterwards', ico:'zoloto', c:'#2894A0', f:'#9ADDE0', rgb:'40,148,160',
+   about:'Your gold flows to the bowl that has only just broken. “Here” and “there” in one life, faith, meaning and what will remain after you.',
+   out:['I have a home here and a connection with home there','I pass something on to children or younger people','there’s work that will outlive me','I have a place of strength: nature, a place of worship, silence'],
+   inn:['“here” and “there” are one life for me','I feel connected to something bigger than me','I’m grateful for my path with all its turns','I know what I want to leave behind'],
+   helps:['Instead of choosing between “there” and “here”, gather them into one life.','Silence and nature as a place of strength.','Talk with children and younger people about where you come from and what you pass on to them.'],
+   steps:['Spend half an hour in silence in nature','Write down what I want to pass on to children or younger people','Write a letter to myself as I was when I had just arrived','Find one thing “from there” and a place for it “here”'],
+   links:[['Mountains, hiking and safety','Swiss nature as a place of strength.','https://svoiludi.ch/shveycariya/priroda/']],
+   prog:[['life','“A life without regrets”','A life strategy with a countdown, 3 hours with me.']] }
+];
+const READY = { fund:true, meet:true, stupeni:true };
+
+const LEAKS = [
+  ['worry about money',0],['tiredness and health',0],['uncertainty about status and documents',0],
+  ['loneliness',1],['homesickness and missing loved ones',1],['worry about loved ones there',1],
+  ['a language in which it’s hard to say what matters most',2],['tension in the couple or in the family',2],
+  ['letters, paperwork and deadlines',3],['the job isn’t right for me, or there isn’t one',4],['the feeling “I’m nobody here”',4],
+  ['“I’ve made it, but there’s no joy”',5],['I’m waiting for real life to begin',6]
+];
+const WHEN = ['Today','Tomorrow','At the weekend','By the end of the week'];
+
+const HELP = {
+  country:'So that the tips and links suit your country. For example, the practical Svoi ludi tools are for people who live in Switzerland. Your answer stays only on this device.',
+  rate:'Answer about the last 2–4 weeks, not about how things “should be”. There are no right answers. “Empty for now” is an honest answer too, and you can work with it.',
+  out:'Outside — what is around you. People, money, housing, places, documents, rules. Mark everything that is there now, even if it’s not much. You can also leave everything unmarked.',
+  inn:'Inside — what is within you. Skills, habits, beliefs, memories of how you coped, faith in yourself. Mark what you recognise in yourself at least sometimes.',
+  leaks:'Energy leaks away where an anchor wobbles. When you can see where your energy goes, it’s clearer what to strengthen. Each leak on the map is linked to its own anchor.',
+  first:'Everything is held up from below: the lower steps hold up the upper ones. The map suggests the lowest anchor that wobbles. But you know your life better, so you can choose another one.',
+  step:'A small step takes 5–15 minutes and doesn’t need strength you don’t have right now. It’s better to take a small step than to plan a big one and put it off.',
+  when:'If you choose a day, you can add the step to your calendar so it doesn’t get lost.',
+  bw:'Without colour, the PDF prints in black and white, which is cheaper. On screen the map stays in colour.',
+  backup:'Your entries are stored only in this browser. If you clear the browser, change phones or don’t visit for a long time (Safari on iPhone deletes website data by itself), your maps will be lost. A backup is a file with all your maps. Save it to “Files” or to your computer, then load it here again, on any device.'
+};
+
+/* ---------- состояние ---------- */
+const blank = () => ({ r:Array(8).fill(-1), out:O.map(() => []), inn:O.map(() => []), outOwn:Array(8).fill(''), innOwn:Array(8).fill(''), leaks:[], leakOwn:'', first:-1, step:-1, stepOwn:'', when:-1 });
+let S = { v:1, country:'', name:'', cur:blank(), idx:0, screen:'start', maps:[], view:-1, bw:false, lastBackup:0, editing:-1 };
+function load(){ try { const x = JSON.parse(localStorage.getItem(KEY) || 'null'); if (x && x.v === 1) S = Object.assign(S, x); } catch(e){} }
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch(e){} }
+load();
+
+/* ---------- мелочи ---------- */
+const el = id => document.getElementById(id);
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const QL = LANG === 'en' ? '“' : '«', QR = LANG === 'en' ? '”' : '»';
+const q = n => QL + O[n].name + QR + ' (' + O[n].sub + ')';
+const LOC = { ru:'ru-RU', uk:'uk-UA', de:'de-CH', en:'en-GB' }[LANG] || 'ru-RU';
+const fmtDate = t => new Date(t).toLocaleDateString(LOC, { day:'2-digit', month:'2-digit', year:'numeric' });
+const joinRu = a => a.length <= 1 ? (a[0] || '') : a.slice(0, -1).join(', ') + ' and ' + a[a.length - 1];
+const rgba = (n, a) => `rgba(${O[n].rgb},${a})`;
+const AV = typeof AVATAR_SVG !== 'undefined' ? AVATAR_SVG : '';
+document.querySelectorAll('[data-avatar]').forEach(x => x.innerHTML = AV);
+function toast(t){ const d = document.createElement('div'); d.className = 'toast'; d.setAttribute('role','status'); d.textContent = t; document.body.appendChild(d); setTimeout(() => d.remove(), 2600); }
+function dotsHtml(r, c){ return `<span class="dots" style="color:${c}">${[0,1,2].map(i => `<i class="${r > i ? 'on' : ''}"></i>`).join('')}</span>`; }
+function show(id){ ['sStart','sFill','sLeaks','sChoose','sResult'].forEach(s => el(s).hidden = s !== id); window.scrollTo(0, 0); }
+
+/* ---------- подсказки «?» ---------- */
+document.addEventListener('click', e => {
+  const b = e.target.closest('.qh');
+  if (b){
+    const open = b.getAttribute('aria-expanded') === 'true';
+    closeHelps();
+    if (!open){
+      b.setAttribute('aria-expanded', 'true');
+      const bub = document.createElement('div'); bub.className = 'hbub'; bub.setAttribute('role', 'note');
+      bub.innerHTML = esc(HELP[b.dataset.help] || '') + '<button type="button" class="x" aria-label="Close">✕</button>';
+      const host = b.closest('.qlabel, p, .field, label, .eyebrow, h2, h3') || b.parentElement;
+      host.insertAdjacentElement('afterend', bub);
+    }
+    return;
+  }
+  if (e.target.closest('.hbub .x') || !e.target.closest('.hbub')) closeHelps();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeHelps(); closeLight(); } });
+function closeHelps(){ document.querySelectorAll('.hbub').forEach(x => x.remove()); document.querySelectorAll('.qh[aria-expanded="true"]').forEach(x => x.setAttribute('aria-expanded', 'false')); }
+const qh = k => `<button type="button" class="qh" data-help="${k}" aria-expanded="false" aria-label="Hint">?</button>`;
+
+/* ---------- 1. вступление ---------- */
+(function(){ const heads = ['Hello! I’m Iryna Voznesenskaya','Glad you’re here! My name is Iryna Voznesenskaya','Welcome! I’m Iryna Voznesenskaya']; el('greetHead').textContent = heads[Math.floor(Math.random() * heads.length)]; })();
+function renderStart(){
+  el('country').querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.v === S.country ? 'true' : 'false'));
+  el('fName').value = S.name || '';
+  const rs = el('resume'); const last = S.maps[S.maps.length - 1];
+  const started = S.cur.r.some(x => x >= 0);
+  if (last){
+    rs.hidden = false;
+    rs.innerHTML = `<div class="eyebrow">Your map is saved on this device</div><h3>Map from ${fmtDate(last.date)}</h3>
+      <p class="note">First anchor — ${q(last.first)}. ${last.done ? 'Small step done ✓' : 'The small step is still waiting.'}</p>
+      <div class="btns"><button type="button" class="btn green" data-act="open">Open my map</button><button type="button" class="btn ghost" data-act="${started ? 'cont' : 'again'}">${started ? 'Continue the new map' : 'Fill in the map again'}</button></div>`;
+  } else if (started){
+    rs.hidden = false;
+    rs.innerHTML = `<div class="eyebrow">You have already started a map</div><p>Your answers are saved on this device. You can carry on from the same place.</p>
+      <div class="btns"><button type="button" class="btn green" data-act="cont">Continue</button><button type="button" class="btn ghost" data-act="fresh">Start again</button></div>`;
+  } else rs.hidden = true;
+}
+el('resume').addEventListener('click', e => {
+  const a = e.target.closest('[data-act]'); if (!a) return;
+  const k = a.dataset.act;
+  if (k === 'open'){ S.view = S.maps.length - 1; S.screen = 'result'; save(); renderResult(); show('sResult'); }
+  if (k === 'cont'){ goFill(S.idx || 0); }
+  if (k === 'fresh'){ S.cur = blank(); S.idx = 0; S.editing = -1; save(); goFill(0); }
+  if (k === 'again'){ startAgain(); }
+});
+el('country').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; S.country = b.dataset.v; save(); renderStart(); });
+el('fName').addEventListener('input', () => { S.name = el('fName').value.trim().slice(0, 40); save(); });
+el('goStart').addEventListener('click', () => { goFill(S.cur.r.some(x => x >= 0) ? (S.idx || 0) : 0); });
+
+/* ---------- 2. восемь опор ---------- */
+function goFill(i){ S.idx = Math.max(0, Math.min(7, i)); S.screen = 'fill'; save(); renderFill(); show('sFill'); }
+function chipHtml(n, list, sel, kind){
+  return list.map((t, j) => `<button type="button" class="chip" data-k="${kind}" data-j="${j}" aria-pressed="${sel.includes(j) ? 'true' : 'false'}">${esc(t)}</button>`).join('');
+}
+function renderFill(){
+  const n = S.idx, o = O[n], c = S.cur;
+  el('progT').textContent = `Anchor ${n + 1} of 8`;
+  el('progN').textContent = o.name;
+  el('progI').style.width = ((n) / 8 * 88 + 4) + '%';
+  el('fillErr').hidden = true;
+  const card = el('oCard');
+  card.style.setProperty('--chip-c', o.c); card.style.setProperty('--chip-bg', rgba(n, .2));
+  card.innerHTML = `
+    <div class="ohead"><span class="oico" style="border-color:${o.c};background:${rgba(n,.16)}">${ico(o.ico, o.c, o.f, 34)}</span>
+      <div><div class="eyebrow">Anchor ${n + 1} · ${o.sub}</div><h2>${esc(o.name)}</h2></div></div>
+    <p>${esc(o.about)}</p>
+    <div class="field"><div class="qlabel">How firmly does this anchor hold you right now? ${qh('rate')}</div>
+      <div class="opts" id="rates">${[3,2,1,0].map(k => `<button type="button" class="opt" data-r="${k}" aria-pressed="${c.r[n] === k ? 'true' : 'false'}">${dotsHtml(k, o.c)}<b>${R[k].t}</b><small>${R[k].d}</small></button>`).join('')}</div></div>
+    <div class="field"><div class="qlabel">What holds you from the outside? ${qh('out')}</div>
+      <div class="chips">${chipHtml(n, o.out, c.out[n], 'out')}</div>
+      <div class="own"><input type="text" id="outOwn" maxlength="80" value="${esc(c.outOwn[n])}" placeholder="Your own, in your own words" aria-label="Your own: what holds you from the outside"></div></div>
+    <div class="field"><div class="qlabel">What holds you from the inside? ${qh('inn')}</div>
+      <div class="chips">${chipHtml(n, o.inn, c.inn[n], 'inn')}</div>
+      <div class="own"><input type="text" id="innOwn" maxlength="80" value="${esc(c.innOwn[n])}" placeholder="Your own, in your own words" aria-label="Your own: what holds you from the inside"></div></div>`;
+  el('fBack').textContent = n === 0 ? '← Back to the start' : '← ' + O[n - 1].name;
+  el('fNext').textContent = n === 7 ? 'Next →' : O[n + 1].name + ' →';
+}
+el('oCard').addEventListener('click', e => {
+  const n = S.idx, c = S.cur;
+  const r = e.target.closest('.opt');
+  if (r){ c.r[n] = +r.dataset.r; save(); el('oCard').querySelectorAll('.opt').forEach(b => b.setAttribute('aria-pressed', b === r ? 'true' : 'false')); el('fillErr').hidden = true; return; }
+  const ch = e.target.closest('.chip');
+  if (ch){ const arr = c[ch.dataset.k][n], j = +ch.dataset.j, i = arr.indexOf(j); if (i >= 0) arr.splice(i, 1); else arr.push(j); ch.setAttribute('aria-pressed', i >= 0 ? 'false' : 'true'); save(); }
+});
+el('oCard').addEventListener('input', e => { const n = S.idx; if (e.target.id === 'outOwn') S.cur.outOwn[n] = e.target.value.slice(0, 80); if (e.target.id === 'innOwn') S.cur.innOwn[n] = e.target.value.slice(0, 80); save(); });
+el('fBack').addEventListener('click', () => { if (S.idx === 0){ S.screen = 'start'; save(); renderStart(); show('sStart'); } else goFill(S.idx - 1); });
+el('fNext').addEventListener('click', () => {
+  if (S.cur.r[S.idx] < 0){ const e = el('fillErr'); e.textContent = 'Mark how firmly this anchor holds. “Empty for now” is fine too.'; e.hidden = false; e.scrollIntoView({ block:'center', behavior:'smooth' }); return; }
+  if (S.idx < 7) goFill(S.idx + 1); else goLeaks();
+});
+
+/* ---------- 3. утечки сил ---------- */
+function goLeaks(){ S.screen = 'leaks'; save(); renderLeaks(); show('sLeaks'); }
+function renderLeaks(){
+  el('leakChips').innerHTML = LEAKS.map(([t], j) => `<button type="button" class="chip" data-j="${j}" aria-pressed="${S.cur.leaks.includes(j) ? 'true' : 'false'}">${esc(t)}</button>`).join('');
+  el('leakOwn').value = S.cur.leakOwn || ''; el('leakErr').hidden = true;
+}
+el('leakChips').addEventListener('click', e => {
+  const ch = e.target.closest('.chip'); if (!ch) return;
+  const j = +ch.dataset.j, a = S.cur.leaks, i = a.indexOf(j);
+  if (i >= 0){ a.splice(i, 1); ch.setAttribute('aria-pressed', 'false'); el('leakErr').hidden = true; }
+  else if (a.length >= 3){ const er = el('leakErr'); er.textContent = 'You can mark up to three. Remove one mark to choose another.'; er.hidden = false; }
+  else { a.push(j); ch.setAttribute('aria-pressed', 'true'); }
+  save();
+});
+el('leakOwn').addEventListener('input', () => { S.cur.leakOwn = el('leakOwn').value.slice(0, 80); save(); });
+el('lBack').addEventListener('click', () => goFill(7));
+el('lNext').addEventListener('click', () => goChoose());
+
+/* ---------- 4. первая опора и шаг ---------- */
+function suggestFirst(r){ for (let i = 0; i < 8; i++) if (r[i] >= 0 && r[i] <= 1) return i; for (let i = 0; i < 8; i++) if (r[i] === 2) return i; return -1; }
+function goChoose(){ const c = S.cur; if (c.first < 0) c.first = suggestFirst(c.r); S.screen = 'choose'; save(); renderChoose(); show('sChoose'); }
+function renderChoose(){
+  const c = S.cur, sug = suggestFirst(c.r);
+  el('chooseErr').hidden = true;
+  const why = sug >= 0
+    ? `<p>The map suggests starting with the anchor <b>${q(sug)}</b>. It sits lower than the others that wobble, and everything is held up from below. While a lower step wobbles, your energy goes into holding on, and climbing higher is hard.</p>`
+    : `<p>All eight anchors hold you firmly. That takes a lot of work, and it is a rare picture. Choose the anchor where you want to reach higher.</p>`;
+  el('chooseBlk').innerHTML = `<div class="eyebrow">Where to start</div><h2>Which anchor should you strengthen first? ${qh('first')}</h2>${why}
+    <div class="opts" id="firstOpts">${O.map((o, i) => `<button type="button" class="opt" data-f="${i}" aria-pressed="${c.first === i ? 'true' : 'false'}" style="border-left:5px solid ${o.c}"><b>${esc(o.name)}${i === sug ? ' · suggested by the map' : ''}</b><small>${o.sub} · ${R[c.r[i]] ? R[c.r[i]].t : ''}</small></button>`).join('')}</div>`;
+  renderStep();
+}
+function renderStep(){
+  const c = S.cur, n = c.first, sb = el('stepBlk');
+  if (n < 0){ sb.innerHTML = `<div class="eyebrow">My small step</div><p class="muted">Choose an anchor first, and steps for it will appear here.</p>`; return; }
+  const o = O[n];
+  sb.style.setProperty('--chip-c', o.c);
+  sb.innerHTML = `<div class="eyebrow">My small step for this week</div><h2>One step for the anchor ${q(n)} ${qh('step')}</h2>
+    <div class="opts" id="stepOpts">${o.steps.map((t, j) => `<button type="button" class="opt" data-s="${j}" aria-pressed="${c.step === j ? 'true' : 'false'}"><b>${esc(t)}</b></button>`).join('')}
+      <button type="button" class="opt" data-s="-2" aria-pressed="${c.step === -2 ? 'true' : 'false'}"><b>My own step</b><small>I’ll write it myself</small></button></div>
+    <div class="field" id="stepOwnF" ${c.step === -2 ? '' : 'hidden'}><label for="stepOwn">My step in my own words</label><input type="text" id="stepOwn" maxlength="90" value="${esc(c.stepOwn)}" placeholder="For example, call Mum on Sunday"></div>
+    <div class="field"><div class="qlabel">When will I do it? ${qh('when')}</div>
+      <div class="seg" id="whenSeg" style="grid-template-columns:repeat(2,minmax(0,1fr))">${WHEN.map((w, j) => `<button type="button" data-w="${j}" aria-pressed="${c.when === j ? 'true' : 'false'}">${w}</button>`).join('')}</div></div>`;
+}
+el('chooseBlk').addEventListener('click', e => { const b = e.target.closest('[data-f]'); if (!b) return; const n = +b.dataset.f; if (S.cur.first !== n){ S.cur.first = n; S.cur.step = -1; } save(); renderChoose(); });
+el('stepBlk').addEventListener('click', e => {
+  const b = e.target.closest('[data-s]');
+  if (b){ S.cur.step = +b.dataset.s; save(); renderStep(); if (S.cur.step === -2){ const i = el('stepOwn'); if (i) i.focus(); } return; }
+  const w = e.target.closest('[data-w]');
+  if (w){ S.cur.when = S.cur.when === +w.dataset.w ? -1 : +w.dataset.w; save(); renderStep(); }
+});
+el('stepBlk').addEventListener('input', e => { if (e.target.id === 'stepOwn'){ S.cur.stepOwn = e.target.value.slice(0, 90); save(); } });
+el('cBack').addEventListener('click', () => goLeaks());
+el('cDone').addEventListener('click', () => {
+  const c = S.cur, er = el('chooseErr');
+  if (c.first < 0){ er.textContent = 'Choose the anchor you want to strengthen first.'; er.hidden = false; return; }
+  if (c.step === -1 || (c.step === -2 && !c.stepOwn.trim())){ er.textContent = 'Choose a small step or write your own.'; er.hidden = false; return; }
+  const snap = JSON.parse(JSON.stringify(c)); snap.date = Date.now(); snap.done = false; snap.doneDate = 0;
+  if (S.editing >= 0 && S.maps[S.editing]){ const old = S.maps[S.editing]; snap.date = old.date; snap.done = old.done && stepText(old) === stepText(snap); snap.doneDate = snap.done ? old.doneDate : 0; S.maps[S.editing] = snap; S.view = S.editing; }
+  else { S.maps.push(snap); if (S.maps.length > 24) S.maps.shift(); S.view = S.maps.length - 1; }
+  S.cur = blank(); S.editing = -1; S.idx = 0;
+  S.screen = 'result'; save(); renderResult(); show('sResult');
+});
+
+/* ---------- толкование ---------- */
+const stepText = m => m.step === -2 ? m.stepOwn.trim() : (m.first >= 0 && m.step >= 0 ? O[m.first].steps[m.step] : '');
+const tagsOf = (m, i, k) => m[k][i].map(j => O[i][k][j]).concat(m[k + 'Own'][i] && m[k + 'Own'][i].trim() ? [m[k + 'Own'][i].trim()] : []);
+function counts(m){ let o = 0, n = 0; for (let i = 0; i < 8; i++){ o += tagsOf(m, i, 'out').length; n += tagsOf(m, i, 'inn').length; } return { o, n }; }
+function shape(m){
+  const r = m.r.map(x => Math.max(0, x)), avg = a => a.reduce((s, x) => s + x, 0) / a.length;
+  const low = avg(r.slice(0, 4)), high = avg(r.slice(4)), all = avg(r), n3 = r.filter(x => x === 3).length;
+  if (n3 >= 6 && Math.min(...r) >= 2) return ['A sturdy staircase', 'Almost all anchors hold you firmly. There is a lot of work behind this, and it deserves recognition. Now you have enough strength to reach higher: towards work of your own, contribution and meaning.'];
+  if (all < 1) return ['Not much is holding you right now', 'There are few anchors right now, and you are holding yourself up almost on your own. That makes sense: a move knocks out a lot at once. You do not need to fix everything at once. One lower anchor and one small step, that is enough to begin with.'];
+  if (low >= 2 && high <= low - 0.75) return ['The foundation is there', 'The lower steps are holding. Body, people, voice and order are already in place, and now you can climb higher: work of your own, contribution, meaning. When what you have achieved starts to feel cramped, that is a good sign.'];
+  if (high >= low + 0.75) return ['An upside-down staircase', 'You have skills, experience and meaning, but the base is thin. This often happens to strong people after a move: there is a lot inside, but the ground is not holding yet. Right now it matters more to strengthen the lower steps than to climb higher. Then the upper ones will work at full strength again.'];
+  if (Math.max(...r) - Math.min(...r) <= 1) return ['Everything holds at half strength', 'No anchor has given way, but almost nothing holds firmly either. This is what living on tiredness looks like. One anchor strengthened all the way will give you more than a little everywhere.'];
+  return ['An uneven staircase', 'Firm in some places, wobbly in others. This is a common picture after a move: you brought some anchors with you, and others are appearing here anew. The firm anchors will help strengthen the ones that wobble.'];
+}
+function ioText(m){
+  const { o, n } = counts(m);
+  if (o + n === 0) return 'You did not mark what holds you, outside and inside. This happens when you have very little strength. Try coming back to the map in a few days and marking at least one thing for each anchor.';
+  if (n >= o * 1.5 && n - o >= 3) return 'You have more anchors inside than outside. You are holding yourself up on your own: on your character, skills and faith. That is strength, but also tiredness. It is worth building anchors outside: people, order, a place where you feel good.';
+  if (o >= n * 1.5 && o - n >= 3) return 'You have more anchors outside than inside. Your life is largely in order, but there are fewer inner anchors: what matters to you, what you can lean on within yourself. This is a good time to work on yourself.';
+  return 'Your anchors outside and inside are roughly in balance. That is a good foundation: one supports the other.';
+}
+function portrait(m){
+  const g = k => m.r.map((x, i) => x === k ? i : -1).filter(i => i >= 0).map(q);
+  const s3 = g(3), s2 = g(2), s01 = g(1).concat(g(0));
+  const p = [];
+  if (s3.length) p.push(`${joinRu(s3)} ${s3.length === 1 ? 'holds' : 'hold'} you most firmly right now.`);
+  if (s2.length) p.push(`${s2.length === 1 ? 'Holds, but wobbles' : 'Holding, but wobbling:'} ${joinRu(s2)}.`);
+  if (s01.length) p.push(`${s01.length === 1 ? 'Barely holding or still empty: the anchor' : 'Barely holding or still empty: the anchors'} ${joinRu(s01)}.`);
+  if (m.first >= 0) p.push(`You decided to strengthen the anchor ${q(m.first)} first.`);
+  return p.join(' ');
+}
+
+/* ---------- блоки карты (одни и те же на экране и в PDF) ---------- */
+function ladderHtml(m, prev){
+  return `<div class="ladder">${O.map((o, i) => i).reverse().map(i => {
+    const o = O[i], r = m.r[i], k = Math.max(0, r);
+    const bg = k === 0 ? 'transparent' : rgba(i, [0, .1, .22, .38][k]);
+    const was = prev ? Math.max(0, prev.r[i]) : null;
+    const delta = prev ? (k > was ? ' ↑' : k < was ? ' ↓' : '') : '';
+    return `<div class="lrow${k === 0 ? ' empty' : ''}" style="--i:${i};border-color:${o.c};background:${bg}">
+      <span class="li">${ico(o.ico, o.c, o.f, 26)}</span>
+      <span class="ln">${i + 1} · ${esc(o.name)} <span class="ls">· ${o.sub}</span>${i === m.first ? ' <span class="flag">start here</span>' : ''}<span class="lt" style="color:${o.c}">${R[k].t}${delta}</span></span>
+      <span class="lr">${dotsHtml(k, o.c)}</span></div>`;
+  }).join('')}</div>`;
+}
+function linksHtml(n, country){
+  if (country && country !== 'ch') return '';
+  const head = country ? 'Help with this in Switzerland' : 'If you live in Switzerland, these can help';
+  return `<h3>${head}</h3><div class="links">${O[n].links.map(([t, d, u]) => `<a href="${SVL(u)}" target="_blank" rel="noopener"><b>${esc(t)}</b><span>${esc(d)}</span></a>`).join('')}</div>
+    <p class="note">Free tools and articles on the Svoi ludi in Switzerland website.</p>`;
+}
+function nextHtml(m){
+  const n = m.first, items = [];
+  O[n].prog.forEach(([id, t, d]) => items.push({ t, d, u:VZ('#path'), ready:!!READY[id] }));
+  if (n <= 2) items.push({ t:'The “Steps of Stability” test', d:'A guide to the eight steps and a 20-minute test. It shows which step is creaking and why.', u:VZT('stupeni'), ready:true });
+  else if (n <= 4) items.push({ t:'“Life snapshot”', d:'A review of all areas of your life with me, 3 hours. Which step each area is on and what holds up the rest.', u:VZ('#path'), ready:false });
+  items.push({ t:'Fill in the map again in 4 weeks', d:'Tick off the steps on the notes sheet, then update the map right here. The map will show what has grown stronger.', ready:true, self:true });
+  const seen = new Set();
+  return `<div class="next">${items.filter(x => !seen.has(x.t) && seen.add(x.t)).slice(0, 4).map(x => {
+    const st = x.self ? '' : `<span class="st${x.ready ? '' : ' dev'}">${x.ready ? 'available, you can start' : 'in development · you can send a request'}</span>`;
+    return x.u ? `<a href="${x.u}">${st}<b>${esc(x.t)}</b><span>${esc(x.d)}</span></a>` : `<div>${st}<b>${esc(x.t)}</b><span>${esc(x.d)}</span></div>`;
+  }).join('')}</div>`;
+}
+const INVITE = {
+  title:['I invite you to a 30-minute meeting','Let’s talk about you','The next step — a conversation'],
+  open:['{N}, you are already taking an important step: looking at yourself honestly and gently.','{N}, this map is only the beginning of the journey.','{N}, everything you see now can be turned into support.'],
+  body:['Moving to a new country changes everything: language, habits, roles in the family and even how we see ourselves. In coaching we look for what supports you in the new world and, step by step, put you back together, here.','When the country changes, we change too. Sometimes it feels like losing yourself. I help you find yourself again so that you can live your life here instead of waiting for it.','You have already come a long way. Coaching helps you turn this experience into strength and reinforce the anchors that are wobbling right now.'],
+  cta:['Book a 30-minute introductory meeting online. We will get to know each other, talk through what you want to work on and see how useful I can be to you.','The first meeting is 30 minutes online, to get to know each other, talk through what you want to work on and see how useful I can be to you.']
+};
+const HUMAN = 'The map gives you a picture, but it cannot see the whole of you. In a personal meeting, when we work with your own question and your own goal, the work becomes far more productive and brings real results. A sheet of paper cannot see what a person with professional skills will notice: the pause before an answer, a tone of voice, what you leave unsaid, and what really matters to you. I work in depth, through emotional intelligence, so change happens at a deep level instead of staying a nice plan on paper.';
+let seed = null;
+function inviteHtml(m){
+  if (!seed) seed = [0,1,2,3].map(() => Math.random());
+  const pick = (a, i) => a[Math.floor(seed[i] * a.length)];
+  const N = S.name;
+  const fill = t => { const s = N ? t.replace('{N}', N) : t.replace('{N}, ', ''); return s.charAt(0).toUpperCase() + s.slice(1); };
+  const ua = S.country === 'ua' ? `<p class="note" style="color:#7A6E62">You live in Ukraine. You can also work with me as a psychologist: <a href="https://t.me/IrynaVoznesenska_psy" target="_blank" rel="noopener">t.me/IrynaVoznesenska_psy</a></p>` : '';
+  return `<div class="blk invite"><div class="letter"><div class="eyebrow">Working on yourself</div><h2>${pick(INVITE.title, 0)}</h2>
+    <p class="open">${esc(fill(pick(INVITE.open, 1)))}</p><p>${pick(INVITE.body, 2)}</p><p class="human">${HUMAN}</p><p>${pick(INVITE.cta, 3)}</p>${ua}<p class="sign">Iryna</p></div>
+    <div class="ticket"><div class="facts"><span><b>30</b>minutes</span><span><b>online</b>from home</span><span><b>1:1</b>just us</span></div>
+      <p>To book, send me one word</p><div class="word">“ВСТРЕЧА”</div><p style="font-size:.9rem">and I will suggest a convenient time.</p>
+      <div class="ilinks"><a href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">${ico('telegram','#6E4F3C','#EADFCF',18)} Telegram @IrynaNeuroCoach</a><a href="https://ig.me/m/iryna.voznesenskaya" target="_blank" rel="noopener">${ico('instagram','#6E4F3C','#EADFCF',18)} Instagram @iryna.voznesenskaya</a></div>
+      <p class="legal">In Switzerland I work only as a coach. Coaching is not psychotherapy and does not replace psychological or medical care.</p></div></div>`;
+}
+const EXPERIMENT = 'Treat this week as an experiment. Try the step and observe yourself: what comes easily, where resistance shows up. There is no “it worked” or “it didn’t” here — any result is new knowledge about yourself.';
+const DISC = [
+  'The “Anchor map” is a worksheet for reflection, self-observation and personal growth. It is a template for personal use, not an official document. It is not a psychological or medical diagnosis or a psychotherapeutic assessment, and it does not replace a consultation with a professional.',
+  'The map reflects your personal perception over the last 2–4 weeks and may change.',
+  'Questions of housing, documents, status and money are handled by social services, lawyers and government agencies. Coaching does not replace them.',
+  '<span class="wi"></span>If you are going through a crisis, violence or a threat to your safety, please contact a professional or the emergency services in your country. In Switzerland — 144 (ambulance), 117 (police) and 143 (<a href="https://www.143.ch/" target="_blank" rel="noopener">Die Dargebotene Hand</a>, someone to talk to in difficult moments, round the clock and anonymously).'
+];
+el('disc').innerHTML = '<b>Important</b>' + DISC.map(x => `<p>${x}</p>`).join('');
+
+function buildBlocks(m, pdf){
+  const B = [], N = S.name, prev = S.maps[S.maps.indexOf(m) - 1] || null;
+  const r = m.r.map(x => Math.max(0, x)), n3 = r.filter(x => x === 3).length, cnt = counts(m), sh = shape(m), stp = stepText(m);
+  B.push({ html:`<div class="blk"><div class="hero-top"><div class="stack" style="gap:6px"><div class="eyebrow">Anchor map · ${fmtDate(m.date)}</div><h1>${N ? esc(N) + ', here is your anchor map' : 'Here is your anchor map'}</h1><p class="slogan">What holds you in a new country and what to strengthen first</p></div><span class="av">${AV}</span></div>
+    <p class="portrait">${portrait(m)}</p>
+    <div class="pills"><span class="pill"><b>${n3} of 8</b>anchors hold firmly</span><span class="pill"><b>${cnt.o + cnt.n}</b>anchors you marked outside and inside</span><span class="pill"><b>${esc(O[m.first].name)}</b>to strengthen first</span></div></div>` });
+  B.push({ html:`<div class="blk"><div class="eyebrow">Your staircase of anchors</div><h2>${sh[0]}</h2>${ladderHtml(m, prev)}
+    <div class="legend"><span>${dotsHtml(3,'#6E4F3C')} holds firmly</span><span>${dotsHtml(2,'#6E4F3C')} holds, but wobbles</span><span>${dotsHtml(1,'#6E4F3C')} barely holds</span><span>${dotsHtml(0,'#6E4F3C')} empty for now</span>${prev ? '<span>↑ ↓ — compared with the previous map</span>' : ''}</div>
+    <p>${sh[1]}</p><p class="note">The steps are read from the bottom up: the lower ones hold up the higher ones. A step is not a grade, and the first is no worse than the eighth. A big change pushes you down, and that is not weakness: cracks can be filled with gold.</p></div>` });
+  B.push({ html:`<div class="blk"><div class="eyebrow">Outside and inside</div><h2>You have more anchors than it seems</h2>
+    <div class="io"><div><b>${cnt.o}</b><span>hold you from outside</span></div><div><b>${cnt.n}</b><span>hold you from inside</span></div></div><p>${ioText(m)}</p></div>`, float:true });
+  const strong = O.map((o, i) => i).filter(i => r[i] >= 2), weak = O.map((o, i) => i).filter(i => r[i] <= 1);
+  const ocard = i => { const o = O[i], to = tagsOf(m, i, 'out'), ti = tagsOf(m, i, 'inn');
+    return `<div class="ocard" style="border-color:${o.c}"><div class="oh">${ico(o.ico, o.c, o.f, 24)}<b>${esc(o.name)}<small style="color:${o.c}">${R[r[i]].t}</small></b></div>
+      ${to.length ? `<div class="tags"><span class="tl">outside</span>${to.map(t => `<span>${esc(t)}</span>`).join('')}</div>` : ''}${ti.length ? `<div class="tags"><span class="tl">inside</span>${ti.map(t => `<span>${esc(t)}</span>`).join('')}</div>` : ''}${to.length || ti.length ? '' : '<p class="note">You didn’t mark anything here.</p>'}</div>`; };
+  if (strong.length) B.push({ html:`<div class="blk"><div class="eyebrow">Your words</div><h2>What you already lean on</h2><div class="stack" style="gap:8px">${strong.map(ocard).join('')}</div></div>` });
+  if (weak.length) B.push({ html:`<div class="blk"><div class="eyebrow">Where it wobbles</div><h2>Where an anchor barely holds or is empty for now</h2>
+    <p>Empty is not a verdict. It’s simply a place where an anchor hasn’t been built yet. After a move, some anchors stay back there, and new ones aren’t built straight away.${weak.some(i => tagsOf(m, i, 'out').length + tagsOf(m, i, 'inn').length) ? ' Look at what you did mark here. That’s where you can start.' : ''}</p>
+    <div class="stack" style="gap:8px">${weak.map(ocard).join('')}</div></div>` });
+  const lk = m.leaks.map(j => LEAKS[j]).concat(m.leakOwn && m.leakOwn.trim() ? [[m.leakOwn.trim(), -1]] : []);
+  if (lk.length) B.push({ html:`<div class="blk"><div class="eyebrow">Where your energy drains away</div><h2>What takes your energy</h2><div class="lines">${lk.map(([t, s]) => `<div><span class="lk">${s >= 0 ? ico(O[s].ico, O[s].c, O[s].f, 20) : ico('drop' in ICONS ? 'drop' : 'seed', '#6E4F3C', '#EADFCF', 20)}</span><span><b>${esc(t)}</b>${s >= 0 ? `. This is about the anchor ${q(s)}${s === m.first ? ', the very one you are strengthening first' : ''}.` : '.'}</span></div>`).join('')}</div>
+    <p class="note">Energy drains away where an anchor wobbles. When it gets stronger, the leak gets smaller.</p></div>`, float:true });
+  const f = m.first, of = O[f];
+  B.push({ html:`<div class="blk" style="border-color:${of.c};border-width:1.5px"><div class="eyebrow">Where to start</div><h2>The first anchor — ${q(f)}</h2>
+    <p>${f === suggestFirst(m.r) ? 'You are starting with the lowest anchor that wobbles. Everything holds from the bottom up: when the lower step grows stronger, energy is freed up for all the others.' : suggestFirst(m.r) >= 0 ? `The map suggested starting with the anchor ${q(suggestFirst(m.r))}, because it is lower down. You chose ${q(f)}, and that is your right: you know your life better. Just keep the lower anchor in view.` : 'All your anchors hold, and you’ve chosen where to reach higher. This is a time for growth, not repair.'}</p>
+    <h3>What helps</h3><div class="lines">${of.helps.map(t => `<div><span class="lk">${ico('seed', of.c, of.f, 20)}</span><span>${esc(t)}</span></div>`).join('')}</div>
+    ${of.safety ? `<p class="warnline"><span class="wi"></span>If someone is hurting you, threatening you or controlling your every step, it is not about “learning to say no”. This is violence, and help is available. In Switzerland it is free and confidential: <a href="https://www.opferhilfe-schweiz.ch/" target="_blank" rel="noopener">Opferhilfe</a>, and if you are in danger — the police, 117.</p>` : ''}
+    ${linksHtml(f, S.country)}</div>` });
+  B.push({ html:`<div class="blk" style="background:var(--soft);border:none"><div class="eyebrow">My small step for this week</div><p class="stepbig">${esc(stp)}</p>
+    <p class="muted">${m.when >= 0 ? WHEN[m.when] + ' · ' : ''}5–15 minutes · anchor ${q(f)}</p>
+    ${pdf ? '' : `<div class="noprint stack" style="gap:10px">
+      <label class="check"><input type="checkbox" id="doneChk" ${m.done ? 'checked' : ''}> <span>${m.done ? 'Done on ' + fmtDate(m.doneDate) + ' ✓' : 'I’ve taken this step'}</span></label></div>`}
+    <p class="exp">${EXPERIMENT}</p></div>`, float:true });
+  if (prev) B.push({ html:`<div class="blk"><div class="eyebrow">Before → now</div><h2>What has changed since ${fmtDate(prev.date)}</h2><div class="tblw"><table class="cmp"><thead><tr><th>Anchor</th><th>Before</th><th>Now</th><th></th></tr></thead><tbody>${O.map((o, i) => { const a = Math.max(0, prev.r[i]), b = r[i]; return `<tr><td>${esc(o.name)}</td><td>${R[a].t}</td><td>${R[b].t}</td><td class="ar" style="color:${b > a ? '#4E9A70' : b < a ? '#C25468' : '#7A6E62'}">${b > a ? '↑ stronger' : b < a ? '↓ weaker' : '='}</td></tr>`; }).join('')}</tbody></table></div>
+    <p class="note">${prev.done ? 'The previous small step is done ✓. ' : ''}If an anchor has become weaker, it isn’t a failure. Life changes, and the map simply shows where care is needed now.</p></div>` });
+  B.push({ html:`<div class="blk"><div class="eyebrow">Where next</div><h2>What will help next</h2>${nextHtml(m)}</div>`, float:true });
+  if (!S.country || S.country === 'ch') B.push({ html:`<div class="blk swiss"><div class="eyebrow">${S.country ? 'For life in Switzerland' : 'If you live in Switzerland'}</div><h3>Swiss Guide</h3>
+    <p>My free Telegram bot in Russian. It has answers to practical questions about life in Switzerland: documents and permits, insurance, taxes, school, housing, letters from the municipality and unwritten rules. So that your energy is left for what matters to you.</p>
+    <p><a href="https://t.me/swisscompass_bot" target="_blank" rel="noopener">Open the bot: @swisscompass_bot</a></p></div>`, float:true });
+  B.push({ html:inviteHtml(m) });
+  if (pdf){
+    B.push({ newPage:true, html:`<div class="blk"><div class="eyebrow">Notes sheet · ${N ? esc(N) + ' · ' : ''}${fmtDate(m.date)}</div><h2>My small steps for 4 weeks</h2>
+      <p>The anchor I am strengthening: <b>${q(f)}</b>. Each week one small step of 5–15 minutes. Note by hand what worked and what got in the way.</p>
+      <table class="wtbl"><thead><tr><th style="width:16%">Week and dates</th><th style="width:38%">My step</th><th style="width:10%">Done</th><th>What helped · what got in the way</th></tr></thead><tbody>
+      ${[1,2,3,4].map(w => `<tr><td>Week ${w}</td><td>${w === 1 ? esc(stp) : ''}</td><td><span class="box"></span></td><td></td></tr>`).join('')}</tbody></table>
+      <p class="exp">${EXPERIMENT}</p></div>` });
+    B.push({ html:`<div class="blk"><div class="eyebrow">After 4 weeks</div><h3>How is the anchor ${q(f)} holding now?</h3><p><span class="box"></span> empty for now &nbsp; <span class="box"></span> barely holds &nbsp; <span class="box"></span> holds, but wobbles &nbsp; <span class="box"></span> holds firmly</p>
+      <h3>What has changed over these weeks?</h3><div class="wline"></div><div class="wline"></div>
+      <h3>What is my next small step?</h3><div class="wline"></div><div class="wline"></div>
+      <p class="note">Then update the map on the website and compare it with this one: ${SITE.replace('https://', '')}</p></div>` });
+    B.push({ float:true, html:`<div class="blk"><div class="eyebrow">About the author · Iryna Voznesenskaya</div>
+      <p>ICF coach in Switzerland and psychologist in Ukraine. I help people who are building their life anew in a new country to feel they belong, find their place and gently rebuild their sense of self.</p>
+      <p class="note">Instagram @iryna.voznesenskaya · Telegram channel t.me/IrynaNeuroCoach_channel · voznesenskaya.ch · Created on the voznesenskaya.ch website, “Anchor map” worksheet</p>
+      <div class="disclaimer"><p><b>Important.</b> ${DISC.join(' ')} Privacy policy — voznesenskaya.ch/privacy/, legal notice — voznesenskaya.ch/impressum/.</p></div>
+</div>` });
+  }
+  return B;
+}
+
+/* ---------- 5. экран карты ---------- */
+function curMap(){ return S.maps[S.view >= 0 ? S.view : S.maps.length - 1]; }
+function renderResult(){
+  const m = curMap(); if (!m){ S.screen = 'start'; renderStart(); show('sStart'); return; }
+  el('report').innerHTML = buildBlocks(m, false).map(b => b.html).join('');
+  el('bw').checked = !!S.bw; el('pdfStatus').textContent = '';
+  const dc = el('doneChk'); if (dc) dc.addEventListener('change', () => { m.done = dc.checked; m.doneDate = dc.checked ? Date.now() : 0; save(); renderResult(); if (dc.checked) toast('Marked. Small step done ✓'); });
+  const cb = el('calBox');
+  cb.hidden = m.when < 0;
+  cb.innerHTML = m.when >= 0 ? `<p class="note">You can put the step in your calendar so it doesn’t get lost.</p><div class="row"><a class="btn small ghost" id="gcal" href="${gcalUrl(m)}" target="_blank" rel="noopener">Add to Google Calendar</a><button type="button" class="btn small ghost" id="icsBtn">Calendar file (.ics)</button></div>` : '';
+  const gc = el('gcal'); if (gc) gc.addEventListener('click', () => { if (window.SVLDOC && SVLDOC.ok) SVLDOC.issue('Google Calendar', TOOL); });
+  const ib = el('icsBtn'); if (ib) ib.addEventListener('click', () => { if (window.SVLDOC) SVLDOC.issue('ics', TOOL); saveBlob(new Blob([icsText(m)], { type:'text/calendar' }), 'My small step.ics').catch(() => toast('The calendar file can’t be downloaded here. Tap “Add to Google Calendar”.')); });
+  renderHist(); renderBackup();
+}
+function renderHist(){
+  const h = el('histBlk');
+  const done = S.maps.filter(x => x.done).length;
+  h.innerHTML = `<div class="eyebrow">My maps on this device</div><h3>${S.maps.length} ${plural(S.maps.length, 'map', 'maps', 'maps')} · ${done} ${plural(done, 'step done', 'steps done', 'steps done')}</h3>
+    <div class="hist">${S.maps.map((x, i) => `<button type="button" data-v="${i}" aria-current="${i === S.view ? 'true' : 'false'}"><span>Map from ${fmtDate(x.date)}</span><small>${x.r.filter(v => v === 3).length} of 8 hold firmly · first anchor ${q(x.first)}${x.done ? ' · step done ✓' : ''}</small></button>`).reverse().join('')}</div>
+    <p class="note">Fill in the map once a month. The new map is compared with the previous one: what has grown stronger, what has weakened.</p>`;
+}
+el('histBlk').addEventListener('click', e => { const b = e.target.closest('[data-v]'); if (!b) return; S.view = +b.dataset.v; save(); renderResult(); el('report').scrollIntoView({ behavior:'smooth' }); });
+const plural = (n, a, b, c) => { if (LANG === 'de' || LANG === 'en') return n === 1 ? a : c; const k = n % 10, h = n % 100; return k === 1 && h !== 11 ? a : k >= 2 && k <= 4 && (h < 12 || h > 14) ? b : c; };
+function startAgain(){
+  const last = S.maps[S.maps.length - 1];
+  S.cur = last ? Object.assign(blank(), JSON.parse(JSON.stringify({ r:last.r, out:last.out, inn:last.inn, outOwn:last.outOwn, innOwn:last.innOwn }))) : blank();
+  S.editing = -1; S.idx = 0; save(); goFill(0);
+  if (last) toast('Your previous answers are already filled in. Change what has changed.');
+}
+el('again').addEventListener('click', startAgain);
+el('editMap').addEventListener('click', () => {
+  const m = curMap(); if (!m) return;
+  S.cur = Object.assign(blank(), JSON.parse(JSON.stringify(m))); delete S.cur.date; delete S.cur.done; delete S.cur.doneDate;
+  S.editing = S.maps.indexOf(m); S.idx = 0; save(); goFill(0); toast('You’re editing the map from ' + fmtDate(m.date));
+});
+el('toStart').addEventListener('click', () => { S.screen = 'start'; save(); renderStart(); show('sStart'); });
+
+/* ---------- календарь ---------- */
+function stepDate(m){
+  const d = new Date(m.date); d.setHours(12, 0, 0, 0);
+  if (m.when === 1) d.setDate(d.getDate() + 1);
+  if (m.when === 2){ const k = (6 - d.getDay() + 7) % 7; d.setDate(d.getDate() + k); }
+  if (m.when === 3){ const k = (7 - d.getDay()) % 7; d.setDate(d.getDate() + k); }
+  return d;
+}
+const ymd = d => d.getFullYear() + String(d.getMonth() + 1).padStart(2, '0') + String(d.getDate()).padStart(2, '0');
+function calText(m){ return { title:'🌱 My small step: ' + stepText(m), desc:`Anchor “${O[m.first].name}” (${O[m.first].sub}). A 5–15 minute step.\nAfterwards, mark in the map what worked and write it in the notes sheet.\n\nIryna Voznesenskaya · from the “Anchor map” worksheet: ${SITE}` }; }
+function gcalUrl(m){ const d = stepDate(m), e = new Date(d); e.setDate(e.getDate() + 1); const t = calText(m);
+  return 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + encodeURIComponent(t.title) + '&dates=' + ymd(d) + '/' + ymd(e) + '&details=' + encodeURIComponent(t.desc); }
+function icsText(m){ const d = stepDate(m), e = new Date(d); e.setDate(e.getDate() + 1); const t = calText(m), x = s => s.replace(/([,;\\])/g, '\\$1').replace(/\n/g, '\\n');
+  return ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//voznesenskaya.ch//Karta opor//RU','BEGIN:VEVENT','UID:' + m.date + '@voznesenskaya.ch','DTSTAMP:' + new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z','DTSTART;VALUE=DATE:' + ymd(d),'DTEND;VALUE=DATE:' + ymd(e),'SUMMARY:' + x(t.title),'DESCRIPTION:' + x(t.desc),'URL:' + SITE,'BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:' + x(t.title),'TRIGGER:PT9H','END:VALARM','END:VEVENT','END:VCALENDAR'].join('\r\n'); }
+
+/* ---------- сохранение файлов ---------- */
+async function saveBlob(blob, filename){
+  const url = URL.createObjectURL(blob), a = document.createElement('a');
+  a.href = url; a.download = filename; a.rel = 'noopener'; document.body.appendChild(a); a.click(); setTimeout(() => a.remove(), 1000); setTimeout(() => URL.revokeObjectURL(url), 60000);
+}
+const cleanName = s => s.replace(/[\\/:*?"<>|]+/g, ' ').replace(/\s+/g, ' ').trim();
+
+/* ---------- PDF ---------- */
+const PDF_SCALE = (/iPhone|iPad|Android/i.test(navigator.userAgent) && (navigator.deviceMemory || 4) < 4) ? 2.5 : 3;
+async function buildPdf(m){
+  const stage = el('stage'); stage.innerHTML = '';
+  const blocks = buildBlocks(m, true), pages = [];
+  const docNo = (window.SVLDOC && window.SVLDOC.issue) ? (window.SVLDOC.issue('PDF', TOOL), window.SVLDOC.label(LANG)) : '';
+  const foot = `© ${YEAR} · ${QL}${TOOL}${QR} · Iryna Voznesenskaya · ICF coach (Switzerland) · psychologist (Ukraine) · voznesenskaya.ch`;
+  const newPage = () => { const p = document.createElement('div'); p.className = 'pdf-page'; p.innerHTML = `<div class="strip"></div><div class="pbody"></div><div class="pfoot"><span>${foot}</span><span class="pn"></span></div>`; stage.appendChild(p); pages.push(p); return p.querySelector('.pbody'); };
+  let body = newPage();
+  const mk = b => { const h = document.createElement('div'); h.innerHTML = b.html; return h.firstElementChild; };
+  const over = () => body.scrollHeight > body.clientHeight + 1;
+  const used = new Set();
+  for (let i = 0; i < blocks.length; i++){
+    const b = blocks[i]; if (used.has(i)) continue;
+    if (b.newPage && body.children.length) body = newPage();
+    const node = mk(b); body.appendChild(node);
+    if (over() && body.children.length > 1){
+      node.remove();
+      for (let j = i + 1; j < blocks.length; j++){ if (!blocks[j].float || used.has(j) || blocks[j].newPage) continue; const f = mk(blocks[j]); body.appendChild(f); if (over()) f.remove(); else used.add(j); }
+      body = newPage(); body.appendChild(node);
+    }
+    if (over() && body.children.length === 1){ const k = body.clientHeight / node.scrollHeight; node.style.transformOrigin = 'top left'; node.style.transform = `scale(${k})`; node.style.width = (100 / k) + '%'; }
+  }
+  pages.forEach((p, i) => p.querySelector('.pn').textContent = `${i + 1} / ${pages.length}` + (docNo ? ' · ' + docNo : ''));
+  if (document.fonts && document.fonts.ready) await document.fonts.ready;
+  const { jsPDF } = window.jspdf, pdf = new jsPDF({ unit:'pt', format:'a4', compress:true });
+  for (let i = 0; i < pages.length; i++){
+    const canvas = await html2canvas(pages[i], { scale:PDF_SCALE, backgroundColor:'#FFFFFF', useCORS:true, logging:false });
+    const c = canvas.getContext('2d'), w = canvas.width, h = canvas.height;
+    if (S.bw){ const im = c.getImageData(0, 0, w, h), d = im.data; for (let k = 0; k < d.length; k += 4){ const y = d[k] * .3 + d[k+1] * .59 + d[k+2] * .11; d[k] = d[k+1] = d[k+2] = y; } c.putImageData(im, 0, 0); }
+    const fs = Math.round(Math.max(w, h) * 0.032); c.save(); c.font = '700 ' + fs + 'px Manrope, sans-serif'; c.fillStyle = 'rgba(110,79,60,0.075)'; c.textAlign = 'center'; c.textBaseline = 'middle'; c.translate(w / 2, h / 2); c.rotate(-Math.PI / 7);
+    const sx = fs * 9, sy = fs * 5, RR = Math.hypot(w, h) / 2 + sx; for (let y = -RR, rr = 0; y <= RR; y += sy, rr++) for (let x = -RR + (rr % 2) * sx / 2; x <= RR; x += sx) c.fillText('voznesenskaya.ch', x, y); c.restore();
+    if (i) pdf.addPage();
+    pdf.addImage(canvas.toDataURL('image/jpeg', 0.93), 'JPEG', 0, 0, 595.28, 841.89, undefined, 'FAST');
+    const pr = pages[i].getBoundingClientRect(), k = 595.28 / pr.width;
+    pages[i].querySelectorAll('a[href]').forEach(a => { if (!/^https?:/.test(a.href)) return; const rc = a.getBoundingClientRect(); pdf.link((rc.left - pr.left) * k, (rc.top - pr.top) * k, rc.width * k, rc.height * k, { url:a.href }); });
+  }
+  pdf.setProperties({ title:'Anchor map', author:'Iryna Voznesenskaya · voznesenskaya.ch', subject:'Anchor map · worksheet', creator:'voznesenskaya.ch' });
+  stage.innerHTML = '';
+  return pdf.output('blob');
+}
+el('bw').addEventListener('change', () => { S.bw = el('bw').checked; save(); });
+el('pdfBtn').addEventListener('click', async () => {
+  const st = el('pdfStatus'), b = el('pdfBtn');
+  if (!window.jspdf || !window.html2canvas){ st.textContent = 'The files for the PDF didn’t load. Check your internet connection and reload the page.'; return; }
+  b.disabled = true; st.textContent = 'Putting the PDF together…';
+  try {
+    const m = curMap(), blob = await buildPdf(m);
+    await saveBlob(blob, cleanName(['Anchor map', S.name, fmtDate(m.date)].filter(Boolean).join(' — ')) + '.pdf');
+    st.textContent = 'Done. The PDF has been saved.';
+  } catch(e){ st.textContent = e && e.code === 'declined' ? 'Saving cancelled.' : 'The PDF couldn’t be created. Try again.'; }
+  finally { b.disabled = false; }
+});
+
+/* ---------- резервная копия ---------- */
+function renderBackup(){
+  const b = el('backupBlk'), lb = S.lastBackup, old = S.maps.length && (!lb || Date.now() - lb > 30 * 864e5);
+  b.classList.toggle('old', !!old);
+  b.innerHTML = `<div class="eyebrow">Backup ${qh('backup')}</div><h3>So your maps don’t get lost</h3>
+    <p class="note">${lb ? 'Last backup: ' + fmtDate(lb) + '.' : 'No backup yet.'}${old ? ' Time to save a new one.' : ''} Tip: add this page to your home screen, so it’s easier to come back to your maps.</p>
+    <div class="btns"><button type="button" class="btn small" id="bkSave">Save a backup</button><button type="button" class="btn ghost small" id="bkLoad">Load from a backup</button></div>
+    <input type="file" id="bkFile" accept=".json,application/json" hidden>
+    <div class="confirm" id="bkAsk" hidden></div>`;
+  el('bkSave').onclick = async () => {
+    try { const data = JSON.stringify({ app:'kartaOpor', v:1, saved:new Date().toISOString(), data:S }, null, 1);
+      await saveBlob(new Blob([data], { type:'application/json' }), 'Anchor map — backup ' + fmtDate(Date.now()) + '.json');
+      S.lastBackup = Date.now(); save(); renderBackup(); toast('Backup saved'); } catch(e){ if (!(e && e.code === 'declined')) toast('The backup couldn’t be saved'); }
+  };
+  el('bkLoad').onclick = () => el('bkFile').click();
+  el('bkFile').onchange = () => {
+    const f = el('bkFile').files[0]; if (!f) return; const rd = new FileReader();
+    rd.onload = () => { let x; try { x = JSON.parse(rd.result); } catch(e){ x = null; }
+      const ask = el('bkAsk'); ask.hidden = false;
+      if (!x || x.app !== 'kartaOpor' || !x.data || !Array.isArray(x.data.maps)){ ask.innerHTML = '<p>This is not an “Anchor map” backup. Choose the file you saved here.</p>'; return; }
+      ask.innerHTML = `<p>The backup from ${fmtDate(x.saved)} contains ${x.data.maps.length} ${plural(x.data.maps.length, 'map', 'maps', 'maps')}. Replace everything currently on this device with them?</p><div class="row"><button type="button" class="btn small" id="bkYes">Yes, replace</button><button type="button" class="btn ghost small" id="bkNo">No</button></div>`;
+      el('bkNo').onclick = () => { ask.hidden = true; };
+      el('bkYes').onclick = () => { S = Object.assign({ v:1, country:'', name:'', cur:blank(), idx:0, screen:'start', maps:[], view:-1, bw:false, lastBackup:0, editing:-1 }, x.data); S.view = S.maps.length - 1; S.screen = S.maps.length ? 'result' : 'start'; save(); toast('Maps loaded'); boot(); };
+    };
+    rd.readAsText(f); el('bkFile').value = '';
+  };
+}
+
+/* ---------- удалить ---------- */
+el('delBtn').addEventListener('click', () => { el('delAsk').hidden = false; });
+el('delNo').addEventListener('click', () => { el('delAsk').hidden = true; });
+el('delYes').addEventListener('click', () => { try { localStorage.removeItem(KEY); } catch(e){} S = { v:1, country:'', name:'', cur:blank(), idx:0, screen:'start', maps:[], view:-1, bw:false, lastBackup:0, editing:-1 }; el('delAsk').hidden = true; toast('Answers deleted from this device'); boot(); });
+
+/* ---------- внутри Instagram или Telegram ---------- */
+if (/Instagram|FBAN|FBAV|Telegram|WhatsApp|Line\//i.test(navigator.userAgent)) el('inapp').hidden = false;
+
+/* ---------- веер «Так выглядит готовый файл» ---------- */
+const FAN = [
+  ['Cover and the anchor staircase', 'Your portrait in a few sentences and a staircase of eight anchors, step by step. Where it’s firm, where it wobbles, where it’s empty for now.'],
+  ['Your words', 'How many anchors hold you outside and inside, and what you already lean on, in your own words.'],
+  ['Where to start', 'The first anchor, what helps to strengthen it and where to find support nearby. Then your small step.'],
+  ['Notes sheet for 4 weeks', 'A table for writing down small steps by hand, and questions to see what has changed after a month.']
+];
+const FAN_PAGES = 6;
+(function fan(){
+  const box = el('fan'); const n = FAN.length; let cur = 0, timer = null, touched = false;
+  const src = i => '/karta-opor/preview/' + (LANG === 'ru' ? '' : LANG + '/') + (i + 1) + '.jpg';
+  box.innerHTML = `<div class="eyebrow">This is what the finished file looks like</div><div class="stage" id="fanStage"><span class="badge">${FAN_PAGES} PDF pages</span>${FAN.map((f, i) => `<div class="pg" data-i="${i}" role="button" tabindex="-1" aria-label="${f[0]}"><img src="${src(i)}" alt="${f[0]}" loading="lazy"></div>`).join('')}</div>
+    <div class="cap" id="fanCap"></div><div class="ctr"><button type="button" id="fanPrev" aria-label="Previous page">←</button><span class="dots2" id="fanDots">${FAN.map(() => '<i></i>').join('')}</span><button type="button" id="fanNext" aria-label="Next page">→</button></div>`;
+  const pgs = [...box.querySelectorAll('.pg')];
+  pgs[0].querySelector('img').addEventListener('error', () => { box.hidden = true; });
+  function lay(){
+    pgs.forEach((p, i) => { let d = i - cur; if (d > n / 2) d -= n; if (d < -n / 2) d += n;
+      const a = Math.abs(d); p.style.zIndex = 10 - a; p.style.opacity = a > 1 ? 0 : 1; p.tabIndex = d === 0 ? 0 : -1;
+      p.style.transform = `translateX(-50%) translateX(${d * 22}%) rotate(${d * 7}deg) scale(${d === 0 ? 1 : .9})`; });
+    el('fanCap').innerHTML = `<b>${FAN[cur][0]}</b><span>${FAN[cur][1]}</span>`;
+    el('fanDots').querySelectorAll('i').forEach((d, i) => d.classList.toggle('on', i === cur));
+  }
+  const go = k => { cur = (k + n) % n; lay(); };
+  el('fanPrev').onclick = () => { touched = true; go(cur - 1); }; el('fanNext').onclick = () => { touched = true; go(cur + 1); };
+  pgs.forEach((p, i) => p.addEventListener('click', () => { touched = true; if (i === cur) openLight(src(i), FAN[i][0]); else go(i); }));
+  let x0 = null; const st = el('fanStage');
+  st.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive:true });
+  st.addEventListener('touchend', e => { if (x0 == null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40){ touched = true; go(cur + (dx < 0 ? 1 : -1)); } x0 = null; });
+  lay();
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) timer = setInterval(() => { if (!touched && !document.hidden && !el('sStart').hidden) go(cur + 1); }, 4200);
+})();
+function openLight(src, alt){ closeLight(); const d = document.createElement('div'); d.className = 'lightbox'; d.id = 'light'; d.innerHTML = `<img src="${src}" alt="${esc(alt)}"><button type="button" aria-label="Close">✕</button>`; d.addEventListener('click', closeLight); document.body.appendChild(d); }
+function closeLight(){ const d = el('light'); if (d) d.remove(); }
+
+/* ---------- старт ---------- */
+function boot(){
+  if (S.screen === 'result' && S.maps.length){ renderResult(); show('sResult'); }
+  else if (S.screen === 'fill'){ renderFill(); show('sFill'); }
+  else if (S.screen === 'leaks'){ renderLeaks(); show('sLeaks'); }
+  else if (S.screen === 'choose'){ renderChoose(); show('sChoose'); }
+  else { renderStart(); show('sStart'); }
+}
+boot();
+</script>
+<script src="/assets/share.en.js" defer></script>
+<script src="/assets/samesite.js"></script>
+<!--i18n--><style>#langbar.langbar{position:fixed;bottom:14px;right:14px;left:auto;top:auto;width:auto;max-width:none;margin:0;z-index:60;display:flex;gap:2px;background:rgba(255,255,255,.92);border:1px solid rgba(0,0,0,.08);border-radius:999px;padding:3px;font:600 12px Manrope,system-ui,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,.08)}#langbar.langbar a{color:#5d554d;padding:5px 9px;border-radius:999px;text-decoration:none;font:inherit;display:inline-block;width:auto}#langbar.langbar a[aria-current="true"]{background:#2f2924;color:#fff}@media print{.langbar{display:none!important}}</style><div class="langbar" id="langbar" role="navigation" aria-label="Language"><a href="/karta-opor/" hreflang="ru" data-lang="ru">RU</a><a href="/uk/karta-opor/" hreflang="uk" data-lang="uk">UA</a><a href="/de/karta-opor/" hreflang="de" data-lang="de">DE</a><a href="/en/karta-opor/" hreflang="en" data-lang="en" aria-current="true">EN</a></div><script>(function(){var b=document.getElementById('langbar');if(!b)return;b.addEventListener('click',function(e){var a=e.target.closest('a[data-lang]');if(a)try{localStorage.setItem('irinaTestsLang',a.dataset.lang)}catch(x){}});})();</script><!--i18n--></body>
+</html>
