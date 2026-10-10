@@ -9,6 +9,7 @@
 | `index.html`, `put/index.html` | `uk/`, `de/`, `en/` (+ `…/put/`), `assets/share.{lang}.js`, `assets/reviews.{lang}.js` | `_i18n/pages.py`, память `tm_main.json` |
 | `{тест}/ru.js` (testy, kompas, roza-lyubvi, stupeni, blizost, privacy, impressum) | `{тест}/uk.js`, `de.js`, `en.js` | `_i18n/tests.py`, память `tm_tests.json` |
 | `og-image.jpg`, `put/og-image.jpg` (превью ссылок, тоже собираются скриптом) | `….{uk,de,en}.jpg` | `node _i18n/og.js`, в страницы ставит `pages.py` |
+| `{тест}/og-image.jpg` (превью ссылки теста, одно на все языки) | — | `node _i18n/og_tests.js [тест]`, веер из `{тест}/preview/1–3.jpg` |
 | `404.html` | там же, тексты в скрипте внизу | вручную |
 | `{тест}/preview/1–6.jpg` | `{тест}/preview/{uk,de,en}/1–6.jpg` | вручную (см. ниже) |
 
