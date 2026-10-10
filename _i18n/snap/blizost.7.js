@@ -164,6 +164,8 @@ async function buildPdf(getBlocks = buildBlocks, foot = null){
   const stage = el('stage'); stage.innerHTML = '';
   window.__PDF = true; let blocks; try { blocks = getBlocks(); } finally { window.__PDF = false; }
   const footText = foot || footerLine();
+  /* номер файла для «Реестра документов»: галочка перед скачиванием, assets/skachivanie.js (10.10.2026) */
+  const docNo = (window.SVLDOC && window.SVLDOC.issue) ? (window.SVLDOC.issue('PDF', TEST_META.id + (foot ? ' · бланк' : ' · разбор')), window.SVLDOC.label(PAGE_LANG)) : '';
   const pages = [];
   const newPage = () => {
     const p = document.createElement('div'); p.className = 'pdf-page';
@@ -195,7 +197,7 @@ async function buildPdf(getBlocks = buildBlocks, foot = null){
       node.style.transformOrigin = 'top left'; node.style.transform = `scale(${k})`; node.style.width = (100 / k) + '%';
     }
   }
-  pages.forEach((p, i) => p.querySelector('.pn').textContent = `${i+1} / ${pages.length}`);
+  pages.forEach((p, i) => p.querySelector('.pn').textContent = `${i+1} / ${pages.length}` + (docNo ? ' · ' + docNo : ''));
   if (document.fonts && document.fonts.ready) await document.fonts.ready;
   const { jsPDF } = window.jspdf;
   const pdf = new jsPDF({ unit:'pt', format:'a4', compress:true });
