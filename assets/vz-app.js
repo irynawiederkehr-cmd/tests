@@ -14,7 +14,7 @@
       shareText: 'Ирина Вознесенская — коуч для тех, кто переехал. Тесты, «Твой путь в новой стране» и работа с ней. Можно установить как приложение на телефон.',
       title: 'Сайт Ирины — как приложение на телефоне', lead: 'Иконка на экране «Домой», сайт открывается во весь экран, с вкладками внизу. Без App Store и без регистрации.',
       help: 'Это тот же сайт, только открывается с иконки, как приложение. Ничего не скачивается из App Store или Google Play, места на телефоне почти не занимает. Удалить можно как обычную иконку.',
-      install: 'Установить приложение', later: 'Не сейчас', foot: '📱 Установить как приложение',
+      install: 'Установить приложение', later: 'Не сейчас', foot: '📱 Установить как приложение', btn: 'Установить приложение на телефон',
       ios: ['Нажми «Поделиться» <span class="pa-ico">⬆︎</span> внизу экрана (на iPad — вверху справа).', 'Прокрути вниз и выбери «На экран „Домой“».', 'Нажми «Добавить». Иконка появится на экране.'],
       android: ['Открой меню браузера ⋮ вверху справа.', 'Выбери «Установить приложение» или «Добавить на главный экран».', 'Подтверди. Иконка появится на экране.'],
       inapp: '<b>Сейчас страница открыта внутри Instagram, Telegram или другого приложения.</b> Отсюда установить нельзя. Нажми ⋯ или значок вверху и выбери «Открыть в браузере» (Safari или Chrome), а там — «Установить приложение».',
@@ -24,7 +24,7 @@
       shareText: 'Ірина Вознесенська — коуч для тих, хто переїхав. Тести, «Твій шлях у новій країні» та робота з нею. Можна встановити як застосунок на телефон.',
       title: 'Сайт Ірини — як застосунок на телефоні', lead: 'Іконка на екрані «Додому», сайт відкривається на весь екран, з вкладками внизу. Без App Store і без реєстрації.',
       help: 'Це той самий сайт, тільки відкривається з іконки, як застосунок. Нічого не завантажується з App Store чи Google Play, місця на телефоні майже не займає. Видалити можна як звичайну іконку.',
-      install: 'Встановити застосунок', later: 'Не зараз', foot: '📱 Встановити як застосунок',
+      install: 'Встановити застосунок', later: 'Не зараз', foot: '📱 Встановити як застосунок', btn: 'Встановити застосунок на телефон',
       ios: ['Натисни «Поділитися» <span class="pa-ico">⬆︎</span> внизу екрана (на iPad — угорі праворуч).', 'Прокрути вниз і вибери «На екран „Додому“».', 'Натисни «Додати». Іконка з’явиться на екрані.'],
       android: ['Відкрий меню браузера ⋮ угорі праворуч.', 'Вибери «Встановити застосунок» або «Додати на головний екран».', 'Підтверди. Іконка з’явиться на екрані.'],
       inapp: '<b>Зараз сторінка відкрита всередині Instagram, Telegram чи іншого застосунку.</b> Звідси встановити не можна. Натисни ⋯ або значок угорі й вибери «Відкрити в браузері» (Safari чи Chrome), а там — «Встановити застосунок».',
@@ -34,7 +34,7 @@
       shareText: 'Iryna Voznesenskaya — Coach für alle, die umgezogen sind. Tests, «Dein Weg im neuen Land» und Arbeit mit ihr. Lässt sich als App aufs Handy installieren.',
       title: 'Irynas Website — als App auf dem Handy', lead: 'Ein Symbol auf dem Home-Bildschirm, die Seite öffnet im Vollbild, mit Tabs unten. Ohne App Store und ohne Anmeldung.',
       help: 'Es ist dieselbe Website, sie öffnet sich nur über das Symbol wie eine App. Nichts wird aus dem App Store oder Google Play geladen, sie braucht kaum Speicher. Entfernen wie jedes andere Symbol.',
-      install: 'App installieren', later: 'Nicht jetzt', foot: '📱 Als App installieren',
+      install: 'App installieren', later: 'Nicht jetzt', foot: '📱 Als App installieren', btn: 'App aufs Handy installieren',
       ios: ['Tippe auf «Teilen» <span class="pa-ico">⬆︎</span> unten (auf dem iPad oben rechts).', 'Scrolle nach unten und wähle «Zum Home-Bildschirm».', 'Tippe auf «Hinzufügen». Das Symbol erscheint auf dem Bildschirm.'],
       android: ['Öffne das Browsermenü ⋮ oben rechts.', 'Wähle «App installieren» oder «Zum Startbildschirm hinzufügen».', 'Bestätige. Das Symbol erscheint auf dem Bildschirm.'],
       inapp: '<b>Die Seite ist gerade in Instagram, Telegram oder einer anderen App geöffnet.</b> Von hier aus lässt sie sich nicht installieren. Tippe auf ⋯ oder das Symbol oben und wähle «Im Browser öffnen» (Safari oder Chrome), dort dann «App installieren».',
@@ -44,7 +44,7 @@
       shareText: 'Iryna Voznesenskaya — a coach for people who have moved abroad. Tests, “Your path in a new country” and working with her. You can install it as an app on your phone.',
       title: 'Iryna’s website — as an app on your phone', lead: 'An icon on your home screen, the site opens full screen with tabs at the bottom. No App Store, no sign-up.',
       help: 'It is the same website, it just opens from an icon like an app. Nothing is downloaded from the App Store or Google Play and it takes almost no space. Remove it like any other icon.',
-      install: 'Install the app', later: 'Not now', foot: '📱 Install as an app',
+      install: 'Install the app', later: 'Not now', foot: '📱 Install as an app', btn: 'Install the app on your phone',
       ios: ['Tap “Share” <span class="pa-ico">⬆︎</span> at the bottom of the screen (on iPad, top right).', 'Scroll down and choose “Add to Home Screen”.', 'Tap “Add”. The icon appears on your screen.'],
       android: ['Open the browser menu ⋮ at the top right.', 'Choose “Install app” or “Add to Home screen”.', 'Confirm. The icon appears on your screen.'],
       inapp: '<b>This page is open inside Instagram, Telegram or another app.</b> It cannot be installed from here. Tap ⋯ or the icon at the top, choose “Open in browser” (Safari or Chrome) and then “Install app”.',
@@ -107,7 +107,14 @@
     '.pa-go{border:0;border-radius:12px;padding:11px 20px;background:var(--brown,#6E4F3C);color:var(--paper,#FFFCF8);font:700 .95rem Manrope,system-ui,sans-serif;cursor:pointer}',
     '.pa-later{border:0;background:none;color:var(--muted,#7A6E62);font:600 .9rem Manrope,system-ui,sans-serif;text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:10px 6px}',
     '.pa-foot{display:inline-block;margin:10px 0;border:1.5px solid var(--brown,#6E4F3C);color:var(--brown,#6E4F3C);background:none;border-radius:12px;padding:9px 16px;font:700 .9rem Manrope,system-ui,sans-serif;cursor:pointer}',
-    '@media print{.pa-tabs,.pa-card,.pa-back,.pa-foot{display:none!important}}'
+    /* кнопка «Установить приложение» под верхним меню — как на svoiludi.ch, в коричневом цвете (10.10.2026) */
+    '.pa-ibtn{order:4;flex:1 0 100%;display:flex;align-items:center;justify-content:center;gap:9px;min-height:46px;margin:0 0 12px;padding:8px 14px;border-radius:12px;border:1.5px solid var(--brown,#6E4F3C);background:color-mix(in srgb,var(--brown,#6E4F3C) 9%,var(--paper,#FFFCF8));color:var(--ink,#2F2924);font:700 .9rem/1.2 Manrope,system-ui,sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;box-sizing:border-box}',
+    '.pa-ibtn svg{width:22px;height:22px;flex:none;fill:none;stroke:var(--brown,#6E4F3C);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}',
+    '.pa-ibtn:active{transform:scale(.98)}',
+    '@media (min-width:1101px){.pa-ibtn{order:1;flex:0 0 auto;min-height:0;margin:0;padding:7px 12px;font-size:.84rem}.pa-ibtn svg{width:18px;height:18px}}',
+    '@media (min-width:1360px){.pa-ibtn{padding:7px 9px}.pa-ibtn span{display:none}}',
+    'html.pa-app .pa-ibtn{display:none!important}',
+    '@media print{.pa-tabs,.pa-card,.pa-back,.pa-foot,.pa-ibtn{display:none!important}}'
   ].join('\n');
   document.head.appendChild(css);
 
@@ -175,8 +182,8 @@
   }
 
   var deferred = null;
-  window.addEventListener('beforeinstallprompt', function (e) { e.preventDefault(); deferred = e; });
-  window.addEventListener('appinstalled', function () { var c = document.querySelector('.pa-card'); if (c) c.remove(); });
+  window.addEventListener('beforeinstallprompt', function (e) { e.preventDefault(); deferred = e; if (document.readyState === 'complete') installBtn(); });
+  window.addEventListener('appinstalled', function () { var c = document.querySelector('.pa-card'); if (c) c.remove(); var ib = document.querySelector('.pa-ibtn'); if (ib) ib.remove(); });
   function later(set) {
     try {
       if (set) localStorage.setItem('vz-app-later', String(Date.now()));
@@ -206,6 +213,19 @@
     b.addEventListener('click', function () { card(force); });
     var box = document.createElement('div'); box.appendChild(b); f.insertBefore(box, f.firstChild);
   }
+  /* кнопка «Установить приложение на телефон» под верхним меню (10.10.2026, как на svoiludi.ch): Android и компьютер с Chrome — окно установки,
+     iPhone и iPad — подсказка с шагами, Instagram и Telegram — «открой в браузере». В приложении кнопки нет. */
+  function installBtn() {
+    if (STANDALONE || document.querySelector('.pa-ibtn')) return;
+    var page = document.querySelector('header.top .page'); if (!page) return;
+    var t = D[lang()].btn;
+    var b = el('<button type="button" class="pa-ibtn" title="' + t + '" aria-label="' + t + '"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M12 7.5v7M9.2 11.8 12 14.6l2.8-2.8M10.5 18.5h3"/></svg><span>' + t + '</span></button>');
+    b.addEventListener('click', function () {
+      if (deferred && !INAPP) { deferred.prompt(); deferred.userChoice.then(function (r) { deferred = null; if (r && r.outcome === 'accepted') b.remove(); }); return; }
+      card(force);
+    });
+    page.appendChild(b);
+  }
   function manifest() {   /* манифест на языке страницы */
     var l = lang(), m = document.querySelector('link[rel="manifest"]');
     if (m && l !== 'ru') m.href = '/site.' + l + '.webmanifest';
@@ -216,7 +236,9 @@
   function start() {
     manifest();
     if (STANDALONE) { tabBar(); return; }
+    if (deferred) installBtn();
     if (!(TOUCH || force)) return;
+    installBtn();
     footerLink();
     if (force) { setTimeout(function () { card(force); }, 300); return; }
     if (later()) return;
