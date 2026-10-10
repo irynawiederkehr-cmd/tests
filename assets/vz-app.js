@@ -3,7 +3,10 @@
    2) Открыто с иконки на экране «Домой» — внизу вкладки: Главная · Твой путь · Тесты · Знакомство · Ещё.
    3) Открыто в браузере телефона или планшета — подсказка «Установить как приложение».
    Язык: <html lang> (ru, uk, de, en). Проверка: ?app=1, ?install=ios|android|inapp.
-   Личные данные не собираются; в localStorage только отметка «Не сейчас» (vz-app-later). */
+   4) При первом заходе — вопрос «Якою мовою тобі комфортно? · На каком языке тебе комфортно?» и кнопки
+      «Українською · По-русски · Deutsch · English» (10.10.2026, просьба Ирины, так же, как на svoiludi.ch). Выбор запоминается
+      (irinaTestsLang — общий ключ сайта и тестов), больше не спрашиваем. Подсказка об установке ждёт выбора. Проверка: ?lang=ask.
+   Личные данные не собираются; в localStorage только отметка «Не сейчас» (vz-app-later) и выбранный язык (irinaTestsLang). */
 (function () {
   if (window.__vzApp) return; window.__vzApp = true;
   var Q = location.search;
@@ -114,6 +117,14 @@
     '@media (min-width:1101px){.pa-ibtn{order:1;flex:0 0 auto;min-height:0;margin:0;padding:7px 12px;font-size:.84rem}.pa-ibtn svg{width:18px;height:18px}}',
     '@media (min-width:1360px){.pa-ibtn{padding:7px 9px}.pa-ibtn span{display:none}}',
     'html.pa-app .pa-ibtn{display:none!important}',
+    /* вопрос о языке при первом заходе (10.10.2026): только вопрос и кнопки, как кнопка установки — светло-коричневые с рамкой */
+    '.pa-lang{padding:18px 16px 16px}',
+    '.pa-lang h3{font:400 1.3rem/1.3 Forum,Georgia,serif;margin:0;text-align:center}',
+    '.pa-lang h3 span{display:block}',
+    '.pa-lbtns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}',
+    '.pa-lbtns button{min-height:48px;padding:10px 12px;border-radius:12px;border:1.5px solid var(--brown,#6E4F3C);background:color-mix(in srgb,var(--brown,#6E4F3C) 9%,var(--paper,#FFFCF8));color:var(--ink,#2F2924);font:700 1rem/1.2 Manrope,system-ui,sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent}',
+    '.pa-lbtns button:active{transform:scale(.98)}',
+    '@media (max-width:1100px){html.pa-app .pa-lang{bottom:calc(84px + env(safe-area-inset-bottom))}}',
     '@media print{.pa-tabs,.pa-card,.pa-back,.pa-foot,.pa-ibtn{display:none!important}}'
   ].join('\n');
   document.head.appendChild(css);
@@ -233,14 +244,52 @@
     if (t) t.content = { ru: 'Ирина', uk: 'Ірина', de: 'Iryna', en: 'Iryna' }[l];
   }
 
+  /* вопрос о языке при первом заходе (10.10.2026). Спрашиваем один раз: выбор хранится в irinaTestsLang.
+     Не спрашиваем: если язык уже выбран (кнопками языка, во вкладке «Ещё», ссылкой с #lang= или здесь), у роботов и снимков сайта,
+     на страницах без других языков (нет переключателя). ?lang=ask — показать для проверки. */
+  var LKEY = 'irinaTestsLang';
+  function langAsk(after) {
+    var ask = /[?&]lang=ask/.test(Q);
+    if (!document.querySelector('#langbar, .langbar') && !ask) return false;
+    if (!ask) {
+      if (navigator.webdriver) return false;
+      try { if (localStorage.getItem(LKEY)) return false; } catch (e) { return false; }
+    }
+    var cur = lang();
+    var c = el('<aside class="pa-card pa-lang" role="dialog" aria-label="Мова · Язык · Sprache · Language">' +
+      '<h3><span lang="uk">Якою мовою тобі комфортно?</span><span lang="ru">На каком языке тебе комфортно?</span></h3>' +
+      '<div class="pa-lbtns"><button type="button" data-l="uk" lang="uk">Українською</button><button type="button" data-l="ru" lang="ru">По-русски</button>' +
+      '<button type="button" data-l="de" lang="de">Deutsch</button><button type="button" data-l="en" lang="en">English</button></div></aside>');
+    function done() { c.remove(); document.removeEventListener('keydown', esc); if (after) after(); }
+    function esc(e) { if (e.key === 'Escape') { try { localStorage.setItem(LKEY, cur); } catch (x) {} done(); } }
+    c.addEventListener('click', function (e) {
+      var bt = e.target.closest('[data-l]'); if (!bt) return;
+      var l = bt.dataset.l;
+      try { localStorage.setItem(LKEY, l); } catch (x) {}
+      if (l === cur) return done();
+      var path = location.pathname.replace(/^\/(uk|de|en)(?=\/)/, '');
+      var q = Q.replace(/[?&]lang=ask/, '').replace(/^&/, '?');
+      if (TEST || /^\/(privacy|impressum)\//.test(path)) { location.href = path + q + '#lang=' + l; location.reload(); return; }
+      var a = document.querySelector('#langbar a[data-lang="' + l + '"]');
+      location.href = (a ? a.getAttribute('href') : pre(l) + path).split('#')[0] + q + location.hash;
+    });
+    document.addEventListener('keydown', esc);
+    setTimeout(function () { document.body.appendChild(c); }, 400);
+    return true;
+  }
+
   function start() {
     manifest();
-    if (STANDALONE) { tabBar(); return; }
+    if (STANDALONE) { tabBar(); langAsk(); return; }
     if (deferred) installBtn();
-    if (!(TOUCH || force)) return;
+    if (!(TOUCH || force)) { langAsk(); return; }
     installBtn();
     footerLink();
     if (force) { setTimeout(function () { card(force); }, 300); return; }
+    if (langAsk(hintLater)) return;   // сначала язык, подсказка об установке — после выбора
+    hintLater();
+  }
+  function hintLater() {
     if (later()) return;
     var shown = false;
     function show() { if (shown) return; shown = true; window.removeEventListener('scroll', onScroll); card(); }
