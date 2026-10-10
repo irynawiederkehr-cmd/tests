@@ -11,7 +11,10 @@
 <meta property="og:title" content="Договір про коучинг: заповнити й підписати онлайн"><meta property="og:description" content="Без паперу і сканів: обери програму, впиши свої дані, перевір договір і підпиши його однією кнопкою. Копія прийде на e-mail.">
 <meta property="og:url" content="https://voznesenskaya.ch/uk/dogovor/"><meta property="og:image" content="https://voznesenskaya.ch/dogovor/og-image.uk.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="robots" content="index,follow">
+<meta name="robots" content="noindex,nofollow">
+<!-- Договор скрыт и дорабатывается (решение Ирины 10.10.2026, 20:31): без ?preview=1 в адресе видна только заметка #sSoon, форма и договор скрыты -->
+<script>if(!/preview/.test(location.search+location.hash))document.documentElement.classList.add('soon');</script>
+<style>html.soon #sIntro,html.soon #sForm,html.soon #sReview{display:none!important}html:not(.soon) #sSoon{display:none!important}</style>
 <link rel="stylesheet" href="/assets/fonts.css">
 <style>
    Цвета и шрифты — система voznesenskaya.ch (коучинг, бежевый); цвета восьми ступеней — палитра тестов. */
@@ -211,6 +214,19 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 </header>
 
 <div class="wrap" id="app">
+
+  <!-- 0. Пока договор дорабатывается -->
+  <section class="stack" id="sSoon" style="gap:22px">
+    <div class="greet"><span class="av" data-avatar></span><div><b>Вітаю! Я Ірина Вознесенська</b><p class="note">Коуч ICF, працюю онлайн російською. <a href="/uk/#who">Детальніше про мене →</a></p></div></div>
+    <div class="stack" style="gap:10px">
+      <div class="eyebrow">Коучинг · договір онлайн</div>
+      <h1>Договір про коучинг</h1>
+    </div>
+    <div class="soft">
+      <p><b>Договір онлайн скоро з’явиться тут.</b> Зараз я його доопрацьовую. Поки що ми домовляємося в листуванні: напиши мені в Telegram слово <span class="codeword">ВСТРЕЧА</span>. Ми познайомимося, оберемо програму й час, і я підтверджу все письмово.</p>
+      <div class="row"><a class="btn green small" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">Написати «ВСТРЕЧА» в Telegram</a><a class="btn ghost small" href="/usloviya/#lang=uk">Умови роботи зі мною</a></div>
+    </div>
+  </section>
 
   <!-- 1. Вступление -->
   <section class="stack" id="sIntro" style="gap:22px">
