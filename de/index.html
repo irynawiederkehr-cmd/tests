@@ -1326,6 +1326,9 @@ function pathInit(){
     const n = e.target.closest('.pd-nx[data-p]'); if (n){ open(n.dataset.p); return; }
     if (e.target === pm || e.target.closest('[data-pclose]')) { typeof pm.close === 'function' ? pm.close() : pm.removeAttribute('open'); }
   });
+  /* ссылка прямо на программу: voznesenskaya.ch/#p-snimok открывает её окно (10.10.2026, для ссылок со страницы «Твой путь») */
+  const fromHash = () => { const m = /^#p-([a-z0-9]+)$/.exec(location.hash); if (m && PR[m[1]]) { const sec = document.getElementById('path'); if (sec) sec.scrollIntoView(); open(m[1]); } };
+  fromHash(); addEventListener('hashchange', fromHash);
 }
 pathInit();
 </script><script src="/assets/share.de.js" defer></script>
