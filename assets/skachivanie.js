@@ -17,8 +17,9 @@
    (тесты: разбор и бланк — два файла на одно нажатие); window.SVL_VIP — подписка без знаков (номер на листе не печатается). */
 (function(){
   if (window.SVLDOC) return;
-  /* адрес веб-приложения Google Apps Script «Реестр документов». Пока пусто — записи копятся в браузере и уйдут, когда адрес появится. */
-  var ENDPOINT = '';
+  /* адрес веб-приложения Google Apps Script «Реестр документов» (развёрнут 10.10.2026 в аккаунте iryna.wiederkehr@gmail.com,
+     проект «Реестр документов — скрипт (svoiludi.ch и voznesenskaya.ch)»). Если пусто — записи копятся в браузере и уйдут, когда адрес появится. */
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbzmMcqH9FfHLSUSv7pb0OIBrYJ-P3hgLX9--BUXMS1XWfZItCty4nqTBhnGCbws6z4EvA/exec';
   var VZ = /voznesenskaya/.test(location.hostname) || window.SVLDOC_SITE === 'vz' || (!/svoiludi/.test(location.hostname) && !!window.__runBundle);
   var SITE = VZ ? 'voznesenskaya.ch' : 'svoiludi.ch', PRE = VZ ? 'VZ' : 'SL', VER = VZ ? 'T1' : 'G1';
   var SEL = '#pdf,#pdf2,#png,#share,#ics,#dlPdf,#dlPng,#dlCli,#dlMine,#dlYear,#dlXlsx,#calIcs,[data-png],[data-dl],a[href*="calendar.google.com/calendar"],#pdfBtn,#wsBtn'
