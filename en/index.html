@@ -262,6 +262,9 @@ footer a{color:var(--muted)}
 /* ---------- полоса-ссылка на страницу «Путь» ---------- */
 .pathband{margin-top:40px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;text-decoration:none;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:22px;padding:20px 24px;transition:border-color .15s}
 .pathband:hover{border-color:var(--brown)}
+.pb-bowl{flex:none;display:block;width:66px}.pb-bowl img{display:block;width:66px;height:auto;mix-blend-mode:multiply}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .pb-bowl img{mix-blend-mode:normal;border-radius:10px}}
+:root[data-theme="dark"] .pb-bowl img{mix-blend-mode:normal;border-radius:10px}
 .pb-txt{flex:1 1 300px;display:flex;flex-direction:column;gap:4px;min-width:0}
 .pb-txt b{font-family:var(--display);font-weight:400;font-size:1.5rem;line-height:1.15}
 .pb-txt span{font-size:.92rem;color:var(--muted)}
@@ -698,8 +701,8 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
 
   <!-- ССЫЛКА НА СТРАНИЦУ «ТВОЙ ПУТЬ» -->
   <a class="pathband" href="https://voznesenskaya.ch/en/put/" target="_blank" rel="noopener">
-    <span class="ic" data-ico="path" data-c="#6E4F3C"></span>
-    <span class="pb-txt"><b>Your path in a new country</b><span>Eight stops, from the ground under your feet to the sky above your home. See what you face at each of them and what will help you keep going.</span></span>
+    <picture class="pb-bowl"><source srcset="/put/img/07-zolotye-shvy.webp" type="image/webp"><img src="/put/img/07-zolotye-shvy.jpg" alt="A bowl mended with gold" width="66" height="88" loading="lazy"></picture>
+    <span class="pb-txt"><b>Steps. Your path in a new country</b><span>Eight steps, from the broken bowl to a life in which here and there become one life. See what you face on each of them and what will help you keep going.</span></span>
     <span class="pb-go">Take a look →</span>
   </a>
 
@@ -842,7 +845,7 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
   <section id="novoe" aria-labelledby="nv-h">
     <h2 id="nv-h">What’s new</h2>
     <p class="nv-lead">What’s new on the site and in the Svoi ludi project.</p>
-    <div class="nv-grid"><article class="nv-item"><div class="nv-meta"><span class="nv-k">Svoi ludi</span><time datetime="2026-10-09">9 October 2026</time></div><h3>How Switzerland works: 56 topics in plain words</h3><p>Permits, taxes, insurance, school, work and housing. Each topic has steps, free tools and specialists.</p><a href="https://svoiludi.ch/shveycariya/" target="_blank" rel="noopener">Open →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">On the site</span><time datetime="2026-10-09">9 October 2026</time></div><h3>ICF Member badge</h3><p>You can check my membership of the International Coaching Federation with one tap on the badge.</p><a href="#who">See it →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">On the site</span><time datetime="2026-10-09">9 October 2026</time></div><h3>The site as an app</h3><p>You can add the site as an icon to your phone’s home screen. It opens full screen, with tabs at the bottom.</p><a href="#start">To the home page →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">Reviews</span><time datetime="2026-10-06">6 October 2026</time></div><h3>A new review of “My foundation”</h3><p>A client’s review of working with values in “My foundation”.</p><a href="#reviews">Read reviews →</a></article></div>
+    <div class="nv-grid"><article class="nv-item"><div class="nv-meta"><span class="nv-k">On the site</span><time datetime="2026-10-10">10 October 2026</time></div><h3>Steps. Your path in a new country</h3><p>Eight steps of life after moving and the story of a bowl that is put back together with gold. For each step it says what brings people to it and what helps on it.</p><a href="/en/put/">Take a look →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">Svoi ludi</span><time datetime="2026-10-09">9 October 2026</time></div><h3>How Switzerland works: 56 topics in plain words</h3><p>Permits, taxes, insurance, school, work and housing. Each topic has steps, free tools and specialists.</p><a href="https://svoiludi.ch/shveycariya/" target="_blank" rel="noopener">Open →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">On the site</span><time datetime="2026-10-09">9 October 2026</time></div><h3>ICF Member badge</h3><p>You can check my membership of the International Coaching Federation with one tap on the badge.</p><a href="#who">See it →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">On the site</span><time datetime="2026-10-09">9 October 2026</time></div><h3>The site as an app</h3><p>You can add the site as an icon to your phone’s home screen. It opens full screen, with tabs at the bottom.</p><a href="#start">To the home page →</a></article></div>
     <div class="nv-bridge"><p><b>Practical questions about life in Switzerland</b> — permits, taxes, insurance, school, housing — are collected in my Svoi ludi project. There you’ll also find specialists who speak your language and free tools.</p><a class="btn ghost" href="https://svoiludi.ch/" target="_blank" rel="noopener">Open Svoi ludi</a></div>
     <div class="nv-sub"><div><b>Subscribe to updates</b><p>New materials, thoughts on adaptation and announcements — in my Telegram channel. You can unsubscribe at any time.</p></div><a class="btn" href="https://t.me/IrynaNeuroCoach_channel" target="_blank" rel="noopener">Subscribe on Telegram</a></div>
   </section>

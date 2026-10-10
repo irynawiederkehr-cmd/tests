@@ -882,7 +882,12 @@
   "Своё дело": "Своя справа",
   "Мой вклад": "Мій внесок",
   "Моя жизнь целиком": "Моє життя цілком",
-  "Здесь и там — одна жизнь": "Тут і там — одне життя"
+  "Здесь и там — одна жизнь": "Тут і там — одне життя",
+  "<span class=\"pb-txt\"><b>Ступени. Твой путь в новой стране</b><span>Восемь ступеней, от разбитой чаши до жизни, в которой здесь и там — одна жизнь. Посмотри, с чем ты сталкиваешься на каждой из них и что поможет тебе идти дальше.</span></span>\n    <span class=\"pb-go\">Посмотреть →</span>\n  </a>": "<span class=\"pb-txt\"><b>Сходинки. Твій шлях у новій країні</b><span>Вісім сходинок, від розбитої чаші до життя, в якому тут і там — одне життя. Подивись, з чим ти стикаєшся на кожній із них і що допоможе тобі йти далі.</span></span>\n    <span class=\"pb-go\">Подивитися →</span>\n  </a>",
+  "Чаша, собранная золотом": "Чаша, зібрана золотом",
+  "10 октября 2026": "10 жовтня 2026",
+  "Восемь ступеней жизни после переезда и история чаши, которая собирается заново золотом. У каждой ступени написано, с чем на неё приходят и что на ней помогает.": "Вісім сходинок життя після переїзду та історія чаші, яку заново збирають золотом. У кожної сходинки написано, з чим на неї приходять і що на ній допомагає.",
+  "<a href=\"put/\">Посмотреть →</a>": "<a href=\"put/\">Подивитися →</a>"
  },
  "de": {
   "Ирина Вознесенская · коучинг": "Iryna Voznesenskaya · Coaching",
@@ -1767,7 +1772,12 @@
   "Своё дело": "Meine eigene Arbeit",
   "Мой вклад": "Mein Beitrag",
   "Моя жизнь целиком": "Mein ganzes Leben",
-  "Здесь и там — одна жизнь": "Hier und dort — ein Leben"
+  "Здесь и там — одна жизнь": "Hier und dort — ein Leben",
+  "<span class=\"pb-txt\"><b>Ступени. Твой путь в новой стране</b><span>Восемь ступеней, от разбитой чаши до жизни, в которой здесь и там — одна жизнь. Посмотри, с чем ты сталкиваешься на каждой из них и что поможет тебе идти дальше.</span></span>\n    <span class=\"pb-go\">Посмотреть →</span>\n  </a>": "<span class=\"pb-txt\"><b>Stufen. Dein Weg im neuen Land</b><span>Acht Stufen, von der zerbrochenen Schale bis zu einem Leben, in dem hier und dort zu einem Leben werden. Schau, womit du auf jeder davon konfrontiert bist und was dir hilft, weiterzugehen.</span></span>\n    <span class=\"pb-go\">Ansehen →</span>\n  </a>",
+  "Чаша, собранная золотом": "Eine mit Gold zusammengefügte Schale",
+  "10 октября 2026": "10. Oktober 2026",
+  "Восемь ступеней жизни после переезда и история чаши, которая собирается заново золотом. У каждой ступени написано, с чем на неё приходят и что на ней помогает.": "Acht Stufen des Lebens nach dem Umzug und die Geschichte einer Schale, die mit Gold neu zusammengefügt wird. Bei jeder Stufe steht, womit man auf sie kommt und was auf ihr hilft.",
+  "<a href=\"put/\">Посмотреть →</a>": "<a href=\"put/\">Ansehen →</a>"
  },
  "en": {
   "Ирина Вознесенская · коучинг": "Iryna Voznesenskaya · coaching",
@@ -2652,6 +2662,11 @@
   "Своё дело": "Work of my own",
   "Мой вклад": "My contribution",
   "Моя жизнь целиком": "My whole life",
-  "Здесь и там — одна жизнь": "Here and there — one life"
+  "Здесь и там — одна жизнь": "Here and there — one life",
+  "<span class=\"pb-txt\"><b>Ступени. Твой путь в новой стране</b><span>Восемь ступеней, от разбитой чаши до жизни, в которой здесь и там — одна жизнь. Посмотри, с чем ты сталкиваешься на каждой из них и что поможет тебе идти дальше.</span></span>\n    <span class=\"pb-go\">Посмотреть →</span>\n  </a>": "<span class=\"pb-txt\"><b>Steps. Your path in a new country</b><span>Eight steps, from the broken bowl to a life in which here and there become one life. See what you face on each of them and what will help you keep going.</span></span>\n    <span class=\"pb-go\">Take a look →</span>\n  </a>",
+  "Чаша, собранная золотом": "A bowl mended with gold",
+  "10 октября 2026": "10 October 2026",
+  "Восемь ступеней жизни после переезда и история чаши, которая собирается заново золотом. У каждой ступени написано, с чем на неё приходят и что на ней помогает.": "Eight steps of life after moving and the story of a bowl that is put back together with gold. For each step it says what brings people to it and what helps on it.",
+  "<a href=\"put/\">Посмотреть →</a>": "<a href=\"put/\">Take a look →</a>"
  }
 }

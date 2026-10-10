@@ -262,6 +262,9 @@ footer a{color:var(--muted)}
 /* ---------- полоса-ссылка на страницу «Путь» ---------- */
 .pathband{margin-top:40px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;text-decoration:none;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:22px;padding:20px 24px;transition:border-color .15s}
 .pathband:hover{border-color:var(--brown)}
+.pb-bowl{flex:none;display:block;width:66px}.pb-bowl img{display:block;width:66px;height:auto;mix-blend-mode:multiply}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .pb-bowl img{mix-blend-mode:normal;border-radius:10px}}
+:root[data-theme="dark"] .pb-bowl img{mix-blend-mode:normal;border-radius:10px}
 .pb-txt{flex:1 1 300px;display:flex;flex-direction:column;gap:4px;min-width:0}
 .pb-txt b{font-family:var(--display);font-weight:400;font-size:1.5rem;line-height:1.15}
 .pb-txt span{font-size:.92rem;color:var(--muted)}
@@ -698,8 +701,8 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
 
   <!-- ССЫЛКА НА СТРАНИЦУ «ТВОЙ ПУТЬ» -->
   <a class="pathband" href="https://voznesenskaya.ch/uk/put/" target="_blank" rel="noopener">
-    <span class="ic" data-ico="path" data-c="#6E4F3C"></span>
-    <span class="pb-txt"><b>Твій шлях у новій країні</b><span>Вісім стоянок, від землі під ногами до неба над домом. Подивись, з чим ти стикаєшся на кожній із них і що допоможе тобі йти далі.</span></span>
+    <picture class="pb-bowl"><source srcset="/put/img/07-zolotye-shvy.webp" type="image/webp"><img src="/put/img/07-zolotye-shvy.jpg" alt="Чаша, зібрана золотом" width="66" height="88" loading="lazy"></picture>
+    <span class="pb-txt"><b>Сходинки. Твій шлях у новій країні</b><span>Вісім сходинок, від розбитої чаші до життя, в якому тут і там — одне життя. Подивись, з чим ти стикаєшся на кожній із них і що допоможе тобі йти далі.</span></span>
     <span class="pb-go">Подивитися →</span>
   </a>
 
@@ -842,7 +845,7 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
   <section id="novoe" aria-labelledby="nv-h">
     <h2 id="nv-h">Нове</h2>
     <p class="nv-lead">Що з’явилося на сайті та в проєкті «Свої люди».</p>
-    <div class="nv-grid"><article class="nv-item"><div class="nv-meta"><span class="nv-k">«Свої люди»</span><time datetime="2026-10-09">9 жовтня 2026</time></div><h3>Як влаштована Швейцарія: 56 тем простими словами</h3><p>Пермити, податки, страховки, школа, робота й житло. До кожної теми кроки, безкоштовні інструменти та фахівці.</p><a href="https://svoiludi.ch/shveycariya/" target="_blank" rel="noopener">Відкрити →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">На сайті</span><time datetime="2026-10-09">9 жовтня 2026</time></div><h3>Значок ICF Member</h3><p>Моє членство в Міжнародній федерації коучингу можна перевірити одним натисканням на значок.</p><a href="#who">Переглянути →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">На сайті</span><time datetime="2026-10-09">9 жовтня 2026</time></div><h3>Сайт як застосунок</h3><p>Сайт можна поставити іконкою на екран «Додому» телефона. Відкривається на весь екран, з вкладками внизу.</p><a href="#start">На головну →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">Відгуки</span><time datetime="2026-10-06">6 жовтня 2026</time></div><h3>Новий відгук про «Мій фундамент»</h3><p>Відгук клієнтки про роботу з цінностями в «Моєму фундаменті».</p><a href="#reviews">Читати відгуки →</a></article></div>
+    <div class="nv-grid"><article class="nv-item"><div class="nv-meta"><span class="nv-k">На сайті</span><time datetime="2026-10-10">10 жовтня 2026</time></div><h3>Сходинки. Твій шлях у новій країні</h3><p>Вісім сходинок життя після переїзду та історія чаші, яку заново збирають золотом. У кожної сходинки написано, з чим на неї приходять і що на ній допомагає.</p><a href="/uk/put/">Подивитися →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">«Свої люди»</span><time datetime="2026-10-09">9 жовтня 2026</time></div><h3>Як влаштована Швейцарія: 56 тем простими словами</h3><p>Пермити, податки, страховки, школа, робота й житло. До кожної теми кроки, безкоштовні інструменти та фахівці.</p><a href="https://svoiludi.ch/shveycariya/" target="_blank" rel="noopener">Відкрити →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">На сайті</span><time datetime="2026-10-09">9 жовтня 2026</time></div><h3>Значок ICF Member</h3><p>Моє членство в Міжнародній федерації коучингу можна перевірити одним натисканням на значок.</p><a href="#who">Переглянути →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">На сайті</span><time datetime="2026-10-09">9 жовтня 2026</time></div><h3>Сайт як застосунок</h3><p>Сайт можна поставити іконкою на екран «Додому» телефона. Відкривається на весь екран, з вкладками внизу.</p><a href="#start">На головну →</a></article></div>
     <div class="nv-bridge"><p><b>Практичні питання про життя у Швейцарії</b> — пермит, податки, страховки, школа, житло — зібрані в моєму проєкті «Свої люди». Там же фахівці, які говорять твоєю мовою, і безкоштовні інструменти.</p><a class="btn ghost" href="https://svoiludi.ch/" target="_blank" rel="noopener">Відкрити «Свої люди»</a></div>
     <div class="nv-sub"><div><b>Підписатися на нове</b><p>Нові матеріали, думки про адаптацію та анонси — у моєму Telegram-каналі. Відписатися можна будь-коли.</p></div><a class="btn" href="https://t.me/IrynaNeuroCoach_channel" target="_blank" rel="noopener">Підписатися в Telegram</a></div>
   </section>
