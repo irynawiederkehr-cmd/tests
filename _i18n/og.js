@@ -10,14 +10,14 @@
 //   `node _i18n/og.js check` — найдёт страницы без превью.
 const { chromium } = require('playwright'); const path = require('path'); const fs = require('fs');
 const ROOT = path.resolve(__dirname, '..');
-const EB = { ru: 'ИРИНА ВОЗНЕСЕНСКАЯ · МЕТОД «СТУПЕНИ»', uk: 'ІРИНА ВОЗНЕСЕНСЬКА · МЕТОД «СХОДИНКИ»', de: 'IRYNA VOZNESENSKAYA · METHODE «STUFEN»', en: 'IRYNA VOZNESENSKAYA · THE “STEPS” METHOD' };
+const EB = { ru: 'ИРИНА ВОЗНЕСЕНСКАЯ · КОУЧ, МЕНТОР', uk: 'ІРИНА ВОЗНЕСЕНСЬКА · КОУЧ, МЕНТОРКА', de: 'IRYNA VOZNESENSKAYA · COACH, MENTORIN', en: 'IRYNA VOZNESENSKAYA · COACH, MENTOR' };
 const CARDS = [
   { out: 'og-image',
     art: () => steps(),
-    ru: ['Жизнь после переезда <em>можно собрать заново</em>', 'Шаг за шагом, с того места, где ты сейчас. Коучинг по методу «Ступени».'],
-    uk: ['Життя після переїзду <em>можна зібрати заново</em>', 'Крок за кроком, з того місця, де ти зараз. Коучинг за методом «Сходинки».'],
-    de: ['Das Leben nach dem Umzug <em>lässt sich neu zusammensetzen</em>', 'Schritt für Schritt, von dort aus, wo du gerade stehst. Coaching nach der Methode «Stufen».'],
-    en: ['Life after moving <em>can be put back together</em>', 'Step by step, from where you are now. Coaching with the “Steps” method.'] },
+    ru: ['Жизнь после переезда <em>можно собрать заново</em>', 'Шаг за шагом, с того места, где ты сейчас. Метод «Ступени» — твой путь в новой стране.'],
+    uk: ['Життя після переїзду <em>можна зібрати заново</em>', 'Крок за кроком, з того місця, де ти зараз. Метод «Сходинки» — твій шлях у новій країні.'],
+    de: ['Das Leben nach dem Umzug <em>lässt sich neu zusammensetzen</em>', 'Schritt für Schritt, von dort aus, wo du gerade stehst. Die Methode «Stufen» — dein Weg im neuen Land.'],
+    en: ['Life after moving <em>can be put back together</em>', 'Step by step, from where you are now. The “Steps” method — your path in a new country.'] },
   { out: 'put/og-image',
     art: () => bowls(),
     ru: ['Ступени. <em>Твой путь</em> в новой стране', 'Восемь ступеней — история одной чаши, которая разбилась и собирается золотом. Посмотри, где ты сейчас.'],
