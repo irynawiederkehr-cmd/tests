@@ -2,6 +2,7 @@
 // Правило Ирины (07.10.2026): у КАЖДОЙ страницы своя картинка-превью 1200×630, на языке страницы.
 //   Без фотографий (Ирина будет менять фото на сайте). Рисунок «Пустить корни» (выбран Ириной 07.10.2026):
 //   эдельвейс из логотипа на стебле, под землёй расходятся корни. Слева текст страницы.
+//   Главная с 10.10.2026 — акварель «Ступени» (восемь ступеней, внизу осколки, наверху чаша с золотыми швами); steps(). art() — прежний рисунок «Пустить корни», не используется.
 //   «Путь» с 10.10.2026 — акварельная чаша с золотыми швами (метод «Ступени», история чаши); bowls(). trail() — запасной рисунок, не используется.
 //   `node _i18n/og.js put` — пересобрать только картинки «Пути».
 //   Пишет {папка}/og-image.jpg (русский) и og-image.{uk,de,en}.jpg; pages.py сам ставит их в языковые страницы.
@@ -9,13 +10,14 @@
 //   `node _i18n/og.js check` — найдёт страницы без превью.
 const { chromium } = require('playwright'); const path = require('path'); const fs = require('fs');
 const ROOT = path.resolve(__dirname, '..');
-const EB = { ru: 'ИРИНА ВОЗНЕСЕНСКАЯ · КОУЧ', uk: 'ІРИНА ВОЗНЕСЕНСЬКА · КОУЧ', de: 'IRYNA VOZNESENSKAYA · COACH', en: 'IRYNA VOZNESENSKAYA · COACH' };
+const EB = { ru: 'ИРИНА ВОЗНЕСЕНСКАЯ · МЕТОД «СТУПЕНИ»', uk: 'ІРИНА ВОЗНЕСЕНСЬКА · МЕТОД «СХОДИНКИ»', de: 'IRYNA VOZNESENSKAYA · METHODE «STUFEN»', en: 'IRYNA VOZNESENSKAYA · THE “STEPS” METHOD' };
 const CARDS = [
   { out: 'og-image',
-    ru: ['Не готовые советы, а <em>твой собственный</em> путь', 'Ты переехала, и жизнь будто встала на паузу. Её можно снова запустить.'],
-    uk: ['Не готові поради, а <em>твій власний</em> шлях', 'Ти переїхала, і життя ніби стало на паузу. Його можна знову запустити.'],
-    de: ['Keine fertigen Ratschläge, sondern <em>dein eigener</em> Weg', 'Du bist umgezogen, und das Leben scheint auf Pause zu stehen. Du kannst es wieder in Gang bringen.'],
-    en: ['Not ready-made advice, but <em>your own</em> path', 'You moved, and life seems to have been put on pause. You can start it again.'] },
+    art: () => steps(),
+    ru: ['Жизнь после переезда <em>можно собрать заново</em>', 'Шаг за шагом, с того места, где ты сейчас. Коучинг по методу «Ступени».'],
+    uk: ['Життя після переїзду <em>можна зібрати заново</em>', 'Крок за кроком, з того місця, де ти зараз. Коучинг за методом «Сходинки».'],
+    de: ['Das Leben nach dem Umzug <em>lässt sich neu zusammensetzen</em>', 'Schritt für Schritt, von dort aus, wo du gerade stehst. Coaching nach der Methode «Stufen».'],
+    en: ['Life after moving <em>can be put back together</em>', 'Step by step, from where you are now. Coaching with the “Steps” method.'] },
   { out: 'put/og-image',
     art: () => bowls(),
     ru: ['Ступени. <em>Твой путь</em> в новой стране', 'Восемь ступеней — история одной чаши, которая разбилась и собирается золотом. Посмотри, где ты сейчас.'],
@@ -45,6 +47,9 @@ function art() {
   return `<circle cx="${gx}" cy="190" r="150" fill="#EFE5D6"/><ellipse cx="${gx}" cy="${ground + 170}" rx="300" ry="175" fill="#EADFCF"/>
 <path d="M640 ${ground} C740 ${ground - 10} 840 ${ground + 6} 930 ${ground - 2} S1120 ${ground + 8} 1200 ${ground - 4}" fill="none" stroke="#6E4F3C" stroke-width="3" stroke-linecap="round"/>${roots}
 <path d="M${gx} ${ground + 4} C${gx - 8} 360 ${gx + 10} 300 ${gx} 250" stroke="#66704F" stroke-width="6" fill="none" stroke-linecap="round"/>${leaves}${logo(gx, 180, 190)}`;
+}
+function steps() {   // главная: акварель «Ступени», белая бумага сливается с фоном (multiply)
+  return `<image href="file://${ROOT}/home/img/stupeni-hero.jpg" x="690" y="12" width="490" height="608" preserveAspectRatio="xMidYMid meet" style="mix-blend-mode:multiply"/>`;
 }
 function bowls() {   // «Путь»: акварель «Золотые швы», белая бумага сливается с фоном (multiply)
   return `<image href="file://${ROOT}/put/img/07-zolotye-shvy.jpg" x="650" y="-150" width="560" height="750" preserveAspectRatio="xMidYMid slice" style="mix-blend-mode:multiply"/>`;
@@ -83,7 +88,7 @@ function check() {
   const b = await chromium.launch(exe ? { executablePath: exe } : {});
   const pg = await (await b.newContext({ viewport: { width: 1200, height: 630 } })).newPage();
   const tmp = path.join(ROOT, '_i18n', '.og_tmp.html');
-  for (const c of CARDS.filter(c => process.argv[2] !== 'put' || c.out === 'put/og-image')) for (const l of ['ru', 'uk', 'de', 'en']) {
+  for (const c of CARDS.filter(c => !process.argv[2] || c.out === (process.argv[2] === 'put' ? 'put/og-image' : process.argv[2]))) for (const l of ['ru', 'uk', 'de', 'en']) {
     const out = c.out + (l === 'ru' ? '.jpg' : `.${l}.jpg`);
     fs.writeFileSync(tmp, html(EB[l], c[l][0], c[l][1], c.art || art)); await pg.goto('file://' + tmp); await pg.evaluate(() => document.fonts.ready); await pg.waitForTimeout(300);
     await pg.screenshot({ path: path.join(ROOT, out), type: 'jpeg', quality: 88 }); console.log('ok', out);

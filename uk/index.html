@@ -1,10 +1,10 @@
 <!doctype html><html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ірина Вознесенська · коучинг</title>
+<title>Ірина Вознесенська · коучинг за методом «Сходинки»</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Не готові поради, а твій власний шлях у новій країні. З чим до мене приходять, як проходить перша зустріч і з чого можна почати безкоштовно.">
+<meta name="description" content="Життя після переїзду можна зібрати заново, крок за кроком. Коучинг за методом «Сходинки»: з чим до мене приходять, як проходить перша зустріч і з чого можна почати безкоштовно.">
 <link rel="canonical" href="https://voznesenskaya.ch/uk/">
 <meta property="og:type" content="website"><meta property="og:locale" content="uk_UA"><meta property="og:site_name" content="Ірина Вознесенська · коучинг">
-<meta property="og:title" content="Ірина Вознесенська · коучинг"><meta property="og:description" content="Не готові поради, а твій власний шлях у новій країні. З чим до мене приходять, як проходить перша зустріч і з чого можна почати безкоштовно.">
+<meta property="og:title" content="Ірина Вознесенська · коучинг за методом «Сходинки»"><meta property="og:description" content="Життя після переїзду можна зібрати заново, крок за кроком. Коучинг за методом «Сходинки»: з чим до мене приходять, як проходить перша зустріч і з чого можна почати безкоштовно.">
 <meta property="og:url" content="https://voznesenskaya.ch/uk/"><meta property="og:image" content="https://voznesenskaya.ch/og-image.uk.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="/assets/fonts.css">
@@ -318,6 +318,35 @@ a.bot:hover{color:#B98324}
 .copyband{background:var(--mustard);color:#fff;text-align:center;font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;padding:8px 16px}
 .w-hero{padding-block:56px 24px;display:flex;flex-direction:column;gap:20px;max-width:860px}
 .w-hero h1{font-size:clamp(2.4rem,6vw,4.2rem)}
+.w-hero.has-pic{max-width:none;display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,340px);grid-template-areas:"txt pic" "jump pic";column-gap:clamp(24px,4vw,56px);row-gap:20px;align-items:center}
+.hero-txt{grid-area:txt;display:flex;flex-direction:column;gap:20px;max-width:780px}
+.w-hero.has-pic .jump{grid-area:jump;align-self:start}
+.hero-pic{grid-area:pic;margin:0;align-self:center}
+.hero-pic img{display:block;width:100%;height:auto;mix-blend-mode:multiply}
+.hero-pic figcaption{font-size:.84rem;color:var(--muted);text-align:center;margin-top:4px;line-height:1.35}
+@media (max-width:860px){.w-hero.has-pic{grid-template-columns:1fr;grid-template-areas:"txt" "pic" "jump"}.hero-pic{max-width:300px;width:100%;justify-self:center}}
+@media (max-width:560px){.hero-pic{max-width:240px}}
+.who-bowl{margin:18px 0 0;padding:16px 18px;border-radius:16px;background:color-mix(in srgb,var(--mustard) 12%,var(--paper));border:1px solid color-mix(in srgb,var(--mustard) 35%,transparent)}
+#project .pj-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:900px){#project .pj-list{grid-template-columns:1fr}}
+.pj{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:18px;padding:18px 20px;transition:border-color .15s}
+.pj:hover{border-color:var(--brown)}
+.pj-k{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--mustard)}
+.pj b{font-family:var(--display);font-weight:400;font-size:1.45rem;line-height:1.15}
+.pj-t{font-size:.92rem;color:var(--muted)}
+.pj-go{margin-top:auto;padding-top:6px;font-weight:700;font-size:.88rem;color:var(--brown)}
+.pillar.pl-method{flex-direction:row;align-items:center;gap:22px;margin-bottom:14px}
+.plm-pic{flex:none;width:150px}.plm-pic img{display:block;width:150px;height:auto;mix-blend-mode:multiply}
+.plm-txt{display:flex;flex-direction:column;gap:10px;min-width:0}
+.plm-txt p{margin:0}
+.plm-steps{display:flex;flex-wrap:wrap;gap:8px}
+.plm-steps span{font-size:.82rem;font-weight:700;color:var(--brown);background:color-mix(in srgb,var(--brown) 9%,var(--paper));border:1px solid var(--line);border-radius:12px;padding:6px 12px}
+.plm-steps span+span::before{content:"→ ";color:var(--muted);font-weight:400}
+.plm-go{font-weight:700;font-size:.9rem;color:var(--brown)}
+@media (max-width:640px){.pillar.pl-method{flex-direction:column;align-items:stretch}.plm-pic{width:120px;align-self:center}.plm-pic img{width:120px}}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) :is(.hero-pic,.plm-pic,.who-pic) img{mix-blend-mode:normal;border-radius:14px}}
+:root[data-theme="dark"] :is(.hero-pic,.plm-pic,.who-pic) img{mix-blend-mode:normal;border-radius:14px}
+
 .w-hero h1 em{font-style:normal;color:var(--brown)}
 .w-hero .lead{font-size:1.14rem;max-width:58ch}
 .jump{display:flex;flex-wrap:wrap;gap:8px}
@@ -447,7 +476,8 @@ a.bot:hover{color:#B98324}
 @media (max-width:860px){.who2{grid-template-columns:1fr}}
 .who-pic{margin:0;display:flex;flex-direction:column;gap:16px;position:sticky;top:90px}
 @media (max-width:860px){.who-pic{position:static;max-width:380px;margin:0 auto;width:100%}}
-.who-pic img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:center 40%;border-radius:26px;box-shadow:0 24px 50px -24px rgba(60,40,20,.4)}
+.who-pic picture{display:block;background:var(--bg)}
+.who-pic img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:center 40%;mix-blend-mode:multiply}
 .who-pic .creds{justify-content:flex-start}
 .icf{display:flex;align-items:center;gap:14px;padding:12px 14px;background:var(--paper);border:1px solid var(--line);border-radius:16px;color:var(--ink);text-decoration:none}
 .who-pic .icf img{flex:none;width:72px;height:72px;aspect-ratio:1/1;object-fit:contain;border-radius:0;box-shadow:none}
@@ -464,7 +494,7 @@ a.bot:hover{color:#B98324}
 .way p{margin:0;font-size:.95rem;color:var(--muted)}
 .who-quote{margin:10px 0 0;padding:4px 0 4px 20px;border-left:3px solid var(--mustard,#B98324);font-family:var(--display);font-size:clamp(1.2rem,2.2vw,1.45rem);line-height:1.35;color:var(--brown)}
 .who-quote span{display:block;margin-top:6px;font-family:inherit;font-size:1rem;color:var(--muted)}
-@media (max-width:560px){.who-pic img{aspect-ratio:4/3;object-position:center 45%}.way{grid-template-columns:1fr;gap:10px}.way .ic{width:46px;height:46px}}
+@media (max-width:560px){.who-pic img{aspect-ratio:4/3;object-position:center 62%}.way{grid-template-columns:1fr;gap:10px}.way .ic{width:46px;height:46px}}
 /* цветы продуктов */
 .pb-fl,.pd-fl{display:inline-flex;flex:none;border-radius:50%;filter:drop-shadow(0 4px 8px rgba(110,79,60,.18))}
 .pb-fl svg,.pd-fl svg{display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
@@ -640,7 +670,7 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
   <div class="page">
     <a class="mark" href="https://voznesenskaya.ch/uk/" aria-label="Ирина Вознесенская — на главную">
       <span class="mono av"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#FFFCF8" stroke="#6E4F3C" stroke-width="3"/><g transform="rotate(22.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(67.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(112.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(157.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(202.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(247.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(292.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(337.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(0.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(45.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(90.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(135.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(180.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(225.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(270.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(315.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><circle cx="50" cy="50" r="7" fill="#B98324"/></svg></span>
-      <span><b>Ірина Вознесенська</b><small>фахівчиня з адаптації · коуч</small></span>
+      <span><b>Ірина Вознесенська</b><small>коучинг за методом «Сходинки»</small></span>
     </a>
     <nav aria-label="Розділи">
       <a href="/uk/#who">Про мене</a>
@@ -655,12 +685,15 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
 </header>
 
 <main class="page" id="start">
-  <section class="w-hero" aria-labelledby="h1">
-    <div class="eyebrow">Робота зі мною</div>
-    <h1 id="h1">Не готові поради, а <em>твій власний</em> шлях</h1>
-    <p class="lead">Ти переїхала, і життя ніби стало на паузу. Його можна знову запустити, і не обов’язково одразу великим кроком. Тут є різні шляхи, легкі й глибокі. Кожен із них допомагає тобі побачити більше, ніж ти бачиш зараз, і перевести увагу з того, чого бракує, на те, що ти вже можеш. Так твоє життя починає змінюватися.</p>
+  <section class="w-hero has-pic" aria-labelledby="h1">
+    <div class="hero-txt">
+    <div class="eyebrow">Коучинг за методом «Сходинки»</div>
+    <h1 id="h1">Життя після переїзду <em>можна зібрати заново</em></h1>
+    <p class="lead">Ти переїхала, і багато що ніби розсипалося. Звичні ролі, своє коло, мова, робота. Це не слабкість, так буває майже з кожною. В Японії розбиту чашу не викидають. Її збирають, тріщини заповнюють золотом, і чаша стає ще ціннішою. Так заново збирається і твоє життя. Крок за кроком, з того місця, де ти зараз, і не обов’язково одразу великим кроком.</p>
+    </div>
+    <figure class="hero-pic"><picture><source srcset="/home/img/stupeni-hero.webp" type="image/webp"><img src="/home/img/stupeni-hero.jpg" width="800" height="992" alt="Вісім світлих сходинок. Унизу лежать уламки чаші, нагорі стоїть та сама чаша, зібрана золотом"></picture><figcaption>Метод «Сходинки». Вісім сходинок, якими життя збирається заново.</figcaption></figure>
     <div class="jump">
-      <a href="#who">Хто я і чому розумію тебе</a><a href="#requests">З чим до мене приходять</a><a href="#approach">На чому тримається наша робота</a><a href="#session">Як проходить перша зустріч</a><a href="#path">Твій шлях і програми для тебе</a><a href="#reviews">Що кажуть клієнти</a><a href="#faq">Відповіді на часті запитання</a>
+      <a href="#who">Хто я і чому розумію тебе</a><a href="#project">Як влаштований мій проєкт</a><a href="#requests">З чим до мене приходять</a><a href="#approach">На чому тримається наша робота</a><a href="#session">Як проходить перша зустріч</a><a href="#path">Твій шлях і програми для тебе</a><a href="#reviews">Що кажуть клієнти</a><a href="#faq">Відповіді на часті запитання</a>
     </div>
   </section>
 
@@ -668,22 +701,37 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
   <section id="who" aria-labelledby="who-h">
     <div class="who2">
       <figure class="who-pic">
-        <img src="/home/img/who.jpg" alt="Жінка в жовтому шарфі з чашкою в руках дивиться у вікно на озеро й гори, поруч спить спанієль">
-        <figcaption class="creds"><span>трансформаційний коуч</span><span>нейрокоуч</span><span>в еміграції з 2010 року</span><span>онлайн · російською</span></figcaption>
+        <picture><source srcset="/home/img/who-chasha.webp" type="image/webp"><img src="/home/img/who-chasha.jpg" width="900" height="1204" alt="Чаша із золотими швами на підвіконні, за вікном озеро і гори"></picture>
+        <figcaption class="creds"><span>трансформаційний коуч</span><span>нейрокоуч</span><span>авторка методу «Сходинки»</span><span>в еміграції з 2010 року</span><span>онлайн · російською</span></figcaption>
         <a class="icf" href="https://www.credly.com/badges/cbafb81c-5da9-414d-b5a5-d1d43323b7b7" target="_blank" rel="noopener"><img src="/home/img/icf-member.webp" width="72" height="72" alt="Значок ICF Member, International Coaching Federation"><span><b>Членкиня Міжнародної федерації коучингу ICF</b><small>Перевірити членство в Credly</small></span></a>
       </figure>
       <div class="who-body">
         <div class="eyebrow">Хто я і чому розумію тебе</div>
         <h2 id="who-h">Привіт! Мене звати Ірина</h2>
-        <p class="who-lead">Я трансформаційний коуч і нейрокоуч. Живу у Швейцарії і сама знаю, як це — починати життя заново в чужій країні.</p>
+        <p class="who-lead">Я трансформаційний коуч і нейрокоуч, авторка методу «Сходинки». Живу у Швейцарії й сама знаю, як це — починати життя заново в чужій країні.</p>
         <p>Тому в нашій роботі в центрі завжди ти. Твоє життя, твої сили і твоє благополуччя.</p>
         <div class="who-ways">
           <div class="way"><span class="ic" data-ico="sprout" data-c="#66704F"></span><div><h3>Ми йдемо глибше за поради</h3><p>Ми не обмежимося планом на папері. Ми дбайливо спустимося туди, де живуть твої звичні реакції, страхи і старі правила, які тут більше не працюють. Коли змінюється щось усередині тебе, рішення зовні починають знаходитися самі.</p></div></div>
           <div class="way"><span class="ic" data-ico="lantern" data-c="#2E5A88"></span><div><h3>Ти перестаєш звинувачувати себе</h3><p>Я розумію, як твій мозок реагує на зміни і незнайоме середовище. Чому в новій країні так швидко закінчуються сили і простий лист із відомства здається горою. Це не про слабкість. Одне це розуміння знімає з твоїх плечей багато зайвої провини.</p></div></div>
           <div class="way"><span class="ic" data-ico="explore" data-c="#B98324"></span><div><h3>Твоя увага повертається до тебе</h3><p>Я працюю з твоїм мисленням і фокусом уваги. Куди дивиться увага, туди йдуть і сили. Разом ми знайдемо думки, які ходять по колу, і навчимося переводити погляд з «чому в мене не виходить» на «що я можу зробити для себе вже сьогодні». Тоді в голові стає тихіше, і з’являється місце для твоїх рішень.</p></div></div>
         </div>
+        <p class="who-bowl">Усе, що я знаю про цей шлях, я зібрала в метод «Сходинки». Це вісім сходинок, якими життя після переїзду збирається заново. Тріщини на цьому шляху не треба ховати. З часом вони стають золотими швами, і твій досвід переїзду стає твоєю силою.</p>
         <blockquote class="who-quote">Я не підганяю і не тягну за руку. Іду поруч — у твоєму темпі й заради тебе.<span>Ірина</span></blockquote>
       </div>
+    </div>
+  </section>
+
+  <!-- КАК УСТРОЕН ПРОЕКТ -->
+  <section id="project" aria-labelledby="pj-h">
+    <div class="sec-head">
+      <div class="eyebrow">Як влаштований мій проєкт</div>
+      <h2 id="pj-h">Три частини одного шляху</h2>
+      <p>Щоб тобі було легко знайти своє, мій проєкт складається з трьох частин. У кожної своє завдання, і разом вони ведуть тебе від перших кроків у новій країні до життя, яке знову твоє.</p>
+    </div>
+    <div class="pj-list">
+      <a class="pj" href="#session"><span class="pj-k">Хто поруч із тобою</span><b>Ірина Вознесенська</b><span class="pj-t">Це я і моя особиста робота з тобою. Знайомство на 30 хвилин, розбори по три години та особиста програма «Моя мета — мій шлях». Я трансформаційний коуч і нейрокоуч, членкиня Міжнародної федерації коучингу ICF.</span><span class="pj-go">Як проходить перша зустріч →</span></a>
+      <a class="pj" href="/uk/put/"><span class="pj-k">Як ми йдемо</span><b>Метод «Сходинки»</b><span class="pj-t">Вісім сходинок життя в новій країні, від «Розбитої чаші» до «Тут і там — одне життя», і три кроки на кожній. На цьому методі побудовані мої тести, програми та наші зустрічі.</span><span class="pj-go">Сходинки. Твій шлях у новій країні →</span></a>
+      <a class="pj" href="https://svoiludi.ch/" target="_blank" rel="noopener"><span class="pj-k">Де і з ким</span><b>«Свої люди у Швейцарії»</b><span class="pj-t">Довідник і спільнота для тих, хто живе у Швейцарії. Практичні питання простими словами — пермит, податки, страховки, школа, житло. Безкоштовні інструменти й довідник, у якому збираються фахівці, що говорять твоєю мовою.</span><span class="pj-go">Відкрити «Свої люди» →</span></a>
     </div>
   </section>
 
@@ -712,6 +760,16 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
       <div class="eyebrow">Як я працюю</div>
       <h2 id="ap-h">На чому тримається наша робота</h2>
       <p>Я не даю порад і не знаю за тебе, як правильно. Правильно так, як підходить саме тобі. Моя робота — ставити запитання, які ти собі не ставиш, і допомагати тобі почути власні відповіді.</p>
+    </div>
+    <div class="pillar pl-method">
+      <picture class="plm-pic"><source srcset="/put/img/03-sobirayu-sebya.webp" type="image/webp"><img src="/put/img/03-sobirayu-sebya.jpg" width="150" height="200" loading="lazy" alt="Уламки чаші повертаються на місце, і тріщини заповнює золото"></picture>
+      <div class="plm-txt">
+        <h3>Метод «Сходинки»</h3>
+        <p>Це мій авторський метод. Життя в новій країні збирається по восьми сходинках, від «Розбитої чаші», коли немає сил і опори, до «Тут і там — одне життя». Нижні сходинки тримають верхні. Поки немає сну й даху над головою, шукати покликання рано, і це не слабкість, а порядок, у якому все будується.</p>
+        <p>На кожній сходинці три кроки. Ставлю ногу — я освоююся, і мені потрібні інформація та опора. Стою твердо — у мене виходить. Тягнуся вище — мені стає тісно, і я шукаю, куди рости. Найчастіше до мене приходять, коли «тягнуся вище» перетворюється на «хочу, але не роблю». Це і є місце для нашої роботи.</p>
+        <div class="plm-steps"><span>Ставлю ногу</span><span>Стою твердо</span><span>Тягнуся вище</span></div>
+        <a class="plm-go" href="/uk/put/">Подивитися вісім сходинок →</a>
+      </div>
     </div>
     <div class="pillars">
       <div class="pillar"><span class="pl-fl" data-mandala="0"></span><h3>Емоційний інтелект</h3><p>Ти вчишся помічати, що відчуваєш, і розуміти, про що говорять твої почуття. Емоції перестають керувати твоїми рішеннями і починають підказувати.</p></div>
@@ -746,7 +804,7 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
     <div class="sec-head">
       <div class="eyebrow">Твій шлях зі мною</div>
       <h2 id="path-h">Крок за кроком — з того місця, де ти зараз</h2>
-      <p>Не обов’язково йти всіма сходинками. Почни з тієї, яка про тебе зараз. Кожен крок — це турбота про себе. Натисни на будь-який блок — побачиш, з чим ти можеш прийти і з чим підеш.</p>
+      <p>Не обов’язково проходити все підряд. Почни з того, що про тебе зараз. Якщо не знаєш, із чого почати, подивись, на якій ти сходинці, на сторінці <a href="/uk/put/">«Твій шлях у новій країні»</a>. Кожен крок — це турбота про себе. Натисни на будь-який блок — побачиш, з чим ти можеш прийти і з чим підеш.</p>
     </div>
     <div id="pathThemes" class="themes"></div>
     <p class="path-note">Усе онлайн і російською. Де написано «ціну уточнюй особисто», ціна ще затверджується, напиши мені, і я розповім.</p>
@@ -767,6 +825,7 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
       <h2 id="re-h">Що змінюється для тебе</h2>
     </div>
     <ul class="results">
+      <li><span class="ic sm" data-ico="sprout" data-c="#B98324"></span>Тріщини переїзду стають золотими швами — твій досвід стає твоєю силою</li>
       <li><span class="ic sm" data-ico="sprout" data-c="#66704F"></span>У тебе з’являється власне формулювання замість чужих порад</li>
       <li><span class="ic sm" data-ico="key" data-c="#B98324"></span>Рішення, яке ти відкладала місяцями, стає ухваленим</li>
       <li><span class="ic sm" data-ico="sun" data-c="#B98324"></span>Повертається твоя енергія — ти перестаєш витрачати її на внутрішню суперечку</li>
@@ -815,6 +874,7 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
     </div>
     <div class="faq">
       <details><summary>Чим коучинг відрізняється від психотерапії?</summary><p>Терапія частіше працює з минулим і з тим, що болить. Коучинг — з теперішнім і з тим, куди ти хочеш. Я не лікую і не ставлю діагнозів; я допомагаю тобі знайти власне рішення і дійти до дії.</p></details>
+      <details><summary>Що таке метод «Сходинки»?</summary><p>Це мій авторський метод. Він описує життя після переїзду як вісім сходинок, від «Розбитої чаші» до «Тут і там — одне життя», і три кроки на кожній. Сходинка — не оцінка, перша не гірша за восьму. Після великої зміни можна спуститися на сходинку нижче, і це нормально. Метод допомагає побачити, де ти зараз і який наступний крок тобі під силу. Усі сходинки можна подивитися на сторінці <a href="/uk/put/">«Твій шлях у новій країні»</a>.</p></details>
       <details><summary>Скільки сесій потрібно?</summary><p>Для конкретного питання часто вистачає однієї-трьох. Для змін рівня «ким мені бути тут» — від трьох місяців. Точніше скажу після знайомства.</p></details>
       <details><summary>Мені нічого сказати, я навіть не можу сформулювати запит</summary><p>Це нормальний початок, а не перешкода. Сформулювати запит — частина моєї роботи. Тобі достатньо прийти з фразою «щось не так».</p></details>
       <details><summary>Це конфіденційно?</summary><p>Так. Усе, що відбувається на сесії, залишається між нами — цього вимагає професійна етика коуча, і я її дотримуюся.</p></details>
@@ -845,7 +905,7 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
   <section id="novoe" aria-labelledby="nv-h">
     <h2 id="nv-h">Нове</h2>
     <p class="nv-lead">Що з’явилося на сайті та в проєкті «Свої люди».</p>
-    <div class="nv-grid"><article class="nv-item"><div class="nv-meta"><span class="nv-k">На сайті</span><time datetime="2026-10-10">10 жовтня 2026</time></div><h3>Сходинки. Твій шлях у новій країні</h3><p>Вісім сходинок життя після переїзду та історія чаші, яку заново збирають золотом. У кожної сходинки написано, з чим на неї приходять і що на ній допомагає.</p><a href="/uk/put/">Подивитися →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">«Свої люди»</span><time datetime="2026-10-09">9 жовтня 2026</time></div><h3>Як влаштована Швейцарія: 56 тем простими словами</h3><p>Пермити, податки, страховки, школа, робота й житло. До кожної теми кроки, безкоштовні інструменти та фахівці.</p><a href="https://svoiludi.ch/shveycariya/" target="_blank" rel="noopener">Відкрити →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">На сайті</span><time datetime="2026-10-09">9 жовтня 2026</time></div><h3>Значок ICF Member</h3><p>Моє членство в Міжнародній федерації коучингу можна перевірити одним натисканням на значок.</p><a href="#who">Переглянути →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">На сайті</span><time datetime="2026-10-09">9 жовтня 2026</time></div><h3>Сайт як застосунок</h3><p>Сайт можна поставити іконкою на екран «Додому» телефона. Відкривається на весь екран, з вкладками внизу.</p><a href="#start">На головну →</a></article></div>
+    <div class="nv-grid"><article class="nv-item"><div class="nv-meta"><span class="nv-k">На сайті</span><time datetime="2026-10-10">10 жовтня 2026</time></div><h3>Головна і тест за методом «Сходинки»</h3><p>Головна про те, як життя після переїзду збирається заново. І тест «Сходинки стійкості» з вісьмома сходинками простими словами та аквареллю чаші.</p><a href="/stupeni/#lang=uk">Пройти тест →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">На сайті</span><time datetime="2026-10-10">10 жовтня 2026</time></div><h3>Сходинки. Твій шлях у новій країні</h3><p>Вісім сходинок життя після переїзду та історія чаші, яку заново збирають золотом. У кожної сходинки написано, з чим на неї приходять і що на ній допомагає.</p><a href="/uk/put/">Подивитися →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">«Свої люди»</span><time datetime="2026-10-09">9 жовтня 2026</time></div><h3>Як влаштована Швейцарія: 56 тем простими словами</h3><p>Пермити, податки, страховки, школа, робота й житло. До кожної теми кроки, безкоштовні інструменти та фахівці.</p><a href="https://svoiludi.ch/shveycariya/" target="_blank" rel="noopener">Відкрити →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">На сайті</span><time datetime="2026-10-09">9 жовтня 2026</time></div><h3>Значок ICF Member</h3><p>Моє членство в Міжнародній федерації коучингу можна перевірити одним натисканням на значок.</p><a href="#who">Переглянути →</a></article></div>
     <div class="nv-bridge"><p><b>Практичні питання про життя у Швейцарії</b> — пермит, податки, страховки, школа, житло — зібрані в моєму проєкті «Свої люди». Там же фахівці, які говорять твоєю мовою, і безкоштовні інструменти.</p><a class="btn ghost" href="https://svoiludi.ch/" target="_blank" rel="noopener">Відкрити «Свої люди»</a></div>
     <div class="nv-sub"><div><b>Підписатися на нове</b><p>Нові матеріали, думки про адаптацію та анонси — у моєму Telegram-каналі. Відписатися можна будь-коли.</p></div><a class="btn" href="https://t.me/IrynaNeuroCoach_channel" target="_blank" rel="noopener">Підписатися в Telegram</a></div>
   </section>
@@ -868,7 +928,7 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
   <div class="share-slot" data-url="https://voznesenskaya.ch/uk/" data-lead="Знаєш когось, хто теж переїхав і шукає опору? Перешли сторінку, повідомлення вже готове." data-text="Привіт! Подивись, це Ірина Вознесенська. Вона коуч для тих, хто переїхав в іншу країну і будує тут життя заново. На сайті є безкоштовні тести, а перша зустріч на 30 хвилин теж безкоштовна. Мені здається, тобі може відгукнутися."></div>
 
   <footer>
-    <span>© 2026 Ірина Вознесенська · фахівчиня з адаптації · коуч</span>
+    <span>© 2026 Ірина Вознесенська · коучинг за методом «Сходинки»</span>
     <span><a href="https://voznesenskaya.ch/privacy/#lang=uk" target="_blank" rel="noopener">Політика конфіденційності</a> · <a href="https://voznesenskaya.ch/impressum/#lang=uk" target="_blank" rel="noopener">Вихідні дані</a></span>
   </footer>
 </div>
@@ -1098,8 +1158,8 @@ const PR = {
     about:'Близько 10 хвилин запитань про твоє життя тут, і з відповідей складається особистий розбір на 11 сторінок. Перше, що ти в ньому побачиш, — як ти зараз тримаєш дві культури, свою і нову. Живеш між ними, ховаєшся в одній чи вже будуєш міст. Далі шість сфер твого життя, мова, побут, робота або своя справа, люди, сили і сенс, намальовані трьома колесами. Як є, як хочеться і наскільки далеко одне від одного. Ти дізнаєшся, на якому ти етапі адаптації, від «часу відкриттів» і «часу труднощів» до «як удома», і що допомагає саме на ньому. А наприкінці прочитаєш своїми ж словами, що тебе зупиняє, і отримаєш план маленьких кроків на чотири тижні.',
     inside:'розбір на 11 сторінок у PDF і бланк для записів. Міст між двома культурами, три колеса за шістьма сферами, твій етап адаптації, що зупиняє, план на чотири тижні', pain:['начебто все нормально, а щось не так','стільки всього одразу — мова, документи, робота, діти — і незрозуміло, за що братися'], res:['як ти живеш між своєю культурою і новою і на що в цьому можеш спертися','у яких сферах тобі вже добре, де порожньо і де розрив між «є» і «хочу» найбільший','на якому ти етапі адаптації і що на ньому допомагає найкраще','план маленьких кроків на чотири тижні'],
     next:[['meet','Обговоримо твій розбір разом і оберемо перший крок'],['stupeni','Зрозуміти, чому важко рухатися далі, хоча ти стараєшся'],['emo','Якщо просіли сили й настрій']]},
-  stupeni:{name:'«Сходинки стійкості»', ic:'hill', c:'#66704F', slogan:'Щоб стати своєю і почуватися як удома', line:'путівник і тест · 20 хвилин', price:'безкоштовно', ready:true, type:'test', href:T+'/stupeni/#lang=uk', more:{h:T+'/uk/put/', b:'Твій шлях у новій країні', t:'Через які стоянки проходить кожна, хто переїхала. Від землі під ногами до неба над домом. Подивися, де ти зараз і що допоможе тобі йти далі.'},
-    about:'Життя після переїзду будується як дім, знизу вгору. У путівнику вісім сходинок цього дому. Земля під ногами — сон, сили й дах над головою. Вогнище і свої люди. Свій голос. Карта і ключі до тутешніх правил. Своя майстерня. Сад для інших. Вид з пагорба і небо над домом. Тест на 20 хвилин допомагає почути, яка сходинка під тобою порипує. Через неї буває важко підніматися вище, скільки не старайся, і тоді здається, що справа в тобі, хоча справа в сходинці. У розборі на 12 сторінок видно, де саме тріщина — у тому, що ти відчуваєш, що робиш, що думаєш чи що довкола тебе, і що найгучніше звучить у твоєму серці, мрія чи потреба в опорі.',
+  stupeni:{name:'«Сходинки стійкості»', ic:'hill', c:'#66704F', slogan:'Щоб стати своєю і почуватися як удома', line:'путівник і тест · 20 хвилин', price:'безкоштовно', ready:true, type:'test', href:T+'/stupeni/#lang=uk', more:{h:T+'/uk/put/', b:'Сходинки. Твій шлях у новій країні', t:'Вісім сходинок, якими проходить кожна, хто переїхала. Від розбитої чаші до життя, в якому тут і там — одне життя. Подивись, де ти зараз і що допоможе тобі йти далі.'},
+    about:'Після переїзду життя збирається заново, знизу вгору, і нижні сходинки тримають верхні. У путівнику вісім сходинок. Розбита чаша — сон, сили й дах над головою. Своє коло — люди поруч. Я можу сама — голос і межі. Зрозумілі правила — порядок і строки. Своя справа — робота, гроші й своя ціна. Мій внесок. Моє життя цілком. Тут і там — одне життя. Тест на 20 хвилин допомагає почути, яка сходинка під тобою порипує. Через неї буває важко підніматися вище, скільки не старайся, і тоді здається, що справа в тобі, хоча справа в сходинці. У розборі на 12 сторінок видно, де саме тріщина — у тому, що ти відчуваєш, що робиш, що думаєш чи що довкола тебе, і що найгучніше звучить у твоєму серці, мрія чи потреба в опорі.',
     inside:'путівник вісьмома сходинками з питаннями для себе, тест із трьох частин — про тебе, опора і дванадцять життєвих сценок — і розбір на 12 сторінок із бланком для записів', pain:['здається, що братися треба за все одразу, і сил ні на що не вистачає','інші справляються, а ти ні, і від цього ще важче'], res:['чому тобі важко рухатися далі і що саме тягне назад','де тріщина — у почуттях, у справах, у думках чи в тому, що довкола тебе','що вже тримає тебе, і цієї опори більше, ніж здавалося','з чого почати саме тобі й маленький крок на цей тиждень'],
     next:[['meet','Подивимося на твій розбір разом і виберемо перший крок'],['mentor','Поговорити з тією, хто сама пройшла цей шлях'],['kompas','Як ти живеш між двома культурами і в якій сфері порожньо']]},
   blizost:{name:'«Бути поруч і бути собою»', ic:'together', c:'#2E5A88', slogan:'Близькість, у якій не треба втрачати себе', line:'тест про пару · 20 хвилин', price:'безкоштовно', ready:true, type:'test', href:T+'/blizost/#lang=uk',

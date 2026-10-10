@@ -852,3 +852,12 @@ footer.copy .del-answers{margin-top:10px}
 .mono.av svg,.sb-mono.av svg{width:100%;height:100%;display:block}
 .practice a svg{vertical-align:-4px;margin-right:2px}
 .invite-links a svg,.st-swiss b svg{vertical-align:-4px;margin-right:4px}
+/* карта-картинка ступени в путеводителе «Ступеней устойчивости» (история чаши, 10.10.2026) */
+.st-card{margin:0 0 14px;display:flex;gap:16px;align-items:center}
+.st-card picture{flex:none;display:block;width:110px}
+.st-card img{display:block;width:110px;height:auto;mix-blend-mode:multiply}
+.st-card figcaption{font-size:.95rem;color:var(--muted);line-height:1.45}
+.st-card figcaption b{display:block;font-family:var(--display);font-weight:400;font-size:1.2rem;color:var(--ink);margin-bottom:2px}
+@media (max-width:520px){.st-card picture,.st-card img{width:84px}}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .st-card img{mix-blend-mode:normal;border-radius:10px}}
+:root[data-theme="dark"] .st-card img{mix-blend-mode:normal;border-radius:10px}

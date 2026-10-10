@@ -1,10 +1,10 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Iryna Voznesenskaya · coaching</title>
+<title>Iryna Voznesenskaya · coaching with the “Steps” method</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Not ready-made advice, but your own path in a new country. What people come to me with, how the first meeting goes and where you can start for free.">
+<meta name="description" content="Life after a move can be put back together, step by step. Coaching with the “Steps” method: what people come to me with, how the first meeting goes and how you can start for free.">
 <link rel="canonical" href="https://voznesenskaya.ch/en/">
 <meta property="og:type" content="website"><meta property="og:locale" content="en_GB"><meta property="og:site_name" content="Iryna Voznesenskaya · coaching">
-<meta property="og:title" content="Iryna Voznesenskaya · coaching"><meta property="og:description" content="Not ready-made advice, but your own path in a new country. What people come to me with, how the first meeting goes and where you can start for free.">
+<meta property="og:title" content="Iryna Voznesenskaya · coaching with the “Steps” method"><meta property="og:description" content="Life after a move can be put back together, step by step. Coaching with the “Steps” method: what people come to me with, how the first meeting goes and how you can start for free.">
 <meta property="og:url" content="https://voznesenskaya.ch/en/"><meta property="og:image" content="https://voznesenskaya.ch/og-image.en.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="/assets/fonts.css">
@@ -318,6 +318,35 @@ a.bot:hover{color:#B98324}
 .copyband{background:var(--mustard);color:#fff;text-align:center;font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;padding:8px 16px}
 .w-hero{padding-block:56px 24px;display:flex;flex-direction:column;gap:20px;max-width:860px}
 .w-hero h1{font-size:clamp(2.4rem,6vw,4.2rem)}
+.w-hero.has-pic{max-width:none;display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,340px);grid-template-areas:"txt pic" "jump pic";column-gap:clamp(24px,4vw,56px);row-gap:20px;align-items:center}
+.hero-txt{grid-area:txt;display:flex;flex-direction:column;gap:20px;max-width:780px}
+.w-hero.has-pic .jump{grid-area:jump;align-self:start}
+.hero-pic{grid-area:pic;margin:0;align-self:center}
+.hero-pic img{display:block;width:100%;height:auto;mix-blend-mode:multiply}
+.hero-pic figcaption{font-size:.84rem;color:var(--muted);text-align:center;margin-top:4px;line-height:1.35}
+@media (max-width:860px){.w-hero.has-pic{grid-template-columns:1fr;grid-template-areas:"txt" "pic" "jump"}.hero-pic{max-width:300px;width:100%;justify-self:center}}
+@media (max-width:560px){.hero-pic{max-width:240px}}
+.who-bowl{margin:18px 0 0;padding:16px 18px;border-radius:16px;background:color-mix(in srgb,var(--mustard) 12%,var(--paper));border:1px solid color-mix(in srgb,var(--mustard) 35%,transparent)}
+#project .pj-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:900px){#project .pj-list{grid-template-columns:1fr}}
+.pj{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:18px;padding:18px 20px;transition:border-color .15s}
+.pj:hover{border-color:var(--brown)}
+.pj-k{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--mustard)}
+.pj b{font-family:var(--display);font-weight:400;font-size:1.45rem;line-height:1.15}
+.pj-t{font-size:.92rem;color:var(--muted)}
+.pj-go{margin-top:auto;padding-top:6px;font-weight:700;font-size:.88rem;color:var(--brown)}
+.pillar.pl-method{flex-direction:row;align-items:center;gap:22px;margin-bottom:14px}
+.plm-pic{flex:none;width:150px}.plm-pic img{display:block;width:150px;height:auto;mix-blend-mode:multiply}
+.plm-txt{display:flex;flex-direction:column;gap:10px;min-width:0}
+.plm-txt p{margin:0}
+.plm-steps{display:flex;flex-wrap:wrap;gap:8px}
+.plm-steps span{font-size:.82rem;font-weight:700;color:var(--brown);background:color-mix(in srgb,var(--brown) 9%,var(--paper));border:1px solid var(--line);border-radius:12px;padding:6px 12px}
+.plm-steps span+span::before{content:"→ ";color:var(--muted);font-weight:400}
+.plm-go{font-weight:700;font-size:.9rem;color:var(--brown)}
+@media (max-width:640px){.pillar.pl-method{flex-direction:column;align-items:stretch}.plm-pic{width:120px;align-self:center}.plm-pic img{width:120px}}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) :is(.hero-pic,.plm-pic,.who-pic) img{mix-blend-mode:normal;border-radius:14px}}
+:root[data-theme="dark"] :is(.hero-pic,.plm-pic,.who-pic) img{mix-blend-mode:normal;border-radius:14px}
+
 .w-hero h1 em{font-style:normal;color:var(--brown)}
 .w-hero .lead{font-size:1.14rem;max-width:58ch}
 .jump{display:flex;flex-wrap:wrap;gap:8px}
@@ -447,7 +476,8 @@ a.bot:hover{color:#B98324}
 @media (max-width:860px){.who2{grid-template-columns:1fr}}
 .who-pic{margin:0;display:flex;flex-direction:column;gap:16px;position:sticky;top:90px}
 @media (max-width:860px){.who-pic{position:static;max-width:380px;margin:0 auto;width:100%}}
-.who-pic img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:center 40%;border-radius:26px;box-shadow:0 24px 50px -24px rgba(60,40,20,.4)}
+.who-pic picture{display:block;background:var(--bg)}
+.who-pic img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:center 40%;mix-blend-mode:multiply}
 .who-pic .creds{justify-content:flex-start}
 .icf{display:flex;align-items:center;gap:14px;padding:12px 14px;background:var(--paper);border:1px solid var(--line);border-radius:16px;color:var(--ink);text-decoration:none}
 .who-pic .icf img{flex:none;width:72px;height:72px;aspect-ratio:1/1;object-fit:contain;border-radius:0;box-shadow:none}
@@ -464,7 +494,7 @@ a.bot:hover{color:#B98324}
 .way p{margin:0;font-size:.95rem;color:var(--muted)}
 .who-quote{margin:10px 0 0;padding:4px 0 4px 20px;border-left:3px solid var(--mustard,#B98324);font-family:var(--display);font-size:clamp(1.2rem,2.2vw,1.45rem);line-height:1.35;color:var(--brown)}
 .who-quote span{display:block;margin-top:6px;font-family:inherit;font-size:1rem;color:var(--muted)}
-@media (max-width:560px){.who-pic img{aspect-ratio:4/3;object-position:center 45%}.way{grid-template-columns:1fr;gap:10px}.way .ic{width:46px;height:46px}}
+@media (max-width:560px){.who-pic img{aspect-ratio:4/3;object-position:center 62%}.way{grid-template-columns:1fr;gap:10px}.way .ic{width:46px;height:46px}}
 /* цветы продуктов */
 .pb-fl,.pd-fl{display:inline-flex;flex:none;border-radius:50%;filter:drop-shadow(0 4px 8px rgba(110,79,60,.18))}
 .pb-fl svg,.pd-fl svg{display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
@@ -640,7 +670,7 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
   <div class="page">
     <a class="mark" href="https://voznesenskaya.ch/en/" aria-label="Ирина Вознесенская — на главную">
       <span class="mono av"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#FFFCF8" stroke="#6E4F3C" stroke-width="3"/><g transform="rotate(22.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(67.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(112.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(157.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(202.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(247.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(292.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(337.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(0.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(45.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(90.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(135.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(180.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(225.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(270.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(315.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><circle cx="50" cy="50" r="7" fill="#B98324"/></svg></span>
-      <span><b>Iryna Voznesenskaya</b><small>adaptation specialist · coach</small></span>
+      <span><b>Iryna Voznesenskaya</b><small>coaching with the “Steps” method</small></span>
     </a>
     <nav aria-label="Sections">
       <a href="/en/#who">About me</a>
@@ -655,12 +685,15 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
 </header>
 
 <main class="page" id="start">
-  <section class="w-hero" aria-labelledby="h1">
-    <div class="eyebrow">Work with me</div>
-    <h1 id="h1">Not ready-made advice, but <em>your own</em> path</h1>
-    <p class="lead">You moved, and life seems to have been put on pause. You can start it again, and it doesn’t have to be one big step right away. There are different paths here, light ones and deep ones. Each of them helps you see more than you see now and shift your attention from what is missing to what you can already do. That is how your life begins to change.</p>
+  <section class="w-hero has-pic" aria-labelledby="h1">
+    <div class="hero-txt">
+    <div class="eyebrow">Coaching with the “Steps” method</div>
+    <h1 id="h1">Life after moving <em>can be put back together</em></h1>
+    <p class="lead">You moved, and so much seems to have fallen apart. Familiar roles, your circle, the language, work. This isn’t weakness, it happens to almost everyone. In Japan a broken bowl isn’t thrown away. It is put back together, the cracks are filled with gold, and the bowl becomes even more precious. Your life comes back together in the same way. Step by step, from where you are now, and not necessarily with one big step straight away.</p>
+    </div>
+    <figure class="hero-pic"><picture><source srcset="/home/img/stupeni-hero.webp" type="image/webp"><img src="/home/img/stupeni-hero.jpg" width="800" height="992" alt="Eight pale steps. At the bottom lie pieces of a bowl, at the top stands the same bowl, mended with gold"></picture><figcaption>The “Steps” method. Eight steps by which life comes back together.</figcaption></figure>
     <div class="jump">
-      <a href="#who">Who I am and why I understand you</a><a href="#requests">What people come to me with</a><a href="#approach">What our work rests on</a><a href="#session">How the first meeting goes</a><a href="#path">Your path and programmes for you</a><a href="#reviews">What clients say</a><a href="#faq">Answers to frequent questions</a>
+      <a href="#who">Who I am and why I understand you</a><a href="#project">How my project works</a><a href="#requests">What people come to me with</a><a href="#approach">What our work rests on</a><a href="#session">How the first meeting goes</a><a href="#path">Your path and programmes for you</a><a href="#reviews">What clients say</a><a href="#faq">Answers to frequent questions</a>
     </div>
   </section>
 
@@ -668,22 +701,37 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
   <section id="who" aria-labelledby="who-h">
     <div class="who2">
       <figure class="who-pic">
-        <img src="/home/img/who.jpg" alt="A woman in a yellow scarf holding a cup looks out of the window at the lake and mountains, with a spaniel asleep beside her">
-        <figcaption class="creds"><span>transformational coach</span><span>neurocoach</span><span>an emigrant since 2010</span><span>online · in Russian</span></figcaption>
+        <picture><source srcset="/home/img/who-chasha.webp" type="image/webp"><img src="/home/img/who-chasha.jpg" width="900" height="1204" alt="A bowl with golden seams on a windowsill, with a lake and mountains outside"></picture>
+        <figcaption class="creds"><span>transformational coach</span><span>neurocoach</span><span>author of the “Steps” method</span><span>an emigrant since 2010</span><span>online · in Russian</span></figcaption>
         <a class="icf" href="https://www.credly.com/badges/cbafb81c-5da9-414d-b5a5-d1d43323b7b7" target="_blank" rel="noopener"><img src="/home/img/icf-member.webp" width="72" height="72" alt="ICF Member badge, International Coaching Federation"><span><b>Member of the International Coaching Federation (ICF)</b><small>Verify membership on Credly</small></span></a>
       </figure>
       <div class="who-body">
         <div class="eyebrow">Who I am and why I understand you</div>
         <h2 id="who-h">Hello! My name is Iryna</h2>
-        <p class="who-lead">I am a transformational coach and neurocoach. I live in Switzerland and know from my own experience what it is like — starting life over in a foreign country.</p>
+        <p class="who-lead">I’m a transformational coach and neurocoach, the author of the “Steps” method. I live in Switzerland and know first-hand what it’s like to start life over in a foreign country.</p>
         <p>That is why you are always at the centre of our work. Your life, your strength and your wellbeing.</p>
         <div class="who-ways">
           <div class="way"><span class="ic" data-ico="sprout" data-c="#66704F"></span><div><h3>We go deeper than advice</h3><p>We won’t stop at a plan on paper. We will gently go down to where your habitual reactions, fears and old rules live, the ones that no longer work here. When something changes inside you, solutions on the outside start to appear by themselves.</p></div></div>
           <div class="way"><span class="ic" data-ico="lantern" data-c="#2E5A88"></span><div><h3>You stop blaming yourself</h3><p>I understand how your brain reacts to change and an unfamiliar environment. Why in a new country your energy runs out so fast and a simple letter from an authority feels like a mountain. This is not about weakness. This understanding alone lifts a lot of needless guilt off your shoulders.</p></div></div>
           <div class="way"><span class="ic" data-ico="explore" data-c="#B98324"></span><div><h3>Your attention comes back to you</h3><p>I work with your thinking and the focus of your attention. Where your attention goes, your energy goes too. Together we will find the thoughts that go round in circles and learn to shift your gaze from “why isn’t it working for me” to “what can I do for myself today”. Then your mind grows quieter, and there is room for your own decisions.</p></div></div>
         </div>
+        <p class="who-bowl">Everything I know about this path I have gathered into the “Steps” method. These are eight steps by which life after a move comes back together. You don’t need to hide the cracks along the way. In time they become golden seams, and your experience of moving becomes your strength.</p>
         <blockquote class="who-quote">I don’t rush you or pull you by the hand. I walk beside you — at your pace and for your sake.<span>Iryna</span></blockquote>
       </div>
+    </div>
+  </section>
+
+  <!-- КАК УСТРОЕН ПРОЕКТ -->
+  <section id="project" aria-labelledby="pj-h">
+    <div class="sec-head">
+      <div class="eyebrow">How my project works</div>
+      <h2 id="pj-h">Three parts of one path</h2>
+      <p>So that it’s easy for you to find what fits, my project has three parts. Each has its own job, and together they lead you from your first steps in a new country to a life that is yours again.</p>
+    </div>
+    <div class="pj-list">
+      <a class="pj" href="#session"><span class="pj-k">Who is by your side</span><b>Iryna Voznesenskaya</b><span class="pj-t">This is me and my personal work with you. A 30-minute introductory meeting, three-hour reviews and the personal programme “My goal — my path”. I’m a transformational coach and neurocoach, a member of the International Coaching Federation ICF.</span><span class="pj-go">How the first meeting goes →</span></a>
+      <a class="pj" href="/en/put/"><span class="pj-k">How we walk</span><b>The “Steps” method</b><span class="pj-t">Eight steps of life in a new country, from “The broken bowl” to “Here and there — one life”, and three stages on each. My tests, programmes and our meetings are built on this method.</span><span class="pj-go">Steps. Your path in a new country →</span></a>
+      <a class="pj" href="https://svoiludi.ch/" target="_blank" rel="noopener"><span class="pj-k">Where and with whom</span><b>“Svoi ludi in Switzerland”</b><span class="pj-t">A directory and community for people living in Switzerland. Practical questions in plain words — permits, taxes, insurance, school, housing. Free tools and a directory where specialists who speak your language are gathering.</span><span class="pj-go">Open Svoi ludi →</span></a>
     </div>
   </section>
 
@@ -712,6 +760,16 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
       <div class="eyebrow">How I work</div>
       <h2 id="ap-h">What our work rests on</h2>
       <p>I don’t give advice, and I don’t know better than you what is right. Right is whatever suits you. My job is to ask the questions you don’t ask yourself and to help you hear your own answers.</p>
+    </div>
+    <div class="pillar pl-method">
+      <picture class="plm-pic"><source srcset="/put/img/03-sobirayu-sebya.webp" type="image/webp"><img src="/put/img/03-sobirayu-sebya.jpg" width="150" height="200" loading="lazy" alt="The pieces of a bowl return to their places, and gold fills the cracks"></picture>
+      <div class="plm-txt">
+        <h3>The “Steps” method</h3>
+        <p>This is my own method. Life in a new country comes back together over eight steps, from “The broken bowl”, when there is no energy and nothing to lean on, to “Here and there — one life”. The lower steps hold up the higher ones. While sleep and a roof over your head are missing, it’s too early to look for your calling, and that isn’t weakness but the order in which everything is built.</p>
+        <p>Each step has three stages. Finding my feet — I’m getting my bearings and need information and something to lean on. Standing firm — it’s working for me. Reaching higher — it starts to feel too tight, and I look for room to grow. Most often people come to me when “reaching higher” turns into “I want to, but I don’t do it”. That is exactly where our work begins.</p>
+        <div class="plm-steps"><span>Finding my feet</span><span>Standing firm</span><span>Reaching higher</span></div>
+        <a class="plm-go" href="/en/put/">See the eight steps →</a>
+      </div>
     </div>
     <div class="pillars">
       <div class="pillar"><span class="pl-fl" data-mandala="0"></span><h3>Emotional intelligence</h3><p>You learn to notice what you feel and to understand what your feelings are telling you. Emotions stop controlling your decisions and start guiding you.</p></div>
@@ -746,7 +804,7 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
     <div class="sec-head">
       <div class="eyebrow">Your path with me</div>
       <h2 id="path-h">Step by step — from where you are now</h2>
-      <p>You don’t have to go through every step. Start with the one that is about you right now. Every step is a way of caring for yourself. Click any block — you’ll see what you can come with and what you’ll leave with.</p>
+      <p>You don’t have to go through everything in order. Start with what is about you right now. If you don’t know where to begin, see which step you’re on at <a href="/en/put/">“Your path in a new country”</a>. Every step is a way of caring for yourself. Tap any block to see what you can come with and what you’ll leave with.</p>
     </div>
     <div id="pathThemes" class="themes"></div>
     <p class="path-note">Everything is online and in Russian. Where it says “ask me about the price personally”, the price is still being confirmed, write to me and I’ll tell you.</p>
@@ -767,6 +825,7 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
       <h2 id="re-h">What changes for you</h2>
     </div>
     <ul class="results">
+      <li><span class="ic sm" data-ico="sprout" data-c="#B98324"></span>The cracks of the move become golden seams — your experience becomes your strength</li>
       <li><span class="ic sm" data-ico="sprout" data-c="#66704F"></span>You find your own words instead of other people’s advice</li>
       <li><span class="ic sm" data-ico="key" data-c="#B98324"></span>The decision you’ve been putting off for months finally gets made</li>
       <li><span class="ic sm" data-ico="sun" data-c="#B98324"></span>Your energy comes back — you stop spending it on arguing with yourself</li>
@@ -815,6 +874,7 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
     </div>
     <div class="faq">
       <details><summary>How is coaching different from psychotherapy?</summary><p>Therapy more often works with the past and with what hurts. Coaching works with the present and with where you want to go. I don’t treat or diagnose; I help you find your own solution and get to action.</p></details>
+      <details><summary>What is the “Steps” method?</summary><p>It is my own method. It describes life after a move as eight steps, from “The broken bowl” to “Here and there — one life”, with three stages on each. A step is not a grade, and the first is no worse than the eighth. After a big change you may slip down a step, and that’s normal. The method helps you see where you are now and which next step is within your reach. You can see all the steps on the page <a href="/en/put/">“Your path in a new country”</a>.</p></details>
       <details><summary>How many sessions do I need?</summary><p>For a specific question, one to three are often enough. For changes on the level of “who do I want to be here”, three months or more. I’ll tell you more precisely after we meet.</p></details>
       <details><summary>I have nothing to say, I can’t even put into words what I want to work on</summary><p>That’s a normal start, not an obstacle. Putting it into words is part of my job. It’s enough to come with the phrase “something’s not right”.</p></details>
       <details><summary>Is it confidential?</summary><p>Yes. Everything that happens in a session stays between us — a coach’s professional ethics require it, and I follow them.</p></details>
@@ -845,7 +905,7 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
   <section id="novoe" aria-labelledby="nv-h">
     <h2 id="nv-h">What’s new</h2>
     <p class="nv-lead">What’s new on the site and in the Svoi ludi project.</p>
-    <div class="nv-grid"><article class="nv-item"><div class="nv-meta"><span class="nv-k">On the site</span><time datetime="2026-10-10">10 October 2026</time></div><h3>Steps. Your path in a new country</h3><p>Eight steps of life after moving and the story of a bowl that is put back together with gold. For each step it says what brings people to it and what helps on it.</p><a href="/en/put/">Take a look →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">Svoi ludi</span><time datetime="2026-10-09">9 October 2026</time></div><h3>How Switzerland works: 56 topics in plain words</h3><p>Permits, taxes, insurance, school, work and housing. Each topic has steps, free tools and specialists.</p><a href="https://svoiludi.ch/shveycariya/" target="_blank" rel="noopener">Open →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">On the site</span><time datetime="2026-10-09">9 October 2026</time></div><h3>ICF Member badge</h3><p>You can check my membership of the International Coaching Federation with one tap on the badge.</p><a href="#who">See it →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">On the site</span><time datetime="2026-10-09">9 October 2026</time></div><h3>The site as an app</h3><p>You can add the site as an icon to your phone’s home screen. It opens full screen, with tabs at the bottom.</p><a href="#start">To the home page →</a></article></div>
+    <div class="nv-grid"><article class="nv-item"><div class="nv-meta"><span class="nv-k">On the site</span><time datetime="2026-10-10">10 October 2026</time></div><h3>Home page and test with the “Steps” method</h3><p>The home page on how life after a move comes back together. And the “Steps of Stability” test with eight steps in plain words and watercolours of the bowl.</p><a href="/stupeni/#lang=en">Take the test →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">On the site</span><time datetime="2026-10-10">10 October 2026</time></div><h3>Steps. Your path in a new country</h3><p>Eight steps of life after moving and the story of a bowl that is put back together with gold. For each step it says what brings people to it and what helps on it.</p><a href="/en/put/">Take a look →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">Svoi ludi</span><time datetime="2026-10-09">9 October 2026</time></div><h3>How Switzerland works: 56 topics in plain words</h3><p>Permits, taxes, insurance, school, work and housing. Each topic has steps, free tools and specialists.</p><a href="https://svoiludi.ch/shveycariya/" target="_blank" rel="noopener">Open →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">On the site</span><time datetime="2026-10-09">9 October 2026</time></div><h3>ICF Member badge</h3><p>You can check my membership of the International Coaching Federation with one tap on the badge.</p><a href="#who">See it →</a></article></div>
     <div class="nv-bridge"><p><b>Practical questions about life in Switzerland</b> — permits, taxes, insurance, school, housing — are collected in my Svoi ludi project. There you’ll also find specialists who speak your language and free tools.</p><a class="btn ghost" href="https://svoiludi.ch/" target="_blank" rel="noopener">Open Svoi ludi</a></div>
     <div class="nv-sub"><div><b>Subscribe to updates</b><p>New materials, thoughts on adaptation and announcements — in my Telegram channel. You can unsubscribe at any time.</p></div><a class="btn" href="https://t.me/IrynaNeuroCoach_channel" target="_blank" rel="noopener">Subscribe on Telegram</a></div>
   </section>
@@ -868,8 +928,8 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
   <div class="share-slot" data-url="https://voznesenskaya.ch/en/" data-lead="Do you know someone who has also moved and is looking for an anchor? Forward this page, the message is already written." data-text="Hi! Have a look, this is Iryna Voznesenskaya. She’s a coach for people who have moved to another country and are building their life here from scratch. The website has free tests, and the first 30-minute meeting is free too. I think it might resonate with you."></div>
 
   <footer>
-    <span>© 2026 Iryna Voznesenskaya · adaptation specialist · coach</span>
-    <span><a href="https://voznesenskaya.ch/privacy/#lang=en" target="_blank" rel="noopener">Privacy policy</a> · <a href="https://voznesenskaya.ch/impressum/#lang=en" target="_blank" rel="noopener">Imprint</a></span>
+    <span>© 2026 Iryna Voznesenskaya · coaching with the “Steps” method</span>
+    <span><a href="https://voznesenskaya.ch/privacy/#lang=en" target="_blank" rel="noopener">Privacy policy</a> · <a href="https://voznesenskaya.ch/impressum/#lang=en" target="_blank" rel="noopener">Legal notice</a></span>
   </footer>
 </div>
 <script>
@@ -1098,8 +1158,8 @@ const PR = {
     about:'About 10 minutes of questions about your life here, and your answers come together into a personal 11-page report. The first thing you’ll see in it is how you are currently holding two cultures, your own and the new one. Whether you live between them, hide in one, or are already building a bridge. Next come six areas of your life, language, everyday life, work or your own business, people, energy and meaning, drawn as three wheels. As it is, as you’d like it to be, and how far apart the two are. You’ll find out which stage of adaptation you’re at, from the “time of discovery” and the “time of difficulty” to “at home”, and what helps most at that particular stage. And at the end you’ll read, in your own words, what is holding you back, and get a plan of small steps for four weeks.',
     inside:'an 11-page PDF report and a notes sheet. The bridge between two cultures, three wheels across six areas, your stage of adaptation, what holds you back, a four-week plan', pain:['everything seems fine, yet something isn’t right','so much at once — language, paperwork, work, children — and no idea where to start'], res:['how you live between your own culture and the new one, and what you can lean on in this','which areas are already good for you, where it feels empty, and where the gap between “is” and “want” is biggest','which stage of adaptation you’re at and what helps most there','a plan of small steps for four weeks'],
     next:[['meet','We’ll go through your report together and choose the first step'],['stupeni','Understand why it’s hard to move on, even though you’re trying'],['emo','If your energy and mood have dipped']]},
-  stupeni:{name:'“Steps of Stability”', ic:'hill', c:'#66704F', slogan:'To belong and feel at home', line:'guide and test · 20 minutes', price:'free', ready:true, type:'test', href:T+'/stupeni/#lang=en', more:{h:T+'/en/put/', b:'Your path in a new country', t:'The stops every woman who has moved passes through. From the ground under your feet to the sky above your home. See where you are now and what will help you keep going.'},
-    about:'Life after a move is built like a house, from the bottom up. The guide describes the eight steps of this house. The ground under your feet — sleep, energy and a roof over your head. A hearth and your own people. Your own voice. A map and the keys to the local rules. Your own workshop. A garden for others. The view from the hill and the sky above your home. The 20-minute test helps you hear which step is creaking beneath you. Because of it, climbing higher can be hard however much you try, and then it seems the problem is you, when the problem is the step. The 12-page report shows exactly where the crack is — in what you feel, what you do, what you think or what surrounds you, and what speaks loudest in your heart, a dream or the need for an anchor.',
+  stupeni:{name:'“Steps of Stability”', ic:'hill', c:'#66704F', slogan:'To belong and feel at home', line:'guide and test · 20 minutes', price:'free', ready:true, type:'test', href:T+'/stupeni/#lang=en', more:{h:T+'/en/put/', b:'Steps. Your path in a new country', t:'Eight steps that everyone who has moved goes through. From the broken bowl to a life in which here and there become one life. See where you are now and what will help you keep going.'},
+    about:'After a move, life comes back together from the bottom up, and the lower steps hold up the higher ones. The guide describes eight steps. The broken bowl — sleep, energy and a roof over your head. Your circle — people around you. I can do it myself — your voice and boundaries. Clear rules — order and deadlines. Work of my own — work, money and your own price. My contribution. My whole life. Here and there — one life. The 20-minute test helps you hear which step is creaking beneath you. Because of it, climbing higher can be hard however much you try, and then it seems the problem is you, when the problem is the step. The 12-page report shows exactly where the crack is — in what you feel, what you do, what you think or what surrounds you, and what speaks loudest in your heart, a dream or the need for an anchor.',
     inside:'a guide to the eight steps with questions for yourself, a three-part test — about you, your anchors and twelve everyday scenes — and a 12-page report with a notes sheet', pain:['it feels like you have to tackle everything at once, and you have no energy for anything','others are coping and you aren’t, and that makes it even harder'], res:['why it’s hard for you to move on and what exactly is holding you back','where the crack is — in your feelings, your actions, your thoughts or what surrounds you','what already holds you up, and there’s more of this support than it seemed','where you in particular should start, and one small step for this week'],
     next:[['meet','We’ll look at your report together and choose the first step'],['mentor','Talk to someone who has walked this path herself'],['kompas','How you live between two cultures and which area of life feels empty']]},
   blizost:{name:'“Being close and being yourself”', ic:'together', c:'#2E5A88', slogan:'Closeness where you don’t have to lose yourself', line:'test about your relationship · 20 minutes', price:'free', ready:true, type:'test', href:T+'/blizost/#lang=en',
