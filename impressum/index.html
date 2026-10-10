@@ -34,6 +34,9 @@
   document.title = {"ru": "Выходные данные", "uk": "Вихідні дані", "de": "Impressum", "en": "Legal notice"}[lang];
   window.__runBundle = function(b){
     document.getElementById('app').innerHTML = b.body;
+    /* якорь раздела: #otvetstvennost или #lang=uk&otvetstvennost (10.10.2026) */
+    var an = (location.hash || '').slice(1).split('&').filter(function(x){ return x && x.indexOf('=') < 0; })[0];
+    if (an) setTimeout(function(){ var t = document.getElementById(an); if (!t) return; var h = document.querySelector('header'), hs = h && /sticky|fixed/.test(getComputedStyle(h).position) ? h.getBoundingClientRect().bottom : 0; window.scrollTo(0, t.getBoundingClientRect().top + window.pageYOffset - hs - 16); }, 120);
     b.scripts.forEach(function(code){ var s = document.createElement('script'); s.textContent = code; document.body.appendChild(s); });
     var bar = document.createElement('div'); bar.className = 'langbar'; bar.setAttribute('role', 'group'); bar.setAttribute('aria-label', 'Language');
     LANGS.forEach(function(l){
@@ -49,7 +52,7 @@
 <body>
 <div id="app"></div>
 
-<script>(function(){var s=document.createElement("script");s.src=LANG+".js?v=b37b3c9c";s.onload=function(){__runBundle(window.__BUNDLE);};document.body.appendChild(s);})();</script>
+<script>(function(){var s=document.createElement("script");s.src=LANG+".js?v=06438f64";s.onload=function(){__runBundle(window.__BUNDLE);};document.body.appendChild(s);})();</script>
 <script src="/assets/samesite.js"></script>
 </body>
 </html>

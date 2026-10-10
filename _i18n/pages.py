@@ -29,6 +29,7 @@ TEST_DIRS = ('/testy/', '/kompas/', '/roza-lyubvi/', '/stupeni/', '/blizost/', '
 def localize_url(path, lang, hashpart=''):
     if path in TRANSLATED: return f'/{lang}{path}' + hashpart
     if path in TEST_DIRS and not hashpart: return path + '#lang=' + lang   # страницы с переключателем внутри
+    if path in ('/privacy/', '/impressum/') and hashpart: return path + '#lang=' + lang + '&' + hashpart[1:]   # якорь раздела + язык (10.10.2026)
     return path + hashpart
 def fix_links(html, base, lang):
     def attr(m):

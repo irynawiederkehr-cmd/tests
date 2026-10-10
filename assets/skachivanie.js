@@ -146,7 +146,7 @@
 
   var box = null;
   function morelink(){ var uk = pl() === 'uk';
-    if (VZ) return '/impressum/';
+    if (VZ) return '/impressum/#lang=' + pl() + '&otvetstvennost';
     return (uk ? '/uk' : '') + '/o-proekte/#otvetstvennost'; }
   function makeBox(){
     var t = T(), b = document.createElement('div'); b.className = 'svl-dl'; b.setAttribute('role', 'group');
