@@ -12,8 +12,8 @@ from jstok import CYR
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 I18N = os.path.join(ROOT, '_i18n')
 LANGS = ['uk', 'de', 'en']
-TESTS = ['testy', 'kompas', 'roza-lyubvi', 'stupeni', 'blizost', 'privacy', 'impressum']
-MULTI = {'testy': [0, 1, 2, 4], 'privacy': [0, 1, 2, 4, 5], 'impressum': [0, 1, 2, 4, 5]}
+TESTS = ['testy', 'kompas', 'roza-lyubvi', 'stupeni', 'blizost', 'privacy', 'impressum', 'usloviya']
+MULTI = {'testy': [0, 1, 2, 4], 'privacy': [0, 1, 2, 4, 5], 'impressum': [0, 1, 2, 4, 5], 'usloviya': [0, 1, 2, 4, 5]}
 MULTI_DEFAULT = [0, 2, 4, 7]
 TITLES = {
  'kompas': ('Компас адаптації', 'Kompass der Anpassung', 'Adaptation Compass'),

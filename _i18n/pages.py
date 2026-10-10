@@ -25,7 +25,7 @@ def site_path(base, url):
     if not stack: return '/'
     path = '/' + '/'.join(stack) + ('/' if url.endswith('/') or url in ('.', './', '..', '../') else '')
     return path
-TEST_DIRS = ('/testy/', '/kompas/', '/roza-lyubvi/', '/stupeni/', '/blizost/', '/privacy/', '/impressum/')
+TEST_DIRS = ('/testy/', '/kompas/', '/roza-lyubvi/', '/stupeni/', '/blizost/', '/privacy/', '/impressum/', '/usloviya/')
 def localize_url(path, lang, hashpart=''):
     if path in TRANSLATED: return f'/{lang}{path}' + hashpart
     if path in TEST_DIRS and not hashpart: return path + '#lang=' + lang   # страницы с переключателем внутри
@@ -51,7 +51,7 @@ def fix_links(html, base, lang):
         q, url = m.group(1), m.group(2)
         sp = site_path(base, url)
         return q + localize_url(sp, lang) + q
-    html = re.sub(r"(['\"])((?:\.\./)*(?:testy|kompas|roza-lyubvi|stupeni|blizost|put|karta-opor|privacy|impressum)/)\1", js, html)
+    html = re.sub(r"(['\"])((?:\.\./)*(?:testy|kompas|roza-lyubvi|stupeni|blizost|put|karta-opor|privacy|impressum|usloviya)/)\1", js, html)
     return html
 SWITCH_CSS = '#langbar.langbar{position:fixed;bottom:14px;right:14px;left:auto;top:auto;width:auto;max-width:none;margin:0;z-index:60;display:flex;gap:2px;background:rgba(255,255,255,.92);border:1px solid rgba(0,0,0,.08);border-radius:999px;padding:3px;font:600 12px Manrope,system-ui,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,.08)}#langbar.langbar a{color:#5d554d;padding:5px 9px;border-radius:999px;text-decoration:none;font:inherit;display:inline-block;width:auto}#langbar.langbar a[aria-current="true"]{background:#2f2924;color:#fff}@media print{.langbar{display:none!important}}'
 def switcher(cur, path):

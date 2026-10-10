@@ -163,7 +163,7 @@
     var l = lang(), T = D[l], P = pre(l);
     var path = location.pathname.replace(/^\/(uk|de|en)(?=\/)/, '');
     var langs = ['ru', 'uk', 'de', 'en'].map(function (x) {
-      var href = TEST || /^\/(privacy|impressum)\//.test(path) ? path + '#lang=' + x : pre(x) + path;
+      var href = TEST || /^\/(privacy|impressum|usloviya)\//.test(path) ? path + '#lang=' + x : pre(x) + path;
       return '<a href="' + href + '" data-lang="' + x + '"' + (x === l ? ' aria-current="true"' : '') + '>' + (x === 'uk' ? 'UA' : x.toUpperCase()) + '</a>';
     }).join('');
     var h = '<div class="pa-back" role="dialog" aria-modal="true" aria-label="' + T.tabs[4] + '"><div class="pa-sheet"><div class="pa-grip"></div><h2>' + T.tabs[4] + '</h2>' +
@@ -269,7 +269,7 @@
       if (l === cur) return done();
       var path = location.pathname.replace(/^\/(uk|de|en)(?=\/)/, '');
       var q = Q.replace(/[?&]lang=ask/, '').replace(/^&/, '?');
-      if (TEST || /^\/(privacy|impressum)\//.test(path)) {   /* язык этих страниц — по #lang=; если меняется только #, страницу надо перезагрузить */
+      if (TEST || /^\/(privacy|impressum|usloviya)\//.test(path)) {   /* язык этих страниц — по #lang=; если меняется только #, страницу надо перезагрузить */
         if (path + q === location.pathname + location.search) { location.hash = 'lang=' + l; location.reload(); } else location.href = path + q + '#lang=' + l;
         return;
       }

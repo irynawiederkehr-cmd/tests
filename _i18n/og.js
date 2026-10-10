@@ -24,6 +24,12 @@ const CARDS = [
     uk: ['Сходинки. <em>Твій шлях</em> у новій країні', 'Вісім сходинок — історія однієї чаші, яка розбилася і збирається золотом. Подивися, де ти зараз.'],
     de: ['Stufen. <em>Dein Weg</em> im neuen Land', 'Acht Stufen — eine Schale, die zerbrochen ist und sich mit Gold neu zusammensetzt. Schau, wo du stehst.'],
     en: ['Steps. <em>Your path</em> in a new country', 'Eight steps — the story of one bowl that broke and is coming together again with gold. See where you are now.'] },
+  { out: 'usloviya/og-image',
+    art: () => art(),
+    ru: ['Условия <em>работы со мной</em>', 'Как записаться, когда платить, как перенести встречу и что будет, если ты решишь остановиться.'],
+    uk: ['Умови <em>роботи зі мною</em>', 'Як записатися, коли платити, як перенести зустріч і що буде, якщо ти вирішиш зупинитися.'],
+    de: ['Bedingungen der <em>Zusammenarbeit</em>', 'Wie du einen Termin vereinbarst, wann du bezahlst, wie du verschiebst und was passiert, wenn du aufhören möchtest.'],
+    en: ['Terms of <em>working with me</em>', 'How to book, when to pay, how to reschedule and what happens if you decide to stop.'] },
 ];
 // эдельвейс из логотипа (favicon.svg)
 const OUT = 'M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z', INN = 'M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z';

@@ -19,7 +19,7 @@ function cyr(txt) { return [...new Set((txt.replace(CODE, '').match(/[^\n]{0,30}
   const pages = [];
   for (const l of LANGS) {
     const pre = l === 'ru' ? '' : `/${l}`;
-    pages.push([`${pre}/`, l], [`${pre}/put/`, l], [`${pre}/karta-opor/`, l], [`/testy/#lang=${l}`, l], [`/privacy/#lang=${l}`, l], [`/impressum/#lang=${l}`, l]);
+    pages.push([`${pre}/`, l], [`${pre}/put/`, l], [`${pre}/karta-opor/`, l], [`/testy/#lang=${l}`, l], [`/privacy/#lang=${l}`, l], [`/impressum/#lang=${l}`, l], [`/usloviya/#lang=${l}`, l]);
     for (const t of TESTS) pages.push([`/${t}/#lang=${l}`, l]);
   }
   for (const [u, l] of pages) {
