@@ -336,6 +336,13 @@ footer a{color:var(--muted)}
 .card .says{display:flex;flex-wrap:wrap;gap:6px}
 .card .says span{font-size:.82rem;background:var(--lf);border-radius:999px;padding:5px 11px;color:#2F2924}
 .card .more{margin-top:2px;font-weight:700;font-size:.88rem;color:var(--lc)}
+/* «что ты собираешь в себе» — золотой шов слева (метод, раздел 7; 10.10.2026) */
+.inside{display:flex;flex-direction:column;gap:3px;border-left:3px solid #C9971F;padding:2px 0 2px 11px}
+.inside small{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.inside q{quotes:"«" "»";font-family:var(--display);font-size:1.08rem;line-height:1.3;color:var(--ink)}
+:lang(en) .inside q{quotes:"“" "”"}
+.qm-head .inside{margin-top:6px}
+.qm-head .inside q{font-size:clamp(1.1rem,2vw,1.3rem)}
 @media (max-width:760px){
   .stop,.between{grid-template-columns:64px 1fr;column-gap:14px}
   .stop.l .card,.stop.r .card{grid-column:2}
@@ -537,56 +544,56 @@ const IMG = ['01-razbitaya-chasha', '02-svoi-chashi', '03-sobirayu-sebya', '04-v
 const bowl = (k, cls) => `<picture class="bowl${cls ? ' ' + cls : ''}"><source srcset="/put/img/${IMG[k]}.webp" type="image/webp"><img src="/put/img/${IMG[k]}.jpg" width="900" height="1205" loading="lazy" alt=""></picture>`;
 
 const STEPS = [
-  { name: 'Die zerbrochene Schale', sub: 'Stufe des Körpers', teaser: 'Wenn es vor allem darum geht, auf den Beinen zu bleiben',
+  { name: 'Die zerbrochene Schale', inside: 'Ich bin in Sicherheit, mein Körper ist bei mir', sub: 'Stufe des Körpers', teaser: 'Wenn es vor allem darum geht, auf den Beinen zu bleiben',
     says: ['Es ist schwer für mich hier', 'Ich habe keine Kraft', 'Ich schlafe nicht und halte mich nur mit den Nerven aufrecht'],
     pain: ['Alles kostet dreimal so viel Kraft, und am Abend scheint es, als hättest du nichts Besonderes geschafft', 'Zuerst geben Körper und Schlaf nach: du kannst nicht schlafen, Kopf und Rücken tun weh, doch die Ärzte finden nichts', 'Kein Gefühl für ein Morgen: Bewilligung, Arbeit, Schule, Geld — alles «mal sehen, wie es kommt»'],
     needs: [['Schlaf und Erholung', 'ausgeschlafen sein und mit Kraft aufwachen'], ['Körper', 'dass nichts wehtut, und ein Arzt, dem du vertraust'], ['Rhythmus', 'richtig essen statt zwischen Tür und Angel'], ['Ein Dach und Geld fürs Nötigste', 'eine Wohnung, um die du nicht bangen musst'], ['Vorhersehbarkeit', 'wenigstens grob wissen, was in den nächsten Monaten kommt'], ['Eine eigene Ecke', 'ein Ort, an dem du die Tür schliessen und durchatmen kannst']],
     vals: ['Leben und Gesundheit', 'Sicherheit', 'Ruhe und Stille', 'Das Recht auf Erholung ohne Schuldgefühl', 'Eins nach dem anderen'],
     check: 'Schläfst du genug? Hast du morgens Kraft? Gibt es Tage, an denen es vor allem darum geht, bis zum Abend durchzuhalten?',
     next: 'Wenn Schlaf und Rhythmus wieder da sind, merkst du plötzlich, wie einsam es ist.' },
-  { name: 'Dein Kreis', sub: 'Stufe des «Wir»', teaser: 'Wenn du dir wünschst, dass abends jemand auf dich wartet',
+  { name: 'Dein Kreis', inside: 'Ich gehöre dazu, ich habe meine Menschen', sub: 'Stufe des «Wir»', teaser: 'Wenn du dir wünschst, dass abends jemand auf dich wartet',
     says: ['Ich habe hier niemanden für ein offenes Gespräch', 'Niemand, den ich um zwei Uhr nachts anrufen kann', 'Ich bin allein, sogar in der Familie'],
     pain: ['Um dich herum sind Menschen, aber niemand, mit dem du wirklich reden kannst', 'Bekannte gibt es, Vertraute nicht, und als Erwachsene Freundschaften zu schliessen dauert lange und macht Angst', 'Zu Hause gehörst du nicht mehr dazu, hier noch nicht; Wochenenden und Feiertage sind am schwersten'],
     needs: [['Die eigenen Leute', 'wenigstens ein Mensch, den du nachts anrufen kannst'], ['Zugehörigkeit', 'ein Ort, an dem man dich kennt und auf dich wartet'], ['Die Liebsten', 'eine lebendige Verbindung zur Familie, zu Eltern und Kindern'], ['Wurzeln', 'die eigenen Feste, die eigene Sprache, das, was du an die Kinder weitergibst'], ['Gesehen werden', 'dass jemand merkt, wenn du verschwindest'], ['Schutz', 'jemand, der dir rät und für dich einsteht']],
     vals: ['Dazugehören', 'Treue', 'Wärme und Nähe', 'Wurzeln und das Gedächtnis der Familie', 'Sich nicht verstellen müssen'],
     check: 'Hast du jemanden, den du anrufen kannst, wenn es dir schlecht geht? Gab es im letzten Monat ein echtes Treffen, bei dem es nicht um Erledigungen ging?',
     next: 'Wenn es wenigstens einen Menschen gibt, der zu dir gehört, willst du selbst etwas wagen.' },
-  { name: 'Ich kann es selbst', sub: 'Stufe der Kraft', teaser: 'Wenn du wieder spüren willst: «ich kann das»',
+  { name: 'Ich kann es selbst', inside: 'Ich bin eigenständig und kann Ja und Nein sagen', sub: 'Stufe der Kraft', teaser: 'Wenn du wieder spüren willst: «ich kann das»',
     says: ['Ich schaffe es nicht einmal, einen Arzttermin zu vereinbaren', 'Ich habe immer noch Angst zu sprechen', 'Zu Hause habe ich meine Stimme verloren'],
     pain: ['Einfache Dinge regeln für dich der Mann, eine Freundin oder das Kind als Übersetzer', 'Es gelingt dir nicht, zu widersprechen und für dich einzustehen, und nachts geht es dir dann immer wieder durch den Kopf', 'Man spricht mit dir, als würdest du nichts verstehen, und du beginnst selbst, es zu glauben'],
     needs: [['Selbstständigkeit', 'deine Angelegenheiten ohne Mann und Übersetzer regeln'], ['Stimme', 'etwas sagen, wenn man dich ungerecht behandelt'], ['Grenzen', 'Nein sagen, ohne dich zu rechtfertigen'], ['Einfluss', 'du entscheidest und wählst, nicht die Umstände'], ['Respekt', 'dass man auf Augenhöhe mit dir spricht'], ['Kleine Siege', 'Beweise, dass du es kannst']],
     vals: ['Würde', 'Freiheit', 'Mut', 'Ehrlichkeit', '«Ich habe es geschafft»'],
     check: 'Kannst du eine einfache Sache selbst regeln: einen Termin machen, anrufen, widersprechen? Gibt es etwas, dem du ausweichst?',
     next: 'Wenn das «ich habe es gekonnt» da ist, willst du verstehen, wie hier alles funktioniert.' },
-  { name: 'Verständliche Regeln', sub: 'Stufe der Ordnung', teaser: 'Wenn jeder Brief im Briefkasten dein Herz schneller schlagen lässt',
+  { name: 'Verständliche Regeln', inside: 'Ich verstehe, wo ich lebe', sub: 'Stufe der Ordnung', teaser: 'Wenn jeder Brief im Briefkasten dein Herz schneller schlagen lässt',
     says: ['Ich verstehe nicht, wie man hier lebt', 'Jeder Brief — und das Herz rast', 'Ich habe Angst, einen Fehler zu machen und Ärger zu bekommen'],
     pain: ['Schule, Versicherungen, Steuern, Bewilligungen: Regeln gibt es, aber niemand erklärt sie', 'Du hast Angst, etwas falsch zu machen und eine Busse oder eine Absage zu bekommen oder eine Frist zu verpassen', 'Zwanzig Chats, zwanzig Ratschläge, und unklar, wem man glauben soll'],
     needs: [['Klarheit', 'verstehen, wie hier alles funktioniert'], ['Eine verlässliche Quelle', 'ein Wegweiser statt zwanzig Chats'], ['Ordnung in deinen Angelegenheiten', 'Papiere, Fristen, Ordner, nichts geht verloren'], ['Gelassenheit', 'die Gewissheit, dass dir und den Kindern nichts droht'], ['Verständliche Regeln', 'was hier üblich ist und was nicht'], ['Ein Plan', 'den Weg sehen, nicht den Nebel']],
     vals: ['Klarheit', 'Verlässlichkeit', 'Gerechtigkeit', 'Verantwortung', 'Gelassenheit'],
     check: 'Weisst du, wohin du mit deiner Frage gehen kannst? Löst ein Brief im Briefkasten Panik aus?',
     next: 'Wenn das System verständlich geworden ist, kommt die Frage: Was will ich eigentlich?' },
-  { name: 'Meine eigene Arbeit', sub: 'Stufe des eigenen Tuns', teaser: 'Wenn sich bei der Frage «Was machen Sie beruflich?» innerlich alles zusammenzieht',
+  { name: 'Meine eigene Arbeit', inside: 'Ich kann etwas, und das ist etwas wert', sub: 'Stufe des eigenen Tuns', teaser: 'Wenn sich bei der Frage «Was machen Sie beruflich?» innerlich alles zusammenzieht',
     says: ['Ich bin hier niemand', 'Ich habe kein eigenes Geld', 'Ich weiss nicht, was ich hier machen soll'],
     pain: ['Das Diplom wird nicht anerkannt, die Erfahrung nicht angerechnet, man bietet dir Stellen unter deinem früheren Niveau an oder gar keine', 'Kraft und Ideen sind da, aber wie der Markt funktioniert, womit man anfängt und was legal ist, ist unklar', 'Weder eigenes Geld noch ein eigener Name, und die Frage «Was machen Sie beruflich?» tut weh'],
     needs: [['Eine eigene Tätigkeit', 'Arbeit, ein neuer Beruf oder das eigene Geschäft, passend zu deiner Kraft und deinem Können'], ['Anerkennung der Erfahrung', 'dass deine bisherige Erfahrung hier etwas zählt'], ['Eigenes Geld', 'nicht wegen der Summe, sondern wegen Freiheit und Mitsprache in der Familie'], ['Wachstum', 'statt «Hauptsache, sie nehmen mich»'], ['Regeln des Marktes', 'wie man hier Arbeit sucht, Leute einstellt und ein Geschäft gründet'], ['Ein Umfeld auf Augenhöhe', 'Menschen, mit denen man über Pläne spricht statt zu klagen']],
     vals: ['Mein eigener Preis', 'Wahlfreiheit', 'Meisterschaft', 'Gesunder Ehrgeiz', 'Selbstachtung'],
     check: 'Hast du hier eine eigene Tätigkeit: eine Arbeit, ein Geschäft oder ein Projekt? Was antwortest du auf «Was machen Sie beruflich?»',
     next: 'Wenn das eigene Tun da ist, kommt die Frage: Wofür das alles?' },
-  { name: 'Mein Beitrag', sub: 'Stufe des Beitrags', teaser: 'Wenn das Eigene schon da ist und du teilen möchtest',
+  { name: 'Mein Beitrag', inside: 'Ich werde gebraucht', sub: 'Stufe des Beitrags', teaser: 'Wenn das Eigene schon da ist und du teilen möchtest',
     says: ['Ich möchte hier gebraucht werden', 'Ich habe es erreicht, doch die Freude fehlt', 'Ich möchte, dass meine Erfahrung jemandem nützt'],
     pain: ['Es gelingt, es läuft, aber wofür — unklar', 'Erfahrung ist da, aber wer sie hier braucht und in welcher Form, ist unklar', 'Entweder hilfst du allen und bist danach leer, oder du traust dich gar nicht, dich anzubieten'],
     needs: [['Sinn', 'verstehen, wofür das alles ist'], ['Gebraucht werden', 'dass deine Erfahrung nicht nur der Familie nützt'], ['Für wen', 'wem genau und in welcher Form du nützlich sein kannst'], ['Eine gemeinsame Sache', 'ein Kreis, in dem du Mitgestalterin bist, nicht Gast'], ['Anerkennung des Beitrags', 'dass er benannt wird, statt «du hast doch nur einen Tipp gegeben»'], ['Das richtige Mass', 'geben, weil du es wählst, ohne dich zu erschöpfen']],
     vals: ['Nutzen', 'Mitgefühl', 'Gleichwertigkeit', 'Gemeinschaft', 'Grosszügigkeit mit Grenzen'],
     check: 'Gibt es hier etwas, das du nicht nur für dich tust? Verstehst du, wofür das alles ist?',
     next: 'Wenn der Beitrag da ist, stellt sich die Frage nach dem ganzen Leben.' },
-  { name: 'Mein ganzes Leben', sub: 'Stufe des ganzen Lebens', teaser: 'Wenn du schon lange hier lebst und doch wie auf gepackten Koffern sitzt',
+  { name: 'Mein ganzes Leben', inside: 'Das ist mein Leben, und ich weiss, was ich will', sub: 'Stufe des ganzen Lebens', teaser: 'Wenn du schon lange hier lebst und doch wie auf gepackten Koffern sitzt',
     says: ['Ich bin schon lange hier, aber immer noch nicht zu Hause', 'Ich warte darauf, dass das echte Leben beginnt', 'Und was, wenn wir nicht weggegangen wären'],
     pain: ['«Wenn wir erst zurück sind», «wenn ich erst die Sprache kann», «wenn die Kinder erst gross sind» — und die Jahre vergehen', 'Bei jeder Schwierigkeit kehrt das «Und wenn wir nicht weggegangen wären» zurück', 'Dort bist du schon fremd, hier noch nicht ganz zu Hause, und die zwei Hälften passen nicht zusammen'],
     needs: [['Ganzheit', '«dort» und «hier» verbinden, dein früheres und dein neues Ich'], ['Dein eigenes Drehbuch', 'leben nicht, wie man soll, sondern wie es zu dir gehört'], ['Der Sinn des ganzen Lebens', 'wofür es da ist und womit du es abschliessen willst'], ['Flexibilität', 'aushalten, dass es nicht die eine richtige Antwort gibt'], ['Dein eigenes System', 'eigene Prioritäten statt allgemeiner Ratschläge'], ['Zeit', 'über sie verfügen, statt Verpasstes nachzuholen']],
     vals: ['Nichts bereuen', 'Echtheit', 'Verantwortung für das eigene Leben', 'Weiter Blick', 'Stimmigkeit'],
     check: 'Weisst du, womit du abschliessen willst? Wenn das Leben morgen enden würde, was würdest du bereuen?',
     next: 'Wenn das Leben zu einem Ganzen zusammengefunden hat, taucht die Frage auf: Was ist grösser als ich?' },
-  { name: 'Hier und dort — ein Leben', sub: 'Stufe «grösser als ich»', teaser: 'Wenn «hier» und «dort» zu einem Leben verschmelzen',
+  { name: 'Hier und dort — ein Leben', inside: 'Hier und dort — ein Leben, mein Leben', sub: 'Stufe «grösser als ich»', teaser: 'Wenn «hier» und «dort» zu einem Leben verschmelzen',
     says: ['Ich bin nicht mehr fremd, ich lebe einfach', 'Ich möchte, dass nach mir etwas bleibt', 'Mich interessieren die, die nach mir kommen'],
     pain: ['Niemand, mit dem du auf deiner Ebene reden kannst: Aus dem alten Kreis bist du herausgewachsen, und einen neuen gibt es noch nicht', 'Die alten Ziele ziehen nicht mehr, und die neuen sind noch nicht benannt', 'Du möchtest, dass das, was du geschaffen hast, nicht mit dir endet'],
     needs: [['Teil von etwas Grösserem sein', 'einer Sache, einer Idee, des Lebensflusses'], ['Spuren', 'dass nach dir etwas bleibt'], ['Weitergeben', 'lehren, begleiten, anderen Türen öffnen'], ['Dein Kreis', 'Menschen, die genauso weit denken'], ['Ein Leben', '«hier» und «dort» sind keine zwei Lager mehr'], ['Stille im Inneren', 'nichts beweisen, einfach sein']],
@@ -608,6 +615,7 @@ document.getElementById('trail').innerHTML = STEPS.map((s, k) => {
       ${bowl(k)}
       <span class="sub">${k + 1} · ${esc(s.sub)}</span><h3>${esc(s.name)}</h3><span class="teaser">${esc(s.teaser)}</span>
       <span class="says">${s.says.map(q => `<span>«${esc(q)}»</span>`).join('')}</span>
+      <span class="inside"><small>Was du in dir zusammenfügst</small><q>${esc(s.inside)}</q></span>
       <span class="more">Was dich auf dieser Stufe erwartet →</span>
     </button></div>`;
   const prev = k ? STEPS[k - 1].next : '';
@@ -620,7 +628,8 @@ function openStep(k){
   const s = STEPS[k];
   qmCard.innerHTML = `<div class="qm-top" style="${vars(k)}">
       <span class="ic">${ico(ICN[k], COL[k][0], COL[k][1], 34)}</span>
-      <div class="qm-head"><div class="eyebrow">Stufe ${k + 1} von 8 · ${esc(s.sub)}</div><h2 class="qm-title" id="qmTitle">${esc(s.name)}</h2></div>
+      <div class="qm-head"><div class="eyebrow">Stufe ${k + 1} von 8 · ${esc(s.sub)}</div><h2 class="qm-title" id="qmTitle">${esc(s.name)}</h2>
+        <p class="inside"><small>Was du auf dieser Stufe in dir zusammenfügst</small><q>${esc(s.inside)}</q></p></div>
       ${bowl(k, 'qm-pic')}
       <button class="qm-close" type="button" data-close aria-label="Schliessen">✕</button>
     </div>

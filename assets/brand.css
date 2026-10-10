@@ -527,8 +527,8 @@ footer.copy{margin-top:22px;padding-top:14px;border-top:1px solid var(--line);fo
 .st-two{display:grid;grid-template-columns:1fr;gap:16px;align-items:center}
 @media (min-width:700px){.st-two{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}}
 .pdf-page .st-two{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
-.st-ladder{max-width:440px;width:100%;margin:0 auto}
-.st-heart{max-width:440px;width:100%;margin:0 auto}
+.st-ladder{max-width:480px;width:100%;margin:0 auto}
+.st-heart{max-width:480px;width:100%;margin:0 auto}
 .st-voice{background:var(--s);color:#3A322B;border-radius:14px;padding:14px 16px;font-family:var(--display);font-style:italic;font-size:1.08rem;line-height:1.5}
 .st-voice span{display:block;font-family:var(--body);font-style:normal;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;opacity:.7}
 .st-voice p{margin:0}
@@ -547,8 +547,8 @@ footer.copy{margin-top:22px;padding-top:14px;border-top:1px solid var(--line);fo
 .st-wheels3 figcaption{font-family:var(--display);font-size:1.05rem;color:var(--plum)}
 /* в PDF всё компактнее */
 .pdf-page .blk h2{font-size:1.45rem}
-.pdf-page .st-ladder{max-width:340px}
-.pdf-page .st-heart{max-width:330px}
+.pdf-page .st-ladder{max-width:380px}
+.pdf-page .st-heart{max-width:360px}
 .pdf-page .st-grani{display:grid;grid-template-columns:1fr 1fr;gap:10px 24px}
 .pdf-page .st-list{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .pdf-page .st-li span{font-size:.8rem}
@@ -863,3 +863,6 @@ footer.copy .del-answers{margin-top:10px}
 :root[data-theme="dark"] .st-card img{mix-blend-mode:normal;border-radius:10px}
 /* длинная строка под именем в шапке тестов (метод «Ступени. Твой путь в новой стране», 10.10.2026): переносится в две строки, меню не сжимается */
 .sb-mark small{max-width:235px;line-height:1.35}@media (min-width:821px) and (max-width:1280px){.sb-nav{gap:13px}}
+/* «Твоя первая потребность сейчас» на обложке разбора «Ступени устойчивости» (метод, раздел 7; 10.10.2026) — золотой шов слева */
+.st-need{margin:0;font-weight:600;color:#3A322B;border-left:3px solid #C9971F;padding:2px 0 2px 11px;line-height:1.45}
+.st-need span{color:var(--l);font-weight:700}

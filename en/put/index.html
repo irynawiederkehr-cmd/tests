@@ -336,6 +336,13 @@ footer a{color:var(--muted)}
 .card .says{display:flex;flex-wrap:wrap;gap:6px}
 .card .says span{font-size:.82rem;background:var(--lf);border-radius:999px;padding:5px 11px;color:#2F2924}
 .card .more{margin-top:2px;font-weight:700;font-size:.88rem;color:var(--lc)}
+/* «что ты собираешь в себе» — золотой шов слева (метод, раздел 7; 10.10.2026) */
+.inside{display:flex;flex-direction:column;gap:3px;border-left:3px solid #C9971F;padding:2px 0 2px 11px}
+.inside small{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.inside q{quotes:"«" "»";font-family:var(--display);font-size:1.08rem;line-height:1.3;color:var(--ink)}
+:lang(en) .inside q{quotes:"“" "”"}
+.qm-head .inside{margin-top:6px}
+.qm-head .inside q{font-size:clamp(1.1rem,2vw,1.3rem)}
 @media (max-width:760px){
   .stop,.between{grid-template-columns:64px 1fr;column-gap:14px}
   .stop.l .card,.stop.r .card{grid-column:2}
@@ -537,56 +544,56 @@ const IMG = ['01-razbitaya-chasha', '02-svoi-chashi', '03-sobirayu-sebya', '04-v
 const bowl = (k, cls) => `<picture class="bowl${cls ? ' ' + cls : ''}"><source srcset="/put/img/${IMG[k]}.webp" type="image/webp"><img src="/put/img/${IMG[k]}.jpg" width="900" height="1205" loading="lazy" alt=""></picture>`;
 
 const STEPS = [
-  { name: 'The broken bowl', sub: 'the body step', teaser: 'When the main thing is just staying on your feet',
+  { name: 'The broken bowl', inside: 'I am safe, my body is with me', sub: 'the body step', teaser: 'When the main thing is just staying on your feet',
     says: ['It’s hard for me here', 'I have no strength', 'I can’t sleep and I’m running on nerves'],
     pain: ['Everything takes three times the energy, and by evening it feels as if nothing much has been done', 'The body and sleep give way first: you can’t sleep, your head and back ache, and the doctors find nothing', 'No sense of tomorrow: permit, work, school, money — it’s all “we’ll see how it goes”'],
     needs: [['Sleep and rest', 'getting enough sleep and waking up with energy'], ['Body', 'nothing hurting, and a doctor you trust'], ['Routine', 'eating properly, not on the run'], ['A roof and money for the basics', 'a home you don’t have to worry about'], ['Predictability', 'knowing at least roughly what the next few months will bring'], ['A corner of your own', 'a place where you can close the door and breathe out']],
     vals: ['Life and health', 'Safety', 'Peace and quiet', 'The right to rest without guilt', 'One thing at a time'],
     check: 'Are you getting enough sleep? Do you have energy in the morning? Are there days when the main thing is just getting through to the evening?',
     next: 'Once sleep and rhythm are back, you suddenly notice how lonely it is.' },
-  { name: 'Your circle', sub: 'the “we” step', teaser: 'When you long for someone to be waiting for you in the evening',
+  { name: 'Your circle', inside: 'I belong, I have my people', sub: 'the “we” step', teaser: 'When you long for someone to be waiting for you in the evening',
     says: ['I have no one here to really open up to', 'No one to call at two in the morning', 'I’m alone even within my family'],
     pain: ['There are people around, but no one to really talk to', 'You have acquaintances but no one close, and making friends as an adult is slow and scary', 'No longer one of them back home, not yet one of them here; weekends and holidays are the hardest'],
     needs: [['Your people', 'at least one person you can call at night'], ['Belonging', 'a place where you’re recognised and expected'], ['Loved ones', 'a living connection with family, parents and children'], ['Roots', 'your own holidays, your own language, what you pass on to your children'], ['Being noticed', 'someone noticing if you disappear'], ['Protection', 'someone to advise you and stand up for you']],
     vals: ['Being one of us', 'Loyalty', 'Warmth and closeness', 'Roots and family memory', 'Not having to pretend'],
     check: 'Is there someone to call when things are bad? Have you had a real, in-person meeting in the past month that wasn’t about tasks?',
     next: 'Once you have at least one person of your own, you want to dare things yourself.' },
-  { name: 'I can do it myself', sub: 'the strength step', teaser: 'When you want to feel again: “I can”',
+  { name: 'I can do it myself', inside: 'I am my own person, I can say yes and no', sub: 'the strength step', teaser: 'When you want to feel again: “I can”',
     says: ['I can’t even book a doctor’s appointment', 'I’m still afraid to speak', 'At home I’ve lost my voice'],
     pain: ['Simple matters are handled for you by your husband, a friend or your child acting as interpreter', 'You can’t manage to object or stand up for yourself, and then you replay it at night', 'People talk to you as if you don’t understand, and you start to believe it yourself'],
     needs: [['Independence', 'sorting out your own matters without your husband or an interpreter'], ['Voice', 'speaking up when you’re treated unfairly'], ['Boundaries', 'saying no without justifying yourself'], ['Influence', 'you decide and choose, not circumstances'], ['Respect', 'being spoken to as an equal'], ['Small victories', 'proof that you can']],
     vals: ['Dignity', 'Freedom', 'Courage', 'Honesty', '“I did it”'],
     check: 'Can you handle a simple matter yourself: book an appointment, make a call, object? Is there something you avoid?',
     next: 'Once “I could do it” is there, you want to understand how everything works here.' },
-  { name: 'Clear rules', sub: 'the order step', teaser: 'When every letter in the letterbox makes your heart beat faster',
+  { name: 'Clear rules', inside: 'I understand where I live', sub: 'the order step', teaser: 'When every letter in the letterbox makes your heart beat faster',
     says: ['I don’t understand how to live here', 'Every letter — and my heart pounds', 'I’m afraid of making a mistake and getting into trouble'],
     pain: ['School, insurance, taxes, permits: there are rules, but nobody explains them', 'You’re scared of doing it wrong and getting a fine or a refusal, or missing a deadline', 'Twenty chats, twenty pieces of advice, and no idea whom to trust'],
     needs: [['Clarity', 'understanding how everything works here'], ['A reliable source', 'one guide instead of twenty chats'], ['Order in your affairs', 'papers, deadlines, folders, nothing lost'], ['Peace of mind', 'certainty that you and your children are not at risk'], ['Clear rules', 'what is done here and what isn’t'], ['A plan', 'seeing the road, not fog']],
     vals: ['Clarity', 'Reliability', 'Fairness', 'Responsibility', 'Peace of mind'],
     check: 'Do you know where to go with your question? Does a letter in the letterbox make you panic?',
     next: 'Once the system makes sense, the question comes: what do I want?' },
-  { name: 'Work of my own', sub: 'the work step', teaser: 'When everything inside you tightens at the question “What do you do?”',
+  { name: 'Work of my own', inside: 'I am good at something, and it is worth something', sub: 'the work step', teaser: 'When everything inside you tightens at the question “What do you do?”',
     says: ['I’m nobody here', 'I have no money of my own', 'I don’t know what to do with myself here'],
     pain: ['Your diploma isn’t recognised, your experience doesn’t count, you’re offered jobs below your previous level or none at all', 'You have energy and ideas, but how the market works, where to start and what’s legal is unclear', 'No money of your own, no name of your own, and the question “What do you do?” hurts'],
     needs: [['Your own occupation', 'a job, a new profession or your own business that fits your strength and your mind'], ['Recognition of experience', 'your past experience counting for something here'], ['Your own money', 'not about the amount, but about freedom and a voice in the family'], ['Growth', 'not “anything, as long as they take me”'], ['Market rules', 'how people look for work, hire and start a business here'], ['A circle of peers', 'people you talk about plans with instead of complaining']],
     vals: ['My own price', 'Freedom of choice', 'Mastery', 'Healthy ambition', 'Self-respect'],
     check: 'Do you have something of your own here: a job, a business or a project? What do you say to “What do you do?”',
     next: 'Once you have your own work, the question comes: what is it all for?' },
-  { name: 'My contribution', sub: 'the contribution step', teaser: 'When you already have something of your own and want to share',
+  { name: 'My contribution', inside: 'I am needed', sub: 'the contribution step', teaser: 'When you already have something of your own and want to share',
     says: ['I want to be needed here', 'I’ve achieved it, but there’s no joy', 'I want my experience to be of use'],
     pain: ['It works, it’s going well, but what for — unclear', 'You have experience, but who needs it here and in what form is unclear', 'Either you help everyone and end up drained, or you don’t dare offer yourself at all'],
     needs: [['Meaning', 'understanding what it’s all for'], ['Being needed', 'your experience being useful beyond your family'], ['Who it’s for', 'exactly whom you can be useful to, and in what form'], ['A shared cause', 'a circle where you’re a co-creator, not a guest'], ['Recognition of your contribution', 'having it named, not “oh, you just gave a tip”'], ['Balance', 'giving by choice without draining yourself']],
     vals: ['Usefulness', 'Compassion', 'Equality', 'Community', 'Generosity with boundaries'],
     check: 'Is there something here that you do not just for yourself? Do you understand what it’s all for?',
     next: 'Once there is a contribution, the question of your whole life arises.' },
-  { name: 'My whole life', sub: 'the whole-life step', teaser: 'When you’ve lived here a long time but still feel you’re living out of a suitcase',
+  { name: 'My whole life', inside: 'This is my life, and I know what I want', sub: 'the whole-life step', teaser: 'When you’ve lived here a long time but still feel you’re living out of a suitcase',
     says: ['I’ve been here a long time, but I’m still not home', 'I’m waiting for real life to begin', 'What if we had never left'],
     pain: ['“Once we go back”, “once I learn the language”, “once the kids grow up” — and the years go by', 'With every difficulty, the “what if we hadn’t left” comes back', 'There you’re already a stranger, here you don’t quite belong yet, and the two halves don’t fit together'],
     needs: [['Wholeness', 'connecting “there” and “here”, your former self and your new one'], ['Your own script', 'living not as you should, but in the way that is yours'], ['The meaning of your whole life', 'what it is for and how you want it to end'], ['Flexibility', 'being able to bear that there is no single right answer'], ['Your own system', 'your own priorities instead of general advice'], ['Time', 'managing it rather than chasing what you missed']],
     vals: ['No regrets', 'Authenticity', 'Responsibility for your own life', 'A broad view', 'Integrity'],
     check: 'Do you know how you want it to end? If life were ending tomorrow, what would you regret?',
     next: 'When life has come together as one whole, a question appears: what is bigger than me?' },
-  { name: 'Here and there — one life', sub: 'the “bigger than me” step', teaser: 'When “here” and “there” merge into one life',
+  { name: 'Here and there — one life', inside: 'Here and there — one life, my life', sub: 'the “bigger than me” step', teaser: 'When “here” and “there” merge into one life',
     says: ['I’m no longer a stranger, I simply live', 'I want something to remain after me', 'I’m interested in those who come after me'],
     pain: ['No one to talk to on your level: you’ve outgrown your old circle, and there’s no new one yet', 'Old goals no longer pull you, and new ones haven’t been named yet', 'You want what you’ve done not to end with you'],
     needs: [['Being part of something bigger', 'a cause, an idea, the flow of life'], ['Legacy', 'something that remains after you'], ['Passing it on', 'teaching, mentoring, opening doors for others'], ['Your circle', 'people who think just as broadly'], ['One life', '“here” and “there” are no longer two camps'], ['Inner quiet', 'not proving, simply being']],
@@ -608,6 +615,7 @@ document.getElementById('trail').innerHTML = STEPS.map((s, k) => {
       ${bowl(k)}
       <span class="sub">${k + 1} · ${esc(s.sub)}</span><h3>${esc(s.name)}</h3><span class="teaser">${esc(s.teaser)}</span>
       <span class="says">${s.says.map(q => `<span>«${esc(q)}»</span>`).join('')}</span>
+      <span class="inside"><small>What you put back together inside</small><q>${esc(s.inside)}</q></span>
       <span class="more">What’s on this step →</span>
     </button></div>`;
   const prev = k ? STEPS[k - 1].next : '';
@@ -620,7 +628,8 @@ function openStep(k){
   const s = STEPS[k];
   qmCard.innerHTML = `<div class="qm-top" style="${vars(k)}">
       <span class="ic">${ico(ICN[k], COL[k][0], COL[k][1], 34)}</span>
-      <div class="qm-head"><div class="eyebrow">Step ${k + 1} of 8 · ${esc(s.sub)}</div><h2 class="qm-title" id="qmTitle">${esc(s.name)}</h2></div>
+      <div class="qm-head"><div class="eyebrow">Step ${k + 1} of 8 · ${esc(s.sub)}</div><h2 class="qm-title" id="qmTitle">${esc(s.name)}</h2>
+        <p class="inside"><small>What you put back together inside on this step</small><q>${esc(s.inside)}</q></p></div>
       ${bowl(k, 'qm-pic')}
       <button class="qm-close" type="button" data-close aria-label="Close">✕</button>
     </div>
