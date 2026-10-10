@@ -22,7 +22,7 @@ const PRIV_ALL = {
     countryQ: 'Где ты сейчас живёшь?', countryPick: 'Выбери страну', countryTop: 'Часто выбирают', countryAll: 'Все страны', countryOther: 'Другая страна',
     countryErr: 'Выбери, пожалуйста, страну, в которой ты сейчас живёшь.',
     countryNote: 'Страна нужна, чтобы показать в разборе подходящее приглашение и полезные ссылки.',
-    privacy: 'Политика конфиденциальности', impressum: 'Выходные данные', home: 'Главная', allTests: 'Все тесты',
+    privacy: 'Политика конфиденциальности', impressum: 'Выходные данные', disclaimer: 'Ограничение ответственности', home: 'Главная', allTests: 'Все тесты',
     onlyYou: 'Твои ответы остаются только у тебя. Я их не вижу.',
     keepUntil: d => `Твои ответы и разбор хранятся только на этом устройстве, до ${d}. Потом они удалятся сами. Скачай PDF, если хочешь сохранить разбор.`,
     del: 'Удалить мои ответы', delAsk: 'Удалить все ответы этого теста с этого устройства? Разбор тоже исчезнет. Если хочешь его сохранить, сначала скачай PDF.',
@@ -32,7 +32,7 @@ const PRIV_ALL = {
     countryQ: 'Де ти зараз живеш?', countryPick: 'Обери країну', countryTop: 'Часто обирають', countryAll: 'Усі країни', countryOther: 'Інша країна',
     countryErr: 'Обери, будь ласка, країну, у якій ти зараз живеш.',
     countryNote: 'Країна потрібна, щоб показати в розборі відповідне запрошення та корисні посилання.',
-    privacy: 'Політика конфіденційності', impressum: 'Вихідні дані', home: 'Головна', allTests: 'Усі тести',
+    privacy: 'Політика конфіденційності', impressum: 'Вихідні дані', disclaimer: 'Обмеження відповідальності', home: 'Головна', allTests: 'Усі тести',
     onlyYou: 'Твої відповіді залишаються тільки в тебе. Я їх не бачу.',
     keepUntil: d => `Твої відповіді та розбір зберігаються тільки на цьому пристрої, до ${d}. Потім вони видаляться самі. Завантаж PDF, якщо хочеш зберегти розбір.`,
     del: 'Видалити мої відповіді', delAsk: 'Видалити всі відповіді цього тесту з цього пристрою? Розбір теж зникне. Якщо хочеш його зберегти, спочатку завантаж PDF.',
@@ -42,7 +42,7 @@ const PRIV_ALL = {
     countryQ: 'Wo lebst du zurzeit?', countryPick: 'Wähle ein Land', countryTop: 'Häufig gewählt', countryAll: 'Alle Länder', countryOther: 'Anderes Land',
     countryErr: 'Wähle bitte das Land, in dem du zurzeit lebst.',
     countryNote: 'Das Land brauche ich, um dir in der Auswertung die passende Einladung und hilfreiche Links zu zeigen.',
-    privacy: 'Datenschutzerklärung', impressum: 'Impressum', home: 'Startseite', allTests: 'Alle Tests',
+    privacy: 'Datenschutzerklärung', impressum: 'Impressum', disclaimer: 'Haftungsausschluss', home: 'Startseite', allTests: 'Alle Tests',
     onlyYou: 'Deine Antworten bleiben nur bei dir. Ich sehe sie nicht.',
     keepUntil: d => `Deine Antworten und die Auswertung sind nur auf diesem Gerät gespeichert, bis ${d}. Danach werden sie automatisch gelöscht. Lade das PDF herunter, wenn du die Auswertung behalten möchtest.`,
     del: 'Meine Antworten löschen', delAsk: 'Alle Antworten dieses Tests von diesem Gerät löschen? Auch die Auswertung verschwindet. Wenn du sie behalten möchtest, lade zuerst das PDF herunter.',
@@ -52,7 +52,7 @@ const PRIV_ALL = {
     countryQ: 'Where do you live now?', countryPick: 'Choose a country', countryTop: 'Frequently chosen', countryAll: 'All countries', countryOther: 'Other country',
     countryErr: 'Please choose the country where you live now.',
     countryNote: 'I need the country to show you the right invitation and useful links in your results.',
-    privacy: 'Privacy policy', impressum: 'Legal notice', home: 'Home', allTests: 'All tests',
+    privacy: 'Privacy policy', impressum: 'Legal notice', disclaimer: 'Limitation of liability', home: 'Home', allTests: 'All tests',
     onlyYou: 'Your answers stay with you only. I cannot see them.',
     keepUntil: d => `Your answers and results are stored only on this device, until ${d}. After that they are deleted automatically. Download the PDF if you want to keep your results.`,
     del: 'Delete my answers', delAsk: 'Delete all answers to this test from this device? Your results will disappear too. If you want to keep them, download the PDF first.',
@@ -156,7 +156,7 @@ function legalUrl(page){
 }
 function privacyLinksHtml(){
   const root = (typeof SITE_BASE !== 'undefined') ? SITE_BASE : '../';
-  return `<a href="${root}">${PRIV.home}</a> · <a href="${root}testy/">${PRIV.allTests}</a> · <a href="${legalUrl('privacy')}">${PRIV.privacy}</a> · <a href="${legalUrl('impressum')}">${PRIV.impressum}</a>`;
+  return `<a href="${root}">${PRIV.home}</a> · <a href="${root}testy/">${PRIV.allTests}</a> · <a href="${legalUrl('privacy')}">${PRIV.privacy}</a> · <a href="${legalUrl('impressum')}#lang=${PAGE_LANG}&otvetstvennost">${PRIV.disclaimer}</a> · <a href="${legalUrl('impressum')}">${PRIV.impressum}</a>`;
 }
 (function footer(){
   const f = document.querySelector('.wrap .copy'); if (!f || f.querySelector('.legal-links')) return;
