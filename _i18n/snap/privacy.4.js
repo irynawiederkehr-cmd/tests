@@ -179,12 +179,12 @@ function privacyLinksHtml(){
   if (document.querySelector('.sitebar')) return;
   const root = (typeof SITE_BASE !== 'undefined') ? SITE_BASE : '../';
   const T = {
-    ru: { sub: 'коуч, ментор, автор метода «Ступени»', name: 'Ирина Вознесенская', nav: ['Обо мне', 'Работа со мной', 'Продукты', 'Твой путь', 'Тесты', 'Свои люди'], cta: 'Знакомство' },
-    uk: { sub: 'коуч, менторка, авторка методу «Сходинки»', name: 'Ірина Вознесенська', nav: ['Про мене', 'Робота зі мною', 'Продукти', 'Твій шлях', 'Тести', 'Свої люди'], cta: 'Знайомство' },
-    de: { sub: 'Coach, Mentorin, Autorin der Methode «Stufen»', name: 'Iryna Voznesenskaya', nav: ['Über mich', 'Arbeit mit mir', 'Angebote', 'Dein Weg', 'Tests', 'Svoi ludi'], cta: 'Kennenlernen' },
-    en: { sub: 'coach, mentor, author of the “Steps” method', name: 'Iryna Voznesenskaya', nav: ['About me', 'Work with me', 'Services', 'Your path', 'Tests', 'Svoi ludi'], cta: 'Intro call' }
+    ru: { sub: 'коуч, ментор, автор метода «Ступени. Твой путь в новой стране»', name: 'Ирина Вознесенская', nav: ['Обо мне', 'Работа со мной', 'Продукты', 'Твой путь', 'Тесты', 'Свои люди'], cta: 'Знакомство' },
+    uk: { sub: 'коуч, менторка, авторка методу «Сходинки. Твій шлях у новій країні»', name: 'Ірина Вознесенська', nav: ['Про мене', 'Робота зі мною', 'Продукти', 'Твій шлях', 'Тести', 'Свої люди'], cta: 'Знайомство' },
+    de: { sub: 'Coach, Mentorin, Autorin der Methode «Stufen. Dein Weg im neuen Land»', name: 'Iryna Voznesenskaya', nav: ['Über mich', 'Arbeit mit mir', 'Angebote', 'Dein Weg', 'Tests', 'Svoi ludi'], cta: 'Kennenlernen' },
+    en: { sub: 'coach, mentor, author of the “Steps. Your path in a new country” method', name: 'Iryna Voznesenskaya', nav: ['About me', 'Work with me', 'Services', 'Your path', 'Tests', 'Svoi ludi'], cta: 'Intro call' }
   }[PAGE_LANG] || {};
-  const L = T.nav ? T : { sub: 'коуч, ментор, автор метода «Ступени»', name: 'Ирина Вознесенская', nav: ['Обо мне', 'Работа со мной', 'Продукты', 'Твой путь', 'Тесты', 'Свои люди'], cta: 'Знакомство' };
+  const L = T.nav ? T : { sub: 'коуч, ментор, автор метода «Ступени. Твой путь в новой стране»', name: 'Ирина Вознесенская', nav: ['Обо мне', 'Работа со мной', 'Продукты', 'Твой путь', 'Тесты', 'Свои люди'], cta: 'Знакомство' };
   const hrefs = [root + '#who', root + '#requests', root + '#path', root + 'put/', root + 'testy/', 'https://svoiludi.ch/'];
   const here = location.pathname.replace(/\/+$/, '').split('/').pop();
   const h = document.createElement('header'); h.className = 'sitebar';
