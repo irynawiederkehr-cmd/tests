@@ -269,7 +269,10 @@
       if (l === cur) return done();
       var path = location.pathname.replace(/^\/(uk|de|en)(?=\/)/, '');
       var q = Q.replace(/[?&]lang=ask/, '').replace(/^&/, '?');
-      if (TEST || /^\/(privacy|impressum)\//.test(path)) { location.href = path + q + '#lang=' + l; location.reload(); return; }
+      if (TEST || /^\/(privacy|impressum)\//.test(path)) {   /* язык этих страниц — по #lang=; если меняется только #, страницу надо перезагрузить */
+        if (path + q === location.pathname + location.search) { location.hash = 'lang=' + l; location.reload(); } else location.href = path + q + '#lang=' + l;
+        return;
+      }
       var a = document.querySelector('#langbar a[data-lang="' + l + '"]');
       location.href = (a ? a.getAttribute('href') : pre(l) + path).split('#')[0] + q + location.hash;
     });
