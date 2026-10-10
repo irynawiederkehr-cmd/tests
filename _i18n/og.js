@@ -2,7 +2,8 @@
 // Правило Ирины (07.10.2026): у КАЖДОЙ страницы своя картинка-превью 1200×630, на языке страницы.
 //   Без фотографий (Ирина будет менять фото на сайте). Рисунок «Пустить корни» (выбран Ириной 07.10.2026):
 //   эдельвейс из логотипа на стебле, под землёй расходятся корни. Слева текст страницы.
-//   «Путь» тоже с корнями (решение Ирины 07.10.2026). trail() — запасной рисунок «тропа из восьми стоянок», сейчас не используется.
+//   «Путь» с 10.10.2026 — акварельная чаша с золотыми швами (метод «Ступени», история чаши); bowls(). trail() — запасной рисунок, не используется.
+//   `node _i18n/og.js put` — пересобрать только картинки «Пути».
 //   Пишет {папка}/og-image.jpg (русский) и og-image.{uk,de,en}.jpg; pages.py сам ставит их в языковые страницы.
 //   Тесты (kompas, stupeni, …) открываются на всех языках по одному адресу — у них своя картинка с веером разбора.
 //   `node _i18n/og.js check` — найдёт страницы без превью.
@@ -16,10 +17,11 @@ const CARDS = [
     de: ['Keine fertigen Ratschläge, sondern <em>dein eigener</em> Weg', 'Du bist umgezogen, und das Leben scheint auf Pause zu stehen. Du kannst es wieder in Gang bringen.'],
     en: ['Not ready-made advice, but <em>your own</em> path', 'You moved, and life seems to have been put on pause. You can start it again.'] },
   { out: 'put/og-image',
-    ru: ['Твой путь <em>в новой стране</em>', 'Восемь стоянок от первых дней до чувства дома. Посмотри, где ты сейчас.'],
-    uk: ['Твій шлях <em>у новій країні</em>', 'Вісім зупинок від перших днів до відчуття дому. Подивися, де ти зараз.'],
-    de: ['Dein Weg <em>im neuen Land</em>', 'Acht Stationen von den ersten Tagen bis zum Gefühl, zu Hause zu sein. Schau, wo du gerade stehst.'],
-    en: ['Your path <em>in a new country</em>', 'Eight stops from the first days to the feeling of being home. See where you are now.'] },
+    art: () => bowls(),
+    ru: ['Ступени. <em>Твой путь</em> в новой стране', 'Восемь ступеней — история одной чаши, которая разбилась и собирается золотом. Посмотри, где ты сейчас.'],
+    uk: ['Сходинки. <em>Твій шлях</em> у новій країні', 'Вісім сходинок — історія однієї чаші, яка розбилася і збирається золотом. Подивися, де ти зараз.'],
+    de: ['Stufen. <em>Dein Weg</em> im neuen Land', 'Acht Stufen — eine Schale, die zerbrochen ist und sich mit Gold neu zusammensetzt. Schau, wo du stehst.'],
+    en: ['Steps. <em>Your path</em> in a new country', 'Eight steps — the story of one bowl that broke and is coming together again with gold. See where you are now.'] },
 ];
 // эдельвейс из логотипа (favicon.svg)
 const OUT = 'M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z', INN = 'M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z';
@@ -43,6 +45,9 @@ function art() {
   return `<circle cx="${gx}" cy="190" r="150" fill="#EFE5D6"/><ellipse cx="${gx}" cy="${ground + 170}" rx="300" ry="175" fill="#EADFCF"/>
 <path d="M640 ${ground} C740 ${ground - 10} 840 ${ground + 6} 930 ${ground - 2} S1120 ${ground + 8} 1200 ${ground - 4}" fill="none" stroke="#6E4F3C" stroke-width="3" stroke-linecap="round"/>${roots}
 <path d="M${gx} ${ground + 4} C${gx - 8} 360 ${gx + 10} 300 ${gx} 250" stroke="#66704F" stroke-width="6" fill="none" stroke-linecap="round"/>${leaves}${logo(gx, 180, 190)}`;
+}
+function bowls() {   // «Путь»: акварель «Золотые швы», белая бумага сливается с фоном (multiply)
+  return `<image href="file://${ROOT}/put/img/07-zolotye-shvy.jpg" x="650" y="-150" width="560" height="750" preserveAspectRatio="xMidYMid slice" style="mix-blend-mode:multiply"/>`;
 }
 function trail() {   // «Путь»: тропа из восьми стоянок, восьмая — эдельвейс
   const pts = [[650, 600], [745, 560], [870, 575], [985, 520], [930, 450], [800, 430], [840, 360], [960, 330], [1040, 250]];
@@ -78,7 +83,7 @@ function check() {
   const b = await chromium.launch(exe ? { executablePath: exe } : {});
   const pg = await (await b.newContext({ viewport: { width: 1200, height: 630 } })).newPage();
   const tmp = path.join(ROOT, '_i18n', '.og_tmp.html');
-  for (const c of CARDS) for (const l of ['ru', 'uk', 'de', 'en']) {
+  for (const c of CARDS.filter(c => process.argv[2] !== 'put' || c.out === 'put/og-image')) for (const l of ['ru', 'uk', 'de', 'en']) {
     const out = c.out + (l === 'ru' ? '.jpg' : `.${l}.jpg`);
     fs.writeFileSync(tmp, html(EB[l], c[l][0], c[l][1], c.art || art)); await pg.goto('file://' + tmp); await pg.evaluate(() => document.fonts.ready); await pg.waitForTimeout(300);
     await pg.screenshot({ path: path.join(ROOT, out), type: 'jpeg', quality: 88 }); console.log('ok', out);

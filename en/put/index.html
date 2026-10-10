@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<title>Your path in a new country · Iryna Voznesenskaya</title>
-<meta name="description" content="Eight stops on the path in a new country. See what you face at each of them and what helps you keep going.">
+<title>Steps. Your path in a new country · Iryna Voznesenskaya</title>
+<meta name="description" content="Eight steps on the path in a new country — the story of one bowl that broke and is coming together again with gold. See what you face on each step and what helps you keep going.">
 <link rel="canonical" href="https://voznesenskaya.ch/en/put/">
 <meta property="og:type" content="website"><meta property="og:locale" content="en_GB"><meta property="og:site_name" content="Iryna Voznesenskaya · coaching">
-<meta property="og:title" content="Your path in a new country"><meta property="og:description" content="Eight stops on the path in a new country. See what you face at each of them and what helps you keep going.">
+<meta property="og:title" content="Steps. Your path in a new country"><meta property="og:description" content="Eight steps on the path in a new country — the story of one bowl that broke and is coming together again with gold. See what you face on each step and what helps you keep going.">
 <meta property="og:url" content="https://voznesenskaya.ch/en/put/"><meta property="og:image" content="https://voznesenskaya.ch/put/og-image.en.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="/assets/fonts.css">
@@ -290,7 +290,14 @@ footer a{color:var(--muted)}
 .p-hero h1 em{font-style:normal;color:var(--brown)}
 .p-hero .lead{font-size:1.1rem;max-width:52ch}
 .p-hero-text{display:flex;flex-direction:column;gap:18px;min-width:0}
-.p-hero img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:941/1672;border-radius:26px;box-shadow:0 24px 50px -24px rgba(60,40,20,.45)}
+.p-hero img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:900/1205}
+/* картинки чаш (акварель на белой бумаге): белое сливается с фоном страницы */
+.bowl{display:block}.bowl img{display:block;width:100%;height:auto;mix-blend-mode:multiply}
+.card .bowl{margin:-8px -6px 0;height:200px;overflow:hidden}.card .bowl img{height:100%;object-fit:cover;object-position:50% 72%}
+.qm-pic{flex:none;width:clamp(96px,16vw,150px)}
+@media (max-width:640px){.qm-pic{display:none}}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bowl img{mix-blend-mode:normal;border-radius:16px;opacity:.92}}
+:root[data-theme="dark"] .bowl img{mix-blend-mode:normal;border-radius:16px;opacity:.92}
 .rules{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding-block:8px 24px}
 @media (max-width:900px){.rules{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:520px){.rules{grid-template-columns:1fr}}
@@ -327,7 +334,7 @@ footer a{color:var(--muted)}
 .card h3{font-size:1.75rem;line-height:1.1}
 .card .teaser{font-family:var(--display);font-size:1.12rem;color:var(--brown);line-height:1.3}
 .card .says{display:flex;flex-wrap:wrap;gap:6px}
-.card .says span{font-size:.82rem;background:var(--lf);border-radius:999px;padding:5px 11px;color:var(--ink)}
+.card .says span{font-size:.82rem;background:var(--lf);border-radius:999px;padding:5px 11px;color:#2F2924}
 .card .more{margin-top:2px;font-weight:700;font-size:.88rem;color:var(--lc)}
 @media (max-width:760px){
   .stop,.between{grid-template-columns:64px 1fr;column-gap:14px}
@@ -390,22 +397,22 @@ footer a{color:var(--muted)}
 <main class="page">
   <section class="p-hero" aria-labelledby="h1">
     <div class="p-hero-text">
-      <div class="eyebrow">Your path in a new country</div>
-      <h1 id="h1">A home that is <em>being rebuilt</em></h1>
-      <p class="lead">When you move, you leave behind more than a flat. Your familiar rhythm stays behind, the people you could call in the middle of the night, the language you joke in, the work you were respected for. In the new place this invisible home has to be built again, from the ground up.</p>
-      <p class="lead">This is how the path usually goes. Eight stops, each with its own difficulties, its own questions and what helps you keep going. Tap a stop to find out more about it.</p>
+      <div class="eyebrow">Steps. Your path in a new country</div>
+      <h1 id="h1">A bowl that is <em>coming together again</em></h1>
+      <p class="lead">When you move, you leave behind more than an apartment. Your familiar rhythm stays behind, the people you could call at night, the language you joke in, the work you were respected for. In the new place much of this seems to break, and you have to put yourself together again, from the bottom up. Like a bowl in the Japanese art of kintsugi: the cracks are not hidden but filled with gold, and they become its story.</p>
+      <p class="lead">This is how the path usually goes. Eight steps, one and the same bowl, and on each step its own difficulties, its own questions and what helps you keep going. Tap a step to learn more about it.</p>
     </div>
-    <img src="/home/img/hero2.jpg" alt="A woman in a yellow scarf with a rucksack walks along a mountain path at sunset, a spaniel running ahead">
+    <picture class="bowl hero-bowl"><source srcset="/put/img/07-zolotye-shvy.webp" type="image/webp"><img src="/put/img/07-zolotye-shvy.jpg" width="900" height="1205" alt="Watercolour: a light bowl mended with bright golden seams on a soft yellow background"></picture>
   </section>
 
   <div class="rules">
     <div class="rule"><b>From the bottom up</b><span>The lower steps hold up the higher ones. While you’re not getting enough sleep, it’s hard to think about your own business.</span></div>
-    <div class="rule"><b>This is not a grade</b><span>The first step is no worse than the eighth, just as the foundation is no worse than the roof.</span></div>
-    <div class="rule"><b>Moving pushes you down</b><span>At home you may have stood high. Here a lot has to be built from scratch, and that is not weakness.</span></div>
-    <div class="rule"><b>Going down is normal</b><span>After a trip home or a child’s illness, things get hard again. It is part of the path.</span></div>
+    <div class="rule"><b>This is not a grade</b><span>The first step is no worse than the eighth. On any step you are the same bowl, just at a different point on the path.</span></div>
+    <div class="rule"><b>Moving pushes you down</b><span>At home you may have stood high. Here a lot has to be put together from scratch, and that is not weakness.</span></div>
+    <div class="rule"><b>Going down is normal</b><span>After a trip home or a child’s illness, things get hard again. A new crack is also a place for gold.</span></div>
   </div>
 
-  <section class="trail" id="trailWrap" aria-label="Eight stops on the path">
+  <section class="trail" id="trailWrap" aria-label="Eight steps of the path">
     <svg class="road-svg" id="road" aria-hidden="true"></svg>
     <div class="trail-start"><span class="ic" data-ico="path" data-c="#6E4F3C"></span><b>You have moved</b><span>The suitcases are unpacked, the documents submitted. This is where the trail begins.</span></div>
     <div id="trail"></div>
@@ -422,7 +429,7 @@ footer a{color:var(--muted)}
 
   <div class="reviews-slot"></div>
 
-  <div class="share-slot" data-url="https://voznesenskaya.ch/en/put/" data-lead="Know someone who’s on this path right now? Forward the page, the message is ready." data-text="Hi! This describes really accurately what you go through after moving. Eight stops, from the first days to the feeling “I’m home”. Have a look at which one you’re at now, I found it interesting to learn about myself."></div>
+  <div class="share-slot" data-url="https://voznesenskaya.ch/en/put/" data-lead="Know someone who’s on this path right now? Forward the page, the message is ready." data-text="Hi! This describes really accurately what you go through after moving. Eight steps, from the first days to the feeling “I’m home”. Have a look at which one you’re on now, I found it interesting to learn about myself."></div>
 
   <footer>
     <span>© 2026 Iryna Voznesenskaya · adaptation specialist · coach</span>
@@ -505,59 +512,81 @@ const T = '../';
 const MEET = { ic: 'telegram', c: '#3F6FBF', t: 'Introductory meeting, 30 minutes', d: 'Online, free. Send the word ВСТРЕЧА on Telegram.', h: 'https://t.me/IrynaNeuroCoach' };
 const STUPENI = { ic: 'path', c: '#66704F', t: 'The “Steps of Stability” test, 20 minutes', d: 'Shows which steps already hold you, which one creaks and where to start.', h: T + '/put/stupeni/' };
 const COL = [['#8E8470','#ECE7DD'],['#6A5FB8','#E7E4F7'],['#C25468','#F8E0E4'],['#3F6FBF','#E1EBFA'],['#C97E52','#FAE8DC'],['#4E9A70','#E1F1E7'],['#A99A2E','#F7F2D3'],['#2894A0','#DDF3F4']];
-const ICN = ['earth', 'hearth', 'door', 'key', 'workshop', 'sprout', 'hill', 'sky'];
+/* значки истории чаши (10.10.2026, метод «Ступени») — стиль библиотеки icons.js: сетка 24×24, заливка светлым тоном, контур глубоким, линия 1.8; золото швов — #C9971F */
+const ICONS_CHASHA = (() => {
+  const G = '#C9971F';
+  const bowl = (c, f, s, notch) => notch
+    ? `<path d="M3.5 9.5h9l1.2 2.2 1.6-2.2h5.2c0 4.9-3.7 8.4-8.5 8.4S3.5 14.4 3.5 9.5z" fill="${f}" stroke="${c}" ${s}/><path d="M9.6 17.9h4.8v1.6H9.6z" fill="${f}" stroke="${c}" stroke-width="1.4" stroke-linejoin="round"/>`
+    : `<path d="M3.5 9.5h17c0 4.9-3.7 8.4-8.5 8.4S3.5 14.4 3.5 9.5z" fill="${f}" stroke="${c}" ${s}/><path d="M9.6 17.9h4.8v1.6H9.6z" fill="${f}" stroke="${c}" stroke-width="1.4" stroke-linejoin="round"/>`;
+  const mini = (x, y, w, c, f, s) => { const h = w * .72, fx = x + w * .34, fw = w * .32;
+    return `<path d="M${x} ${y}H${x + w}C${x + w} ${y + h * .9} ${x + w * .74} ${y + h} ${x + w / 2} ${y + h}S${x} ${y + h * .9} ${x} ${y}z" fill="${f}" stroke="${c}" ${s}/><path d="M${fx} ${y + h}h${fw}v1.1h-${fw}z" fill="${f}" stroke="${c}" stroke-width="1.2" stroke-linejoin="round"/>`; };
+  return {
+    razbita: (c, f, s) => bowl(c, f, s, true) + `<path d="M8.6 9.7l1 2.7-1.3 2.6" fill="none" stroke="${c}" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.6 20.6l2.6-.9-.4 1.9z" fill="${f}" stroke="${c}" stroke-width="1.3" stroke-linejoin="round"/>`,
+    svoi: (c, f, s) => mini(1.5, 7.5, 9.2, c, f, s) + `<path d="M4.8 7.7l1.4 2.4-.9 2.4" fill="none" stroke="${G}" stroke-width="1.6" stroke-linecap="round"/>` + mini(13.3, 9.5, 9.2, c, f, s) + `<path d="M18.9 9.6l.8 2 1.1-2" fill="none" stroke="${c}" stroke-width="1.3" stroke-linejoin="round"/>`,
+    sobirayu: (c, f, s) => bowl(c, f, s, true) + `<path d="M13.7 11.7l-.6 2.4.9 2.4" fill="none" stroke="${G}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.6 5.2l3.4-1.4 1.1 2.4-3.3 1.2z" fill="${f}" stroke="${c}" stroke-width="1.3" stroke-linejoin="round"/><path d="M13.2 7.3l2.5-.9" stroke="${G}" stroke-width="1.4" stroke-linecap="round"/>`,
+    ryad: (c, f, s) => mini(1.4, 9, 6.4, c, f, s) + mini(8.8, 9, 6.4, c, f, s) + mini(16.2, 9, 6.4, c, f, s) + `<path d="M3.4 9.2l.8 1.7-.5 1.4M11.9 9.2l-.6 1.6.6 1.6M18.3 9.2l.7 1.5" fill="none" stroke="${G}" stroke-width="1.3" stroke-linecap="round"/><path d="M1.3 16.9h21.4" stroke="${c}" ${s}/>`,
+    polnaya: (c, f, s) => bowl(c, f, s, false) + `<path d="M5.2 11.2c2.2.9 11.4.9 13.6 0" fill="none" stroke="${c}" stroke-width="1.2" stroke-linecap="round"/><path d="M8.2 12.6l1 2.2-.6 1.9" fill="none" stroke="${G}" stroke-width="1.5" stroke-linecap="round"/><path d="M10 6.8c-1-1.2 1-2 0-3.3M14 6.8c-1-1.2 1-2 0-3.3" fill="none" stroke="${c}" stroke-width="1.3" stroke-linecap="round"/>`,
+    krug: (c, f, s) => `<circle cx="12" cy="12" r="8.6" fill="none" stroke="${G}" stroke-width="1.2" stroke-dasharray="1.6 2.2"/>` + mini(8.4, 10.2, 7.2, c, f, s) + `<circle cx="12" cy="3.4" r="1.7" fill="${f}" stroke="${c}" stroke-width="1.3"/><circle cx="20.6" cy="12" r="1.7" fill="${f}" stroke="${c}" stroke-width="1.3"/><circle cx="12" cy="20.6" r="1.7" fill="${f}" stroke="${c}" stroke-width="1.3"/><circle cx="3.4" cy="12" r="1.7" fill="${f}" stroke="${c}" stroke-width="1.3"/>`,
+    shvy: (c, f, s) => bowl(c, f, s, false) + `<path d="M7 9.8l1.4 2.5-1 2.4M8.4 12.3l2.6.6M13.6 9.8l-.7 2.8 1.6 2.3 2.3-.5M12.9 12.6l-2.2 1.9" fill="none" stroke="${G}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>`,
+    zoloto: (c, f, s) => mini(1.4, 6.5, 10, c, f, s) + `<path d="M4.4 6.8l1.2 2.3-.8 2.1" fill="none" stroke="${G}" stroke-width="1.5" stroke-linecap="round"/>` + mini(15.2, 11.8, 7.2, c, f, s) + `<path d="M19.6 12l.8 1.6.8-1.6" fill="none" stroke="${c}" stroke-width="1.2" stroke-linejoin="round"/><path d="M8.5 14.4c1.5 3.6 4.4 5.3 7.6 4.6" fill="none" stroke="${G}" stroke-width="1.6" stroke-linecap="round"/>`
+  };
+})();
+Object.assign(ICONS, ICONS_CHASHA);
+const ICN = ['razbita', 'svoi', 'sobirayu', 'ryad', 'polnaya', 'krug', 'shvy', 'zoloto'];
+const IMG = ['01-razbitaya-chasha', '02-svoi-chashi', '03-sobirayu-sebya', '04-v-odnom-ryadu', '05-polnaya-chasha', '06-chasha-po-krugu', '07-zolotye-shvy', '08-zoloto-dlya-novoj'];
+const bowl = (k, cls) => `<picture class="bowl${cls ? ' ' + cls : ''}"><source srcset="/put/img/${IMG[k]}.webp" type="image/webp"><img src="/put/img/${IMG[k]}.jpg" width="900" height="1205" loading="lazy" alt=""></picture>`;
 
 const STEPS = [
-  { name: 'Ground under your feet', sub: 'the body step', teaser: 'When the main thing is just staying on your feet',
+  { name: 'The broken bowl', sub: 'the body step', teaser: 'When the main thing is just staying on your feet',
     says: ['It’s hard for me here', 'I have no strength', 'I can’t sleep and I’m running on nerves'],
     pain: ['Everything takes three times the energy, and by evening it feels as if nothing much has been done', 'The body and sleep give way first: you can’t sleep, your head and back ache, and the doctors find nothing', 'No sense of tomorrow: permit, work, school, money — it’s all “we’ll see how it goes”'],
     needs: [['Sleep and rest', 'getting enough sleep and waking up with energy'], ['Body', 'nothing hurting, and a doctor you trust'], ['Routine', 'eating properly, not on the run'], ['A roof and money for the basics', 'a home you don’t have to worry about'], ['Predictability', 'knowing at least roughly what the next few months will bring'], ['A corner of your own', 'a place where you can close the door and breathe out']],
     vals: ['Life and health', 'Safety', 'Peace and quiet', 'The right to rest without guilt', 'One thing at a time'],
     check: 'Are you getting enough sleep? Do you have energy in the morning? Are there days when the main thing is just getting through to the evening?',
     next: 'Once sleep and rhythm are back, you suddenly notice how lonely it is.' },
-  { name: 'The hearth and your people at the table', sub: 'the “we” step', teaser: 'When you long for someone to be waiting for you in the evening',
+  { name: 'Bowls like me', sub: 'the “we” step', teaser: 'When you long for someone to be waiting for you in the evening',
     says: ['I have no one here to really open up to', 'No one to call at two in the morning', 'I’m alone even within my family'],
     pain: ['There are people around, but no one to really talk to', 'You have acquaintances but no one close, and making friends as an adult is slow and scary', 'No longer one of them back home, not yet one of them here; weekends and holidays are the hardest'],
     needs: [['Your people', 'at least one person you can call at night'], ['Belonging', 'a place where you’re recognised and expected'], ['Loved ones', 'a living connection with family, parents and children'], ['Roots', 'your own holidays, your own language, what you pass on to your children'], ['Being noticed', 'someone noticing if you disappear'], ['Protection', 'someone to advise you and stand up for you']],
     vals: ['Being one of us', 'Loyalty', 'Warmth and closeness', 'Roots and family memory', 'Not having to pretend'],
     check: 'Is there someone to call when things are bad? Have you had a real, in-person meeting in the past month that wasn’t about tasks?',
     next: 'Once you have at least one person of your own, you want to dare things yourself.' },
-  { name: 'Your own voice', sub: 'the strength step', teaser: 'When you want to feel again: “I can”',
+  { name: 'Putting myself together', sub: 'the strength step', teaser: 'When you want to feel again: “I can”',
     says: ['I can’t even book a doctor’s appointment', 'I’m still afraid to speak', 'At home I’ve lost my voice'],
     pain: ['Simple matters are handled for you by your husband, a friend or your child acting as interpreter', 'You can’t manage to object or stand up for yourself, and then you replay it at night', 'People talk to you as if you don’t understand, and you start to believe it yourself'],
     needs: [['Independence', 'sorting out your own matters without your husband or an interpreter'], ['Voice', 'speaking up when you’re treated unfairly'], ['Boundaries', 'saying no without justifying yourself'], ['Influence', 'you decide and choose, not circumstances'], ['Respect', 'being spoken to as an equal'], ['Small victories', 'proof that you can']],
     vals: ['Dignity', 'Freedom', 'Courage', 'Honesty', '“I did it”'],
     check: 'Can you handle a simple matter yourself: book an appointment, make a call, object? Is there something you avoid?',
     next: 'Once “I could do it” is there, you want to understand how everything works here.' },
-  { name: 'Map and keys', sub: 'the order step', teaser: 'When every letter in the letterbox makes your heart beat faster',
+  { name: 'In the row', sub: 'the order step', teaser: 'When every letter in the letterbox makes your heart beat faster',
     says: ['I don’t understand how to live here', 'Every letter — and my heart pounds', 'I’m afraid of making a mistake and getting into trouble'],
     pain: ['School, insurance, taxes, permits: there are rules, but nobody explains them', 'You’re scared of doing it wrong and getting a fine or a refusal, or missing a deadline', 'Twenty chats, twenty pieces of advice, and no idea whom to trust'],
     needs: [['Clarity', 'understanding how everything works here'], ['A reliable source', 'one guide instead of twenty chats'], ['Order in your affairs', 'papers, deadlines, folders, nothing lost'], ['Peace of mind', 'certainty that you and your children are not at risk'], ['Clear rules', 'what is done here and what isn’t'], ['A plan', 'seeing the road, not fog']],
     vals: ['Clarity', 'Reliability', 'Fairness', 'Responsibility', 'Peace of mind'],
     check: 'Do you know where to go with your question? Does a letter in the letterbox make you panic?',
     next: 'Once the system makes sense, the question comes: what do I want?' },
-  { name: 'Your own workshop', sub: 'the work step', teaser: 'When everything inside you tightens at the question “What do you do?”',
+  { name: 'The full bowl', sub: 'the work step', teaser: 'When everything inside you tightens at the question “What do you do?”',
     says: ['I’m nobody here', 'I have no money of my own', 'I don’t know what to do with myself here'],
     pain: ['Your diploma isn’t recognised, your experience doesn’t count, you’re offered jobs below your previous level or none at all', 'You have energy and ideas, but how the market works, where to start and what’s legal is unclear', 'No money of your own, no name of your own, and the question “What do you do?” hurts'],
     needs: [['Your own occupation', 'a job, a new profession or your own business that fits your strength and your mind'], ['Recognition of experience', 'your past experience counting for something here'], ['Your own money', 'not about the amount, but about freedom and a voice in the family'], ['Growth', 'not “anything, as long as they take me”'], ['Market rules', 'how people look for work, hire and start a business here'], ['A circle of peers', 'people you talk about plans with instead of complaining']],
     vals: ['My own price', 'Freedom of choice', 'Mastery', 'Healthy ambition', 'Self-respect'],
     check: 'Do you have something of your own here: a job, a business or a project? What do you say to “What do you do?”',
     next: 'Once you have your own work, the question comes: what is it all for?' },
-  { name: 'A garden for others', sub: 'the contribution step', teaser: 'When you already have something of your own and want to share',
+  { name: 'Passing the bowl around', sub: 'the contribution step', teaser: 'When you already have something of your own and want to share',
     says: ['I want to be needed here', 'I’ve achieved it, but there’s no joy', 'I want my experience to be of use'],
     pain: ['It works, it’s going well, but what for — unclear', 'You have experience, but who needs it here and in what form is unclear', 'Either you help everyone and end up drained, or you don’t dare offer yourself at all'],
     needs: [['Meaning', 'understanding what it’s all for'], ['Being needed', 'your experience being useful beyond your family'], ['Who it’s for', 'exactly whom you can be useful to, and in what form'], ['A shared cause', 'a circle where you’re a co-creator, not a guest'], ['Recognition of your contribution', 'having it named, not “oh, you just gave a tip”'], ['Balance', 'giving by choice without draining yourself']],
     vals: ['Usefulness', 'Compassion', 'Equality', 'Community', 'Generosity with boundaries'],
     check: 'Is there something here that you do not just for yourself? Do you understand what it’s all for?',
     next: 'Once there is a contribution, the question of your whole life arises.' },
-  { name: 'The view from the hill', sub: 'the whole-life step', teaser: 'When you’ve lived here a long time but still feel you’re living out of a suitcase',
+  { name: 'Golden seams', sub: 'the whole-life step', teaser: 'When you’ve lived here a long time but still feel you’re living out of a suitcase',
     says: ['I’ve been here a long time, but I’m still not home', 'I’m waiting for real life to begin', 'What if we had never left'],
     pain: ['“Once we go back”, “once I learn the language”, “once the kids grow up” — and the years go by', 'With every difficulty, the “what if we hadn’t left” comes back', 'There you’re already a stranger, here you don’t quite belong yet, and the two halves don’t fit together'],
     needs: [['Wholeness', 'connecting “there” and “here”, your former self and your new one'], ['Your own script', 'living not as you should, but in the way that is yours'], ['The meaning of your whole life', 'what it is for and how you want it to end'], ['Flexibility', 'being able to bear that there is no single right answer'], ['Your own system', 'your own priorities instead of general advice'], ['Time', 'managing it rather than chasing what you missed']],
     vals: ['No regrets', 'Authenticity', 'Responsibility for your own life', 'A broad view', 'Integrity'],
     check: 'Do you know how you want it to end? If life were ending tomorrow, what would you regret?',
     next: 'When life has come together as one whole, a question appears: what is bigger than me?' },
-  { name: 'The sky above home', sub: 'the “bigger than me” step', teaser: 'When “here” and “there” merge into one life',
+  { name: 'Gold for the new one', sub: 'the “bigger than me” step', teaser: 'When “here” and “there” merge into one life',
     says: ['I’m no longer a stranger, I simply live', 'I want something to remain after me', 'I’m interested in those who come after me'],
     pain: ['No one to talk to on your level: you’ve outgrown your old circle, and there’s no new one yet', 'Old goals no longer pull you, and new ones haven’t been named yet', 'You want what you’ve done not to end with you'],
     needs: [['Being part of something bigger', 'a cause, an idea, the flow of life'], ['Legacy', 'something that remains after you'], ['Passing it on', 'teaching, mentoring, opening doors for others'], ['Your circle', 'people who think just as broadly'], ['One life', '“here” and “there” are no longer two camps'], ['Inner quiet', 'not proving, simply being']],
@@ -576,9 +605,10 @@ document.getElementById('trail').innerHTML = STEPS.map((s, k) => {
   const stop = `<div class="stop ${side}" style="${vars(k)}">
     <span class="node">${ico(ICN[k], COL[k][0], COL[k][1], 36)}<i>${k + 1}</i></span>
     <button class="card" type="button" data-k="${k}" aria-haspopup="dialog">
+      ${bowl(k)}
       <span class="sub">${k + 1} · ${esc(s.sub)}</span><h3>${esc(s.name)}</h3><span class="teaser">${esc(s.teaser)}</span>
       <span class="says">${s.says.map(q => `<span>«${esc(q)}»</span>`).join('')}</span>
-      <span class="more">What’s at this stop →</span>
+      <span class="more">What’s on this step →</span>
     </button></div>`;
   const prev = k ? STEPS[k - 1].next : '';
   const between = `<div class="between ${side === 'l' ? 'r' : 'l'}">${prev ? `<p>${esc(prev)}</p>` : ''}</div>`;
@@ -590,7 +620,8 @@ function openStep(k){
   const s = STEPS[k];
   qmCard.innerHTML = `<div class="qm-top" style="${vars(k)}">
       <span class="ic">${ico(ICN[k], COL[k][0], COL[k][1], 34)}</span>
-      <div class="qm-head"><div class="eyebrow">Stop ${k + 1} of 8 · ${esc(s.sub)}</div><h2 class="qm-title" id="qmTitle">${esc(s.name)}</h2></div>
+      <div class="qm-head"><div class="eyebrow">Step ${k + 1} of 8 · ${esc(s.sub)}</div><h2 class="qm-title" id="qmTitle">${esc(s.name)}</h2></div>
+      ${bowl(k, 'qm-pic')}
       <button class="qm-close" type="button" data-close aria-label="Close">✕</button>
     </div>
     <div class="qm-panel lv" style="${vars(k)}">
@@ -600,7 +631,7 @@ function openStep(k){
         <h3 style="margin-top:6px">Check yourself</h3><p class="check">${esc(s.check)}</p></div>
     </div>
     <div class="qm-foot"><p class="next">${s.note ? esc(s.note) : `<b>Next.</b> ${esc(s.next)}`}</p>
-      <p class="notme"><button type="button" data-step="${k - 1}" ${k ? '' : 'hidden'}>← Stop ${k}</button> ${k < 7 ? `<button type="button" data-step="${k + 1}">Stop ${k + 2} →</button>` : ''}</p></div>
+      <p class="notme"><button type="button" data-step="${k - 1}" ${k ? '' : 'hidden'}>← Step ${k}</button> ${k < 7 ? `<button type="button" data-step="${k + 1}">Step ${k + 2} →</button>` : ''}</p></div>
     <div class="two-grid">${actHtml(STUPENI)}${actHtml(MEET)}</div>`;
   if (!qm.open){ if (typeof qm.showModal === 'function'){ try { qm.showModal(); } catch (e) { qm.setAttribute('open', ''); } } else qm.setAttribute('open', ''); }
   qmCard.scrollTop = 0;
