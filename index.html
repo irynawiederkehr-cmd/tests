@@ -503,12 +503,8 @@ a.bot:hover{color:#B98324}
 .pblock:hover .pb-fl svg{transform:rotate(36deg) scale(1.06)}
 .pd-fl svg{animation:flOpen .9s cubic-bezier(.2,.7,.2,1)}
 @keyframes flOpen{from{transform:rotate(-60deg) scale(.6);opacity:.2}}
-/* программы по методу «Ступени. Твой путь в новой стране» (10.10.2026): значок-чаша ступени, точки ступеней, три шага */
-.pic{display:grid;place-items:center;border-radius:50%;background:var(--lf);border:2px solid var(--lc);flex:none}
-.pic svg{display:block}
-.pblock:hover .pb-fl svg{transform:scale(1.08)}
-@keyframes picIn{from{transform:scale(.6);opacity:.2}}
-.pd-fl svg{animation:picIn .6s cubic-bezier(.2,.7,.2,1)}
+/* программы по методу «Ступени. Твой путь в новой стране» (10.10.2026): цветок программы (вид цветка = шаг метода), точки ступеней, три шага.
+   Значки-чаши ступеней на главной не используем: они для «Твой путь» и теста, от 40 px и всегда с номером ступени (концепция значков, 10.10.2026) */
 .pb-steps{display:flex;align-items:center;gap:8px;font-size:.76rem;color:var(--muted);line-height:1.3}
 .pdots{display:inline-flex;gap:3px;flex:none}
 .pdots i{width:7px;height:7px;border-radius:50%;background:var(--line)}
@@ -516,7 +512,8 @@ a.bot:hover{color:#B98324}
 .theme-q{font-family:var(--display);font-size:1.12rem;color:var(--brown);margin:2px 0 4px}
 .theme-more{margin:14px 0 10px;font-size:.92rem;color:var(--muted)}
 .pd-steps{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 6px}
-.pd-steps span{display:inline-flex;align-items:center;gap:5px;font-size:.8rem;font-weight:600;background:var(--lf);color:#2F2924;border:1px solid color-mix(in srgb,var(--lc) 45%,transparent);border-radius:999px;padding:3px 10px 3px 6px}
+.pd-steps span{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:600;background:var(--lf);color:#2F2924;border:1px solid color-mix(in srgb,var(--lc) 45%,transparent);border-radius:999px;padding:3px 10px 3px 4px}
+.pd-steps i{font-style:normal;width:18px;height:18px;border-radius:50%;background:var(--lc);color:#FFFCF8;display:grid;place-items:center;font-size:.7rem;font-weight:700}
 .pd-stlink{font-size:.85rem;font-weight:700}
 @media (prefers-reduced-motion: reduce){.pb-fl svg,.pd-fl svg{transition:none;animation:none}}
 /* «бесплатно» и «в подарок» — заметная зелёная плашка с бликом */
@@ -1272,27 +1269,7 @@ const PR = {
 };
 /* ===== Программы по методу «Ступени. Твой путь в новой стране» (10.10.2026, решение Ирины) =====
    Группы — «Где ты сейчас» и три шага внутри каждой ступени: Ставлю ногу · Стою твёрдо · Тянусь выше.
-   Значок карточки — чаша ступени (как на «Твой путь» и в тесте), точки — на каких ступенях программа помогает. */
-const ICONS_CHASHA = (() => {
-  const G = '#C9971F';
-  const bowl = (c, f, s, notch) => notch
-    ? `<path d="M3.5 9.5h9l1.2 2.2 1.6-2.2h5.2c0 4.9-3.7 8.4-8.5 8.4S3.5 14.4 3.5 9.5z" fill="${f}" stroke="${c}" ${s}/><path d="M9.6 17.9h4.8v1.6H9.6z" fill="${f}" stroke="${c}" stroke-width="1.4" stroke-linejoin="round"/>`
-    : `<path d="M3.5 9.5h17c0 4.9-3.7 8.4-8.5 8.4S3.5 14.4 3.5 9.5z" fill="${f}" stroke="${c}" ${s}/><path d="M9.6 17.9h4.8v1.6H9.6z" fill="${f}" stroke="${c}" stroke-width="1.4" stroke-linejoin="round"/>`;
-  const mini = (x, y, w, c, f, s) => { const h = w * .72, fx = x + w * .34, fw = w * .32;
-    return `<path d="M${x} ${y}H${x + w}C${x + w} ${y + h * .9} ${x + w * .74} ${y + h} ${x + w / 2} ${y + h}S${x} ${y + h * .9} ${x} ${y}z" fill="${f}" stroke="${c}" ${s}/><path d="M${fx} ${y + h}h${fw}v1.1h-${fw}z" fill="${f}" stroke="${c}" stroke-width="1.2" stroke-linejoin="round"/>`; };
-  return {
-    razbita: (c, f, s) => bowl(c, f, s, true) + `<path d="M8.6 9.7l1 2.7-1.3 2.6" fill="none" stroke="${c}" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.6 20.6l2.6-.9-.4 1.9z" fill="${f}" stroke="${c}" stroke-width="1.3" stroke-linejoin="round"/>`,
-    svoi: (c, f, s) => mini(1.5, 7.5, 9.2, c, f, s) + `<path d="M4.8 7.7l1.4 2.4-.9 2.4" fill="none" stroke="${G}" stroke-width="1.6" stroke-linecap="round"/>` + mini(13.3, 9.5, 9.2, c, f, s) + `<path d="M18.9 9.6l.8 2 1.1-2" fill="none" stroke="${c}" stroke-width="1.3" stroke-linejoin="round"/>`,
-    sobirayu: (c, f, s) => bowl(c, f, s, true) + `<path d="M13.7 11.7l-.6 2.4.9 2.4" fill="none" stroke="${G}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.6 5.2l3.4-1.4 1.1 2.4-3.3 1.2z" fill="${f}" stroke="${c}" stroke-width="1.3" stroke-linejoin="round"/><path d="M13.2 7.3l2.5-.9" stroke="${G}" stroke-width="1.4" stroke-linecap="round"/>`,
-    ryad: (c, f, s) => mini(1.4, 9, 6.4, c, f, s) + mini(8.8, 9, 6.4, c, f, s) + mini(16.2, 9, 6.4, c, f, s) + `<path d="M3.4 9.2l.8 1.7-.5 1.4M11.9 9.2l-.6 1.6.6 1.6M18.3 9.2l.7 1.5" fill="none" stroke="${G}" stroke-width="1.3" stroke-linecap="round"/><path d="M1.3 16.9h21.4" stroke="${c}" ${s}/>`,
-    polnaya: (c, f, s) => bowl(c, f, s, false) + `<path d="M5.2 11.2c2.2.9 11.4.9 13.6 0" fill="none" stroke="${c}" stroke-width="1.2" stroke-linecap="round"/><path d="M8.2 12.6l1 2.2-.6 1.9" fill="none" stroke="${G}" stroke-width="1.5" stroke-linecap="round"/><path d="M10 6.8c-1-1.2 1-2 0-3.3M14 6.8c-1-1.2 1-2 0-3.3" fill="none" stroke="${c}" stroke-width="1.3" stroke-linecap="round"/>`,
-    krug: (c, f, s) => `<circle cx="12" cy="12" r="8.6" fill="none" stroke="${G}" stroke-width="1.2" stroke-dasharray="1.6 2.2"/>` + mini(8.4, 10.2, 7.2, c, f, s) + `<circle cx="12" cy="3.4" r="1.7" fill="${f}" stroke="${c}" stroke-width="1.3"/><circle cx="20.6" cy="12" r="1.7" fill="${f}" stroke="${c}" stroke-width="1.3"/><circle cx="12" cy="20.6" r="1.7" fill="${f}" stroke="${c}" stroke-width="1.3"/><circle cx="3.4" cy="12" r="1.7" fill="${f}" stroke="${c}" stroke-width="1.3"/>`,
-    shvy: (c, f, s) => bowl(c, f, s, false) + `<path d="M7 9.8l1.4 2.5-1 2.4M8.4 12.3l2.6.6M13.6 9.8l-.7 2.8 1.6 2.3 2.3-.5M12.9 12.6l-2.2 1.9" fill="none" stroke="${G}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>`,
-    zoloto: (c, f, s) => mini(1.4, 6.5, 10, c, f, s) + `<path d="M4.4 6.8l1.2 2.3-.8 2.1" fill="none" stroke="${G}" stroke-width="1.5" stroke-linecap="round"/>` + mini(15.2, 11.8, 7.2, c, f, s) + `<path d="M19.6 12l.8 1.6.8-1.6" fill="none" stroke="${c}" stroke-width="1.2" stroke-linejoin="round"/><path d="M8.5 14.4c1.5 3.6 4.4 5.3 7.6 4.6" fill="none" stroke="${G}" stroke-width="1.6" stroke-linecap="round"/>`
-  };
-})();
-Object.assign(ICONS, ICONS_CHASHA);
-const ICN = ['razbita', 'svoi', 'sobirayu', 'ryad', 'polnaya', 'krug', 'shvy', 'zoloto'];
+   Значок карточки — цветок программы (вид цветка = группа), точки — на каких ступенях программа помогает. */
 const STEPN = ['Разбитая чаша', 'Свой круг', 'Я могу сама', 'Понятные правила', 'Своё дело', 'Мой вклад', 'Моя жизнь целиком', 'Здесь и там — одна жизнь'];
 const STEPC = [['#8E8470','#ECE7DD'],['#6A5FB8','#E7E4F7'],['#C25468','#F8E0E4'],['#3F6FBF','#E1EBFA'],['#C97E52','#FAE8DC'],['#4E9A70','#E1F1E7'],['#A99A2E','#F7F2D3'],['#2894A0','#DDF3F4']];
 const ALL8 = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -1305,11 +1282,10 @@ const stepsText = s => s.length === 8 ? 'для всех восьми ступе
   : s.length === 1 ? `ступень ${s[0]} · ${STEPN[s[0] - 1]}`
   : s.every((v, i) => !i || v === s[i - 1] + 1) ? `ступени ${s[0]}–${s[s.length - 1]}`
   : `ступени ${s.slice(0, -1).join(', ')} и ${s[s.length - 1]}`;
-function picon(id, size){            // значок программы: чаша первой ступени, для всех ступеней — лестница
-  const s = PSTEPS[id] || ALL8, k = s[0] - 1, all = s.length === 8;
-  const c = all ? ['#6E4F3C', '#EADFCF'] : STEPC[k];
-  return `<span class="pic" style="--lc:${c[0]};--lf:${c[1]};width:${size}px;height:${size}px">${ico(all ? 'path' : ICN[k], c[0], c[1], Math.round(size * .6))}</span>`;
-}
+// значок программы — цветок-мандала, как на живой главной. Вид цветка = группа (шаг метода):
+// «Где ты сейчас» — ромашка, «Ставлю ногу» — клевер, «Стою твёрдо» — лотос, «Тянусь выше» — роза
+const FLK = {};
+function picon(id, size){ const f = FLK[id] || [0, 0]; return flower(f[0], f[1], size); }
 const pdots = id => { const s = PSTEPS[id] || ALL8; return `<span class="pdots" aria-hidden="true">${ALL8.map(n => `<i style="${s.includes(n) ? `background:${STEPC[n - 1][0]}` : ''}"></i>`).join('')}</span>`; };
 const SUBBARS = n => `<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">${[0, 1, 2].map(i => `<rect x="${4 + i * 6}" y="${16 - i * 5}" width="4" height="${4 + i * 5}" rx="1.5" fill="${i < n ? '#FFFCF8' : 'rgba(255,252,248,.35)'}"/>`).join('')}</svg>`;
 const THEMES = [
@@ -1319,6 +1295,7 @@ const THEMES = [
   {h:'Тянусь выше', q:'«Мне этого уже мало, тесно»', sub:'Когда стало тесно и хочется большего, а шаг не получается, приходит время личной работы ради твоей цели. От снимка жизни к сделанным шагам.', ids:['snimok','fund','flag'], flow:true,
    more:'А дальше — чтобы ты не сбилась с пути и обросла своими людьми.', ids2:['life','support','gift']},
 ];
+THEMES.forEach((t, ti) => [...t.ids, ...(t.ids2 || [])].forEach((id, k) => FLK[id] = [ti, k]));
 const cap = s => String(s).charAt(0).toUpperCase() + String(s).slice(1);
 const isFree = p => /^(бесплатно|в подарок)$/.test(p.price);
 function pathInit(){
@@ -1370,7 +1347,7 @@ function pathInit(){
       ${p.phases ? `<div class="pd-phases"><span class="pd-lbl">Как меняется твоя жизнь</span><ol>${p.phases.map((x, k) => `<li><span class="ph-n">${k+1}</span><b>${esc2(x[0])}</b><p>${esc2(x[1])}</p></li>`).join('')}</ol></div>` : ''}
       ${p.bonus ? `<div class="pd-bonus"><span class="pd-lbl">${esc2(p.bonus.b)}</span><p>${esc2(p.bonus.t)}</p><a href="${p.bonus.h}" target="_blank" rel="noopener">${esc2(p.bonus.l)}</a></div>` : ''}
       <div class="pd-facts"><div class="pd-fact"><span class="pd-lbl">Что внутри</span><p>${esc2(cap(p.inside))}.</p></div>${p.note ? `<p class="pd-note">${esc2(p.note)}</p>` : ''}${p.more ? `<a class="pd-more" href="${p.more.h}" target="_blank" rel="noopener"><span class="pd-lbl">Читай также</span><b>${esc2(p.more.b)} →</b><span>${esc2(p.more.t)}</span></a>` : ''}
-      <div class="pd-fact"><span class="pd-lbl">На каких ступенях помогает</span><p class="pd-steps">${(PSTEPS[id] || ALL8).map(n => `<span style="--lc:${STEPC[n - 1][0]};--lf:${STEPC[n - 1][1]}">${ico(ICN[n - 1], STEPC[n - 1][0], STEPC[n - 1][1], 18)}${n} · ${esc2(STEPN[n - 1])}</span>`).join('')}</p><a class="pd-stlink" href="put/">Что это за ступени →</a></div>
+      <div class="pd-fact"><span class="pd-lbl">На каких ступенях помогает</span><p class="pd-steps">${(PSTEPS[id] || ALL8).map(n => `<span style="--lc:${STEPC[n - 1][0]};--lf:${STEPC[n - 1][1]}"><i>${n}</i>${esc2(STEPN[n - 1])}</span>`).join('')}</p><a class="pd-stlink" href="put/">Что это за ступени →</a></div>
       <div class="pd-fact"><span class="pd-lbl">Сколько стоит</span><p>${esc2(cap(p.price))}${p.price === ASK ? '. Окончательная цена появится здесь, как только я её утвержу.' : ''}</p></div>${p.report ? `<div class="pd-report"><span class="pd-lbl">Отчёт в PDF · 29 CHF дополнительно</span><p>${esc2(REPORT)}</p></div>` : ''}</div>
       <div class="pd-act">${actions(p)}</div>
       ${nextBox(p)}`;
