@@ -182,7 +182,8 @@
   }
   function paint(){ document.documentElement.classList.toggle('svl-dl-off', !ok); var cb = box && box.querySelector('input'); if (cb) cb.checked = ok; }
   var raf = 0;
-  function schedule(){ if (raf) return; raf = requestAnimationFrame(function(){ raf = 0; place(); }); }
+  /* requestAnimationFrame не срабатывает во вкладке, которая сейчас не видна, поэтому есть запасной таймер */
+  function schedule(){ if (raf) return; var done = false, run = function(){ if (done) return; done = true; raf = 0; place(); }; raf = requestAnimationFrame(run) || 1; setTimeout(run, 300); }
   function start(){ place(); paint(); try { new MutationObserver(function(){ if (!box || !box.isConnected) schedule(); }).observe(document.body, {childList: true, subtree: true, attributes: true, attributeFilter: ['hidden', 'class']}); } catch (e) {} }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
 
