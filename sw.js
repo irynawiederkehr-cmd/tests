@@ -3,7 +3,7 @@
    Файлы (стили, скрипты, шрифты, картинки): сразу из памяти, в фоне обновляются.
    Личные записи людей здесь не хранятся: они остаются в localStorage браузера, как раньше.
    При изменении этого файла поднять VERSION — старая память удалится. */
-const VERSION = 'v5-2026-10-10';
+const VERSION = 'v6-2026-10-10';
 const CACHE = 'vz-' + VERSION;
 const CORE = ['/offline.html', '/assets/vz-app.js', '/icon-192.png', '/favicon.svg'];
 const MAX = 160;
