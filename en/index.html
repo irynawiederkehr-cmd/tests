@@ -412,6 +412,13 @@ a.bot:hover{color:#B98324}
 /* «Узнаёшь себя?» на языке метода (11.10.2026): подпись ступени в списке, «Где это на пути», «С чего начать» по трём видам помощи */
 .rq-at{display:block;font-size:.84rem;font-weight:600;line-height:1.35;color:var(--muted)}
 .rq-dots{display:inline-flex;gap:3px;margin-right:6px;vertical-align:1px}
+.rq-gh{display:flex;flex-direction:column;gap:4px;margin:40px 0 14px}
+.rq-gh b{font-family:var(--display);font-weight:400;font-size:clamp(1.35rem,2.2vw,1.6rem);line-height:1.2}
+.rq-gh span{font-size:.95rem;color:var(--muted);max-width:70ch}
+.rq-all{display:grid;grid-template-columns:repeat(4,7px);gap:4px;margin-top:8px}
+.rq-all i{width:7px;height:7px;border-radius:50%;display:block}
+/* на телефоне фраз 11: без мандалы и с меньшими отступами, чтобы строки были короче */
+@media (max-width:520px){.rq{grid-template-columns:2.4rem 1fr auto;gap:12px;padding:18px 2px}.rq .rq-m{display:none}.rq .n{font-size:1.9rem}.rq .arr{width:38px;height:38px}}
 .rq-dots i{width:9px;height:9px;border-radius:50%;display:block}
 .rq-btns{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
 .rq-alt{font:600 .9rem/1.35 var(--body);color:var(--brown);background:none;border:0;padding:0;text-align:left;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
@@ -850,9 +857,11 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
     <div class="sec-head">
       <div class="eyebrow">What people come to me with</div>
       <h2 id="rq-h">Do you recognise yourself in one of these phrases?</h2>
-      <p>Each phrase shows a place on your path in a new country. It is the step you are standing on right now, or the stage that feels hard at the moment. It is not a diagnosis or a label, but the point where a conversation about you begins. Tap your phrase, and you’ll see where it sits on the path, what changes in our work and where you can start today.</p>
+      <p>Eight phrases — one for each step of the path in a new country, from the bottom up. Below are three more that can come up on any step. It is not a diagnosis or a label, but the point where a conversation about you begins. Tap your phrase, and you’ll see where it sits on the path, what changes in our work and where you can start today.</p>
     </div>
     <div class="rq-list" id="rqList"></div>
+    <div class="rq-gh"><b>On any step</b><span>These three phrases can come up on any step, when things feel too tight, when a choice is frightening or when you hardly recognise yourself.</span></div>
+    <div class="rq-list rq-any" id="rqAny"></div>
     <div class="rq-after"><p>Recognised yourself? At the introductory meeting we’ll look together at which step you are on and which stage is yours right now. It’s 30 minutes online, and it’s free.</p><div class="rq-btns"><a class="btn free" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">Write “ВСТРЕЧА” in Telegram</a><button type="button" class="rq-alt" data-prog="stupeni">Find your step on your own first — the “Steps of Stability” test, 20 minutes</button></div></div>
     <dialog class="qm" id="qm" aria-labelledby="qmTitle"><div class="qm-card" id="qmCard"></div></dialog>
   </section>
@@ -1149,45 +1158,77 @@ function mandala(i, size){
 document.querySelectorAll('[data-ico]').forEach(e => { e.innerHTML = ico(e.dataset.ico, e.dataset.c, null, e.classList.contains('sm') ? 26 : 32); });
 document.querySelectorAll('[data-mandala]').forEach(e => { e.innerHTML = mandala(+e.dataset.mandala, 60); });
 /* ===== «Узнаёшь себя в одной из этих фраз?» на языке метода «Ступени. Твой путь в новой стране» (11.10.2026, вопрос Ирины 17:47) =====
-   у каждой фразы: подпись в списке (at), где это на пути — ступени (st) и шаг (sub: 0 Ставлю ногу · 1 Стою твёрдо · 2 Тянусь выше, -1 — без шага),
+   с 11.10.2026, 21:05 (Ирина: «хочется иметь по боли на каждую ступень») — восемь фраз, по одной на ступень снизу вверх, и группа «На любой ступени» (any).
+   У каждой фразы: подпись в списке (at, у ступеней — «Ступень N · название»), где это на пути — ступени (st) и шаг (sub: 0 Ставлю ногу · 1 Стою твёрдо · 2 Тянусь выше, -1 — без шага),
    «Кто я здесь?» (self), что происходит (pain), что меняется (res), с чего начать (go: id из PR или X, по трём видам помощи) */
 const RQ = [
- {t:'I keep feeling that I’m not allowed', at:'I can do it myself', st:[3], sub:-1,
-  where:'Usually this is the step “I can do it myself”. On it your voice comes back, and you can once again make a call yourself, ask for what you need, say no and not justify yourself. While “I’m not allowed” sounds inside, it is hard to climb higher too, for example to name your price on the step “Work of my own”.',
+ {t:'I have no strength left, I’m running on nerves', st:[1], sub:-1,
+  where:'This is the step “The broken bowl”. After the move, everything familiar fell apart, and everything takes three times the effort. It isn’t weakness, but an ordinary beginning of the path. Right now what matters is sleep, strength, a roof over your head and money to live on; big decisions and personal work can wait. If sleep and strength have been missing for weeks, start with a doctor — that is also caring for yourself.',
+  self:'On this step you gather within yourself the answer “I am safe, my body is with me”.',
+  pain:['Everything takes three times the effort, and by evening it feels as if nothing got done','You can’t sleep, your head and back ache, and no one finds the cause','There is no sense of tomorrow. Permit, work, school, money — it’s all “we’ll see how it goes”','You hold on for your family, and there is no strength left for yourself','It seems that others are coping, and you are not'],
+  res:['You’ll lay out the uncertainty by date and see a horizon for the coming months','You’ll find small tasks for each day that are within your strength','You’ll get back a corner of your own and time to breathe out','You’ll know where to turn if sleep and strength have been missing for weeks'],
+  go:[['s_priehala','First steps in Switzerland, in order'],['s_psy','If sleep and strength have been missing for weeks'],['karta','What already holds you up and what to strengthen first'],['m1','Sleep, a corner of your own and a horizon for the coming months'],['mentor','Talk to someone who has walked this path herself']]},
+ {t:'I have no one here to really open up to', st:[2], sub:-1,
+  where:'This is the step “Your circle”. Once sleep and rhythm are back, you suddenly notice how lonely it is. Here it matters to find your first own people and not lose touch with those close to you. You can start with one event or one person. You don’t need a hundred acquaintances, but one person you can call.',
+  self:'On this step you gather within yourself the answer “I belong, I have my own people”.',
+  pain:['There are people around, but no one to really talk to','No one to call at two in the morning','You have acquaintances but no one close, and making friends as an adult is slow and scary','No longer at home there, not yet at home here','Weekends and holidays are the hardest days'],
+  res:['You’ll see who is already around you — there are more people than it seemed','You’ll find places where people speak your language and are waiting for you','You’ll take a first step towards one person','You’ll keep a living connection with those who stayed behind'],
+  go:[['s_events','Meetings in your language near you'],['s_org','Associations and centres where your own people gather'],['krug','Who is already around and whom you can write to'],['vstrecha','An open meeting of our own people once a month'],['mentor','Talk to someone who has walked this path herself']]},
+ {t:'I keep feeling that I’m not allowed', st:[3], sub:-1,
+  where:'This is the step “I can do it myself”. On it your voice comes back, and you can once again make a call yourself, ask for what you need, say no and not justify yourself. While “I’m not allowed” sounds inside, it is hard to climb higher too, for example to name your price on the step “Work of my own”.',
   self:'On this step you gather within yourself the answer “I am my own person, I can say yes and no”.',
-  pain:['“I’m not allowed” comes before “I want”','It’s scary to take up space, to ask, to name my price','I keep comparing myself with those who have “made it”','The same patterns repeat in different countries and jobs','Lots of explanations for why now is not the time'],
+  pain:['“I’m not allowed” comes before “I want”','Simple matters are handled for you by your husband, a friend or your child acting as interpreter','It’s scary to take up space, to ask, to name my price','You can’t bring yourself to object, and then you replay the conversation at night','Lots of explanations for why now is not the time'],
   res:['You’ll hear whose voice it really is and when it appeared','You’ll separate your own rules from inherited ones','You’ll reframe the prohibition as a condition you can work with','You’ll do what used to be “not allowed” — little by little at first'],
-  go:[['stupeni','Which step under you creaks and why'],['granicy','Where you agree when you want to say no'],['borders','Saying no calmly and without guilt'],['fund','Untangle the old rules that keep you stuck']]},
- {t:'I don’t know where to go next', at:'Work of my own · Finding my feet', st:[5,4], sub:0,
-  where:'Usually this is the beginning of the step “Work of my own”, the stage “Finding my feet”. Your former work stayed there, a new one isn’t in sight yet, and right now you need information and something to lean on most of all. Often it helps first to understand how everything works here — recognition of your diploma, language requirements, how people get hired here. That is the step “Clear rules”.',
+  go:[['s_arenda','Ready-made letters in German, so you can sort out your own matters yourself'],['granicy','Where you agree when you want to say no'],['borders','Saying no calmly and without guilt'],['kartami','Find your own image for the “not allowed” and one step'],['fund','Untangle the old rules that keep you stuck']]},
+ {t:'Every letter in the mailbox — and my heart pounds', st:[4], sub:-1,
+  where:'This is the step “Clear rules”. There are rules here, and they help different people live together, but they are rarely explained. Once it becomes clear how everything works, the fear goes away, and papers and deadlines fall into order. Personal work with me also begins on this step.',
+  self:'On this step you gather within yourself the answer “I understand where I live”.',
+  pain:['School, insurance, taxes, permits — there are rules, but nobody explains them','You’re scared of doing it wrong and getting a fine or a refusal, or missing a deadline','Twenty chats, twenty pieces of advice, and no idea whom to trust','Papers lie in a pile, and every time you search for everything again','You don’t know where to go with your question'],
+  res:['You’ll understand how the things that concern you work and where to look for answers','You’ll separate what you know for sure from what you assume and what you fear','You’ll put your papers and deadlines in order, and nothing will get lost','You’ll open letters calmly and know what to do next'],
+  go:[['s_pisma','What to do with a letter and by what date to reply'],['s_ustroena','Permits, taxes, insurance, school and housing'],['pochta','14 days to stop being afraid of letters'],['gde','Separate what you know for sure from what you fear'],['snimok','Where you have chaos and where you have order']]},
+ {t:'I’m nobody here, and my experience doesn’t count here', st:[5,4], sub:-1,
+  where:'This is the step “Work of my own”. Here you get back meaningful work and money of your own. It can be a job, a recognised diploma, a new profession or your own business. Often it helps first to understand how everything works here — recognition of your diploma, language requirements, how hiring works and how to start your own business. That is the step “Clear rules”, and there is no shame at all in going back to it.',
   self:'On this step you gather within yourself the answer “I am good at something, and it is worth something”.',
-  pain:['My old profession doesn’t count here or no longer warms my heart','There are many options, but none of them feels like mine','Diploma, language, recognition take years — and it’s unclear what for','The advice around me is contradictory','A feeling that time is being wasted'],
-  res:['You’ll put what you can do into words the local market understands','You’ll tell “I have to” from “I want to” and see where they overlap','You’ll choose one direction and try it without big risks','You’ll get a plan for the next three months, not for your whole life'],
-  go:[['s_diplom','What it takes to have your diploma recognised here'],['s_rabota','Where to look for work and how hiring works here'],['kompas','Where you are now in your new country and where to go next'],['bagazh','What you can do and what of it is needed here'],['snimok','Which area of life asks for attention first']]},
- {t:'I know what I want, but I can’t get started', at:'Reaching higher · on any step', st:[5,3,4], sub:2,
+  pain:['Your diploma isn’t recognised, your experience doesn’t count, you’re offered jobs below your previous level or none at all','My old profession doesn’t count here or no longer warms my heart','You want a business of your own, but it’s unclear how that works here and where to start','You have no money of your own, and so less of a voice in the family','The question “What do you do?” hurts'],
+  res:['You’ll put what you can do into words the local market understands','You’ll choose one direction and try it without big risks','You’ll find a format you can test within a few weeks','You’ll get a plan for the next three months, not for your whole life'],
+  go:[['s_diplom','What it takes to have your diploma recognised here'],['s_ip','First steps, pension contributions and insurance for your own business'],['bagazh','What you can do and what of it is needed here'],['price5','Name your price and earn your first franc'],['fund','Check your goal against what truly matters to you']]},
+ {t:'I’ve achieved a lot, but there’s no joy', st:[6], sub:-1,
+  where:'This is the step “My contribution”. Once you have something of your own, the question comes: what is it all for? Here you want to be needed not only by your family, to share your experience and see who is better off because of your life. It matters to give by choice, not with your last strength.',
+  self:'On this step you gather within yourself the answer “I am needed”.',
+  pain:['It works, it’s going well, but what for — unclear','You have experience, but who needs it here and in what form is unclear','You help everyone and end up drained','You don’t dare to offer yourself and your experience','What you do goes unnoticed, as if you “just gave a tip”'],
+  res:['You’ll see who is already better off because of your life','You’ll find who needs your experience and in what form','You’ll learn to give with joy and say no without guilt','You’ll name a first price for what you do well'],
+  go:[['s_join','So that those who need you can find you'],['komu','Seeing your contribution'],['exp','Give with joy, not from emptiness'],['fund','Understand what really drives you']]},
+ {t:'I’m waiting for real life to begin', st:[7], sub:-1,
+  where:'This is the step “My whole life”. You have lived here a long time, yet it feels as if you’re still living out of a suitcase. Here you want to make peace with the decision to leave, join “there” and “here” together and understand what you want from your life. You can make peace with the past, and then life begins here and now.',
+  self:'On this step you gather within yourself the answer “This is my life, and I know what I want”.',
+  pain:['“Once I learn the language”, “once the kids grow up”, “once we go back” — and the years go by','I’ve been here a long time, but I’m still not home','With every difficulty, the “what if we hadn’t left” comes back','A stranger there already, not quite at home here yet','You live “the way you should”, not the way you want'],
+  res:['You’ll make peace with the decision to leave and stop replaying it','You’ll decide what to take with you from your old life and what to let go','You’ll see the coming years, and they will bring you joy','You’ll give your wishes a place in your actual schedule'],
+  go:[['schastye','What truly matters to you'],['draft','Make peace with the decision and start living here'],['ostavila','Say goodbye gently and take the most important things with you'],['life','Look at your life from the future and regret nothing']]},
+ {t:'Old goals no longer pull you, and new ones haven’t been named yet', st:[8], sub:-1,
+  where:'This is the step “Here and there — one life”. It isn’t a step you fix, but a horizon you grow into. “Here” and “there” are no longer two camps, but one life — yours. You want to be part of something bigger and pass on your experience to those who come after you.',
+  self:'On this step you gather within yourself the answer “Here and there — one life, mine”.',
+  pain:['You have outgrown your old circle, and there is no new one yet','There is no one to talk to on your level','You have everything, but no big horizon','You want what you’ve done not to end with you'],
+  res:['You’ll name goals that are truly yours','You’ll see what you want to pass on and to whom','You’ll find people who think just as broadly','You’ll make a plan for the big horizon and a few things to do this year'],
+  go:[['odna','Bringing two lives together into one'],['pismo','Passing your experience on'],['life','A life strategy with a countdown'],['support','To stay on track']]},
+ /* «На любой ступени»: шаг «Тянусь выше» и вопрос «Кто я здесь?» */
+ {any:true, t:'I know what I want, but I can’t get started', at:'Reaching higher · “I want to, but I don’t do it”', st:[5,3,4], sub:2,
   where:'This is the stage “Reaching higher”. Where you are now already feels too tight, but the next step just doesn’t happen. This happens on any step, and it isn’t laziness or weakness. Often the goal lives on the step “Work of my own”, while a step lower holds you back, “I can do it myself” or “Clear rules”. This is exactly where personal work helps most.',
   self:'',
   pain:['The goal is clear, but the first step keeps getting postponed','Fear of mistakes, judgement, failure','I want to know in advance that it will work','Doubts, insecurity, perfectionism','Lots of worrying and little action'],
   res:['You’ll understand what exactly is holding you back — it’s rarely laziness','You’ll work through your fears, doubts, what you believe and what holds you back','You’ll find inner support and the courage to act','You’ll start taking real steps while we are still working together'],
   go:[['hochu','Write down what you want and what holds you back'],['tracker','One small step a day, and you can see you are moving'],['fund','Understand what drives you and what keeps you stuck'],['flag','Ten sessions from a goal to steps taken']]},
- {t:'I no longer recognise myself', at:'Who am I here? · on every step', st:[1,7], sub:-1,
-  where:'This is the question “Who am I here?”. After moving you put yourself together anew, and each step adds one part to the answer. The question sounds loudest on the step “The broken bowl”, when your familiar roles, circle and language have fallen apart, and on the step “My whole life”, when you want to understand what you yourself want. It isn’t weakness, but an ordinary part of the path.',
-  self:'Stage by stage you gather within yourself the answer “This is my life, and I know what I want”.',
-  pain:['The roles of “wife”, “mum”, “trailing spouse” have pushed out everything else','To the question “and what do you want” — emptiness','What used to bring joy somehow doesn’t work here','You answer “who are you” through your husband, children or past profession','Your own wishes seem out of place and badly timed'],
-  res:['You’ll get back your “I want”, not just “I must”','You’ll separate yourself from your roles without giving them up','You’ll decide what to take with you from your old life and what to let go','You’ll give your wishes a place in your actual schedule'],
-  go:[['emo','Notice what you feel and what helps you'],['karta','What already holds you up, outside and inside'],['schastye','When you were happy and what those moments share'],['snimok','Take an honest look at how you live now']]},
- {t:'I want to do my own thing, but I don’t know where to start', at:'Clear rules · Work of my own', st:[4,5], sub:0,
-  where:'This is the step “Work of my own”, the stage “Finding my feet”. To begin, you first need to understand how things work here — registration, AHV (the state pension insurance), taxes and insurance. That is the step “Clear rules”. Then it matters to see which part of your experience people here need. The idea doesn’t have to be ready from day one; you test it in small steps.',
-  self:'On this step you gather within yourself the answer “I am good at something, and it is worth something”.',
-  pain:['I have an idea, but it’s unclear how things even work here','It seems I first need to finish studying, wait for my language to catch up, get recognition','Fear that nobody here needs it','Experience from my previous country doesn’t transfer directly','Lots of preparation and not a single client'],
-  res:['You’ll separate real obstacles from imagined ones','You’ll find a format you can test within a few weeks','You’ll identify the first person who needs it','You’ll take the first real step — not a perfect one, but a done one'],
-  go:[['s_ip','First steps, AHV and insurance for your own business'],['bagazh','What you can do and what you brought with you'],['price5','Name your price and earn your first franc'],['fund','Check your goal against what truly matters to you']]},
- {t:'I’m afraid of making the wrong choice', at:'Reaching higher · a crossroads', st:[], sub:2,
+ {any:true, t:'I’m afraid of making the wrong choice', at:'Reaching higher · a crossroads', st:[], sub:2,
   where:'This is the stage “Reaching higher”. There is always a crossroads here. You can take a step up to the next step, or you can grow steadier where you are for now. Fear of getting it wrong at this crossroads is understandable, because the choice really matters. It helps to lean on what truly matters to you and take a small first step that you can adjust later.',
   self:'',
   pain:['I go round in circles. Pros and cons, and pros and cons again','I ask everyone for advice but can’t decide','It feels like a mistake here can no longer be undone','While I’m thinking, the opportunity slips away','After deciding, I keep doubting for a long time'],
   res:['You’ll understand what truly matters to you in this choice','You’ll separate your own voice from other people’s advice and fears','You’ll see options you hadn’t noticed before','You’ll make a decision and take the first step — without months of doubt'],
-  go:[['gde','Separate what you know for sure from what you fear'],['sess','One session for one question'],['kartami','Look at the choice through your own image'],['fund','A decision that rests on your values']]}
+  go:[['gde','Separate what you know for sure from what you fear'],['sess','One session for one question'],['kartami','Look at the choice through your own image'],['fund','A decision that rests on your values']]},
+ {any:true, t:'I no longer recognise myself', at:'Who am I here? · on every step', st:[1,7], sub:-1,
+  where:'This is the question “Who am I here?”. After moving you put yourself together anew, and each step adds one part to the answer. The question sounds loudest on the step “The broken bowl”, when your familiar roles, circle and language have fallen apart, and on the step “My whole life”, when you want to understand what you yourself want. It isn’t weakness, but an ordinary part of the path.',
+  self:'Stage by stage you gather within yourself the answer “This is my life, and I know what I want”.',
+  pain:['The roles of “wife”, “mum”, “trailing spouse” have pushed out everything else','To the question “and what do you want” — emptiness','What used to bring joy somehow doesn’t work here','You answer “who are you” through your husband, children or past profession','Your own wishes seem out of place and badly timed'],
+  res:['You’ll get back your “I want”, not just “I must”','You’ll separate yourself from your roles without giving them up','You’ll decide what to take with you from your old life and what to let go','You’ll give your wishes a place in your actual schedule'],
+  go:[['emo','Notice what you feel and what helps you'],['karta','What already holds you up, outside and inside'],['schastye','When you were happy and what those moments share'],['snimok','Take an honest look at how you live now']]}
 ];
 const esc = s => String(s).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
 /* запускается после данных линейки (STEPN, STEPC, SUBN, LV, it): см. rqInit() перед pathInit() */
@@ -1195,7 +1236,13 @@ function rqInit(){
   const sec = document.getElementById('requests'), rqList = document.getElementById('rqList'), qm = document.getElementById('qm'), qmCard = document.getElementById('qmCard');
   const GOLD = ['#B98324', '#F6E7C6'];
   const dots = x => (x.st.length ? x.st : [0]).map(s => `<i style="background:${s ? STEPC[s - 1][0] : GOLD[0]}"></i>`).join('');
-  rqList.innerHTML = RQ.map((x, i) => `<button class="rq" data-i="${i}" aria-haspopup="dialog"><span class="n">0${i+1}</span><span class="rq-m">${mandala(i,46)}</span><span class="rq-t"><b>${esc(x.t)}</b><span class="rq-at"><span class="rq-dots" aria-hidden="true">${dots(x)}</span>${esc(x.at)}</span></span><span class="arr" aria-hidden="true">→</span></button>`).join('');
+  const all8 = `<span class="rq-all" aria-hidden="true">${STEPC.map(c => `<i style="background:${c[0]}"></i>`).join('')}</span>`;
+  const row = (x, i) => { const s = x.st[0];
+    const n = x.any ? `<span class="n">${all8}</span>` : `<span class="n" style="color:${STEPC[s - 1][0]}">0${s}</span>`;
+    const at = x.any ? `<span class="rq-dots" aria-hidden="true">${dots(x)}</span>${esc(x.at)}` : `Step ${s} · ${esc(STEPN[s - 1])}`;
+    return `<button class="rq" data-i="${i}" aria-haspopup="dialog">${n}<span class="rq-m">${mandala(i,46)}</span><span class="rq-t"><b>${esc(x.t)}</b><span class="rq-at">${at}</span></span><span class="arr" aria-hidden="true">→</span></button>`; };
+  rqList.innerHTML = RQ.map((x, i) => x.any ? '' : row(x, i)).join('');
+  document.getElementById('rqAny').innerHTML = RQ.map((x, i) => x.any ? row(x, i) : '').join('');
   const bars = n => `<svg viewBox="0 0 18 18" width="12" height="12" aria-hidden="true">${[0, 1, 2].map(k => `<rect x="${1 + k * 6}" y="${12 - k * 5}" width="4" height="${5 + k * 5}" rx="1.2" fill="${k <= n ? '#FFFCF8' : 'rgba(255,252,248,.45)'}"/>`).join('')}</svg>`;
   const stepChip = s => `<button type="button" data-go="${s}" style="--lc:${STEPC[s - 1][0]};--lf:${STEPC[s - 1][1]}"><i>${s}</i>${esc(STEPN[s - 1])}</button>`;
   const subChip = n => `<button type="button" data-sub="${n}" style="--lc:${GOLD[0]};--lf:${GOLD[1]}"><i>${bars(n)}</i>${esc(SUBN[n])}</button>`;
