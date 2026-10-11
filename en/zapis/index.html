@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Book a session online: choose the day and time · Iryna Voznesenskaya</title>
+<meta name="description" content="Book a session with coach Iryna Voznesenskaya: a free 30-minute introductory meeting, online via Zoom. Only free times are shown, in your time zone.">
+<link rel="canonical" href="https://voznesenskaya.ch/en/zapis/">
+<meta property="og:type" content="website"><meta property="og:locale" content="en_GB"><meta property="og:site_name" content="Iryna Voznesenskaya · coaching">
+<meta property="og:title" content="Book a session: choose the day and time"><meta property="og:description" content="A free 30-minute introductory meeting, online via Zoom. Only free times are shown, in your time zone. I confirm every booking by e-mail.">
+<meta property="og:url" content="https://voznesenskaya.ch/en/zapis/"><meta property="og:image" content="https://voznesenskaya.ch/zapis/og-image.en.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="/assets/fonts.css">
+<style>
+/* Цвета и шрифты — система voznesenskaya.ch (коучинг, бежевый); цвета восьми ступеней — палитра тестов. */
+[hidden]{display:none!important}
+.page{max-width:1120px;margin:0 auto;padding-inline:20px}
+.mono.av{border:none;padding:0}
+.mono.av svg{width:100%;height:100%;display:block}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.12;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+.eyebrow{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+:focus-visible{outline:3px solid var(--mustard);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .page{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none}
+.mono{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--brown);display:grid;place-items:center;font-family:var(--display);font-size:1.05rem;color:var(--brown);letter-spacing:.02em}
+.mark b{font-family:var(--display);font-weight:400;font-size:1.25rem;line-height:1}
+.mark small{display:block;font-size:.72rem;color:var(--muted);letter-spacing:.04em;margin-top:3px}
+nav{display:flex;gap:22px;font-size:.88rem;font-weight:600}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.navcta{font-size:.86rem;font-weight:700;text-decoration:none;border:1.5px solid var(--brown);color:var(--brown);border-radius:999px;padding:8px 16px;white-space:nowrap}
+@media (max-width:860px){
+  .top .page{flex-wrap:wrap;row-gap:6px}
+  nav{order:3;width:100%;gap:16px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+  nav::-webkit-scrollbar{display:none}
+  nav a{white-space:nowrap}
+}
+@media (max-width:420px){.mark small{display:none}.navcta{padding:7px 12px}}
+/* телефон: шапка в две строки, все разделы видны */
+@media (max-width:860px){
+  nav{flex-wrap:wrap;overflow-x:visible;gap:2px 14px;padding-bottom:2px}
+}
+@media (max-width:420px){
+  .top .page{padding-block:8px;gap:8px}
+  .mono{width:32px;height:32px}
+  .mark{gap:8px}
+  .mark b{font-size:1.06rem}
+  .navcta{font-size:.8rem;padding:6px 11px}
+  nav{font-size:.82rem}
+}
+:root{
+  --bg:#F4EDE3; --paper:#FFFCF8; --ink:#2F2924; --muted:#7A6E62; --line:#E5D9C9; --soft:#EADFCF;
+  --brown:#6E4F3C; --green:#4F5E3E; --gold:#B98324; --on:#FFFCF8; --warn:#D32F2F; --warn-bg:#FDECEA;
+  --display:"Forum","Cormorant Garamond",Georgia,serif; --body:"Manrope","Segoe UI",system-ui,sans-serif;
+  --r:12px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#221D19; --paper:#2C2621; --ink:#F1E9DF; --muted:#B4A796; --line:#3E362F; --soft:#3A3129;
+  --brown:#E1C2A6; --green:#A9BB8E; --gold:#E2B45C; --on:#221D19; --warn:#FF8A80; --warn-bg:#3A2422; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#221D19; --paper:#2C2621; --ink:#F1E9DF; --muted:#B4A796; --line:#3E362F; --soft:#3A3129;
+  --brown:#E1C2A6; --green:#A9BB8E; --gold:#E2B45C; --on:#221D19; --warn:#FF8A80; --warn-bg:#3A2422; color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:18px 64px;display:flex;flex-direction:column;gap:22px}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:clamp(2.4rem,8vw,3.4rem);color:var(--brown)}
+h2{font-size:clamp(1.55rem,5vw,2rem)}
+h3{font-size:1.25rem}
+p{margin:0}
+a{color:var(--brown)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2.5px solid var(--gold);outline-offset:2px}
+.eyebrow{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.muted{color:var(--muted)}
+.note{font-size:.88rem;color:var(--muted)}
+.lead{font-size:1.07rem;max-width:62ch}
+.slogan{font-family:var(--display);font-size:1.35rem;line-height:1.3;color:var(--ink)}
+.stack{display:flex;flex-direction:column;gap:14px}
+.blk{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+/* кнопки: зелёная — бесплатное действие, золотая — главное, коричневая — остальное */
+.btn{font-weight:700;border:none;border-radius:var(--r);padding:13px 20px;cursor:pointer;background:var(--brown);color:var(--on);display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;line-height:1.2;text-align:center;min-height:48px}
+.btn.green{background:var(--green)}
+.btn.gold{background:var(--gold)}
+.btn.ghost{background:transparent;color:var(--brown);border:1.5px solid var(--brown)}
+.btn.small{padding:9px 14px;min-height:40px;font-size:.9rem}
+.btn:disabled{opacity:.5;cursor:default}
+.btns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.btns .wide{grid-column:1/-1}
+@media (max-width:420px){.btns{grid-template-columns:minmax(0,1fr)}}
+
+/* приветствие */
+.greet{display:flex;gap:14px;align-items:center}
+.greet .av{width:54px;height:54px;flex:none}
+.greet .av svg{width:100%;height:100%}
+.greet b{font-family:var(--display);font-weight:400;font-size:1.35rem;display:block;line-height:1.2}
+.greet a{font-size:.9rem}
+
+/* выбор */
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field > label,.qlabel{font-weight:700;font-size:.98rem;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.field input[type=text]{font:inherit;border:1.5px solid var(--line);border-radius:var(--r);padding:11px 13px;background:var(--paper);color:var(--ink);width:100%;min-width:0}
+.field input[type=text]:focus{border-color:var(--brown);outline:none}
+.seg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+/* подсказки «?» */
+.qh{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--muted);background:transparent;color:var(--muted);font-weight:800;font-size:.78rem;line-height:1;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0;flex:none}
+.qh[aria-expanded="true"]{background:var(--brown);border-color:var(--brown);color:var(--on)}
+.hbub{position:relative;background:var(--paper);border:1.5px solid var(--brown);border-radius:14px;padding:12px 38px 12px 14px;font-size:.9rem;font-weight:400;color:var(--ink);line-height:1.5;width:100%}
+.hbub .x{position:absolute;top:6px;right:6px;width:28px;height:28px;border:none;background:transparent;cursor:pointer;font-size:1rem;color:var(--muted)}
+.hist small{color:var(--muted)}
+.disclaimer{border:1px dashed var(--line);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;font-size:.84rem;color:var(--muted)}
+.disclaimer b{color:var(--ink)}
+footer.copy{font-size:.8rem;color:var(--muted);display:flex;flex-direction:column;gap:6px;align-items:center;text-align:center;padding-top:8px}
+footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.status{font-size:.9rem;color:var(--green);font-weight:600}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:.95rem;cursor:pointer}
+.check input{width:20px;height:20px;margin-top:2px;accent-color:var(--brown);flex:none}
+.share-btns{display:flex;flex-wrap:wrap;gap:8px}
+.toast{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#2F2924;color:#FFFCF8;padding:10px 16px;border-radius:12px;font-size:.92rem;z-index:120;max-width:calc(100% - 32px)}
+
+/* ---------- «Договор о коучинге» (решение Ирины 10.10.2026: «нужен коучинговый договор, чтобы его можно было заполнить и отправить, отправка — подпись») ----------
+   Один спокойный столбец: вступление и шаги → форма (программа, данные, подтверждения) → весь договор на проверку → подпись → готово.
+   Договор печатается сам по себе (@media print) — так из него получается PDF. */
+.wrap{max-width:760px}
+.steps{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;counter-reset:st}
+.steps li{position:relative;padding-left:40px;line-height:1.5;counter-increment:st}
+.steps li::before{content:counter(st);position:absolute;left:0;top:-1px;width:28px;height:28px;border-radius:50%;background:var(--brown);color:var(--on);font-weight:800;font-size:.85rem;display:grid;place-items:center}
+.steps b{display:block}
+.soft{background:var(--soft);border-radius:18px;padding:18px 20px;display:flex;flex-direction:column;gap:10px}
+.codeword{background:#F3E3C2;color:#2F2924;border-radius:6px;padding:1px 7px;font-weight:800;letter-spacing:.04em;white-space:nowrap}
+.blk h2{font-size:1.5rem}
+.field input[type=email],.field input[type=number],.field input[type=tel],.field select,.field textarea{font:inherit;border:1.5px solid var(--line);border-radius:var(--r);padding:11px 13px;background:var(--paper);color:var(--ink);width:100%;min-width:0}
+.field textarea{min-height:84px;resize:vertical}
+.field select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 19px) 50%,calc(100% - 14px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:36px}
+.field :is(input,select,textarea):focus{border-color:var(--brown);outline:none}
+.field .opt-l{font-weight:400;color:var(--muted);font-size:.86rem}
+.field .hint{font-size:.86rem;color:var(--muted)}
+.field.bad :is(input,select){border-color:var(--warn)}
+.check.bad span{color:var(--warn)}
+.info{border-left:3px solid var(--brown);padding:4px 0 4px 14px;display:flex;flex-direction:column;gap:2px}
+.info b{font-size:1.05rem}
+.radios{display:flex;flex-direction:column;gap:8px}
+.total{font-family:var(--display);font-size:1.45rem;color:var(--brown)}
+.errbox{border:1.5px solid var(--warn);background:var(--warn-bg);border-radius:var(--r);padding:12px 14px;font-size:.94rem}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+/* ---------- «Запись на встречу» (решение Ирины 11.10.2026: календарь записи, связанный с её календарями) ----------
+   Один спокойный столбец, как у договора: встреча → день и время → данные → подтверждения → готово.
+   Новые элементы: карточки встреч, месячный календарь (свободные дни — коричневая рамка, выбранный — заливка), кнопки времени. */
+.wrap{max-width:760px}
+.demo-band{background:#2F2924;color:#FFFCF8;border-radius:12px;padding:10px 14px;font-size:.88rem;font-weight:600;text-align:center}
+.soft.small{padding:14px 16px;font-size:.94rem}
+.done-h{display:flex;gap:12px;align-items:center}
+.done-h .ok{width:46px;height:46px;border-radius:50%;background:var(--green);color:#FFFCF8;display:grid;place-items:center;font-size:1.4rem;flex:none}
+.types{display:flex;flex-direction:column;gap:10px}
+.tcard{display:flex;gap:12px;align-items:flex-start;border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;background:var(--paper);cursor:pointer;transition:border-color .15s,background .15s}
+.tcard input{width:20px;height:20px;margin-top:4px;accent-color:var(--brown);flex:none}
+.tcard:hover{border-color:var(--muted)}
+.tcard.on{border-color:var(--brown);box-shadow:inset 0 0 0 1px var(--brown);background:color-mix(in srgb,var(--soft) 35%,var(--paper))}
+.tc-body{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1}
+.tc-top{display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.tc-top b{font-family:var(--display);font-weight:400;font-size:1.28rem;line-height:1.2}
+.tc-meta{font-size:.86rem;color:var(--muted);font-weight:600}
+.tc-note{font-size:.92rem;line-height:1.5}
+.tag{font-size:.78rem;font-weight:800;border-radius:12px;padding:3px 10px;white-space:nowrap;color:var(--on)}
+.tag.free{background:var(--green)}
+.tag.gold{background:var(--gold)}
+.tag.brown{background:var(--brown)}
+.soon{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:1px 8px;vertical-align:middle;width:max-content}
+.tcard.is-soon .tc-top b{color:var(--muted)}
+.cal{display:flex;flex-direction:column;gap:10px}
+.cal-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.cal-head h3{font-size:1.35rem;text-align:center;flex:1}
+.cal-nav{min-width:46px;font-size:1.1rem}
+.cal-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}
+.cal-grid .wd{font-size:.72rem;font-weight:700;color:var(--muted);text-align:center;text-transform:uppercase;letter-spacing:.04em;padding-bottom:2px}
+.d{aspect-ratio:1;display:grid;place-items:center;border-radius:12px;font-size:.95rem;min-width:0}
+.d.pad{visibility:hidden}
+.d.off{color:var(--muted);opacity:.5}
+.d.free{border:1.5px solid var(--brown);background:var(--paper);color:var(--ink);cursor:pointer;padding:0;font:inherit;font-weight:800}
+.d.free:hover{background:var(--soft)}
+.d.free[aria-pressed="true"]{background:var(--brown);color:var(--on)}
+.d.today{outline:1.5px dashed var(--muted);outline-offset:1px}
+.cal-legend{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.lg{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px}
+.lg-free{border:1.5px solid var(--brown);background:var(--paper)}
+.lg-off{background:var(--line)}
+.lgi{display:inline-flex;align-items:center;gap:6px;margin-right:12px;white-space:nowrap}
+.types > .field{padding:2px 4px 8px 16px}
+.times{display:grid;grid-template-columns:repeat(auto-fill,minmax(86px,1fr));gap:8px}
+.tm{border:1.5px solid var(--brown);background:var(--paper);color:var(--ink);border-radius:12px;padding:11px 6px;font-weight:800;cursor:pointer;font-variant-numeric:tabular-nums}
+.tm:hover{background:var(--soft)}
+.tm[aria-pressed="true"]{background:var(--brown);color:var(--on)}
+.mstatus{font-weight:700}
+.mstatus.st-подтверждена{color:var(--green)}
+#sWhen.bad{border-color:var(--warn)}
+@media (max-width:380px){.cal-grid{gap:4px}.d{font-size:.88rem;border-radius:10px}.blk{padding:18px}}
+</style>
+<meta name="theme-color" content="#6E4F3C">
+<!--shape--><style id="shape">:is(.navcta,.btn,.jump a,.pb-price,.go-pill,.rv-prod,.rvs-btn,.shr-btn,.invite-links a,.share-btns button,.share-btns a,.inv-copy,.inv-btn,.sb-cta,.langbar,#langbar.langbar){border-radius:12px!important}:is(.langbar button,.langbar a,#langbar.langbar a,.bz-pills button){border-radius:9px!important}html header.top nav a .pa-ni{display:none}@media (max-width:1100px){html header.top .page{flex-wrap:wrap;row-gap:8px}html header.top nav{order:3;width:100%;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px!important;overflow:visible!important;padding:4px 0 12px!important;margin:0}html header.top nav a{display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:62px;padding:9px 6px;border-radius:14px;background:var(--paper,#FFFCF8);border:1px solid color-mix(in srgb,var(--brown,#6E4F3C) 22%,transparent);box-shadow:0 3px 10px -6px rgba(80,55,35,.45);color:var(--ink,#2F2924)!important;font:600 .78rem/1.18 var(--body,system-ui);text-align:center;white-space:normal!important;text-decoration:none;-webkit-tap-highlight-color:transparent}html header.top nav a .pa-ni{display:block;width:22px;height:22px;fill:none;stroke:var(--brown,#6E4F3C);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}html header.top nav a[aria-current]:not([aria-current=false]){background:var(--brown,#6E4F3C);border-color:var(--brown,#6E4F3C);color:var(--paper,#FFFCF8)!important}html header.top nav a[aria-current]:not([aria-current=false]) .pa-ni{stroke:var(--paper,#FFFCF8)}html header.top nav a:active{transform:scale(.97)}}/* длинная строка под именем (метод «Ступени. Твой путь в новой стране», 10.10.2026): переносится сама, меню в одну строку */@media (min-width:1101px){html header.top nav a{white-space:nowrap}html header.top .mark small{display:block;max-width:300px;line-height:1.35}}.pa-mini{display:none}@media (max-width:1100px){html header.top:not(.pa-mini){position:relative!important;top:auto!important}html header.top.pa-mini{display:block;position:fixed!important;left:0;right:0;top:0;z-index:55;padding-top:env(safe-area-inset-top,0px);transform:translateY(-105%);visibility:hidden;transition:transform .22s ease,visibility 0s .22s;box-shadow:0 8px 20px -14px rgba(60,40,20,.5)}html header.top.pa-mini.on{transform:none;visibility:visible;transition:transform .22s ease}html header.top.pa-mini .page{padding-block:8px;flex-wrap:wrap}html header.top.pa-mini .mark small{display:none}html header.top.pa-mini .mark b{font-size:1.05rem}html header.top.pa-mini .mono{width:32px;height:32px}html header.top.pa-mini:not(.open) nav{display:none!important}.pa-mbtn{margin-left:auto;display:flex;align-items:center;gap:6px;padding:7px 12px;border-radius:12px;border:1.5px solid color-mix(in srgb,var(--brown,#6E4F3C) 35%,transparent);background:var(--paper,#FFFCF8);color:var(--ink,#2F2924);font:700 .84rem/1 var(--body,Manrope,system-ui);cursor:pointer;-webkit-tap-highlight-color:transparent}.pa-mbtn svg{width:18px;height:18px;flex:none;fill:none;stroke:var(--brown,#6E4F3C);stroke-width:2;stroke-linecap:round}}@media (max-width:480px){html header.top.pa-mini .mark span:not(.mono){display:none}}</style><script>(function(){function run(){var n=document.querySelector('header.top nav');if(!n)return;var I={who:'<circle cx="12" cy="8" r="3.6"/><path d="M5 20c.7-3.8 3.4-6 7-6s6.3 2.2 7 6"/>',req:'<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',path:'<path d="M12 3.5 20.5 8 12 12.5 3.5 8z"/><path d="M3.5 12 12 16.5 20.5 12M3.5 16 12 20.5 20.5 16"/>',put:'<circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8 18h6a3.5 3.5 0 0 0 0-7h-4a3.5 3.5 0 0 1 0-7h6"/>',tests:'<rect x="5" y="3.5" width="14" height="17" rx="2.5"/><path d="m8.5 9 1.5 1.5L13 7.5M8.5 15l1.5 1.5 3-3M15 9.5h1M15 15.5h1"/>',svoi:'<circle cx="12" cy="12" r="2.4"/><circle cx="12" cy="4.5" r="1.8"/><circle cx="12" cy="19.5" r="1.8"/><circle cx="5.5" cy="8.3" r="1.8"/><circle cx="18.5" cy="8.3" r="1.8"/><circle cx="5.5" cy="15.7" r="1.8"/><circle cx="18.5" cy="15.7" r="1.8"/>'};n.querySelectorAll('a').forEach(function(a){if(a.querySelector('.pa-ni'))return;var h=a.getAttribute('href')||'',k=/svoiludi/.test(h)?'svoi':/#who/.test(h)?'who':/#requests/.test(h)?'req':/#path/.test(h)?'path':/put\/?$/.test(h)?'put':/testy/.test(h)?'tests':null;if(!k)return;a.insertAdjacentHTML('afterbegin','<svg class="pa-ni" viewBox="0 0 24 24" aria-hidden="true">'+I[k]+'</svg>');a.style.removeProperty('color');});}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();})();(function(){function mini(){var h=document.querySelector('header.top');if(!h||document.querySelector('.pa-mini')||!('IntersectionObserver' in window))return;var lg=(document.documentElement.lang||'ru').slice(0,2),L={ru:['Menu','Show less'],uk:['Menu','Close'],de:['Menü','Zuklappen'],en:['Menu','Close']}[lg]||['Menu','Show less'];var m=document.createElement('header');m.className='top pa-mini';var pg=document.createElement('div');pg.className='page';var mk=h.querySelector('.mark');if(mk)pg.appendChild(mk.cloneNode(true));var b=document.createElement('button');b.type='button';b.className='pa-mbtn';b.setAttribute('aria-expanded','false');b.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span></span>';b.lastChild.textContent=L[0];pg.appendChild(b);var c=h.querySelector('.navcta');if(c)pg.appendChild(c.cloneNode(true));var n=h.querySelector('nav');if(n)pg.appendChild(n.cloneNode(true));m.appendChild(pg);document.body.appendChild(m);function set(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');b.lastChild.textContent=o?L[1]:L[0];}b.addEventListener('click',function(){set(!m.classList.contains('open'));});m.addEventListener('click',function(e){if(e.target.closest('nav a'))set(false);});new IntersectionObserver(function(es){var v=es[0].isIntersecting;m.classList.toggle('on',!v);if(v)set(false);}).observe(h);}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mini);else mini();})();</script><link rel="manifest" href="/site.webmanifest"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Iryna"><meta name="apple-mobile-web-app-status-bar-style" content="default"><script src="/assets/vz-app.js" defer></script><!--shape--><!--i18n--><link rel="alternate" hreflang="ru" href="https://voznesenskaya.ch/zapis/"><link rel="alternate" hreflang="uk" href="https://voznesenskaya.ch/uk/zapis/"><link rel="alternate" hreflang="de" href="https://voznesenskaya.ch/de/zapis/"><link rel="alternate" hreflang="en" href="https://voznesenskaya.ch/en/zapis/"><!--i18n--></head>
+<body>
+
+<header class="top">
+  <div class="page">
+    <a class="mark" href="/en/" aria-label="Ирина Вознесенская — на главную">
+      <span class="mono av"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#FFFCF8" stroke="#6E4F3C" stroke-width="3"/><g transform="rotate(22.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(67.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(112.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(157.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(202.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(247.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(292.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(337.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(0.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(45.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(90.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(135.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(180.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(225.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(270.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(315.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><circle cx="50" cy="50" r="7" fill="#B98324"/></svg></span>
+      <span><b>Iryna Voznesenskaya</b><small>coach, mentor, author of the “Steps. Your path in a new country” method</small></span>
+    </a>
+    <nav aria-label="Sections">
+      <a href="/en/#who">About me</a>
+      <a href="/en/#requests">Work with me</a>
+      <a href="/en/#path">Products</a>
+      <a href="/en/put/">Your path</a>
+      <a href="/testy/#lang=en">Tests</a>
+      <a href="https://svoiludi.ch/" target="_blank" rel="noopener">Svoi ludi</a>
+    </nav>
+    <a class="navcta" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">Introductory meeting</a>
+  </div>
+</header>
+
+<div class="wrap" id="app">
+
+  <div class="demo-band" id="demoBand" hidden>Sample page: the free times are made up, requests are not sent anywhere.</div>
+
+  <!-- 1. Вступление -->
+  <section class="stack" id="sIntro" style="gap:22px">
+    <div class="greet"><span class="av" data-avatar></span><div><b>Hello! I’m Iryna Voznesenskaya</b><p class="note">ICF coach, I work online in Russian. <a href="/en/#who">More about me →</a></p></div></div>
+    <div class="stack" style="gap:10px">
+      <div class="eyebrow">Coaching · online booking</div>
+      <h1>Book a session</h1>
+      <p class="slogan">Choose the day and time that suit you</p>
+      <p class="lead">Here you choose the time of our session yourself. You only see free times, and they are shown in your time zone. I confirm every booking by e-mail, usually within two days. All sessions take place online, via Zoom.</p>
+    </div>
+    <div class="blk">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><b>Choose the session</b>Introductory meeting, mentoring session, 3-hour session or a session of your programme.</li>
+        <li><b>Choose the day and time</b>Only free times are shown. You can book no sooner than 3 days and no further than 60 days ahead.</li>
+        <li><b>Enter your name and e-mail</b>The confirmation, the Zoom link and a reminder the day before the session will go there.</li>
+        <li><b>For a paid session, sign the agreement</b>While you sign the agreement online, the time is held for you for 24 hours. It takes a few minutes.</li>
+        <li><b>Wait for my confirmation</b>I confirm the time by e-mail, usually within two days. For a paid session, the invoice comes next and needs to be paid before the session.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 2. Форма записи -->
+  <form class="stack" id="sForm" novalidate autocomplete="on">
+    <div class="blk" id="sType">
+      <h2>1. Which session do you need</h2>
+      <div class="types" role="radiogroup" aria-label="Session">
+        <label class="tcard" data-t="intro"><input type="radio" name="t" value="intro"><span class="tc-body"><span class="tc-top"><b>Introductory meeting</b><span class="tag free">★ Free</span></span><span class="tc-meta">30 minutes · online</span><span class="tc-note">We get to know each other, I ask a few questions and tell you honestly whether I can help. No obligation.</span></span></label>
+        <label class="tcard" data-t="mentor"><input type="radio" name="t" value="mentor"><span class="tc-body"><span class="tc-top"><b>Mentoring session</b><span class="tag gold">150 CHF</span></span><span class="tc-meta">1 hour · online</span><span class="tc-note">Ask someone who has already walked this path. Needs an agreement, payment before the session.</span><span class="soon" data-soon>in development</span></span></label>
+        <label class="tcard" data-t="razbor"><input type="radio" name="t" value="razbor"><span class="tc-body"><span class="tc-top"><b>3-hour session</b><span class="tag gold">249 CHF</span></span><span class="tc-meta">3 hours · online</span><span class="tc-note">“Life snapshot”, “My foundation” or “A life without regrets”. Needs an agreement, payment before the session.</span></span></label>
+        <label class="tcard" data-t="prog"><input type="radio" name="t" value="prog"><span class="tc-body"><span class="tc-top"><b>Session of my programme</b><span class="tag brown">under agreement</span></span><span class="tc-meta">1 hour · online</span><span class="tc-note">For those who already have an agreement: “My goal — my path”, “Ongoing support” or another programme.</span></span></label>
+      </div>
+      <div class="field" id="wRazbor" hidden>
+        <span class="qlabel">Which session <button type="button" class="qh" data-h="razbor" aria-expanded="false" aria-label="Hint">?</button></span>
+        <div class="radios">
+          <label class="check" data-p="snimok"><input type="radio" name="prog" value="snimok"> <span><b>“Life snapshot”</b> — a review using the wheel of life areas. Where there is chaos in my life and where there is order. <span class="soon" data-soon>in development</span></span></label>
+          <label class="check" data-p="fund"><input type="radio" name="prog" value="fund"> <span><b>“My foundation”</b> — a review of values in the context of your goal. What drives me and what holds me.</span></label>
+          <label class="check" data-p="life"><input type="radio" name="prog" value="life"> <span><b>“A life without regrets”</b> — a life strategy with a countdown. How to live my life and regret nothing. <span class="soon" data-soon>in development</span></span></label>
+        </div>
+      </div>
+      <div class="field" id="wKv" hidden>
+        <label for="fKv">Agreement number <button type="button" class="qh" data-h="kv" aria-expanded="false" aria-label="Hint">?</button></label>
+        <input type="text" id="fKv" maxlength="16" autocomplete="off" placeholder="KV-20261012-AB3C" spellcheck="false">
+        <span class="hint">It is in the e-mail with your agreement. Enter the same e-mail below as in the agreement.</span>
+      </div>
+      <div class="soft small" id="soonBox" hidden>
+        <p>This session is still <b>in development</b>. If you would like to join, send a request: write the word <span class="codeword">ЗАЯВКА</span> to me on Telegram, and I will write to you first when it opens.</p>
+        <div class="row"><a class="btn small" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">Send a request on Telegram</a></div>
+      </div>
+    </div>
+
+    <div class="blk" id="sWhen" hidden>
+      <h2>2. Day and time</h2>
+      <div class="field tzline">
+        <label for="fTz">Time shown in the time zone <button type="button" class="qh" data-h="tz" aria-expanded="false" aria-label="Hint">?</button></label>
+        <select id="fTz"></select>
+      </div>
+      <p class="note" id="calLoad" role="status">Looking for free times…</p>
+      <div class="errbox" id="calErr" role="alert" hidden></div>
+      <div class="soft small" id="calEmpty" hidden><p>There is no free time for this session in the next 60 days. Write the word <span class="codeword">ВСТРЕЧА</span> to me on Telegram and we will find a time together.</p><div class="row"><a class="btn green small" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">Write “ВСТРЕЧА” on Telegram</a></div></div>
+      <div class="cal" id="cal" hidden>
+        <div class="cal-head">
+          <button type="button" class="btn ghost small cal-nav" id="calPrev" aria-label="Previous month">←</button>
+          <h3 id="calTitle" aria-live="polite"></h3>
+          <button type="button" class="btn ghost small cal-nav" id="calNext" aria-label="Next month">→</button>
+        </div>
+        <div class="cal-grid" id="calGrid" role="grid"></div>
+        <p class="note cal-legend"><span class="lgi"><span class="lg lg-free"></span> free time available</span><span class="lgi"><span class="lg lg-off"></span> no free time</span></p>
+      </div>
+      <div class="stack" id="timesBox" hidden style="gap:10px">
+        <h3 id="timesTitle"></h3>
+        <div class="times" id="times"></div>
+      </div>
+    </div>
+
+    <div class="blk" id="sData" hidden>
+      <h2>3. Your details</h2>
+      <div class="field" id="wName">
+        <label for="fName">First name and surname</label>
+        <input type="text" id="fName" maxlength="100" autocomplete="name" required>
+      </div>
+      <div class="field" id="wEmail">
+        <label for="fEmail">E-mail</label>
+        <input type="email" id="fEmail" maxlength="120" autocomplete="email" required>
+        <span class="hint">The confirmation, the Zoom link and the reminder will go here. If there is no e-mail, check your “Spam” folder.</span>
+      </div>
+      <div class="field">
+        <label for="fContact">Telegram or phone <span class="opt-l">optional</span></label>
+        <input type="text" id="fContact" maxlength="80" autocomplete="tel">
+        <span class="hint">So that I can write to you quickly if something changes.</span>
+      </div>
+      <div class="field">
+        <label for="fComment">What you would like to bring <span class="opt-l">optional</span></label>
+        <textarea id="fComment" maxlength="600" placeholder="For example: “I want to understand how to start working in Switzerland”"></textarea>
+        <span class="hint">A few words so that I can prepare. You do not need to write about health or personal matters here, we will talk about that in the session.</span>
+      </div>
+      <input class="hp" type="text" id="fWebsite" tabindex="-1" autocomplete="off" aria-hidden="true">
+    </div>
+
+    <div class="blk" id="sOk" hidden>
+      <h2>4. Confirmations</h2>
+      <label class="check" id="wAdult"><input type="checkbox" id="cAdult"> <span>I am at least 18 years old.</span></label>
+      <label class="check" id="wCoach"><input type="checkbox" id="cCoach"> <span>I understand that coaching is not psychotherapy and not medical care. If things get very hard for me, I will turn to a doctor or the emergency services.</span></label>
+      <label class="check" id="wData"><input type="checkbox" id="cData"> <span>I agree that Alonira.ch AG uses the details from this form (name, contacts, chosen time and my message) to book my session and contact me. More in the <a href="/privacy/#lang=en">privacy policy</a>.</span></label>
+      <div class="info" id="sum" hidden></div>
+      <div class="errbox" id="formErr" role="alert" hidden></div>
+      <button class="btn green wide" type="submit" id="send">Send a request for this time</button>
+      <p class="note" id="sendNote">Sending a request costs you nothing. I confirm the time by e-mail.</p>
+    </div>
+  </form>
+
+  <!-- 3. Готово -->
+  <section class="stack" id="sDone" hidden></section>
+
+  <!-- 4. Моя запись (по ссылке из письма) -->
+  <section class="stack" id="sManage" hidden></section>
+
+  <div class="soft">
+    <p><b>Prefer to write?</b> Write the word <span class="codeword">ВСТРЕЧА</span> to me on Telegram and we will agree on the time by message. How sessions, payment, rescheduling and cancelling work is in the <a href="/usloviya/#lang=en">terms of work</a>. What data we keep and why is in the <a href="/privacy/#lang=en">privacy policy</a>.</p>
+    <div class="row"><a class="btn green small" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">Write “ВСТРЕЧА” on Telegram</a></div>
+  </div>
+
+  <footer class="copy"><nav><a href="/en/">Home</a><a href="/usloviya/#lang=en">Terms of working with me</a><a href="/testy/#lang=en">All tests</a><a href="/privacy/#lang=en">Privacy policy</a><a href="/impressum/#lang=en&otvetstvennost">Limitation of liability</a><a href="/impressum/#lang=en">Legal notice</a></nav><span>© 2026 Iryna Voznesenskaya · coach, mentor, author of the “Steps. Your path in a new country” method</span></footer>
+</div>
+
+<script>const LOGO_SVG = "<svg viewBox=\"0 0 100 100\" aria-hidden=\"true\"><circle cx=\"50\" cy=\"50\" r=\"46\" fill=\"#FFFCF8\" stroke=\"#6E4F3C\" stroke-width=\"3\"/><g transform=\"rotate(22.5 50 50)\"><path d=\"M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z\" fill=\"#E3E6D6\" stroke=\"#66704F\" stroke-width=\"2\"/></g><g transform=\"rotate(67.5 50 50)\"><path d=\"M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z\" fill=\"#E3E6D6\" stroke=\"#66704F\" stroke-width=\"2\"/></g><g transform=\"rotate(112.5 50 50)\"><path d=\"M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z\" fill=\"#E3E6D6\" stroke=\"#66704F\" stroke-width=\"2\"/></g><g transform=\"rotate(157.5 50 50)\"><path d=\"M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z\" fill=\"#E3E6D6\" stroke=\"#66704F\" stroke-width=\"2\"/></g><g transform=\"rotate(202.5 50 50)\"><path d=\"M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z\" fill=\"#E3E6D6\" stroke=\"#66704F\" stroke-width=\"2\"/></g><g transform=\"rotate(247.5 50 50)\"><path d=\"M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z\" fill=\"#E3E6D6\" stroke=\"#66704F\" stroke-width=\"2\"/></g><g transform=\"rotate(292.5 50 50)\"><path d=\"M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z\" fill=\"#E3E6D6\" stroke=\"#66704F\" stroke-width=\"2\"/></g><g transform=\"rotate(337.5 50 50)\"><path d=\"M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z\" fill=\"#E3E6D6\" stroke=\"#66704F\" stroke-width=\"2\"/></g><g transform=\"rotate(0.0 50 50)\"><path d=\"M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z\" fill=\"#EADFCF\" stroke=\"#6E4F3C\" stroke-width=\"2\"/></g><g transform=\"rotate(45.0 50 50)\"><path d=\"M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z\" fill=\"#EADFCF\" stroke=\"#6E4F3C\" stroke-width=\"2\"/></g><g transform=\"rotate(90.0 50 50)\"><path d=\"M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z\" fill=\"#EADFCF\" stroke=\"#6E4F3C\" stroke-width=\"2\"/></g><g transform=\"rotate(135.0 50 50)\"><path d=\"M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z\" fill=\"#EADFCF\" stroke=\"#6E4F3C\" stroke-width=\"2\"/></g><g transform=\"rotate(180.0 50 50)\"><path d=\"M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z\" fill=\"#EADFCF\" stroke=\"#6E4F3C\" stroke-width=\"2\"/></g><g transform=\"rotate(225.0 50 50)\"><path d=\"M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z\" fill=\"#EADFCF\" stroke=\"#6E4F3C\" stroke-width=\"2\"/></g><g transform=\"rotate(270.0 50 50)\"><path d=\"M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z\" fill=\"#EADFCF\" stroke=\"#6E4F3C\" stroke-width=\"2\"/></g><g transform=\"rotate(315.0 50 50)\"><path d=\"M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z\" fill=\"#EADFCF\" stroke=\"#6E4F3C\" stroke-width=\"2\"/></g><circle cx=\"50\" cy=\"50\" r=\"7\" fill=\"#B98324\"/></svg>";</script>
+<script>
+'use strict';
+/* =====================================================================
+   «Запись на встречу» voznesenskaya.ch/zapis/ (решение Ирины 11.10.2026, документ проекта «zapis-kalendar.md»).
+   Клиентка выбирает встречу, день и время из свободного времени Ирины и отправляет запрос.
+   Свободное время и запись — Google Apps Script в аккаунте Ирины (тот же адрес, что у договора, файл zapis.gs):
+   он смотрит занятость во всех календарях Ирины, ставит предварительную бронь и пишет письма.
+   Платная встреча идёт через договор (/dogovor/?z=…), на подпись 24 часа. Каждую запись Ирина подтверждает сама.
+   По ссылке из письма (?z=…&k=…) клиентка видит свою запись, может её перенести (&r=1) или отменить.
+   В браузере ничего не хранится. ?demo=1 — пример без отправки (для «Копии»), ?preview=1 — видны платные встречи.
+   ===================================================================== */
+const ENDPOINT = 'https://script.google.com/macros/s/AKfycbxbvsmtd5qMpxVN9pHyGACTw8qrFhJWfufXh9N2tIIhqlyuahO2zg2WepROrdD6tP-IwA/exec';
+/* Платные встречи открываются вместе с договором: договор скрыт и дорабатывается до «открывай» Ирины.
+   Пока false — без ?preview=1 на странице только знакомство. */
+const PAID_OPEN = false;
+/* Готово ли — как ready у программ на главной (index.html). Неготовое — «в разработке» и заявка словом ЗАЯВКА. */
+const READY = { intro: true, mentor: false, razbor: true, prog: true, snimok: false, fund: true, life: false };
+const LANG = (document.documentElement.lang || 'ru').slice(0, 2);
+const LOC = ({ ru: 'ru-RU', uk: 'uk-UA', de: 'de-CH', en: 'en-GB' })[LANG] || 'ru-RU';
+const Q = new URLSearchParams(location.search);
+const DEMO = Q.has('demo');
+const PREVIEW = DEMO || /preview/.test(location.search + location.hash);
+const el = id => document.getElementById(id);
+const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const AV = typeof LOGO_SVG !== 'undefined' ? LOGO_SVG : '';
+document.querySelectorAll('[data-avatar]').forEach(x => x.innerHTML = AV);
+
+const T = {
+  intro: { dur: 30, paid: false, name: 'Introductory meeting', price: 'free' },
+  mentor: { dur: 60, paid: true, name: 'Mentoring session', price: '150 CHF' },
+  razbor: { dur: 180, paid: true, name: '3-hour session', price: '249 CHF' },
+  prog: { dur: 60, paid: false, name: 'Session of my programme', price: 'under agreement' }
+};
+const PN = { snimok: '“Life snapshot”', fund: '“My foundation”', life: '“A life without regrets”' };
+const HELP = {
+  razbor: 'All three sessions last 3 hours and cost 249 CHF. You can add a written PDF report in the agreement, it costs 29 CHF.',
+  kv: 'The agreement number looks like this: KV-20261012-AB3C. It is in the subject and in the text of the e-mail with your copy of the agreement. If you do not have the number to hand, write to me on Telegram.',
+  tz: 'I took the time zone from your device settings. If you are in another country right now or want to see Zurich time, choose a time zone from the list. The session itself does not move.'
+};
+const CITY = { 'Europe/Zurich': 'Zurich', 'Europe/Kyiv': 'Kyiv', 'Europe/Berlin': 'Berlin', 'Europe/Vienna': 'Vienna', 'Europe/Paris': 'Paris', 'Europe/Rome': 'Rome',
+  'Europe/Madrid': 'Madrid', 'Europe/Lisbon': 'Lisbon', 'Europe/London': 'London', 'Europe/Warsaw': 'Warsaw', 'Europe/Prague': 'Prague', 'Europe/Riga': 'Riga',
+  'Europe/Vilnius': 'Vilnius', 'Europe/Tallinn': 'Tallinn', 'Europe/Chisinau': 'Chișinău', 'Europe/Istanbul': 'Istanbul', 'Asia/Tbilisi': 'Tbilisi', 'Asia/Yerevan': 'Yerevan',
+  'Asia/Dubai': 'Dubai', 'Asia/Almaty': 'Almaty', 'America/New_York': 'New York', 'America/Toronto': 'Toronto', 'America/Los_Angeles': 'Los Angeles' };
+
+/* ---------- подсказки «?» ---------- */
+document.addEventListener('click', e => {
+  const q = e.target.closest('.qh');
+  if (q){
+    e.preventDefault();
+    const open = q.getAttribute('aria-expanded') === 'true';
+    document.querySelectorAll('.hbub').forEach(b => b.remove()); document.querySelectorAll('.qh').forEach(b => b.setAttribute('aria-expanded', 'false'));
+    if (open) return;
+    const b = document.createElement('div'); b.className = 'hbub'; b.setAttribute('role', 'note');
+    b.innerHTML = esc(HELP[q.dataset.h] || '') + '<button type="button" class="x" aria-label="Close">✕</button>';
+    q.closest('.field, .blk').appendChild(b);
+    q.setAttribute('aria-expanded', 'true'); return;
+  }
+  if (e.target.closest('.hbub .x') || !e.target.closest('.hbub')){ document.querySelectorAll('.hbub').forEach(b => b.remove()); document.querySelectorAll('.qh').forEach(b => b.setAttribute('aria-expanded', 'false')); }
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape'){ document.querySelectorAll('.hbub').forEach(b => b.remove()); document.querySelectorAll('.qh').forEach(b => b.setAttribute('aria-expanded', 'false')); } });
+
+/* ---------- время и часовой пояс ---------- */
+const S = { t: '', prog: '', slots: [], tz: '', y: 0, m: 0, day: '', start: 0, info: null, resch: false };
+const detected = (() => { try { return Intl.DateTimeFormat().resolvedOptions().timeZone || 'Europe/Zurich'; } catch (e){ return 'Europe/Zurich'; } })().replace('Europe/Kiev', 'Europe/Kyiv');
+const serverTz = tz => tz === 'Europe/Kyiv' ? 'Europe/Kiev' : tz;   // старое имя пояса понимают все серверы
+const offMin = (ms, tz) => { try { const p = new Intl.DateTimeFormat('en-US', { timeZone: tz, timeZoneName: 'longOffset' }).formatToParts(new Date(ms)).find(x => x.type === 'timeZoneName').value; const m = /([+-])(\d{2}):?(\d{2})?/.exec(p); return m ? (m[1] === '-' ? -1 : 1) * (+m[2] * 60 + +(m[3] || 0)) : 0; } catch (e){ return 0; } };
+const offTxt = (ms, tz) => { const o = offMin(ms, tz), h = Math.floor(Math.abs(o) / 60), mm = Math.abs(o) % 60; return 'UTC' + (o < 0 ? '−' : '+') + h + (mm ? ':' + String(mm).padStart(2, '0') : ''); };
+const cityOf = tz => CITY[tz] || CITY[tz.replace('Europe/Kiev', 'Europe/Kyiv')] || tz.split('/').pop().replace(/_/g, ' ');
+const fmt = (ms, opt, tz) => new Intl.DateTimeFormat(LOC, Object.assign({ timeZone: tz || S.tz }, opt)).format(new Date(ms));
+const hm = (ms, tz) => fmt(ms, { hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }, tz);
+const noYear = s => s.replace(/\s(г|р)\.$/, '');
+const dayKey = (ms, tz) => new Intl.DateTimeFormat('en-CA', { timeZone: tz || S.tz, year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(ms));
+/* день недели отдельно: в украинском полная дата даёт винительный падеж («пʼятницю»), а нужно «пʼятниця» */
+const dayMonth = (ms, tz) => fmt(ms, { day: 'numeric', month: 'long' }, tz);
+const longDate = (ms, tz) => `${fmt(ms, { weekday: 'long' }, tz)}, ${dayMonth(ms, tz)} ${fmt(ms, { year: 'numeric' }, tz).replace(/\D/g, '')}`;
+function whenTxt(s, e, tz){
+  tz = tz || S.tz;
+  const base = `${longDate(s, tz)}, ${hm(s, tz)}–${hm(e, tz)}`;
+  if (tz === 'Europe/Zurich') return `${base} Zurich time`;
+  if (offMin(s, tz) === offMin(s, 'Europe/Zurich')) return `${base} (${cityOf(tz)})`;
+  return `${base} (${cityOf(tz)}) · ${hm(s, 'Europe/Zurich')}–${hm(e, 'Europe/Zurich')} Zurich time`;
+}
+function fillTz(){
+  const list = [detected, ...Object.keys(CITY)].filter((x, i, a) => a.indexOf(x) === i);
+  const now = Date.now();
+  el('fTz').innerHTML = list.map(tz => `<option value="${esc(tz)}">${esc(cityOf(tz))} · ${esc(offTxt(now, tz))}${tz === detected ? ' · ' + esc('your zone') : ''}</option>`).join('');
+  el('fTz').value = S.tz = detected;
+}
+el('fTz').addEventListener('change', () => { S.tz = el('fTz').value; S.day = ''; S.start = 0; renderCal(); renderTimes(); refresh(); });
+
+/* ---------- сервер ---------- */
+async function api(params){
+  if (DEMO) return demoApi(params);
+  const r = await fetch(ENDPOINT + '?' + new URLSearchParams(params).toString(), { cache: 'no-store' });
+  return r.json();
+}
+async function apiPost(payload){
+  if (DEMO) return demoPost(payload);
+  const r = await fetch(ENDPOINT, { method: 'POST', body: JSON.stringify(payload) });
+  return r.json();
+}
+/* пример для «Копии»: свободное время придумано, ничего не отправляется */
+function demoSlots(t){
+  const dur = T[t].dur, out = [], now = Date.now();
+  let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  for (let i = 3; i <= 60; i++){
+    const d = new Date(now + i * 864e5), key = dayKey(d.getTime(), 'Europe/Zurich'), [y, m, dd] = key.split('-').map(Number);
+    const wd = new Date(Date.UTC(y, m - 1, dd)).getUTCDay(); if (wd === 0 || wd === 6) continue;
+    const off = offMin(Date.UTC(y, m - 1, dd, 12), 'Europe/Zurich');
+    for (let mi = 540; mi + dur <= 1080; mi += 30){ if (rnd() < 0.55) continue; out.push(Date.UTC(y, m - 1, dd) + (mi - off) * 6e4); }
+  }
+  return out;
+}
+let demoBook = null;
+function demoApi(p){
+  if (p.a === 'slots') return Promise.resolve({ ok: true, slots: demoSlots(p.t), dur: T[p.t].dur });
+  if (p.a === 'zinfo'){ const s = demoSlots('intro')[4]; return Promise.resolve(demoBook || { ok: true, no: 'ZP-20261011-DEMO', st: 'подтверждена', t: 'intro', prog: '', s, e: s + 18e5, dur: 30, tz: detected, name: 'Anna', free: true, past: false, canCancel: true, canMove: true, to: '' }); }
+  return Promise.resolve({ ok: false });
+}
+function demoPost(d){
+  const t = d.t || (S.info && S.info.t) || 'intro', paid = T[t].paid && !d.kv && !d.from;
+  return new Promise(res => setTimeout(() => res({ ok: true, no: 'ZP-20261011-DEMO', st: paid ? 'ждёт договор' : 'ждёт подтверждения', s: d.start, e: d.start + T[t].dur * 6e4,
+    manage: location.pathname + '?demo=1&z=ZP-20261011-DEMO&k=demo', contract: paid ? '../dogovor/?preview=1&p=' + (t === 'mentor' ? 'mentor' : d.prog) : '' }), 500));
+}
+
+/* ---------- 1. встреча ---------- */
+function visibleType(t){ return t === 'intro' || PAID_OPEN || PREVIEW; }
+document.querySelectorAll('.tcard').forEach(c => {
+  if (!visibleType(c.dataset.t)) c.hidden = true;
+  if (READY[c.dataset.t] === false) c.classList.add('is-soon');
+  else c.querySelectorAll('[data-soon]').forEach(x => x.remove());
+});
+document.querySelectorAll('#wRazbor .check').forEach(c => { if (READY[c.dataset.p] !== false) c.querySelectorAll('[data-soon]').forEach(x => x.remove()); });
+document.querySelectorAll('input[name=t]').forEach(r => r.addEventListener('change', () => pickType(r.value)));
+document.querySelectorAll('input[name=prog]').forEach(r => r.addEventListener('change', () => { S.prog = r.value; afterType(); }));
+el('fKv').addEventListener('input', refresh);
+function pickType(t){
+  S.t = t; S.prog = ''; S.day = ''; S.start = 0;
+  document.querySelectorAll('.tcard').forEach(c => c.classList.toggle('on', c.dataset.t === t));
+  document.querySelectorAll('input[name=prog]').forEach(r => r.checked = false);
+  el('wRazbor').hidden = t !== 'razbor';
+  el('wKv').hidden = t !== 'prog';
+  /* уточнение — сразу под выбранной карточкой */
+  if (t === 'razbor') document.querySelector('.tcard[data-t=razbor]').after(el('wRazbor'));
+  if (t === 'prog') document.querySelector('.tcard[data-t=prog]').after(el('wKv'));
+  afterType();
+}
+function afterType(){
+  const t = S.t, soon = READY[t] === false || (t === 'razbor' && S.prog && READY[S.prog] === false);
+  el('soonBox').hidden = !soon;
+  const ready = !!t && !soon && (t !== 'razbor' || !!S.prog);
+  ['sWhen', 'sData', 'sOk'].forEach(id => el(id).hidden = true);
+  if (ready){ el('sWhen').hidden = false; loadSlots(t); }
+  refresh();
+}
+
+/* ---------- 2. день и время ---------- */
+const slotCache = {};
+async function loadSlots(t){
+  S.day = ''; S.start = 0;
+  el('cal').hidden = true; el('timesBox').hidden = true; el('calEmpty').hidden = true; el('calErr').hidden = true; el('calLoad').hidden = false;
+  try {
+    const j = slotCache[t] || await api({ a: 'slots', t });
+    if (!j || !j.ok) throw new Error('slots');
+    slotCache[t] = j; if (S.t !== t && !S.resch) return;
+    S.slots = j.slots || [];
+    el('calLoad').hidden = true;
+    if (!S.slots.length){ el('calEmpty').hidden = false; return; }
+    const first = S.slots[0], k = dayKey(first).split('-').map(Number);
+    S.y = k[0]; S.m = k[1] - 1;
+    S.day = dayKey(first);   // сразу показываем ближайший свободный день
+    el('cal').hidden = false; renderCal(); renderTimes();
+  } catch (e){
+    el('calLoad').hidden = true; el('calErr').hidden = false;
+    el('calErr').innerHTML = 'The free times could not be loaded. Check your internet connection and reload the page. If it still does not work, write to me on Telegram <a href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">@IrynaNeuroCoach</a> with the word <span class="codeword">ВСТРЕЧА</span>.';
+  }
+}
+function byDay(){ const o = {}; S.slots.forEach(s => { const k = dayKey(s); (o[k] = o[k] || []).push(s); }); return o; }
+function renderCal(){
+  if (!S.slots.length) return;
+  const days = byDay(), keys = Object.keys(days).sort();
+  const minM = keys[0].slice(0, 7), maxM = keys[keys.length - 1].slice(0, 7);
+  const cur = `${S.y}-${String(S.m + 1).padStart(2, '0')}`;
+  if (cur < minM){ [S.y, S.m] = [+minM.slice(0, 4), +minM.slice(5) - 1]; }
+  if (cur > maxM){ [S.y, S.m] = [+maxM.slice(0, 4), +maxM.slice(5) - 1]; }
+  const mk = `${S.y}-${String(S.m + 1).padStart(2, '0')}`;
+  const t = new Intl.DateTimeFormat(LOC, { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(Date.UTC(S.y, S.m, 15)));
+  el('calTitle').textContent = noYear(t).replace(/^./, c => c.toUpperCase());
+  el('calPrev').disabled = mk <= minM; el('calNext').disabled = mk >= maxM;
+  const wdf = new Intl.DateTimeFormat(LOC, { weekday: 'short', timeZone: 'UTC' });
+  let h = '';
+  for (let i = 0; i < 7; i++) h += `<span class="wd" aria-hidden="true">${esc(wdf.format(new Date(Date.UTC(2026, 9, 12 + i))).replace('.', ''))}</span>`;
+  const firstWd = (new Date(Date.UTC(S.y, S.m, 1)).getUTCDay() + 6) % 7, n = new Date(Date.UTC(S.y, S.m + 1, 0)).getUTCDate();
+  for (let i = 0; i < firstWd; i++) h += '<span class="d pad"></span>';
+  const today = dayKey(Date.now());
+  for (let d = 1; d <= n; d++){
+    const k = `${mk}-${String(d).padStart(2, '0')}`, free = !!days[k];
+    const lbl = longDate(Date.UTC(S.y, S.m, d, 12), 'UTC') + (free ? '' : ' — ' + 'no free time');
+    h += free ? `<button type="button" class="d free${k === today ? ' today' : ''}" data-k="${k}" aria-pressed="${k === S.day}" aria-label="${esc(lbl)}">${d}</button>`
+      : `<span class="d off${k === today ? ' today' : ''}" aria-label="${esc(lbl)}">${d}</span>`;
+  }
+  el('calGrid').innerHTML = h;
+}
+el('calGrid').addEventListener('click', e => { const b = e.target.closest('button.d'); if (!b) return; S.day = b.dataset.k; S.start = 0; renderCal(); renderTimes(); refresh(); el('timesBox').scrollIntoView({ block: 'nearest', behavior: 'smooth' }); });
+el('calPrev').addEventListener('click', () => { S.m--; if (S.m < 0){ S.m = 11; S.y--; } renderCal(); });
+el('calNext').addEventListener('click', () => { S.m++; if (S.m > 11){ S.m = 0; S.y++; } renderCal(); });
+function renderTimes(){
+  const list = S.day ? (byDay()[S.day] || []) : [];
+  el('timesBox').hidden = !list.length;
+  if (!list.length) return;
+  el('timesTitle').textContent = `Free times: ${fmt(list[0], { weekday: 'long' })}, ${dayMonth(list[0])}`;
+  el('times').innerHTML = list.map(s => `<button type="button" class="tm" data-s="${s}" aria-pressed="${s === S.start}">${esc(hm(s))}</button>`).join('');
+}
+el('times').addEventListener('click', e => {
+  const b = e.target.closest('button.tm'); if (!b) return;
+  S.start = +b.dataset.s; renderTimes();
+  if (S.resch){ el('sResch').hidden = false; refresh(); el('sResch').scrollIntoView({ block: 'nearest', behavior: 'smooth' }); return; }
+  el('sData').hidden = false; el('sOk').hidden = false; refresh();
+  el('sData').scrollIntoView({ block: 'start', behavior: 'smooth' });
+});
+
+/* ---------- итог и кнопка ---------- */
+function curType(){ return S.resch && S.info ? S.info.t : S.t; }
+function typeLine(t, prog){ return t === 'razbor' && prog ? `${PN[prog]}, 3-hour session` : T[t].name; }
+function refresh(){
+  const t = curType(); if (!t || !S.start) { el('sum').hidden = true; return; }
+  const e = S.start + T[t].dur * 6e4, prog = S.resch ? S.info.prog : S.prog;
+  const html = `<b>${esc(typeLine(t, prog))}</b><span>${esc(whenTxt(S.start, e))}</span><span class="note">${esc(T[t].price === 'free' ? 'Free, online via Zoom.' : T[t].price === 'under agreement' ? 'Under your agreement, online via Zoom.' : `${T[t].price}, online via Zoom. Payment by invoice before the session.`)}</span>`;
+  if (S.resch){ el('reschSum').innerHTML = html; return; }
+  el('sum').hidden = false; el('sum').innerHTML = html;
+  const paid = T[t].paid, send = el('send');
+  send.className = 'btn wide ' + (paid ? 'gold' : t === 'intro' ? 'green' : '');
+  send.textContent = paid ? 'Next: sign the agreement' : 'Send a request for this time';
+  el('sendNote').textContent = paid ? 'The time is held for you for 24 hours while you sign the agreement. You pay later, by invoice from Alonira.ch AG.' : t === 'intro' ? 'Sending a request costs you nothing. I confirm the time by e-mail.' : 'I confirm the time by e-mail.';
+}
+
+/* ---------- отправка ---------- */
+const ERR = {
+  slot: 'This time has just been taken. Please choose another one.',
+  many: 'You already have two upcoming bookings. To change a time, open the link from the booking e-mail or write to me on Telegram.',
+  kv: 'I could not find an agreement with this number and this e-mail. Check the number and e-mail from the agreement e-mail or write to me on Telegram.',
+  limit: 'There are a lot of requests today. Try again tomorrow or write to me on Telegram.',
+  late: 'There are less than 24 hours before the session, so it can no longer be moved here. Write to me on Telegram and we will find a solution.',
+  moved: 'A request to move this session has already been sent. Wait for my reply, it will come by e-mail.',
+  key: 'The link did not open. Open it from the e-mail again or write to me on Telegram.'
+};
+function showErr(box, code){
+  box.hidden = false;
+  box.innerHTML = esc(ERR[code] || 'The request could not be sent. Check your internet connection and press again. If it still does not work, write to me on Telegram.') + ' <a href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">@IrynaNeuroCoach</a>';
+  box.scrollIntoView({ block: 'center' });
+}
+function check(){
+  const miss = [];
+  document.querySelectorAll('.bad').forEach(x => x.classList.remove('bad'));
+  const need = (ok, wrap, label) => { if (!ok){ miss.push(label); const w = el(wrap); if (w) w.classList.add('bad'); } };
+  if (S.t === 'prog') need(/^KV-\d{8}-[2-9A-HJKMNP-Z]{4}$/i.test(el('fKv').value.trim()), 'wKv', 'agreement number');
+  need(!!S.start, 'sWhen', 'day and time');
+  need(el('fName').value.trim().length > 1, 'wName', 'name');
+  need(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(el('fEmail').value.trim()), 'wEmail', 'e-mail');
+  need(el('cAdult').checked, 'wAdult', 'that you are at least 18 years old');
+  need(el('cCoach').checked, 'wCoach', 'that coaching is not psychotherapy');
+  need(el('cData').checked, 'wData', 'consent to the booking details');
+  return miss;
+}
+let sending = false;
+el('sForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  if (sending || S.resch) return;
+  const miss = check();
+  if (miss.length){ el('formErr').hidden = false; el('formErr').textContent = `Please fill in: ${miss.join(', ')}.`; const b = document.querySelector('.bad'); if (b) b.scrollIntoView({ block: 'center' }); return; }
+  el('formErr').hidden = true;
+  sending = true; const btn = el('send'), label = btn.textContent; btn.disabled = true; btn.textContent = 'Sending your request…';
+  const payload = { kind: 'zapis', v: 1, t: S.t, prog: S.prog, kv: el('fKv').value.trim().toUpperCase(), start: S.start, lang: LANG, tz: serverTz(S.tz),
+    name: el('fName').value.trim(), email: el('fEmail').value.trim(), contact: el('fContact').value.trim(), comment: el('fComment').value.trim(),
+    consents: { adult: true, coach: true, data: true }, consentAt: new Date().toISOString(), page: location.origin + location.pathname, website: el('fWebsite').value };
+  try {
+    const j = await apiPost(payload);
+    if (!j || !j.ok){ if (j && j.err === 'slot'){ delete slotCache[S.t]; loadSlots(S.t); } throw Object.assign(new Error('x'), { code: j && j.err }); }
+    done(j, payload);
+  } catch (err){ showErr(el('formErr'), err.code); }
+  finally { sending = false; btn.disabled = false; btn.textContent = label; }
+});
+
+/* ---------- готово ---------- */
+function done(j, p){
+  const t = p.t || (S.info && S.info.t), e = j.e || (S.start + T[t].dur * 6e4);
+  ['sIntro', 'sForm', 'sManage'].forEach(id => el(id).hidden = true);
+  const box = el('sDone'); box.hidden = false;
+  const when = esc(whenTxt(j.s || S.start, e));
+  if (j.st === 'ждёт договор'){
+    box.innerHTML = `<div class="blk"><div class="done-h"><span class="ok" aria-hidden="true">✓</span><h2>This time is held for you for 24 hours</h2></div>
+<p><b>${esc(typeLine(t, p.prog || (S.info && S.info.prog)))}</b><br>${when}</p>
+<p>So that I can confirm this time, sign the coaching agreement. It takes a few minutes, no paper or scan needed. The link to the agreement is also in the e-mail that is arriving in your inbox now.</p>
+<div class="btns"><a class="btn gold wide" href="${esc(j.contract)}">Sign the agreement</a></div>
+<h3>What happens next</h3>
+<ol class="steps"><li>You sign the agreement within 24 hours. If you do not manage it, the time becomes free again.</li><li>I confirm the agreement and the time in one e-mail, usually within two days. The e-mail contains the Zoom link and a calendar file.</li><li>You receive an invoice from Alonira.ch AG with a QR payment slip. It needs to be paid before the session.</li></ol></div>`;
+  } else {
+    box.innerHTML = `<div class="blk"><div class="done-h"><span class="ok" aria-hidden="true">✓</span><h2>Request sent</h2></div>
+<p><b>${esc(typeLine(t, p.prog || (S.info && S.info.prog)))}</b><br>${when}</p>
+<p>${S.resch && S.info && S.info.st === 'подтверждена' ? 'Until I confirm the new time, the previous one still stands.' : 'This time is held for you.'} I will confirm it by e-mail within two days. If there is no e-mail, check your “Spam” folder.</p>
+<h3>What happens next</h3>
+<ol class="steps"><li>In a few minutes you will receive the e-mail “Your booking request has arrived”. It contains a link to reschedule or cancel the request.</li><li>I confirm the time, and you receive an e-mail with the Zoom link and a calendar file.</li><li>I will send you a reminder the day before the session.</li></ol>
+<div class="btns"><a class="btn green" href="/testy/#lang=en">While you wait: free tests</a><a class="btn ghost" href="/en/">Home page</a></div></div>`;
+  }
+  window.scrollTo(0, 0);
+}
+
+/* ---------- моя запись: по ссылке из письма ---------- */
+const ST = {
+  'ждёт договор': 'The time is held for you. So that I can confirm it, please sign the agreement.',
+  'ждёт подтверждения': 'Request sent. I will confirm the time by e-mail within two days.',
+  'подтверждена': 'Session confirmed. The Zoom link is in the confirmation e-mail.',
+  'отклонена': 'Unfortunately this time did not suit me. Please choose another one.',
+  'истекла': 'This time is free again. If you would still like to meet, choose a new one.',
+  'отменена': 'This session has been cancelled.',
+  'перенесена': 'This session has been moved to another time. The new time is in my last e-mail.'
+};
+async function manage(){
+  ['sIntro', 'sForm'].forEach(id => el(id).hidden = true);
+  const box = el('sManage'); box.hidden = false;
+  box.innerHTML = '<p class="note" role="status">Opening your booking…</p>';
+  let j;
+  try { j = await api({ a: 'zinfo', z: Q.get('z'), k: Q.get('k') }); } catch (e){ j = null; }
+  if (!j || !j.ok){
+    box.innerHTML = `<div class="blk"><h2>The booking did not open</h2><p>${esc(ERR.key)} <a href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">@IrynaNeuroCoach</a></p><div class="btns"><a class="btn green" href="/en/zapis/">Book again</a></div></div>`;
+    return;
+  }
+  S.info = j; const tz = S.tz;
+  const kind = typeLine(j.t, j.prog);
+  let msg = ST[j.st] || '';
+  if (j.st === 'подтверждена' && j.to) msg = 'You asked to move this session. Until I confirm the new time, this one still stands.';
+  if (j.past && (j.st === 'подтверждена')) msg = 'This session has already taken place.';
+  const late = j.st === 'подтверждена' && !j.free && !j.past;
+  box.innerHTML = `<div class="stack" style="gap:10px"><div class="eyebrow">Coaching · my booking</div><h1>Your booking</h1></div>
+<div class="blk">
+  <p class="mstatus st-${esc(String(j.st).replace(/\s/g, '-'))}">${esc(msg)}</p>
+  <div class="info"><b>${esc(kind)}</b><span>${esc(whenTxt(j.s, j.e, tz))}</span><span class="note">${esc(`Booking number: ${j.no}`)}${j.kv ? esc(` · agreement ${j.kv}`) : ''}</span></div>
+  ${j.st === 'ждёт договор' && j.contract ? `<div class="btns"><a class="btn gold wide" href="${esc(j.contract)}">Sign the agreement</a></div>` : ''}
+  ${late ? `<p class="note">${esc('There are less than 24 hours before the session, so it can no longer be moved here. If something serious and sudden has happened, write to me on Telegram and we will find a solution.')}</p>` : ''}
+  <div class="btns" id="mBtns">
+    ${j.canMove ? `<button type="button" class="btn" id="mMove">${esc(j.st === 'отклонена' || j.st === 'истекла' ? 'Choose another time' : 'Move to another time')}</button>` : ''}
+    ${j.canCancel ? `<button type="button" class="btn ghost" id="mCancel">${esc('Cancel the session')}</button>` : ''}
+  </div>
+  <div class="stack" id="mAsk" hidden style="gap:10px"></div>
+  <div class="errbox" id="mErr" role="alert" hidden></div>
+</div>
+<p class="note">${esc('You can reschedule or cancel the session free of charge up to 24 hours before the start.')} <a href="/usloviya/#lang=en">${esc('Terms of working with me')}</a></p>`;
+  if (el('mMove')) el('mMove').addEventListener('click', startResch);
+  if (el('mCancel')) el('mCancel').addEventListener('click', () => {
+    const ask = el('mAsk'); ask.hidden = false;
+    const lateTxt = late && j.t !== 'intro' ? 'There are less than 24 hours before the session: under the terms of work, such a session counts as held. If something serious has happened, better write to me first.' : '';
+    ask.innerHTML = `<p><b>${esc('Cancel the session?')}</b> ${esc(lateTxt)}</p><div class="btns"><button type="button" class="btn" id="mYes">${esc('Yes, cancel')}</button><button type="button" class="btn ghost" id="mNo">${esc('No, keep them')}</button></div>`;
+    el('mNo').addEventListener('click', () => { ask.hidden = true; });
+    el('mYes').addEventListener('click', async () => {
+      el('mYes').disabled = true; el('mYes').textContent = 'Cancelling…';
+      try {
+        const r = DEMO ? { ok: true } : await apiPost({ kind: 'zapis-otmena', z: j.no, k: Q.get('k') });
+        if (!r || !r.ok) throw Object.assign(new Error('x'), { code: r && r.err });
+        box.innerHTML = `<div class="blk"><div class="done-h"><span class="ok" aria-hidden="true">✓</span><h2>${esc('Session cancelled')}</h2></div><p>${esc('The cancellation e-mail will arrive in your inbox. If you like, choose a new time at any moment.')}</p><div class="btns"><a class="btn green" href="/en/zapis/">${esc('Choose a new time')}</a><a class="btn ghost" href="/en/">${esc('Home page')}</a></div></div>`;
+      } catch (err){ showErr(el('mErr'), err.code); el('mYes').disabled = false; el('mYes').textContent = 'Yes, cancel'; }
+    });
+  });
+  if (Q.get('r') === '1' && j.canMove) startResch();
+}
+function startResch(){
+  S.resch = true;
+  const f = el('sForm'); f.hidden = false;
+  ['sType', 'sData', 'sOk'].forEach(id => el(id).hidden = true);
+  el('sWhen').hidden = false;
+  el('sWhen').querySelector('h2').textContent = 'New day and time';
+  if (!el('sResch')){
+    const b = document.createElement('div'); b.className = 'blk'; b.id = 'sResch'; b.hidden = true;
+    b.innerHTML = `<h2>${esc('New time')}</h2><div class="info" id="reschSum"></div><div class="errbox" id="reschErr" role="alert" hidden></div><button type="button" class="btn wide" id="reschSend">${esc('Send a request for the new time')}</button><p class="note">${esc('I confirm the new time by e-mail. If you are moving a confirmed session, the previous time stands until I reply.')}</p>`;
+    f.appendChild(b);
+    el('reschSend').addEventListener('click', sendResch);
+  }
+  loadSlots(S.info.t);
+  el('sWhen').scrollIntoView({ block: 'start', behavior: 'smooth' });
+}
+async function sendResch(){
+  if (sending || !S.start) return;
+  sending = true; const btn = el('reschSend'), label = btn.textContent; btn.disabled = true; btn.textContent = 'Sending your request…';
+  try {
+    const j = await apiPost({ kind: 'zapis', v: 1, from: S.info.no, fromKey: Q.get('k'), start: S.start, lang: LANG, tz: serverTz(S.tz) });
+    if (!j || !j.ok){ if (j && j.err === 'slot'){ delete slotCache[S.info.t]; loadSlots(S.info.t); } throw Object.assign(new Error('x'), { code: j && j.err }); }
+    done(j, { t: S.info.t, prog: S.info.prog });
+  } catch (err){ showErr(el('reschErr'), err.code); }
+  finally { sending = false; btn.disabled = false; btn.textContent = label; }
+}
+
+/* ---------- старт ---------- */
+fillTz();
+if (DEMO) el('demoBand').hidden = false;
+document.querySelectorAll('a.navcta').forEach(a => { a.setAttribute('href', '#sType'); a.removeAttribute('target'); a.addEventListener('click', e => { e.preventDefault(); if (!el('sForm').hidden && !S.resch){ const r = document.querySelector('input[name=t][value=intro]'); r.checked = true; pickType('intro'); el('sType').scrollIntoView({ block: 'start', behavior: 'smooth' }); } }); });
+if (Q.get('z') && Q.get('k')) manage();
+else {
+  const vis = [...document.querySelectorAll('.tcard')].filter(c => !c.hidden);
+  const want = Q.get('t');
+  const pre = (want && vis.find(c => c.dataset.t === want)) || (vis.length === 1 ? vis[0] : null);
+  if (pre){ pre.querySelector('input').checked = true; pickType(pre.dataset.t); }
+}
+</script>
+
+<script src="/assets/samesite.js"></script>
+<!--i18n--><style>#langbar.langbar{position:fixed;bottom:14px;right:14px;left:auto;top:auto;width:auto;max-width:none;margin:0;z-index:60;display:flex;gap:2px;background:rgba(255,255,255,.92);border:1px solid rgba(0,0,0,.08);border-radius:999px;padding:3px;font:600 12px Manrope,system-ui,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,.08)}#langbar.langbar a{color:#5d554d;padding:5px 9px;border-radius:999px;text-decoration:none;font:inherit;display:inline-block;width:auto}#langbar.langbar a[aria-current="true"]{background:#2f2924;color:#fff}@media print{.langbar{display:none!important}}</style><div class="langbar" id="langbar" role="navigation" aria-label="Language"><a href="/zapis/" hreflang="ru" data-lang="ru">RU</a><a href="/uk/zapis/" hreflang="uk" data-lang="uk">UA</a><a href="/de/zapis/" hreflang="de" data-lang="de">DE</a><a href="/en/zapis/" hreflang="en" data-lang="en" aria-current="true">EN</a></div><script>(function(){var b=document.getElementById('langbar');if(!b)return;b.addEventListener('click',function(e){var a=e.target.closest('a[data-lang]');if(a)try{localStorage.setItem('irinaTestsLang',a.dataset.lang)}catch(x){}});})();</script><!--i18n--></body>
+</html>

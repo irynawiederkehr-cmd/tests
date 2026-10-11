@@ -271,6 +271,7 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
         </select>
       </div>
       <div class="info" id="progInfo" hidden></div>
+      <div class="info" id="zInfo" hidden></div>
       <div class="field" id="wOfferName" hidden>
         <label for="fOfferName">Назва програми</label>
         <input type="text" id="fOfferName" maxlength="120" placeholder="Як у моїй письмовій пропозиції">
@@ -400,7 +401,7 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
    Ничего не хранится в браузере: закрыла страницу — форма пустая.
    ===================================================================== */
 const ENDPOINT = 'https://script.google.com/macros/s/AKfycbxbvsmtd5qMpxVN9pHyGACTw8qrFhJWfufXh9N2tIIhqlyuahO2zg2WepROrdD6tP-IwA/exec';
-const TERMS_VER = '2026-10-10';
+const TERMS_VER = '2026-10-11';
 const LANG = (document.documentElement.lang || 'ru').slice(0, 2);
 const LOC = ({ ru: 'ru-RU', uk: 'uk-UA', de: 'de-CH', en: 'en-GB' })[LANG] || 'ru-RU';
 const el = id => document.getElementById(id);
@@ -419,6 +420,27 @@ const P = {
   other: { n: '', f: 'за письмовою пропозицією Ірини · онлайн', price: null, parts: true, named: true }
 };
 const REP_PRICE = 29;
+/* договор по ссылке со страницы записи (/zapis/, 11.10.2026): ?z=номер записи&k=ключ — время первой встречи уже выбрано и держится 24 часа */
+const ZQ = (() => { const q = new URLSearchParams(location.search); return q.get('z') && q.get('k') ? { z: q.get('z'), k: q.get('k') } : null; })();
+let ZB = null;
+function zWhenTxt(b){
+  const tz = (typeof TZ !== 'undefined' && TZ) || 'Europe/Zurich';
+  const f = x => new Intl.DateTimeFormat(LOC, Object.assign({ timeZone: tz }, x)).format(new Date(b.s));
+  const day = `${f({ weekday: 'long' })}, ${f({ day: 'numeric', month: 'long' })} ${f({ year: 'numeric' }).replace(/\D/g, '')}`;   // день недели отдельно: в украинском иначе «пʼятницю»
+  const t = (x, z) => new Intl.DateTimeFormat(LOC, { hour: '2-digit', minute: '2-digit', hourCycle: 'h23', timeZone: z }).format(new Date(x));
+  if (tz === 'Europe/Zurich') return `${day}, ${t(b.s, tz)}–${t(b.e, tz)} за цюрихським часом`;
+  return `${day}, ${t(b.s, tz)}–${t(b.e, tz)} (${tz.split('/').pop().replace(/_/g, ' ').replace('Kiev', 'Kyiv')}) · ${t(b.s, 'Europe/Zurich')}–${t(b.e, 'Europe/Zurich')} за цюрихським часом`;
+}
+function showBooking(){
+  if (!ZB) return;
+  const live = ZB.st === 'ждёт договор' || ZB.st === 'ждёт подтверждения';
+  const until = ZB.dl ? new Date(ZB.dl).toLocaleString(LOC, { day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' }) : '';
+  el('zInfo').hidden = false;
+  el('zInfo').innerHTML = `<b>Час першої зустрічі</b><span>${esc(zWhenTxt(ZB))}</span>` + (live
+    ? `<span class="note">${esc(`Він тримається за тобою до ${until}. Я підтверджую договір і час одним листом.`)}</span>`
+    : `<span class="note">${esc('Цей час уже звільнився. Договір можна підписати, а новий час ми погодимо.')} <a href="/zapis/?z=${encodeURIComponent(ZQ.z)}&k=${encodeURIComponent(ZQ.k)}&r=1">${esc('Вибрати новий час')}</a></span>`);
+}
+if (ZQ) fetch(`${ENDPOINT}?a=zinfo&z=${encodeURIComponent(ZQ.z)}&k=${encodeURIComponent(ZQ.k)}`, { cache: 'no-store' }).then(r => r.json()).then(j => { if (j && j.ok){ ZB = j; showBooking(); } }).catch(() => {});
 /* страны ЕС и ЕЭЗ: там действует право отказа от договора 14 дней (директива 2011/83/ЕС) */
 const EEA = ['DE', 'AT', 'LI', 'IT', 'FR', 'PL', 'CZ', 'ES', 'NL', 'BE', 'PT', 'EU'];
 
@@ -573,7 +595,7 @@ function contractHtml(s, signed){
 <table>${tr.join('')}</table>
 <h3>2. Як укладається договір</h3>
 <p>Ти підписуєш договір, коли натискаєш кнопку «Підписати договір із зобов’язанням оплатити» на сторінці voznesenskaya.ch/dogovor/. Договір набирає чинності, коли ми підтверджуємо його листом на твій e-mail, зазвичай протягом двох робочих днів. Якщо ми не можемо прийняти договір, наприклад тому що тобі зараз потрібніший лікар або психотерапевт, ми напишемо про це, і договір не виникає.</p>
-<p>Дати й час зустрічей ми погоджуємо в листуванні, я підтверджую їх письмово.</p>
+<p>${ZB ? esc(`Час першої зустрічі: ${zWhenTxt(ZB)}. Ти вибрала його на сторінці запису voznesenskaya.ch/zapis/, і він тримається за тобою, поки ми підтверджуємо договір. Час наступних зустрічей ми погодимо так само або в листуванні, я підтверджую його письмово.`) : 'Дати й час зустрічей ми погоджуємо в листуванні, я підтверджую їх письмово.'}</p>
 <h3>3. Умови</h3>
 <p>Частиною договору є «Умови роботи зі мною» в редакції, яка діє на день підписання. Їхній повний текст наведено нижче, наприкінці договору.</p>
 <h3>4. Що ти підтверджуєш</h3>
@@ -626,7 +648,8 @@ el('sign').addEventListener('click', async () => {
     kind: 'contract', v: 1, no: NO, lang: LANG, termsVer: TERMS_VER, termsEdition: TERMS ? TERMS.edition : '',
     prog: s.id, progName: s.progName, format: s.format, offer: s.offer, price: s.price, report: s.rep, total: s.total, pay: s.pay,
     name: s.name, email: s.email, contact: s.contact, country: s.country, countryName: s.countryName, eu: s.eu, city: s.city, addr: s.addr, comment: s.comment,
-    consents: s.c, signedAt: at.toISOString(), signedLocal: `${fmtDate(at)}, ${fmtTime(at)}`, tz: TZ, hash, html, page: location.origin + location.pathname, website: el('fWebsite').value
+    consents: s.c, signedAt: at.toISOString(), signedLocal: `${fmtDate(at)}, ${fmtTime(at)}`, tz: TZ, hash, html, page: location.origin + location.pathname, website: el('fWebsite').value,
+    z: ZQ ? ZQ.z : '', zk: ZQ ? ZQ.k : ''
   };
   try {
     if (!ENDPOINT) throw new Error('no endpoint');
@@ -648,7 +671,7 @@ function done(signed, s){
 <p>Дякую, ${esc(s.name)}! Номер договору — <b>${esc(signed.no)}</b>, підписано ${esc(fmtDate(signed.at))} о ${esc(fmtTime(signed.at))}.</p>
 <p>Копія договору прийде на ${esc(s.email)} протягом кількох хвилин. Якщо листа немає, подивись у папці «Спам» або напиши мені.</p>
 <h3>Що далі</h3>
-<ol class="steps"><li>Я підтверджую договір листом, зазвичай протягом двох робочих днів. З цього моменту він діє.</li><li>Надходить рахунок від Alonira.ch AG з QR-квитанцією.</li><li>Ми домовляємося про час першої зустрічі, і я підтверджую його письмово.</li></ol>
+${ZB ? `<ol class="steps"><li>${esc('Я підтверджую договір і час зустрічі одним листом, зазвичай протягом двох днів. У листі буде посилання на Zoom і файл для календаря.')}</li><li>${esc('Надходить рахунок від Alonira.ch AG з QR-квитанцією. Оплатити його потрібно до зустрічі.')}</li><li>${esc('За день до зустрічі я надішлю нагадування.')}</li></ol>` : '<ol class="steps"><li>Я підтверджую договір листом, зазвичай протягом двох робочих днів. З цього моменту він діє.</li><li>Надходить рахунок від Alonira.ch AG з QR-квитанцією.</li><li>Ми домовляємося про час першої зустрічі, і я підтверджую його письмово.</li></ol>'}
 <div class="btns"><button class="btn" type="button" id="printBtn">Роздрукувати або зберегти в PDF</button><a class="btn ghost" href="/uk/">На головну</a></div></div>`;
   el('printBtn').addEventListener('click', () => window.print());
   window.scrollTo(0, 0);

@@ -7,7 +7,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANGS = ['uk', 'de', 'en']
 LOCALE = {'ru': 'ru_RU', 'uk': 'uk_UA', 'de': 'de_CH', 'en': 'en_GB'}
 LABEL = {'ru': 'RU', 'uk': 'UA', 'de': 'DE', 'en': 'EN'}
-PAGES = [('index.html', '/'), ('put/index.html', '/put/'), ('karta-opor/index.html', '/karta-opor/'), ('dogovor/index.html', '/dogovor/')]   # исходник → путь на сайте
+PAGES = [('index.html', '/'), ('put/index.html', '/put/'), ('karta-opor/index.html', '/karta-opor/'), ('dogovor/index.html', '/dogovor/'), ('zapis/index.html', '/zapis/')]   # исходник → путь на сайте
 TRANSLATED = {p for _, p in PAGES}
 KEY = 'irinaTestsLang'   # тот же ключ, что у тестов: выбор языка общий для всего сайта
 def tm():
@@ -51,7 +51,7 @@ def fix_links(html, base, lang):
         q, url = m.group(1), m.group(2)
         sp = site_path(base, url)
         return q + localize_url(sp, lang) + q
-    html = re.sub(r"(['\"])((?:\.\./)*(?:testy|kompas|roza-lyubvi|stupeni|blizost|put|karta-opor|dogovor|privacy|impressum|usloviya)/)\1", js, html)
+    html = re.sub(r"(['\"])((?:\.\./)*(?:testy|kompas|roza-lyubvi|stupeni|blizost|put|karta-opor|dogovor|zapis|privacy|impressum|usloviya)/)\1", js, html)
     return html
 SWITCH_CSS = '#langbar.langbar{position:fixed;bottom:14px;right:14px;left:auto;top:auto;width:auto;max-width:none;margin:0;z-index:60;display:flex;gap:2px;background:rgba(255,255,255,.92);border:1px solid rgba(0,0,0,.08);border-radius:999px;padding:3px;font:600 12px Manrope,system-ui,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,.08)}#langbar.langbar a{color:#5d554d;padding:5px 9px;border-radius:999px;text-decoration:none;font:inherit;display:inline-block;width:auto}#langbar.langbar a[aria-current="true"]{background:#2f2924;color:#fff}@media print{.langbar{display:none!important}}'
 def switcher(cur, path):
