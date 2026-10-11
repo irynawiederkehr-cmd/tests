@@ -300,7 +300,7 @@ function zFind_(sh, no) {
   if (!cell) return null;
   return { r: cell.getRow(), v: sh.getRange(cell.getRow(), 1, 1, ZHEAD.length).getValues()[0] };
 }
-function zSet_(sh, r, o) { Object.keys(o).forEach(function (k) { sh.getRange(r, ZC[k] + 1).setValue(o[k]); }); }
+function zSet_(sh, r, o) { Object.keys(o).forEach(function (k) { sh.getRange(r, ZC[k] + 1).setValue(k === 'В пакете' ? zPnCell_(o[k]) : o[k]); }); }
 function zAll_(sh) { var n = sh.getLastRow(); return n < 2 ? [] : sh.getRange(2, 1, n - 1, ZHEAD.length).getValues().map(function (v, i) { return { r: i + 2, v: v }; }); }
 
 /* ---------- время ---------- */
@@ -418,8 +418,11 @@ function zObj_(v) {
     tz: v[ZC['Часовой пояс']], lang: v[ZC['Язык']], name: v[ZC['Имя']], email: v[ZC['E-mail']], contact: v[ZC['Telegram или телефон']], comment: v[ZC['С чем приходит']],
     kv: v[ZC['Договор']], dl: Number(v[ZC['Срок, мс']]) || 0, flags: String(v[ZC['Напоминания']] || ''), from: v[ZC['Перенос с']], to: v[ZC['Перенесено на']],
     ev: v[ZC['Событие']], ik: v[ZC['Ключ Ирины']], ck: v[ZC['Ключ клиентки']], who: String(v[ZC['Кто отменил']] || ''),
-    pk: String(v[ZC['Пакет']] || ''), pn: String(v[ZC['В пакете']] || '') };
+    pk: String(v[ZC['Пакет']] || ''), pn: zPnRead_(v[ZC['В пакете']]) };
 }
+/* «1/3» таблица Google сама превращает в дату (3 января) — пишем текстом с апострофом, а уже испорченное читаем обратно (месяц/день) */
+function zPnRead_(x) { if (Object.prototype.toString.call(x) === '[object Date]') return (x.getMonth() + 1) + '/' + x.getDate(); return String(x || '').replace(/^'/, ''); }
+function zPnCell_(pn) { return pn ? "'" + pn : ''; }
 function zEnd_(o) { return o.s + o.dur * 6e4; }                                   // конец встречи для клиентки
 function zBEnd_(o) { return zEnd_(o) + (((ZT[o.t] || {}).res) || 0) * 6e4; }      // конец брони в календаре Ирины (с запасом)
 function zFirst_(name) { return String(name || '').trim().split(/\s+/)[0]; }
@@ -628,7 +631,7 @@ function zRow_(o, consent) {
   row[ZC['Начало (Цюрих)']] = zFmt_(o.s, TZ, 'dd.MM.yyyy HH:mm'); row[ZC['Конец (Цюрих)']] = zFmt_(zEnd_(o), TZ, 'dd.MM.yyyy HH:mm'); row[ZC['Начало, мс']] = o.s; row[ZC['Минут']] = o.dur;
   row[ZC['Часовой пояс']] = o.tz; row[ZC['Язык']] = o.lang; row[ZC['Имя']] = o.name; row[ZC['E-mail']] = o.email; row[ZC['Telegram или телефон']] = o.contact; row[ZC['С чем приходит']] = o.comment;
   row[ZC['Договор']] = o.kv; row[ZC['Срок (Цюрих)']] = zFmt_(o.dl, TZ, 'dd.MM.yyyy HH:mm'); row[ZC['Срок, мс']] = o.dl; row[ZC['Перенос с']] = o.from; row[ZC['Событие']] = o.ev;
-  row[ZC['Ключ Ирины']] = o.ik; row[ZC['Ключ клиентки']] = o.ck; row[ZC['Согласия']] = consent; row[ZC['Пакет']] = o.pk || ''; row[ZC['В пакете']] = o.pn || '';
+  row[ZC['Ключ Ирины']] = o.ik; row[ZC['Ключ клиентки']] = o.ck; row[ZC['Согласия']] = consent; row[ZC['Пакет']] = o.pk || ''; row[ZC['В пакете']] = zPnCell_(o.pn);
   return row;
 }
 function zCreate_(d) {
