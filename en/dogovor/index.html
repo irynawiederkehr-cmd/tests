@@ -265,6 +265,7 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
           <option value="snimok">“Life snapshot” — 3 hours, 249 CHF</option>
           <option value="fund">“My foundation” — 3 hours, 249 CHF</option>
           <option value="life">“A life without regrets” — 3 hours, 249 CHF</option>
+          <option value="pk3">Personal session: package of 3 sessions — 360 CHF</option>
           <option value="flag">“My goal — my path” — 10 sessions, price as per my offer</option>
           <option value="support">Ongoing support — price as per my offer</option>
           <option value="other">Another programme — as per my written offer</option>
@@ -415,6 +416,7 @@ const P = {
   snimok: { n: '“Life snapshot”', f: 'a review using the wheel of life · 3 hours · online', price: 249, rep: true },
   fund: { n: '“My foundation”', f: 'a review of your values in the context of your goal · 3 hours · online', price: 249, rep: true },
   life: { n: '“A life without regrets”', f: 'a life strategy with a countdown · 3 hours · online', price: 249, rep: true },
+  pk3: { n: 'Personal session: package of 3 sessions', f: '3 sessions of 60 minutes · online · all sessions within 2 months · paid with one invoice', price: 360 },
   flag: { n: '“My goal — my path”', f: 'main programme · 10 personal sessions · online', price: null, parts: true },
   support: { n: 'Ongoing support', f: 'a package of sessions or one-off sessions · online', price: null, parts: true },
   other: { n: '', f: 'based on Iryna’s written offer · online', price: null, parts: true, named: true }
@@ -431,13 +433,16 @@ function zWhenTxt(b){
   if (tz === 'Europe/Zurich') return `${day}, ${t(b.s, tz)}–${t(b.e, tz)} Zurich time`;
   return `${day}, ${t(b.s, tz)}–${t(b.e, tz)} (${tz.split('/').pop().replace(/_/g, ' ').replace('Kiev', 'Kyiv')}) · ${t(b.s, 'Europe/Zurich')}–${t(b.e, 'Europe/Zurich')} Zurich time`;
 }
+/* у пакета — все встречи, которые ждут договора (ZB.list), иначе одна */
+function zList(){ return ZB ? (ZB.pk ? (ZB.items || []).filter(x => x.st === 'ждёт договор' || x.st === 'ждёт подтверждения' || x.st === 'истекла') : [ZB]) : []; }
 function showBooking(){
   if (!ZB) return;
-  const live = ZB.st === 'ждёт договор' || ZB.st === 'ждёт подтверждения';
-  const until = ZB.dl ? new Date(ZB.dl).toLocaleString(LOC, { day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' }) : '';
+  const L = zList(), many = !!ZB.pk;
+  const live = L.some(x => x.st === 'ждёт договор' || x.st === 'ждёт подтверждения'), dl = (L.find(x => x.dl) || {}).dl;
+  const until = dl ? new Date(dl).toLocaleString(LOC, { day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' }) : '';
   el('zInfo').hidden = false;
-  el('zInfo').innerHTML = `<b>Time of the first session</b><span>${esc(zWhenTxt(ZB))}</span>` + (live
-    ? `<span class="note">${esc(`It is held for you until ${until}. I confirm the agreement and the time in one e-mail.`)}</span>`
+  el('zInfo').innerHTML = `<b>${esc(many ? 'Session times' : 'Time of the first session')}</b>${L.map(x => `<span>${esc(zWhenTxt(x))}</span>`).join('')}` + (live
+    ? `<span class="note">${esc(many ? `These times are held for you until ${until}. I confirm the agreement and all sessions in one e-mail.` : `It is held for you until ${until}. I confirm the agreement and the time in one e-mail.`)}</span>`
     : `<span class="note">${esc('This time is already free again. You can sign the agreement, and we will agree on a new time.')} <a href="/zapis/?z=${encodeURIComponent(ZQ.z)}&k=${encodeURIComponent(ZQ.k)}&r=1">${esc('Choose a new time')}</a></span>`);
 }
 if (ZQ) fetch(`${ENDPOINT}?a=zinfo&z=${encodeURIComponent(ZQ.z)}&k=${encodeURIComponent(ZQ.k)}`, { cache: 'no-store' }).then(r => r.json()).then(j => { if (j && j.ok){ ZB = j; showBooking(); } }).catch(() => {});
@@ -595,7 +600,7 @@ function contractHtml(s, signed){
 <table>${tr.join('')}</table>
 <h3>2. How the agreement is concluded</h3>
 <p>You sign the agreement when you press the “Sign with obligation to pay” button on the page voznesenskaya.ch/dogovor/. The agreement comes into force when we confirm it by e-mail to your address, usually within two working days. If we cannot accept the agreement, for example because right now you need a doctor or a psychotherapist more, we will write to you about it, and no agreement is formed.</p>
-<p>${ZB ? esc(`Time of the first session: ${zWhenTxt(ZB)}. You chose it on the booking page voznesenskaya.ch/zapis/, and it is held for you while we confirm the agreement. We arrange the times of further sessions the same way or by message, and I confirm them in writing.`) : 'We arrange the dates and times of sessions by message, and I confirm them in writing.'}</p>
+<p>${ZB && ZB.pk ? esc(`Session times: ${zList().map(zWhenTxt).join('; ')}. You chose them on the booking page voznesenskaya.ch/en/zapis/, and they are held for you while we confirm the agreement. You choose the times for the remaining sessions of the package there via your link, or we arrange them by message. I confirm them in writing.`) : ZB ? esc(`Time of the first session: ${zWhenTxt(ZB)}. You chose it on the booking page voznesenskaya.ch/zapis/, and it is held for you while we confirm the agreement. We arrange the times of further sessions the same way or by message, and I confirm them in writing.`) : 'We arrange the dates and times of sessions by message, and I confirm them in writing.'}</p>
 <h3>3. Terms</h3>
 <p>The “Terms of working with me”, in the version valid on the day of signing, form part of the agreement. Their full text is below, at the end of the agreement.</p>
 <h3>4. What you confirm</h3>
@@ -671,7 +676,7 @@ function done(signed, s){
 <p>Thank you, ${esc(s.name)}! Your agreement number is <b>${esc(signed.no)}</b>, signed on ${esc(fmtDate(signed.at))} at ${esc(fmtTime(signed.at))}.</p>
 <p>A copy of the agreement will arrive at ${esc(s.email)} within a few minutes. If there is no e-mail, check your “Spam” folder or write to me.</p>
 <h3>What happens next</h3>
-${ZB ? `<ol class="steps"><li>${esc('I confirm the agreement and the session time in one e-mail, usually within two days. The e-mail contains the Zoom link and a calendar file.')}</li><li>${esc('You receive an invoice from Alonira.ch AG with a QR payment slip. It needs to be paid before the session.')}</li><li>${esc('I will send you a reminder the day before the session.')}</li></ol>` : '<ol class="steps"><li>I confirm the agreement by e-mail, usually within two working days. From that moment it is in effect.</li><li>You receive an invoice from Alonira.ch AG with a QR payment slip.</li><li>We agree on a time for the first session, and I confirm it in writing.</li></ol>'}
+${ZB && ZB.pk ? `<ol class="steps"><li>${esc('I confirm the agreement and all sessions in one e-mail, usually within two days. The e-mail contains the Zoom link and a calendar file.')}</li><li>${esc('You receive an invoice from Alonira.ch AG with a QR payment slip. It needs to be paid before the first session.')}</li><li>${esc('I will send you a reminder the day before each session.')}</li></ol>` : ZB ? `<ol class="steps"><li>${esc('I confirm the agreement and the session time in one e-mail, usually within two days. The e-mail contains the Zoom link and a calendar file.')}</li><li>${esc('You receive an invoice from Alonira.ch AG with a QR payment slip. It needs to be paid before the session.')}</li><li>${esc('I will send you a reminder the day before the session.')}</li></ol>` : '<ol class="steps"><li>I confirm the agreement by e-mail, usually within two working days. From that moment it is in effect.</li><li>You receive an invoice from Alonira.ch AG with a QR payment slip.</li><li>We agree on a time for the first session, and I confirm it in writing.</li></ol>'}
 <div class="btns"><button class="btn" type="button" id="printBtn">Print or save as PDF</button><a class="btn ghost" href="/en/">Home page</a></div></div>`;
   el('printBtn').addEventListener('click', () => window.print());
   window.scrollTo(0, 0);

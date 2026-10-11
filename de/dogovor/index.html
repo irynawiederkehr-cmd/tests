@@ -265,6 +265,7 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
           <option value="snimok">«Momentaufnahme meines Lebens» — 3 Stunden, 249 CHF</option>
           <option value="fund">«Mein Fundament» — 3 Stunden, 249 CHF</option>
           <option value="life">«Ein Leben ohne Bedauern» — 3 Stunden, 249 CHF</option>
+          <option value="pk3">Persönliche Sitzung: Paket mit 3 Terminen — 360 CHF</option>
           <option value="flag">«Mein Ziel — mein Weg» — 10 Treffen, Preis gemäss meinem Angebot</option>
           <option value="support">Begleitung — Preis gemäss meinem Angebot</option>
           <option value="other">Anderes Programm — gemäss meinem schriftlichen Angebot</option>
@@ -415,6 +416,7 @@ const P = {
   snimok: { n: '«Momentaufnahme meines Lebens»', f: 'Auswertung anhand des Rads der Lebensbereiche · 3 Stunden · online', price: 249, rep: true },
   fund: { n: '«Mein Fundament»', f: 'Auswertung der Werte im Hinblick auf dein Ziel · 3 Stunden · online', price: 249, rep: true },
   life: { n: '«Ein Leben ohne Bedauern»', f: 'Lebensstrategie mit Countdown · 3 Stunden · online', price: 249, rep: true },
+  pk3: { n: 'Persönliche Sitzung: Paket mit 3 Terminen', f: '3 Termine à 60 Minuten · online · alle Termine innerhalb von 2 Monaten · Zahlung mit einer Rechnung', price: 360 },
   flag: { n: '«Mein Ziel — mein Weg»', f: 'Hauptprogramm · 10 persönliche Treffen · online', price: null, parts: true },
   support: { n: 'Begleitung', f: 'Paket von Treffen oder einzelne Treffen · online', price: null, parts: true },
   other: { n: '', f: 'nach schriftlichem Angebot von Iryna · online', price: null, parts: true, named: true }
@@ -431,13 +433,16 @@ function zWhenTxt(b){
   if (tz === 'Europe/Zurich') return `${day}, ${t(b.s, tz)}–${t(b.e, tz)} Zürcher Zeit`;
   return `${day}, ${t(b.s, tz)}–${t(b.e, tz)} (${tz.split('/').pop().replace(/_/g, ' ').replace('Kiev', 'Kyiv')}) · ${t(b.s, 'Europe/Zurich')}–${t(b.e, 'Europe/Zurich')} Zürcher Zeit`;
 }
+/* у пакета — все встречи, которые ждут договора (ZB.list), иначе одна */
+function zList(){ return ZB ? (ZB.pk ? (ZB.items || []).filter(x => x.st === 'ждёт договор' || x.st === 'ждёт подтверждения' || x.st === 'истекла') : [ZB]) : []; }
 function showBooking(){
   if (!ZB) return;
-  const live = ZB.st === 'ждёт договор' || ZB.st === 'ждёт подтверждения';
-  const until = ZB.dl ? new Date(ZB.dl).toLocaleString(LOC, { day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' }) : '';
+  const L = zList(), many = !!ZB.pk;
+  const live = L.some(x => x.st === 'ждёт договор' || x.st === 'ждёт подтверждения'), dl = (L.find(x => x.dl) || {}).dl;
+  const until = dl ? new Date(dl).toLocaleString(LOC, { day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' }) : '';
   el('zInfo').hidden = false;
-  el('zInfo').innerHTML = `<b>Zeit des ersten Treffens</b><span>${esc(zWhenTxt(ZB))}</span>` + (live
-    ? `<span class="note">${esc(`Sie ist bis ${until} für dich reserviert. Ich bestätige Vertrag und Termin mit einer E-Mail.`)}</span>`
+  el('zInfo').innerHTML = `<b>${esc(many ? 'Termine' : 'Zeit des ersten Termins')}</b>${L.map(x => `<span>${esc(zWhenTxt(x))}</span>`).join('')}` + (live
+    ? `<span class="note">${esc(many ? `Diese Zeiten sind bis ${until} für dich reserviert. Ich bestätige Vertrag und alle Termine mit einer E-Mail.` : `Sie ist bis ${until} für dich reserviert. Ich bestätige Vertrag und Termin mit einer E-Mail.`)}</span>`
     : `<span class="note">${esc('Diese Zeit ist bereits wieder frei. Du kannst den Vertrag unterschreiben, eine neue Zeit vereinbaren wir dann.')} <a href="/zapis/?z=${encodeURIComponent(ZQ.z)}&k=${encodeURIComponent(ZQ.k)}&r=1">${esc('Neue Zeit wählen')}</a></span>`);
 }
 if (ZQ) fetch(`${ENDPOINT}?a=zinfo&z=${encodeURIComponent(ZQ.z)}&k=${encodeURIComponent(ZQ.k)}`, { cache: 'no-store' }).then(r => r.json()).then(j => { if (j && j.ok){ ZB = j; showBooking(); } }).catch(() => {});
@@ -595,7 +600,7 @@ function contractHtml(s, signed){
 <table>${tr.join('')}</table>
 <h3>2. Wie der Vertrag zustande kommt</h3>
 <p>Du unterschreibst den Vertrag, wenn du auf der Seite voznesenskaya.ch/dogovor/ auf den Button «Zahlungspflichtig unterschreiben» klickst. Der Vertrag tritt in Kraft, wenn wir ihn dir mit einer E-Mail an deine Adresse bestätigen, in der Regel innerhalb von zwei Arbeitstagen. Wenn wir den Vertrag nicht annehmen können, zum Beispiel weil du gerade eher eine Ärztin, einen Arzt oder eine Psychotherapie brauchst, schreiben wir dir das, und der Vertrag kommt nicht zustande.</p>
-<p>${ZB ? esc(`Zeit des ersten Treffens: ${zWhenTxt(ZB)}. Du hast sie auf der Buchungsseite voznesenskaya.ch/zapis/ gewählt, und sie bleibt für dich reserviert, während wir den Vertrag bestätigen. Die Zeiten der weiteren Treffen vereinbaren wir ebenso oder per Nachricht, ich bestätige sie schriftlich.`) : 'Daten und Uhrzeiten der Treffen vereinbaren wir per Nachricht, ich bestätige sie schriftlich.'}</p>
+<p>${ZB && ZB.pk ? esc(`Termine: ${zList().map(zWhenTxt).join('; ')}. Du hast sie auf der Buchungsseite voznesenskaya.ch/de/zapis/ gewählt, und sie sind für dich reserviert, solange wir den Vertrag bestätigen. Die Zeiten für die übrigen Termine des Pakets wählst du dort über deinen Link, oder wir vereinbaren sie per Nachricht. Ich bestätige sie schriftlich.`) : ZB ? esc(`Zeit des ersten Treffens: ${zWhenTxt(ZB)}. Du hast sie auf der Buchungsseite voznesenskaya.ch/zapis/ gewählt, und sie bleibt für dich reserviert, während wir den Vertrag bestätigen. Die Zeiten der weiteren Treffen vereinbaren wir ebenso oder per Nachricht, ich bestätige sie schriftlich.`) : 'Daten und Uhrzeiten der Treffen vereinbaren wir per Nachricht, ich bestätige sie schriftlich.'}</p>
 <h3>3. Bedingungen</h3>
 <p>Bestandteil des Vertrags sind die «Bedingungen der Zusammenarbeit» in der Fassung, die am Tag der Unterzeichnung gilt. Ihr vollständiger Text steht unten, am Ende des Vertrags.</p>
 <h3>4. Was du bestätigst</h3>
@@ -671,7 +676,7 @@ function done(signed, s){
 <p>Danke, ${esc(s.name)}! Die Vertragsnummer ist <b>${esc(signed.no)}</b>, unterschrieben am ${esc(fmtDate(signed.at))} um ${esc(fmtTime(signed.at))}.</p>
 <p>Eine Kopie des Vertrags kommt in wenigen Minuten an ${esc(s.email)}. Wenn keine E-Mail da ist, schau im Ordner «Spam» nach oder schreib mir.</p>
 <h3>Wie es weitergeht</h3>
-${ZB ? `<ol class="steps"><li>${esc('Ich bestätige Vertrag und Termin mit einer E-Mail, in der Regel innerhalb von zwei Tagen. In der E-Mail findest du den Zoom-Link und die Kalenderdatei.')}</li><li>${esc('Du erhältst eine Rechnung der Alonira.ch AG mit QR-Einzahlungsschein. Sie ist vor dem Termin zu bezahlen.')}</li><li>${esc('Einen Tag vor dem Termin schicke ich dir eine Erinnerung.')}</li></ol>` : '<ol class="steps"><li>Ich bestätige den Vertrag per E-Mail, meist innerhalb von zwei Arbeitstagen. Ab diesem Zeitpunkt gilt er.</li><li>Du erhältst eine Rechnung der Alonira.ch AG mit QR-Einzahlungsschein.</li><li>Wir vereinbaren die Uhrzeit für das erste Treffen, und ich bestätige sie schriftlich.</li></ol>'}
+${ZB && ZB.pk ? `<ol class="steps"><li>${esc('Ich bestätige Vertrag und alle Termine mit einer E-Mail, in der Regel innerhalb von zwei Tagen. In der E-Mail findest du den Zoom-Link und die Kalenderdatei.')}</li><li>${esc('Du erhältst eine Rechnung der Alonira.ch AG mit QR-Einzahlungsschein. Sie ist vor dem ersten Termin zu bezahlen.')}</li><li>${esc('Einen Tag vor jedem Termin schicke ich dir eine Erinnerung.')}</li></ol>` : ZB ? `<ol class="steps"><li>${esc('Ich bestätige Vertrag und Termin mit einer E-Mail, in der Regel innerhalb von zwei Tagen. In der E-Mail findest du den Zoom-Link und die Kalenderdatei.')}</li><li>${esc('Du erhältst eine Rechnung der Alonira.ch AG mit QR-Einzahlungsschein. Sie ist vor dem Termin zu bezahlen.')}</li><li>${esc('Einen Tag vor dem Termin schicke ich dir eine Erinnerung.')}</li></ol>` : '<ol class="steps"><li>Ich bestätige den Vertrag per E-Mail, meist innerhalb von zwei Arbeitstagen. Ab diesem Zeitpunkt gilt er.</li><li>Du erhältst eine Rechnung der Alonira.ch AG mit QR-Einzahlungsschein.</li><li>Wir vereinbaren die Uhrzeit für das erste Treffen, und ich bestätige sie schriftlich.</li></ol>'}
 <div class="btns"><button class="btn" type="button" id="printBtn">Drucken oder als PDF speichern</button><a class="btn ghost" href="/de/">Zur Startseite</a></div></div>`;
   el('printBtn').addEventListener('click', () => window.print());
   window.scrollTo(0, 0);
