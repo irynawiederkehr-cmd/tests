@@ -1537,12 +1537,25 @@ function it(id){
   const x = X[id]; return x ? Object.assign({ id }, x) : null;
 }
 // цветок программы: вид цветка = шаг, где программа встречается впервые («Где я сейчас» — ромашка, сквозные — эдельвейс)
+// цвет цветка = цвет ступени на этой карточке (решение Ирины 11.10.2026: цветок, точки и чаша ступени — одного цвета);
+// несколько ступеней — цвет первой; все восемь, тесты о паре и «На всех ступенях» — золото и коричневый, как эдельвейс в логотипе
 const FLK = {}, FLN = [0, 0, 0, 0, 0];
 const setFl = (id, lane) => { if (!(id in FLK)) FLK[id] = [lane, FLN[lane]++]; };
 [...WHERE, ...PAIR].forEach(id => setFl(id, 0));
 [0, 1, 2].forEach(j => LINE.forEach(st => LVK.forEach(l => (st[j][l] || []).forEach(e => setFl(eid(e), j + 1)))));
 THRU.forEach(id => setFl(id, 4)); setFl('gift', 3);
-function picon(id, size){ const f = FLK[id] || [0, 0]; return flower(f[0], f[1], size); }
+const FLMIX = (a, b, t) => '#' + [1, 3, 5].map(i => Math.round(parseInt(a.substr(i, 2), 16) * (1 - t) + parseInt(b.substr(i, 2), 16) * t).toString(16).padStart(2, '0')).join('');
+const FLGOLD = { line: '#B98324', soft: '#F6E7C6', mid: '#E2B45C', core: '#6E4F3C' }, FLLOGO = { line: '#6E4F3C', soft: '#EADFCF', mid: '#B98324', core: '#6E4F3C' };
+/* ss — ступени этой карточки; null — карточка вне ступеней; не задано (окно программы, «Куда дальше») — все ступени программы */
+function picon(id, size, ss){
+  const f = FLK[id] || [0, 0], base = LANES[f[0]];
+  const st = [...new Set(ss === undefined ? (POS[id] || []).map(p => p[0]) : (ss || []))];
+  let col;
+  if (st.length && st.length < 8) { const c = STEPC[Math.min(...st) - 1]; col = { line: c[0], soft: c[1], mid: FLMIX(c[0], c[1], .55), core: '#B98324' }; }
+  else col = base.flower === 'edelweiss' ? FLLOGO : FLGOLD;
+  const key = 'c' + f[0] + '-' + col.line; LANES[key] = Object.assign({ flower: base.flower }, col);
+  return flower(key, f[1], size);
+}
 const pdotsS = s => `<span class="pdots" aria-hidden="true">${ALL8.map(n => `<i style="${s.includes(n) ? `background:${STEPC[n - 1][0]}` : ''}"></i>`).join('')}</span>`;
 const stepsText = s => s.length === 8 ? 'для всіх восьми сходинок'
   : s.length === 1 ? `сходинка ${s[0]} · ${STEPN[s[0] - 1]}`
@@ -1567,7 +1580,7 @@ function pathInit(){
   /* карточка программы — одна и та же в обоих видах */
   const card = (id, ss, note) => { const x = it(id); if (!x) return '';
     return `<button class="pblock${x.st === 'new' ? ' st-new' : ''}" data-p="${id}" aria-haspopup="dialog">
-        <span class="pb-top"><span class="pb-fl">${picon(id, 48)}</span><span class="pb-tags">${lvBadge(x.lv)}${stTag(x)}</span></span>
+        <span class="pb-top"><span class="pb-fl">${picon(id, 48, ss)}</span><span class="pb-tags">${lvBadge(x.lv)}${stTag(x)}</span></span>
         <b>${esc2(x.name)}</b>${x.slogan ? `<span class="pb-slogan">${esc2(x.slogan)}</span>` : ''}<span class="pb-line">${esc2(x.line)}</span>${note ? `<span class="pb-note">${esc2(cap(note))}</span>` : ''}
         ${ss ? `<span class="pb-steps">${pdotsS(ss)}<span>${esc2(stepsText(ss))}</span></span>` : ''}
         <span class="pb-foot"><span class="pb-price${isFreeP(x.price) ? ' free' : /\d/.test(x.price) ? ' paid' : ' soonp'}">${isFreeP(x.price) ? '<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 3l2.3 5.6 6 .5-4.6 3.9 1.4 5.9L12 15.8 6.9 18.9l1.4-5.9L3.7 9.1l6-.5z" fill="currentColor"/></svg>' : ''}${esc2(x.price)}</span><span class="pb-more" aria-hidden="true">→</span></span></button>`; };
