@@ -3,7 +3,7 @@
    всё, что относится к записи.
 
    Как устроено:
-   1) Страница спрашивает свободное время (?a=slots&t=intro). Скрипт смотрит занятость во всех календарях Ирины обоих аккаунтов (Freebusy),
+   1) Страница спрашивает свободное время (?a=slots&t=intro). Скрипт смотрит занятость во всех календарях Ирины обоих аккаунтов (события; заметки на весь день и длиннее суток не в счёт),
       берёт будни 9:00–18:00 по Цюриху без праздников кантона Цюрих, не раньше чем через 3 дня и не дальше чем на 60 дней, с перерывом
       15 минут вокруг встречи (вокруг разбора на 3 часа — 30 минут). Наружу уходит только время начала свободных окон, без чужих событий.
    2) Клиентка выбирает время и отправляет запрос. Скрипт ещё раз проверяет, что время свободно, ставит в календарь «Коучинг с Ириной
@@ -239,21 +239,37 @@ function zHolidays_(y) {
   [Date.UTC(y, 0, 1), Date.UTC(y, 0, 2), e - 2 * D, e + D, Date.UTC(y, 4, 1), e + 39 * D, e + 50 * D, Date.UTC(y, 7, 1), Date.UTC(y, 11, 25), Date.UTC(y, 11, 26)].forEach(add);
   return o;
 }
-/* занятость: Freebusy по всем календарям (кэш 2 минуты; fresh — без кэша, перед записью) */
+/* занятость: события всех календарей (кэш 2 минуты; fresh — без кэша, перед записью).
+   Время НЕ закрывают (11.10.2026, проверка на настоящих календарях Ирины): события со статусом «Свободно», отменённые и те, где Ирина
+   отказалась; события на весь день и заметки длиннее 24 часов — это напоминания и пометки («📚 модуль МЕУ» на три недели,
+   «Kein Invalidentaxi ganze Woche», «✍️ Kontrolle…»), а не встречи. Закрыть целый день: событие со временем (например 9:00–18:00)
+   или знак ⛔ в названии события на весь день. Наружу по-прежнему уходит только время свободных окон. */
+var ZBLOCK = '⛔';
+function zDayMs_(ymd) { var p = String(ymd).slice(0, 10).split('-').map(Number), u = Date.UTC(p[0], p[1] - 1, p[2]); return u - zOff_(new Date(u + 12 * 36e5)) * 6e4; }
 function zBusy_(fresh) {
   var cache = CacheService.getScriptCache();
   if (!fresh) { var c = cache.get('zbusy'); if (c) return JSON.parse(c); }
   var ids = JSON.parse(props_().getProperty('ZBUSY_CALS') || '[]');
   if (ids.indexOf(ZCAL) < 0) ids.push(ZCAL);
-  var now = Date.now(), from = now, to = now + (ZW.max + 2) * 864e5, raw = [], errs = [];
-  for (var t = from; t < to; t += 30 * 864e5) {
-    var r = Calendar.Freebusy.query({ timeMin: new Date(t).toISOString(), timeMax: new Date(Math.min(to, t + 30 * 864e5)).toISOString(), items: ids.map(function (id) { return { id: id }; }) });
-    Object.keys(r.calendars || {}).forEach(function (id) {
-      var x = r.calendars[id];
-      if (x.errors && x.errors.length && errs.indexOf(id) < 0) errs.push(id);
-      (x.busy || []).forEach(function (b) { raw.push([Date.parse(b.start), Date.parse(b.end)]); });
-    });
-  }
+  var now = Date.now(), from = now - 864e5, to = now + (ZW.max + 2) * 864e5, raw = [], errs = [];
+  ids.forEach(function (id) {
+    try {
+      var tok = null;
+      do {
+        var r = Calendar.Events.list(id, { timeMin: new Date(from).toISOString(), timeMax: new Date(to).toISOString(), singleEvents: true, maxResults: 2500,
+          pageToken: tok || undefined, fields: 'nextPageToken,items(status,transparency,summary,start,end,attendees(self,responseStatus))' });
+        (r.items || []).forEach(function (ev) {
+          if (ev.status === 'cancelled' || ev.transparency === 'transparent' || !ev.start || !ev.end) return;
+          if ((ev.attendees || []).some(function (a) { return a.self && a.responseStatus === 'declined'; })) return;
+          var hard = String(ev.summary || '').indexOf(ZBLOCK) >= 0, s, e;
+          if (ev.start.date) { if (!hard) return; s = zDayMs_(ev.start.date); e = zDayMs_(ev.end.date); }
+          else { s = Date.parse(ev.start.dateTime); e = Date.parse(ev.end.dateTime); if (e - s >= 24 * 36e5 && !hard) return; }
+          if (e > s) raw.push([s, e]);
+        });
+        tok = r.nextPageToken;
+      } while (tok);
+    } catch (err) { if (errs.indexOf(id) < 0) errs.push(id); }
+  });
   raw.sort(function (a, b) { return a[0] - b[0]; });
   var busy = [];
   raw.forEach(function (b) { var l = busy[busy.length - 1]; if (l && b[0] <= l[1]) l[1] = Math.max(l[1], b[1]); else busy.push([b[0], b[1]]); });
