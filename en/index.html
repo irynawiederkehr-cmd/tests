@@ -409,6 +409,24 @@ a.bot:hover{color:#B98324}
 .res li{font-size:.95rem;padding-left:22px;position:relative}
 .res li::before{content:"✓";position:absolute;left:0;color:var(--sage);font-weight:700}
 .qm-note{font-size:.84rem;color:var(--muted)}
+/* «Узнаёшь себя?» на языке метода (11.10.2026): подпись ступени в списке, «Где это на пути», «С чего начать» по трём видам помощи */
+.rq-at{display:block;font-size:.84rem;font-weight:600;line-height:1.35;color:var(--muted)}
+.rq-dots{display:inline-flex;gap:3px;margin-right:6px;vertical-align:1px}
+.rq-dots i{width:9px;height:9px;border-radius:50%;display:block}
+.rq-btns{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.rq-alt{font:600 .9rem/1.35 var(--body);color:var(--brown);background:none;border:0;padding:0;text-align:left;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.rq-where{display:flex;flex-direction:column;gap:8px;background:color-mix(in srgb,var(--lf) 55%,var(--paper));border:1px solid color-mix(in srgb,var(--lc) 30%,var(--line));border-left:5px solid var(--lc);border-radius:18px;padding:16px 18px}
+.rq-where > p{margin:0;font-size:.98rem;max-width:80ch}
+.rq-where .pd-steps{margin:2px 0 0}
+.rq-self{font-family:var(--display);font-size:1.12rem;line-height:1.35}
+.rq-self b{font-family:var(--body);font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--brown);margin-right:4px}
+.rq-lv{display:flex;flex-direction:column;gap:8px}
+.rq-lv .lvrow-h{margin:4px 0 0}
+.rq-go{font:inherit;text-align:left;cursor:pointer;width:100%}
+.rq-go:hover{border-color:var(--brown)}
+.rq-go em{font-style:normal;font-size:.74rem;font-weight:700;color:var(--brown)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .rq-where{background:color-mix(in srgb,var(--lc) 14%,var(--paper))}}
+:root[data-theme="dark"] .rq-where{background:color-mix(in srgb,var(--lc) 14%,var(--paper))}
 .rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 @media (max-width:820px){.rv-grid{grid-template-columns:1fr}}
 .rv{margin:0;background:var(--paper);border:1.5px dashed var(--line);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:14px}
@@ -832,10 +850,10 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
     <div class="sec-head">
       <div class="eyebrow">What people come to me with</div>
       <h2 id="rq-h">Do you recognise yourself in one of these phrases?</h2>
-      <p>This is not a diagnosis or a label. It is the point where the conversation about you begins. Click your phrase and you will see how we can work with it.</p>
+      <p>Each phrase shows a place on your path in a new country. It is the step you are standing on right now, or the stage that feels hard at the moment. It is not a diagnosis or a label, but the point where a conversation about you begins. Tap your phrase, and you’ll see where it sits on the path, what changes in our work and where you can start today.</p>
     </div>
     <div class="rq-list" id="rqList"></div>
-    <div class="rq-after"><p>Recognised yourself? Then it’s time to make time for yourself. Let’s start with an introductory meeting. It’s 30 minutes online, and it’s free.</p><a class="btn free" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">Write “ВСТРЕЧА” in Telegram</a></div>
+    <div class="rq-after"><p>Recognised yourself? At the introductory meeting we’ll look together at which step you are on and which stage is yours right now. It’s 30 minutes online, and it’s free.</p><div class="rq-btns"><a class="btn free" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">Write “ВСТРЕЧА” in Telegram</a><button type="button" class="rq-alt" data-prog="stupeni">Find your step on your own first — the “Steps of Stability” test, 20 minutes</button></div></div>
     <dialog class="qm" id="qm" aria-labelledby="qmTitle"><div class="qm-card" id="qmCard"></div></dialog>
   </section>
 
@@ -1130,49 +1148,95 @@ function mandala(i, size){
 }
 document.querySelectorAll('[data-ico]').forEach(e => { e.innerHTML = ico(e.dataset.ico, e.dataset.c, null, e.classList.contains('sm') ? 26 : 32); });
 document.querySelectorAll('[data-mandala]').forEach(e => { e.innerHTML = mandala(+e.dataset.mandala, 60); });
+/* ===== «Узнаёшь себя в одной из этих фраз?» на языке метода «Ступени. Твой путь в новой стране» (11.10.2026, вопрос Ирины 17:47) =====
+   у каждой фразы: подпись в списке (at), где это на пути — ступени (st) и шаг (sub: 0 Ставлю ногу · 1 Стою твёрдо · 2 Тянусь выше, -1 — без шага),
+   «Кто я здесь?» (self), что происходит (pain), что меняется (res), с чего начать (go: id из PR или X, по трём видам помощи) */
 const RQ = [
- {q:'How do I find and untangle my inner prohibitions?', t:'I keep feeling that I’m not allowed', ic:'key', c:'#B98324',
+ {t:'I keep feeling that I’m not allowed', at:'I can do it myself', st:[3], sub:-1,
+  where:'Usually this is the step “I can do it myself”. On it your voice comes back, and you can once again make a call yourself, ask for what you need, say no and not justify yourself. While “I’m not allowed” sounds inside, it is hard to climb higher too, for example to name your price on the step “Work of my own”.',
+  self:'On this step you gather within yourself the answer “I am my own person, I can say yes and no”.',
   pain:['“I’m not allowed” comes before “I want”','It’s scary to take up space, to ask, to name my price','I keep comparing myself with those who have “made it”','The same patterns repeat in different countries and jobs','Lots of explanations for why now is not the time'],
-  res:['You’ll hear whose voice it really is and when it appeared','You’ll separate your own rules from inherited ones','You’ll reframe the prohibition as a condition you can work with','You’ll do what used to be “not allowed” — little by little at first']},
- {q:'How do I figure out who to be here and which way to go?', t:'I don’t know where to go next', ic:'signpost', c:'#66704F',
+  res:['You’ll hear whose voice it really is and when it appeared','You’ll separate your own rules from inherited ones','You’ll reframe the prohibition as a condition you can work with','You’ll do what used to be “not allowed” — little by little at first'],
+  go:[['stupeni','Which step under you creaks and why'],['granicy','Where you agree when you want to say no'],['borders','Saying no calmly and without guilt'],['fund','Untangle the old rules that keep you stuck']]},
+ {t:'I don’t know where to go next', at:'Work of my own · Finding my feet', st:[5,4], sub:0,
+  where:'Usually this is the beginning of the step “Work of my own”, the stage “Finding my feet”. Your former work stayed there, a new one isn’t in sight yet, and right now you need information and something to lean on most of all. Often it helps first to understand how everything works here — recognition of your diploma, language requirements, how people get hired here. That is the step “Clear rules”.',
+  self:'On this step you gather within yourself the answer “I am good at something, and it is worth something”.',
   pain:['My old profession doesn’t count here or no longer warms my heart','There are many options, but none of them feels like mine','Diploma, language, recognition take years — and it’s unclear what for','The advice around me is contradictory','A feeling that time is being wasted'],
-  res:['You’ll put what you can do into words the local market understands','You’ll tell “I have to” from “I want to” and see where they overlap','You’ll choose one direction and try it without big risks','You’ll get a plan for the next three months, not for your whole life']},
- {q:'How do I stop putting things off and start acting?', t:'I know what I want, but I can’t get started', ic:'path', c:'#2E5A88',
+  res:['You’ll put what you can do into words the local market understands','You’ll tell “I have to” from “I want to” and see where they overlap','You’ll choose one direction and try it without big risks','You’ll get a plan for the next three months, not for your whole life'],
+  go:[['s_diplom','What it takes to have your diploma recognised here'],['s_rabota','Where to look for work and how hiring works here'],['kompas','Where you are now in your new country and where to go next'],['bagazh','What you can do and what of it is needed here'],['snimok','Which area of life asks for attention first']]},
+ {t:'I know what I want, but I can’t get started', at:'Reaching higher · on any step', st:[5,3,4], sub:2,
+  where:'This is the stage “Reaching higher”. Where you are now already feels too tight, but the next step just doesn’t happen. This happens on any step, and it isn’t laziness or weakness. Often the goal lives on the step “Work of my own”, while a step lower holds you back, “I can do it myself” or “Clear rules”. This is exactly where personal work helps most.',
+  self:'',
   pain:['The goal is clear, but the first step keeps getting postponed','Fear of mistakes, judgement, failure','I want to know in advance that it will work','Doubts, insecurity, perfectionism','Lots of worrying and little action'],
-  res:['You’ll understand what exactly is holding you back — it’s rarely laziness','You’ll work through your fears, doubts, what you believe and what holds you back','You’ll find inner support and the courage to act','You’ll start taking real steps while we are still working together']},
- {q:'How do I get myself back after moving?', t:'I no longer recognise myself', ic:'mirror', c:'#6E4F3C',
+  res:['You’ll understand what exactly is holding you back — it’s rarely laziness','You’ll work through your fears, doubts, what you believe and what holds you back','You’ll find inner support and the courage to act','You’ll start taking real steps while we are still working together'],
+  go:[['hochu','Write down what you want and what holds you back'],['tracker','One small step a day, and you can see you are moving'],['fund','Understand what drives you and what keeps you stuck'],['flag','Ten sessions from a goal to steps taken']]},
+ {t:'I no longer recognise myself', at:'Who am I here? · on every step', st:[1,7], sub:-1,
+  where:'This is the question “Who am I here?”. After moving you put yourself together anew, and each step adds one part to the answer. The question sounds loudest on the step “The broken bowl”, when your familiar roles, circle and language have fallen apart, and on the step “My whole life”, when you want to understand what you yourself want. It isn’t weakness, but an ordinary part of the path.',
+  self:'Stage by stage you gather within yourself the answer “This is my life, and I know what I want”.',
   pain:['The roles of “wife”, “mum”, “trailing spouse” have pushed out everything else','To the question “and what do you want” — emptiness','What used to bring joy somehow doesn’t work here','You answer “who are you” through your husband, children or past profession','Your own wishes seem out of place and badly timed'],
-  res:['You’ll get back your “I want”, not just “I must”','You’ll separate yourself from your roles without giving them up','You’ll decide what to take with you from your old life and what to let go','You’ll give your wishes a place in your actual schedule']},
- {q:'How do I start my own thing in a new country?', t:'I want to do my own thing, but I don’t know where to start', ic:'sprout', c:'#66704F',
+  res:['You’ll get back your “I want”, not just “I must”','You’ll separate yourself from your roles without giving them up','You’ll decide what to take with you from your old life and what to let go','You’ll give your wishes a place in your actual schedule'],
+  go:[['emo','Notice what you feel and what helps you'],['karta','What already holds you up, outside and inside'],['schastye','When you were happy and what those moments share'],['snimok','Take an honest look at how you live now']]},
+ {t:'I want to do my own thing, but I don’t know where to start', at:'Clear rules · Work of my own', st:[4,5], sub:0,
+  where:'This is the step “Work of my own”, the stage “Finding my feet”. To begin, you first need to understand how things work here — registration, AHV (the state pension insurance), taxes and insurance. That is the step “Clear rules”. Then it matters to see which part of your experience people here need. The idea doesn’t have to be ready from day one; you test it in small steps.',
+  self:'On this step you gather within yourself the answer “I am good at something, and it is worth something”.',
   pain:['I have an idea, but it’s unclear how things even work here','It seems I first need to finish studying, wait for my language to catch up, get recognition','Fear that nobody here needs it','Experience from my previous country doesn’t transfer directly','Lots of preparation and not a single client'],
-  res:['You’ll separate real obstacles from imagined ones','You’ll find a format you can test within a few weeks','You’ll identify the first person who needs it','You’ll take the first real step — not a perfect one, but a done one']},
- {q:'', t:'I’m afraid of making the wrong choice', ic:'compass', c:'#B98324',
+  res:['You’ll separate real obstacles from imagined ones','You’ll find a format you can test within a few weeks','You’ll identify the first person who needs it','You’ll take the first real step — not a perfect one, but a done one'],
+  go:[['s_ip','First steps, AHV and insurance for your own business'],['bagazh','What you can do and what you brought with you'],['price5','Name your price and earn your first franc'],['fund','Check your goal against what truly matters to you']]},
+ {t:'I’m afraid of making the wrong choice', at:'Reaching higher · a crossroads', st:[], sub:2,
+  where:'This is the stage “Reaching higher”. There is always a crossroads here. You can take a step up to the next step, or you can grow steadier where you are for now. Fear of getting it wrong at this crossroads is understandable, because the choice really matters. It helps to lean on what truly matters to you and take a small first step that you can adjust later.',
+  self:'',
   pain:['I go round in circles. Pros and cons, and pros and cons again','I ask everyone for advice but can’t decide','It feels like a mistake here can no longer be undone','While I’m thinking, the opportunity slips away','After deciding, I keep doubting for a long time'],
-  res:['You’ll understand what truly matters to you in this choice','You’ll separate your own voice from other people’s advice and fears','You’ll see options you hadn’t noticed before','You’ll make a decision and take the first step — without months of doubt']}
+  res:['You’ll understand what truly matters to you in this choice','You’ll separate your own voice from other people’s advice and fears','You’ll see options you hadn’t noticed before','You’ll make a decision and take the first step — without months of doubt'],
+  go:[['gde','Separate what you know for sure from what you fear'],['sess','One session for one question'],['kartami','Look at the choice through your own image'],['fund','A decision that rests on your values']]}
 ];
 const esc = s => String(s).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
-const rqList = document.getElementById('rqList');
-const HINTS = ["inner prohibitions", "direction and profession", "procrastination", "yourself after moving", "your own business", "decisions and choices"];
-rqList.innerHTML = RQ.map((x,i) => `<button class="rq" data-i="${i}" aria-haspopup="dialog"><span class="n">0${i+1}</span><span class="rq-m">${mandala(i,46)}</span><span class="rq-t"><b>${esc(x.t)}</b></span><span class="arr" aria-hidden="true">→</span></button>`).join('');
-const qm = document.getElementById('qm'), qmCard = document.getElementById('qmCard');
-function openRq(x){
-  qmCard.innerHTML = `<div class="qm-top"><span class="rq-mm">${mandala(RQ.indexOf(x),64)}</span>
-    <div class="qm-head"><div class="eyebrow">What people come to me with</div><h2 class="qm-title" id="qmTitle">“${esc(x.t)}”</h2></div>
-    <button class="qm-close" type="button" data-close aria-label="Close">✕</button></div>
-    <div class="qm-panel">
-      <div class="qm-col"><h3>What’s happening</h3><ul class="pain">${x.pain.map(p=>`<li>${esc(p)}</li>`).join('')}</ul></div>
-      <div class="qm-col"><h3>What changes in our work</h3><ul class="res">${x.res.map(p=>`<li>${esc(p)}</li>`).join('')}</ul><p class="qm-note">Coaching is a partnership. Results come when we work together. The number of sessions is decided individually.</p></div>
-      <div class="qm-col"><h3>Where to start</h3>
-        <a class="act" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener"><b>Introductory meeting, 30 minutes <span>→</span></b><span>It’s 30 minutes online, and it’s free. Send me the word ВСТРЕЧА on Telegram.</span></a>
-        <a class="act" href="#path" data-close><b>Your path and programmes <span>→</span></b><span>Look through the steps and programmes. We’ll choose the right one together at the introductory meeting.</span></a>
-      </div>
-    </div>`;
-  if (typeof qm.showModal === 'function') { try { qm.showModal(); } catch(e){ qm.setAttribute('open',''); } } else qm.setAttribute('open','');
-  qmCard.scrollTop = 0;
+/* запускается после данных линейки (STEPN, STEPC, SUBN, LV, it): см. rqInit() перед pathInit() */
+function rqInit(){
+  const sec = document.getElementById('requests'), rqList = document.getElementById('rqList'), qm = document.getElementById('qm'), qmCard = document.getElementById('qmCard');
+  const GOLD = ['#B98324', '#F6E7C6'];
+  const dots = x => (x.st.length ? x.st : [0]).map(s => `<i style="background:${s ? STEPC[s - 1][0] : GOLD[0]}"></i>`).join('');
+  rqList.innerHTML = RQ.map((x, i) => `<button class="rq" data-i="${i}" aria-haspopup="dialog"><span class="n">0${i+1}</span><span class="rq-m">${mandala(i,46)}</span><span class="rq-t"><b>${esc(x.t)}</b><span class="rq-at"><span class="rq-dots" aria-hidden="true">${dots(x)}</span>${esc(x.at)}</span></span><span class="arr" aria-hidden="true">→</span></button>`).join('');
+  const bars = n => `<svg viewBox="0 0 18 18" width="12" height="12" aria-hidden="true">${[0, 1, 2].map(k => `<rect x="${1 + k * 6}" y="${12 - k * 5}" width="4" height="${5 + k * 5}" rx="1.2" fill="${k <= n ? '#FFFCF8' : 'rgba(255,252,248,.45)'}"/>`).join('')}</svg>`;
+  const stepChip = s => `<button type="button" data-go="${s}" style="--lc:${STEPC[s - 1][0]};--lf:${STEPC[s - 1][1]}"><i>${s}</i>${esc(STEPN[s - 1])}</button>`;
+  const subChip = n => `<button type="button" data-sub="${n}" style="--lc:${GOLD[0]};--lf:${GOLD[1]}"><i>${bars(n)}</i>${esc(SUBN[n])}</button>`;
+  const goItem = ([id, why]) => { const p = it(id); if (!p) return '';
+    const ext = p.h && !p.pr, tag = p.st === 'ok' ? p.price : 'in development';
+    const inner = `<b>${esc(p.name)} <span aria-hidden="true">${ext ? '↗' : '→'}</span></b><span>${esc(why)}</span><em>${esc(cap(tag))}</em>`;
+    return ext ? `<a class="act rq-go" href="${p.h}" target="_blank" rel="noopener">${inner}</a>` : `<button type="button" class="act rq-go" data-prog="${id}">${inner}</button>`; };
+  const goBox = x => LVK.map(l => {
+    const items = x.go.filter(g => { const p = it(g[0]); return p && p.lv === l; }).map(goItem).join('');
+    const meet = l === 'so' ? `<a class="act rq-go" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener"><b>Introductory meeting, 30 minutes <span>→</span></b><span>It’s 30 minutes online, and it’s free. Send me the word ВСТРЕЧА on Telegram.</span></a>` : '';
+    return items || meet ? `<div class="rq-lv"><div class="lvrow-h">${lvBadge(l)}<span>${esc(LV[l].d)}</span></div>${meet}${items}</div>` : '';
+  }).join('');
+  function openRq(x){
+    const c = x.st.length ? STEPC[x.st[0] - 1] : GOLD;
+    qmCard.innerHTML = `<div class="qm-top"><span class="rq-mm">${mandala(RQ.indexOf(x),64)}</span>
+      <div class="qm-head"><div class="eyebrow">What people come to me with</div><h2 class="qm-title" id="qmTitle">“${esc(x.t)}”</h2></div>
+      <button class="qm-close" type="button" data-close aria-label="Close">✕</button></div>
+      <div class="rq-where" style="--lc:${c[0]};--lf:${c[1]}"><span class="pd-lbl">Where this is on the path</span>
+        <p class="pd-steps">${x.st.map(stepChip).join('')}${x.sub >= 0 ? subChip(x.sub) : ''}</p>
+        <p>${esc(x.where)}</p>${x.self ? `<p class="rq-self"><b>Who am I here?</b> ${esc(x.self)}</p>` : ''}
+        <a class="pd-stlink" href="/en/put/">What these steps are →</a></div>
+      <div class="qm-panel">
+        <div class="qm-col"><h3>What’s happening</h3><ul class="pain">${x.pain.map(p=>`<li>${esc(p)}</li>`).join('')}</ul></div>
+        <div class="qm-col"><h3>What changes in our work</h3><ul class="res">${x.res.map(p=>`<li>${esc(p)}</li>`).join('')}</ul><p class="qm-note">Coaching is a partnership. Results come when we work together. The number of sessions is decided individually.</p></div>
+        <div class="qm-col"><h3>Where to start</h3>${goBox(x)}
+          <button type="button" class="act rq-go" ${x.st.length ? `data-go="${x.st[0]}"` : `data-sub="${x.sub}"`}><b>All programmes by step <span aria-hidden="true">→</span></b><span>See what else helps on your step. We’ll choose the right thing together at the introductory meeting.</span></button>
+        </div>
+      </div>`;
+    if (typeof qm.showModal === 'function') { try { qm.showModal(); } catch(e){ qm.setAttribute('open',''); } } else qm.setAttribute('open','');
+    qmCard.scrollTop = 0;
+  }
+  const closeRq = () => { if (qm.open) { typeof qm.close === 'function' ? qm.close() : qm.removeAttribute('open'); } };
+  sec.addEventListener('click', e => {
+    const b = e.target.closest('.rq'); if (b){ openRq(RQ[+b.dataset.i]); return; }
+    // после закрытия окна браузер возвращает фокус на фразу, поэтому к ступени переходим на следующем кадре
+    const g = e.target.closest('[data-go]'); if (g){ closeRq(); setTimeout(() => { if (window.vzGoStep) window.vzGoStep(+g.dataset.go); }, 40); return; }
+    const sb = e.target.closest('[data-sub]'); if (sb){ closeRq(); setTimeout(() => { if (window.vzGoSubs) window.vzGoSubs(); }, 40); return; }
+    const pg = e.target.closest('[data-prog]'); if (pg){ closeRq(); if (window.vzOpenProgram) window.vzOpenProgram(pg.dataset.prog); return; }
+    if (e.target === qm || e.target.closest('[data-close]')) closeRq();
+  });
 }
-function closeRq(){ if (qm.open) { typeof qm.close === 'function' ? qm.close() : qm.removeAttribute('open'); } }
-rqList.addEventListener('click', e => { const b = e.target.closest('.rq'); if (b) openRq(RQ[+b.dataset.i]); });
-qm.addEventListener('click', e => { if (e.target === qm || e.target.closest('[data-close]')) closeRq(); });
 /* ===== Цветы-мандалы (04.10.2026): с 10.10.2026 только в списке запросов и опорах; у программ — чаши ступеней (см. ниже). =====
 */
 const LANES = [
@@ -1736,6 +1800,8 @@ function pathInit(){
     if (e.target === pm || e.target.closest('[data-pclose]')) close();
   });
   window.vzOpenProgram = open;
+  window.vzGoStep = goStep;   // из окна «Узнаёшь себя?»: ступень и шаг
+  window.vzGoSubs = () => { setView('subs', true); const sec = document.getElementById('path'); if (sec) sec.scrollIntoView(); };
   /* прямые ссылки: voznesenskaya.ch/#p-snimok — окно программы; #stupen-3 — вид «По ступеням» на ступени 3; #po-shagam — вид «По шагам» */
   const fromHash = () => { const h = location.hash, sec = document.getElementById('path');
     let m = /^#p-([a-z0-9_]+)$/.exec(h); if (m && (PR[m[1]] || X[m[1]])) { if (sec) sec.scrollIntoView(); open(m[1]); return; }
@@ -1743,6 +1809,7 @@ function pathInit(){
     if (h === '#po-shagam') { setView('subs'); if (sec) sec.scrollIntoView(); } };
   fromHash(); addEventListener('hashchange', fromHash);
 }
+rqInit();
 pathInit();
 </script><script src="/assets/share.en.js" defer></script>
 <script>/* меню: подсвечивается раздел, который сейчас на экране */

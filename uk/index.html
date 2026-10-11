@@ -409,6 +409,24 @@ a.bot:hover{color:#B98324}
 .res li{font-size:.95rem;padding-left:22px;position:relative}
 .res li::before{content:"✓";position:absolute;left:0;color:var(--sage);font-weight:700}
 .qm-note{font-size:.84rem;color:var(--muted)}
+/* «Узнаёшь себя?» на языке метода (11.10.2026): подпись ступени в списке, «Где это на пути», «С чего начать» по трём видам помощи */
+.rq-at{display:block;font-size:.84rem;font-weight:600;line-height:1.35;color:var(--muted)}
+.rq-dots{display:inline-flex;gap:3px;margin-right:6px;vertical-align:1px}
+.rq-dots i{width:9px;height:9px;border-radius:50%;display:block}
+.rq-btns{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.rq-alt{font:600 .9rem/1.35 var(--body);color:var(--brown);background:none;border:0;padding:0;text-align:left;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.rq-where{display:flex;flex-direction:column;gap:8px;background:color-mix(in srgb,var(--lf) 55%,var(--paper));border:1px solid color-mix(in srgb,var(--lc) 30%,var(--line));border-left:5px solid var(--lc);border-radius:18px;padding:16px 18px}
+.rq-where > p{margin:0;font-size:.98rem;max-width:80ch}
+.rq-where .pd-steps{margin:2px 0 0}
+.rq-self{font-family:var(--display);font-size:1.12rem;line-height:1.35}
+.rq-self b{font-family:var(--body);font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--brown);margin-right:4px}
+.rq-lv{display:flex;flex-direction:column;gap:8px}
+.rq-lv .lvrow-h{margin:4px 0 0}
+.rq-go{font:inherit;text-align:left;cursor:pointer;width:100%}
+.rq-go:hover{border-color:var(--brown)}
+.rq-go em{font-style:normal;font-size:.74rem;font-weight:700;color:var(--brown)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .rq-where{background:color-mix(in srgb,var(--lc) 14%,var(--paper))}}
+:root[data-theme="dark"] .rq-where{background:color-mix(in srgb,var(--lc) 14%,var(--paper))}
 .rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 @media (max-width:820px){.rv-grid{grid-template-columns:1fr}}
 .rv{margin:0;background:var(--paper);border:1.5px dashed var(--line);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:14px}
@@ -832,10 +850,10 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
     <div class="sec-head">
       <div class="eyebrow">З чим до мене приходять</div>
       <h2 id="rq-h">Впізнаєш себе в одній із цих фраз?</h2>
-      <p>Це не діагноз і не ярлик. Це точка, з якої почнеться розмова про тебе. Натисни на свою фразу, і ти побачиш, як ми можемо з цим працювати.</p>
+      <p>Кожна фраза показує місце на твоєму шляху в новій країні. Це сходинка, на якій ти зараз стоїш, або крок, який зараз дається важко. Це не діагноз і не ярлик, а точка, з якої почнеться розмова про тебе. Натисни на свою фразу, і ти побачиш, де це на шляху, що змінюється в роботі і з чого почати вже сьогодні.</p>
     </div>
     <div class="rq-list" id="rqList"></div>
-    <div class="rq-after"><p>Впізнала себе? Отже, настав час приділити час собі. Почнемо зі знайомства. Це 30 хвилин онлайн, і це безкоштовно.</p><a class="btn free" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">Написати «ВСТРЕЧА» в Telegram</a></div>
+    <div class="rq-after"><p>Впізнала себе? На знайомстві ми разом подивимося, на якій ти сходинці і який крок зараз твій. Це 30 хвилин онлайн, і це безкоштовно.</p><div class="rq-btns"><a class="btn free" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">Написати «ВСТРЕЧА» в Telegram</a><button type="button" class="rq-alt" data-prog="stupeni">Спочатку знайти свою сходинку самій — тест «Сходинки стійкості», 20 хвилин</button></div></div>
     <dialog class="qm" id="qm" aria-labelledby="qmTitle"><div class="qm-card" id="qmCard"></div></dialog>
   </section>
 
@@ -1130,49 +1148,95 @@ function mandala(i, size){
 }
 document.querySelectorAll('[data-ico]').forEach(e => { e.innerHTML = ico(e.dataset.ico, e.dataset.c, null, e.classList.contains('sm') ? 26 : 32); });
 document.querySelectorAll('[data-mandala]').forEach(e => { e.innerHTML = mandala(+e.dataset.mandala, 60); });
+/* ===== «Узнаёшь себя в одной из этих фраз?» на языке метода «Ступени. Твой путь в новой стране» (11.10.2026, вопрос Ирины 17:47) =====
+   у каждой фразы: подпись в списке (at), где это на пути — ступени (st) и шаг (sub: 0 Ставлю ногу · 1 Стою твёрдо · 2 Тянусь выше, -1 — без шага),
+   «Кто я здесь?» (self), что происходит (pain), что меняется (res), с чего начать (go: id из PR или X, по трём видам помощи) */
 const RQ = [
- {q:'Як знайти і розібрати свої внутрішні заборони?', t:'Мені весь час здається, що мені не можна', ic:'key', c:'#B98324',
+ {t:'Мені весь час здається, що мені не можна', at:'Я можу сама', st:[3], sub:-1,
+  where:'Зазвичай це сходинка «Я можу сама». На ній до тебе повертається голос, і ти знову можеш сама зателефонувати, попросити про своє, сказати «ні» і не виправдовуватися. Поки всередині звучить «мені не можна», важко підніматися й вище, наприклад назвати свою ціну на сходинці «Своя справа».',
+  self:'На цій сходинці ти збираєш у собі відповідь «Я окрема, можу сказати „так“ і „ні“».',
   pain:['«Мені не можна» звучить раніше, ніж «я хочу»','Страшно зайняти місце, попросити, назвати свою ціну','Постійно порівнюю себе з тими, у кого «вийшло»','Одні й ті самі сценарії повторюються в різних країнах і на різних роботах','Багато пояснень, чому саме зараз не час'],
-  res:['Почуєш, чий це насправді голос і коли він з’явився','Відокремиш свої правила від успадкованих','Переформулюєш заборону в умову, з якою можна працювати','Зробиш те, що раніше було «не можна», — спочатку потроху']},
- {q:'Як зрозуміти, ким бути тут і в який бік іти?', t:'Не розумію, куди мені йти далі', ic:'signpost', c:'#66704F',
+  res:['Почуєш, чий це насправді голос і коли він з’явився','Відокремиш свої правила від успадкованих','Переформулюєш заборону в умову, з якою можна працювати','Зробиш те, що раніше було «не можна», — спочатку потроху'],
+  go:[['stupeni','Яка сходинка під тобою порипує і чому'],['granicy','Де ти погоджуєшся, коли хочеш відмовити'],['borders','Казати «ні» спокійно і без провини'],['fund','Розібрати старі правила, які тримають на місці']]},
+ {t:'Не розумію, куди мені йти далі', at:'Своя справа · Ставлю ногу', st:[5,4], sub:0,
+  where:'Зазвичай це початок сходинки «Своя справа», крок «Ставлю ногу». Колишня робота лишилася там, а нової поки не видно, і зараз найбільше потрібні інформація та опора. Часто спершу допомагає розібратися, як тут усе влаштовано, — визнання диплома, вимоги до мови, те, як тут наймають. Це сходинка «Зрозумілі правила».',
+  self:'На цій сходинці ти збираєш у собі відповідь «Я вмію, і це чогось варте».',
   pain:['Колишня професія тут не рахується або більше не гріє','Варіантів багато, а свого серед них немає','Диплом, мова, визнання потребують років — і незрозуміло, заради чого','Поради довкола суперечать одна одній','Відчуття, що час іде марно'],
-  res:['Збереш те, що вмієш, у формулювання, зрозуміле тутешньому ринку','Відрізниш «треба» від «хочу» і побачиш, де вони збігаються','Обереш один напрям і спробуєш його без великих ризиків','Отримаєш план на найближчі три місяці, а не на все життя']},
- {q:'Як перестати відкладати і почати діяти?', t:'Знаю, чого хочу, але не можу почати', ic:'path', c:'#2E5A88',
+  res:['Збереш те, що вмієш, у формулювання, зрозуміле тутешньому ринку','Відрізниш «треба» від «хочу» і побачиш, де вони збігаються','Обереш один напрям і спробуєш його без великих ризиків','Отримаєш план на найближчі три місяці, а не на все життя'],
+  go:[['s_diplom','Що потрібно, щоб тут визнали твій диплом'],['s_rabota','Де шукати роботу і як тут наймають'],['kompas','Де ти зараз у новій країні і куди йти далі'],['bagazh','Що ти вмієш і що з цього потрібно тут'],['snimok','Яка сфера життя просить уваги першою']]},
+ {t:'Знаю, чого хочу, але не можу почати', at:'Тягнуся вище · на будь-якій сходинці', st:[5,3,4], sub:2,
+  where:'Це крок «Тягнуся вище». Там, де ти зараз, уже тісно, а наступний крок усе не робиться. Так буває на будь-якій сходинці, і це не лінь і не слабкість. Часто мета живе на сходинці «Своя справа», а тримає сходинка нижче, «Я можу сама» або «Зрозумілі правила». Саме тут найкраще допомагає особиста робота.',
+  self:'',
   pain:['Мета зрозуміла, а перший крок весь час переноситься','Страх помилки, осуду, невдачі','Хочеться заздалегідь знати, що вийде','Сумніви, невпевненість, перфекціонізм','Багато переживань і мало дій'],
-  res:['Зрозумієш, що саме тебе зупиняє — це рідко лінь','Розберешся зі страхами, сумнівами і тим, у що віриш і що тебе тримає','Знайдеш внутрішню опору і сміливість діяти','Почнеш робити реальні кроки вже під час роботи']},
- {q:'Як повернути собі себе після переїзду?', t:'Я перестала впізнавати себе', ic:'mirror', c:'#6E4F3C',
+  res:['Зрозумієш, що саме тебе зупиняє — це рідко лінь','Розберешся зі страхами, сумнівами і тим, у що віриш і що тебе тримає','Знайдеш внутрішню опору і сміливість діяти','Почнеш робити реальні кроки вже під час роботи'],
+  go:[['hochu','Записати, чого ти хочеш і що тебе стримує'],['tracker','Один маленький крок на день, і видно, що ти йдеш'],['fund','Зрозуміти, що тобою рухає і що тримає на місці'],['flag','Десять зустрічей від мети до зроблених кроків']]},
+ {t:'Я перестала впізнавати себе', at:'Хто я тут? · на всіх сходинках', st:[1,7], sub:-1,
+  where:'Це питання «Хто я тут?». Після переїзду ти заново збираєш себе, і кожна сходинка додає до відповіді одну частину. Найгучніше це питання звучить на сходинці «Розбита чаша», коли розсипалися звичні ролі, коло і мова, і на сходинці «Моє життя цілком», коли хочеться зрозуміти, чого хочеш саме ти. Це не слабкість, а звичайна частина шляху.',
+  self:'Крок за кроком ти збираєш у собі відповідь «Це моє життя, і я знаю, чого хочу».',
   pain:['Ролі «дружина», «мама», «партнерка, що супроводжує» витіснили решту','На запитання «а чого хочеш ти» — порожнеча','Те, що раніше радувало, тут чомусь не працює','На «хто ти» відповідаєш через чоловіка, дітей або колишню професію','Свої бажання здаються недоречними і невчасними'],
-  res:['Повернеш собі своє «я хочу», а не тільки «я повинна»','Відокремиш себе від ролей, не відмовляючись від них','Вирішиш, що з колишнього життя взяти з собою, а що відпустити','Даси своїм бажанням місце в реальному розкладі']},
- {q:'Як почати робити своє в новій країні?', t:'Хочу робити своє, але не знаю, за що взятися', ic:'sprout', c:'#66704F',
+  res:['Повернеш собі своє «я хочу», а не тільки «я повинна»','Відокремиш себе від ролей, не відмовляючись від них','Вирішиш, що з колишнього життя взяти з собою, а що відпустити','Даси своїм бажанням місце в реальному розкладі'],
+  go:[['emo','Помічати, що ти відчуваєш і що тобі допомагає'],['karta','Що вже тримає тебе ззовні і всередині'],['schastye','Коли ти була щаслива і що в цьому спільного'],['snimok','Чесно подивитися, як ти живеш зараз']]},
+ {t:'Хочу робити своє, але не знаю, за що взятися', at:'Зрозумілі правила · Своя справа', st:[4,5], sub:0,
+  where:'Це сходинка «Своя справа», крок «Ставлю ногу». Щоб почати, спершу треба зрозуміти, як тут це влаштовано, — реєстрація, AHV (державне пенсійне страхування), податки і страховки. Це сходинка «Зрозумілі правила». Потім важливо побачити, що з твого досвіду потрібно людям тут. Ідея не мусить бути готовою з першого дня, її перевіряють маленькими кроками.',
+  self:'На цій сходинці ти збираєш у собі відповідь «Я вмію, і це чогось варте».',
   pain:['Ідея є, але незрозуміло, як це взагалі влаштовано тут','Здається, що спочатку треба доучитися, дочекатися мови, отримати визнання','Страшно, що тут це нікому не потрібно','Досвід з колишньої країни не переноситься напряму','Багато підготовки і жодного клієнта'],
-  res:['Відокремиш справжні перешкоди від уявних','Знайдеш формат, який можна перевірити за кілька тижнів','Визначиш першу людину, якій це потрібно','Зробиш перший реальний крок — не ідеальний, а зроблений']},
- {q:'', t:'Боюся помилитися з вибором', ic:'compass', c:'#B98324',
+  res:['Відокремиш справжні перешкоди від уявних','Знайдеш формат, який можна перевірити за кілька тижнів','Визначиш першу людину, якій це потрібно','Зробиш перший реальний крок — не ідеальний, а зроблений'],
+  go:[['s_ip','Перші кроки, AHV і страховки для своєї справи'],['bagazh','Що ти вмієш і що привезла з собою'],['price5','Назвати свою ціну і заробити перший франк'],['fund','Перевірити мету тим, що для тебе по-справжньому важливо']]},
+ {t:'Боюся помилитися з вибором', at:'Тягнуся вище · роздоріжжя', st:[], sub:2,
+  where:'Це крок «Тягнуся вище». Тут завжди роздоріжжя. Можна зробити крок на наступну сходинку, а можна поки зміцнитися там, де ти є. Страх помилитися на цьому роздоріжжі зрозумілий, адже вибір справді важливий. Допомагає спертися на те, що для тебе по-справжньому важливо, і зробити перший невеликий крок, який потім можна виправити.',
+  self:'',
   pain:['Ходжу по колу. За і проти, і знову за і проти','Питаю поради в усіх, а вирішити не можу','Здається, що помилку тут уже не виправити','Поки думаю, можливість минає','Після рішення ще довго сумніваюся'],
-  res:['Зрозумієш, що для тебе по-справжньому важливо в цьому виборі','Відокремиш свій голос від чужих порад і страхів','Побачиш варіанти, яких раніше не помічала','Ухвалиш рішення і зробиш перший крок — без місяців сумнівів']}
+  res:['Зрозумієш, що для тебе по-справжньому важливо в цьому виборі','Відокремиш свій голос від чужих порад і страхів','Побачиш варіанти, яких раніше не помічала','Ухвалиш рішення і зробиш перший крок — без місяців сумнівів'],
+  go:[['gde','Відокремити те, що знаєш точно, від того, чого боїшся'],['sess','Одна зустріч для одного питання'],['kartami','Подивитися на вибір через свій образ'],['fund','Рішення, яке спирається на твої цінності']]}
 ];
 const esc = s => String(s).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
-const rqList = document.getElementById('rqList');
-const HINTS = ["внутрішні заборони", "напрям і професія", "відкладання", "себе після переїзду", "своя справа", "рішення і вибір"];
-rqList.innerHTML = RQ.map((x,i) => `<button class="rq" data-i="${i}" aria-haspopup="dialog"><span class="n">0${i+1}</span><span class="rq-m">${mandala(i,46)}</span><span class="rq-t"><b>${esc(x.t)}</b></span><span class="arr" aria-hidden="true">→</span></button>`).join('');
-const qm = document.getElementById('qm'), qmCard = document.getElementById('qmCard');
-function openRq(x){
-  qmCard.innerHTML = `<div class="qm-top"><span class="rq-mm">${mandala(RQ.indexOf(x),64)}</span>
-    <div class="qm-head"><div class="eyebrow">З чим до мене приходять</div><h2 class="qm-title" id="qmTitle">«${esc(x.t)}»</h2></div>
-    <button class="qm-close" type="button" data-close aria-label="Закрити">✕</button></div>
-    <div class="qm-panel">
-      <div class="qm-col"><h3>Що відбувається</h3><ul class="pain">${x.pain.map(p=>`<li>${esc(p)}</li>`).join('')}</ul></div>
-      <div class="qm-col"><h3>Що змінюється в роботі</h3><ul class="res">${x.res.map(p=>`<li>${esc(p)}</li>`).join('')}</ul><p class="qm-note">Коучинг — це партнерська робота. Результат з’являється, коли ми працюємо разом. Кількість сесій визначається індивідуально.</p></div>
-      <div class="qm-col"><h3>З чого почати</h3>
-        <a class="act" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener"><b>Знайомство, 30 хвилин <span>→</span></b><span>Це 30 хвилин онлайн, і це безкоштовно. Напиши мені в Telegram слово ВСТРЕЧА.</span></a>
-        <a class="act" href="#path" data-close><b>Твій шлях і програми <span>→</span></b><span>Подивись кроки і програми. Відповідну оберемо разом на знайомстві.</span></a>
-      </div>
-    </div>`;
-  if (typeof qm.showModal === 'function') { try { qm.showModal(); } catch(e){ qm.setAttribute('open',''); } } else qm.setAttribute('open','');
-  qmCard.scrollTop = 0;
+/* запускается после данных линейки (STEPN, STEPC, SUBN, LV, it): см. rqInit() перед pathInit() */
+function rqInit(){
+  const sec = document.getElementById('requests'), rqList = document.getElementById('rqList'), qm = document.getElementById('qm'), qmCard = document.getElementById('qmCard');
+  const GOLD = ['#B98324', '#F6E7C6'];
+  const dots = x => (x.st.length ? x.st : [0]).map(s => `<i style="background:${s ? STEPC[s - 1][0] : GOLD[0]}"></i>`).join('');
+  rqList.innerHTML = RQ.map((x, i) => `<button class="rq" data-i="${i}" aria-haspopup="dialog"><span class="n">0${i+1}</span><span class="rq-m">${mandala(i,46)}</span><span class="rq-t"><b>${esc(x.t)}</b><span class="rq-at"><span class="rq-dots" aria-hidden="true">${dots(x)}</span>${esc(x.at)}</span></span><span class="arr" aria-hidden="true">→</span></button>`).join('');
+  const bars = n => `<svg viewBox="0 0 18 18" width="12" height="12" aria-hidden="true">${[0, 1, 2].map(k => `<rect x="${1 + k * 6}" y="${12 - k * 5}" width="4" height="${5 + k * 5}" rx="1.2" fill="${k <= n ? '#FFFCF8' : 'rgba(255,252,248,.45)'}"/>`).join('')}</svg>`;
+  const stepChip = s => `<button type="button" data-go="${s}" style="--lc:${STEPC[s - 1][0]};--lf:${STEPC[s - 1][1]}"><i>${s}</i>${esc(STEPN[s - 1])}</button>`;
+  const subChip = n => `<button type="button" data-sub="${n}" style="--lc:${GOLD[0]};--lf:${GOLD[1]}"><i>${bars(n)}</i>${esc(SUBN[n])}</button>`;
+  const goItem = ([id, why]) => { const p = it(id); if (!p) return '';
+    const ext = p.h && !p.pr, tag = p.st === 'ok' ? p.price : 'у розробці';
+    const inner = `<b>${esc(p.name)} <span aria-hidden="true">${ext ? '↗' : '→'}</span></b><span>${esc(why)}</span><em>${esc(cap(tag))}</em>`;
+    return ext ? `<a class="act rq-go" href="${p.h}" target="_blank" rel="noopener">${inner}</a>` : `<button type="button" class="act rq-go" data-prog="${id}">${inner}</button>`; };
+  const goBox = x => LVK.map(l => {
+    const items = x.go.filter(g => { const p = it(g[0]); return p && p.lv === l; }).map(goItem).join('');
+    const meet = l === 'so' ? `<a class="act rq-go" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener"><b>Знайомство, 30 хвилин <span>→</span></b><span>Це 30 хвилин онлайн, і це безкоштовно. Напиши мені в Telegram слово ВСТРЕЧА.</span></a>` : '';
+    return items || meet ? `<div class="rq-lv"><div class="lvrow-h">${lvBadge(l)}<span>${esc(LV[l].d)}</span></div>${meet}${items}</div>` : '';
+  }).join('');
+  function openRq(x){
+    const c = x.st.length ? STEPC[x.st[0] - 1] : GOLD;
+    qmCard.innerHTML = `<div class="qm-top"><span class="rq-mm">${mandala(RQ.indexOf(x),64)}</span>
+      <div class="qm-head"><div class="eyebrow">З чим до мене приходять</div><h2 class="qm-title" id="qmTitle">«${esc(x.t)}»</h2></div>
+      <button class="qm-close" type="button" data-close aria-label="Закрити">✕</button></div>
+      <div class="rq-where" style="--lc:${c[0]};--lf:${c[1]}"><span class="pd-lbl">Де це на шляху</span>
+        <p class="pd-steps">${x.st.map(stepChip).join('')}${x.sub >= 0 ? subChip(x.sub) : ''}</p>
+        <p>${esc(x.where)}</p>${x.self ? `<p class="rq-self"><b>Хто я тут?</b> ${esc(x.self)}</p>` : ''}
+        <a class="pd-stlink" href="/uk/put/">Що це за сходинки →</a></div>
+      <div class="qm-panel">
+        <div class="qm-col"><h3>Що відбувається</h3><ul class="pain">${x.pain.map(p=>`<li>${esc(p)}</li>`).join('')}</ul></div>
+        <div class="qm-col"><h3>Що змінюється в роботі</h3><ul class="res">${x.res.map(p=>`<li>${esc(p)}</li>`).join('')}</ul><p class="qm-note">Коучинг — це партнерська робота. Результат з’являється, коли ми працюємо разом. Кількість сесій визначається індивідуально.</p></div>
+        <div class="qm-col"><h3>З чого почати</h3>${goBox(x)}
+          <button type="button" class="act rq-go" ${x.st.length ? `data-go="${x.st[0]}"` : `data-sub="${x.sub}"`}><b>Усі програми за сходинками <span aria-hidden="true">→</span></b><span>Подивись, що ще допомагає на твоїй сходинці. Відповідне оберемо разом на знайомстві.</span></button>
+        </div>
+      </div>`;
+    if (typeof qm.showModal === 'function') { try { qm.showModal(); } catch(e){ qm.setAttribute('open',''); } } else qm.setAttribute('open','');
+    qmCard.scrollTop = 0;
+  }
+  const closeRq = () => { if (qm.open) { typeof qm.close === 'function' ? qm.close() : qm.removeAttribute('open'); } };
+  sec.addEventListener('click', e => {
+    const b = e.target.closest('.rq'); if (b){ openRq(RQ[+b.dataset.i]); return; }
+    // после закрытия окна браузер возвращает фокус на фразу, поэтому к ступени переходим на следующем кадре
+    const g = e.target.closest('[data-go]'); if (g){ closeRq(); setTimeout(() => { if (window.vzGoStep) window.vzGoStep(+g.dataset.go); }, 40); return; }
+    const sb = e.target.closest('[data-sub]'); if (sb){ closeRq(); setTimeout(() => { if (window.vzGoSubs) window.vzGoSubs(); }, 40); return; }
+    const pg = e.target.closest('[data-prog]'); if (pg){ closeRq(); if (window.vzOpenProgram) window.vzOpenProgram(pg.dataset.prog); return; }
+    if (e.target === qm || e.target.closest('[data-close]')) closeRq();
+  });
 }
-function closeRq(){ if (qm.open) { typeof qm.close === 'function' ? qm.close() : qm.removeAttribute('open'); } }
-rqList.addEventListener('click', e => { const b = e.target.closest('.rq'); if (b) openRq(RQ[+b.dataset.i]); });
-qm.addEventListener('click', e => { if (e.target === qm || e.target.closest('[data-close]')) closeRq(); });
 /* ===== Цветы-мандалы (04.10.2026): с 10.10.2026 только в списке запросов и опорах; у программ — чаши ступеней (см. ниже). =====
 */
 const LANES = [
@@ -1736,6 +1800,8 @@ function pathInit(){
     if (e.target === pm || e.target.closest('[data-pclose]')) close();
   });
   window.vzOpenProgram = open;
+  window.vzGoStep = goStep;   // из окна «Узнаёшь себя?»: ступень и шаг
+  window.vzGoSubs = () => { setView('subs', true); const sec = document.getElementById('path'); if (sec) sec.scrollIntoView(); };
   /* прямые ссылки: voznesenskaya.ch/#p-snimok — окно программы; #stupen-3 — вид «По ступеням» на ступени 3; #po-shagam — вид «По шагам» */
   const fromHash = () => { const h = location.hash, sec = document.getElementById('path');
     let m = /^#p-([a-z0-9_]+)$/.exec(h); if (m && (PR[m[1]] || X[m[1]])) { if (sec) sec.scrollIntoView(); open(m[1]); return; }
@@ -1743,6 +1809,7 @@ function pathInit(){
     if (h === '#po-shagam') { setView('subs'); if (sec) sec.scrollIntoView(); } };
   fromHash(); addEventListener('hashchange', fromHash);
 }
+rqInit();
 pathInit();
 </script><script src="/assets/share.uk.js" defer></script>
 <script>/* меню: подсвечивается раздел, который сейчас на экране */
