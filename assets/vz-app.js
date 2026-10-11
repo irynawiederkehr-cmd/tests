@@ -6,6 +6,7 @@
    4) При первом заходе — вопрос «Якою мовою тобі комфортно? · На каком языке тебе комфортно?» и кнопки
       «Українською · По-русски · Deutsch · English» (10.10.2026, просьба Ирины, так же, как на svoiludi.ch). Выбор запоминается
       (irinaTestsLang — общий ключ сайта и тестов), больше не спрашиваем. Подсказка об установке ждёт выбора. Проверка: ?lang=ask.
+   5) В подвале каждой страницы — значок «Мой проект «Свои люди»» со ссылкой на svoiludi.ch (11.10.2026), svoiBadge().
    Личные данные не собираются; в localStorage только отметка «Не сейчас» (vz-app-later) и выбранный язык (irinaTestsLang). */
 (function () {
   if (window.__vzApp) return; window.__vzApp = true;
@@ -13,6 +14,7 @@
   function lang() { var l = (document.documentElement.lang || 'ru').slice(0, 2); return /^(ru|uk|de|en)$/.test(l) ? l : 'ru'; }
   var D = {
     ru: { tabs: ['Главная', 'Твой путь', 'Тесты', 'Знакомство', 'Ещё'], who: 'Обо мне', prod: 'Продукты', svoi: 'Свои люди', privacy: 'Политика конфиденциальности',
+      svoiBadge: 'Мой проект «Свои люди» — справочник для своих в Швейцарии',
       share: 'Поделиться приложением с друзьями', reload: 'Обновить страницу', langs: 'Язык', close: 'Закрыть',
       shareText: 'Ирина Вознесенская — коуч для тех, кто переехал. Тесты, «Твой путь в новой стране» и работа с ней. Можно установить как приложение на телефон.',
       title: 'Сайт Ирины — как приложение на телефоне', lead: 'Иконка на экране «Домой», сайт открывается во весь экран, с вкладками внизу. Без App Store и без регистрации.',
@@ -23,6 +25,7 @@
       inapp: '<b>Сейчас страница открыта внутри Instagram, Telegram или другого приложения.</b> Отсюда установить нельзя. Нажми ⋯ или значок вверху и выбери «Открыть в браузере» (Safari или Chrome), а там — «Установить приложение».',
       note: '<b>Важно для тестов.</b> Начатые в браузере ответы в приложение сами не переходят. Если тест уже начат, сначала закончи его здесь.' },
     uk: { tabs: ['Головна', 'Твій шлях', 'Тести', 'Знайомство', 'Ще'], who: 'Про мене', prod: 'Продукти', svoi: 'Свої люди', privacy: 'Політика конфіденційності',
+      svoiBadge: 'Мій проєкт «Свої люди» — довідник для своїх у Швейцарії',
       share: 'Поділитися застосунком з друзями', reload: 'Оновити сторінку', langs: 'Мова', close: 'Закрити',
       shareText: 'Ірина Вознесенська — коуч для тих, хто переїхав. Тести, «Твій шлях у новій країні» та робота з нею. Можна встановити як застосунок на телефон.',
       title: 'Сайт Ірини — як застосунок на телефоні', lead: 'Іконка на екрані «Додому», сайт відкривається на весь екран, з вкладками внизу. Без App Store і без реєстрації.',
@@ -33,6 +36,7 @@
       inapp: '<b>Зараз сторінка відкрита всередині Instagram, Telegram чи іншого застосунку.</b> Звідси встановити не можна. Натисни ⋯ або значок угорі й вибери «Відкрити в браузері» (Safari чи Chrome), а там — «Встановити застосунок».',
       note: '<b>Важливо для тестів.</b> Розпочаті в браузері відповіді в застосунок самі не переходять. Якщо тест уже розпочато, спершу закінчи його тут.' },
     de: { tabs: ['Start', 'Dein Weg', 'Tests', 'Kennenlernen', 'Mehr'], who: 'Über mich', prod: 'Angebote', svoi: 'Svoi ludi', privacy: 'Datenschutzerklärung',
+      svoiBadge: 'Mein Projekt «Svoi ludi» — Verzeichnis und Gemeinschaft in der Schweiz',
       share: 'App mit Freunden teilen', reload: 'Seite neu laden', langs: 'Sprache', close: 'Schliessen',
       shareText: 'Iryna Voznesenskaya — Coach für alle, die umgezogen sind. Tests, «Dein Weg im neuen Land» und Arbeit mit ihr. Lässt sich als App aufs Handy installieren.',
       title: 'Irynas Website — als App auf dem Handy', lead: 'Ein Symbol auf dem Home-Bildschirm, die Seite öffnet im Vollbild, mit Tabs unten. Ohne App Store und ohne Anmeldung.',
@@ -43,6 +47,7 @@
       inapp: '<b>Die Seite ist gerade in Instagram, Telegram oder einer anderen App geöffnet.</b> Von hier aus lässt sie sich nicht installieren. Tippe auf ⋯ oder das Symbol oben und wähle «Im Browser öffnen» (Safari oder Chrome), dort dann «App installieren».',
       note: '<b>Wichtig für die Tests.</b> Im Browser begonnene Antworten werden nicht automatisch in die App übernommen. Wenn du schon einen Test begonnen hast, schliesse ihn zuerst hier ab.' },
     en: { tabs: ['Home', 'Your path', 'Tests', 'Meet me', 'More'], who: 'About me', prod: 'Services', svoi: 'Svoi ludi', privacy: 'Privacy policy',
+      svoiBadge: 'My project “Svoi ludi” — a directory and community in Switzerland',
       share: 'Share the app with friends', reload: 'Reload page', langs: 'Language', close: 'Close',
       shareText: 'Iryna Voznesenskaya — a coach for people who have moved abroad. Tests, “Your path in a new country” and working with her. You can install it as an app on your phone.',
       title: 'Iryna’s website — as an app on your phone', lead: 'An icon on your home screen, the site opens full screen with tabs at the bottom. No App Store, no sign-up.',
@@ -125,7 +130,15 @@
     '.pa-lbtns button{min-height:48px;padding:10px 12px;border-radius:12px;border:1.5px solid var(--brown,#6E4F3C);background:color-mix(in srgb,var(--brown,#6E4F3C) 9%,var(--paper,#FFFCF8));color:var(--ink,#2F2924);font:700 1rem/1.2 Manrope,system-ui,sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent}',
     '.pa-lbtns button:active{transform:scale(.98)}',
     '@media (max-width:1100px){html.pa-app .pa-lang{bottom:calc(84px + env(safe-area-inset-bottom))}}',
-    '@media print{.pa-tabs,.pa-card,.pa-back,.pa-foot,.pa-ibtn{display:none!important}}'
+    /* значок «Мой проект «Свои люди»» в подвале каждой страницы (11.10.2026): как значки svoiludi.ch/badge/, светлый или тёмный по теме сайта */
+    '.vz-svoi{flex:1 0 100%;margin:4px 0 0}.copy .vz-svoi{margin:14px 0 0}',
+    '@media (max-width:760px){footer:not(.copy) .vz-svoi{margin-bottom:52px}}',   /* на телефоне не под кнопками языка внизу справа */
+    '.vz-svoi a{display:inline-block;line-height:0;border-radius:12px;-webkit-tap-highlight-color:transparent}',
+    '.vz-svoi a:focus-visible{outline:2px solid var(--brown,#6E4F3C);outline-offset:3px}',
+    '.vz-svoi img{width:220px;max-width:100%;height:auto;border:0}.vz-svoi .dk{display:none}',
+    '@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .vz-svoi .lt{display:none}:root:not([data-theme="light"]) .vz-svoi .dk{display:inline}}',
+    ':root[data-theme="dark"] .vz-svoi .lt{display:none}:root[data-theme="dark"] .vz-svoi .dk{display:inline}',
+    '@media print{.pa-tabs,.pa-card,.pa-back,.pa-foot,.pa-ibtn,.vz-svoi{display:none!important}}'
   ].join('\n');
   document.head.appendChild(css);
 
@@ -224,6 +237,16 @@
     b.addEventListener('click', function () { card(force); });
     var box = document.createElement('div'); box.appendChild(b); f.insertBefore(box, f.firstChild);
   }
+  /* значок «Мой проект «Свои люди»» (11.10.2026, просьба Ирины): в подвале каждой страницы — у страниц сайта это <footer>, у тестов, условий,
+     политики и выходных данных — .copy. Ведёт на главную svoiludi.ch (на украинских страницах — на /uk/). Картинки собирает _i18n/svoi_badge.js. */
+  function svoiBadge() {
+    if (document.querySelector('.vz-svoi')) return;
+    var f = document.querySelector('footer') || document.querySelector('.wrap .copy'); if (!f) return;
+    var l = lang(), t = D[l].svoiBadge, href = 'https://svoiludi.ch/' + (l === 'uk' ? 'uk/' : '');
+    var img = function (th) { return '<img class="' + (th === 'light' ? 'lt' : 'dk') + '" src="/assets/svoi/avtor-' + l + '-' + th + '.png" width="220" height="63" alt="' + t + '" loading="lazy">'; };
+    var box = el('<div class="vz-svoi"><a href="' + href + '" target="_blank" rel="noopener" title="' + t + '">' + img('light') + img('dark') + '</a></div>');
+    f.appendChild(box);
+  }
   /* кнопка «Установить приложение на телефон» под верхним меню (10.10.2026, как на svoiludi.ch): Android и компьютер с Chrome — окно установки,
      iPhone и iPad — подсказка с шагами, Instagram и Telegram — «открой в браузере». В приложении кнопки нет. */
   function installBtn() {
@@ -283,6 +306,7 @@
 
   function start() {
     manifest();
+    svoiBadge();
     if (STANDALONE) { tabBar(); langAsk(); return; }
     if (deferred) installBtn();
     if (!(TOUCH || force)) { langAsk(); return; }
