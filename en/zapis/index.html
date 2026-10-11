@@ -11,7 +11,11 @@
 <meta property="og:title" content="Book a session: choose the day and time"><meta property="og:description" content="A free 30-minute introductory meeting, online via Zoom. Only free times are shown, in your time zone. I confirm every booking by e-mail.">
 <meta property="og:url" content="https://voznesenskaya.ch/en/zapis/"><meta property="og:image" content="https://voznesenskaya.ch/zapis/og-image.en.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="robots" content="index,follow">
+<meta name="robots" content="noindex,nofollow">
+<!-- Запись выложена скрытой (решение Ирины 11.10.2026, 14:21: «календарь публикуй, но скрой»): без ?preview=1 в адресе видна только заметка #sSoon.
+     Ссылки из писем (?z=…&k=…) и пример (?demo=1) работают всегда. Открыть: убрать этот скрипт и стиль, robots — index,follow (документ проекта «zapis-kalendar.md»). -->
+<script>if(!/preview|demo/.test(location.search+location.hash)&&!/[?&]z=/.test(location.search))document.documentElement.classList.add('zhide');</script>
+<style>html.zhide #sIntro,html.zhide #sForm,html.zhide #sDone,html.zhide #sManage,html.zhide #sAlt{display:none!important}html:not(.zhide) #sSoon{display:none!important}</style>
 <link rel="stylesheet" href="/assets/fonts.css">
 <style>
 /* Цвета и шрифты — система voznesenskaya.ch (коучинг, бежевый); цвета восьми ступеней — палитра тестов. */
@@ -244,6 +248,19 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 
   <div class="demo-band" id="demoBand" hidden>Sample page: the free times are made up, requests are not sent anywhere.</div>
 
+  <!-- 0. Пока запись скрыта -->
+  <section class="stack" id="sSoon" style="gap:22px">
+    <div class="greet"><span class="av" data-avatar></span><div><b>Hello! I’m Iryna Voznesenskaya</b><p class="note">ICF coach, I work online in Russian. <a href="/en/#who">More about me →</a></p></div></div>
+    <div class="stack" style="gap:10px">
+      <div class="eyebrow">Coaching · online booking</div>
+      <h1>Book a session</h1>
+    </div>
+    <div class="soft">
+      <p><b>Online booking will be available here soon.</b> I am still finishing it. Until then, we arrange everything by message: write me the word <span class="codeword">ВСТРЕЧА</span> in Telegram. We will get to know each other, choose a time that suits you, and I will confirm it by e-mail.</p>
+      <div class="row"><a class="btn green small" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">Write “ВСТРЕЧА” in Telegram</a><a class="btn ghost small" href="/usloviya/#lang=en">Terms of working with me</a></div>
+    </div>
+  </section>
+
   <!-- 1. Вступление -->
   <section class="stack" id="sIntro" style="gap:22px">
     <div class="greet"><span class="av" data-avatar></span><div><b>Hello! I’m Iryna Voznesenskaya</b><p class="note">ICF coach, I work online in Russian. <a href="/en/#who">More about me →</a></p></div></div>
@@ -256,7 +273,7 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
     <div class="blk">
       <h2>How it works</h2>
       <ol class="steps">
-        <li><b>Choose your session</b>Introductory meeting, mentoring session, 3-hour session, a package of sessions or a session of your programme. For a package, you can choose the times for all sessions at once.</li>
+        <li><b>Choose your session</b>Introductory meeting, personal session, mentoring session, 3-hour session, a package of sessions or a session of your programme. For a package, you can choose the times for all sessions at once.</li>
         <li><b>Choose a day and time</b>You only see free times. You can book no earlier than 3 days and no more than 60 days ahead, and package sessions throughout the package period.</li>
         <li><b>Enter your name and e-mail</b>The confirmation, the Zoom link and a reminder the day before the session will go there.</li>
         <li><b>For a paid session, sign the agreement</b>While you sign the agreement online, the time is held for you for 24 hours. It takes a few minutes.</li>
@@ -375,7 +392,7 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
   <!-- 4. Моя запись (по ссылке из письма) -->
   <section class="stack" id="sManage" hidden></section>
 
-  <div class="soft">
+  <div class="soft" id="sAlt">
     <p><b>Prefer to write?</b> Write the word <span class="codeword">ВСТРЕЧА</span> to me on Telegram and we will agree on the time by message. How sessions, payment, rescheduling and cancelling work is in the <a href="/usloviya/#lang=en">terms of work</a>. What data we keep and why is in the <a href="/privacy/#lang=en">privacy policy</a>.</p>
     <div class="row"><a class="btn green small" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">Write “ВСТРЕЧА” on Telegram</a></div>
   </div>

@@ -11,7 +11,11 @@
 <meta property="og:title" content="Запись на встречу: выбери день и время"><meta property="og:description" content="Знакомство 30 минут бесплатно, онлайн в Zoom. Видно только свободное время, по твоему часовому поясу. Я подтверждаю каждую запись письмом.">
 <meta property="og:url" content="https://voznesenskaya.ch/zapis/"><meta property="og:image" content="https://voznesenskaya.ch/zapis/og-image.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="robots" content="index,follow">
+<meta name="robots" content="noindex,nofollow">
+<!-- Запись выложена скрытой (решение Ирины 11.10.2026, 14:21: «календарь публикуй, но скрой»): без ?preview=1 в адресе видна только заметка #sSoon.
+     Ссылки из писем (?z=…&k=…) и пример (?demo=1) работают всегда. Открыть: убрать этот скрипт и стиль, robots — index,follow (документ проекта «zapis-kalendar.md»). -->
+<script>if(!/preview|demo/.test(location.search+location.hash)&&!/[?&]z=/.test(location.search))document.documentElement.classList.add('zhide');</script>
+<style>html.zhide #sIntro,html.zhide #sForm,html.zhide #sDone,html.zhide #sManage,html.zhide #sAlt{display:none!important}html:not(.zhide) #sSoon{display:none!important}</style>
 <link rel="stylesheet" href="../assets/fonts.css">
 <style>
 /* Цвета и шрифты — система voznesenskaya.ch (коучинг, бежевый); цвета восьми ступеней — палитра тестов. */
@@ -244,6 +248,19 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 
   <div class="demo-band" id="demoBand" hidden>Пример страницы: свободное время придумано, запросы никуда не отправляются.</div>
 
+  <!-- 0. Пока запись скрыта -->
+  <section class="stack" id="sSoon" style="gap:22px">
+    <div class="greet"><span class="av" data-avatar></span><div><b>Здравствуй! Я Ирина Вознесенская</b><p class="note">Коуч ICF, работаю онлайн на русском. <a href="../#who">Подробнее обо мне →</a></p></div></div>
+    <div class="stack" style="gap:10px">
+      <div class="eyebrow">Коучинг · запись онлайн</div>
+      <h1>Запись на встречу</h1>
+    </div>
+    <div class="soft">
+      <p><b>Запись онлайн скоро появится здесь.</b> Сейчас я её дорабатываю. Пока мы договариваемся в переписке: напиши мне в Telegram слово <span class="codeword">ВСТРЕЧА</span>. Мы познакомимся, выберем удобное время, и я подтвержу его письмом.</p>
+      <div class="row"><a class="btn green small" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">Написать «ВСТРЕЧА» в Telegram</a><a class="btn ghost small" href="../usloviya/">Условия работы со мной</a></div>
+    </div>
+  </section>
+
   <!-- 1. Вступление -->
   <section class="stack" id="sIntro" style="gap:22px">
     <div class="greet"><span class="av" data-avatar></span><div><b>Здравствуй! Я Ирина Вознесенская</b><p class="note">Коуч ICF, работаю онлайн на русском. <a href="../#who">Подробнее обо мне →</a></p></div></div>
@@ -256,7 +273,7 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
     <div class="blk">
       <h2>Как это устроено</h2>
       <ol class="steps">
-        <li><b>Выбери встречу</b>Знакомство, менторская встреча, разбор на 3 часа, пакет встреч или встреча твоей программы. Для пакета можно сразу выбрать время всех встреч.</li>
+        <li><b>Выбери встречу</b>Знакомство, личная сессия, менторская встреча, разбор на 3 часа, пакет встреч или встреча твоей программы. Для пакета можно сразу выбрать время всех встреч.</li>
         <li><b>Выбери день и время</b>Видно только свободное время. Записаться можно не раньше чем за 3 дня и не дальше чем на 60 дней вперёд, а встречи пакета — в течение всего его срока.</li>
         <li><b>Впиши имя и e-mail</b>Туда придут подтверждение, ссылка на Zoom и напоминание за день до встречи.</li>
         <li><b>Для платной встречи подпиши договор</b>Пока ты подписываешь договор онлайн, время 24 часа держится за тобой. Это займёт несколько минут.</li>
@@ -375,7 +392,7 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
   <!-- 4. Моя запись (по ссылке из письма) -->
   <section class="stack" id="sManage" hidden></section>
 
-  <div class="soft">
+  <div class="soft" id="sAlt">
     <p><b>Удобнее написать?</b> Напиши мне в Telegram слово <span class="codeword">ВСТРЕЧА</span>, и мы договоримся о времени в переписке. Как проходят встречи, оплата, перенос и отмена — в <a href="../usloviya/">условиях работы</a>. Какие данные мы храним и зачем — в <a href="../privacy/">политике конфиденциальности</a>.</p>
     <div class="row"><a class="btn green small" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">Написать «ВСТРЕЧА» в Telegram</a></div>
   </div>

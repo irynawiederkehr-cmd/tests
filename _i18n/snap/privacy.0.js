@@ -19,5 +19,5 @@ const LEGAL = {
     de: 'Alonira.ch AG\nPoststrasse 6\n6302 Zug, Schweiz',
     en: 'Alonira.ch AG\nPoststrasse 6\n6302 Zug, Switzerland'
   },
-  email: 'voznesenskaya.iryna@gmail.com', since: '11.10.2026'
+  email: 'voznesenskaya.iryna@gmail.com', since: '10.10.2026'
 };
