@@ -65,7 +65,7 @@ def switcher(cur, path):
 def redirect_js(path):
     """на русской странице: если человек раньше выбрал другой язык, открыть его версию"""
     return ("<script>(function(){try{var l=localStorage.getItem('" + KEY + "');if(l&&l!=='ru'&&['uk','de','en'].indexOf(l)>=0&&!/[?&]lang=ru/.test(location.search))"
-            "location.replace('/'+l+'" + path + "'+location.hash);}catch(e){}})();</script>")
+            "location.replace('/'+l+'" + path + "'+location.search+location.hash);}catch(e){}})();</script>")   # 11.10.2026: с ?параметрами (ссылки записи ?z=&k=, договора ?p=, ?preview=1)
 def alternates(path):
     s = f'<link rel="alternate" hreflang="ru" href="https://voznesenskaya.ch{path}">'
     for l in LANGS: s += f'<link rel="alternate" hreflang="{l}" href="https://voznesenskaya.ch/{l}{path}">'
