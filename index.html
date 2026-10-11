@@ -732,6 +732,13 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
 @media (max-width:600px){.sp-head{flex-direction:column;gap:12px}.sp-bowl{width:100%;max-width:340px}.sp-panel{padding:16px 14px}.sp-head h3{font-size:1.5rem}}
 .pv-after{margin-top:34px}
 .pb-note{font-size:.8rem;font-weight:700;color:var(--brown);line-height:1.35}
+/* длинные списки: «Показать ещё N» */
+.slrow > .cut,.pgrid > .cut{display:none!important}
+.more-btn{display:inline-flex;align-items:center;gap:8px;margin-top:10px;font:700 .86rem/1 var(--body);color:var(--brown);background:var(--paper);border:1.5px solid color-mix(in srgb,var(--brown) 35%,var(--line));border-radius:12px;padding:10px 14px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.more-btn:hover{border-color:var(--brown)}
+.more-btn svg{transition:transform .2s}
+.more-btn[aria-expanded="true"] svg{transform:rotate(180deg)}
+.more-btn[hidden]{display:none}
 /* «По шагам»: уровни внутри шага */
 .lvrow{margin-top:12px}
 .lvrow-h{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:.82rem;color:var(--muted)}
@@ -1616,13 +1623,30 @@ function pathInit(){
     <div class="pv-subs themes">${subsHtml}</div>`;
 
   const spPanel = document.getElementById('spPanel');
+  /* длинные списки сворачиваются (правило Ирины 11.10.2026: «избегай длинных списков, сворачивай их красиво»):
+     видно несколько первых, остальное — под кнопкой «Показать ещё N»; если спрятать пришлось бы меньше трёх, показываем всё */
+  const MQ = window.matchMedia ? matchMedia('(max-width: 700px)') : { matches: false };
+  const CHEV = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  function clamp(scope){
+    scope.querySelectorAll('.slrow, .pgrid').forEach(list => {
+      let btn = list.nextElementSibling && list.nextElementSibling.classList.contains('more-btn') ? list.nextElementSibling : null;
+      if (!btn){ btn = document.createElement('button'); btn.type = 'button'; btn.className = 'more-btn'; list.after(btn); }
+      const items = [...list.children], lim = list.classList.contains('slrow') ? (MQ.matches ? 5 : 9) : (MQ.matches ? 3 : 4);
+      const hide = items.length - lim, open = list.classList.contains('open');
+      items.forEach((el, i) => el.classList.toggle('cut', !open && hide >= 3 && i >= lim));
+      btn.hidden = hide < 3;
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.innerHTML = (open ? 'Свернуть' : `Показать ещё ${hide}`) + CHEV;
+    });
+  }
   const store = (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} };
   const load = k => { try { return localStorage.getItem(k); } catch (e) { return null; } };
   function setView(v, save){ box.dataset.view = v; box.querySelectorAll('.pv-sw [data-v]').forEach(b => b.setAttribute('aria-pressed', b.dataset.v === v ? 'true' : 'false')); if (save) store('vzPathView', v); }
   function selStep(s, save){ s = Math.min(8, Math.max(1, +s || 1)); box.querySelectorAll('.sp').forEach(b => b.setAttribute('aria-selected', +b.dataset.s === s ? 'true' : 'false'));
-    spPanel.setAttribute('style', `--lc:${STEPC[s - 1][0]};--lf:${STEPC[s - 1][1]}`); spPanel.innerHTML = panel(s); if (save) store('vzPathStep', s); }
+    spPanel.setAttribute('style', `--lc:${STEPC[s - 1][0]};--lf:${STEPC[s - 1][1]}`); spPanel.innerHTML = panel(s); clamp(spPanel); if (save) store('vzPathStep', s); }
   function setF(l){ if (l) box.dataset.f = l; else delete box.dataset.f; box.querySelectorAll('.lvk').forEach(b => b.setAttribute('aria-pressed', b.dataset.k === l ? 'true' : 'false')); }
   setView(load('vzPathView') === 'subs' ? 'subs' : 'steps'); selStep(load('vzPathStep') || 1);
+  clamp(box); if (MQ.addEventListener) MQ.addEventListener('change', () => clamp(box));
 
   const pm = document.getElementById('pdlg'), pc = document.getElementById('pdlgCard');
   const show = () => { if (!pm.open){ if (typeof pm.showModal === 'function') { try { pm.showModal(); } catch(e){ pm.setAttribute('open',''); } } else pm.setAttribute('open',''); } pc.scrollTop = 0; };
@@ -1684,6 +1708,7 @@ function pathInit(){
   }
   function goStep(s){ setView('steps', true); selStep(s, true); const sec = document.getElementById('path'); if (sec) sec.scrollIntoView(); }
   box.addEventListener('click', e => {
+    const mb = e.target.closest('.more-btn'); if (mb){ const list = mb.previousElementSibling, was = list.classList.toggle('open'); clamp(list.parentElement); if (!was){ const r = list.getBoundingClientRect(); if (r.top < 0) list.scrollIntoView({ block: 'start' }); } return; }
     const v = e.target.closest('.pv-sw [data-v]'); if (v){ setView(v.dataset.v, true); return; }
     const k = e.target.closest('.lvk'); if (k){ setF(box.dataset.f === k.dataset.k ? '' : k.dataset.k); return; }
     const sp = e.target.closest('.sp'); if (sp){ selStep(sp.dataset.s, true); return; }
