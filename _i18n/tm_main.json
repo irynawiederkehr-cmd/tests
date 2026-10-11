@@ -2117,7 +2117,10 @@
   "Выбранные встречи": "Вибрані зустрічі",
   "Я подтверждаю время письмом, обычно в течение двух дней. До моего ответа время держится за тобой.": "Я підтверджую час листом, зазвичай протягом двох днів. До моєї відповіді час тримається за тобою.",
   "✓ подтверждена": "✓ підтверджено",
-  "отменена бесплатно": "скасовано безкоштовно"
+  "отменена бесплатно": "скасовано безкоштовно",
+  "Личная сессия — 60 минут, 150 CHF": "Особиста сесія — 60 хвилин, 150 CHF",
+  "1 встреча · 60 минут · онлайн": "1 зустріч · 60 хвилин · онлайн",
+  "<span class=\"tc-body\"><span class=\"tc-top\"><b>Личная сессия</b><span class=\"tag gold\">150 CHF</span></span><span class=\"tc-meta\">60 минут · онлайн</span><span class=\"tc-note\">Одна встреча для одного вопроса: личная коуч-сессия по тому, что важно тебе сейчас. Нужен договор, оплата до встречи. Три встречи сразу — в карточке «Пакет встреч».</span></span>": "<span class=\"tc-body\"><span class=\"tc-top\"><b>Особиста сесія</b><span class=\"tag gold\">150 CHF</span></span><span class=\"tc-meta\">60 хвилин · онлайн</span><span class=\"tc-note\">Одна зустріч для одного питання: особиста коуч-сесія про те, що важливо тобі зараз. Потрібен договір, оплата до зустрічі. Три зустрічі одразу — у картці «Пакет зустрічей».</span></span>"
  },
  "de": {
   "Ирина Вознесенская · коучинг": "Iryna Voznesenskaya · Coaching",
@@ -4237,7 +4240,10 @@
   "Выбранные встречи": "Gewählte Termine",
   "Я подтверждаю время письмом, обычно в течение двух дней. До моего ответа время держится за тобой.": "Ich bestätige die Zeit per E-Mail, in der Regel innerhalb von zwei Tagen. Bis zu meiner Antwort ist sie für dich reserviert.",
   "✓ подтверждена": "✓ bestätigt",
-  "отменена бесплатно": "kostenlos abgesagt"
+  "отменена бесплатно": "kostenlos abgesagt",
+  "Личная сессия — 60 минут, 150 CHF": "Persönliche Sitzung — 60 Minuten, 150 CHF",
+  "1 встреча · 60 минут · онлайн": "1 Treffen · 60 Minuten · online",
+  "<span class=\"tc-body\"><span class=\"tc-top\"><b>Личная сессия</b><span class=\"tag gold\">150 CHF</span></span><span class=\"tc-meta\">60 минут · онлайн</span><span class=\"tc-note\">Одна встреча для одного вопроса: личная коуч-сессия по тому, что важно тебе сейчас. Нужен договор, оплата до встречи. Три встречи сразу — в карточке «Пакет встреч».</span></span>": "<span class=\"tc-body\"><span class=\"tc-top\"><b>Persönliche Sitzung</b><span class=\"tag gold\">150 CHF</span></span><span class=\"tc-meta\">60 Minuten · online</span><span class=\"tc-note\">Ein Termin für eine Frage: eine persönliche Coaching-Sitzung zu dem, was dir jetzt wichtig ist. Mit Vertrag, Zahlung vor dem Termin. Drei Termine auf einmal findest du unter «Paket mit mehreren Terminen».</span></span>"
  },
  "en": {
   "Ирина Вознесенская · коучинг": "Iryna Voznesenskaya · coaching",
@@ -6357,6 +6363,9 @@
   "Выбранные встречи": "Chosen sessions",
   "Я подтверждаю время письмом, обычно в течение двух дней. До моего ответа время держится за тобой.": "I confirm the time by e-mail, usually within two days. Until I reply, the time is held for you.",
   "✓ подтверждена": "✓ confirmed",
-  "отменена бесплатно": "cancelled free of charge"
+  "отменена бесплатно": "cancelled free of charge",
+  "Личная сессия — 60 минут, 150 CHF": "Personal session — 60 minutes, 150 CHF",
+  "1 встреча · 60 минут · онлайн": "1 session · 60 minutes · online",
+  "<span class=\"tc-body\"><span class=\"tc-top\"><b>Личная сессия</b><span class=\"tag gold\">150 CHF</span></span><span class=\"tc-meta\">60 минут · онлайн</span><span class=\"tc-note\">Одна встреча для одного вопроса: личная коуч-сессия по тому, что важно тебе сейчас. Нужен договор, оплата до встречи. Три встречи сразу — в карточке «Пакет встреч».</span></span>": "<span class=\"tc-body\"><span class=\"tc-top\"><b>Personal session</b><span class=\"tag gold\">150 CHF</span></span><span class=\"tc-meta\">60 minutes · online</span><span class=\"tc-note\">One session for one question: a personal coaching session about what matters to you right now. Needs an agreement, payment before the session. Three sessions at once are under “Package of sessions”.</span></span>"
  }
 }

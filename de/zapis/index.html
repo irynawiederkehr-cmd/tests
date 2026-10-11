@@ -271,6 +271,7 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
       <h2>1. Welchen Termin brauchst du</h2>
       <div class="types" role="radiogroup" aria-label="Termin">
         <label class="tcard" data-t="intro"><input type="radio" name="t" value="intro"><span class="tc-body"><span class="tc-top"><b>Kennenlernen</b><span class="tag free">★ Kostenlos</span></span><span class="tc-meta">30 Minuten · online</span><span class="tc-note">Wir lernen uns kennen, ich stelle dir ein paar Fragen und sage dir ehrlich, ob ich helfen kann. Unverbindlich.</span></span></label>
+        <label class="tcard" data-t="sess"><input type="radio" name="t" value="sess"><span class="tc-body"><span class="tc-top"><b>Persönliche Sitzung</b><span class="tag gold">150 CHF</span></span><span class="tc-meta">60 Minuten · online</span><span class="tc-note">Ein Termin für eine Frage: eine persönliche Coaching-Sitzung zu dem, was dir jetzt wichtig ist. Mit Vertrag, Zahlung vor dem Termin. Drei Termine auf einmal findest du unter «Paket mit mehreren Terminen».</span></span></label>
         <label class="tcard" data-t="mentor"><input type="radio" name="t" value="mentor"><span class="tc-body"><span class="tc-top"><b>Mentoring-Gespräch</b><span class="tag gold">150 CHF</span></span><span class="tc-meta">1 Stunde · online</span><span class="tc-note">Die fragen, die diesen Weg schon gegangen ist. Mit Vertrag, Zahlung vor dem Termin.</span><span class="soon" data-soon>in Arbeit</span></span></label>
         <label class="tcard" data-t="razbor"><input type="radio" name="t" value="razbor"><span class="tc-body"><span class="tc-top"><b>Auswertung über 3 Stunden</b><span class="tag gold">249 CHF</span></span><span class="tc-meta">3 Stunden · online</span><span class="tc-note">«Momentaufnahme meines Lebens», «Mein Fundament» oder «Ein Leben ohne Bedauern». Mit Vertrag, Zahlung vor dem Termin.</span></span></label>
         <label class="tcard" data-t="pk"><input type="radio" name="t" value="pk"><span class="tc-body"><span class="tc-top"><b>Paket mit mehreren Terminen</b><span class="tag gold">ab 360 CHF</span></span><span class="tc-meta">mehrere Termine à 60 Minuten · online</span><span class="tc-note">Persönliche Sitzung als Paket mit 3 Terminen, «Mein Ziel — mein Weg» oder Begleitung. Die Zeiten kannst du gleich für alle Termine wählen. Mit Vertrag, Zahlung vor dem ersten Termin.</span></span></label>
@@ -399,7 +400,7 @@ const ENDPOINT = 'https://script.google.com/macros/s/AKfycbxbvsmtd5qMpxVN9pHyGAC
    Пока false — без ?preview=1 на странице только знакомство. */
 const PAID_OPEN = false;
 /* Готово ли — как ready у программ на главной (index.html). Неготовое — «в разработке» и заявка словом ЗАЯВКА. */
-const READY = { intro: true, mentor: false, razbor: true, prog: true, snimok: false, fund: true, life: false, pk: true, pk3: true, flag: false, support: false };
+const READY = { intro: true, sess: true, mentor: false, razbor: true, prog: true, snimok: false, fund: true, life: false, pk: true, pk3: true, flag: false, support: false };
 const LANG = (document.documentElement.lang || 'ru').slice(0, 2);
 const LOC = ({ ru: 'ru-RU', uk: 'uk-UA', de: 'de-CH', en: 'en-GB' })[LANG] || 'ru-RU';
 const Q = new URLSearchParams(location.search);
@@ -412,9 +413,11 @@ document.querySelectorAll('[data-avatar]').forEach(x => x.innerHTML = AV);
 
 const T = {
   intro: { dur: 30, paid: false, name: 'Kennenlernen', price: 'kostenlos' },
+  /* «Личная сессия» одной встречей (11.10.2026): клиентке 60 минут, в календаре Ирины 90 и перерыв 15 */
+  sess: { dur: 60, res: 30, buf: 15, paid: true, name: 'Persönliche Sitzung', price: '150 CHF' },
   mentor: { dur: 60, paid: true, name: 'Mentoring-Gespräch', price: '150 CHF' },
   razbor: { dur: 180, paid: true, name: 'Auswertung über 3 Stunden', price: '249 CHF' },
-  prog: { dur: 60, paid: false, name: 'Termin in meinem Programm', price: 'laut Vertrag' },
+  prog: { dur: 60, res: 30, buf: 15, paid: false, name: 'Termin in meinem Programm', price: 'laut Vertrag' },
   /* пакеты (11.10.2026): встреча 60 минут; в календаре Ирины 90 (res — запас) и перерыв 15; n — встреч, term — срок в днях от первой встречи */
   pk3: { dur: 60, res: 30, buf: 15, paid: true, n: 3, term: 61, name: 'Persönliche Sitzung: Paket mit 3 Terminen', price: '360 CHF', termTxt: 'innerhalb von 2 Monaten' },
   flag: { dur: 60, res: 30, buf: 15, paid: true, n: 10, term: 153, name: '«Mein Ziel — mein Weg»: 10 Termine', price: 'laut Vertrag', termTxt: 'innerhalb von 5 Monaten' },
@@ -519,7 +522,7 @@ function demoPost(d){
     left: d.add ? Math.max(0, S.add.left - d.starts.length) : T[t].n - d.starts.length, items: d.starts.map((s, i) => ({ no: 'ZP-20261011-DEM' + (i + 1), s, e: s + T[t].dur * 6e4, pn: (i + 1) + '/' + T[t].n })),
     manage: location.pathname + '?demo=1&z=ZP-20261011-PAKET&k=demo', contract: paid ? '../dogovor/?preview=1&p=' + t : '' }), 500));
   return new Promise(res => setTimeout(() => res({ ok: true, no: 'ZP-20261011-DEMO', st: paid ? 'ждёт договор' : 'ждёт подтверждения', s: d.start, e: d.start + T[t].dur * 6e4,
-    manage: location.pathname + '?demo=1&z=ZP-20261011-DEMO&k=demo', contract: paid ? '../dogovor/?preview=1&p=' + (t === 'mentor' ? 'mentor' : d.prog) : '' }), 500));
+    manage: location.pathname + '?demo=1&z=ZP-20261011-DEMO&k=demo', contract: paid ? '../dogovor/?preview=1&p=' + (t === 'mentor' || t === 'sess' ? t : d.prog) : '' }), 500));
 }
 
 /* ---------- 1. встреча ---------- */

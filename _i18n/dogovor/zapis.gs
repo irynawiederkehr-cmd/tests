@@ -18,6 +18,7 @@
    6) Пакеты (11.10.2026): «Личная сессия» 3 встречи, «Моя цель — мой путь» 10, «Сопровождение» 2. Клиентка выбирает время сразу для всех
       встреч или только для первой; остальные — позже по своей ссылке (kind 'zapis' + add). Все встречи пакета — одна группа (колонки «Пакет»
       и «В пакете»), один договор, одно подтверждение Ирины и одно письмо. Клиентке встреча 60 минут, в календаре Ирины 90 (запас 30) + перерыв 15.
+   7) «Личная сессия» одной встречей (sess, 150 CHF, по договору) и «Встреча моей программы» — тоже 60 минут клиентке, 90 в календаре (11.10.2026).
 
    Ставится один раз: функция zapisUstanovka (из редактора, «Выполнить»), до этого в «Службы» добавить Google Calendar API.
    Свойства скрипта: ZOOM_URL — постоянная ссылка Zoom Ирины; CONTRACT_PREVIEW = 1, пока договор скрыт (ссылка на договор с ?preview=1). */
@@ -28,8 +29,10 @@ var ZW = { from: 9 * 60, to: 18 * 60, step: 30, lead: 3, max: 60 };   // буд�
 var ZT = {
   intro: { dur: 30, buf: 15, paid: false },
   mentor: { dur: 60, buf: 15, paid: true },
+  /* «Личная сессия» одной встречей (решение Ирины 11.10.2026: своя карточка, 150 CHF): клиентке 60 минут, в календаре 90 + перерыв 15 */
+  sess: { dur: 60, res: 30, buf: 15, paid: true },
   razbor: { dur: 180, buf: 30, paid: true },
-  prog: { dur: 60, buf: 15, paid: false, kv: true },
+  prog: { dur: 60, res: 30, buf: 15, paid: false, kv: true },   // 11.10.2026: как у пакетов — клиентке 60 минут, в календаре 90
   /* пакеты (решение Ирины 11.10.2026): клиентке — 60 минут, в календаре Ирины 90 (res — 30 минут запаса), плюс перерыв 15;
      pk — сколько встреч, term — срок пакета в днях от первой встречи (3 встречи — 2 месяца, 10 — 5 месяцев, «Сопровождение» — месяц) */
   pk3: { dur: 60, res: 30, buf: 15, paid: true, pk: 3, term: 61 },
@@ -83,8 +86,8 @@ var ZM = {
     your: 'по твоему времени', zur: 'по Цюриху',
     days: ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'],
     months: ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'],
-    types: { intro: 'Знакомство, 30 минут, бесплатно', mentor: 'Менторская встреча, 1 час, 150 CHF', razbor: '{p}, разбор 3 часа, 249 CHF', prog: 'Встреча программы, 1 час', pk3: 'Личная сессия {n}, 60 минут', flag: '«Моя цель — мой путь», встреча {n}, 60 минут', support: 'Сопровождение, встреча {n}, 60 минут' },
-    tshort: { intro: 'Знакомство', mentor: 'Менторская встреча', razbor: '{p}', prog: 'Встреча программы', pk3: 'Личная сессия {n}', flag: '«Моя цель — мой путь» · {n}', support: 'Сопровождение · {n}' },
+    types: { intro: 'Знакомство, 30 минут, бесплатно', mentor: 'Менторская встреча, 1 час, 150 CHF', sess: 'Личная сессия, 60 минут, 150 CHF', razbor: '{p}, разбор 3 часа, 249 CHF', prog: 'Встреча программы, 1 час', pk3: 'Личная сессия {n}, 60 минут', flag: '«Моя цель — мой путь», встреча {n}, 60 минут', support: 'Сопровождение, встреча {n}, 60 минут' },
+    tshort: { intro: 'Знакомство', mentor: 'Менторская встреча', sess: 'Личная сессия', razbor: '{p}', prog: 'Встреча программы', pk3: 'Личная сессия {n}', flag: '«Моя цель — мой путь» · {n}', support: 'Сопровождение · {n}' },
     progs: { snimok: '«Снимок жизни»', fund: '«Мой фундамент»', life: '«Жизнь без сожалений»' },
     pkName: { pk3: 'Личная сессия: пакет из 3 встреч по 60 минут, 360 CHF', flag: '«Моя цель — мой путь»: 10 встреч по 60 минут', support: 'Сопровождение: 2 встречи по 60 минут' },
     of: 'из', nth: 'встреча {n}', whensL: 'Время встреч:\n{when}',
@@ -139,8 +142,8 @@ var ZM = {
     your: 'за твоїм часом', zur: 'за цюрихським часом',
     days: ['понеділок', 'вівторок', 'середа', 'четвер', 'п’ятниця', 'субота', 'неділя'],
     months: ['січня', 'лютого', 'березня', 'квітня', 'травня', 'червня', 'липня', 'серпня', 'вересня', 'жовтня', 'листопада', 'грудня'],
-    types: { intro: 'Знайомство, 30 хвилин, безкоштовно', mentor: 'Менторська зустріч, 1 година, 150 CHF', razbor: '{p}, розбір 3 години, 249 CHF', prog: 'Зустріч програми, 1 година', pk3: 'Особиста сесія {n}, 60 хвилин', flag: '«Моя мета — мій шлях», зустріч {n}, 60 хвилин', support: 'Супровід, зустріч {n}, 60 хвилин' },
-    tshort: { intro: 'Знайомство', mentor: 'Менторська зустріч', razbor: '{p}', prog: 'Зустріч програми', pk3: 'Особиста сесія {n}', flag: '«Моя мета — мій шлях» · {n}', support: 'Супровід · {n}' },
+    types: { intro: 'Знайомство, 30 хвилин, безкоштовно', mentor: 'Менторська зустріч, 1 година, 150 CHF', sess: 'Особиста сесія, 60 хвилин, 150 CHF', razbor: '{p}, розбір 3 години, 249 CHF', prog: 'Зустріч програми, 1 година', pk3: 'Особиста сесія {n}, 60 хвилин', flag: '«Моя мета — мій шлях», зустріч {n}, 60 хвилин', support: 'Супровід, зустріч {n}, 60 хвилин' },
+    tshort: { intro: 'Знайомство', mentor: 'Менторська зустріч', sess: 'Особиста сесія', razbor: '{p}', prog: 'Зустріч програми', pk3: 'Особиста сесія {n}', flag: '«Моя мета — мій шлях» · {n}', support: 'Супровід · {n}' },
     progs: { snimok: '«Знімок життя»', fund: '«Мій фундамент»', life: '«Життя без жалю»' },
     pkName: { pk3: 'Особиста сесія: пакет із 3 зустрічей по 60 хвилин, 360 CHF', flag: '«Моя мета — мій шлях»: 10 зустрічей по 60 хвилин', support: 'Супровід: 2 зустрічі по 60 хвилин' },
     of: 'з', nth: 'зустріч {n}', whensL: 'Час зустрічей:\n{when}',
@@ -195,8 +198,8 @@ var ZM = {
     your: 'deine Zeit', zur: 'Zürcher Zeit',
     days: ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'],
     months: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
-    types: { intro: 'Kennenlernen, 30 Minuten, kostenlos', mentor: 'Mentoring-Gespräch, 1 Stunde, 150 CHF', razbor: '{p}, Auswertung 3 Stunden, 249 CHF', prog: 'Termin im Programm, 1 Stunde', pk3: 'Persönliche Sitzung {n}, 60 Minuten', flag: '«Mein Ziel — mein Weg», Termin {n}, 60 Minuten', support: 'Begleitung, Termin {n}, 60 Minuten' },
-    tshort: { intro: 'Kennenlernen', mentor: 'Mentoring-Gespräch', razbor: '{p}', prog: 'Termin im Programm', pk3: 'Persönliche Sitzung {n}', flag: '«Mein Ziel — mein Weg» · {n}', support: 'Begleitung · {n}' },
+    types: { intro: 'Kennenlernen, 30 Minuten, kostenlos', mentor: 'Mentoring-Gespräch, 1 Stunde, 150 CHF', sess: 'Persönliche Sitzung, 60 Minuten, 150 CHF', razbor: '{p}, Auswertung 3 Stunden, 249 CHF', prog: 'Termin im Programm, 1 Stunde', pk3: 'Persönliche Sitzung {n}, 60 Minuten', flag: '«Mein Ziel — mein Weg», Termin {n}, 60 Minuten', support: 'Begleitung, Termin {n}, 60 Minuten' },
+    tshort: { intro: 'Kennenlernen', mentor: 'Mentoring-Gespräch', sess: 'Persönliche Sitzung', razbor: '{p}', prog: 'Termin im Programm', pk3: 'Persönliche Sitzung {n}', flag: '«Mein Ziel — mein Weg» · {n}', support: 'Begleitung · {n}' },
     progs: { snimok: '«Momentaufnahme meines Lebens»', fund: '«Mein Fundament»', life: '«Ein Leben ohne Bedauern»' },
     pkName: { pk3: 'Persönliche Sitzung: Paket mit 3 Terminen à 60 Minuten, 360 CHF', flag: '«Mein Ziel — mein Weg»: 10 Termine à 60 Minuten', support: 'Begleitung: 2 Termine à 60 Minuten' },
     of: 'von', nth: 'Termin {n}', whensL: 'Termine:\n{when}',
@@ -251,8 +254,8 @@ var ZM = {
     your: 'your time', zur: 'Zurich time',
     days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
     months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-    types: { intro: 'Introductory meeting, 30 minutes, free', mentor: 'Mentoring session, 1 hour, 150 CHF', razbor: '{p}, 3-hour session, 249 CHF', prog: 'Programme session, 1 hour', pk3: 'Personal session {n}, 60 minutes', flag: '“My goal — my path”, session {n}, 60 minutes', support: 'Ongoing support, session {n}, 60 minutes' },
-    tshort: { intro: 'Introductory meeting', mentor: 'Mentoring session', razbor: '{p}', prog: 'Programme session', pk3: 'Personal session {n}', flag: '“My goal — my path” · {n}', support: 'Ongoing support · {n}' },
+    types: { intro: 'Introductory meeting, 30 minutes, free', mentor: 'Mentoring session, 1 hour, 150 CHF', sess: 'Personal session, 60 minutes, 150 CHF', razbor: '{p}, 3-hour session, 249 CHF', prog: 'Programme session, 1 hour', pk3: 'Personal session {n}, 60 minutes', flag: '“My goal — my path”, session {n}, 60 minutes', support: 'Ongoing support, session {n}, 60 minutes' },
+    tshort: { intro: 'Introductory meeting', mentor: 'Mentoring session', sess: 'Personal session', razbor: '{p}', prog: 'Programme session', pk3: 'Personal session {n}', flag: '“My goal — my path” · {n}', support: 'Ongoing support · {n}' },
     progs: { snimok: '“Life snapshot”', fund: '“My foundation”', life: '“A life without regrets”' },
     pkName: { pk3: 'Personal session: package of 3 sessions of 60 minutes, 360 CHF', flag: '“My goal — my path”: 10 sessions of 60 minutes', support: 'Ongoing support: 2 sessions of 60 minutes' },
     of: 'of', nth: 'session {n}', whensL: 'Sessions:\n{when}',
@@ -591,7 +594,7 @@ function zapisGet_(p) {
         items: rows.filter(function (x) { return x.st !== 'перенесена' && (zCounts_(x) || x.st === 'отклонена' || x.st === 'истекла' || x.st === 'отменена'); }).map(item) });
     }
     var r = item(o); r.ok = true; r.lang = o.lang; r.tz = o.tz; r.name = zFirst_(o.name);
-    r.contract = o.st === 'ждёт договор' ? zContractUrl_(o.lang, o.t === 'mentor' ? 'mentor' : o.prog, o.no, o.ck) : '';
+    r.contract = o.st === 'ждёт договор' ? zContractUrl_(o.lang, o.t === 'mentor' || o.t === 'sess' ? o.t : o.prog, o.no, o.ck) : '';
     return json_(r);
   }
   if (p.a === 'zok') return zAdminPage_(p);
@@ -668,7 +671,7 @@ function zCreate_(d) {
   } else {
     t = String(d.t || ''); if (!ZT[t]) return json_({ ok: false, err: 'data' });
     if (t === 'razbor') { prog = String(d.prog || ''); if (!ZPROG[prog]) return json_({ ok: false, err: 'data' }); }
-    if (t === 'mentor') prog = 'mentor';
+    if (t === 'mentor' || t === 'sess') prog = t;
     if (ZT[t].pk) prog = t;
     name = clean_(d.name, 100).trim(); email = String(d.email || '').trim().slice(0, 120); contact = clean_(d.contact, 80); comment = clean_(d.comment, 600);
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) || name.length < 2) return json_({ ok: false, err: 'data' });

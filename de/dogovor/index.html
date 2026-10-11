@@ -261,6 +261,7 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
         <label for="fProg">Programm <button type="button" class="qh" data-h="prog" aria-expanded="false" aria-label="Hinweis">?</button></label>
         <select id="fProg" required>
           <option value="">Wähle ein Programm</option>
+          <option value="sess">Persönliche Sitzung — 60 Minuten, 150 CHF</option>
           <option value="mentor">Mentoring-Gespräch — 1 Stunde, 150 CHF</option>
           <option value="snimok">«Momentaufnahme meines Lebens» — 3 Stunden, 249 CHF</option>
           <option value="fund">«Mein Fundament» — 3 Stunden, 249 CHF</option>
@@ -412,6 +413,7 @@ document.querySelectorAll('[data-avatar]').forEach(x => x.innerHTML = AV);
 
 /* программы: цена и формат как на главной (PR в index.html). Цена null — по письменному предложению Ирины */
 const P = {
+  sess: { n: 'Persönliche Sitzung', f: '1 Treffen · 60 Minuten · online', price: 150 },
   mentor: { n: 'Mentoring-Gespräch', f: '1 Treffen · 1 Stunde · online', price: 150 },
   snimok: { n: '«Momentaufnahme meines Lebens»', f: 'Auswertung anhand des Rads der Lebensbereiche · 3 Stunden · online', price: 249, rep: true },
   fund: { n: '«Mein Fundament»', f: 'Auswertung der Werte im Hinblick auf dein Ziel · 3 Stunden · online', price: 249, rep: true },

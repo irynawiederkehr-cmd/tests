@@ -261,6 +261,7 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
         <label for="fProg">Програма <button type="button" class="qh" data-h="prog" aria-expanded="false" aria-label="Підказка">?</button></label>
         <select id="fProg" required>
           <option value="">Обери програму</option>
+          <option value="sess">Особиста сесія — 60 хвилин, 150 CHF</option>
           <option value="mentor">Менторська зустріч — 1 година, 150 CHF</option>
           <option value="snimok">«Знімок життя» — 3 години, 249 CHF</option>
           <option value="fund">«Мій фундамент» — 3 години, 249 CHF</option>
@@ -412,6 +413,7 @@ document.querySelectorAll('[data-avatar]').forEach(x => x.innerHTML = AV);
 
 /* программы: цена и формат как на главной (PR в index.html). Цена null — по письменному предложению Ирины */
 const P = {
+  sess: { n: 'Особиста сесія', f: '1 зустріч · 60 хвилин · онлайн', price: 150 },
   mentor: { n: 'Менторська зустріч', f: '1 зустріч · 1 година · онлайн', price: 150 },
   snimok: { n: '«Знімок життя»', f: 'розбір за колесом сфер життя · 3 години · онлайн', price: 249, rep: true },
   fund: { n: '«Мій фундамент»', f: 'розбір цінностей у контексті мети · 3 години · онлайн', price: 249, rep: true },
