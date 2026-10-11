@@ -705,69 +705,33 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
 .pv[data-view="steps"] .pv-subs,.pv[data-view="subs"] .pv-steps{display:none}
 .pv[data-f="sl"] [data-lv]:not([data-lv="sl"]),.pv[data-f="sama"] [data-lv]:not([data-lv="sama"]),.pv[data-f="so"] [data-lv]:not([data-lv="so"]){display:none!important}
 .pv.nonew .st-new{display:none!important}
-/* «Где я сейчас» и «На всех ступенях» */
-.pv-where,.pv-thru{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:14px 16px;margin-bottom:18px}
-.pv-thru{margin:18px 0 0}
-.pv-where-h{display:flex;flex-wrap:wrap;gap:2px 12px;align-items:baseline;margin-bottom:10px}
-.pv-where-h b{font-family:var(--display);font-weight:400;font-size:1.35rem}
-.pv-where-h span{font-size:.88rem;color:var(--muted)}
-.pv-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px}
-.pv-pair{font-size:.84rem;color:var(--muted);margin:10px 0 0}
 .lnk{font:inherit;color:var(--brown);background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:2px;cursor:pointer}
-/* выбор ступени: чаша с номером */
-.sp-ask{font-size:.88rem;font-weight:700;color:var(--muted);margin:0 0 8px}
-.sp-pick{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;margin-bottom:14px}
-.sp{display:flex;flex-direction:column;align-items:center;gap:3px;font:inherit;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:10px 4px 9px;cursor:pointer;text-align:center;min-width:0;transition:border-color .15s,background .15s;-webkit-tap-highlight-color:transparent}
+/* выбор ступени: акварельные чаши, как на «Твой путь» */
+.sp-ask{font-size:.92rem;color:var(--muted);margin:0 0 10px}
+.sp-pick{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;margin-bottom:16px}
+.sp{display:flex;flex-direction:column;align-items:center;gap:3px;font:inherit;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:0 4px 10px;cursor:pointer;text-align:center;min-width:0;overflow:hidden;transition:border-color .15s,background .15s,box-shadow .15s;-webkit-tap-highlight-color:transparent}
 .sp:hover{border-color:var(--lc)}
-.sp-ic svg{display:block}
-.sp-n{font:800 .74rem/1 var(--body);color:var(--lc);letter-spacing:.06em}
-.sp-t{font-size:.76rem;line-height:1.2;font-weight:600}
-.sp[aria-selected="true"]{background:var(--lf);border-color:var(--lc);box-shadow:0 6px 16px -12px var(--lc);color:#2F2924}
-@media (max-width:760px){.sp-pick{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.sp{padding:8px 2px}.sp-t{font-size:.68rem}}
-/* панель ступени */
-.sp-panel{background:var(--paper);border:1px solid var(--line);border-top:5px solid var(--lc);border-radius:18px;padding:18px}
-.sp-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:16px}
-.sp-big{flex:none;width:72px;height:72px;border-radius:18px;background:var(--lf);display:grid;place-items:center}
-.sp-big svg{display:block}
-.sp-head h3{font-size:1.7rem;line-height:1.1;margin:2px 0 0}
-.sp-head p{margin:4px 0 0;font-size:.95rem;color:var(--muted);max-width:72ch}
+.sp-img{display:block;width:calc(100% + 8px);margin:0 -4px 4px;aspect-ratio:4/3;overflow:hidden}
+.sp-img picture,.sp-bowl picture{display:block;width:100%;height:100%}
+.sp-img img,.sp-bowl img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 78%;mix-blend-mode:multiply}
+.sp-n{font:800 .66rem/1.1 var(--body);color:var(--lc);letter-spacing:.08em;text-transform:uppercase}
+.sp-t{font-size:.78rem;line-height:1.2;font-weight:600}
+.sp[aria-selected="true"]{background:var(--lf);border-color:var(--lc);box-shadow:0 8px 18px -12px var(--lc);color:#2F2924}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .sp-img img,:root:not([data-theme="light"]) .sp-bowl img{mix-blend-mode:normal;opacity:.92}}
+:root[data-theme="dark"] .sp-img img,:root[data-theme="dark"] .sp-bowl img{mix-blend-mode:normal;opacity:.92}
+@media (max-width:760px){.sp-pick{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.sp{padding-bottom:8px}.sp-t{font-size:.7rem}.sp-n{font-size:.6rem}}
+/* выбранная ступень */
+.sp-panel{background:var(--paper);border:1px solid var(--line);border-top:5px solid var(--lc);border-radius:18px;padding:20px}
+.sp-head{display:flex;gap:20px;align-items:flex-start;margin-bottom:26px}
+.sp-bowl{flex:none;width:190px;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:var(--lf)}
+.sp-head-t{min-width:0}
+.sp-head h3{font-size:1.8rem;line-height:1.1;margin:2px 0 0}
+.sp-head p{margin:4px 0 0;font-size:.95rem;color:var(--muted);max-width:68ch}
 .sp-head .theme-q{color:var(--brown);margin-top:4px}
-.sp-head .pd-stlink{display:inline-block;margin-top:6px}
-@media (max-width:560px){.sp-big{width:56px;height:56px;border-radius:14px}.sp-big svg{width:40px;height:40px}.sp-head h3{font-size:1.4rem}.sp-panel{padding:14px 12px}}
-/* сетка ступени: шаги × уровни */
-.sg{display:grid;grid-template-columns:148px repeat(3,minmax(0,1fr));gap:8px}
-.sg-h{background:var(--bg);border-radius:14px;padding:12px;border-top:4px solid color-mix(in srgb,var(--lc) 45%,transparent)}
-.sg-h.hl2{border-top-color:color-mix(in srgb,var(--lc) 72%,transparent)}.sg-h.hl3{border-top-color:var(--lc)}
-.help-head{display:flex;align-items:center;gap:8px}
-.help-head b{font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--lc)}
-.help-bars{display:inline-flex;align-items:flex-end;gap:2px;height:14px}
-.help-bars i{width:5px;border-radius:2px;background:color-mix(in srgb,var(--lc) 25%,transparent)}
-.help-bars i:nth-child(1){height:6px}.help-bars i:nth-child(2){height:10px}.help-bars i:nth-child(3){height:14px}
-.help-bars i:nth-child(1),.hl2 .help-bars i:nth-child(-n+2),.hl3 .help-bars i{background:var(--lc)}
-.help-q{font-family:var(--display);font-size:1.08rem;line-height:1.3;margin:6px 0 0}
-.help-q q{quotes:"«" "»"}
-.help-h{font-size:.8rem;color:var(--muted);margin:2px 0 0}
-.sg-l{display:flex;flex-direction:column;gap:4px;justify-content:center;background:var(--f);border-radius:14px;padding:12px;color:var(--c)}
-.sg-l b{font-size:1rem;line-height:1.2}
-.sg-l span{font-size:.76rem;color:var(--muted);line-height:1.3}
-.sg-c{background:color-mix(in srgb,var(--f) 40%,var(--bg));border-radius:14px;padding:8px;display:flex;flex-direction:column;gap:6px;min-width:0}
-.sg-cl{display:none}
-.li-empty{color:var(--muted);opacity:.55;text-align:center;padding:10px 0;margin:auto 0}
-.li{display:flex;flex-direction:column;gap:2px;font:inherit;text-align:left;cursor:pointer;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:9px 11px;text-decoration:none;color:var(--ink);transition:border-color .15s;width:100%;min-width:0}
-.li:hover{border-color:var(--lc,var(--brown))}
-.li b{font-size:.88rem;font-weight:700;line-height:1.3}
-.li b span{color:var(--brown)}
-.li > span{font-size:.8rem;color:var(--muted);line-height:1.35}
-.li em{font-style:normal;font-size:.72rem;font-weight:700;color:var(--brown)}
-.li.st-new{border-style:dashed;border-color:color-mix(in srgb,var(--brown) 45%,var(--line))}
-@media (max-width:900px){
-  .sg{display:flex;flex-direction:column;gap:8px}
-  .sg-corner,.sg-l{display:none}
-  .sg-h,.sg-c{order:var(--o)}
-  .sg-c.empty{display:none}
-  .sg-h{margin-top:10px}
-  .sg-cl{display:block;margin:0 0 2px}
-}
+.sp-head .pd-stlink{display:inline-block;margin-top:8px}
+@media (max-width:600px){.sp-head{flex-direction:column;gap:12px}.sp-bowl{width:100%;max-width:340px}.sp-panel{padding:16px 14px}.sp-head h3{font-size:1.5rem}}
+.pv-after{margin-top:34px}
+.pb-note{font-size:.8rem;font-weight:700;color:var(--brown);line-height:1.35}
 /* «По шагам»: уровни внутри шага */
 .lvrow{margin-top:12px}
 .lvrow-h{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:.82rem;color:var(--muted)}
@@ -1382,27 +1346,8 @@ const PR = {
    Два вида: «По ступеням» — выбираешь ступень и видишь сетку «шаги × уровни»; «По шагам» — по трём шагам, как раньше.
    Три уровня помощи: «Свои люди» — бесплатное практическое на svoiludi.ch · «Сама» — в своём темпе · «Со мной» — личные встречи.
    Одна таблица LINE питает оба вида (дальше — и «Твой путь», и разбор теста «Ступени устойчивости»).
-   Значки: цветок — программа; чаша с номером — только ступень (кнопки выбора ступени); веточка, конверт, две чашки — уровень. */
-const ICONS_CHASHA = (() => {
-  const G = '#C9971F';
-  const bowl = (c, f, s, notch) => notch
-    ? `<path d="M3.5 9.5h9l1.2 2.2 1.6-2.2h5.2c0 4.9-3.7 8.4-8.5 8.4S3.5 14.4 3.5 9.5z" fill="${f}" stroke="${c}" ${s}/><path d="M9.6 17.9h4.8v1.6H9.6z" fill="${f}" stroke="${c}" stroke-width="1.4" stroke-linejoin="round"/>`
-    : `<path d="M3.5 9.5h17c0 4.9-3.7 8.4-8.5 8.4S3.5 14.4 3.5 9.5z" fill="${f}" stroke="${c}" ${s}/><path d="M9.6 17.9h4.8v1.6H9.6z" fill="${f}" stroke="${c}" stroke-width="1.4" stroke-linejoin="round"/>`;
-  const mini = (x, y, w, c, f, s) => { const h = w * .72, fx = x + w * .34, fw = w * .32;
-    return `<path d="M${x} ${y}H${x + w}C${x + w} ${y + h * .9} ${x + w * .74} ${y + h} ${x + w / 2} ${y + h}S${x} ${y + h * .9} ${x} ${y}z" fill="${f}" stroke="${c}" ${s}/><path d="M${fx} ${y + h}h${fw}v1.1h-${fw}z" fill="${f}" stroke="${c}" stroke-width="1.2" stroke-linejoin="round"/>`; };
-  return {
-    razbita: (c, f, s) => bowl(c, f, s, true) + `<path d="M8.6 9.7l1 2.7-1.3 2.6" fill="none" stroke="${c}" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.6 20.6l2.6-.9-.4 1.9z" fill="${f}" stroke="${c}" stroke-width="1.3" stroke-linejoin="round"/>`,
-    svoi: (c, f, s) => mini(1.5, 7.5, 9.2, c, f, s) + `<path d="M4.8 7.7l1.4 2.4-.9 2.4" fill="none" stroke="${G}" stroke-width="1.6" stroke-linecap="round"/>` + mini(13.3, 9.5, 9.2, c, f, s) + `<path d="M18.9 9.6l.8 2 1.1-2" fill="none" stroke="${c}" stroke-width="1.3" stroke-linejoin="round"/>`,
-    sobirayu: (c, f, s) => bowl(c, f, s, true) + `<path d="M13.7 11.7l-.6 2.4.9 2.4" fill="none" stroke="${G}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.6 5.2l3.4-1.4 1.1 2.4-3.3 1.2z" fill="${f}" stroke="${c}" stroke-width="1.3" stroke-linejoin="round"/><path d="M13.2 7.3l2.5-.9" stroke="${G}" stroke-width="1.4" stroke-linecap="round"/>`,
-    ryad: (c, f, s) => mini(1.4, 9, 6.4, c, f, s) + mini(8.8, 9, 6.4, c, f, s) + mini(16.2, 9, 6.4, c, f, s) + `<path d="M3.4 9.2l.8 1.7-.5 1.4M11.9 9.2l-.6 1.6.6 1.6M18.3 9.2l.7 1.5" fill="none" stroke="${G}" stroke-width="1.3" stroke-linecap="round"/><path d="M1.3 16.9h21.4" stroke="${c}" ${s}/>`,
-    polnaya: (c, f, s) => bowl(c, f, s, false) + `<path d="M5.2 11.2c2.2.9 11.4.9 13.6 0" fill="none" stroke="${c}" stroke-width="1.2" stroke-linecap="round"/><path d="M8.2 12.6l1 2.2-.6 1.9" fill="none" stroke="${G}" stroke-width="1.5" stroke-linecap="round"/><path d="M10 6.8c-1-1.2 1-2 0-3.3M14 6.8c-1-1.2 1-2 0-3.3" fill="none" stroke="${c}" stroke-width="1.3" stroke-linecap="round"/>`,
-    krug: (c, f, s) => `<circle cx="12" cy="12" r="8.6" fill="none" stroke="${G}" stroke-width="1.2" stroke-dasharray="1.6 2.2"/>` + mini(8.4, 10.2, 7.2, c, f, s) + `<circle cx="12" cy="3.4" r="1.7" fill="${f}" stroke="${c}" stroke-width="1.3"/><circle cx="20.6" cy="12" r="1.7" fill="${f}" stroke="${c}" stroke-width="1.3"/><circle cx="12" cy="20.6" r="1.7" fill="${f}" stroke="${c}" stroke-width="1.3"/><circle cx="3.4" cy="12" r="1.7" fill="${f}" stroke="${c}" stroke-width="1.3"/>`,
-    shvy: (c, f, s) => bowl(c, f, s, false) + `<path d="M7 9.8l1.4 2.5-1 2.4M8.4 12.3l2.6.6M13.6 9.8l-.7 2.8 1.6 2.3 2.3-.5M12.9 12.6l-2.2 1.9" fill="none" stroke="${G}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>`,
-    zoloto: (c, f, s) => mini(1.4, 6.5, 10, c, f, s) + `<path d="M4.4 6.8l1.2 2.3-.8 2.1" fill="none" stroke="${G}" stroke-width="1.5" stroke-linecap="round"/>` + mini(15.2, 11.8, 7.2, c, f, s) + `<path d="M19.6 12l.8 1.6.8-1.6" fill="none" stroke="${c}" stroke-width="1.2" stroke-linejoin="round"/><path d="M8.5 14.4c1.5 3.6 4.4 5.3 7.6 4.6" fill="none" stroke="${G}" stroke-width="1.6" stroke-linecap="round"/>`
-  };
-})();
-Object.assign(ICONS, ICONS_CHASHA);
-const ICN = ['razbita', 'svoi', 'sobirayu', 'ryad', 'polnaya', 'krug', 'shvy', 'zoloto'];
+   Значки: цветок — программа; акварельная чаша — ступень (выбор ступени, как на «Твой путь»); веточка, конверт, две чашки — уровень.
+   11.10.2026, 09:15 — Ирина: «оформление по шагам мне нравится, а по ступеням с теми иконками нет» → «По ступеням» в стиле «По шагам», линейные чаши убраны. */
 const STEPN = ['Разбитая чаша', 'Свой круг', 'Я могу сама', 'Понятные правила', 'Своё дело', 'Мой вклад', 'Моя жизнь целиком', 'Здесь и там — одна жизнь'];
 const STEPC = [['#8E8470','#ECE7DD'],['#6A5FB8','#E7E4F7'],['#C25468','#F8E0E4'],['#3F6FBF','#E1EBFA'],['#C97E52','#FAE8DC'],['#4E9A70','#E1F1E7'],['#A99A2E','#F7F2D3'],['#2894A0','#DDF3F4']];
 const ALL8 = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -1612,43 +1557,18 @@ function posFact(id){
 
 function pathInit(){
   const box = document.getElementById('pathBox');
-  /* компактная строка программы — в сетке ступени */
-  const li = e => { const id = eid(e), note = Array.isArray(e) ? e[1] : '', x = it(id); if (!x) return '';
-    const tail = cap([x.st === 'dev' ? 'в разработке' : x.st === 'new' ? 'новое' : '', x.price].filter(Boolean).join(' · '));
-    const out = x.h && !x.pr;
-    const inner = `<b>${esc2(x.name)} <span aria-hidden="true">${out ? '↗' : '→'}</span></b><span>${esc2(note || x.line)}</span><em>${esc2(tail)}</em>`;
-    const cls = `li${x.st === 'new' ? ' st-new' : ''}`;
-    return out ? `<a class="${cls}" href="${x.h}" target="_blank" rel="noopener">${inner}</a>` : `<button type="button" class="${cls}" data-p="${id}" aria-haspopup="dialog">${inner}</button>`; };
-  /* карточка программы — в виде «По шагам» */
-  const card = (id, ss) => { const x = it(id); if (!x) return '';
+  /* карточка программы — одна и та же в обоих видах */
+  const card = (id, ss, note) => { const x = it(id); if (!x) return '';
     return `<button class="pblock${x.st === 'new' ? ' st-new' : ''}" data-p="${id}" aria-haspopup="dialog">
         <span class="pb-top"><span class="pb-fl">${picon(id, 48)}</span><span class="pb-tags">${lvBadge(x.lv)}${stTag(x)}</span></span>
-        <b>${esc2(x.name)}</b>${x.slogan ? `<span class="pb-slogan">${esc2(x.slogan)}</span>` : ''}<span class="pb-line">${esc2(x.line)}</span>
+        <b>${esc2(x.name)}</b>${x.slogan ? `<span class="pb-slogan">${esc2(x.slogan)}</span>` : ''}<span class="pb-line">${esc2(x.line)}</span>${note ? `<span class="pb-note">${esc2(cap(note))}</span>` : ''}
         ${ss ? `<span class="pb-steps">${pdotsS(ss)}<span>${esc2(stepsText(ss))}</span></span>` : ''}
         <span class="pb-foot"><span class="pb-price${isFreeP(x.price) ? ' free' : /\d/.test(x.price) ? ' paid' : ' soonp'}">${isFreeP(x.price) ? '<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 3l2.3 5.6 6 .5-4.6 3.9 1.4 5.9L12 15.8 6.9 18.9l1.4-5.9L3.7 9.1l6-.5z" fill="currentColor"/></svg>' : ''}${esc2(x.price)}</span><span class="pb-more" aria-hidden="true">→</span></span></button>`; };
-  const slp = (id, ss) => { const x = it(id); const t = `${lvIco('sl', 14)}<span>${esc2(x.name)}</span><small>${ss.length === 8 ? 'все ступени' : (ss.length > 1 ? 'ступени ' : 'ступень ') + ss.join(', ')}</small>`;
+  const slp = (id, ss, note) => { const x = it(id); const sm = ss ? (ss.length === 8 ? 'все ступени' : (ss.length > 1 ? 'ступени ' : 'ступень ') + ss.join(', ')) : note || '';
+    const t = `${lvIco('sl', 14)}<span>${esc2(x.name)}</span>${sm ? `<small>${esc2(sm)}</small>` : ''}`;
     return x.h && !x.pr ? `<a class="slp lv-sl" href="${x.h}" target="_blank" rel="noopener">${t}<span aria-hidden="true">↗</span></a>` : `<button type="button" class="slp lv-sl${x.st === 'new' ? ' st-new' : ''}" data-p="${id}">${t}</button>`; };
 
-  /* ===== вид «По ступеням» ===== */
-  const stepsHtml = `<div class="pv-where"><div class="pv-where-h"><b>Где я сейчас</b><span>Начни бесплатно: тест покажет твою ступень, а на знакомстве мы вместе выберем первый шаг.</span></div>
-      <div class="pv-row">${WHERE.map(li).join('')}</div>
-      <p class="pv-pair">Для пары, отдельно от ступеней: ${PAIR.map(id => `<button type="button" class="lnk" data-p="${id}">${esc2(PR[id].name)}</button>`).join(' и ')}.</p></div>
-    <p class="sp-ask">Выбери свою ступень:</p>
-    <div class="sp-pick" role="tablist" aria-label="Восемь ступеней">${STEPN.map((n, k) => `<button type="button" class="sp" role="tab" aria-selected="false" aria-controls="spPanel" data-s="${k + 1}" style="--lc:${STEPC[k][0]};--lf:${STEPC[k][1]}"><span class="sp-ic">${ico(ICN[k], STEPC[k][0], STEPC[k][1], 34)}</span><span class="sp-n">${k + 1}</span><span class="sp-t">${esc2(n)}</span></button>`).join('')}</div>
-    <div class="sp-panel" id="spPanel" role="tabpanel"></div>
-    <div class="pv-thru"><div class="pv-where-h"><b>На всех ступенях</b><span>Это идёт с тобой по всему пути.</span></div><div class="pv-row">${THRU.map(li).join('')}</div></div>`;
-  function panel(s){
-    const k = s - 1, st = LINE[k];
-    let g = '<div class="sg-corner" aria-hidden="true"></div>' + SUBN.map((u, j) => `<div class="sg-h hl${j + 1}" style="--o:${j * 10}"><div class="help-head"><span class="help-bars" aria-hidden="true"><i></i><i></i><i></i></span><b>${esc2(u)}</b></div><p class="help-q"><q>${esc2(SUBQ[j])}</q></p><p class="help-h">${esc2(SUBH[j])}</p></div>`).join('');
-    LVK.forEach((l, i) => {
-      g += `<div class="sg-l lv-${l}" data-lv="${l}">${lvIco(l, 28)}<b>${LV[l].n}</b><span>${esc2(LV[l].d)}</span></div>`;
-      g += [0, 1, 2].map(j => { const a = st[j][l] || [];
-        return `<div class="sg-c lv-${l}${a.length ? '' : ' empty'}" data-lv="${l}" style="--o:${j * 10 + i + 1}"><span class="sg-cl">${lvBadge(l)}</span>${a.length ? a.map(li).join('') : '<span class="li-empty" aria-label="на этом шаге ничего не нужно">—</span>'}</div>`; }).join('');
-    });
-    return `<div class="sp-head"><span class="sp-big">${ico(ICN[k], STEPC[k][0], STEPC[k][1], 52)}</span><div><div class="eyebrow">Ступень ${s} из 8</div><h3>${esc2(STEPN[k])}</h3><p class="theme-q">${esc2(TEASER[k])}</p><p>${esc2(STEPI[k])}</p><a class="pd-stlink" href="put/">Что это за ступень →</a></div></div><div class="sg">${g}</div>`;
-  }
-
-  /* ===== вид «По шагам» ===== */
+  /* ===== общие блоки: оба вида в одном стиле (шаг — коричневый кружок, внутри три уровня, карточки с цветком) ===== */
   const GH = [
     {h:'Ставлю ногу', q:'«Я только учусь, всё требует сил»', sub:'Когда ты осваиваешься и на всё уходит много сил, помогают информация и опора: понятные статьи и инструменты на «Своих людях», рабочие листы «Кто я здесь» и знакомство со мной.'},
     {h:'Стою твёрдо', q:'«Это у меня получается»', sub:'Когда уже получается, помогают порядок и ритм, чтобы силы не уходили на хаос: инструменты для быта и дела, программы письмами и мини-дневники. Разобрать всё вместе можно за 30 минут.'},
@@ -1657,14 +1577,35 @@ function pathInit(){
   const coll = (j, l) => { const m = new Map(); LINE.forEach((st, s) => (st[j][l] || []).forEach(e => { const id = eid(e); if (!m.has(id)) m.set(id, []); m.get(id).push(s + 1); })); return [...m]; };
   const lvRow = (l, inner, d) => `<div class="lvrow" data-lv="${l}"><div class="lvrow-h">${lvBadge(l)}<span>${esc2(d || LV[l].d)}</span></div>${inner}</div>`;
   const theme = (ti, h, q, sub, rows, extra = '') => `<div class="theme"><div class="theme-h"><span class="theme-n${ti ? '' : ' where'}">${ti ? SUBBARS(ti) : ico('path', '#FFFCF8', 'rgba(255,252,248,.25)', 22)}</span><div><h3>${esc2(h)}</h3>${q ? `<p class="theme-q">${esc2(q)}</p>` : ''}<p>${esc2(sub)}</p></div></div>${rows}${extra}</div>`;
-  const subsHtml = theme(0, 'Где ты сейчас', '', 'Начни бесплатно. Тест покажет, на какой ты ступени и какая поскрипывает, а на знакомстве мы вместе выберем твой следующий шаг.',
+  const whereHtml = theme(0, 'Где ты сейчас', '', 'Начни бесплатно. Тест покажет, на какой ты ступени и какая поскрипывает, а на знакомстве мы вместе выберем твой следующий шаг.',
       lvRow('sama', `<div class="pgrid">${['stupeni', 'kompas', 'karta'].map(id => card(id, ALL8)).join('')}</div>`)
       + lvRow('so', `<div class="pgrid">${card('meet', ALL8)}</div>`)
-      + lvRow('sama', `<div class="pgrid">${PAIR.map(id => card(id, null)).join('')}</div>`, 'для пары — отдельно от ступеней'))
+      + lvRow('sama', `<div class="pgrid">${PAIR.map(id => card(id, null)).join('')}</div>`, 'для пары — отдельно от ступеней'));
+  const thruHtml = `<div class="theme"><div class="theme-h"><span class="theme-n thru">${SUBBARS(3)}</span><div><h3>На всех ступенях</h3><p>Это идёт с тобой по всему пути.</p></div></div>${LVK.map(l => { const a = THRU.filter(id => it(id).lv === l); return a.length ? lvRow(l, `<div class="pgrid">${a.map(id => card(id, ALL8)).join('')}</div>`) : ''; }).join('')}</div>`;
+  /* акварельные чаши ступеней — те же картины, что на «Твой путь» */
+  const IMGS = ['01-razbitaya-chasha', '02-svoi-chashi', '03-sobirayu-sebya', '04-v-odnom-ryadu', '05-polnaya-chasha', '06-chasha-po-krugu', '07-zolotye-shvy', '08-zoloto-dlya-novoj'];
+  const bowlPic = k => `<picture><source srcset="/put/img/${IMGS[k]}.webp" type="image/webp"><img src="/put/img/${IMGS[k]}.jpg" width="900" height="1205" loading="lazy" alt=""></picture>`;
+
+  /* ===== вид «По ступеням» ===== */
+  const stepsHtml = `<p class="sp-ask">Выбери свою ступень. Не знаешь, на какой ты? Пройди <button type="button" class="lnk" data-p="stupeni">тест «Ступени устойчивости»</button>: 20 минут, бесплатно.</p>
+    <div class="sp-pick" role="tablist" aria-label="Восемь ступеней">${STEPN.map((n, k) => `<button type="button" class="sp" role="tab" aria-selected="false" aria-controls="spPanel" data-s="${k + 1}" style="--lc:${STEPC[k][0]};--lf:${STEPC[k][1]}"><span class="sp-img">${bowlPic(k)}</span><span class="sp-n">Ступень ${k + 1}</span><span class="sp-t">${esc2(n)}</span></button>`).join('')}</div>
+    <div class="sp-panel" id="spPanel" role="tabpanel"></div>
+    <div class="themes pv-after">${whereHtml}${thruHtml}</div>`;
+  function panel(s){
+    const k = s - 1, st = LINE[k];
+    const rows = j => LVK.map(l => { const a = st[j][l] || []; if (!a.length) return '';
+      return lvRow(l, l === 'sl' ? `<div class="slrow">${a.map(e => slp(eid(e), null, Array.isArray(e) ? e[1] : '')).join('')}</div>`
+        : `<div class="pgrid">${a.map(e => card(eid(e), null, Array.isArray(e) ? e[1] : '')).join('')}</div>`); }).join('');
+    return `<div class="sp-head"><span class="sp-bowl">${bowlPic(k)}</span><div class="sp-head-t"><div class="eyebrow">Ступень ${s} из 8</div><h3>${esc2(STEPN[k])}</h3><p class="theme-q">${esc2(TEASER[k])}</p><p>${esc2(STEPI[k])}</p><a class="pd-stlink" href="put/">Что это за ступень →</a></div></div>
+      <div class="themes">${GH.map((g, j) => theme(j + 1, g.h, g.q, SUBH[j] + '.', rows(j))).join('')}</div>`;
+  }
+
+  /* ===== вид «По шагам» ===== */
+  const subsHtml = whereHtml
     + GH.map((g, j) => theme(j + 1, g.h, g.q, g.sub, LVK.map(l => { const a = coll(j, l); if (!a.length) return '';
         return lvRow(l, l === 'sl' ? `<div class="slrow">${a.map(([id, ss]) => slp(id, ss)).join('')}</div>` : `<div class="pgrid">${a.map(([id, ss]) => card(id, ss)).join('')}</div>`); }).join(''),
         j === 2 ? `<p class="theme-more">За полное прохождение «Моя цель — мой путь» — <button type="button" class="lnk" data-p="gift">подарок «Свои люди»</button>.</p>` : '')).join('')
-    + `<div class="theme"><div class="theme-h"><span class="theme-n thru">${SUBBARS(3)}</span><div><h3>На всех ступенях</h3><p>Это идёт с тобой по всему пути.</p></div></div>${LVK.map(l => { const a = THRU.filter(id => it(id).lv === l); return a.length ? lvRow(l, `<div class="pgrid">${a.map(id => card(id, ALL8)).join('')}</div>`) : ''; }).join('')}</div>`;
+    + thruHtml;
 
   box.innerHTML = `<div class="pv-ctl"><div class="pv-sw" role="group" aria-label="Как показать программы">
       <button type="button" data-v="steps" aria-pressed="false">${ico('hill', 'currentColor', 'none', 18)}По ступеням</button>
