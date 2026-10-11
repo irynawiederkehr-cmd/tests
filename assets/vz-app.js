@@ -76,10 +76,10 @@
   css.textContent = [
     '.pa-tabs{position:fixed;left:0;right:0;bottom:0;z-index:900;display:none;background:color-mix(in srgb,var(--paper,#FFFCF8) 94%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-top:1px solid var(--line,#E5D9C9);padding:6px 6px calc(6px + env(safe-area-inset-bottom))}',
     '.pa-tabs ul{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(5,1fr);max-width:640px}',
-    '.pa-tabs a,.pa-tabs button{display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 2px 4px;border:0;background:none;font:600 .7rem/1.15 Manrope,system-ui,sans-serif;color:var(--muted,#7A6E62);text-decoration:none;cursor:pointer;width:100%;border-radius:12px;-webkit-tap-highlight-color:transparent}',
+    '.pa-tabs a,.pa-tabs button{position:relative;display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 2px 4px;border:0;background:none;font:600 .7rem/1.15 Manrope,system-ui,sans-serif;color:var(--muted,#7A6E62);text-decoration:none;cursor:pointer;width:100%;border-radius:12px;-webkit-tap-highlight-color:transparent}',
     '.pa-tabs svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}',
     '.pa-tabs [aria-current="page"]{color:var(--brown,#6E4F3C)}',
-    '.pa-tabs [aria-current="page"]::before{content:"";display:block;width:26px;height:3px;border-radius:3px;background:var(--brown,#6E4F3C);margin:-6px 0 3px}',
+    '.pa-tabs [aria-current="page"]::before{content:"";position:absolute;top:-6px;left:50%;width:26px;height:3px;border-radius:3px;background:var(--brown,#6E4F3C);transform:translateX(-50%)}',   /* полоска не сдвигает значок и подпись (11.10.2026, как на svoiludi.ch) */
     '.pa-tabs a:active,.pa-tabs button:active{background:color-mix(in srgb,var(--brown,#6E4F3C) 10%,transparent)}',
     'html.pa-app .pa-tabs{display:block}html.pa-app body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}',
     'html.pa-app #langbar.langbar{bottom:calc(80px + env(safe-area-inset-bottom))!important}',
@@ -170,6 +170,10 @@
     });
     h += '<li><button type="button" class="pa-more"' + (cur === 4 ? ' aria-current="page"' : '') + '>' + I.more + '<span>' + T.tabs[4] + '</span></button></li></ul></div>';
     var bar = el(h); document.body.appendChild(bar);
+    /* нажатие видно сразу: вкладка становится текущей до того, как откроется страница (11.10.2026, как на svoiludi.ch); Telegram открывается отдельно — его не отмечаем */
+    function mark(n) { [].forEach.call(bar.querySelectorAll('li > *'), function (x, i) { if (i === n) x.setAttribute('aria-current', 'page'); else x.removeAttribute('aria-current'); }); }
+    bar.addEventListener('click', function (e) { var a = e.target.closest('a'); if (a && a.target !== '_blank') mark([].indexOf.call(bar.querySelectorAll('li > *'), a)); });
+    window.addEventListener('pageshow', function (e) { if (e.persisted) mark(cur); });
     bar.querySelector('.pa-more').addEventListener('click', moreSheet);
   }
   function moreSheet() {

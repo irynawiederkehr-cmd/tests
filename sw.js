@@ -3,13 +3,14 @@
    Файлы (стили, скрипты, шрифты, картинки): сразу из памяти, в фоне обновляются.
    Личные записи людей здесь не хранятся: они остаются в localStorage браузера, как раньше.
    При изменении этого файла поднять VERSION — старая память удалится. */
-const VERSION = 'v20-2026-10-11';
+const VERSION = 'v21-2026-10-11';
 const CACHE = 'vz-' + VERSION;
 const CORE = ['/offline.html', '/assets/vz-app.js', '/icon-192.png', '/favicon.svg'];
 const MAX = 160;
 
 self.addEventListener('install', e => {
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(CORE)).then(() => self.skipWaiting()));
+  // cache: 'reload' — новая версия берёт файлы с сайта, а не из памяти браузера (11.10.2026)
+  e.waitUntil(caches.open(CACHE).then(c => c.addAll(CORE.map(u => new Request(u, { cache: 'reload' })))).then(() => self.skipWaiting()));
 });
 self.addEventListener('activate', e => {
   e.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k.startsWith('vz-') && k !== CACHE).map(k => caches.delete(k))))
