@@ -493,7 +493,7 @@ function zCreate_(d) {
       dl: dl, flags: '', from: old ? old.no : '', to: '', ik: Utilities.getUuid().replace(/-/g, ''), ck: Utilities.getUuid().replace(/-/g, '') };
     var ev = zCal_().createEvent(zEvTitle_(o), new Date(o.s), new Date(zEnd_(o)), { description: '' });
     o.ev = ev.getId(); zEvPaint_(ev, o);
-    var row = new Array(ZHEAD.length).fill('');
+    var row = []; for (var ri = 0; ri < ZHEAD.length; ri++) row.push('');
     row[ZC['Номер']] = o.no; row[ZC['Создан (Цюрих)']] = fmtNow_(); row[ZC['Статус']] = st; row[ZC['Вид']] = t; row[ZC['Встреча']] = zRuName_(t, prog); row[ZC['Программа']] = prog;
     row[ZC['Начало (Цюрих)']] = zFmt_(o.s, TZ, 'dd.MM.yyyy HH:mm'); row[ZC['Конец (Цюрих)']] = zFmt_(zEnd_(o), TZ, 'dd.MM.yyyy HH:mm'); row[ZC['Начало, мс']] = o.s; row[ZC['Минут']] = o.dur;
     row[ZC['Часовой пояс']] = tz; row[ZC['Язык']] = lang; row[ZC['Имя']] = name; row[ZC['E-mail']] = email; row[ZC['Telegram или телефон']] = contact; row[ZC['С чем приходит']] = comment;
