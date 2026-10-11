@@ -679,7 +679,85 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
 
 .rv-track .rv figcaption{margin-top:auto}
 .rv-more{margin-top:0!important}
-</style><meta name="theme-color" content="#6E4F3C"><!--shape--><style id="shape">:is(.navcta,.btn,.jump a,.pb-price,.go-pill,.rv-prod,.rvs-btn,.shr-btn,.invite-links a,.share-btns button,.share-btns a,.inv-copy,.inv-btn,.sb-cta,.langbar,#langbar.langbar){border-radius:12px!important}:is(.langbar button,.langbar a,#langbar.langbar a,.bz-pills button){border-radius:9px!important}html header.top nav a .pa-ni{display:none}@media (max-width:1100px){html header.top .page{flex-wrap:wrap;row-gap:8px}html header.top nav{order:3;width:100%;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px!important;overflow:visible!important;padding:4px 0 12px!important;margin:0}html header.top nav a{display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:62px;padding:9px 6px;border-radius:14px;background:var(--paper,#FFFCF8);border:1px solid color-mix(in srgb,var(--brown,#6E4F3C) 22%,transparent);box-shadow:0 3px 10px -6px rgba(80,55,35,.45);color:var(--ink,#2F2924)!important;font:600 .78rem/1.18 var(--body,system-ui);text-align:center;white-space:normal!important;text-decoration:none;-webkit-tap-highlight-color:transparent}html header.top nav a .pa-ni{display:block;width:22px;height:22px;fill:none;stroke:var(--brown,#6E4F3C);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}html header.top nav a[aria-current]:not([aria-current=false]){background:var(--brown,#6E4F3C);border-color:var(--brown,#6E4F3C);color:var(--paper,#FFFCF8)!important}html header.top nav a[aria-current]:not([aria-current=false]) .pa-ni{stroke:var(--paper,#FFFCF8)}html header.top nav a:active{transform:scale(.97)}}/* длинная строка под именем (метод «Ступени. Твой путь в новой стране», 10.10.2026): переносится сама, меню в одну строку */@media (min-width:1101px){html header.top nav a{white-space:nowrap}html header.top .mark small{display:block;max-width:300px;line-height:1.35}}.pa-mini{display:none}@media (max-width:1100px){html header.top:not(.pa-mini){position:relative!important;top:auto!important}html header.top.pa-mini{display:block;position:fixed!important;left:0;right:0;top:0;z-index:55;padding-top:env(safe-area-inset-top,0px);transform:translateY(-105%);visibility:hidden;transition:transform .22s ease,visibility 0s .22s;box-shadow:0 8px 20px -14px rgba(60,40,20,.5)}html header.top.pa-mini.on{transform:none;visibility:visible;transition:transform .22s ease}html header.top.pa-mini .page{padding-block:8px;flex-wrap:wrap}html header.top.pa-mini .mark small{display:none}html header.top.pa-mini .mark b{font-size:1.05rem}html header.top.pa-mini .mono{width:32px;height:32px}html header.top.pa-mini:not(.open) nav{display:none!important}.pa-mbtn{margin-left:auto;display:flex;align-items:center;gap:6px;padding:7px 12px;border-radius:12px;border:1.5px solid color-mix(in srgb,var(--brown,#6E4F3C) 35%,transparent);background:var(--paper,#FFFCF8);color:var(--ink,#2F2924);font:700 .84rem/1 var(--body,Manrope,system-ui);cursor:pointer;-webkit-tap-highlight-color:transparent}.pa-mbtn svg{width:18px;height:18px;flex:none;fill:none;stroke:var(--brown,#6E4F3C);stroke-width:2;stroke-linecap:round}}@media (max-width:480px){html header.top.pa-mini .mark span:not(.mono){display:none}}</style><script>(function(){function run(){var n=document.querySelector('header.top nav');if(!n)return;var I={who:'<circle cx="12" cy="8" r="3.6"/><path d="M5 20c.7-3.8 3.4-6 7-6s6.3 2.2 7 6"/>',req:'<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',path:'<path d="M12 3.5 20.5 8 12 12.5 3.5 8z"/><path d="M3.5 12 12 16.5 20.5 12M3.5 16 12 20.5 20.5 16"/>',put:'<circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8 18h6a3.5 3.5 0 0 0 0-7h-4a3.5 3.5 0 0 1 0-7h6"/>',tests:'<rect x="5" y="3.5" width="14" height="17" rx="2.5"/><path d="m8.5 9 1.5 1.5L13 7.5M8.5 15l1.5 1.5 3-3M15 9.5h1M15 15.5h1"/>',svoi:'<circle cx="12" cy="12" r="2.4"/><circle cx="12" cy="4.5" r="1.8"/><circle cx="12" cy="19.5" r="1.8"/><circle cx="5.5" cy="8.3" r="1.8"/><circle cx="18.5" cy="8.3" r="1.8"/><circle cx="5.5" cy="15.7" r="1.8"/><circle cx="18.5" cy="15.7" r="1.8"/>'};n.querySelectorAll('a').forEach(function(a){if(a.querySelector('.pa-ni'))return;var h=a.getAttribute('href')||'',k=/svoiludi/.test(h)?'svoi':/#who/.test(h)?'who':/#requests/.test(h)?'req':/#path/.test(h)?'path':/put\/?$/.test(h)?'put':/testy/.test(h)?'tests':null;if(!k)return;a.insertAdjacentHTML('afterbegin','<svg class="pa-ni" viewBox="0 0 24 24" aria-hidden="true">'+I[k]+'</svg>');a.style.removeProperty('color');});}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();})();(function(){function mini(){var h=document.querySelector('header.top');if(!h||document.querySelector('.pa-mini')||!('IntersectionObserver' in window))return;var lg=(document.documentElement.lang||'ru').slice(0,2),L={ru:['Menü','Einklappen'],uk:['Menü','Zuklappen'],de:['Menü','Zuklappen'],en:['Menu','Close']}[lg]||['Menü','Einklappen'];var m=document.createElement('header');m.className='top pa-mini';var pg=document.createElement('div');pg.className='page';var mk=h.querySelector('.mark');if(mk)pg.appendChild(mk.cloneNode(true));var b=document.createElement('button');b.type='button';b.className='pa-mbtn';b.setAttribute('aria-expanded','false');b.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span></span>';b.lastChild.textContent=L[0];pg.appendChild(b);var c=h.querySelector('.navcta');if(c)pg.appendChild(c.cloneNode(true));var n=h.querySelector('nav');if(n)pg.appendChild(n.cloneNode(true));m.appendChild(pg);document.body.appendChild(m);function set(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');b.lastChild.textContent=o?L[1]:L[0];}b.addEventListener('click',function(){set(!m.classList.contains('open'));});m.addEventListener('click',function(e){if(e.target.closest('nav a'))set(false);});new IntersectionObserver(function(es){var v=es[0].isIntersecting;m.classList.toggle('on',!v);if(v)set(false);}).observe(h);}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mini);else mini();})();</script><link rel="manifest" href="/site.webmanifest"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Iryna"><meta name="apple-mobile-web-app-status-bar-style" content="default"><script src="/assets/vz-app.js" defer></script><!--shape--><!--i18n--><link rel="alternate" hreflang="ru" href="https://voznesenskaya.ch/"><link rel="alternate" hreflang="uk" href="https://voznesenskaya.ch/uk/"><link rel="alternate" hreflang="de" href="https://voznesenskaya.ch/de/"><link rel="alternate" hreflang="en" href="https://voznesenskaya.ch/en/"><!--i18n--></head><body>
+</style><meta name="theme-color" content="#6E4F3C"><style id="lineyka">/* ===== Линейка по ступеням: два вида и три уровня помощи (копия 11.10.2026) ===== */
+.lv-sl{--c:#5E6B45;--f:#E3E8D3}.lv-sama{--c:#9A6C1A;--f:#F6E7C6}.lv-so{--c:#6E4F3C;--f:#EADFCF}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .lv-sl{--c:#B4BF97;--f:#2E3226}:root:not([data-theme="light"]) .lv-sama{--c:#E2B45C;--f:#3D321F}:root:not([data-theme="light"]) .lv-so{--c:#E1C2A6;--f:#3A3129}}
+:root[data-theme="dark"] .lv-sl{--c:#B4BF97;--f:#2E3226}:root[data-theme="dark"] .lv-sama{--c:#E2B45C;--f:#3D321F}:root[data-theme="dark"] .lv-so{--c:#E1C2A6;--f:#3A3129}
+.lvi{flex:none;display:block}
+.lvi .fs{fill:var(--f);stroke:var(--c);stroke-width:1.6;stroke-linejoin:round}
+.lvi .st{fill:none;stroke:var(--c);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.lvb{display:inline-flex;align-items:center;gap:4px;font-size:.72rem;font-weight:700;line-height:1;color:var(--c);background:var(--f);border:1px solid color-mix(in srgb,var(--c) 35%,transparent);border-radius:999px;padding:3px 9px 3px 5px;white-space:nowrap}
+/* переключатель вида */
+.pv-ctl{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:14px}
+.pv-sw{display:inline-flex;gap:4px;padding:4px;background:var(--paper);border:1px solid var(--line);border-radius:14px}
+.pv-sw button{font:700 .92rem/1 var(--body);color:var(--ink);background:transparent;border:0;border-radius:10px;padding:11px 16px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;-webkit-tap-highlight-color:transparent}
+.pv-sw button svg{display:block;width:18px;height:18px}
+.pv-sw button[aria-pressed="true"]{background:var(--brown);color:var(--paper)}
+/* три вида помощи — и легенда, и фильтр */
+.lv-keys{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:6px}
+.lvk{display:flex;gap:10px;align-items:flex-start;text-align:left;font:inherit;color:var(--ink);background:var(--paper);border:1.5px solid color-mix(in srgb,var(--c) 30%,var(--line));border-left:5px solid var(--c);border-radius:12px;padding:10px 12px;cursor:pointer;transition:opacity .15s,background .15s;-webkit-tap-highlight-color:transparent}
+.lvk b{display:block;font-size:.98rem;color:var(--c);line-height:1.2}
+.lvk small{display:block;font-size:.8rem;color:var(--muted);line-height:1.35;margin-top:2px}
+.lvk[aria-pressed="true"]{background:var(--f);border-color:var(--c)}
+.pv[data-f] .lvk:not([aria-pressed="true"]){opacity:.5}
+.lv-hint{font-size:.8rem;color:var(--muted);margin:0 0 18px}
+@media (max-width:760px){.lv-keys{grid-template-columns:1fr}}
+.pv[data-view="steps"] .pv-subs,.pv[data-view="subs"] .pv-steps{display:none}
+.pv[data-f="sl"] [data-lv]:not([data-lv="sl"]),.pv[data-f="sama"] [data-lv]:not([data-lv="sama"]),.pv[data-f="so"] [data-lv]:not([data-lv="so"]){display:none!important}
+.pv.nonew .st-new{display:none!important}
+.lnk{font:inherit;color:var(--brown);background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:2px;cursor:pointer}
+/* выбор ступени: акварельные чаши, как на «Твой путь» */
+.sp-ask{font-size:.92rem;color:var(--muted);margin:0 0 10px}
+.sp-pick{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;margin-bottom:16px}
+.sp{display:flex;flex-direction:column;align-items:center;gap:3px;font:inherit;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:0 4px 10px;cursor:pointer;text-align:center;min-width:0;overflow:hidden;transition:border-color .15s,background .15s,box-shadow .15s;-webkit-tap-highlight-color:transparent}
+.sp:hover{border-color:var(--lc)}
+.sp-img{display:block;width:calc(100% + 8px);margin:0 -4px 4px;aspect-ratio:4/3;overflow:hidden}
+.sp-img picture,.sp-bowl picture{display:block;width:100%;height:100%}
+.sp-img img,.sp-bowl img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 78%;mix-blend-mode:multiply}
+.sp-n{font:800 .66rem/1.1 var(--body);color:var(--lc);letter-spacing:.08em;text-transform:uppercase}
+.sp-t{font-size:.78rem;line-height:1.2;font-weight:600}
+.sp[aria-selected="true"]{background:var(--lf);border-color:var(--lc);box-shadow:0 8px 18px -12px var(--lc);color:#2F2924}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .sp-img img,:root:not([data-theme="light"]) .sp-bowl img{mix-blend-mode:normal;opacity:.92}}
+:root[data-theme="dark"] .sp-img img,:root[data-theme="dark"] .sp-bowl img{mix-blend-mode:normal;opacity:.92}
+@media (max-width:760px){.sp-pick{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.sp{padding-bottom:8px}.sp-t{font-size:.7rem}.sp-n{font-size:.6rem}}
+/* выбранная ступень */
+.sp-panel{background:var(--paper);border:1px solid var(--line);border-top:5px solid var(--lc);border-radius:18px;padding:20px}
+.sp-head{display:flex;gap:20px;align-items:flex-start;margin-bottom:26px}
+.sp-bowl{flex:none;width:190px;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:var(--lf)}
+.sp-head-t{min-width:0}
+.sp-head h3{font-size:1.8rem;line-height:1.1;margin:2px 0 0}
+.sp-head p{margin:4px 0 0;font-size:.95rem;color:var(--muted);max-width:68ch}
+.sp-head .theme-q{color:var(--brown);margin-top:4px}
+.sp-head .pd-stlink{display:inline-block;margin-top:8px}
+@media (max-width:600px){.sp-head{flex-direction:column;gap:12px}.sp-bowl{width:100%;max-width:340px}.sp-panel{padding:16px 14px}.sp-head h3{font-size:1.5rem}}
+.pv-after{margin-top:34px}
+.pb-note{font-size:.8rem;font-weight:700;color:var(--brown);line-height:1.35}
+/* длинные списки: «Показать ещё N» */
+.slrow > .cut,.pgrid > .cut{display:none!important}
+.more-btn{display:inline-flex;align-items:center;gap:8px;margin-top:10px;font:700 .86rem/1 var(--body);color:var(--brown);background:var(--paper);border:1.5px solid color-mix(in srgb,var(--brown) 35%,var(--line));border-radius:12px;padding:10px 14px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.more-btn:hover{border-color:var(--brown)}
+.more-btn svg{transition:transform .2s}
+.more-btn[aria-expanded="true"] svg{transform:rotate(180deg)}
+.more-btn[hidden]{display:none}
+/* «По шагам»: уровни внутри шага */
+.lvrow{margin-top:12px}
+.lvrow-h{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:.82rem;color:var(--muted)}
+.slrow{display:flex;flex-wrap:wrap;gap:6px}
+.slp{display:inline-flex;align-items:center;gap:6px;font:600 .82rem/1.25 var(--body);color:var(--ink);background:var(--paper);border:1px solid color-mix(in srgb,var(--c) 35%,var(--line));border-radius:12px;padding:7px 10px;text-decoration:none;cursor:pointer;text-align:left}
+.slp:hover{border-color:var(--c)}
+.slp small{font-weight:600;color:var(--muted);font-size:.72rem;white-space:nowrap}
+.slp.st-new{border-style:dashed}
+.pb-tags{display:inline-flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.pblock.st-new{border-style:dashed}
+.soon.new{color:var(--brown);background:var(--soft)}
+.theme-n.thru{background:var(--sage)}
+/* окно программы: вид помощи и место на пути */
+.pd-lv{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.pd-lv > span:last-child{flex:1 1 220px}
+.pd-steps button{display:inline-flex;align-items:center;gap:6px;font:600 .8rem/1.3 var(--body);background:var(--lf);color:#2F2924;border:1px solid color-mix(in srgb,var(--lc) 45%,transparent);border-radius:999px;padding:3px 10px 3px 4px;cursor:pointer}
+.pd-steps button:hover{border-color:var(--lc)}
+.pd-lvbig{display:grid;place-items:center;width:68px;height:68px;border-radius:50%;background:var(--f);border:2px solid var(--c)}
+</style><!--shape--><style id="shape">:is(.navcta,.btn,.jump a,.pb-price,.go-pill,.rv-prod,.rvs-btn,.shr-btn,.invite-links a,.share-btns button,.share-btns a,.inv-copy,.inv-btn,.sb-cta,.langbar,#langbar.langbar){border-radius:12px!important}:is(.langbar button,.langbar a,#langbar.langbar a,.bz-pills button){border-radius:9px!important}html header.top nav a .pa-ni{display:none}@media (max-width:1100px){html header.top .page{flex-wrap:wrap;row-gap:8px}html header.top nav{order:3;width:100%;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px!important;overflow:visible!important;padding:4px 0 12px!important;margin:0}html header.top nav a{display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:62px;padding:9px 6px;border-radius:14px;background:var(--paper,#FFFCF8);border:1px solid color-mix(in srgb,var(--brown,#6E4F3C) 22%,transparent);box-shadow:0 3px 10px -6px rgba(80,55,35,.45);color:var(--ink,#2F2924)!important;font:600 .78rem/1.18 var(--body,system-ui);text-align:center;white-space:normal!important;text-decoration:none;-webkit-tap-highlight-color:transparent}html header.top nav a .pa-ni{display:block;width:22px;height:22px;fill:none;stroke:var(--brown,#6E4F3C);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}html header.top nav a[aria-current]:not([aria-current=false]){background:var(--brown,#6E4F3C);border-color:var(--brown,#6E4F3C);color:var(--paper,#FFFCF8)!important}html header.top nav a[aria-current]:not([aria-current=false]) .pa-ni{stroke:var(--paper,#FFFCF8)}html header.top nav a:active{transform:scale(.97)}}/* длинная строка под именем (метод «Ступени. Твой путь в новой стране», 10.10.2026): переносится сама, меню в одну строку */@media (min-width:1101px){html header.top nav a{white-space:nowrap}html header.top .mark small{display:block;max-width:300px;line-height:1.35}}.pa-mini{display:none}@media (max-width:1100px){html header.top:not(.pa-mini){position:relative!important;top:auto!important}html header.top.pa-mini{display:block;position:fixed!important;left:0;right:0;top:0;z-index:55;padding-top:env(safe-area-inset-top,0px);transform:translateY(-105%);visibility:hidden;transition:transform .22s ease,visibility 0s .22s;box-shadow:0 8px 20px -14px rgba(60,40,20,.5)}html header.top.pa-mini.on{transform:none;visibility:visible;transition:transform .22s ease}html header.top.pa-mini .page{padding-block:8px;flex-wrap:wrap}html header.top.pa-mini .mark small{display:none}html header.top.pa-mini .mark b{font-size:1.05rem}html header.top.pa-mini .mono{width:32px;height:32px}html header.top.pa-mini:not(.open) nav{display:none!important}.pa-mbtn{margin-left:auto;display:flex;align-items:center;gap:6px;padding:7px 12px;border-radius:12px;border:1.5px solid color-mix(in srgb,var(--brown,#6E4F3C) 35%,transparent);background:var(--paper,#FFFCF8);color:var(--ink,#2F2924);font:700 .84rem/1 var(--body,Manrope,system-ui);cursor:pointer;-webkit-tap-highlight-color:transparent}.pa-mbtn svg{width:18px;height:18px;flex:none;fill:none;stroke:var(--brown,#6E4F3C);stroke-width:2;stroke-linecap:round}}@media (max-width:480px){html header.top.pa-mini .mark span:not(.mono){display:none}}</style><script>(function(){function run(){var n=document.querySelector('header.top nav');if(!n)return;var I={who:'<circle cx="12" cy="8" r="3.6"/><path d="M5 20c.7-3.8 3.4-6 7-6s6.3 2.2 7 6"/>',req:'<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',path:'<path d="M12 3.5 20.5 8 12 12.5 3.5 8z"/><path d="M3.5 12 12 16.5 20.5 12M3.5 16 12 20.5 20.5 16"/>',put:'<circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8 18h6a3.5 3.5 0 0 0 0-7h-4a3.5 3.5 0 0 1 0-7h6"/>',tests:'<rect x="5" y="3.5" width="14" height="17" rx="2.5"/><path d="m8.5 9 1.5 1.5L13 7.5M8.5 15l1.5 1.5 3-3M15 9.5h1M15 15.5h1"/>',svoi:'<circle cx="12" cy="12" r="2.4"/><circle cx="12" cy="4.5" r="1.8"/><circle cx="12" cy="19.5" r="1.8"/><circle cx="5.5" cy="8.3" r="1.8"/><circle cx="18.5" cy="8.3" r="1.8"/><circle cx="5.5" cy="15.7" r="1.8"/><circle cx="18.5" cy="15.7" r="1.8"/>'};n.querySelectorAll('a').forEach(function(a){if(a.querySelector('.pa-ni'))return;var h=a.getAttribute('href')||'',k=/svoiludi/.test(h)?'svoi':/#who/.test(h)?'who':/#requests/.test(h)?'req':/#path/.test(h)?'path':/put\/?$/.test(h)?'put':/testy/.test(h)?'tests':null;if(!k)return;a.insertAdjacentHTML('afterbegin','<svg class="pa-ni" viewBox="0 0 24 24" aria-hidden="true">'+I[k]+'</svg>');a.style.removeProperty('color');});}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();})();(function(){function mini(){var h=document.querySelector('header.top');if(!h||document.querySelector('.pa-mini')||!('IntersectionObserver' in window))return;var lg=(document.documentElement.lang||'ru').slice(0,2),L={ru:['Menü','Einklappen'],uk:['Menü','Zuklappen'],de:['Menü','Zuklappen'],en:['Menu','Close']}[lg]||['Menü','Einklappen'];var m=document.createElement('header');m.className='top pa-mini';var pg=document.createElement('div');pg.className='page';var mk=h.querySelector('.mark');if(mk)pg.appendChild(mk.cloneNode(true));var b=document.createElement('button');b.type='button';b.className='pa-mbtn';b.setAttribute('aria-expanded','false');b.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span></span>';b.lastChild.textContent=L[0];pg.appendChild(b);var c=h.querySelector('.navcta');if(c)pg.appendChild(c.cloneNode(true));var n=h.querySelector('nav');if(n)pg.appendChild(n.cloneNode(true));m.appendChild(pg);document.body.appendChild(m);function set(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');b.lastChild.textContent=o?L[1]:L[0];}b.addEventListener('click',function(){set(!m.classList.contains('open'));});m.addEventListener('click',function(e){if(e.target.closest('nav a'))set(false);});new IntersectionObserver(function(es){var v=es[0].isIntersecting;m.classList.toggle('on',!v);if(v)set(false);}).observe(h);}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mini);else mini();})();</script><link rel="manifest" href="/site.webmanifest"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Iryna"><meta name="apple-mobile-web-app-status-bar-style" content="default"><script src="/assets/vz-app.js" defer></script><!--shape--><!--i18n--><link rel="alternate" hreflang="ru" href="https://voznesenskaya.ch/"><link rel="alternate" hreflang="uk" href="https://voznesenskaya.ch/uk/"><link rel="alternate" hreflang="de" href="https://voznesenskaya.ch/de/"><link rel="alternate" hreflang="en" href="https://voznesenskaya.ch/en/"><!--i18n--></head><body>
 <header class="top">
   <div class="page">
     <a class="mark" href="https://voznesenskaya.ch/de/" aria-label="Ирина Вознесенская — на главную">
@@ -819,9 +897,9 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
     <div class="sec-head">
       <div class="eyebrow">Dein Weg mit mir</div>
       <h2 id="path-h">Schritt für Schritt — von dort aus, wo du gerade stehst</h2>
-      <p>Die Programme sind nach der Methode «Stufen. Dein Weg im neuen Land» geordnet. Jede Stufe hat drei Schritte: «Fuss fassen», «Fest stehen», «Höher hinaus». Du musst nicht alles der Reihe nach durchlaufen, beginne mit dem, was jetzt zu dir passt. Die farbigen Punkte auf der Karte zeigen, auf welchen Stufen das Programm hilft. Wenn du nicht weisst, wo du stehst, mach den Test «Stufen der Stabilität» oder schau dir <a href="/de/put/">«Dein Weg im neuen Land»</a> an. Tippe auf einen Block — du siehst, womit du kommen kannst und womit du gehst.</p>
+      <p>Die Programme sind nach der Methode «Stufen. Dein Weg im neuen Land» geordnet. Auf jeder Stufe gibt es drei Schritte: «Fuss fassen», «Fest stehen», «Höher hinaus». Bei jedem Schritt gibt es drei Arten von Hilfe: «Svoi ludi» — kostenlose praktische Hilfe auf der Website «Svoi ludi», «Selbst» — was du in deinem eigenen Tempo machst, und «Mit mir» — persönliche Treffen. Du musst nicht alles der Reihe nach machen: Wähle deine Stufe oder sieh dir alles nach Schritten an. Wenn du nicht weisst, wo du stehst, mach den Test «Stufen der Stabilität» oder schau dir <a href="/de/put/">«Dein Weg im neuen Land»</a> an. Tippe auf einen Block — du siehst, womit du kommen kannst und womit du gehst.</p>
     </div>
-    <div id="pathThemes" class="themes"></div>
+    <div id="pathBox" class="pv"></div>
     <p class="path-note">Alles online und auf Russisch. Wo «den Preis erfährst du persönlich» steht, wird der Preis noch festgelegt, schreib mir, und ich erzähle dir mehr. Wie du einen Termin vereinbarst, bezahlst und verschiebst, steht in den <a href="/usloviya/#lang=de">Bedingungen der Zusammenarbeit</a>.</p>
     <div class="also" style="margin-top:28px">
       <a class="mini" href="/testy/#lang=de"><span class="ic sm" data-ico="compass" data-c="#4F5E3E"></span><b>Alle meine Tests</b><span>Vier kostenlose Tests, je 10–20 Minuten, mit ausführlicher Auswertung.</span></a>
@@ -920,7 +998,7 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
   <section id="novoe" aria-labelledby="nv-h">
     <h2 id="nv-h">Neu</h2>
     <p class="nv-lead">Was es Neues auf der Website und im Projekt «Svoi ludi» gibt.</p>
-    <div class="nv-grid"><article class="nv-item"><div class="nv-meta"><span class="nv-k">Auf der Website</span><time datetime="2026-10-11">11. Oktober 2026</time></div><h3>Badge «Svoi ludi» unten auf jeder Seite</h3><p>Unten auf jeder Seite ist jetzt das Badge meines Projekts «Svoi ludi in der Schweiz». Tippe darauf, und es öffnet sich ein Verzeichnis und eine Gemeinschaft für alle, die in der Schweiz leben: das Leben hier in einfachen Worten, kostenlose Tools sowie Fachleute und Organisationen, die deine Sprache sprechen.</p><a href="https://svoiludi.ch/" target="_blank" rel="noopener">«Svoi ludi» öffnen →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">Auf der Website</span><time datetime="2026-10-10">10. Oktober 2026</time></div><h3>Bedingungen der Zusammenarbeit</h3><p>Wie du einen Termin vereinbarst, wann du bezahlst, wie du einen Termin verschiebst und was passiert, wenn du aufhören möchtest. Kurz und ehrlich, damit du dich von Anfang an sicher fühlst.</p><a href="/usloviya/#lang=de">Lesen →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">Auf der Website</span><time datetime="2026-10-10">10. Oktober 2026</time></div><h3>«Karte der Stützen» — was dich im neuen Land hält</h3><p>Ein neues kostenloses Arbeitsblatt für 10–15 Minuten. Acht Stützen, von der zerbrochenen Schale bis zum Gold, das du weitergibst: Bei jeder markierst du, wie fest sie dich gerade hält und was dich von aussen und von innen hält. Die Karte zeigt, wo es leer ist, wohin deine Kraft versickert und welche Stütze du als Erstes stärkst, und du wählst einen kleinen Schritt für die Woche. Die Antworten bleiben nur bei dir, die Karte kannst du als PDF herunterladen.</p><a href="/de/karta-opor/">Karte erstellen →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">Auf der Website</span><time datetime="2026-10-10">10. Oktober 2026</time></div><h3>Programme nach den Schritten der Methode</h3><p>Meine Programme sind jetzt nach der Methode «Stufen. Dein Weg im neuen Land» geordnet: «Wo du jetzt stehst» und drei Schritte auf jeder Stufe — «Fuss fassen», «Fest stehen», «Höher hinaus». Finde deinen Schritt und beginne mit dem, was jetzt zu dir passt. Die farbigen Punkte auf der Karte zeigen, auf welchen Stufen das Programm hilft.</p><a href="#path">Programme ansehen →</a></article></div>
+    <div class="nv-grid"><article class="nv-item"><div class="nv-meta"><span class="nv-k">Auf der Website</span><time datetime="2026-10-11">11. Oktober 2026</time></div><h3>Programme nach Stufen: deine Stufe und drei Arten von Hilfe</h3><p>Jetzt kannst du die Programme nach Stufen ansehen: Wähle deine Stufe — und du siehst, was bei jedem ihrer Schritte hilft. Es gibt drei Arten von Hilfe: «Svoi ludi» — kostenlose Artikel und Tools, «Selbst» — Tests, Arbeitsblätter und Programme in deinem Tempo, «Mit mir» — persönliche Treffen. Lange Listen sind eingeklappt und öffnen sich mit der Schaltfläche «weitere anzeigen».</p><a href="#path">Meine Stufe wählen →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">Auf der Website</span><time datetime="2026-10-11">11. Oktober 2026</time></div><h3>Badge «Svoi ludi» unten auf jeder Seite</h3><p>Unten auf jeder Seite ist jetzt das Badge meines Projekts «Svoi ludi in der Schweiz». Tippe darauf, und es öffnet sich ein Verzeichnis und eine Gemeinschaft für alle, die in der Schweiz leben: das Leben hier in einfachen Worten, kostenlose Tools sowie Fachleute und Organisationen, die deine Sprache sprechen.</p><a href="https://svoiludi.ch/" target="_blank" rel="noopener">«Svoi ludi» öffnen →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">Auf der Website</span><time datetime="2026-10-10">10. Oktober 2026</time></div><h3>Bedingungen der Zusammenarbeit</h3><p>Wie du einen Termin vereinbarst, wann du bezahlst, wie du einen Termin verschiebst und was passiert, wenn du aufhören möchtest. Kurz und ehrlich, damit du dich von Anfang an sicher fühlst.</p><a href="/usloviya/#lang=de">Lesen →</a></article><article class="nv-item"><div class="nv-meta"><span class="nv-k">Auf der Website</span><time datetime="2026-10-10">10. Oktober 2026</time></div><h3>«Karte der Stützen» — was dich im neuen Land hält</h3><p>Ein neues kostenloses Arbeitsblatt für 10–15 Minuten. Acht Stützen, von der zerbrochenen Schale bis zum Gold, das du weitergibst: Bei jeder markierst du, wie fest sie dich gerade hält und was dich von aussen und von innen hält. Die Karte zeigt, wo es leer ist, wohin deine Kraft versickert und welche Stütze du als Erstes stärkst, und du wählst einen kleinen Schritt für die Woche. Die Antworten bleiben nur bei dir, die Karte kannst du als PDF herunterladen.</p><a href="/de/karta-opor/">Karte erstellen →</a></article></div>
     <div class="nv-bridge"><p><b>Praktische Fragen zum Leben in der Schweiz</b> — Bewilligung, Steuern, Versicherungen, Schule, Wohnen — findest du in meinem Projekt «Svoi ludi». Dort gibt es auch Fachleute, die deine Sprache sprechen, und kostenlose Tools.</p><a class="btn ghost" href="https://svoiludi.ch/" target="_blank" rel="noopener">«Svoi ludi» öffnen</a></div>
     <div class="nv-sub"><div><b>Neues abonnieren</b><p>Neue Beiträge, Gedanken zur Anpassung und Ankündigungen — in meinem Telegram-Kanal. Abmelden kannst du dich jederzeit.</p></div><a class="btn" href="https://t.me/IrynaNeuroCoach_channel" target="_blank" rel="noopener">In Telegram abonnieren</a></div>
   </section>
@@ -1271,50 +1349,308 @@ const PR = {
     inside:'ein halbes Jahr kostenlos im Verzeichnis «Svoi ludi in der Schweiz» und Zugang zum Telegram-Chat «Svoi ludi»', note:'Im Verzeichnis sind Fachpersonen eingetragen, die offiziell in der Schweiz arbeiten und Menschen auf Russisch oder Ukrainisch helfen.', pain:['nach dem Programm hast du Angst, allein dazustehen','du hast dein eigenes Geschäft, aber wenig Kundschaft und Kontakte'], res:['Unterstützung und Gleichgesinnte im Chat','Sichtbarkeit im Verzeichnis, neue Kundschaft und Kontakte'],
     next:[SVJ,['support','Nach dem Programm Kurs halten']]},
 };
-/* ===== Программы по методу «Ступени. Твой путь в новой стране» (10.10.2026, решение Ирины) =====
-   Группы — «Где ты сейчас» и три шага внутри каждой ступени: Ставлю ногу · Стою твёрдо · Тянусь выше.
-   Значок карточки — цветок программы (вид цветка = группа), точки — на каких ступенях программа помогает. */
+/* ===== Линейка по методу «Ступени. Твой путь в новой стране» (КОПИЯ 11.10.2026, черновик «Линейка по ступеням») =====
+   Два вида: «По ступеням» — выбираешь ступень и видишь сетку «шаги × уровни»; «По шагам» — по трём шагам, как раньше.
+   Три уровня помощи: «Свои люди» — бесплатное практическое на svoiludi.ch · «Сама» — в своём темпе · «Со мной» — личные встречи.
+   Одна таблица LINE питает оба вида (дальше — и «Твой путь», и разбор теста «Ступени устойчивости»).
+   Значки: цветок — программа; акварельная чаша — ступень (выбор ступени, как на «Твой путь»); веточка, конверт, две чашки — уровень.
+   11.10.2026, 09:15 — Ирина: «оформление по шагам мне нравится, а по ступеням с теми иконками нет» → «По ступеням» в стиле «По шагам», линейные чаши убраны. */
 const STEPN = ['Die zerbrochene Schale', 'Dein Kreis', 'Ich kann es selbst', 'Verständliche Regeln', 'Meine eigene Arbeit', 'Mein Beitrag', 'Mein ganzes Leben', 'Hier und dort — ein Leben'];
 const STEPC = [['#8E8470','#ECE7DD'],['#6A5FB8','#E7E4F7'],['#C25468','#F8E0E4'],['#3F6FBF','#E1EBFA'],['#C97E52','#FAE8DC'],['#4E9A70','#E1F1E7'],['#A99A2E','#F7F2D3'],['#2894A0','#DDF3F4']];
 const ALL8 = [1, 2, 3, 4, 5, 6, 7, 8];
-/* на каких ступенях помогает программа (метод, разделы 4 и 9; «Что поможет на этой ступени» на «Твой путь») */
-const PSTEPS = { kompas: ALL8, stupeni: ALL8, karta: ALL8, blizost: [2], roza: [2], meet: ALL8,
-  mentor: [1, 2, 3], m1: [1], enough: [3, 5], borders: [3], price5: [5], exp: [6, 8], draft: [7], emo: [1], bot: [1, 4],
-  day: [1, 4], year: [4, 7], budget: [1, 4], tax: [4],
-  snimok: [4, 5, 6, 7, 8], fund: [5, 6, 7], flag: [5, 6, 7], life: [7, 8], support: [6, 7, 8], gift: [6, 8] };
+const TEASER = ['Wenn es vor allem darum geht, auf den Beinen zu bleiben', 'Wenn du dir wünschst, dass abends jemand auf dich wartet', 'Wenn du wieder spüren willst: «ich kann das»', 'Wenn jeder Brief im Briefkasten dein Herz schneller schlagen lässt',
+  'Wenn sich bei der Frage «Was machen Sie beruflich?» innerlich alles zusammenzieht', 'Wenn das Eigene schon da ist und du teilen möchtest', 'Wenn du schon lange hier lebst und doch wie auf gepackten Koffern sitzt', 'Wenn «hier» und «dort» zu einem Leben verschmelzen'];
+const STEPI = [
+  'Hier geht es vor allem um Sicherheit, Schlaf, Geld zum Leben und einen eigenen Ort. Die persönliche Arbeit kann warten: Zuerst brauchst du Boden unter den Füssen.',
+  'Hier ist es wichtig, die ersten eigenen Menschen zu finden und den Kontakt zu halten. Du kannst mit einem Anlass oder einem Menschen beginnen.',
+  'Hier kommt die Stimme zurück: selbst anrufen, einen Brief beantworten, «nein» sagen, ohne dich zu rechtfertigen.',
+  'Hier geht es darum zu verstehen, wie alles funktioniert, und Ordnung in Papiere und Fristen zu bringen. Ab dieser Stufe beginnt die persönliche Arbeit mit mir.',
+  'Hier holst du dir deine Arbeit und dein eigenes Geld zurück: Job, Diplom, eigenes Geschäft, dein eigener Preis.',
+  'Hier möchtest du gebraucht werden: Erfahrung teilen, eigene Angebote leiten und sehen, wem dein Leben guttut.',
+  'Hier schaust du langfristig auf dein Leben: Rente, Pass, eigenes Zuhause — und wofür das alles ist.',
+  'Das ist keine Stufe, die man repariert, sondern ein Horizont: Deine zwei Leben werden zu einem, und du gibst deine Erfahrung an die weiter, die nach dir kommen.'];
+const SUBN = ['Fuss fassen', 'Fest stehen', 'Höher hinaus'];
+const SUBQ = ['Ich lerne noch, alles kostet Kraft', 'Das gelingt mir', 'Das reicht mir nicht mehr, es wird mir zu eng'];
+const SUBH = ['Es braucht Informationen und Halt', 'Es braucht Ordnung und Rhythmus', 'Es braucht Gespräche und persönliche Arbeit'];
+
+/* три уровня помощи */
+const LVK = ['sl', 'sama', 'so'];
+const LV = {
+  sl:   {n:'Svoi ludi', d:'kostenlos auf der Website «Svoi ludi»', k:'Kostenlos: Artikel, Übersichten, Tools, Verzeichnis und Anlässe auf svoiludi.ch',
+         q:'Artikel, Übersichten, Tools, ein Verzeichnis von Fachleuten und Anlässe auf der Website «Svoi ludi». Alles ist kostenlos und öffnet sich auf svoiludi.ch.'},
+  sama: {n:'Selbst', d:'in deinem Tempo', k:'In deinem Tempo: Tests, Arbeitsblätter, E-Mail-Serien und Mini-Tagebücher',
+         q:'Tests, Arbeitsblätter, E-Mail-Serien und Mini-Tagebücher. Du machst sie selbst, wann es dir passt.'},
+  so:   {n:'Mit mir', d:'persönliche Treffen', k:'Persönliche Treffen online: vom Kennenlernen bis zum Hauptprogramm',
+         q:'Persönliche Treffen mit mir online: Kennenlernen, Mentoring-Gespräch, Auswertungen von je 3 Stunden, das Hauptprogramm und Begleitung.'},
+};
+const LVSVG = {
+  sl:   '<path class="st" d="M5.5 20.8C8.3 15.2 12.4 9.6 18.6 4"/><path class="fs" d="M8.6 15.6C6.8 13.4 5 13 3.4 13.4c1 2.2 3 3 5.2 2.2z"/><path class="fs" d="M11.8 11.1c2.1-.6 3.7.3 4.4 2.5-2.2.6-3.8-.3-4.4-2.5z"/><path class="fs" d="M13.6 9.2c-1.6-.8-2.7-2.3-2.8-4.4 2.1.4 3.2 2 2.8 4.4z"/><path class="fs" d="M18.6 4c1.3.1 2.3 1 2.5 2.6-1.5 0-2.4-1-2.5-2.6z"/>',
+  sama: '<rect class="fs" x="3" y="6" width="18" height="13" rx="2.2"/><path class="st" d="M3.7 7.3 12 13.5l8.3-6.2"/><path class="st" d="M3.9 18.2l5.9-5.5M20.1 18.2l-5.9-5.5"/>',
+  so:   '<path class="fs" d="M2.3 10.5h7.4v3.4c0 2.2-1.7 3.9-3.7 3.9s-3.7-1.7-3.7-3.9z"/><path class="st" d="M9.7 11.6h.6a1.5 1.5 0 0 1 0 3h-.7"/><path class="fs" d="M13.3 10.5h7.4v3.4c0 2.2-1.7 3.9-3.7 3.9s-3.7-1.7-3.7-3.9z"/><path class="st" d="M20.7 11.6h.5a1.5 1.5 0 0 1 0 3h-.6"/><path class="st" d="M1.5 20.2h21M5.9 8.3c-.6-.9.6-1.5 0-2.5M17 8.3c-.6-.9.6-1.5 0-2.5"/>',
+};
+const lvIco = (k, s = 16) => `<svg class="lvi" viewBox="0 0 24 24" width="${s}" height="${s}" aria-hidden="true">${LVSVG[k]}</svg>`;
+const lvBadge = k => `<span class="lvb lv-${k}">${lvIco(k, 15)}${LV[k].n}</span>`;
+
+/* уровень каждой программы со страницы */
+const PLV = { kompas:'sama', stupeni:'sama', karta:'sama', blizost:'sama', roza:'sama', m1:'sama', enough:'sama', borders:'sama', price5:'sama', exp:'sama', draft:'sama', tax:'sama',
+  bot:'sl', emo:'sl', day:'sl', year:'sl', budget:'sl',
+  meet:'so', mentor:'so', snimok:'so', fund:'so', flag:'so', life:'so', support:'so', gift:'so' };
+/* «Декларация» становится набором «Сама»; встреча 30 минут — отдельно, «Разобрать вместе: 30 минут» */
+Object.assign(PR.tax, { name:'«Steuererklärung ohne Panik»', line:'Set zum Selbermachen · Ordner, Sammelkalender, Checkliste fürs Einreichen' });
+
+/* то, чего нет среди программ страницы: ссылки на «Свои люди» и новые продукты */
+const SVU = 'https://svoiludi.ch/';
+const sv = (h, name, line) => ({ lv:'sl', name, line, h: SVU + h, st:'ok', price:'kostenlos' });
+const nw = (lv, name, slogan, line, about, price = 'kostenlos', st = 'new') => ({ lv, name, slogan, line, about, price, st });
+const X = {
+  s_priehala: sv('situacii/tolko-priehala/', 'Gerade in der Schweiz angekommen', 'die ersten Schritte der Reihe nach'),
+  s_ekstr:    sv('instrumenty/ekstrennye-nomera/', 'Karte mit Notfallnummern', 'Arzt, Notruf, Notfallapotheke'),
+  s_psy:      sv('shveycariya/psihoterapiya/', 'Psychotherapie über die Krankenkasse', 'wenn Schlaf und Kraft seit Wochen fehlen'),
+  s_sozial:   sv('shveycariya/sozialhilfe/', 'Sozialhilfe', 'wenn das Geld zum Leben nicht reicht'),
+  s_med:      sv('shveycariya/medstrahovka/', 'Krankenversicherung', 'wie Krankenkasse und Franchise funktionieren'),
+  s_events:   sv('events/', 'Treffen in deiner Nähe', 'Veranstaltungen in deiner Sprache'),
+  s_org:      sv('organizacii/', 'Organisationen', 'Vereine, Stiftungen und Hilfszentren'),
+  s_spr:      sv('', 'Verzeichnis «Svoi ludi»', 'Kategorien des Verzeichnisses, in denen du Fachleute suchen kannst'),
+  s_kursy:    sv('kursy/', 'Kurse und Angebote', 'regelmässige Angebote in deiner Sprache'),
+  s_srok:     sv('instrumenty/srok-pisma/', 'Bis wann du auf einen Brief antworten musst', 'Frist mit den Feiertagen des Kantons'),
+  s_pisma:    sv('shveycariya/pisma-sroki/', 'Briefe von Behörden und Fristen', 'was mit dem Brief zu tun ist und bis wann'),
+  s_yazyk:    sv('instrumenty/yazyk-trebovaniya/', 'Welches Sprachniveau nötig ist', 'für Bewilligung, Pass und Arbeit'),
+  s_fide:     sv('shveycariya/fide/', 'fide-Test', 'Sprachniveaus A1, A2, B1 und wie man die Prüfung besteht'),
+  s_arenda:   sv('instrumenty/pisma-arenda/', 'Briefe an die Verwaltung', 'fertige Briefe auf Deutsch'),
+  s_prodav:   sv('instrumenty/pisma-prodavcu/', 'Briefe an Verkäufer', 'Mangel, Abo, Widerruf eines Vertrags'),
+  s_frazy:    Object.assign(nw('sl', '«Fertige Sätze für Anrufe»', 'Anrufen, ohne den Faden zu verlieren', 'Spickzettel auf der Website «Svoi ludi»',
+                'Kurze Sätze in der Sprache des Kantons für Anrufe bei der Ärztin, in der Schule, bei der Gemeinde und der Verwaltung: wie du dich vorstellst, um Wiederholung bittest und die Antwort notierst.'), {}),
+  s_ustroena: sv('shveycariya/', 'Wie hier alles funktioniert', 'Bewilligungen, Steuern, Versicherungen, Schule, Wohnen'),
+  s_shemy:    sv('instrumenty/vse-fayly/', 'Übersichten auf einem Blatt', 'Steuern, Versicherungen, Rente, Diplom'),
+  s_kuda:     sv('instrumenty/kuda-obratitsya/', 'Wo du Rat bekommst', 'Gewerkschaften und kostenlose Beratungen'),
+  s_sroki:    sv('instrumenty/sroki-goda/', 'Obligatorische Fristen des Jahres', 'Erinnerungen in deinem Kalender'),
+  s_dannye:   sv('instrumenty/moi-dannye/', 'Datenblatt der Familie', 'AHV, Versicherungen, Ärztinnen und Ärzte an einem Ort'),
+  s_rabota:   sv('shveycariya/rabota/', 'Arbeit in der Schweiz', 'wo suchen und wie man hier einstellt'),
+  s_ip:       sv('shveycariya/samozanyatost/', 'Wie man sich in der Schweiz selbständig macht', 'erste Schritte, AHV, Versicherungen'),
+  s_diplom:   sv('instrumenty/diplomy-shema/', 'Wie ein ausländisches Diplom anerkannt wird', 'Schema auf einem Blatt'),
+  s_rez:      sv('instrumenty/rezyume/', 'Lebenslauf für die Schweiz', 'Lebenslauf nach hiesigen Regeln'),
+  s_schet:    sv('instrumenty/schet-qr/', 'Rechnung an Kunden mit QR-Einzahlungsschein', 'für die ersten Kundinnen und Kunden'),
+  s_tabel:    sv('instrumenty/uchet-vremeni/', 'Arbeitszeitrapport', 'Stunden eines Monats auf einem Blatt'),
+  s_chasy:    sv('instrumenty/chasy-po-klientam/', 'Stunden und Zahlungen pro Kundin erfassen', 'wer wie viele Stunden hatte und was bezahlt ist'),
+  s_kniga:    sv('instrumenty/dohody-rashody/', 'Einnahmen- und Ausgabenbuch', 'für dein eigenes Geschäft und die Steuern'),
+  s_partner:  sv('vakansii/', 'Partnerin oder Partner gesucht', 'eine Partnerin oder einen Partner für dein Geschäft finden'),
+  s_join:     sv('join/', 'Sich im Verzeichnis eintragen', 'damit dich die finden, die dich brauchen'),
+  s_ustav:    sv('instrumenty/statuty-fereyna/', 'Statuten eines Vereins', 'Vorlage, um eine eigene Gemeinschaft zu gründen'),
+  s_pensiya:  sv('instrumenty/pensiya-shema/', 'Wie die Altersvorsorge funktioniert', 'drei Säulen auf einem Blatt'),
+  s_pasport:  sv('instrumenty/grazhdanstvo-shema/', 'Der Weg zum Schweizer Pass', 'Schema auf einem Blatt'),
+  s_ipoteka:  sv('instrumenty/ipoteka-raschet/', 'Hypothekenrechner', 'wie viel Wohnung ich mir leisten kann'),
+  s_zhile:    sv('shveycariya/pokupka-zhilya/', 'Eine Wohnung in der Schweiz kaufen', 'Eigenkapital, Hypothek, Lex Koller'),
+
+  tyazhelo: nw('sama', '«Wenn es gerade schwer ist»', 'Eine Seite für den schwersten Tag', 'Blatt · PDF · 5 Minuten',
+    'Ein kurzes Blatt für einen Tag, an dem nichts gelingt: wie du deinen Atem etwas beruhigst, wen du in der Schweiz anrufen kannst und eine kleine Aufgabe für heute. Du kannst es ausdrucken und griffbereit haben.'),
+  tracker: nw('sama', 'Tracker «Meine kleinen Schritte»', 'Ein Schritt am Tag — und du siehst, dass du vorankommst', 'Tracker · online und PDF',
+    'Du wählst einen kleinen Schritt für den Tag oder die Woche und hakst ab, was du geschafft hast. Ein Wenn-dann-Plan hilft, nicht aufzugeben, wenn du müde bist. Nach einem Monat siehst du, wie viel du schon gegangen bist.'),
+  zima: nw('sama', '«Grauer Winter»', '30 Tage Licht und Kraft', 'Mini-Tagebuch · 30 Tage',
+    'Im Winter wird es früh dunkel, und die Kraft geht schneller aus. Jeden Tag eine kleine Sache für Licht, Bewegung und Wärme.', ASK),
+  krug: nw('sama', '«Mein Kreis»', 'Wer schon da ist und wem du schreiben kannst', 'Arbeitsblatt «Wer bin ich hier» · PDF',
+    'Du zeichnest deinen Kreis: wer schon da ist, wem du näherkommen möchtest und wohin du diesen Monat gehen kannst. Du siehst, dass du nicht allein bist, und weisst, womit du anfängst.'),
+  odin: nw('sama', '«Ein eigener Mensch»', '30 Tage, um einen eigenen Menschen zu finden', 'Mini-Tagebuch · 30 Tage',
+    'Jeden Tag ein kleiner Schritt auf Menschen zu: schreiben, hingehen, fragen. Das Ziel sind nicht hundert Bekannte, sondern ein Mensch, den du anrufen kannst.', ASK),
+  granicy: nw('sama', '«Meine Grenzen»', 'Wo ich «nein» sagen muss', 'Arbeitsblatt «Wer bin ich hier» · PDF',
+    'Du markierst, wo du zustimmst, obwohl du ablehnen möchtest, und wo man dich nicht hört. Das Blatt zeigt dir eine Grenze, mit der du beginnen kannst.'),
+  nemeckiy: nw('sama', '«Deutsch im Alltag ohne Scham»', 'Sprechen, auch mit Fehlern', 'Mini-Tagebuch · 21 Tage',
+    '21 Tage kleiner Gespräche in der Sprache: im Laden, am Telefon, mit der Nachbarin. Fehler gehören zum Weg und sind kein Grund zu schweigen.', ASK),
+  gde: nw('sama', '«Wo ich wirklich stehe: was ich weiss, was ich vermute, wovor ich Angst habe»', 'Fakten von Ängsten trennen', 'Arbeitsblatt «Wer bin ich hier» · PDF',
+    'Du schreibst auf, was du über deine Situation sicher weisst, was du vermutest und wovor du Angst hast. Die Angst wird kleiner, wenn du siehst, wo Fakten sind und wo Vermutungen.'),
+  pochta: nw('sama', '«Ein Brief im Briefkasten — ohne Panik»', '14 Tage, um die Angst vor Briefen zu verlieren', 'Mini-Tagebuch · 14 Tage',
+    'Jeden Tag ein kleiner Schritt: den Brief öffnen, verstehen, wer schreibt und welche Frist gilt, die Papiere in Ordner sortieren. Nach zwei Wochen ist ein Brief im Briefkasten einfach ein Brief.', ASK),
+  hochu: nw('sama', '«Ich will, aber ich tue es nicht»', 'Was mich zurückhält', 'Arbeitsblatt · PDF',
+    'Du schreibst auf, was du schon lange tun möchtest, und was dich zurückhält: Angst, Scham, Müdigkeit, fremde Regeln. Mit diesem Blatt kommst du gut vorbereitet zu einem persönlichen Treffen.'),
+  bagazh: nw('sama', '«Mein Gepäck»', 'Was ich kann und was ich mitgebracht habe', 'Arbeitsblatt «Wer bin ich hier» · PDF',
+    'Du sammelst alles, was du kannst: Beruf, Erfahrung, Fähigkeiten aus dem Leben. Du siehst, was davon hier gebraucht wird und womit du den Weg zu deiner eigenen Arbeit beginnst.'),
+  deti: nw('sama', '«Kinder und mein eigenes Geschäft»', '21 Tage, um Zeit für das Eigene zu finden', 'Mini-Tagebuch · 21 Tage',
+    'Jeden Tag ein kleiner Schritt, damit neben Kindern und Haushalt Zeit und Platz für dein eigenes Geschäft entstehen.', ASK),
+  fokus: nw('sama', '«Viel Kraft, aber kein Fokus»', '30 Tage, um das Wichtigste zu wählen', 'Mini-Tagebuch · 30 Tage',
+    'Wenn du alles gleichzeitig willst, verteilt sich die Kraft in alle Richtungen. In 30 Tagen wählst du das Wichtigste und bringst wenigstens eine Sache zu Ende.', ASK),
+  komu: nw('sama', '«Wem mein Leben guttut»', 'Den eigenen Beitrag sehen', 'Arbeitsblatt · PDF',
+    'Du markierst, wem du schon hilfst und womit: Familie, Freundinnen, Nachbarn, Kundinnen. Du siehst, dass dein Beitrag schon da ist und wo er wachsen kann.'),
+  schastye: nw('sama', '«Mein Glück»', 'Was mir wirklich wichtig ist', 'Arbeitsblatt «Wer bin ich hier» · PDF',
+    'Du erinnerst dich an Momente, in denen du glücklich warst, und findest, was sie gemeinsam haben. Das ist der erste Schritt zu deinen Werten und eine gute Vorbereitung auf «Mein Fundament».'),
+  chas: nw('sama', '«Eine Stunde für mich ohne schlechtes Gewissen»', '4 Wochen, um dir Zeit zurückzuholen', 'Mini-Tagebuch · 4 Wochen',
+    'Jede Woche etwas mehr Zeit für dich — ohne Rechtfertigung. Erholung gehört zum Leben und ist keine Belohnung für alles Erledigte.', ASK),
+  ostavila: nw('sama', '«Was ich zurückgelassen habe»', '21 Tage, um behutsam Abschied zu nehmen und das Wichtigste mitzunehmen', 'Mini-Tagebuch · 21 Tage',
+    'Du erinnerst dich, was dort geblieben ist: Menschen, Zuhause, Beruf, die Frau, die du früher warst. Manches lässt du dankbar los, das Wichtigste nimmst du mit in dein neues Leben.', ASK),
+  odna: nw('sama', '«Hier und dort — ein Ich»', 'Zwei Leben zu einem zusammenfügen', 'Arbeitsblatt «Wer bin ich hier» · PDF',
+    'Du verbindest, was dir dort lieb ist, mit dem, was hier gewachsen ist. Du siehst: Das sind nicht zwei Leben, sondern eines — deines.'),
+  pismo: nw('sama', '«Ein Brief an die, die nach mir kommen»', 'Die eigene Erfahrung weitergeben', 'Arbeitsblatt · PDF',
+    'Du schreibst einen Brief an eine Frau, die gerade angekommen ist: was dir geholfen hat und was du dir selbst im ersten Jahr sagen würdest. So wird deine Erfahrung zur Stütze für andere.'),
+  proverka: nw('sama', '«Stufen-Check»', 'Stehe ich fest und bin ich bereit für mehr', 'drei Fragen von 0 bis 10 · 3 Minuten',
+    'Drei kurze Fragen am Ende jeder Stufe. Einmal im Monat siehst du, was sich verändert hat, und ob es Zeit ist, weiterzugehen, oder ob du dich hier noch festigst.'),
+
+  razobrat: nw('so', '«Gemeinsam anschauen: 30 Minuten»', 'Deinen Tag, dein Jahr, dein Budget oder deine Steuererklärung zu zweit anschauen', '30 Minuten · online',
+    'Du füllst das Tool selbst aus, und dann schauen wir uns in 30 Minuten gemeinsam an, was herausgekommen ist, und wählen, was du zuerst änderst.', ASK, 'dev'),
+  kartami: nw('so', '«Gespräch mit Karten»', 'Deine eigene Metapher und ein Schritt', 'persönliches Treffen · 60–75 Minuten · online',
+    'Wir arbeiten mit metaphorischen Karten und Clean Language: Du wählst eine Karte, und wir erkunden gemeinsam, was sie über deine Situation sagt. Du gehst mit deiner eigenen Metapher und einem klaren Schritt.', '150 CHF'),
+  sess: nw('so', 'Persönliche Sitzung', 'Ein Treffen für ein Anliegen', '60–90 Minuten · online · auch als Paket',
+    'Eine persönliche Coaching-Sitzung zu deinem Anliegen. Du kannst einmal kommen oder ein Paket nehmen: 3 Treffen — 360 CHF.', '150 CHF'),
+  vstrecha: nw('so', '«Treffen des Monats»', 'Offenes Treffen unter uns, einmal im Monat', 'online · 60 Minuten',
+    'Einmal im Monat ein offenes Online-Treffen: ein Thema des Monats, Fragen und ein lebendiges Gespräch. Du kannst einfach kommen und zuhören.'),
+  razbor: nw('so', '«Monatsrückblick»', 'Für alle, die ein Programm machen', 'online · 75–90 Minuten',
+    'Ein geschlossenes Treffen einmal im Monat für alle, die mit mir ein Programm machen: was gelungen ist, wo du feststeckst, was der nächste Schritt ist.', 'im Programm inbegriffen'),
+  nastav: nw('so', 'Mentoring für andere', 'Die begleiten, die nach dir kommen', 'später',
+    'Für Frauen, die ihren Weg gegangen sind und Neuankömmlinge unterstützen möchten. Das Format kommt später.', ASK),
+};
+
+/* ===== ГЛАВНАЯ ТАБЛИЦА: ступень → шаг (Ставлю ногу · Стою твёрдо · Тянусь выше) → уровень =====
+   запись — id или [id, 'что именно на этом шаге'] */
+const LINE = [
+  [ { sl:['s_priehala','s_ekstr','s_psy','s_sozial','s_med','bot'], sama:['karta','tyazhelo'], so:['meet'] },
+    { sl:['day','budget','emo'], sama:['tracker','zima'], so:[] },
+    { sl:[], sama:['m1'], so:['mentor'] } ],
+  [ { sl:['s_events','s_org','s_spr'], sama:['krug'], so:['meet'] },
+    { sl:['s_kursy',['year','Feiertage und Treffen mit Nahestehenden im Blick']], sama:['odin'], so:['vstrecha'] },
+    { sl:[], sama:[], so:['mentor'] } ],
+  [ { sl:['s_srok','s_pisma','s_yazyk','s_fide'], sama:['granicy','nemeckiy'], so:['meet'] },
+    { sl:['s_arenda','s_prodav','s_frazy'], sama:['enough'], so:[] },
+    { sl:[], sama:['borders','hochu'], so:['mentor','kartami'] } ],
+  [ { sl:['s_ustroena','s_shemy','s_kuda','bot'], sama:['gde','pochta'], so:['meet'] },
+    { sl:[['year','alle Fristen des Jahres an einem Ort'],'s_sroki','budget','s_dannye'], sama:['tax'], so:[['razobrat','zu Tag, Jahr, Budget oder Steuererklärung']] },
+    { sl:[], sama:['hochu'], so:['snimok','kartami','sess'] } ],
+  [ { sl:['s_rabota','s_ip','s_diplom','s_rez'], sama:['bagazh'], so:['meet'] },
+    { sl:['s_schet','s_tabel','s_chasy','s_kniga'], sama:['price5','deti','fokus'], so:[['razobrat','zur Rechnung und zum Einnahmenbuch']] },
+    { sl:['s_partner'], sama:['hochu',['enough','falls du es auf Stufe 3 noch nicht gemacht hast']], so:['fund','flag','kartami'] } ],
+  [ { sl:['s_join','s_org'], sama:['komu'], so:['meet'] },
+    { sl:[['s_kursy','eigene Kurse leiten'],'s_ustav'], sama:['exp'], so:[['vstrecha','ein eigenes Treffen an meiner Seite leiten']] },
+    { sl:['s_partner'], sama:[], so:['fund','flag','support'] } ],
+  [ { sl:['s_pensiya','s_pasport','s_ipoteka','s_zhile'], sama:['schastye','chas'], so:['meet'] },
+    { sl:[['year','das Jahr nach deinen Prioritäten']], sama:['draft','ostavila'], so:[] },
+    { sl:[], sama:[], so:['life','fund','flag'] } ],
+  [ { sl:[['s_join','Erfahrung mit denen teilen, die nachkommen'],['s_events','hingehen und eigene Treffen veranstalten']], sama:['odna'], so:['meet'] },
+    { sl:[['s_kursy','eigene Kurse leiten']], sama:['pismo'], so:[] },
+    { sl:[], sama:['exp'], so:['life','support','nastav'] } ],
+];
+const WHERE = ['stupeni', 'karta', 'kompas', 'meet'];      // «Где я сейчас» — общий вход
+const PAIR = ['blizost', 'roza'];                           // тесты о паре — отдельно от ступеней
+const THRU = ['tracker', 'hochu', 'proverka', 'sess', 'vstrecha', 'razbor'];   // на всех ступенях
+
+const eid = e => Array.isArray(e) ? e[0] : e;
+const POS = {};
+LINE.forEach((st, s) => st.forEach((cell, j) => LVK.forEach(l => (cell[l] || []).forEach(e => { const id = eid(e); (POS[id] = POS[id] || []).push([s + 1, j]); }))));
+function it(id){
+  const p = PR[id];
+  if (p) return { id, pr: true, lv: PLV[id] || 'sama', name: p.name, slogan: p.slogan, line: p.line, price: p.price, st: p.ready ? 'ok' : 'dev' };
+  const x = X[id]; return x ? Object.assign({ id }, x) : null;
+}
+// цветок программы: вид цветка = шаг, где программа встречается впервые («Где я сейчас» — ромашка, сквозные — эдельвейс)
+const FLK = {}, FLN = [0, 0, 0, 0, 0];
+const setFl = (id, lane) => { if (!(id in FLK)) FLK[id] = [lane, FLN[lane]++]; };
+[...WHERE, ...PAIR].forEach(id => setFl(id, 0));
+[0, 1, 2].forEach(j => LINE.forEach(st => LVK.forEach(l => (st[j][l] || []).forEach(e => setFl(eid(e), j + 1)))));
+THRU.forEach(id => setFl(id, 4)); setFl('gift', 3);
+function picon(id, size){ const f = FLK[id] || [0, 0]; return flower(f[0], f[1], size); }
+const pdotsS = s => `<span class="pdots" aria-hidden="true">${ALL8.map(n => `<i style="${s.includes(n) ? `background:${STEPC[n - 1][0]}` : ''}"></i>`).join('')}</span>`;
 const stepsText = s => s.length === 8 ? 'für alle acht Stufen'
   : s.length === 1 ? `Stufe ${s[0]} · ${STEPN[s[0] - 1]}`
   : s.every((v, i) => !i || v === s[i - 1] + 1) ? `Stufen ${s[0]}–${s[s.length - 1]}`
   : `Stufen ${s.slice(0, -1).join(', ')} und ${s[s.length - 1]}`;
-// значок программы — цветок-мандала, как на живой главной. Вид цветка = группа (шаг метода):
-// «Где ты сейчас» — ромашка, «Ставлю ногу» — клевер, «Стою твёрдо» — лотос, «Тянусь выше» — роза
-const FLK = {};
-function picon(id, size){ const f = FLK[id] || [0, 0]; return flower(f[0], f[1], size); }
-const pdots = id => { const s = PSTEPS[id] || ALL8; return `<span class="pdots" aria-hidden="true">${ALL8.map(n => `<i style="${s.includes(n) ? `background:${STEPC[n - 1][0]}` : ''}"></i>`).join('')}</span>`; };
 const SUBBARS = n => `<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">${[0, 1, 2].map(i => `<rect x="${4 + i * 6}" y="${16 - i * 5}" width="4" height="${4 + i * 5}" rx="1.5" fill="${i < n ? '#FFFCF8' : 'rgba(255,252,248,.35)'}"/>`).join('')}</svg>`;
-const THEMES = [
-  {h:'Wo du jetzt stehst', sub:'Beginne kostenlos. Der Test zeigt, auf welcher Stufe du stehst und welche knarrt, und beim Kennenlernen wählen wir gemeinsam deinen nächsten Schritt.', ids:['stupeni','kompas','karta','blizost','roza','meet']},
-  {h:'Fuss fassen', q:'«Ich lerne noch, alles kostet Kraft»', sub:'Wenn du dich zurechtfindest und alles viel Kraft kostet, helfen Informationen und Halt. Ein Gespräch mit jemandem, der diesen Weg gegangen ist, Programme per E-Mail und kostenlose Helfer.', ids:['mentor','m1','enough','borders','price5','exp','draft','emo','bot']},
-  {h:'Fest stehen', q:'«Das gelingt mir»', sub:'Wenn es schon gelingt, helfen Ordnung und Rhythmus, damit die Kraft nicht ins Chaos fliesst. Werkzeuge für den Alltag, einige davon kostenlos. Gemeinsam besprechen können wir alles in einem Treffen von 30 Minuten.', ids:['day','year','budget','tax']},
-  {h:'Höher hinaus', q:'«Das reicht mir nicht mehr, es wird mir zu eng»', sub:'Wenn es eng geworden ist, du mehr willst, aber der Schritt nicht gelingt, ist es Zeit für persönliche Arbeit für dein Ziel. Vom Lebensbild zu den getanen Schritten.', ids:['snimok','fund','flag'], flow:true,
-   more:'Und danach — damit du nicht vom Weg abkommst und deine eigenen Leute um dich hast.', ids2:['life','support','gift']},
-];
-THEMES.forEach((t, ti) => [...t.ids, ...(t.ids2 || [])].forEach((id, k) => FLK[id] = [ti, k]));
 const cap = s => String(s).charAt(0).toUpperCase() + String(s).slice(1);
-const isFree = p => /^(бесплатно|в подарок)$/.test(p.price);
+const isFreeP = pr => /^(бесплатно|в подарок)$/.test(pr);
+const isFree = p => isFreeP(p.price);
+const esc2 = s => String(s).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+const stTag = x => x.st === 'dev' ? '<span class="soon">in Arbeit</span>' : x.st === 'new' ? '<span class="soon new">neu</span>' : '';
+const lvFact = l => `<div class="pd-fact"><span class="pd-lbl">Wie es abläuft</span><p class="pd-lv">${lvBadge(l)}<span>${esc2(LV[l].q)}</span></p></div>`;
+function posFact(id){
+  const ps = POS[id];
+  const body = ps ? `<p class="pd-steps">${ps.map(([s, j]) => `<button type="button" data-go="${s}" style="--lc:${STEPC[s - 1][0]};--lf:${STEPC[s - 1][1]}"><i>${s}</i>${esc2(STEPN[s - 1])} · ${esc2(SUBN[j])}</button>`).join('')}</p>`
+    : `<p>${WHERE.includes(id) ? 'Der gemeinsame Einstieg für alle acht Stufen: Hier fängst du am besten an.' : PAIR.includes(id) ? 'Ein Test für Paare. Er steht ausserhalb der Stufen.' : THRU.includes(id) ? 'Begleitet dich über alle acht Stufen.' : 'Nach dem Hauptprogramm «Mein Ziel — mein Weg».'}</p>`;
+  return `<div class="pd-fact"><span class="pd-lbl">Wo es auf dem Weg steht</span>${body}<a class="pd-stlink" href="/de/put/">Was sind diese Stufen? →</a></div>`;
+}
+
 function pathInit(){
-  const esc2 = s => String(s).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
-  const box = document.getElementById('pathThemes');
-  const card = (t, id, k) => { const p = PR[id];
-      return (t.flow && k ? '<span class="parr" aria-hidden="true">→</span>' : '') + `<button class="pblock${p.main ? ' main' : ''}" data-p="${id}" aria-haspopup="dialog">
-        <span class="pb-top"><span class="pb-fl">${picon(id, 48)}</span>${p.ready ? '' : '<span class="soon">in Arbeit</span>'}</span>
-        <b>${esc2(p.name)}</b><span class="pb-slogan">${esc2(p.slogan)}</span><span class="pb-line">${esc2(p.line)}</span>
-        <span class="pb-steps">${pdots(id)}<span>${esc2(stepsText(PSTEPS[id] || ALL8))}</span></span>
-        <span class="pb-foot"><span class="pb-price${isFree(p) ? ' free' : /\d/.test(p.price) ? ' paid' : ' soonp'}">${isFree(p) ? '<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 3l2.3 5.6 6 .5-4.6 3.9 1.4 5.9L12 15.8 6.9 18.9l1.4-5.9L3.7 9.1l6-.5z" fill="currentColor"/></svg>' : ''}${esc2(p.price)}</span><span class="pb-more" aria-hidden="true">→</span></span></button>`; };
-  box.innerHTML = THEMES.map((t, ti) => `<div class="theme"><div class="theme-h"><span class="theme-n${ti ? '' : ' where'}">${ti ? SUBBARS(ti) : ico('path', '#FFFCF8', 'rgba(255,252,248,.25)', 22)}</span><div><h3>${esc2(t.h)}</h3>${t.q ? `<p class="theme-q">${esc2(t.q)}</p>` : ''}<p>${esc2(t.sub)}</p></div></div>
-    <div class="pgrid${t.flow ? ' flowrow' : ''}">` + t.ids.map((id, k) => card(t, id, k)).join('') + '</div>'
-    + (t.ids2 ? `<p class="theme-more">${esc2(t.more)}</p><div class="pgrid">` + t.ids2.map((id, k) => card({}, id, k)).join('') + '</div>' : '') + '</div>').join('');
+  const box = document.getElementById('pathBox');
+  /* карточка программы — одна и та же в обоих видах */
+  const card = (id, ss, note) => { const x = it(id); if (!x) return '';
+    return `<button class="pblock${x.st === 'new' ? ' st-new' : ''}" data-p="${id}" aria-haspopup="dialog">
+        <span class="pb-top"><span class="pb-fl">${picon(id, 48)}</span><span class="pb-tags">${lvBadge(x.lv)}${stTag(x)}</span></span>
+        <b>${esc2(x.name)}</b>${x.slogan ? `<span class="pb-slogan">${esc2(x.slogan)}</span>` : ''}<span class="pb-line">${esc2(x.line)}</span>${note ? `<span class="pb-note">${esc2(cap(note))}</span>` : ''}
+        ${ss ? `<span class="pb-steps">${pdotsS(ss)}<span>${esc2(stepsText(ss))}</span></span>` : ''}
+        <span class="pb-foot"><span class="pb-price${isFreeP(x.price) ? ' free' : /\d/.test(x.price) ? ' paid' : ' soonp'}">${isFreeP(x.price) ? '<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 3l2.3 5.6 6 .5-4.6 3.9 1.4 5.9L12 15.8 6.9 18.9l1.4-5.9L3.7 9.1l6-.5z" fill="currentColor"/></svg>' : ''}${esc2(x.price)}</span><span class="pb-more" aria-hidden="true">→</span></span></button>`; };
+  const slp = (id, ss, note) => { const x = it(id); const sm = ss ? (ss.length === 8 ? 'alle Stufen' : (ss.length > 1 ? 'Stufen ' : 'Stufe ') + ss.join(', ')) : note || '';
+    const t = `${lvIco('sl', 14)}<span>${esc2(x.name)}</span>${sm ? `<small>${esc2(sm)}</small>` : ''}`;
+    return x.h && !x.pr ? `<a class="slp lv-sl" href="${x.h}" target="_blank" rel="noopener">${t}<span aria-hidden="true">↗</span></a>` : `<button type="button" class="slp lv-sl${x.st === 'new' ? ' st-new' : ''}" data-p="${id}">${t}</button>`; };
+
+  /* ===== общие блоки: оба вида в одном стиле (шаг — коричневый кружок, внутри три уровня, карточки с цветком) ===== */
+  const GH = [
+    {h:'Fuss fassen', q:'«Ich lerne noch, alles kostet Kraft»', sub:'Wenn du dich zurechtfindest und alles viel Kraft kostet, helfen Informationen und Halt: verständliche Artikel und Tools bei «Svoi ludi», die Arbeitsblätter «Wer bin ich hier» und das Kennenlernen mit mir.'},
+    {h:'Fest stehen', q:'«Das gelingt mir»', sub:'Wenn es schon gelingt, helfen Ordnung und Rhythmus, damit die Kraft nicht im Chaos verloren geht: Tools für Alltag und Geschäft, E-Mail-Serien und Mini-Tagebücher. Alles gemeinsam anschauen können wir in 30 Minuten.'},
+    {h:'Höher hinaus', q:'«Das reicht mir nicht mehr, es wird mir zu eng»', sub:'Wenn es eng wird und du mehr willst, der Schritt aber nicht gelingt, ist es Zeit für Gespräche und persönliche Arbeit: Mentoring-Gespräch, persönliche Sitzungen, Auswertungen von je 3 Stunden und das Hauptprogramm.'},
+  ];
+  const coll = (j, l) => { const m = new Map(); LINE.forEach((st, s) => (st[j][l] || []).forEach(e => { const id = eid(e); if (!m.has(id)) m.set(id, []); m.get(id).push(s + 1); })); return [...m]; };
+  const lvRow = (l, inner, d) => `<div class="lvrow" data-lv="${l}"><div class="lvrow-h">${lvBadge(l)}<span>${esc2(d || LV[l].d)}</span></div>${inner}</div>`;
+  const theme = (ti, h, q, sub, rows, extra = '') => `<div class="theme"><div class="theme-h"><span class="theme-n${ti ? '' : ' where'}">${ti ? SUBBARS(ti) : ico('path', '#FFFCF8', 'rgba(255,252,248,.25)', 22)}</span><div><h3>${esc2(h)}</h3>${q ? `<p class="theme-q">${esc2(q)}</p>` : ''}<p>${esc2(sub)}</p></div></div>${rows}${extra}</div>`;
+  const whereHtml = theme(0, 'Wo du jetzt stehst', '', 'Beginne kostenlos. Der Test zeigt, auf welcher Stufe du stehst und welche knarrt, und beim Kennenlernen wählen wir gemeinsam deinen nächsten Schritt.',
+      lvRow('sama', `<div class="pgrid">${['stupeni', 'kompas', 'karta'].map(id => card(id, ALL8)).join('')}</div>`)
+      + lvRow('so', `<div class="pgrid">${card('meet', ALL8)}</div>`)
+      + lvRow('sama', `<div class="pgrid">${PAIR.map(id => card(id, null)).join('')}</div>`, 'für Paare — ausserhalb der Stufen'));
+  const thruHtml = `<div class="theme"><div class="theme-h"><span class="theme-n thru">${SUBBARS(3)}</span><div><h3>Auf allen Stufen</h3><p>Das begleitet dich auf dem ganzen Weg.</p></div></div>${LVK.map(l => { const a = THRU.filter(id => it(id).lv === l); return a.length ? lvRow(l, `<div class="pgrid">${a.map(id => card(id, ALL8)).join('')}</div>`) : ''; }).join('')}</div>`;
+  /* акварельные чаши ступеней — те же картины, что на «Твой путь» */
+  const IMGS = ['01-razbitaya-chasha', '02-svoi-chashi', '03-sobirayu-sebya', '04-v-odnom-ryadu', '05-polnaya-chasha', '06-chasha-po-krugu', '07-zolotye-shvy', '08-zoloto-dlya-novoj'];
+  const bowlPic = k => `<picture><source srcset="/put/img/${IMGS[k]}.webp" type="image/webp"><img src="/put/img/${IMGS[k]}.jpg" width="900" height="1205" loading="lazy" alt=""></picture>`;
+
+  /* ===== вид «По ступеням» ===== */
+  const stepsHtml = `<p class="sp-ask">Wähle deine Stufe. Du weisst nicht, wo du stehst? Mach den <button type="button" class="lnk" data-p="stupeni">Test «Stufen der Stabilität»</button>: 20 Minuten, kostenlos.</p>
+    <div class="sp-pick" role="tablist" aria-label="Acht Stufen">${STEPN.map((n, k) => `<button type="button" class="sp" role="tab" aria-selected="false" aria-controls="spPanel" data-s="${k + 1}" style="--lc:${STEPC[k][0]};--lf:${STEPC[k][1]}"><span class="sp-img">${bowlPic(k)}</span><span class="sp-n">Stufe ${k + 1}</span><span class="sp-t">${esc2(n)}</span></button>`).join('')}</div>
+    <div class="sp-panel" id="spPanel" role="tabpanel"></div>
+    <div class="themes pv-after">${whereHtml}${thruHtml}</div>`;
+  function panel(s){
+    const k = s - 1, st = LINE[k];
+    const rows = j => LVK.map(l => { const a = st[j][l] || []; if (!a.length) return '';
+      return lvRow(l, l === 'sl' ? `<div class="slrow">${a.map(e => slp(eid(e), null, Array.isArray(e) ? e[1] : '')).join('')}</div>`
+        : `<div class="pgrid">${a.map(e => card(eid(e), null, Array.isArray(e) ? e[1] : '')).join('')}</div>`); }).join('');
+    return `<div class="sp-head"><span class="sp-bowl">${bowlPic(k)}</span><div class="sp-head-t"><div class="eyebrow">Stufe ${s} von 8</div><h3>${esc2(STEPN[k])}</h3><p class="theme-q">${esc2(TEASER[k])}</p><p>${esc2(STEPI[k])}</p><a class="pd-stlink" href="/de/put/">Was ist das für eine Stufe? →</a></div></div>
+      <div class="themes">${GH.map((g, j) => theme(j + 1, g.h, g.q, SUBH[j] + '.', rows(j))).join('')}</div>`;
+  }
+
+  /* ===== вид «По шагам» ===== */
+  const subsHtml = whereHtml
+    + GH.map((g, j) => theme(j + 1, g.h, g.q, g.sub, LVK.map(l => { const a = coll(j, l); if (!a.length) return '';
+        return lvRow(l, l === 'sl' ? `<div class="slrow">${a.map(([id, ss]) => slp(id, ss)).join('')}</div>` : `<div class="pgrid">${a.map(([id, ss]) => card(id, ss)).join('')}</div>`); }).join(''),
+        j === 2 ? `<p class="theme-more">Wer «Mein Ziel — mein Weg» ganz abschliesst, bekommt ein <button type="button" class="lnk" data-p="gift">Geschenk von «Svoi ludi»</button>.</p>` : '')).join('')
+    + thruHtml;
+
+  box.innerHTML = `<div class="pv-ctl"><div class="pv-sw" role="group" aria-label="Wie die Programme angezeigt werden">
+      <button type="button" data-v="steps" aria-pressed="false">${ico('hill', 'currentColor', 'none', 18)}Nach Stufen</button>
+      <button type="button" data-v="subs" aria-pressed="false">${SUBBARS(3).replace(/#FFFCF8/g, 'currentColor').replace(/rgba\(255,252,248,\.35\)/g, 'currentColor')}Nach Schritten</button></div></div>
+    <div class="lv-keys" role="group" aria-label="Art der Hilfe">${LVK.map(l => `<button type="button" class="lvk lv-${l}" data-k="${l}" aria-pressed="false">${lvIco(l, 30)}<span><b>${LV[l].n}</b><small>${esc2(LV[l].k)}</small></span></button>`).join('')}</div>
+    <p class="lv-hint">Tippe auf eine Art der Hilfe, um nur sie zu sehen. Tippe noch einmal — und du siehst wieder alles.</p>
+    <div class="pv-steps">${stepsHtml}</div>
+    <div class="pv-subs themes">${subsHtml}</div>`;
+
+  const spPanel = document.getElementById('spPanel');
+  /* длинные списки сворачиваются (правило Ирины 11.10.2026: «избегай длинных списков, сворачивай их красиво»):
+     видно несколько первых, остальное — под кнопкой «Показать ещё N»; если спрятать пришлось бы меньше трёх, показываем всё */
+  const MQ = window.matchMedia ? matchMedia('(max-width: 700px)') : { matches: false };
+  const CHEV = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  function clamp(scope){
+    scope.querySelectorAll('.slrow, .pgrid').forEach(list => {
+      let btn = list.nextElementSibling && list.nextElementSibling.classList.contains('more-btn') ? list.nextElementSibling : null;
+      if (!btn){ btn = document.createElement('button'); btn.type = 'button'; btn.className = 'more-btn'; list.after(btn); }
+      const items = [...list.children], lim = list.classList.contains('slrow') ? (MQ.matches ? 5 : 9) : (MQ.matches ? 3 : 4);
+      const hide = items.length - lim, open = list.classList.contains('open');
+      items.forEach((el, i) => el.classList.toggle('cut', !open && hide >= 3 && i >= lim));
+      btn.hidden = hide < 3;
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.innerHTML = (open ? 'Einklappen' : `${hide} weitere anzeigen`) + CHEV;
+    });
+  }
+  const store = (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} };
+  const load = k => { try { return localStorage.getItem(k); } catch (e) { return null; } };
+  function setView(v, save){ box.dataset.view = v; box.querySelectorAll('.pv-sw [data-v]').forEach(b => b.setAttribute('aria-pressed', b.dataset.v === v ? 'true' : 'false')); if (save) store('vzPathView', v); }
+  function selStep(s, save){ s = Math.min(8, Math.max(1, +s || 1)); box.querySelectorAll('.sp').forEach(b => b.setAttribute('aria-selected', +b.dataset.s === s ? 'true' : 'false'));
+    spPanel.setAttribute('style', `--lc:${STEPC[s - 1][0]};--lf:${STEPC[s - 1][1]}`); spPanel.innerHTML = panel(s); clamp(spPanel); if (save) store('vzPathStep', s); }
+  function setF(l){ if (l) box.dataset.f = l; else delete box.dataset.f; box.querySelectorAll('.lvk').forEach(b => b.setAttribute('aria-pressed', b.dataset.k === l ? 'true' : 'false')); }
+  setView(load('vzPathView') === 'subs' ? 'subs' : 'steps'); selStep(load('vzPathStep') || 1);
+  clamp(box); if (MQ.addEventListener) MQ.addEventListener('change', () => clamp(box));
+
   const pm = document.getElementById('pdlg'), pc = document.getElementById('pdlgCard');
+  const show = () => { if (!pm.open){ if (typeof pm.showModal === 'function') { try { pm.showModal(); } catch(e){ pm.setAttribute('open',''); } } else pm.setAttribute('open',''); } pc.scrollTop = 0; };
+  const close = () => { typeof pm.close === 'function' ? pm.close() : pm.removeAttribute('open'); };
   const note = t => `<span class="act-note">${t}</span>`;
   function actions(p, id){
     const a = [];
@@ -1342,6 +1678,7 @@ function pathInit(){
   }
   function open(id){
     const p = PR[id];
+    if (!p) return openX(id);
     pc.innerHTML = `<div class="qm-top"><span class="pd-fl">${picon(id, 68)}</span>
       <div class="qm-head"><div class="eyebrow">${esc2(p.line)}${p.ready ? '' : ' · in Arbeit'}</div><h2 class="qm-title" id="pdlgTitle">${esc2(p.name)}</h2><p class="pd-slogan">${esc2(p.slogan)}</p></div>
       <button class="qm-close" type="button" data-pclose aria-label="Schliessen">✕</button></div>
@@ -1351,20 +1688,44 @@ function pathInit(){
       ${p.phases ? `<div class="pd-phases"><span class="pd-lbl">Wie sich dein Leben verändert</span><ol>${p.phases.map((x, k) => `<li><span class="ph-n">${k+1}</span><b>${esc2(x[0])}</b><p>${esc2(x[1])}</p></li>`).join('')}</ol></div>` : ''}
       ${p.bonus ? `<div class="pd-bonus"><span class="pd-lbl">${esc2(p.bonus.b)}</span><p>${esc2(p.bonus.t)}</p><a href="${p.bonus.h}" target="_blank" rel="noopener">${esc2(p.bonus.l)}</a></div>` : ''}
       <div class="pd-facts"><div class="pd-fact"><span class="pd-lbl">Was drin ist</span><p>${esc2(cap(p.inside))}.</p></div>${p.note ? `<p class="pd-note">${esc2(p.note)}</p>` : ''}${p.more ? `<a class="pd-more" href="${p.more.h}" target="_blank" rel="noopener"><span class="pd-lbl">Lies auch</span><b>${esc2(p.more.b)} →</b><span>${esc2(p.more.t)}</span></a>` : ''}
-      <div class="pd-fact"><span class="pd-lbl">Auf welchen Stufen es hilft</span><p class="pd-steps">${(PSTEPS[id] || ALL8).map(n => `<span style="--lc:${STEPC[n - 1][0]};--lf:${STEPC[n - 1][1]}"><i>${n}</i>${esc2(STEPN[n - 1])}</span>`).join('')}</p><a class="pd-stlink" href="/de/put/">Was sind diese Stufen? →</a></div>
+      ${lvFact(PLV[id] || 'sama')}${posFact(id)}
       <div class="pd-fact"><span class="pd-lbl">Was es kostet</span><p>${esc2(cap(p.price))}${p.price === ASK ? '. Der endgültige Preis erscheint hier, sobald ich ihn festgelegt habe.' : ''}</p></div>${p.report ? `<div class="pd-report"><span class="pd-lbl">Bericht als PDF · 29 CHF zusätzlich</span><p>${esc2(REPORT)}</p></div>` : ''}</div>
       <div class="pd-act">${actions(p, id)}</div>
       ${nextBox(p)}`;
-    if (!pm.open){ if (typeof pm.showModal === 'function') { try { pm.showModal(); } catch(e){ pm.setAttribute('open',''); } } else pm.setAttribute('open',''); }
-    pc.scrollTop = 0;
+    show();
   }
-  box.addEventListener('click', e => { const b = e.target.closest('[data-p]'); if (b) open(b.dataset.p); });
-  pm.addEventListener('click', e => {
-    const n = e.target.closest('.pd-nx[data-p]'); if (n){ open(n.dataset.p); return; }
-    if (e.target === pm || e.target.closest('[data-pclose]')) { typeof pm.close === 'function' ? pm.close() : pm.removeAttribute('open'); }
+  function openX(id){
+    const x = it(id); if (!x) return;
+    pc.innerHTML = `<div class="qm-top"><span class="pd-fl">${x.lv === 'sl' ? `<span class="pd-lvbig lv-sl">${lvIco('sl', 40)}</span>` : picon(id, 68)}</span>
+      <div class="qm-head"><div class="eyebrow">${esc2(x.line)}${x.st === 'dev' ? ' · in Arbeit' : x.st === 'new' ? ' · neu' : ''}</div><h2 class="qm-title" id="pdlgTitle">${esc2(x.name)}</h2>${x.slogan ? `<p class="pd-slogan">${esc2(x.slogan)}</p>` : ''}</div>
+      <button class="qm-close" type="button" data-pclose aria-label="Schliessen">✕</button></div>
+      ${x.about ? `<p class="pd-about">${esc2(x.about)}</p>` : ''}
+      <div class="pd-facts">${lvFact(x.lv)}${posFact(id)}
+      <div class="pd-fact"><span class="pd-lbl">Was es kostet</span><p>${esc2(cap(x.price))}${x.price === ASK ? '. Der endgültige Preis erscheint hier, sobald ich ihn festgelegt habe.' : ''}</p></div></div>
+      <div class="pd-act">${x.h ? `<a class="btn free" href="${x.h}" target="_blank" rel="noopener">Auf «Svoi ludi» öffnen</a>`
+        : `<a class="btn${isFreeP(x.price) ? ' free' : ''}" href="${TG}" target="_blank" rel="noopener">Anfrage senden</a>` + note(`Das gibt es noch nicht auf der Website, aber du kannst schon jetzt eine Anfrage senden. Schreib mir in Telegram das Wort <span class="codeword">ЗАЯВКА</span> und den Namen. Sobald alles fertig ist, melde ich mich als Erste bei dir.`)}</div>`;
+    show();
+  }
+  function goStep(s){ setView('steps', true); selStep(s, true); const sec = document.getElementById('path'); if (sec) sec.scrollIntoView(); }
+  box.addEventListener('click', e => {
+    const mb = e.target.closest('.more-btn'); if (mb){ const list = mb.previousElementSibling, was = list.classList.toggle('open'); clamp(list.parentElement); if (!was){ const r = list.getBoundingClientRect(); if (r.top < 0) list.scrollIntoView({ block: 'start' }); } return; }
+    const v = e.target.closest('.pv-sw [data-v]'); if (v){ setView(v.dataset.v, true); return; }
+    const k = e.target.closest('.lvk'); if (k){ setF(box.dataset.f === k.dataset.k ? '' : k.dataset.k); return; }
+    const sp = e.target.closest('.sp'); if (sp){ selStep(sp.dataset.s, true); return; }
+    const b = e.target.closest('[data-p]'); if (b) open(b.dataset.p);
   });
-  /* ссылка прямо на программу: voznesenskaya.ch/#p-snimok открывает её окно (10.10.2026, для ссылок со страницы «Твой путь») */
-  const fromHash = () => { const m = /^#p-([a-z0-9]+)$/.exec(location.hash); if (m && PR[m[1]]) { const sec = document.getElementById('path'); if (sec) sec.scrollIntoView(); open(m[1]); } };
+  box.addEventListener('keydown', e => { const sp = e.target.closest('.sp'); if (!sp || !/^Arrow(Left|Right)$/.test(e.key)) return; const n = (+sp.dataset.s + (e.key === 'ArrowRight' ? 0 : -2) + 8) % 8 + 1; selStep(n, true); const nb = box.querySelector(`.sp[data-s="${n}"]`); if (nb) nb.focus(); });
+  pm.addEventListener('click', e => {
+    const g = e.target.closest('[data-go]'); if (g){ close(); goStep(+g.dataset.go); return; }
+    const n = e.target.closest('.pd-nx[data-p]'); if (n){ open(n.dataset.p); return; }
+    if (e.target === pm || e.target.closest('[data-pclose]')) close();
+  });
+  window.vzOpenProgram = open;
+  /* прямые ссылки: voznesenskaya.ch/#p-snimok — окно программы; #stupen-3 — вид «По ступеням» на ступени 3; #po-shagam — вид «По шагам» */
+  const fromHash = () => { const h = location.hash, sec = document.getElementById('path');
+    let m = /^#p-([a-z0-9_]+)$/.exec(h); if (m && (PR[m[1]] || X[m[1]])) { if (sec) sec.scrollIntoView(); open(m[1]); return; }
+    m = /^#stupen-([1-8])$/.exec(h); if (m) { setView('steps'); selStep(+m[1]); if (sec) sec.scrollIntoView(); return; }
+    if (h === '#po-shagam') { setView('subs'); if (sec) sec.scrollIntoView(); } };
   fromHash(); addEventListener('hashchange', fromHash);
 }
 pathInit();
@@ -1379,7 +1740,7 @@ pathInit();
 (function(){ var t = document.getElementById('rvTrack'); if (!t) return;
   t.querySelectorAll('.rv:not(.rv-cta)').forEach(function(c){ var q = c.querySelector('blockquote'); if (!q || q.scrollHeight <= q.clientHeight + 2) return; var m = document.createElement('button'); m.type = 'button'; m.className = 'rv-more'; m.textContent = 'Ganz lesen'; q.insertAdjacentElement('afterend', m); m.addEventListener('click', function(){ var o = c.classList.toggle('open'); m.textContent = o ? 'Einklappen' : 'Ganz lesen'; }); });
   document.querySelectorAll('[data-rv]').forEach(function(b){ b.addEventListener('click', function(){ var c = t.querySelector('.rv'); t.scrollBy({ left: (+b.dataset.rv) * ((c ? c.offsetWidth : 300) + 14), behavior: 'smooth' }); }); });
-  t.addEventListener('click', function(e){ var p = e.target.closest('[data-open]'); if (!p) return; var c = document.querySelector('#pathThemes [data-p="' + p.dataset.open + '"]'); if (c) c.click(); });
+  t.addEventListener('click', function(e){ var p = e.target.closest('[data-open]'); if (!p) return; var c = null; if (window.vzOpenProgram) window.vzOpenProgram(p.dataset.open); });
 })();</script>
 <script src="/assets/samesite.js"></script>
 <!--i18n--><style>#langbar.langbar{position:fixed;bottom:14px;right:14px;left:auto;top:auto;width:auto;max-width:none;margin:0;z-index:60;display:flex;gap:2px;background:rgba(255,255,255,.92);border:1px solid rgba(0,0,0,.08);border-radius:999px;padding:3px;font:600 12px Manrope,system-ui,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,.08)}#langbar.langbar a{color:#5d554d;padding:5px 9px;border-radius:999px;text-decoration:none;font:inherit;display:inline-block;width:auto}#langbar.langbar a[aria-current="true"]{background:#2f2924;color:#fff}@media print{.langbar{display:none!important}}</style><div class="langbar" id="langbar" role="navigation" aria-label="Language"><a href="/" hreflang="ru" data-lang="ru">RU</a><a href="/uk/" hreflang="uk" data-lang="uk">UA</a><a href="/de/" hreflang="de" data-lang="de" aria-current="true">DE</a><a href="/en/" hreflang="en" data-lang="en">EN</a></div><script>(function(){var b=document.getElementById('langbar');if(!b)return;b.addEventListener('click',function(e){var a=e.target.closest('a[data-lang]');if(a)try{localStorage.setItem('irinaTestsLang',a.dataset.lang)}catch(x){}});})();</script><!--i18n--></body></html>
