@@ -5,7 +5,7 @@ Run: python3 _i18n/shape.py ; check: python3 _i18n/shape.py check"""
 import os, re, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGES = ['index.html', 'put/index.html', '404.html', 'testy/index.html', 'kompas/index.html', 'stupeni/index.html',
-         'blizost/index.html', 'roza-lyubvi/index.html', 'privacy/index.html', 'impressum/index.html', 'karta-opor/index.html', 'dogovor/index.html', 'zapis/index.html']
+         'blizost/index.html', 'roza-lyubvi/index.html', 'privacy/index.html', 'impressum/index.html', 'karta-opor/index.html', 'dogovor/index.html', 'zapis/index.html', 'usloviya/index.html']
 M = '<!--shape-->'
 CSS = (':is(.navcta,.btn,.jump a,.pb-price,.go-pill,.rv-prod,.rvs-btn,.shr-btn,.invite-links a,.share-btns button,.share-btns a,'
        '.inv-copy,.inv-btn,.sb-cta,.langbar,#langbar.langbar){border-radius:12px!important}'
@@ -20,7 +20,25 @@ APP = ('<link rel="manifest" href="/site.webmanifest"><meta name="mobile-web-app
 # вместе со страницей, сверху появляется узкая строка «логотип · Меню · Знакомство»; «Меню» раскрывает плитки.
 MINI_CSS = '/* длинная строка под именем (метод «Ступени. Твой путь в новой стране», 10.10.2026): переносится сама, меню в одну строку */@media (min-width:1101px){html header.top nav a{white-space:nowrap}html header.top .mark small{display:block;max-width:300px;line-height:1.35}}.pa-mini{display:none}@media (max-width:1100px){html header.top:not(.pa-mini){position:relative!important;top:auto!important}html header.top.pa-mini{display:block;position:fixed!important;left:0;right:0;top:0;z-index:55;padding-top:env(safe-area-inset-top,0px);transform:translateY(-105%);visibility:hidden;transition:transform .22s ease,visibility 0s .22s;box-shadow:0 8px 20px -14px rgba(60,40,20,.5)}html header.top.pa-mini.on{transform:none;visibility:visible;transition:transform .22s ease}html header.top.pa-mini .page{padding-block:8px;flex-wrap:wrap}html header.top.pa-mini .mark small{display:none}html header.top.pa-mini .mark b{font-size:1.05rem}html header.top.pa-mini .mono{width:32px;height:32px}html header.top.pa-mini:not(.open) nav{display:none!important}.pa-mbtn{margin-left:auto;display:flex;align-items:center;gap:6px;padding:7px 12px;border-radius:12px;border:1.5px solid color-mix(in srgb,var(--brown,#6E4F3C) 35%,transparent);background:var(--paper,#FFFCF8);color:var(--ink,#2F2924);font:700 .84rem/1 var(--body,Manrope,system-ui);cursor:pointer;-webkit-tap-highlight-color:transparent}.pa-mbtn svg{width:18px;height:18px;flex:none;fill:none;stroke:var(--brown,#6E4F3C);stroke-width:2;stroke-linecap:round}}@media (max-width:480px){html header.top.pa-mini .mark span:not(.mono){display:none}}'
 MINI_JS = '(function(){function mini(){var h=document.querySelector(\'header.top\');if(!h||document.querySelector(\'.pa-mini\')||!(\'IntersectionObserver\' in window))return;var lg=(document.documentElement.lang||\'ru\').slice(0,2),L={ru:[\'Меню\',\'Свернуть\'],uk:[\'Меню\',\'Згорнути\'],de:[\'Menü\',\'Zuklappen\'],en:[\'Menu\',\'Close\']}[lg]||[\'Меню\',\'Свернуть\'];var m=document.createElement(\'header\');m.className=\'top pa-mini\';var pg=document.createElement(\'div\');pg.className=\'page\';var mk=h.querySelector(\'.mark\');if(mk)pg.appendChild(mk.cloneNode(true));var b=document.createElement(\'button\');b.type=\'button\';b.className=\'pa-mbtn\';b.setAttribute(\'aria-expanded\',\'false\');b.innerHTML=\'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span></span>\';b.lastChild.textContent=L[0];pg.appendChild(b);var c=h.querySelector(\'.navcta\');if(c)pg.appendChild(c.cloneNode(true));var n=h.querySelector(\'nav\');if(n)pg.appendChild(n.cloneNode(true));m.appendChild(pg);document.body.appendChild(m);function set(o){m.classList.toggle(\'open\',o);b.setAttribute(\'aria-expanded\',o?\'true\':\'false\');b.lastChild.textContent=o?L[1]:L[0];}b.addEventListener(\'click\',function(){set(!m.classList.contains(\'open\'));});m.addEventListener(\'click\',function(e){if(e.target.closest(\'nav a\'))set(false);});new IntersectionObserver(function(es){var v=es[0].isIntersecting;m.classList.toggle(\'on\',!v);if(v)set(false);}).observe(h);}if(document.readyState===\'loading\')document.addEventListener(\'DOMContentLoaded\',mini);else mini();})();'
-BLOCK = M + '<style id="shape">' + CSS + TILES + MINI_CSS + '</style><script>' + JS + MINI_JS + '</script>' + APP + M
+# «Росток» — единый маркер списков на обоих сайтах (решение Ирины 12.10.2026, 22:29: вариант 3; «на будущее запоминай… чёрные точки как в вордовском файле» — не ставим).
+# Стебелёк с двумя листиками коричневым цветом сайта (на svoiludi.ch тот же рисунок шалфеем, svoiludi/_i18n/pwa.py). Рисунок — маска, цвет — --sl-bul-c.
+# Новый список: ul без класса и без id получает росток сам; ul с классом — допиши класс в BUL_UL; список без маркера — класс no-bul.
+# Не трогаем: нумерацию (ol, шаги), меню и вкладки, договор (.doc .terms).
+BUL_SVG = ("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23000' stroke-width='1.6' "
+           "stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 18V9'/%3E%3Cpath d='M10 12C6 12 3.5 9.5 3.5 6 7 6 10 8.2 10 12Z' "
+           "fill='%23000' fill-opacity='.3'/%3E%3Cpath d='M10 9.5C10 5.5 12.5 3 16.5 3 16.5 6.8 14 9.5 10 9.5Z' fill='%23000' fill-opacity='.3'/%3E%3C/svg%3E")
+BUL_UL = '.pd-box ul,.lim-body ul,ul.pain,ul.res,ul.leaf,ul.sl-bul,ul:not([class]):not([id])'
+BUL_NOT = 'nav ul,header ul,footer ul,button ul,[role=navigation] ul,.pa-tabs ul,.doc .terms ul,.no-bul'
+W = ':where(:is(' + BUL_UL + '):not(' + BUL_NOT + '))'
+BUL = ('<style id="vz-bul-css">/* «Росток» — единый маркер списков (12.10.2026), собирается _i18n/shape.py */'
+       ':root{--sl-bul-c:#6E4F3C}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sl-bul-c:#E1C2A6}}:root[data-theme="dark"]{--sl-bul-c:#E1C2A6}'
+       + W + '{list-style:none!important;padding-left:0!important}'
+       + W + '>li{list-style:none!important;position:relative!important;padding-left:1.7em!important}'
+       + W + '>li::marker{content:none}'
+       + W + '>li::before{content:""!important;display:block!important;position:absolute!important;left:.05em!important;top:.2em!important;'
+       'width:1.15em!important;height:1.15em!important;margin:0!important;border:0!important;border-radius:0!important;transform:none!important;box-shadow:none!important;'
+       'color:transparent!important;background:var(--sl-bul-c)!important;-webkit-mask:url("' + BUL_SVG + '") center/contain no-repeat!important;mask:url("' + BUL_SVG + '") center/contain no-repeat!important}</style>')
+BLOCK = M + '<style id="shape">' + CSS + TILES + MINI_CSS + '</style><script>' + JS + MINI_JS + '</script>' + BUL + APP + M
 
 def apply(h):
     h = re.sub(re.escape(M) + '.*?' + re.escape(M), '', h, flags=re.S)
