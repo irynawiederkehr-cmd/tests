@@ -1,7 +1,7 @@
 /* =====================================================================
    Библиотека значков — общая для всех тестов (с 02.10.2026).
    Один стиль: сетка 24×24, мягкая заливка светлым тоном + тонкий контур глубоким тоном того же цвета
-   (как акварель с контуром в утверждённой палитре), линия 1.8, скруглённые концы.
+   (как акварель с контуром в утверждённой палитре), линия ≈1,6 px при любом размере, скруглённые концы.
    Использование: ico('flame', '#C25468', '#EEA9B3', 26) — имя, цвет контура, цвет заливки, размер.
    Если заливка не задана, берётся очень светлый тон контура.
    Каталог с картинками всех значков — файл «Библиотека значков.html».
@@ -59,7 +59,7 @@ const icoSoft = c => { const h = String(c).replace('#', ''); if (h.length !== 6)
   return '#' + [0, 2, 4].map(i => Math.round(parseInt(h.substr(i, 2), 16) * .3 + 255 * .7).toString(16).padStart(2, '0')).join(''); };
 function ico(name, line = '#2E5A88', fill, size = 24){
   const draw = ICONS[name] || ICONS.seed;
-  const s = 'stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"';
+  const s = `stroke-width="${Math.min(1.8, Math.max(0.9, 38 / size)).toFixed(2)}" stroke-linecap="round" stroke-linejoin="round"`;   // линия ≈1,6 px при любом размере, как у цветов-мандал (правило Ирины 13.10.2026)
   return `<svg viewBox="0 0 24 24" width="${size}" height="${size}" aria-hidden="true">${draw(line, fill || icoSoft(line), s)}</svg>`;
 }
 

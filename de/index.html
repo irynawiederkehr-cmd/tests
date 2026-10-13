@@ -628,7 +628,11 @@ section[id]{scroll-margin-top:96px}
 .sess-steps li{position:relative;display:grid;grid-template-columns:56px minmax(0,1fr);gap:18px;align-items:start;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:20px 22px}
 .sess-steps li:last-child{background:var(--mustard-soft);border-color:color-mix(in srgb,var(--mustard) 55%,var(--line))}
 .ss-ic{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--bg);border:1.5px solid var(--line)}
-.sess-steps li:last-child .ss-ic{background:var(--paper);border-color:var(--mustard)}
+.sess-steps li:last-child .ss-ic{background:var(--paper);border-color:var(--ic,var(--mustard))}
+/* значок в кольце — как цветы-мандалы (правило Ирины 13.10.2026): кольцо цветом значка, бумажный круг, мягкая тень; линия значка ≈1,6 px, тоньше кольца */
+.ic,.ss-ic{background:var(--paper);border:1.75px solid var(--ic,var(--line));box-shadow:0 4px 10px -6px color-mix(in srgb,var(--ic,#6E4F3C) 60%,transparent)}
+.ic.sm{border-width:1.5px}
+.ic svg,.ss-ic svg{width:58%;height:58%}
 .ss-k{display:block;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mustard);margin-bottom:4px}
 .sess-steps h3{font-family:var(--display);font-weight:400;font-size:1.4rem;line-height:1.2;margin:0 0 6px}
 .sess-steps p{margin:0;font-size:.95rem;line-height:1.6;color:var(--muted)}
@@ -829,9 +833,9 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
         <p>Deshalb stehst in unserer Arbeit immer du im Mittelpunkt. Dein Leben, deine Kräfte und dein Wohlbefinden.</p>
         <p class="who-bowl">Alles, was ich über diesen Weg weiss, habe ich in der Methode «Stufen. Dein Weg im neuen Land» zusammengefasst. Es sind acht Stufen, auf denen sich das Leben nach dem Umzug neu zusammensetzt, so wie man eine zerbrochene Schale mit Gold wieder zusammenfügt. Die Risse auf diesem Weg musst du nicht verstecken. Mit der Zeit werden sie zu goldenen Nähten, und deine Erfahrung mit dem Umzug wird zu deiner Stärke.</p>
         <div class="who-ways">
-          <div class="way"><span class="ic" data-ico="sprout" data-c="#66704F"></span><div><h3>Wir gehen tiefer als Ratschläge</h3><p>Wir bleiben nicht bei einem Plan auf Papier stehen. Die wichtigste Frage nach dem Umzug lautet: «Wer bin ich hier?» Wir schauen behutsam dorthin, wo deine gewohnten Reaktionen, Ängste und alten Regeln wohnen. Zu Hause haben sie geholfen, hier funktionieren sie nicht mehr. Wenn du dich neu zusammensetzt und verstehst, was dir jetzt wichtig ist, finden sich die Lösungen draussen wie von selbst.</p></div></div>
-          <div class="way"><span class="ic" data-ico="lantern" data-c="#2E5A88"></span><div><h3>Du hörst auf, dir Vorwürfe zu machen</h3><p>Nach dem Umzug steigen fast alle auf die unteren Stufen hinab, auch wer zu Hause weit oben stand. Die Kräfte gehen schnell zu Ende, und ein einfacher Brief vom Amt wirkt wie ein Berg. Ich verstehe, wie das Gehirn auf Veränderungen und eine fremde Umgebung reagiert. Das ist keine Schwäche. So setzt sich das Leben neu zusammen: zuerst die unteren Stufen, dann die oberen. Allein dieses Verständnis nimmt dir viel unnötige Schuld von den Schultern.</p></div></div>
-          <div class="way"><span class="ic" data-ico="explore" data-c="#B98324"></span><div><h3>Deine Aufmerksamkeit kehrt zu dir zurück</h3><p>Nach dem Umzug geht die ganze Aufmerksamkeit nach aussen: Papiere, Fristen, eine fremde Sprache, die Sorgen der Familie. Für dich selbst bleibt kaum etwas übrig. Gemeinsam holen wir die Aufmerksamkeit zu dir und zu deiner Stufe zurück: was du jetzt brauchst und welchen kleinen Schritt du schon heute für dich tun kannst. Dann wird es im Kopf ruhiger, und es entsteht Raum für deine Entscheidungen.</p></div></div>
+          <div class="way"><span class="ic" data-ico="sprout" data-c="#5E8A6C"></span><div><h3>Wir gehen tiefer als Ratschläge</h3><p>Wir bleiben nicht bei einem Plan auf Papier stehen. Die wichtigste Frage nach dem Umzug lautet: «Wer bin ich hier?» Wir schauen behutsam dorthin, wo deine gewohnten Reaktionen, Ängste und alten Regeln wohnen. Zu Hause haben sie geholfen, hier funktionieren sie nicht mehr. Wenn du dich neu zusammensetzt und verstehst, was dir jetzt wichtig ist, finden sich die Lösungen draussen wie von selbst.</p></div></div>
+          <div class="way"><span class="ic" data-ico="lantern" data-c="#4F7EC2"></span><div><h3>Du hörst auf, dir Vorwürfe zu machen</h3><p>Nach dem Umzug steigen fast alle auf die unteren Stufen hinab, auch wer zu Hause weit oben stand. Die Kräfte gehen schnell zu Ende, und ein einfacher Brief vom Amt wirkt wie ein Berg. Ich verstehe, wie das Gehirn auf Veränderungen und eine fremde Umgebung reagiert. Das ist keine Schwäche. So setzt sich das Leben neu zusammen: zuerst die unteren Stufen, dann die oberen. Allein dieses Verständnis nimmt dir viel unnötige Schuld von den Schultern.</p></div></div>
+          <div class="way"><span class="ic" data-ico="explore" data-c="#C4973A"></span><div><h3>Deine Aufmerksamkeit kehrt zu dir zurück</h3><p>Nach dem Umzug geht die ganze Aufmerksamkeit nach aussen: Papiere, Fristen, eine fremde Sprache, die Sorgen der Familie. Für dich selbst bleibt kaum etwas übrig. Gemeinsam holen wir die Aufmerksamkeit zu dir und zu deiner Stufe zurück: was du jetzt brauchst und welchen kleinen Schritt du schon heute für dich tun kannst. Dann wird es im Kopf ruhiger, und es entsteht Raum für deine Entscheidungen.</p></div></div>
         </div>
         <blockquote class="who-quote">Ich dränge nicht und ziehe dich nicht an der Hand. Ich gehe neben dir — in deinem Tempo und für dich.<span>Iryna</span></blockquote>
       </div>
@@ -910,10 +914,10 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
       <a class="btn free" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">«ВСТРЕЧА» in Telegram schreiben</a>
     </div>
     <ol class="sess-steps">
-      <li><span class="ss-ic" data-ico="telegram" data-c="#3F6FBF"></span><div><span class="ss-k">Schritt 1</span><h3>Du schreibst mir</h3><p>Schreib in Telegram das Wort <span class="codeword">ВСТРЕЧА</span>. Du kannst ein paar Zeilen über dich und das, was gerade los ist, hinzufügen. Schön formulieren musst du nicht, das ist meine Arbeit.</p></div></li>
-      <li><span class="ss-ic" data-ico="speech" data-c="#66704F"></span><div><span class="ss-k">Schritt 2</span><h3>Wir lernen uns kennen</h3><p>Das sind 30 Minuten online, und es ist kostenlos. Ich stelle dir ein paar Fragen über dich und sage dir ehrlich, ob ich helfen kann. Wenn nicht, sage ich dir, an wen du dich besser wendest.</p></div></li>
+      <li><span class="ss-ic" data-ico="telegram" data-c="#4F7EC2"></span><div><span class="ss-k">Schritt 1</span><h3>Du schreibst mir</h3><p>Schreib in Telegram das Wort <span class="codeword">ВСТРЕЧА</span>. Du kannst ein paar Zeilen über dich und das, was gerade los ist, hinzufügen. Schön formulieren musst du nicht, das ist meine Arbeit.</p></div></li>
+      <li><span class="ss-ic" data-ico="speech" data-c="#5E8A6C"></span><div><span class="ss-k">Schritt 2</span><h3>Wir lernen uns kennen</h3><p>Das sind 30 Minuten online, und es ist kostenlos. Ich stelle dir ein paar Fragen über dich und sage dir ehrlich, ob ich helfen kann. Wenn nicht, sage ich dir, an wen du dich besser wendest.</p></div></li>
       <li><span class="ss-ic" data-ico="cup" data-c="#6E4F3C"></span><div><span class="ss-k">Schritt 3</span><h3>Die Sitzung — Zeit nur für dich</h3><p>Wir treffen uns per Video, und meine ganze Aufmerksamkeit gehört dir. Du musst dich nicht vorbereiten und nichts mitbringen. Alles, was du sagst, bleibt unter uns.</p></div></li>
-      <li><span class="ss-ic" data-ico="sprout" data-c="#B98324"></span><div><span class="ss-k">Schritt 4</span><h3>Du machst einen Schritt für dich</h3><p>Jedes Treffen endet nicht nur mit einer Erkenntnis. Am Ende finden wir eine kleine, konkrete Handlung für dich, die du bis zum nächsten Treffen wirklich umsetzt.</p></div></li>
+      <li><span class="ss-ic" data-ico="sprout" data-c="#C4973A"></span><div><span class="ss-k">Schritt 4</span><h3>Du machst einen Schritt für dich</h3><p>Jedes Treffen endet nicht nur mit einer Erkenntnis. Am Ende finden wir eine kleine, konkrete Handlung für dich, die du bis zum nächsten Treffen wirklich umsetzt.</p></div></li>
     </ol>
   </section>
 </main>
@@ -929,9 +933,9 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
     <div id="pathBox" class="pv"></div>
     <p class="path-note">Alles online und auf Russisch. Wo «den Preis erfährst du persönlich» steht, wird der Preis noch festgelegt, schreib mir, und ich erzähle dir mehr. Wie du einen Termin vereinbarst, bezahlst und verschiebst, steht in den <a href="/usloviya/#lang=de">Bedingungen der Zusammenarbeit</a>.</p>
     <div class="also" style="margin-top:28px">
-      <a class="mini" href="/testy/#lang=de"><span class="ic sm" data-ico="compass" data-c="#4F5E3E"></span><b>Alle meine Tests</b><span>Vier kostenlose Tests, je 10–20 Minuten, mit ausführlicher Auswertung.</span></a>
+      <a class="mini" href="/testy/#lang=de"><span class="ic sm" data-ico="compass" data-c="#5E8A6C"></span><b>Alle meine Tests</b><span>Vier kostenlose Tests, je 10–20 Minuten, mit ausführlicher Auswertung.</span></a>
       <a class="mini" href="https://t.me/swisscompass_bot" target="_blank" rel="noopener"><span class="ic sm" data-ico="swissguide" data-c="#6E4F3C"></span><b>Swiss Guide</b><span>Mein kostenloser Telegram-Bot. Papiere, Versicherung, Schule und Ärzte Schritt für Schritt und auf Russisch.</span></a>
-      <a class="mini" href="https://t.me/IrynaNeuroCoach_channel" target="_blank" rel="noopener"><span class="ic sm" data-ico="megaphone" data-c="#3F6FBF"></span><b>Mein Telegram-Kanal</b><span>Nützliches für dich über das Leben im neuen Land. Und ein Ort, an dem du deine Leute findest.</span></a>
+      <a class="mini" href="https://t.me/IrynaNeuroCoach_channel" target="_blank" rel="noopener"><span class="ic sm" data-ico="megaphone" data-c="#4F7EC2"></span><b>Mein Telegram-Kanal</b><span>Nützliches für dich über das Leben im neuen Land. Und ein Ort, an dem du deine Leute findest.</span></a>
     </div>
   </div>
   <dialog class="qm" id="pdlg" aria-labelledby="pdlgTitle"><div class="qm-card" id="pdlgCard"></div></dialog>
@@ -945,12 +949,12 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
       <h2 id="re-h">Was sich für dich verändert</h2>
     </div>
     <ul class="results">
-      <li><span class="ic sm" data-ico="sprout" data-c="#B98324"></span>Die Risse des Umzugs werden zu goldenen Nähten — deine Erfahrung wird zu deiner Stärke</li>
-      <li><span class="ic sm" data-ico="sprout" data-c="#66704F"></span>Auf die Frage «Wer bin ich hier?» hast du deine eigene Antwort statt fremder Ratschläge</li>
-      <li><span class="ic sm" data-ico="key" data-c="#B98324"></span>Die Entscheidung, die du monatelang aufgeschoben hast, ist endlich getroffen</li>
-      <li><span class="ic sm" data-ico="sun" data-c="#B98324"></span>Deine Energie kehrt zurück — du verbrauchst sie nicht mehr für den inneren Streit</li>
+      <li><span class="ic sm" data-ico="sprout" data-c="#C4973A"></span>Die Risse des Umzugs werden zu goldenen Nähten — deine Erfahrung wird zu deiner Stärke</li>
+      <li><span class="ic sm" data-ico="sprout" data-c="#5E8A6C"></span>Auf die Frage «Wer bin ich hier?» hast du deine eigene Antwort statt fremder Ratschläge</li>
+      <li><span class="ic sm" data-ico="key" data-c="#C4973A"></span>Die Entscheidung, die du monatelang aufgeschoben hast, ist endlich getroffen</li>
+      <li><span class="ic sm" data-ico="sun" data-c="#C4973A"></span>Deine Energie kehrt zurück — du verbrauchst sie nicht mehr für den inneren Streit</li>
       <li><span class="ic sm" data-ico="compass" data-c="#6E4F3C"></span>Du findest dein «Wozu» im neuen Land, nicht nur ein «Ich muss»</li>
-      <li><span class="ic sm" data-ico="signpost" data-c="#2E5A88"></span>Du siehst deine Stufe und den nächsten Schritt darauf, nicht den ganzen Berg</li>
+      <li><span class="ic sm" data-ico="signpost" data-c="#4F7EC2"></span>Du siehst deine Stufe und den nächsten Schritt darauf, nicht den ganzen Berg</li>
     </ul>
     <p class="note">Coaching ist partnerschaftliche Arbeit. Das Ergebnis entsteht, wenn wir zusammenarbeiten, du und ich.</p>
   </section>
@@ -1038,9 +1042,9 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
         <p>Schreib mir auf Telegram das Wort <span class="codeword">ВСТРЕЧА</span>, und wir finden einen Termin für die ersten 30 Minuten über dich. Das ist kostenlos und unverbindlich.</p>
       </div>
       <div class="clist">
-        <a href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener"><span class="c-l"><span class="ic sm" data-ico="telegram" data-c="#3F6FBF"></span>Telegram</span> <span>@IrynaNeuroCoach</span></a>
-        <a href="https://www.instagram.com/iryna.voznesenskaya/" target="_blank" rel="noopener"><span class="c-l"><span class="ic sm" data-ico="instagram" data-c="#C25468"></span>Instagram</span> <span>@iryna.voznesenskaya</span></a>
-        <div><span class="c-l"><span class="ic sm" data-ico="mail" data-c="#66704F"></span>E-mail</span> <span>voznesenskaya.iryna@gmail.com</span></div>
+        <a href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener"><span class="c-l"><span class="ic sm" data-ico="telegram" data-c="#4F7EC2"></span>Telegram</span> <span>@IrynaNeuroCoach</span></a>
+        <a href="https://www.instagram.com/iryna.voznesenskaya/" target="_blank" rel="noopener"><span class="c-l"><span class="ic sm" data-ico="instagram" data-c="#8A6B52"></span>Instagram</span> <span>@iryna.voznesenskaya</span></a>
+        <div><span class="c-l"><span class="ic sm" data-ico="mail" data-c="#5E8A6C"></span>E-mail</span> <span>voznesenskaya.iryna@gmail.com</span></div>
       </div>
     </div>
   </section>
@@ -1056,7 +1060,7 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
 /* =====================================================================
    Библиотека значков — общая для всех тестов (с 02.10.2026).
    Один стиль: сетка 24×24, мягкая заливка светлым тоном + тонкий контур глубоким тоном того же цвета
-   (как акварель с контуром в утверждённой палитре), линия 1.8, скруглённые концы.
+   (как акварель с контуром в утверждённой палитре), линия ≈1,6 px при любом размере, скруглённые концы.
    Использование: ico('flame', '#C25468', '#EEA9B3', 26) — имя, цвет контура, цвет заливки, размер.
    Если заливка не задана, берётся очень светлый тон контура.
    Каталог с картинками всех значков — файл «Библиотека значков.html».
@@ -1131,7 +1135,7 @@ const icoSoft = c => { const h = String(c).replace('#', ''); if (h.length !== 6)
   return '#' + [0, 2, 4].map(i => Math.round(parseInt(h.substr(i, 2), 16) * .3 + 255 * .7).toString(16).padStart(2, '0')).join(''); };
 function ico(name, line = '#2E5A88', fill, size = 24){
   const draw = ICONS[name] || ICONS.seed;
-  const s = 'stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"';
+  const s = `stroke-width="${Math.min(1.8, Math.max(0.9, 38 / size)).toFixed(2)}" stroke-linecap="round" stroke-linejoin="round"`;   // линия ≈1,6 px при любом размере, как у цветов-мандал (правило Ирины 13.10.2026)
   return `<svg viewBox="0 0 24 24" width="${size}" height="${size}" aria-hidden="true">${draw(line, fill || icoSoft(line), s)}</svg>`;
 }
 
@@ -1156,7 +1160,7 @@ function mandala(i, size){
   g += `<circle cx="50" cy="50" r="6" fill="${m.core}"/><circle cx="50" cy="50" r="2.4" fill="#FFFCF8"/>`;
   return `<svg viewBox="0 0 100 100" width="${size}" height="${size}" aria-hidden="true">${g}</svg>`;
 }
-document.querySelectorAll('[data-ico]').forEach(e => { e.innerHTML = ico(e.dataset.ico, e.dataset.c, null, e.classList.contains('sm') ? 26 : 32); });
+document.querySelectorAll('[data-ico]').forEach(e => { e.innerHTML = ico(e.dataset.ico, e.dataset.c, null, e.classList.contains('sm') ? 26 : 32); if (e.dataset.c) e.style.setProperty('--ic', e.dataset.c); });
 document.querySelectorAll('[data-mandala]').forEach(e => { e.innerHTML = mandala(+e.dataset.mandala, 60); });
 /* ===== «Узнаёшь себя в одной из этих фраз?» на языке метода «Ступени. Твой путь в новой стране» (11.10.2026, вопрос Ирины 17:47) =====
    с 11.10.2026, 21:05 (Ирина: «хочется иметь по боли на каждую ступень») — восемь фраз, по одной на ступень снизу вверх, и группа «На любой ступени» (any).
