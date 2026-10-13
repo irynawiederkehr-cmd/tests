@@ -717,6 +717,7 @@ function openStep(k){
         <h3 style="margin-top:6px">Проверь себя</h3><p class="check">${esc(s.check)}</p></div>
     </div>
     ${helpHtml(k)}
+    ${k === 4 ? `<a class="act" href="../delo/"><b><span class="act-ic" style="--ic:${COL[4][0]}">${ico('workshop', COL[4][0], null, 20)}</span><span class="act-t">Своё дело — с нуля и до вершины</span><span aria-hidden="true">→</span></b><span>Если ты хочешь своё дело или уже ведёшь его, посмотри восемь ступеней, по которым оно растёт: от первой мысли «а что, если своё?» до дела, которое живёт и помогает другим.</span></a>` : ''}
     <div class="qm-foot"><p class="next">${s.note ? esc(s.note) : `<b>Дальше.</b> ${esc(s.next)}`}</p>
       <p class="notme"><button type="button" data-step="${k - 1}" ${k ? '' : 'hidden'}>← Ступень ${k}</button> ${k < 7 ? `<button type="button" data-step="${k + 1}">Ступень ${k + 2} →</button>` : ''}</p></div>
     <div class="two-grid">${actHtml(STUPENI)}${actHtml(MEET)}</div>`;
