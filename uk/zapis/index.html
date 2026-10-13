@@ -174,7 +174,11 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 .tcard:hover{border-color:var(--muted)}
 .tcard.on{border-color:var(--brown);box-shadow:inset 0 0 0 1px var(--brown);background:color-mix(in srgb,var(--soft) 35%,var(--paper))}
 .tc-body{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1}
-.tc-top{display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+/* название слева, цена справа в своей колонке: цены во всех карточках стоят ровно у правого края на уровне первой строки названия, длинное название переносится, а цена не уезжает вниз (Ирина 13.10.2026: «Цены должны ровно стоять») */
+.tc-top{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;align-items:start}
+.tc-top .tag{justify-self:end;margin-top:.12em;text-align:center}
+/* на телефоне — у всех карточек цена отдельной строкой под названием, слева: название не сжимается, цены стоят одна под другой */
+@media (max-width:520px){.tc-top{grid-template-columns:minmax(0,1fr)}.tc-top .tag{justify-self:start;margin:2px 0 1px}}
 .tc-top b{font-family:var(--display);font-weight:400;font-size:1.28rem;line-height:1.2}
 .tc-meta{font-size:.86rem;color:var(--muted);font-weight:600}
 .tc-note{font-size:.92rem;line-height:1.5}
