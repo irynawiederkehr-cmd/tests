@@ -39,6 +39,9 @@ const CARDS = [
   { out: 'delo/og-image',
     art: () => fullBowl(),
     ru: ['Своё дело — <em>с&nbsp;нуля и&nbsp;до&nbsp;вершины</em>', 'Восемь ступеней, по которым растёт своё дело в новой стране. Посмотри, где ты сейчас и что поможет дальше.'] },   // КОПИЯ 13.10.2026; uk/de/en — после «переводи»
+  { out: 'otnosheniya/og-image',
+    art: () => twoBowls(),
+    ru: ['Мужчина и&nbsp;женщина&nbsp;— <em>ступень за&nbsp;ступенью</em>', 'Восемь ступеней, по которым растут отношения: от «рядом безопасно» до любви, которая больше вас двоих.'] },   // КОПИЯ 14.10.2026; uk/de/en — после «переводи»
 ];
 // эдельвейс из логотипа (favicon.svg)
 const OUT = 'M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z', INN = 'M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z';
@@ -71,6 +74,9 @@ function bowls() {   // «Путь»: акварель «Золотые швы»
 }
 function fullBowl() {   // «Своё дело»: акварель «Полная чаша», белая бумага сливается с фоном (multiply)
   return `<image href="file://${ROOT}/put/img/05-polnaya-chasha.jpg" x="650" y="-150" width="560" height="750" preserveAspectRatio="xMidYMid slice" style="mix-blend-mode:multiply"/>`;
+}
+function twoBowls() {   // «Отношения»: акварель «Свои чаши» (пока нет своей колоды), белая бумага сливается с фоном (multiply)
+  return `<image href="file://${ROOT}/put/img/02-svoi-chashi.jpg" x="650" y="-150" width="560" height="750" preserveAspectRatio="xMidYMid slice" style="mix-blend-mode:multiply"/>`;
 }
 function trail() {   // «Путь»: тропа из восьми стоянок, восьмая — эдельвейс
   const pts = [[650, 600], [745, 560], [870, 575], [985, 520], [930, 450], [800, 430], [840, 360], [960, 330], [1040, 250]];
