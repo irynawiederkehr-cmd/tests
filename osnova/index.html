@@ -413,9 +413,9 @@ footer a{color:var(--muted)}
 }
 
 /* ===== «Основа метода» (osnova/, 15.10.2026) — цвета уровней спиральной динамики ===== */
-:root{--l1:#9C8461;--l1s:#F2EADC;--l2:#76579A;--l2s:#EFE7F6;--l3:#B4433A;--l3s:#F8E4E0;--l4:#2F5E95;--l4s:#E3ECF6;--l5:#BE661C;--l5s:#F9E9D7;--l6:#4C7A43;--l6s:#E5EFDF;--l7:#9A7A0E;--l7s:#F7F0D2;--l8:#1C827E;--l8s:#DDF1EF;--gold:#B98324;--fig:#FBF7F0}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--l1:#D2BE9A;--l1s:#3A3126;--l2:#C6ACE2;--l2s:#30273A;--l3:#F0A69C;--l3s:#3D2624;--l4:#9CC2EA;--l4s:#1D2733;--l5:#F2B57E;--l5s:#3B2B1D;--l6:#AED3A0;--l6s:#243020;--l7:#E8CF6E;--l7s:#373017;--l8:#8ED9D3;--l8s:#1B3331;--gold:#E2B45C;--fig:#F4EEE4}}
-:root[data-theme="dark"]{--l1:#D2BE9A;--l1s:#3A3126;--l2:#C6ACE2;--l2s:#30273A;--l3:#F0A69C;--l3s:#3D2624;--l4:#9CC2EA;--l4s:#1D2733;--l5:#F2B57E;--l5s:#3B2B1D;--l6:#AED3A0;--l6s:#243020;--l7:#E8CF6E;--l7s:#373017;--l8:#8ED9D3;--l8s:#1B3331;--gold:#E2B45C;--fig:#F4EEE4}
+:root{--l1:#8E8470;--l1s:#ECE7DD;--l2:#6A5FB8;--l2s:#E7E4F7;--l3:#C25468;--l3s:#F8E0E4;--l4:#3F6FBF;--l4s:#E1EBFA;--l5:#C97E52;--l5s:#FAE8DC;--l6:#4E9A70;--l6s:#E1F1E7;--l7:#A99A2E;--l7s:#F7F2D3;--l8:#2894A0;--l8s:#DDF3F4;--gold:#B98324;--fig:#FBF7F0}  /* цвета ступеней — как на сайте (put/, главная: COL, STEPC) */
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--l1:#CFC4AE;--l1s:#35302A;--l2:#B3AAEE;--l2s:#2C2A3D;--l3:#F0A0AE;--l3s:#3B2529;--l4:#9DBEF0;--l4s:#1F2836;--l5:#EDB08A;--l5s:#3A2C22;--l6:#9FD6B5;--l6s:#213128;--l7:#DDD07A;--l7s:#353219;--l8:#8AD6DB;--l8s:#1B3234;--gold:#E2B45C;--fig:#F4EEE4}}
+:root[data-theme="dark"]{--l1:#CFC4AE;--l1s:#35302A;--l2:#B3AAEE;--l2s:#2C2A3D;--l3:#F0A0AE;--l3s:#3B2529;--l4:#9DBEF0;--l4s:#1F2836;--l5:#EDB08A;--l5s:#3A2C22;--l6:#9FD6B5;--l6s:#213128;--l7:#DDD07A;--l7s:#353219;--l8:#8AD6DB;--l8s:#1B3234;--gold:#E2B45C;--fig:#F4EEE4}
 .os h3{font-size:1.5rem}
 .os-hero{grid-template-columns:1.2fr .8fr}
 .os-hero h1{font-size:clamp(2.3rem,5.6vw,3.9rem)}
@@ -467,8 +467,11 @@ footer a{color:var(--muted)}
 @media (max-width:820px){.os-lvl{grid-template-columns:1fr;gap:18px;padding:18px}.os-lvl .os-card{max-width:250px}}
 .os-card{margin:0;display:flex;flex-direction:column;gap:8px;position:sticky;top:96px}
 @media (max-width:820px){.os-card{position:static}}
-.os-card picture,.os-card .os-ph{display:block;width:100%;aspect-ratio:3/4;border-radius:14px;overflow:hidden;background:var(--fig);box-shadow:0 14px 30px -20px rgba(60,40,20,.55)}
-.os-card img{display:block;width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply}
+.os-card picture{display:block;width:100%;aspect-ratio:3/4;overflow:hidden}
+.os-card .os-ph{display:block;width:100%;aspect-ratio:3/4;border-radius:14px;overflow:hidden;background:var(--fig)}
+.os-card img{display:block;width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply}  /* белая бумага растворяется в фоне, как чаши на «Твой путь» */
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .os-card img{mix-blend-mode:normal;border-radius:14px;opacity:.92}}
+:root[data-theme="dark"] .os-card img{mix-blend-mode:normal;border-radius:14px;opacity:.92}
 .os-card.ph{position:relative}
 .os-card .os-ph{background:radial-gradient(ellipse 48% 30% at 50% 66%,color-mix(in srgb,var(--cd) 36%,transparent),transparent 72%),radial-gradient(ellipse 60% 46% at 42% 46%,color-mix(in srgb,var(--cd) 20%,transparent),transparent 70%),radial-gradient(ellipse 40% 34% at 64% 34%,color-mix(in srgb,var(--cd) 14%,transparent),transparent 70%),var(--fig)}
 .os-ph-t{position:absolute;left:0;right:0;top:0;aspect-ratio:3/4;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:2px;padding:16px;text-align:center}
@@ -632,7 +635,7 @@ footer a{color:var(--muted)}
     <nav class="os-lnav" aria-label="Уровни"><a href="#uroven-1" style="--c:var(--l1)"><i></i>1 · Выжить и согреться</a><a href="#uroven-2" style="--c:var(--l2)"><i></i>2 · Быть среди своих</a><a href="#uroven-3" style="--c:var(--l3)"><i></i>3 · Своя сила</a><a href="#uroven-4" style="--c:var(--l4)"><i></i>4 · Порядок и смысл</a><a href="#uroven-5" style="--c:var(--l5)"><i></i>5 · Свой успех</a><a href="#uroven-6" style="--c:var(--l6)"><i></i>6 · Люди и близость</a><a href="#uroven-7" style="--c:var(--l7)"><i></i>7 · Жизнь целиком</a><a href="#uroven-8" style="--c:var(--l8)"><i></i>8 · Одно целое</a></nav>
     <div class="os-lvls">
     <article class="os-lvl" id="uroven-1" style="--c:var(--l1);--s:var(--l1s)" aria-labelledby="ul1">
-      <figure class="os-card" style="--cd:#8A7352"><picture><source srcset="img/01-koster.webp" type="image/webp"><img src="img/01-koster.jpg" width="900" height="1204" loading="lazy" alt="Акварельная карта «Огонь, который греет»"></picture><figcaption><b>Огонь, который греет</b><span>выжить, согреться, перевести дух</span></figcaption></figure>
+      <figure class="os-card" style="--cd:#8E8470"><picture><source srcset="img/01-koster.webp" type="image/webp"><img src="img/01-koster.jpg" width="900" height="1204" loading="lazy" alt="Акварельная карта «Огонь, который греет»"></picture><figcaption><b>Огонь, который греет</b><span>выжить, согреться, перевести дух</span></figcaption></figure>
       <div class="os-lvl-body">
         <div class="os-lh"><span class="os-num">1</span><div><div class="os-eb">Уровень 1 · бежевый · A–N · про «я»</div><h3 id="ul1">Выжить и согреться</h3></div></div>
         <p class="os-ess">Всё внимание уходит на тело: еду, тепло, сон и безопасность. Думать о будущем и о смысле пока некогда, и это правильно: сначала нужно выжить и сохранить силы.</p>
@@ -650,7 +653,7 @@ footer a{color:var(--muted)}
       </div>
     </article>
     <article class="os-lvl" id="uroven-2" style="--c:var(--l2);--s:var(--l2s)" aria-labelledby="ul2">
-      <figure class="os-card" style="--cd:#6B4C8C"><picture><source srcset="img/02-gnezdo.webp" type="image/webp"><img src="img/02-gnezdo.jpg" width="900" height="1204" loading="lazy" alt="Акварельная карта «Гнездо»"></picture><figcaption><b>Гнездо</b><span>свои рядом, тепло рода</span></figcaption></figure>
+      <figure class="os-card" style="--cd:#6A5FB8"><picture><source srcset="img/02-gnezdo.webp" type="image/webp"><img src="img/02-gnezdo.jpg" width="900" height="1204" loading="lazy" alt="Акварельная карта «Гнездо»"></picture><figcaption><b>Гнездо</b><span>свои рядом, тепло рода</span></figcaption></figure>
       <div class="os-lvl-body">
         <div class="os-lh"><span class="os-num">2</span><div><div class="os-eb">Уровень 2 · фиолетовый · B–O · про «мы»</div><h3 id="ul2">Быть среди своих</h3></div></div>
         <p class="os-ess">Безопасность приходит через принадлежность: семья, род, община, свои обычаи. Здесь рождаются ритуалы, приметы, праздники и тёплое чувство «мы вместе».</p>
@@ -668,7 +671,7 @@ footer a{color:var(--muted)}
       </div>
     </article>
     <article class="os-lvl" id="uroven-3" style="--c:var(--l3);--s:var(--l3s)" aria-labelledby="ul3">
-      <figure class="os-card" style="--cd:#A63C33"><picture><source srcset="img/03-mak.webp" type="image/webp"><img src="img/03-mak.jpg" width="900" height="1204" loading="lazy" alt="Акварельная карта «Мак сквозь камень»"></picture><figcaption><b>Мак сквозь камень</b><span>пробиться и заявить о себе</span></figcaption></figure>
+      <figure class="os-card" style="--cd:#C25468"><picture><source srcset="img/03-mak.webp" type="image/webp"><img src="img/03-mak.jpg" width="900" height="1204" loading="lazy" alt="Акварельная карта «Мак сквозь камень»"></picture><figcaption><b>Мак сквозь камень</b><span>пробиться и заявить о себе</span></figcaption></figure>
       <div class="os-lvl-body">
         <div class="os-lh"><span class="os-num">3</span><div><div class="os-eb">Уровень 3 · красный · C–P · про «я»</div><h3 id="ul3">Своя сила</h3></div></div>
         <p class="os-ess">Человек отделяется от рода и говорит: «я есть, и я могу». Здесь энергия, смелость, напор, желание получить своё сейчас и уважение к себе.</p>
@@ -686,7 +689,7 @@ footer a{color:var(--muted)}
       </div>
     </article>
     <article class="os-lvl" id="uroven-4" style="--c:var(--l4);--s:var(--l4s)" aria-labelledby="ul4">
-      <figure class="os-card" style="--cd:#2B578A"><picture><source srcset="img/04-kompas.webp" type="image/webp"><img src="img/04-kompas.jpg" width="900" height="1204" loading="lazy" alt="Акварельная карта «Компас»"></picture><figcaption><b>Компас</b><span>я знаю, где север</span></figcaption></figure>
+      <figure class="os-card" style="--cd:#3F6FBF"><picture><source srcset="img/04-kompas.webp" type="image/webp"><img src="img/04-kompas.jpg" width="900" height="1204" loading="lazy" alt="Акварельная карта «Компас»"></picture><figcaption><b>Компас</b><span>я знаю, где север</span></figcaption></figure>
       <div class="os-lvl-body">
         <div class="os-lh"><span class="os-num">4</span><div><div class="os-eb">Уровень 4 · синий · D–Q · про «мы»</div><h3 id="ul4">Порядок и смысл</h3></div></div>
         <p class="os-ess">Есть правильный путь, правила и долг. Человек готов потерпеть сейчас ради надёжного будущего и ради того, что правильно.</p>
@@ -704,7 +707,7 @@ footer a{color:var(--muted)}
       </div>
     </article>
     <article class="os-lvl" id="uroven-5" style="--c:var(--l5);--s:var(--l5s)" aria-labelledby="ul5">
-      <figure class="os-card" style="--cd:#A85A16"><picture><source srcset="img/05-shar.webp" type="image/webp"><img src="img/05-shar.jpg" width="900" height="1204" loading="lazy" alt="Акварельная карта «Воздушный шар»"></picture><figcaption><b>Воздушный шар</b><span>подняться на свою высоту</span></figcaption></figure>
+      <figure class="os-card" style="--cd:#C97E52"><picture><source srcset="img/05-shar.webp" type="image/webp"><img src="img/05-shar.jpg" width="900" height="1204" loading="lazy" alt="Акварельная карта «Воздушный шар»"></picture><figcaption><b>Воздушный шар</b><span>подняться на свою высоту</span></figcaption></figure>
       <div class="os-lvl-body">
         <div class="os-lh"><span class="os-num">5</span><div><div class="os-eb">Уровень 5 · оранжевый · E–R · про «я»</div><h3 id="ul5">Свой успех</h3></div></div>
         <p class="os-ess">Человек верит, что может улучшить свою жизнь сам: ставит цели, ищет лучший способ, пробует, считает и растёт.</p>
@@ -722,7 +725,7 @@ footer a{color:var(--muted)}
       </div>
     </article>
     <article class="os-lvl" id="uroven-6" style="--c:var(--l6);--s:var(--l6s)" aria-labelledby="ul6">
-      <figure class="os-card" style="--cd:#447038"><picture><source srcset="img/06-venok.webp" type="image/webp"><img src="img/06-venok.jpg" width="900" height="1204" loading="lazy" alt="Акварельная карта «Венок из полевых цветов»"></picture><figcaption><b>Венок из полевых цветов</b><span>все разные — все в одном круге</span></figcaption></figure>
+      <figure class="os-card" style="--cd:#4E9A70"><picture><source srcset="img/06-venok.webp" type="image/webp"><img src="img/06-venok.jpg" width="900" height="1204" loading="lazy" alt="Акварельная карта «Венок из полевых цветов»"></picture><figcaption><b>Венок из полевых цветов</b><span>все разные — все в одном круге</span></figcaption></figure>
       <div class="os-lvl-body">
         <div class="os-lh"><span class="os-num">6</span><div><div class="os-eb">Уровень 6 · зелёный · F–S · про «мы»</div><h3 id="ul6">Люди и близость</h3></div></div>
         <p class="os-ess">Важно, что чувствуют другие, быть принятой, слышать и быть услышанной. Все разные, и все равны.</p>
@@ -740,7 +743,7 @@ footer a{color:var(--muted)}
       </div>
     </article>
     <article class="os-lvl" id="uroven-7" style="--c:var(--l7);--s:var(--l7s)" aria-labelledby="ul7">
-      <figure class="os-card ph" style="--cd:#86690A"><span class="os-ph" aria-hidden="true"></span><span class="os-ph-t"><b>Раковина наутилуса</b><small>карта рисуется</small></span><figcaption><b>Раковина наутилуса</b><span>каждый виток остаётся частью целого</span></figcaption></figure>
+      <figure class="os-card ph" style="--cd:#A99A2E"><span class="os-ph" aria-hidden="true"></span><span class="os-ph-t"><b>Раковина наутилуса</b><small>карта рисуется</small></span><figcaption><b>Раковина наутилуса</b><span>каждый виток остаётся частью целого</span></figcaption></figure>
       <div class="os-lvl-body">
         <div class="os-lh"><span class="os-num">7</span><div><div class="os-eb">Уровень 7 · жёлтый · G–T · про «я»</div><h3 id="ul7">Жизнь целиком</h3></div></div>
         <p class="os-ess">Человек видит, как всё связано, и не держится за один правильный способ. В одной ситуации нужен порядок, в другой — смелость, в третьей — забота, и он может опереться на любой из них.</p>
@@ -758,7 +761,7 @@ footer a{color:var(--muted)}
       </div>
     </article>
     <article class="os-lvl" id="uroven-8" style="--c:var(--l8);--s:var(--l8s)" aria-labelledby="ul8">
-      <figure class="os-card ph" style="--cd:#17736F"><span class="os-ph" aria-hidden="true"></span><span class="os-ph-t"><b>Мир в капле росы</b><small>карта рисуется</small></span><figcaption><b>Мир в капле росы</b><span>здесь и там — одно целое</span></figcaption></figure>
+      <figure class="os-card ph" style="--cd:#2894A0"><span class="os-ph" aria-hidden="true"></span><span class="os-ph-t"><b>Мир в капле росы</b><small>карта рисуется</small></span><figcaption><b>Мир в капле росы</b><span>здесь и там — одно целое</span></figcaption></figure>
       <div class="os-lvl-body">
         <div class="os-lh"><span class="os-num">8</span><div><div class="os-eb">Уровень 8 · бирюзовый · H–U · про «мы»</div><h3 id="ul8">Одно целое</h3></div></div>
         <p class="os-ess">Человек чувствует себя частью большего: людей, природы, поколений. Важно то, что останется после тебя.</p>
