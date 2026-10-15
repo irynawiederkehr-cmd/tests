@@ -69,7 +69,8 @@
     + '.tt-hd>div{font-weight:700;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--bg)}'
     + '.tt-row>div.here{background:color-mix(in srgb,var(--brown) 7%,var(--paper))}.tt-hd>div.here{color:var(--ink);background:color-mix(in srgb,var(--brown) 14%,var(--bg))}'
     + '.tt-n b{display:block;font-size:.98rem}.tt-n span{color:var(--muted);font-size:.82rem}'
-    + '.tt-c a{color:inherit;text-decoration:none}.tt-c a:hover .tt-t{text-decoration:underline}.tt-c em{display:inline-block;margin-top:4px;font-style:normal;font-size:.74rem;font-weight:700;border-radius:999px;padding:1px 8px;background:color-mix(in srgb,var(--mustard) 22%,transparent)}'
+    + '.tt-c{display:flex;flex-direction:column}.tt-c>a{display:flex;flex-direction:column;flex:1 1 auto;color:inherit;text-decoration:none}.tt-c a:hover .tt-t{text-decoration:underline}.tt-c .tt-t{margin-bottom:8px}'
+    + '.tt-c em{display:block;align-self:flex-start;margin-top:auto;font-style:normal;font-size:.74rem;font-weight:700;border-radius:999px;padding:1px 8px;background:color-mix(in srgb,var(--mustard) 22%,transparent)}'
     + '.tt-c em.free{background:color-mix(in srgb,var(--sage) 30%,transparent)}.tt-c i{display:none;font-style:normal;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted)}'
     + '@media (max-width:760px){.tt-hd{display:none!important}.tt-row{display:flex;flex-direction:column}.tt-row>div+div{border-left:none;border-top:1px dashed var(--line)}.tt-c i{display:block}.tt-row>div.here{order:-1}.tt-row>.tt-n{order:-2;background:var(--bg)}.tt-row>div:not(.here):not(.tt-n){font-size:.84rem}}'
     + '.tt-all{margin-top:10px;font:700 .9rem/1 var(--body,system-ui);color:var(--ink);background:var(--paper);border:1.5px solid color-mix(in srgb,var(--brown) 35%,transparent);border-radius:12px;padding:10px 14px;cursor:pointer}.tt-all:hover{border-color:var(--brown)}'
@@ -88,9 +89,10 @@
   }
   function cell(c, row, p) {
     var link = c[1] === 1 ? '../#p-' + row.p : c[1], m = c[2];
-    var inner = '<i>' + esc(p.n) + '</i><span class="tt-t">' + esc(c[0]) + '</span>' + (m ? ' <em' + (/^бесплатно/.test(m) ? ' class="free"' : '') + '>' + esc(m) + '</em>' : '');
+    var inner = '<i>' + esc(p.n) + '</i><span class="tt-t">' + esc(c[0]) + '</span>' + (m ? '<em' + (/^бесплатно/.test(m) ? ' class="free"' : '') + '>' + esc(m) + '</em>' : '');
     return '<div class="tt-c' + (p.k === here ? ' here' : '') + '">' + (link ? '<a href="' + link + '">' + inner + '</a>' : inner) + '</div>';
   }
+  /* 15.10.2026, Ирина: «сделай ровненько цены» — пометка цены стоит отдельной строкой внизу клетки, в одной линии по всей строке таблицы. */
   var MORE = 4;   // сколько строк видно сразу, остальные — по кнопке (на телефоне таблица длинная)
   function tools() {
     var el = document.getElementById('triTools'); if (!el) return;
