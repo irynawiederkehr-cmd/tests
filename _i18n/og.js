@@ -13,7 +13,7 @@ const ROOT = path.resolve(__dirname, '..');
 const EB = { ru: 'ИРИНА ВОЗНЕСЕНСКАЯ · КОУЧ, МЕНТОР', uk: 'ІРИНА ВОЗНЕСЕНСЬКА · КОУЧ, МЕНТОРКА', de: 'IRYNA VOZNESENSKAYA · COACH, MENTORIN', en: 'IRYNA VOZNESENSKAYA · COACH, MENTOR' };
 const CARDS = [
   { out: 'og-image',
-    art: () => steps(),
+    art: () => sq('home/img/og/kresla.jpg'),
     ru: ['Жизнь после переезда <em>можно собрать заново</em>', 'Шаг за шагом, с того места, где ты сейчас. Метод «Ступени. Твой путь в новой стране».'],
     uk: ['Життя після переїзду <em>можна зібрати заново</em>', 'Крок за кроком, з того місця, де ти зараз. Метод «Сходинки. Твій шлях у новій країні».'],
     de: ['Das Leben nach dem Umzug <em>lässt sich neu zusammensetzen</em>', 'Schritt für Schritt, von dort aus, wo du gerade stehst. Die Methode «Stufen. Dein Weg im neuen Land».'],
@@ -25,25 +25,25 @@ const CARDS = [
     de: ['Stufen. <em>Dein Weg</em> im neuen Land', 'Acht Stufen — eine Schale, die zerbrochen ist und sich mit Gold neu zusammensetzt. Schau, wo du stehst.'],
     en: ['Steps. <em>Your path</em> in a new country', 'Eight steps — the story of one bowl that broke and is coming together again with gold. See where you are now.'] },
   { out: 'zapis/og-image',
-    art: () => art(),
+    art: () => sq('home/img/og/samolet.jpg'),
     ru: ['Запись <em>на встречу</em>', 'Выбери день и время, которые удобны тебе. Знакомство 30 минут бесплатно, онлайн в Zoom.'],
     uk: ['Запис <em>на зустріч</em>', 'Вибери день і час, які зручні тобі. Знайомство 30 хвилин безкоштовно, онлайн у Zoom.'],
     de: ['Termin <em>buchen</em>', 'Wähl den Tag und die Zeit, die dir passen. Kennenlernen 30 Minuten kostenlos, online über Zoom.'],
     en: ['Book <em>a session</em>', 'Choose the day and time that suit you. Introductory meeting 30 minutes, free, online via Zoom.'] },
   { out: 'usloviya/og-image',
-    art: () => art(),
+    art: () => sq('home/img/og/bloknot.jpg'),
     ru: ['Условия <em>работы со мной</em>', 'Как записаться, когда платить, как перенести встречу и что будет, если ты решишь остановиться.'],
     uk: ['Умови <em>роботи зі мною</em>', 'Як записатися, коли платити, як перенести зустріч і що буде, якщо ти вирішиш зупинитися.'],
     de: ['Bedingungen der <em>Zusammenarbeit</em>', 'Wie du einen Termin vereinbarst, wann du bezahlst, wie du verschiebst und was passiert, wenn du aufhören möchtest.'],
     en: ['Terms of <em>working with me</em>', 'How to book, when to pay, how to reschedule and what happens if you decide to stop.'] },
   { out: 'delo/og-image',
-    art: () => fullBowl(),
+    art: () => card('home/img/og/delo.jpg'),
     ru: ['Своё дело — <em>с&nbsp;нуля и&nbsp;до&nbsp;вершины</em>', 'Восемь ступеней, по которым растёт своё дело в новой стране. Посмотри, где ты сейчас и что поможет дальше.'] },   // КОПИЯ 13.10.2026; uk/de/en — после «переводи»
   { out: 'osnova/og-image',
     art: () => koster(),
     ru: ['Спиральная динамика&nbsp;— <em>основа метода</em>', 'Кто её создал, что важно человеку на каждом из восьми уровней и как он переходит на следующий.'] },
   { out: 'otnosheniya/og-image',
-    art: () => twoBowls(),
+    art: () => card('home/img/og/otnosheniya.jpg'),
     ru: ['Мужчина и&nbsp;женщина&nbsp;— <em>ступень за&nbsp;ступенью</em>', 'Восемь ступеней, по которым растут отношения: от «рядом безопасно» до любви, которая больше вас двоих.'] },   // КОПИЯ 14.10.2026; uk/de/en — после «переводи»
 ];
 // эдельвейс из логотипа (favicon.svg)
@@ -68,6 +68,13 @@ function art() {
   return `<circle cx="${gx}" cy="190" r="150" fill="#EFE5D6"/><ellipse cx="${gx}" cy="${ground + 170}" rx="300" ry="175" fill="#EADFCF"/>
 <path d="M640 ${ground} C740 ${ground - 10} 840 ${ground + 6} 930 ${ground - 2} S1120 ${ground + 8} 1200 ${ground - 4}" fill="none" stroke="#6E4F3C" stroke-width="3" stroke-linecap="round"/>${roots}
 <path d="M${gx} ${ground + 4} C${gx - 8} 360 ${gx + 10} 300 ${gx} 250" stroke="#66704F" stroke-width="6" fill="none" stroke-linecap="round"/>${leaves}${logo(gx, 180, 190)}`;
+}
+/* 15.10.2026, 21:11, Ирина: «На сайте обнови все превьюшки, на моей основной превью поставь вот те кресла со столиком и лампой» */
+function sq(f) {   // квадратная акварель-медальон (кресла, самолётик, блокнот), белая бумага сливается с фоном (multiply)
+  return `<image href="file://${ROOT}/${f}" x="640" y="20" width="590" height="590" preserveAspectRatio="xMidYMid meet" style="mix-blend-mode:multiply"/>`;
+}
+function card(f) {   // акварельная карта пути 900×1205, белая бумага сливается с фоном (multiply)
+  return `<image href="file://${ROOT}/${f}" x="650" y="-150" width="560" height="750" preserveAspectRatio="xMidYMid slice" style="mix-blend-mode:multiply"/>`;
 }
 function steps() {   // главная: акварель «Ступени», белая бумага сливается с фоном (multiply)
   return `<image href="file://${ROOT}/home/img/stupeni-hero.jpg" x="690" y="12" width="490" height="608" preserveAspectRatio="xMidYMid meet" style="mix-blend-mode:multiply"/>`;
