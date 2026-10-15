@@ -9,7 +9,7 @@
   var P = [
     { k: 'put', h: '../put/', n: 'Жизнь в новой стране', d: 'Восемь ступеней после переезда: от разбитой чаши до жизни, в которой «здесь» и «там» — одна жизнь.', img: '07-zolotye-shvy' },
     { k: 'delo', h: '../delo/', n: 'Своё дело', d: 'От первой мысли «а что, если своё?» до дела, которое живёт без тебя и помогает другим.', img: '05-polnaya-chasha' },
-    { k: 'otn', h: '../otnosheniya/', n: 'Отношения', d: 'Мужчина и женщина: от «рядом безопасно» до любви, которая больше вас двоих.', img: '02-svoi-chashi' }
+    { k: 'otn', h: '../otnosheniya/', n: 'Отношения', d: 'Мужчина и женщина: от «рядом безопасно» до любви, которая больше вас двоих.', img: '06-slyshim-drug-druga', dir: '/otnosheniya/img/' }
   ];
   var S = {
     put: ['Разбитая чаша', 'Свой круг', 'Я могу сама', 'Понятные правила', 'Своё дело', 'Мой вклад', 'Моя жизнь целиком', 'Здесь и там — одна жизнь'],
@@ -152,7 +152,7 @@
      Стоят на put/, delo/, otnosheniya/ и osnova/ (там скрипт подключён с data-path="osnova"). На телефоне — 2×2, только картинка и название. */
   function topBlocks() {
     var main = document.querySelector('main.page'); if (!main || document.querySelector('.tri-top')) return;
-    var B = P.map(function (p, i) { return { k: p.k, h: p.h, e: 'Путь ' + (i + 1), n: p.n, d: p.d, img: p.img }; })
+    var B = P.map(function (p, i) { return { k: p.k, h: p.h, e: 'Путь ' + (i + 1), n: p.n, d: p.d, img: p.img, dir: p.dir }; })
       .concat([{ k: 'osnova', h: '../osnova/', e: 'Основа метода', n: 'Спиральная динамика', d: 'Авторы, восемь уровней, что нужно и что ценно на каждом и как человек переходит на следующий.', img: '01-koster', dir: '/osnova/img/' },
         { k: 'prog', h: '../#path', e: 'Твой путь со мной', n: 'Программы', d: '«По ступеням» и «По шагам»: на каждом шаге — «Свои люди», «Сама» и «Со мной». Выбери свою ступень или посмотри всё по шагам.', img: '04-v-odnom-ryadu', wide: 1 }]);
     var nav = document.createElement('div'); nav.className = 'tri-top'; nav.setAttribute('role', 'navigation'); nav.setAttribute('aria-label', 'Твой путь');   // не <nav>: у страниц свои правила для nav a (без переноса строк)

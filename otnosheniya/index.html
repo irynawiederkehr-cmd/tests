@@ -441,7 +441,7 @@ footer a{color:var(--muted)}
       <p class="lead">После переезда меняется не только адрес. Меняется пара. Один сразу работает и говорит на языке, другая впервые за много лет зависит от него во всём. Роли, деньги, усталость, свои и чужие правила перемешиваются, и даже крепкая пара оказывается на ступень ниже, чем была дома. Отношения растут так же, как жизнь, — снизу вверх. Как чаши в японском искусстве кинцуги: у каждой свои золотые швы, и вместе они не сливаются в одну, а учатся стоять рядом.</p>
       <p class="lead">Вот как обычно растут отношения мужчины и женщины. Восемь ступеней — от «рядом безопасно» до любви, которая больше вас двоих. Эта страница о тебе в паре: что ты чувствуешь, что тебе нужно и что ты можешь сделать сама. Нажми на ступень, чтобы узнать о ней больше.</p>
     </div>
-    <picture class="bowl hero-bowl"><source srcset="/put/img/02-svoi-chashi.webp" type="image/webp"><img src="/put/img/02-svoi-chashi.jpg" width="900" height="1205" alt="Акварель: две чаши с золотыми швами и маленькая треснувшая чаша на нежно-сиреневом фоне"></picture>
+    <picture class="bowl hero-bowl"><source srcset="/otnosheniya/img/06-slyshim-drug-druga.webp" type="image/webp"><img src="/otnosheniya/img/06-slyshim-drug-druga.jpg" width="900" height="1205" alt="Акварель: мужчина и женщина сидят на скамье у озера, она говорит, он слушает; золотой свет на воде"></picture>
   </section>
 
   <section id="triBand"></section>
@@ -579,8 +579,9 @@ const ICONS_CHASHA = (() => {
 })();
 Object.assign(ICONS, ICONS_CHASHA);
 const ICN = ['razbita', 'svoi', 'sobirayu', 'ryad', 'polnaya', 'krug', 'shvy', 'zoloto'];
-const IMG = ['01-razbitaya-chasha', '02-svoi-chashi', '03-sobirayu-sebya', '04-v-odnom-ryadu', '05-polnaya-chasha', '06-chasha-po-krugu', '07-zolotye-shvy', '08-zoloto-dlya-novoj'];
-const bowl = (k, cls) => `<picture class="bowl${cls ? ' ' + cls : ''}"><source srcset="/put/img/${IMG[k]}.webp" type="image/webp"><img src="/put/img/${IMG[k]}.jpg" width="900" height="1205" loading="lazy" alt=""></picture>`;
+/* Карты пути «Отношения» (15.10.2026, Ирина: «карты для этого пути сделаем» — символы ступеней без чаш, акварель цвета ступени, одна золотая деталь) */
+const IMG = ['01-ryadom-bezopasno', '02-nash-dom', '03-moj-golos', '04-dogovorennosti', '05-rastem-oba', '06-slyshim-drug-druga', '07-vmeste-po-vyboru', '08-lyubov-bolshe-nas'];
+const bowl = (k, cls) => `<picture class="bowl${cls ? ' ' + cls : ''}"><source srcset="/otnosheniya/img/${IMG[k]}.webp" type="image/webp"><img src="/otnosheniya/img/${IMG[k]}.jpg" width="900" height="1205" loading="lazy" alt=""></picture>`;
 
 const STEPS = [
  {
