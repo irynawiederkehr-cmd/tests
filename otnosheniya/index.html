@@ -299,7 +299,7 @@ footer a{color:var(--muted)}
 .p-hero img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:900/1205}
 /* картинки чаш (акварель на белой бумаге): белое сливается с фоном страницы */
 .bowl{display:block}.bowl img{display:block;width:100%;height:auto;mix-blend-mode:multiply}
-.card .bowl{margin:-8px -6px 0;aspect-ratio:4/3;overflow:hidden}.card .bowl img{height:100%;object-fit:cover;object-position:50% 78%}  /* чаша — главное на картинке: показываем её целиком (10.10.2026) */
+.card .bowl{margin:-8px -6px 0;aspect-ratio:4/3;overflow:hidden}.card .bowl img{height:100%;object-fit:cover;object-position:50% var(--pos,78%)}  /* чаша — главное на картинке: показываем её целиком (10.10.2026) */
 .qm-pic{flex:none;width:clamp(96px,16vw,150px)}
 @media (max-width:640px){.qm-pic{display:none}}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bowl img{mix-blend-mode:normal;border-radius:16px;opacity:.92}}
@@ -581,7 +581,8 @@ Object.assign(ICONS, ICONS_CHASHA);
 const ICN = ['razbita', 'svoi', 'sobirayu', 'ryad', 'polnaya', 'krug', 'shvy', 'zoloto'];
 /* Карты пути «Отношения» (15.10.2026, Ирина: «карты для этого пути сделаем» — символы ступеней без чаш, акварель цвета ступени, одна золотая деталь) */
 const IMG = ['01-ryadom-bezopasno', '02-nash-dom', '03-moj-golos', '04-dogovorennosti', '05-rastem-oba', '06-slyshim-drug-druga', '07-vmeste-po-vyboru', '08-lyubov-bolshe-nas'];
-const bowl = (k, cls) => `<picture class="bowl${cls ? ' ' + cls : ''}"><source srcset="/otnosheniya/img/${IMG[k]}.webp" type="image/webp"><img src="/otnosheniya/img/${IMG[k]}.jpg" width="900" height="1205" loading="lazy" alt=""></picture>`;
+const POS = [78, 78, 100, 78, 95, 92, 78, 90];   // где на карте сюжет: окно 4:3 в карточке тропы не режет ноги и корни (15.10.2026, Ирина: «обрезало ноги»)
+const bowl = (k, cls) => `<picture class="bowl${cls ? ' ' + cls : ''}" style="--pos:${POS[k]}%"><source srcset="/otnosheniya/img/${IMG[k]}.webp" type="image/webp"><img src="/otnosheniya/img/${IMG[k]}.jpg" width="900" height="1205" loading="lazy" alt=""></picture>`;
 
 const STEPS = [
  {
