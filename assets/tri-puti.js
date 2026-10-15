@@ -3,7 +3,7 @@
    между мужчиной и женщиной. В каждом из этих путей будут переплетаться одни и те же инструменты, просто адаптироваться под тему».
    Один файл на три страницы: put/ (жизнь в новой стране), delo/ (своё дело), otnosheniya/ (отношения).
    Подключение: <script src="/assets/tri-puti.js" data-path="put|delo|otn" defer></script>
-   Рисует: полосу «Три пути» (#triBand), «Одни инструменты на трёх путях» (#triTools), в окне ступени — работа со мной (TRI.coach); открывает ступень по ссылке …/#stupen-N. Модель и цвета ступеней клиентке не называем. */
+   Рисует: полосу «Три пути» (#triBand), «Одни инструменты на трёх путях» (#triTools), в окне ступени — работа со мной (TRI.coach); открывает ступень по ссылке …/#stupen-N. Модель и цвета в окнах ступеней не называем; о модели, авторах и цветах — отдельная страница «Основа метода» (osnova/, 15.10.2026), ссылка в полосе. */
 (function () {
   var me = document.currentScript, here = (me && me.dataset.path) || 'put';
   var P = [
@@ -51,7 +51,7 @@
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
   var pic = function (n, cls) { return '<picture class="' + cls + '"><source srcset="/put/img/' + n + '.webp" type="image/webp"><img src="/put/img/' + n + '.jpg" width="900" height="1205" loading="lazy" alt=""></picture>'; };
   var CSS = '.tri-band,.tri-tools{margin-top:34px}'
-    + '.tri-head h2{font-size:clamp(1.5rem,3.2vw,2rem)}.tri-head p{color:var(--muted);max-width:66ch;margin-top:6px}'
+    + '.tri-head h2{font-size:clamp(1.5rem,3.2vw,2rem)}.tri-head p{color:var(--muted);max-width:66ch;margin-top:6px}.tri-osn{display:inline-block;margin-top:8px;font-weight:700;font-size:.92rem;color:var(--brown);text-underline-offset:4px}'
     + '.tri-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}'
     + '.tri-card{display:grid;grid-template-columns:62px minmax(0,1fr);gap:4px 14px;align-items:start;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:12px 14px;text-decoration:none;color:var(--ink);transition:border-color .15s}'
     + 'a.tri-card:hover{border-color:var(--brown)}.tri-card.here{border:1.5px solid var(--brown);background:color-mix(in srgb,var(--brown) 7%,var(--paper))}'
@@ -75,7 +75,7 @@
   function band() {
     var el = document.getElementById('triBand'); if (!el) return;
     el.className = 'tri-band'; el.setAttribute('aria-labelledby', 'tri-h');
-    el.innerHTML = '<div class="tri-head"><h2 id="tri-h">Три пути — один метод</h2><p>Жизнь в новой стране, своё дело и отношения растут по одним и тем же восьми ступеням — снизу вверх, от опоры к целому. На каждом пути свои трудности, а инструменты одни. Выбери, о чём ты сейчас.</p></div>'
+    el.innerHTML = '<div class="tri-head"><h2 id="tri-h">Три пути — один метод</h2><p>Жизнь в новой стране, своё дело и отношения растут по одним и тем же восьми ступеням — снизу вверх, от опоры к целому. На каждом пути свои трудности, а инструменты одни. Выбери, о чём ты сейчас.</p><a class="tri-osn" href="../osnova/">На чём стоит метод — спиральная динамика →</a></div>'
       + '<div class="tri-cards">' + P.map(function (p, i) {
         var cur = p.k === here, tag = cur ? 'div' : 'a';
         return '<' + tag + ' class="tri-card' + (cur ? ' here' : '') + '"' + (cur ? ' aria-current="page"' : ' href="' + p.h + '"') + '>' + pic(p.img, 'tri-bowl')

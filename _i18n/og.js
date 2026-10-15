@@ -39,6 +39,9 @@ const CARDS = [
   { out: 'delo/og-image',
     art: () => fullBowl(),
     ru: ['Своё дело — <em>с&nbsp;нуля и&nbsp;до&nbsp;вершины</em>', 'Восемь ступеней, по которым растёт своё дело в новой стране. Посмотри, где ты сейчас и что поможет дальше.'] },   // КОПИЯ 13.10.2026; uk/de/en — после «переводи»
+  { out: 'osnova/og-image',
+    art: () => koster(),
+    ru: ['Спиральная динамика&nbsp;— <em>основа метода</em>', 'Кто её создал, что важно человеку на каждом из восьми уровней и как он переходит на следующий.'] },
   { out: 'otnosheniya/og-image',
     art: () => twoBowls(),
     ru: ['Мужчина и&nbsp;женщина&nbsp;— <em>ступень за&nbsp;ступенью</em>', 'Восемь ступеней, по которым растут отношения: от «рядом безопасно» до любви, которая больше вас двоих.'] },   // КОПИЯ 14.10.2026; uk/de/en — после «переводи»
@@ -74,6 +77,9 @@ function bowls() {   // «Путь»: акварель «Золотые швы»
 }
 function fullBowl() {   // «Своё дело»: акварель «Полная чаша», белая бумага сливается с фоном (multiply)
   return `<image href="file://${ROOT}/put/img/05-polnaya-chasha.jpg" x="650" y="-150" width="560" height="750" preserveAspectRatio="xMidYMid slice" style="mix-blend-mode:multiply"/>`;
+}
+function koster() {   // «Основа метода»: акварель уровня 1 «Огонь, который греет» (карты уровней, 15.10.2026), белая бумага сливается с фоном (multiply)
+  return `<image href="file://${ROOT}/osnova/img/01-koster.jpg" x="650" y="-120" width="560" height="750" preserveAspectRatio="xMidYMid slice" style="mix-blend-mode:multiply"/>`;
 }
 function twoBowls() {   // «Отношения»: акварель «Свои чаши» (пока нет своей колоды), белая бумага сливается с фоном (multiply)
   return `<image href="file://${ROOT}/put/img/02-svoi-chashi.jpg" x="650" y="-150" width="560" height="750" preserveAspectRatio="xMidYMid slice" style="mix-blend-mode:multiply"/>`;
