@@ -397,7 +397,7 @@ a.bot:hover{color:#B98324}
 .lim-body ul{margin:0;padding-left:20px;color:var(--muted);display:flex;flex-direction:column;gap:4px}
 .rq-list{display:grid;grid-template-columns:1fr 1fr;column-gap:48px;border-top:1.5px solid var(--brown)}
 @media (max-width:860px){.rq-list{grid-template-columns:1fr}}
-.rq{font:inherit;text-align:left;cursor:pointer;color:var(--ink);background:none;border:0;border-bottom:1px solid var(--line);padding:24px 4px;display:grid;grid-template-columns:2.6rem 46px 1fr auto;gap:16px;align-items:center;min-width:0;transition:background .2s}
+.rq{font:inherit;text-align:left;cursor:pointer;color:var(--ink);background:none;border:0;border-bottom:1px solid var(--line);padding:24px 4px;display:grid;grid-template-columns:2.6rem 1fr auto;gap:16px;align-items:center;min-width:0;transition:background .2s}
 .rq .n{font-family:var(--display);font-size:2.2rem;line-height:1;color:var(--mustard);align-self:start}
 .rq-t{display:flex;flex-direction:column;gap:6px;min-width:0}
 .rq-t b{font-family:var(--display);font-weight:400;font-size:clamp(1.35rem,2.2vw,1.7rem);line-height:1.2;transition:color .2s}
@@ -1182,7 +1182,7 @@ const MANDALAS = [
 /* ===== медальоны-акварели (15.10.2026, 20:17) — вместо цветков-эдельвейсов и линейных значков ===== */
 function medal(slug, size, lc){ return `<span class="md" style="${size ? `width:${size}px;height:${size}px;` : ''}--lc:${lc || '#B98324'}"><img src="/img/m/${slug}.webp" alt="" loading="lazy" decoding="async"></span>`; }
 const MDC = ['#8E8470','#6A5FB8','#C25468','#3F6FBF','#C97E52','#4E9A70','#A99A2E','#2894A0'];
-/* 15.10.2026, 20:38, Ирина о чашах у фраз: «это не красиво. что то нужно поменять» → у каждой фразы свой ясный символ */
+/* 15.10.2026, 20:38, Ирина о чашах у фраз: «это не красиво. что то нужно поменять»; 20:42: «много разных картинок режет глаз» → в списке фраз картинок нет, только номер цвета ступени; символ остаётся в окне фразы */
 const RQM = ['l1-3-medved','otn-6-skamya','l5-3-orel','n-pismo','put-start-chemodan','l5-4-podsolnuh','put-end-dom','l5-6-zvezda','n-kamni','n-razvilka','n-zerkalo'];
 const rqMedal = (i, s) => medal(RQM[i] || 'stupeni', s, MDC[i] || '#B98324');
 const LVM = { sl: 'l2-7-ruki-po-krugu', sama: 'n-bloknot', so: 'n-kresla' };
@@ -1288,7 +1288,7 @@ function rqInit(){
   const row = (x, i) => { const s = x.st[0];
     const n = x.any ? `<span class="n">${all8}</span>` : `<span class="n" style="color:${STEPC[s - 1][0]}">0${s}</span>`;
     const at = x.any ? `<span class="rq-dots" aria-hidden="true">${dots(x)}</span>${esc(x.at)}` : `Ступень ${s} · ${esc(STEPN[s - 1])}`;
-    return `<button class="rq" data-i="${i}" aria-haspopup="dialog">${n}<span class="rq-m">${rqMedal(i,54)}</span><span class="rq-t"><b>${esc(x.t)}</b><span class="rq-at">${at}</span></span><span class="arr" aria-hidden="true">→</span></button>`; };
+    return `<button class="rq" data-i="${i}" aria-haspopup="dialog">${n}<span class="rq-t"><b>${esc(x.t)}</b><span class="rq-at">${at}</span></span><span class="arr" aria-hidden="true">→</span></button>`; };
   rqList.innerHTML = RQ.map((x, i) => x.any ? '' : row(x, i)).join('');
   document.getElementById('rqAny').innerHTML = RQ.map((x, i) => x.any ? row(x, i) : '').join('');
   const bars = n => `<svg viewBox="0 0 18 18" width="12" height="12" aria-hidden="true">${[0, 1, 2].map(k => `<rect x="${1 + k * 6}" y="${12 - k * 5}" width="4" height="${5 + k * 5}" rx="1.2" fill="${k <= n ? '#FFFCF8' : 'rgba(255,252,248,.45)'}"/>`).join('')}</svg>`;
