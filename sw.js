@@ -3,7 +3,7 @@
    Файлы (стили, скрипты, шрифты, картинки): сразу из памяти, в фоне обновляются.
    Личные записи людей здесь не хранятся: они остаются в localStorage браузера, как раньше.
    При изменении этого файла поднять VERSION — старая память удалится. */
-const VERSION = 'v26-2026-10-15';
+const VERSION = 'v27-2026-10-15';
 const CACHE = 'vz-' + VERSION;
 const CORE = ['/offline.html', '/assets/vz-app.js', '/icon-192.png', '/favicon.svg'];
 const MAX = 160;
@@ -39,7 +39,8 @@ async function page(req){
 }
 async function file(req, ev){
   const hit = await caches.match(req);
-  const net = fetch(req).then(res => { put(req, res.clone()); return res; }).catch(() => null);
+  // cache: 'no-cache' — сверяться с сайтом, а не брать старый файл из памяти браузера (15.10.2026: после выкладки блоки «Твой путь» не приходили до 10 минут)
+  const net = fetch(req, { cache: 'no-cache' }).then(res => { put(req, res.clone()); return res; }).catch(() => null);
   if (hit){ ev.waitUntil(net); return hit; }
   return (await net) || Response.error();
 }
