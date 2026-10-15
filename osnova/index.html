@@ -1,0 +1,878 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="icon" href="../favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<title>Спиральная динамика — основа метода «Ступени» · Ирина Вознесенская</title>
+<meta name="description" content="Спиральная динамика Клэра Грейвза, Дона Бека и Кристофера Кована: восемь уровней, что человеку нужно и что ценно на каждом, и как он переходит на следующий. Основа метода «Ступени. Твой путь в новой стране».">
+<link rel="canonical" href="https://voznesenskaya.ch/osnova/">
+<meta property="og:type" content="article"><meta property="og:locale" content="ru_RU"><meta property="og:site_name" content="Ирина Вознесенская · коучинг">
+<meta property="og:title" content="Спиральная динамика — основа метода «Ступени»"><meta property="og:description" content="Кто её создал, что важно человеку на каждом из восьми уровней и как он переходит на следующий.">
+<meta property="og:url" content="https://voznesenskaya.ch/osnova/"><meta property="og:image" content="https://voznesenskaya.ch/osnova/og-image.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/fonts.css">
+<style>
+[hidden]{display:none!important}
+
+[hidden]{display:none!important}
+/* Layout: тёплая страница-письмо. Слева слово, справа шерстяная картина; дальше «двери» — фразы, в которых она узнаёт себя */
+:root{
+  --bg:#F4EDE3;       /* бежевый фон коучинга, как в тестах */
+  --paper:#FFFCF8;
+  --ink:#2F2924;
+  --muted:#7A6E62;
+  --line:#E5D9C9;
+  --brown:#6E4F3C;    /* главный акцент, как в тестах */
+  --mustard:#B98324;  /* шарф героини */
+  --mustard-soft:#F3E3C2;
+  --sage:#66704F;     /* пальто героини */
+  --sage-soft:#E3E6D6;
+  --soft:#EADFCF;
+  --blue:#2E5A88;     /* тесты о паре — голубой, как в тестах */
+  --blue-soft:#EAF2FA;
+  --blue-line:#D3E1EE;
+  --display:"Forum","Cormorant Garamond",Georgia,serif;
+  --body:"Manrope","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#221D19; --paper:#2C2621; --ink:#F1E9DF; --muted:#B4A796; --line:#3E362F; --brown:#E1C2A6;
+  --mustard:#E2B45C; --mustard-soft:#3D321F; --sage:#B4BF97; --sage-soft:#2E3226; --soft:#3A3129; --blue:#9CC2EA; --blue-soft:#1D2733; --blue-line:#2C3A4A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#221D19; --paper:#2C2621; --ink:#F1E9DF; --muted:#B4A796; --line:#3E362F; --brown:#E1C2A6;
+  --mustard:#E2B45C; --mustard-soft:#3D321F; --sage:#B4BF97; --sage-soft:#2E3226; --soft:#3A3129; --blue:#9CC2EA; --blue-soft:#1D2733; --blue-line:#2C3A4A; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.65;margin:0}
+.page{max-width:1120px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.12;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+.eyebrow{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+:focus-visible{outline:3px solid var(--mustard);outline-offset:3px;border-radius:6px}
+
+/* ---------- шапка ---------- */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .page{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none}
+.mono{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--brown);display:grid;place-items:center;font-family:var(--display);font-size:1.05rem;color:var(--brown);letter-spacing:.02em}
+.mark b{font-family:var(--display);font-weight:400;font-size:1.25rem;line-height:1}
+.mark small{display:block;font-size:.72rem;color:var(--muted);letter-spacing:.04em;margin-top:3px}
+nav{display:flex;gap:22px;font-size:.88rem;font-weight:600}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.navcta{font-size:.86rem;font-weight:700;text-decoration:none;border:1.5px solid var(--brown);color:var(--brown);border-radius:999px;padding:8px 16px;white-space:nowrap}
+@media (max-width:860px){
+  .top .page{flex-wrap:wrap;row-gap:6px}
+  nav{order:3;width:100%;gap:16px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+  nav::-webkit-scrollbar{display:none}
+  nav a{white-space:nowrap}
+}
+@media (max-width:420px){.mark small{display:none}.navcta{padding:7px 12px}}
+
+/* ---------- первый экран ---------- */
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center;padding-block:48px 40px}
+.hero-text{display:flex;flex-direction:column;gap:22px;min-width:0}
+.hero h1{font-size:clamp(2.5rem,6.2vw,4.4rem);color:var(--ink)}
+.hero h1 em{font-style:normal;color:var(--brown)}
+.hero .lead{font-size:1.14rem;max-width:34ch;color:var(--ink)}
+.who{font-size:.86rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 14px}
+.who span+span::before{content:"·";margin-right:14px;color:var(--line)}
+@media (max-width:520px){.who span+span::before{content:none}.who{gap:4px 12px}}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{font:inherit;font-weight:700;font-size:.95rem;border:none;border-radius:999px;padding:14px 24px;cursor:pointer;background:var(--brown);color:var(--paper);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--brown);border:1.5px solid var(--brown)}
+.hero-art{position:relative;min-width:0}
+.hero-art img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:941/1672;border-radius:26px;box-shadow:0 24px 50px -24px rgba(60,40,20,.45)}
+.hero-art figcaption{margin-top:14px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px 16px;font-size:.84rem}
+.hero-art figcaption b{display:block;font-family:var(--display);font-weight:400;font-size:1.1rem;color:var(--brown)}
+@media (max-width:860px){.hero{grid-template-columns:1fr;gap:28px;padding-block:32px 24px}.hero-art{max-width:360px;margin:0 auto;width:100%}}
+
+/* ---------- двери ---------- */
+section{padding-block:56px}
+.sec-head{display:flex;flex-direction:column;gap:10px;max-width:640px;margin-bottom:28px}
+.sec-head h2{font-size:clamp(2rem,4.6vw,2.9rem)}
+.sec-head p{color:var(--muted);font-size:1.02rem}
+.doors{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.door-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media (max-width:980px){.door-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.door-grid{grid-template-columns:1fr}}
+.door{font:inherit;text-align:left;cursor:pointer;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:18px;padding:22px 20px 18px;display:flex;flex-direction:column;gap:14px;min-height:150px;transition:border-color .15s,transform .15s,background .15s;min-width:0}
+.door:hover{border-color:var(--brown);transform:translateY(-2px)}
+.door q{font-family:var(--display);font-size:1.5rem;line-height:1.15;quotes:"«" "»"}
+.door small{margin-top:auto;font-size:.8rem;color:var(--muted);display:flex;justify-content:space-between;gap:8px}
+.door[aria-expanded="true"]{background:var(--mustard-soft);border-color:var(--mustard)}
+.door[aria-expanded="true"] small span:last-child{transform:rotate(90deg)}
+.door small span:last-child{transition:transform .2s}
+.more-link{margin-top:22px;font:inherit;font-weight:700;color:var(--brown);background:none;border:none;padding:6px 0;cursor:pointer;font-size:.98rem;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
+.spheres{margin-top:18px}
+.sphere-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media (max-width:820px){.sphere-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.sphere-grid{grid-template-columns:1fr}}
+.sphere{font:inherit;text-align:left;cursor:pointer;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;font-weight:600;font-size:.98rem;display:flex;justify-content:space-between;gap:10px;align-items:center;min-width:0}
+.sphere:hover{border-color:var(--brown)}
+.sphere[aria-expanded="true"]{background:var(--sage-soft);border-color:var(--sage)}
+.panel{margin-top:18px;background:var(--bg);border:1.5px solid var(--mustard);border-radius:20px;padding:28px;display:grid;grid-template-columns:1.1fr 1fr;gap:28px;animation:rise .25s ease-out}
+.panel.sage{border-color:var(--sage)}
+@keyframes rise{from{transform:translateY(8px)}}
+@media (max-width:820px){.panel{grid-template-columns:1fr;padding:22px 18px;gap:20px}}
+.panel h3{font-size:1.75rem;margin-bottom:12px}
+.panel .say{display:flex;flex-direction:column;gap:12px;min-width:0}
+.panel .say p{max-width:60ch}
+.todo{display:flex;flex-direction:column;gap:10px;min-width:0}
+.todo .eyebrow{margin-bottom:2px}
+.act{display:flex;flex-direction:column;gap:4px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px;text-decoration:none;color:var(--ink);transition:border-color .15s}
+a.act:hover{border-color:var(--brown)}
+.act b{font-weight:700;font-size:.98rem;display:flex;justify-content:space-between;gap:10px}
+.act span{font-size:.88rem;color:var(--muted)}
+.edge{font-size:.86rem;color:var(--muted);border-left:3px solid var(--line);padding-left:12px}
+.next{font-size:.92rem}
+.next b{color:var(--brown)}
+.notme{font-size:.86rem;color:var(--muted)}
+.notme button{font:inherit;color:var(--brown);background:none;border:none;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+
+
+/* ---------- всплывающее окно ---------- */
+dialog.qm{border:0;padding:0;background:transparent;width:min(100% - 24px,1080px);max-height:92vh;color:var(--ink)}
+dialog.qm[open]{animation:qmIn .28s cubic-bezier(.2,.8,.2,1)}
+@keyframes qmIn{from{opacity:0;transform:translateY(14px) scale(.98)}}
+dialog.qm::backdrop{background:rgba(47,41,36,.62);backdrop-filter:blur(3px)}
+.qm-card{background:var(--paper);border-radius:28px;padding:clamp(20px,3.4vw,40px);display:flex;flex-direction:column;gap:clamp(18px,2.6vw,28px);max-height:92vh;overflow-y:auto;box-shadow:0 30px 80px -30px rgba(40,25,10,.6)}
+.qm-top{display:flex;align-items:flex-start;gap:16px}
+.qm-head{flex:1;display:flex;flex-direction:column;gap:6px;min-width:0}
+.qm-title{font-size:clamp(1.8rem,4.4vw,3.2rem);line-height:1.04}
+.qm-close{flex:none;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);font-size:1.05rem;cursor:pointer;display:grid;place-items:center;transition:background .15s,border-color .15s}
+.qm-close:hover{background:var(--mustard-soft);border-color:var(--mustard)}
+.qm-panel{background:var(--mustard-soft);border-radius:20px;padding:clamp(18px,2.8vw,32px);display:grid;grid-template-columns:.9fr 1.2fr 1fr;gap:clamp(18px,2.6vw,32px)}
+.qm-panel.sage{background:var(--sage-soft)}
+@media (max-width:900px){.qm-panel{grid-template-columns:1fr}}
+.qm-col{display:flex;flex-direction:column;gap:12px;min-width:0}
+.qm-col h3{font-size:1.4rem;line-height:1.15}
+.qm-col p{font-size:.95rem}
+.pain{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.pain li{font-family:var(--display);font-size:1.12rem;line-height:1.3;padding-left:16px;border-left:2px solid var(--mustard)}
+.qm-panel.sage .pain li{border-color:var(--sage)}
+.qm-col .act{background:var(--paper)}
+.qm-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;align-items:baseline}
+.qm-foot .next{max-width:60ch}
+.qm-foot .notme button{font:inherit;color:var(--brown);background:none;border:none;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- обо мне ---------- */
+.about{display:grid;grid-template-columns:.75fr 1.25fr;gap:56px;align-items:center}
+@media (max-width:860px){.about{grid-template-columns:1fr;gap:28px}.about img{max-width:360px;margin:0 auto}}
+.about img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:941/1672;border-radius:26px;box-shadow:0 24px 50px -24px rgba(60,40,20,.4)}
+.about-text{display:flex;flex-direction:column;gap:16px;min-width:0}
+.about-text h2{font-size:clamp(2rem,4.6vw,2.9rem)}
+.about-text p{max-width:60ch}
+.creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.creds span{font-size:.8rem;font-weight:600;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+.how-i{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:6px}
+@media (max-width:520px){.how-i{grid-template-columns:1fr}}
+.how-i div{background:var(--paper);border-radius:14px;padding:14px 16px;font-size:.9rem;color:var(--muted)}
+.how-i b{display:block;font-family:var(--display);font-weight:400;font-size:1.2rem;color:var(--ink);margin-bottom:2px}
+
+.two{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.two-lead{font-weight:600}
+.two-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:560px){.two-grid{grid-template-columns:1fr}}
+.prac{border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:6px;min-width:0;border:1.5px solid var(--line);background:var(--paper)}
+.prac.psy{background:var(--blue-soft);border-color:var(--blue-line)}
+.prac .tag{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sage)}
+.prac.psy .tag{color:var(--blue)}
+.prac b{font-family:var(--display);font-weight:400;font-size:1.3rem;line-height:1.2}
+.prac p{font-size:.9rem;color:var(--muted)}
+.prac .links{font-size:.86rem;font-weight:700;margin-top:auto}
+.prac .links a{color:var(--brown)}
+.prac.psy .links a{color:var(--blue)}
+.two-note{font-size:.82rem;color:var(--muted)}
+
+.ic{flex:none;display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:var(--paper);border:1.5px solid var(--line)}
+.ic.sm{width:46px;height:46px}
+/* значок в кольце — как цветы-мандалы (правило Ирины 13.10.2026): кольцо цветом значка, бумажный круг, мягкая тень; линия значка ≈1,6 px, тоньше кольца */
+.ic,.ss-ic{background:var(--paper);border:1.75px solid var(--ic,var(--line));box-shadow:0 4px 10px -6px color-mix(in srgb,var(--ic,#6E4F3C) 60%,transparent)}
+.ic.sm{border-width:1.5px}
+.ic svg,.ss-ic svg{width:58%;height:58%}
+.act .act-ic{border:1.5px solid var(--ic,transparent);background:var(--paper)}
+
+.tcard .ic{width:56px;height:56px}
+.door .ic{background:var(--paper)}
+.door-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.sphere .lbl{display:flex;align-items:center;gap:12px}
+.step-top{display:flex;align-items:center;gap:14px}
+.tcard .t-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.prac .p-top{display:flex;align-items:center;gap:10px}
+.limits .l-top{display:flex;align-items:center;gap:14px}
+.clist .c-l{display:flex;align-items:center;gap:10px}
+
+/* ---------- как начать ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1.5px solid var(--brown)}
+@media (max-width:820px){.steps{grid-template-columns:1fr}}
+.step{padding:22px 24px 6px 0;display:flex;flex-direction:column;gap:8px;min-width:0}
+.step+.step{padding-left:24px;border-left:1px solid var(--line)}
+@media (max-width:820px){.step+.step{padding-left:0;border-left:none;border-top:1px solid var(--line)}}
+.step i{font-style:normal;font-family:var(--display);font-size:2.6rem;line-height:1;color:var(--mustard)}
+.step h3{font-size:1.4rem}
+.step p{color:var(--muted);font-size:.95rem}
+.codeword{display:inline-block;font-weight:700;letter-spacing:.12em;color:var(--brown);background:var(--mustard-soft);border-radius:6px;padding:0 6px}
+
+/* ---------- бесплатно ---------- */
+.free{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.free-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media (max-width:980px){.free-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.free-grid{grid-template-columns:1fr}}
+.fcard{display:flex;flex-direction:column;gap:10px;text-decoration:none;color:var(--ink);background:var(--bg);border-radius:18px;padding:20px;border:1.5px solid transparent;transition:border-color .15s;min-width:0}
+.fcard:hover{border-color:var(--brown)}
+.fcard .tag{font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sage)}
+.fcard h3{font-size:1.45rem}
+.fcard p{font-size:.9rem;color:var(--muted)}
+.fcard .go{margin-top:auto;font-weight:700;font-size:.88rem;color:var(--brown)}
+
+
+.tgroup{display:flex;flex-direction:column;gap:12px;margin-bottom:26px}
+.tgroup-h{font-size:1.3rem;color:var(--muted)}
+.test-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media (max-width:700px){.test-grid{grid-template-columns:1fr}}
+.tcard{display:flex;flex-direction:column;gap:8px;text-decoration:none;color:var(--ink);background:var(--bg);border-radius:20px;padding:22px 22px 18px;border:1.5px solid var(--line);transition:border-color .15s,transform .15s;min-width:0}
+.tcard:hover{border-color:var(--brown);transform:translateY(-2px)}
+.tcard.pair{background:var(--blue-soft);border-color:var(--blue-line)}
+.tcard.pair:hover{border-color:var(--blue)}
+.tcard .tag{font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sage)}
+.tcard.pair .tag,.tcard.pair .go{color:var(--blue)}
+.tcard h3{font-size:1.65rem}
+.tcard .slog{font-family:var(--display);font-size:1.08rem;color:var(--brown);line-height:1.3}
+.tcard.pair .slog{color:var(--blue)}
+.tcard p{font-size:.92rem;color:var(--muted)}
+.tcard .go{margin-top:auto;padding-top:6px;font-weight:700;font-size:.9rem;color:var(--brown)}
+.also{display:grid;grid-template-columns:auto 1fr 1fr;gap:12px;align-items:stretch}
+@media (max-width:820px){.also{grid-template-columns:1fr}}
+.also .btn{justify-content:center;align-self:center}
+.mini{display:flex;flex-direction:column;gap:2px;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:12px 16px;min-width:0}
+.mini:hover{border-color:var(--brown)}
+.mini b{font-size:.95rem}
+.mini span{font-size:.84rem;color:var(--muted)}
+/* ---------- граница и контакт ---------- */
+.limits{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:start}
+@media (max-width:820px){.limits{grid-template-columns:1fr;gap:16px}}
+.limits h2{font-size:clamp(1.7rem,3.6vw,2.2rem)}
+.limits p{color:var(--muted);max-width:62ch}
+.contact{background:linear-gradient(160deg,var(--soft) 0%,var(--bg) 100%);border-radius:28px;padding:44px 40px;display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+@media (max-width:820px){.contact{grid-template-columns:1fr;padding:30px 22px}}
+.contact h2{font-size:clamp(2rem,4.6vw,2.9rem);margin-bottom:12px}
+.contact p{max-width:46ch}
+.clist{display:flex;flex-direction:column;gap:10px}
+.clist a,.clist div{display:flex;justify-content:space-between;gap:12px;align-items:center;background:var(--paper);border-radius:14px;padding:14px 16px;text-decoration:none;color:var(--ink);font-weight:600;font-size:.95rem;min-width:0}
+.clist span{color:var(--muted);font-weight:500;font-size:.85rem;overflow-wrap:anywhere;text-align:right}
+footer{padding-block:28px 40px;font-size:.82rem;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+footer a{color:var(--muted)}
+
+/* ---------- полоса-ссылка на страницу «Путь» ---------- */
+.pathband{margin-top:40px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;text-decoration:none;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:22px;padding:20px 24px;transition:border-color .15s}
+.pathband:hover{border-color:var(--brown)}
+.pb-txt{flex:1 1 300px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.pb-txt b{font-family:var(--display);font-weight:400;font-size:1.5rem;line-height:1.15}
+.pb-txt span{font-size:.92rem;color:var(--muted)}
+.pb-go{font-weight:700;color:var(--brown);white-space:nowrap}
+
+.mono.av{border:none;padding:0}
+.mono.av svg{width:100%;height:100%;display:block}
+
+.act b{align-items:center}
+.act-ic{flex:none;width:32px;height:32px;border-radius:50%;background:var(--bg);display:grid;place-items:center;margin-right:2px}
+.act b > .act-ic + *{flex:1}
+.mini{flex-direction:row;flex-wrap:wrap;align-items:center;column-gap:10px}
+.mini .ic.sm{width:38px;height:38px}
+.mini b{flex:1 1 auto}
+.mini span:not(.ic){flex-basis:100%}
+.act-t{flex:1;min-width:0}
+.act b{justify-content:flex-start;gap:10px}
+
+/* ---------- страница «Путь»: тропа из восьми стоянок ---------- */
+.p-hero{display:grid;grid-template-columns:1.3fr .7fr;gap:56px;align-items:center;padding-block:48px 24px}
+@media (max-width:860px){.p-hero{grid-template-columns:1fr;gap:24px;padding-block:28px 12px}.p-hero img{max-width:320px;margin:0 auto}}
+.p-hero h1{font-size:clamp(2.4rem,5.6vw,4rem)}
+.p-hero h1 em{font-style:normal;color:var(--brown)}
+.p-hero .lead{font-size:1.1rem;max-width:52ch}
+.p-hero-text{display:flex;flex-direction:column;gap:18px;min-width:0}
+.p-hero img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:900/1205}
+/* картинки чаш (акварель на белой бумаге): белое сливается с фоном страницы */
+.bowl{display:block}.bowl img{display:block;width:100%;height:auto;mix-blend-mode:multiply}
+.card .bowl{margin:-8px -6px 0;aspect-ratio:4/3;overflow:hidden}.card .bowl img{height:100%;object-fit:cover;object-position:50% 78%}  /* чаша — главное на картинке: показываем её целиком (10.10.2026) */
+.qm-pic{flex:none;width:clamp(96px,16vw,150px)}
+@media (max-width:640px){.qm-pic{display:none}}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bowl img{mix-blend-mode:normal;border-radius:16px;opacity:.92}}
+:root[data-theme="dark"] .bowl img{mix-blend-mode:normal;border-radius:16px;opacity:.92}
+.rules{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding-block:8px 24px}
+@media (max-width:900px){.rules{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.rules{grid-template-columns:1fr}}
+.rule{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.rule b{font-family:var(--display);font-weight:400;font-size:1.2rem;line-height:1.2}
+.rule span{font-size:.9rem;color:var(--muted)}
+
+.trail{position:relative;padding-block:12px 0}
+.trail-start,.trail-end{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px}
+.trail-start b,.trail-end b{font-family:var(--display);font-weight:400;font-size:1.5rem}
+.trail-start span{font-size:.9rem;color:var(--muted);max-width:40ch}
+.stop,.between{display:grid;grid-template-columns:1fr 140px 1fr;align-items:center}
+.stop .card{grid-row:1;min-width:0}
+.stop.l .card{grid-column:1}
+.stop.r .card{grid-column:3}
+.stop .node{grid-column:2;grid-row:1;justify-self:center;position:relative;z-index:1}
+.node{width:84px;height:84px;border-radius:50%;background:var(--paper);display:grid;place-items:center;border:2.5px solid var(--lc);box-shadow:0 6px 16px -8px color-mix(in srgb,var(--lc) 60%,transparent)}
+.node i{position:absolute;top:-6px;right:-6px;font-style:normal;width:30px;height:30px;border-radius:50%;background:var(--lc);color:#fff;font-weight:700;font-size:.85rem;display:grid;place-items:center}
+.between{min-height:110px}
+.trail-start,.trail-end,#trail{position:relative;z-index:1}
+.road-svg{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;overflow:visible}
+.road-svg .road{fill:none;stroke:var(--soft);stroke-width:18;stroke-linecap:round;stroke-linejoin:round}
+.road-svg .edge{fill:none;stroke:color-mix(in srgb,var(--brown) 18%,transparent);stroke-width:20;stroke-linecap:round;stroke-linejoin:round}
+.road-svg .dash{fill:none;stroke-width:2.8;stroke-dasharray:10 9;stroke-linecap:round;opacity:.9}
+.road-svg .glow{fill:none;stroke:color-mix(in srgb,var(--brown) 14%,transparent);stroke-width:30;stroke-linecap:round}
+.road-svg .arr{opacity:.95}
+.trail-start .ic,.trail-end .ic{position:relative;z-index:1}
+.between p{grid-row:1;font-size:.88rem;color:var(--muted);font-style:italic;max-width:34ch;line-height:1.45}
+.between.l p{grid-column:1;justify-self:end;text-align:right;padding-right:14px}
+.between.r p{grid-column:3;justify-self:start;padding-left:14px}
+.card{background:var(--paper);border:1.5px solid var(--line);border-radius:22px;padding:22px 22px 18px;display:flex;flex-direction:column;gap:10px;text-align:left;font:inherit;color:var(--ink);cursor:pointer;transition:border-color .15s,transform .15s}
+.card:hover{border-color:var(--lc);transform:translateY(-2px)}
+.card .sub{font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lc)}
+.card h3{font-size:1.75rem;line-height:1.1}
+.card .teaser{font-family:var(--display);font-size:1.12rem;color:var(--brown);line-height:1.3}
+.card .says{display:flex;flex-wrap:wrap;gap:6px}
+.card .says span{font-size:.82rem;background:var(--lf);border-radius:999px;padding:5px 11px;color:#2F2924}
+.card .more{margin-top:2px;font-weight:700;font-size:.88rem;color:var(--lc)}
+/* «что ты собираешь в себе» — золотой шов слева (метод, раздел 7; 10.10.2026) */
+.inside{display:flex;flex-direction:column;gap:3px;border-left:3px solid #C9971F;padding:2px 0 2px 11px}
+.inside small{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.inside q{quotes:"«" "»";font-family:var(--display);font-size:1.08rem;line-height:1.3;color:var(--ink)}
+.help-q q{quotes:"«" "»"}
+:lang(en) .inside q,:lang(en) .help-q q{quotes:"“" "”"}
+.qm-head .inside{margin-top:6px}
+/* «Что поможет на этой ступени» — три подуровня (10.10.2026) */
+.qm-help{border:1.5px solid var(--line);border-radius:20px;padding:clamp(16px,2.6vw,28px);display:flex;flex-direction:column;gap:16px}
+.help-top h3{font-size:1.5rem;line-height:1.15;margin-bottom:4px}
+.help-top p{font-size:.92rem;color:var(--muted);max-width:70ch}
+.help-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:900px){.help-grid{grid-template-columns:1fr}}
+.help-col{background:var(--bg);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:8px;border-top:4px solid color-mix(in srgb,var(--lc) 45%,transparent)}
+.help-col.hl2{border-top-color:color-mix(in srgb,var(--lc) 72%,transparent)}
+.help-col.hl3{border-top-color:var(--lc)}
+.help-head{display:flex;align-items:center;gap:8px}
+.help-head b{font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--lc)}
+.help-bars{display:inline-flex;align-items:flex-end;gap:2px;height:14px}
+.help-bars i{width:5px;border-radius:2px;background:color-mix(in srgb,var(--lc) 25%,transparent)}
+.help-bars i:nth-child(1){height:6px}.help-bars i:nth-child(2){height:10px}.help-bars i:nth-child(3){height:14px}
+.hl1 .help-bars i:nth-child(1),.hl2 .help-bars i:nth-child(-n+2),.hl3 .help-bars i{background:var(--lc)}
+.help-q{font-family:var(--display);font-size:1.12rem;line-height:1.3;margin:0}
+.help-h{font-size:.82rem;color:var(--muted);margin:0}
+.help-list{display:flex;flex-direction:column;gap:8px;margin-top:4px}
+.help-a{display:flex;flex-direction:column;gap:2px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 12px;text-decoration:none;color:var(--ink);transition:border-color .15s}
+.help-a:hover{border-color:var(--lc)}
+.help-a b{font-size:.9rem;font-weight:700;line-height:1.3}
+.help-a b span{color:var(--lc)}
+.help-a span{font-size:.82rem;color:var(--muted);line-height:1.35}
+.help-a em{font-style:normal;font-size:.72rem;font-weight:700;color:var(--lc);letter-spacing:.02em}
+
+.qm-head .inside q{font-size:clamp(1.1rem,2vw,1.3rem)}
+@media (max-width:760px){
+  .stop,.between{grid-template-columns:64px 1fr;column-gap:14px}
+  .stop.l .card,.stop.r .card{grid-column:2}
+  .stop .node{grid-column:1}
+  .node{width:58px;height:58px}
+  .node svg{width:26px;height:26px}
+  .node i{width:24px;height:24px;font-size:.75rem;top:-5px;right:-5px}
+  .between.l p,.between.r p{grid-column:2;justify-self:start;text-align:left;padding:0}
+  .trail-start,.trail-end{align-items:flex-start;text-align:left}
+}
+.where{margin-block:40px 8px;background:linear-gradient(160deg,var(--soft) 0%,var(--bg) 100%);border-radius:28px;padding:40px;display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center}
+@media (max-width:820px){.where{grid-template-columns:1fr;padding:28px 20px}}
+.where h2{font-size:clamp(2rem,4.4vw,2.8rem);margin-bottom:10px}
+.where p{max-width:52ch}
+.where .acts{display:flex;flex-direction:column;gap:10px}
+.qm-panel .needs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.qm-panel .needs li{font-size:.92rem;line-height:1.4}
+.qm-panel .needs b{font-weight:700}
+.vals{display:flex;flex-wrap:wrap;gap:6px}
+.vals span{font-size:.82rem;background:var(--paper);border-radius:999px;padding:5px 11px}
+.check{background:var(--paper);border-radius:14px;padding:14px 16px;font-family:var(--display);font-size:1.15rem;line-height:1.35}
+.qm-panel.lv{background:var(--lf)}
+.qm-panel.lv .pain li{border-color:var(--lc)}
+
+/* телефон: шапка в две строки, все разделы видны */
+@media (max-width:860px){
+  nav{flex-wrap:wrap;overflow-x:visible;gap:2px 14px;padding-bottom:2px}
+}
+@media (max-width:420px){
+  .top .page{padding-block:8px;gap:8px}
+  .mono{width:32px;height:32px}
+  .mark{gap:8px}
+  .mark b{font-size:1.06rem}
+  .navcta{font-size:.8rem;padding:6px 11px}
+  nav{font-size:.82rem}
+}
+
+/* ===== «Основа метода» (osnova/, 15.10.2026) — цвета уровней спиральной динамики ===== */
+:root{--l1:#8E8470;--l1s:#ECE7DD;--l2:#6A5FB8;--l2s:#E7E4F7;--l3:#C25468;--l3s:#F8E0E4;--l4:#3F6FBF;--l4s:#E1EBFA;--l5:#C97E52;--l5s:#FAE8DC;--l6:#4E9A70;--l6s:#E1F1E7;--l7:#A99A2E;--l7s:#F7F2D3;--l8:#2894A0;--l8s:#DDF3F4;--gold:#B98324;--fig:#FBF7F0}  /* цвета ступеней — как на сайте (put/, главная: COL, STEPC) */
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--l1:#CFC4AE;--l1s:#35302A;--l2:#B3AAEE;--l2s:#2C2A3D;--l3:#F0A0AE;--l3s:#3B2529;--l4:#9DBEF0;--l4s:#1F2836;--l5:#EDB08A;--l5s:#3A2C22;--l6:#9FD6B5;--l6s:#213128;--l7:#DDD07A;--l7s:#353219;--l8:#8AD6DB;--l8s:#1B3234;--gold:#E2B45C;--fig:#F4EEE4}}
+:root[data-theme="dark"]{--l1:#CFC4AE;--l1s:#35302A;--l2:#B3AAEE;--l2s:#2C2A3D;--l3:#F0A0AE;--l3s:#3B2529;--l4:#9DBEF0;--l4s:#1F2836;--l5:#EDB08A;--l5s:#3A2C22;--l6:#9FD6B5;--l6s:#213128;--l7:#DDD07A;--l7s:#353219;--l8:#8AD6DB;--l8s:#1B3234;--gold:#E2B45C;--fig:#F4EEE4}
+.os h3{font-size:1.5rem}
+.os-hero{grid-template-columns:1.2fr .8fr}
+.os-hero h1{font-size:clamp(2.3rem,5.6vw,3.9rem)}
+.os-hero .lead{max-width:52ch}
+.os-lead2{color:var(--muted);max-width:58ch}
+.os-art{background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:18px 18px 16px;margin:0}
+.os-spiral{display:block;width:100%;height:auto;max-width:420px;margin:0 auto}
+.os-sp-line{stroke:var(--line);stroke-width:9;stroke-linecap:round}
+.os-sp-gold{stroke:var(--gold);stroke-width:1.6;stroke-dasharray:2 7;stroke-linecap:round}
+.os-spiral circle{stroke:var(--paper);stroke-width:3}
+.os-spiral text{font:800 13px/1 var(--body);fill:var(--paper);pointer-events:none}
+.os-spiral a:hover circle,.os-spiral a:focus-visible circle{stroke:var(--ink)}
+.os-art figcaption{margin-top:8px;background:none;border:0;padding:0;text-align:center;color:var(--muted)}
+.os-art figcaption b{color:var(--ink)}
+.os-toc{display:flex;flex-wrap:wrap;gap:8px;padding-bottom:8px}
+.os-toc a{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:7px 13px;font-size:.86rem;font-weight:600;text-decoration:none;color:var(--ink)}
+.os-toc a:hover{border-color:var(--brown)}
+.os section{scroll-margin-top:84px}
+.os-prose{display:flex;flex-direction:column;gap:14px;max-width:68ch}
+.os-rules{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:26px}
+.os-rules>div,.os-how>div,.os-two>div{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.os-rules b,.os-two b{font-family:var(--display);font-weight:400;font-size:1.3rem;line-height:1.15;color:var(--brown)}
+.os-rules p,.os-how p,.os-two p{font-size:.95rem}
+@media (max-width:980px){.os-rules{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:540px){.os-rules{grid-template-columns:1fr}}
+.os-band{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding-inline:clamp(18px,3.4vw,40px);margin-block:8px}
+@media (max-width:600px){.os-band{margin-inline:-20px;border-radius:0;border-left:0;border-right:0;padding-inline:20px}}
+.os-band .os-rules>div,.os-band .os-two>div,.os-band .os-au{background:var(--bg)}
+.os-authors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:940px){.os-authors{grid-template-columns:1fr}}
+.os-au{border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.os-au header{display:flex;flex-direction:column;gap:2px}
+.os-au header b{font-family:var(--display);font-weight:400;font-size:1.55rem;line-height:1.1}
+.os-au header span{font-size:.86rem;color:var(--brown);font-weight:600}
+.os-au header small{font-size:.84rem;color:var(--muted);line-height:1.4;margin-top:4px}
+.os-au p{font-size:.95rem}
+.os-quote{margin:24px 0 0;border-left:4px solid var(--gold);padding:6px 0 6px 20px;max-width:72ch}
+.os-quote p{font-family:var(--display);font-size:clamp(1.2rem,2.6vw,1.5rem);line-height:1.35}
+.os-quote footer{padding:8px 0 0;font-size:.86rem;color:var(--muted);display:block}
+.os-how{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (max-width:760px){.os-how{grid-template-columns:1fr}}
+.os-how h3{font-size:1.35rem}
+.os-lnav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.os-lnav a{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:6px 12px 6px 8px;font-size:.84rem;font-weight:600;text-decoration:none;color:var(--ink)}
+.os-lnav a:hover{border-color:var(--c)}
+.os-lnav i,.os-tbl th i{flex:none;width:14px;height:14px;border-radius:50%;background:var(--c)}
+.os-lvls{display:flex;flex-direction:column;gap:22px}
+.os-lvl{display:grid;grid-template-columns:minmax(0,250px) minmax(0,1fr);gap:28px;align-items:start;background:var(--paper);border:1px solid var(--line);border-top:6px solid var(--c);border-radius:22px;padding:24px;scroll-margin-top:84px}
+@media (max-width:820px){.os-lvl{grid-template-columns:1fr;gap:18px;padding:18px}.os-lvl .os-card{width:100%;max-width:280px;margin-inline:auto;text-align:center}.os-lvl .os-card figcaption{align-items:center}}  /* на телефоне карта по центру (Ирина, 15.10.2026, 10:48) */
+.os-card{margin:0;display:flex;flex-direction:column;gap:8px;position:sticky;top:96px}
+@media (max-width:820px){.os-card{position:static}}
+.os-card picture{display:block;width:100%;aspect-ratio:3/4;overflow:hidden}
+.os-card .os-ph{display:block;width:100%;aspect-ratio:3/4;border-radius:14px;overflow:hidden;background:var(--fig)}
+.os-card img{display:block;width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply}  /* белая бумага растворяется в фоне, как чаши на «Твой путь» */
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .os-card img{mix-blend-mode:normal;border-radius:14px;opacity:.92}}
+:root[data-theme="dark"] .os-card img{mix-blend-mode:normal;border-radius:14px;opacity:.92}
+.os-card.ph{position:relative}
+.os-card .os-ph{background:radial-gradient(ellipse 48% 30% at 50% 66%,color-mix(in srgb,var(--cd) 36%,transparent),transparent 72%),radial-gradient(ellipse 60% 46% at 42% 46%,color-mix(in srgb,var(--cd) 20%,transparent),transparent 70%),radial-gradient(ellipse 40% 34% at 64% 34%,color-mix(in srgb,var(--cd) 14%,transparent),transparent 70%),var(--fig)}
+.os-ph-t{position:absolute;left:0;right:0;top:0;aspect-ratio:3/4;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:2px;padding:16px;text-align:center}
+.os-ph-t b{font-family:var(--display);font-weight:400;font-size:1.2rem;color:var(--cd)}
+.os-ph-t small{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:color-mix(in srgb,var(--cd) 70%,#7A6E62)}
+.os-card figcaption{display:flex;flex-direction:column;font-size:.84rem;color:var(--muted);line-height:1.35}
+.os-card figcaption b{font-family:var(--display);font-weight:400;font-size:1.1rem;color:var(--ink)}
+.os-lvl-body{display:flex;flex-direction:column;gap:14px;min-width:0}
+.os-lh{display:flex;gap:14px;align-items:center}
+.os-num{flex:none;width:46px;height:46px;border-radius:50%;background:var(--c);color:var(--paper);display:grid;place-items:center;font:800 1.15rem/1 var(--body)}
+.os-eb{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--c)}
+.os-lh h3{font-size:clamp(1.6rem,3.4vw,2.1rem)}
+.os-ess{font-size:1.08rem;max-width:62ch}
+.os-sd{font-size:.86rem;color:var(--muted)}
+.os-f{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 22px;border-top:1px dashed var(--line);padding-top:14px}
+.os-f .os-wide{grid-column:1/-1}
+@media (max-width:640px){.os-f{grid-template-columns:1fr}}
+.os-f h4,.os-in h4{margin:0 0 4px;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.os-f p{font-size:.95rem}
+.os-vals{display:flex;flex-wrap:wrap;gap:6px}
+.os-vals span{background:var(--s);color:var(--ink);border-radius:999px;padding:4px 11px;font-size:.86rem;font-weight:600}
+.os-voice{display:flex;flex-wrap:wrap;gap:8px 18px}
+.os-voice q{font-family:var(--display);font-size:1.2rem;line-height:1.2;quotes:"«" "»"}
+.os-next{background:var(--s);border-radius:14px;padding:12px 16px;font-size:.95rem}
+.os-next b{color:var(--ink)}
+.os-in-l{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+@media (max-width:640px){.os-in-l{grid-template-columns:1fr}}
+.os-in-l a{display:flex;flex-direction:column;gap:2px;border:1px solid var(--line);border-left:4px solid var(--c);border-radius:12px;padding:9px 12px;text-decoration:none;color:var(--ink);background:var(--paper);min-width:0}
+.os-in-l a:hover{border-color:var(--c)}
+.os-in-l small{font-size:.76rem;color:var(--muted)}
+.os-in-l b{font-size:.93rem;line-height:1.3}
+.os-h3{font-size:1.6rem;margin:30px 0 14px}
+.os-h3:first-of-type{margin-top:6px}
+.os-cond{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;counter-reset:c}
+@media (max-width:900px){.os-cond{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.os-cond{grid-template-columns:1fr}}
+.os-cond li{counter-increment:c;background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:16px 16px 16px 58px;position:relative;display:flex;flex-direction:column;gap:6px;min-width:0}
+.os-cond li::before{content:counter(c);position:absolute;left:16px;top:15px;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--gold);color:var(--gold);display:grid;place-items:center;font:800 .9rem/1 var(--body)}
+.os-cond b{font-family:var(--display);font-weight:400;font-size:1.25rem;line-height:1.15}
+.os-cond p{font-size:.93rem}
+.os-states{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.os-states li{position:relative;background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:5px;min-width:0}
+.os-states li:not(:last-child)::after{content:"→";position:absolute;right:-10px;top:50%;transform:translate(50%,-50%);color:var(--gold);font-weight:800;z-index:1}
+.os-states small{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.os-states b{font-family:var(--display);font-weight:400;font-size:1.25rem;line-height:1.15}
+.os-states p{font-size:.88rem}
+.os-states em{margin-top:auto;font-style:normal;font-size:.8rem;font-weight:700;color:var(--brown)}
+.os-states li.hot{border-color:var(--gold);background:color-mix(in srgb,var(--gold) 12%,var(--bg))}
+@media (max-width:900px){.os-states{grid-template-columns:1fr}.os-states li:not(:last-child)::after{content:"↓";right:50%;top:auto;bottom:-10px;transform:translate(50%,50%)}}
+.os-note{margin-top:14px;max-width:70ch;border-left:3px solid var(--gold);padding-left:14px;color:var(--ink)}
+.os-two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:700px){.os-two{grid-template-columns:1fr}}
+.os-ul{margin:0;display:flex;flex-direction:column;gap:10px;max-width:74ch}
+.os-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:24px 0}
+@media (max-width:760px){.os-steps{grid-template-columns:1fr}}
+.os-steps>div{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.os-steps small{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.os-steps b{font-family:var(--display);font-weight:400;font-size:1.35rem;color:var(--brown)}
+.os-steps p{font-size:.93rem}
+.os-tblw{overflow-x:auto;border:1px solid var(--line);border-radius:18px;background:var(--paper)}
+.os-tbl{width:100%;min-width:640px;border-collapse:collapse;font-size:.93rem}
+.os-tbl caption{caption-side:top;text-align:left;padding:14px 16px 6px;color:var(--muted);font-size:.86rem}
+.os-tbl th,.os-tbl td{padding:10px 14px;text-align:left;border-top:1px solid var(--line);vertical-align:top}
+.os-tbl thead th{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;border-top:0}
+.os-tbl tbody th{display:flex;gap:10px;align-items:flex-start;font-weight:700;border-left:4px solid var(--c)}
+.os-tbl tbody th i{margin-top:4px}
+.os-tbl tbody th span{display:flex;flex-direction:column}
+.os-tbl tbody th small{font-weight:600;color:var(--muted);font-size:.78rem}
+.os-tbl td a{color:var(--ink);text-underline-offset:3px;text-decoration-color:color-mix(in srgb,var(--c) 60%,transparent)}
+.os-cta{margin-top:24px;background:var(--mustard-soft);border-radius:20px;padding:22px;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
+.os-cta>div:first-child{flex:1 1 320px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.os-cta b{font-family:var(--display);font-weight:400;font-size:1.5rem}
+.os-src{margin:0;display:flex;flex-direction:column;gap:8px;font-size:.92rem;max-width:80ch}
+@media (max-width:860px){.os-hero{grid-template-columns:1fr}.os-art{max-width:400px;margin:0 auto;width:100%}}
+</style>
+<meta name="theme-color" content="#6E4F3C"><!--shape--><style id="shape">:is(.navcta,.btn,.jump a,.pb-price,.go-pill,.rv-prod,.rvs-btn,.shr-btn,.invite-links a,.share-btns button,.share-btns a,.inv-copy,.inv-btn,.sb-cta,.langbar,#langbar.langbar){border-radius:12px!important}:is(.langbar button,.langbar a,#langbar.langbar a,.bz-pills button){border-radius:9px!important}html header.top nav a .pa-ni{display:none}@media (max-width:1100px){html header.top .page{flex-wrap:wrap;row-gap:8px}html header.top nav{order:3;width:100%;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px!important;overflow:visible!important;padding:4px 0 12px!important;margin:0}html header.top nav a{display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:62px;padding:9px 6px;border-radius:14px;background:var(--paper,#FFFCF8);border:1px solid color-mix(in srgb,var(--brown,#6E4F3C) 22%,transparent);box-shadow:0 3px 10px -6px rgba(80,55,35,.45);color:var(--ink,#2F2924)!important;font:600 .78rem/1.18 var(--body,system-ui);text-align:center;white-space:normal!important;text-decoration:none;-webkit-tap-highlight-color:transparent}html header.top nav a .pa-ni{display:block;width:22px;height:22px;fill:none;stroke:var(--brown,#6E4F3C);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}html header.top nav a[aria-current]:not([aria-current=false]){background:var(--brown,#6E4F3C);border-color:var(--brown,#6E4F3C);color:var(--paper,#FFFCF8)!important}html header.top nav a[aria-current]:not([aria-current=false]) .pa-ni{stroke:var(--paper,#FFFCF8)}html header.top nav a:active{transform:scale(.97)}}/* длинная строка под именем (метод «Ступени. Твой путь в новой стране», 10.10.2026): переносится сама, меню в одну строку */@media (min-width:1101px){html header.top nav a{white-space:nowrap}html header.top .mark small{display:block;max-width:300px;line-height:1.35}}.pa-mini{display:none}@media (max-width:1100px){html header.top:not(.pa-mini){position:relative!important;top:auto!important}html header.top.pa-mini{display:block;position:fixed!important;left:0;right:0;top:0;z-index:55;padding-top:env(safe-area-inset-top,0px);transform:translateY(-105%);visibility:hidden;transition:transform .22s ease,visibility 0s .22s;box-shadow:0 8px 20px -14px rgba(60,40,20,.5)}html header.top.pa-mini.on{transform:none;visibility:visible;transition:transform .22s ease}html header.top.pa-mini .page{padding-block:8px;flex-wrap:wrap}html header.top.pa-mini .mark small{display:none}html header.top.pa-mini .mark b{font-size:1.05rem}html header.top.pa-mini .mono{width:32px;height:32px}html header.top.pa-mini:not(.open) nav{display:none!important}.pa-mbtn{margin-left:auto;display:flex;align-items:center;gap:6px;padding:7px 12px;border-radius:12px;border:1.5px solid color-mix(in srgb,var(--brown,#6E4F3C) 35%,transparent);background:var(--paper,#FFFCF8);color:var(--ink,#2F2924);font:700 .84rem/1 var(--body,Manrope,system-ui);cursor:pointer;-webkit-tap-highlight-color:transparent}.pa-mbtn svg{width:18px;height:18px;flex:none;fill:none;stroke:var(--brown,#6E4F3C);stroke-width:2;stroke-linecap:round}}@media (max-width:480px){html header.top.pa-mini .mark span:not(.mono){display:none}}</style><script>(function(){function run(){var n=document.querySelector('header.top nav');if(!n)return;var I={who:'<circle cx="12" cy="8" r="3.6"/><path d="M5 20c.7-3.8 3.4-6 7-6s6.3 2.2 7 6"/>',req:'<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',path:'<path d="M12 3.5 20.5 8 12 12.5 3.5 8z"/><path d="M3.5 12 12 16.5 20.5 12M3.5 16 12 20.5 20.5 16"/>',put:'<circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8 18h6a3.5 3.5 0 0 0 0-7h-4a3.5 3.5 0 0 1 0-7h6"/>',tests:'<rect x="5" y="3.5" width="14" height="17" rx="2.5"/><path d="m8.5 9 1.5 1.5L13 7.5M8.5 15l1.5 1.5 3-3M15 9.5h1M15 15.5h1"/>',svoi:'<circle cx="12" cy="12" r="2.4"/><circle cx="12" cy="4.5" r="1.8"/><circle cx="12" cy="19.5" r="1.8"/><circle cx="5.5" cy="8.3" r="1.8"/><circle cx="18.5" cy="8.3" r="1.8"/><circle cx="5.5" cy="15.7" r="1.8"/><circle cx="18.5" cy="15.7" r="1.8"/>'};n.querySelectorAll('a').forEach(function(a){if(a.querySelector('.pa-ni'))return;var h=a.getAttribute('href')||'',k=/svoiludi/.test(h)?'svoi':/#who/.test(h)?'who':/#requests/.test(h)?'req':/#path/.test(h)?'path':/put\/?$/.test(h)?'put':/testy/.test(h)?'tests':null;if(!k)return;a.insertAdjacentHTML('afterbegin','<svg class="pa-ni" viewBox="0 0 24 24" aria-hidden="true">'+I[k]+'</svg>');a.style.removeProperty('color');});}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();})();(function(){function mini(){var h=document.querySelector('header.top');if(!h||document.querySelector('.pa-mini')||!('IntersectionObserver' in window))return;var lg=(document.documentElement.lang||'ru').slice(0,2),L={ru:['Меню','Свернуть'],uk:['Меню','Згорнути'],de:['Menü','Zuklappen'],en:['Menu','Close']}[lg]||['Меню','Свернуть'];var m=document.createElement('header');m.className='top pa-mini';var pg=document.createElement('div');pg.className='page';var mk=h.querySelector('.mark');if(mk)pg.appendChild(mk.cloneNode(true));var b=document.createElement('button');b.type='button';b.className='pa-mbtn';b.setAttribute('aria-expanded','false');b.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span></span>';b.lastChild.textContent=L[0];pg.appendChild(b);var c=h.querySelector('.navcta');if(c)pg.appendChild(c.cloneNode(true));var n=h.querySelector('nav');if(n)pg.appendChild(n.cloneNode(true));m.appendChild(pg);document.body.appendChild(m);function set(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');b.lastChild.textContent=o?L[1]:L[0];}b.addEventListener('click',function(){set(!m.classList.contains('open'));});m.addEventListener('click',function(e){if(e.target.closest('nav a'))set(false);});new IntersectionObserver(function(es){var v=es[0].isIntersecting;m.classList.toggle('on',!v);if(v)set(false);}).observe(h);}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mini);else mini();})();</script><style id="vz-bul-css">/* «Росток» — единый маркер списков (12.10.2026), собирается _i18n/shape.py */:root{--sl-bul-c:#6E4F3C}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sl-bul-c:#E1C2A6}}:root[data-theme="dark"]{--sl-bul-c:#E1C2A6}:where(:is(.pd-box ul,.lim-body ul,ul.pain,ul.res,ul.leaf,ul.sl-bul,ul:not([class]):not([id])):not(nav ul,header ul,footer ul,button ul,[role=navigation] ul,.pa-tabs ul,.doc .terms ul,.no-bul)){list-style:none!important;padding-left:0!important}:where(:is(.pd-box ul,.lim-body ul,ul.pain,ul.res,ul.leaf,ul.sl-bul,ul:not([class]):not([id])):not(nav ul,header ul,footer ul,button ul,[role=navigation] ul,.pa-tabs ul,.doc .terms ul,.no-bul))>li{list-style:none!important;position:relative!important;padding-left:1.7em!important}:where(:is(.pd-box ul,.lim-body ul,ul.pain,ul.res,ul.leaf,ul.sl-bul,ul:not([class]):not([id])):not(nav ul,header ul,footer ul,button ul,[role=navigation] ul,.pa-tabs ul,.doc .terms ul,.no-bul))>li::marker{content:none}:where(:is(.pd-box ul,.lim-body ul,ul.pain,ul.res,ul.leaf,ul.sl-bul,ul:not([class]):not([id])):not(nav ul,header ul,footer ul,button ul,[role=navigation] ul,.pa-tabs ul,.doc .terms ul,.no-bul))>li::before{content:""!important;display:block!important;position:absolute!important;left:.05em!important;top:.2em!important;width:1.15em!important;height:1.15em!important;margin:0!important;border:0!important;border-radius:0!important;transform:none!important;box-shadow:none!important;color:transparent!important;background:var(--sl-bul-c)!important;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 18V9'/%3E%3Cpath d='M10 12C6 12 3.5 9.5 3.5 6 7 6 10 8.2 10 12Z' fill='%23000' fill-opacity='.3'/%3E%3Cpath d='M10 9.5C10 5.5 12.5 3 16.5 3 16.5 6.8 14 9.5 10 9.5Z' fill='%23000' fill-opacity='.3'/%3E%3C/svg%3E") center/contain no-repeat!important;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 18V9'/%3E%3Cpath d='M10 12C6 12 3.5 9.5 3.5 6 7 6 10 8.2 10 12Z' fill='%23000' fill-opacity='.3'/%3E%3Cpath d='M10 9.5C10 5.5 12.5 3 16.5 3 16.5 6.8 14 9.5 10 9.5Z' fill='%23000' fill-opacity='.3'/%3E%3C/svg%3E") center/contain no-repeat!important}</style><link rel="manifest" href="/site.webmanifest"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Iryna"><meta name="apple-mobile-web-app-status-bar-style" content="default"><script src="/assets/vz-app.js" defer></script><!--shape--></head>
+<body>
+
+<header class="top">
+  <div class="page">
+    <a class="mark" href="../" aria-label="Ирина Вознесенская — на главную">
+      <span class="mono av"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#FFFCF8" stroke="#6E4F3C" stroke-width="3"/><g transform="rotate(22.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(67.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(112.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(157.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(202.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(247.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(292.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(337.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(0.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(45.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(90.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(135.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(180.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(225.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(270.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(315.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><circle cx="50" cy="50" r="7" fill="#B98324"/></svg></span>
+      <span><b>Ирина Вознесенская</b><small>коуч, ментор, автор метода «Ступени. Твой путь в новой стране»</small></span>
+    </a>
+    <nav aria-label="Разделы">
+      <a href="../#who">Обо мне</a>
+      <a href="../#requests">Работа со мной</a>
+      <a href="../#path">Продукты</a>
+      <a href="../put/" aria-current="page" style="color:var(--ink)">Твой путь</a>
+      <a href="../testy/">Тесты</a>
+      <a href="https://svoiludi.ch/" target="_blank" rel="noopener">Свои люди</a>
+    </nav>
+    <a class="navcta" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">Знакомство</a>
+  </div>
+</header>
+
+<main class="page os">
+  <section class="hero os-hero" aria-labelledby="h1">
+    <div class="hero-text">
+      <div class="eyebrow">Основа метода «Ступени. Твой путь в новой стране»</div>
+      <h1 id="h1">Спиральная динамика: <em>на чём стоят ступени</em></h1>
+      <p class="lead">Восемь ступеней моего метода выросли из одной большой теории о том, как растут люди. Психолог Клэр Грейвз больше тридцати лет изучал, какой взрослые люди видят зрелую и здоровую жизнь. Его ученики Дон Бек и Кристофер Кован назвали эту модель спиральной динамикой и дали каждому уровню свой цвет.</p>
+      <p class="os-lead2">Здесь подробно о том, кто её создал, что человеку нужно и что для него ценно на каждом уровне и как он переходит на следующий.</p>
+      <div class="who"><span>Клэр Грейвз, 1914–1986</span><span>Бек и Кован, «Spiral Dynamics», 1996</span><span>8 уровней, 2 яруса</span></div>
+    </div>
+    <figure class="hero-art os-art"><svg class="os-spiral" viewBox="0 0 400 400" role="img" aria-label="Спираль из восьми уровней: каждый следующий виток шире предыдущего"><path d="M178.2 211.1 L177.1 210.4 L176.2 209.6 L175.2 208.7 L174.3 207.7 L173.4 206.7 L172.5 205.7 L171.7 204.5 L171.0 203.3 L170.2 202.1 L169.6 200.7 L169.0 199.4 L168.5 197.9 L168.0 196.5 L167.6 195.0 L167.3 193.4 L167.1 191.8 L166.9 190.2 L166.8 188.5 L166.8 186.8 L166.9 185.1 L167.1 183.4 L167.3 181.6 L167.7 179.9 L168.1 178.1 L168.7 176.3 L169.3 174.6 L170.0 172.9 L170.8 171.1 L171.8 169.4 L172.8 167.7 L173.9 166.1 L175.1 164.5 L176.4 162.9 L177.8 161.4 L179.3 159.9 L180.8 158.5 L182.5 157.1 L184.2 155.8 L186.0 154.6 L187.9 153.4 L189.9 152.4 L191.9 151.4 L194.0 150.5 L196.2 149.7 L198.5 149.0 L200.7 148.3 L203.1 147.8 L205.5 147.4 L207.9 147.2 L210.4 147.0 L212.9 146.9 L215.4 147.0 L217.9 147.2 L220.5 147.5 L223.1 147.9 L225.6 148.5 L228.2 149.1 L230.8 150.0 L233.3 150.9 L235.8 152.0 L238.3 153.1 L240.7 154.5 L243.1 155.9 L245.5 157.5 L247.8 159.2 L250.1 161.0 L252.2 162.9 L254.3 165.0 L256.3 167.1 L258.3 169.4 L260.1 171.8 L261.9 174.3 L263.5 176.9 L265.0 179.6 L266.5 182.3 L267.8 185.2 L268.9 188.1 L270.0 191.2 L270.9 194.2 L271.7 197.4 L272.3 200.6 L272.8 203.9 L273.1 207.2 L273.3 210.5 L273.4 213.9 L273.2 217.3 L273.0 220.7 L272.5 224.1 L271.9 227.6 L271.2 231.0 L270.2 234.4 L269.2 237.8 L267.9 241.2 L266.5 244.5 L264.9 247.8 L263.2 251.0 L261.3 254.1 L259.2 257.2 L257.0 260.3 L254.6 263.2 L252.1 266.0 L249.5 268.8 L246.7 271.4 L243.7 273.9 L240.7 276.3 L237.5 278.6 L234.1 280.7 L230.7 282.7 L227.1 284.6 L223.5 286.3 L219.7 287.8 L215.9 289.2 L212.0 290.4 L208.0 291.4 L203.9 292.3 L199.8 293.0 L195.6 293.5 L191.4 293.8 L187.1 293.9 L182.8 293.8 L178.5 293.5 L174.2 293.0 L169.9 292.3 L165.6 291.4 L161.3 290.3 L157.0 289.1 L152.8 287.6 L148.7 285.9 L144.5 284.0 L140.5 281.9 L136.5 279.6 L132.6 277.1 L128.9 274.5 L125.2 271.6 L121.6 268.6 L118.2 265.4 L114.8 262.0 L111.7 258.5 L108.6 254.8 L105.7 250.9 L103.0 246.9 L100.5 242.8 L98.1 238.5 L95.9 234.1 L94.0 229.6 L92.2 224.9 L90.6 220.2 L89.2 215.4 L88.0 210.4 L87.1 205.5 L86.4 200.4 L85.9 195.3 L85.6 190.2 L85.6 185.0 L85.8 179.8 L86.2 174.6 L86.9 169.4 L87.8 164.2 L89.0 159.0 L90.4 153.8 L92.0 148.7 L93.9 143.7 L96.0 138.7 L98.4 133.8 L101.0 129.0 L103.8 124.2 L106.8 119.6 L110.1 115.1 L113.5 110.8 L117.2 106.6 L121.1 102.5 L125.2 98.6 L129.5 94.9 L133.9 91.3 L138.6 87.9 L143.4 84.8 L148.4 81.8 L153.5 79.1 L158.7 76.6 L164.1 74.3 L169.7 72.2 L175.3 70.4 L181.0 68.9 L186.8 67.6 L192.7 66.5 L198.7 65.7 L204.7 65.2 L210.8 65.0 L216.9 65.0 L223.0 65.3 L229.1 65.9 L235.2 66.8 L241.3 67.9 L247.4 69.3 L253.4 71.0 L259.4 73.0 L265.3 75.3 L271.1 77.8 L276.8 80.6 L282.4 83.7 L287.9 87.0 L293.2 90.6 L298.4 94.4 L303.4 98.5 L308.3 102.9 L313.0 107.4 L317.5 112.2 L321.8 117.2 L325.9 122.4 L329.7 127.9 L333.4 133.5 L336.7 139.3 L339.9 145.2 L342.7 151.3 L345.3 157.6 L347.7 164.0 L349.7 170.5 L351.4 177.1 L352.9 183.9 L354.1 190.7 L354.9 197.6 L355.5 204.5 L355.7 211.5 L355.6 218.5 L355.2 225.5 L354.5 232.6 L353.4 239.6 L352.1 246.6 L350.4 253.5 L348.4 260.4 L346.1 267.2 L343.5 274.0 L340.5 280.6 L337.3 287.1 L333.7 293.5 L329.9 299.8 L325.8 305.8 L321.3 311.8 L316.6 317.5 L311.7 323.0 L306.4 328.3 L301.0 333.4 L295.2 338.3 L289.3 342.9 L283.1 347.3 L276.7 351.4 L270.1 355.2 L263.3 358.7 L256.3 361.9 L249.2 364.9 L241.9 367.5 L234.5 369.8 L227.0 371.7 L219.3 373.3 L211.6 374.6 L203.8 375.5 L196.0 376.1 L188.0 376.4 L180.1 376.2 L172.2 375.8" fill="none" class="os-sp-line"/><path d="M178.2 211.1 L177.1 210.4 L176.2 209.6 L175.2 208.7 L174.3 207.7 L173.4 206.7 L172.5 205.7 L171.7 204.5 L171.0 203.3 L170.2 202.1 L169.6 200.7 L169.0 199.4 L168.5 197.9 L168.0 196.5 L167.6 195.0 L167.3 193.4 L167.1 191.8 L166.9 190.2 L166.8 188.5 L166.8 186.8 L166.9 185.1 L167.1 183.4 L167.3 181.6 L167.7 179.9 L168.1 178.1 L168.7 176.3 L169.3 174.6 L170.0 172.9 L170.8 171.1 L171.8 169.4 L172.8 167.7 L173.9 166.1 L175.1 164.5 L176.4 162.9 L177.8 161.4 L179.3 159.9 L180.8 158.5 L182.5 157.1 L184.2 155.8 L186.0 154.6 L187.9 153.4 L189.9 152.4 L191.9 151.4 L194.0 150.5 L196.2 149.7 L198.5 149.0 L200.7 148.3 L203.1 147.8 L205.5 147.4 L207.9 147.2 L210.4 147.0 L212.9 146.9 L215.4 147.0 L217.9 147.2 L220.5 147.5 L223.1 147.9 L225.6 148.5 L228.2 149.1 L230.8 150.0 L233.3 150.9 L235.8 152.0 L238.3 153.1 L240.7 154.5 L243.1 155.9 L245.5 157.5 L247.8 159.2 L250.1 161.0 L252.2 162.9 L254.3 165.0 L256.3 167.1 L258.3 169.4 L260.1 171.8 L261.9 174.3 L263.5 176.9 L265.0 179.6 L266.5 182.3 L267.8 185.2 L268.9 188.1 L270.0 191.2 L270.9 194.2 L271.7 197.4 L272.3 200.6 L272.8 203.9 L273.1 207.2 L273.3 210.5 L273.4 213.9 L273.2 217.3 L273.0 220.7 L272.5 224.1 L271.9 227.6 L271.2 231.0 L270.2 234.4 L269.2 237.8 L267.9 241.2 L266.5 244.5 L264.9 247.8 L263.2 251.0 L261.3 254.1 L259.2 257.2 L257.0 260.3 L254.6 263.2 L252.1 266.0 L249.5 268.8 L246.7 271.4 L243.7 273.9 L240.7 276.3 L237.5 278.6 L234.1 280.7 L230.7 282.7 L227.1 284.6 L223.5 286.3 L219.7 287.8 L215.9 289.2 L212.0 290.4 L208.0 291.4 L203.9 292.3 L199.8 293.0 L195.6 293.5 L191.4 293.8 L187.1 293.9 L182.8 293.8 L178.5 293.5 L174.2 293.0 L169.9 292.3 L165.6 291.4 L161.3 290.3 L157.0 289.1 L152.8 287.6 L148.7 285.9 L144.5 284.0 L140.5 281.9 L136.5 279.6 L132.6 277.1 L128.9 274.5 L125.2 271.6 L121.6 268.6 L118.2 265.4 L114.8 262.0 L111.7 258.5 L108.6 254.8 L105.7 250.9 L103.0 246.9 L100.5 242.8 L98.1 238.5 L95.9 234.1 L94.0 229.6 L92.2 224.9 L90.6 220.2 L89.2 215.4 L88.0 210.4 L87.1 205.5 L86.4 200.4 L85.9 195.3 L85.6 190.2 L85.6 185.0 L85.8 179.8 L86.2 174.6 L86.9 169.4 L87.8 164.2 L89.0 159.0 L90.4 153.8 L92.0 148.7 L93.9 143.7 L96.0 138.7 L98.4 133.8 L101.0 129.0 L103.8 124.2 L106.8 119.6 L110.1 115.1 L113.5 110.8 L117.2 106.6 L121.1 102.5 L125.2 98.6 L129.5 94.9 L133.9 91.3 L138.6 87.9 L143.4 84.8 L148.4 81.8 L153.5 79.1 L158.7 76.6 L164.1 74.3 L169.7 72.2 L175.3 70.4 L181.0 68.9 L186.8 67.6 L192.7 66.5 L198.7 65.7 L204.7 65.2 L210.8 65.0 L216.9 65.0 L223.0 65.3 L229.1 65.9 L235.2 66.8 L241.3 67.9 L247.4 69.3 L253.4 71.0 L259.4 73.0 L265.3 75.3 L271.1 77.8 L276.8 80.6 L282.4 83.7 L287.9 87.0 L293.2 90.6 L298.4 94.4 L303.4 98.5 L308.3 102.9 L313.0 107.4 L317.5 112.2 L321.8 117.2 L325.9 122.4 L329.7 127.9 L333.4 133.5 L336.7 139.3 L339.9 145.2 L342.7 151.3 L345.3 157.6 L347.7 164.0 L349.7 170.5 L351.4 177.1 L352.9 183.9 L354.1 190.7 L354.9 197.6 L355.5 204.5 L355.7 211.5 L355.6 218.5 L355.2 225.5 L354.5 232.6 L353.4 239.6 L352.1 246.6 L350.4 253.5 L348.4 260.4 L346.1 267.2 L343.5 274.0 L340.5 280.6 L337.3 287.1 L333.7 293.5 L329.9 299.8 L325.8 305.8 L321.3 311.8 L316.6 317.5 L311.7 323.0 L306.4 328.3 L301.0 333.4 L295.2 338.3 L289.3 342.9 L283.1 347.3 L276.7 351.4 L270.1 355.2 L263.3 358.7 L256.3 361.9 L249.2 364.9 L241.9 367.5 L234.5 369.8 L227.0 371.7 L219.3 373.3 L211.6 374.6 L203.8 375.5 L196.0 376.1 L188.0 376.4 L180.1 376.2 L172.2 375.8" fill="none" class="os-sp-gold"/><a href="#uroven-1" aria-label="Уровень 1"><circle cx="170.9" cy="170.9" r="13.0" style="fill:var(--l1)" /><text x="170.9" y="175.9" text-anchor="middle">1</text></a><a href="#uroven-2" aria-label="Уровень 2"><circle cx="236.4" cy="152.2" r="14.2" style="fill:var(--l2)" /><text x="236.4" y="157.2" text-anchor="middle">2</text></a><a href="#uroven-3" aria-label="Уровень 3"><circle cx="268.7" cy="239.0" r="15.4" style="fill:var(--l3)" /><text x="268.7" y="244.0" text-anchor="middle">3</text></a><a href="#uroven-4" aria-label="Уровень 4"><circle cx="163.5" cy="290.9" r="16.6" style="fill:var(--l4)" /><text x="163.5" y="295.9" text-anchor="middle">4</text></a><a href="#uroven-5" aria-label="Уровень 5"><circle cx="86.6" cy="171.4" r="17.8" style="fill:var(--l5)" /><text x="86.6" y="176.4" text-anchor="middle">5</text></a><a href="#uroven-6" aria-label="Уровень 6"><circle cx="215.2" cy="65.0" r="19.0" style="fill:var(--l6)" /><text x="215.2" y="70.0" text-anchor="middle">6</text></a><a href="#uroven-7" aria-label="Уровень 7"><circle cx="354.8" cy="196.5" r="20.2" style="fill:var(--l7)" /><text x="354.8" y="201.5" text-anchor="middle">7</text></a><a href="#uroven-8" aria-label="Уровень 8"><circle cx="227.2" cy="371.7" r="21.4" style="fill:var(--l8)" /><text x="227.2" y="376.7" text-anchor="middle">8</text></a></svg><figcaption><b>Каждый виток шире предыдущего</b>Нажми на номер, чтобы открыть уровень.</figcaption></figure>
+  </section>
+
+  <nav class="os-toc" aria-label="На этой странице">
+    <a href="#kratko">Коротко</a><a href="#avtory">Авторы</a><a href="#spiral">Как устроена спираль</a><a href="#urovni">Восемь уровней</a><a href="#perehod">Как происходит переход</a><a href="#metod">Спираль в моём методе</a><a href="#chestno">Честно о модели</a><a href="#istochniki">Источники</a>
+  </nav>
+
+  <section id="kratko" aria-labelledby="h-kr">
+    <div class="sec-head"><div class="eyebrow">Коротко о главном</div><h2 id="h-kr">Ценности — это ответ на условия жизни</h2></div>
+    <div class="os-prose">
+      <p>Спиральная динамика — модель того, как меняется то, что для человека важно. Речь не о характере и не о «типе личности», а о том, на что человек опирается и ради чего живёт. Пока условия жизни одни, ему нужно одно. Меняются условия, и прежние способы жить перестают помогать, а изнутри вырастает новый, более сложный способ.</p>
+      <p>Поэтому модель так хорошо объясняет переезд. Новая страна меняет условия разом: язык, работу, круг, правила, иногда роли в семье. И женщина, которая дома уверенно стояла высоко, на время снова ищет сон, своих людей и свой голос. Это не слабость, а нормальный ответ на новые условия.</p>
+    </div>
+    <div class="os-rules">
+      <div><b>Уровень — ответ, а не оценка</b><p>Ни один уровень не лучше другого. Каждый хорош для своих условий. Когда холодно, правильно думать о тепле, а не о смысле жизни.</p></div>
+      <div><b>Нижние держат верхние</b><p>Новый уровень не отменяет прежний, а встаёт на него. Сон, свои люди и свой голос нужны и той, кто уже наверху.</p></div>
+      <div><b>Спираль, а не лестница</b><p>Жизнь возвращается к тем же вопросам, но на новом витке. Уровни чередуются: один про «я», следующий про «мы».</p></div>
+      <div><b>Можно идти вверх и вниз</b><p>Когда условия становятся труднее, человек опирается на более ранние способы, чтобы выстоять. Когда станет легче, путь вверх откроется снова.</p></div>
+    </div>
+  </section>
+
+  <section id="avtory" class="os-band" aria-labelledby="h-av">
+    <div class="sec-head"><div class="eyebrow">Авторы</div><h2 id="h-av">Кто создал спиральную динамику</h2><p>Учёный, который открыл уровни, и двое его учеников, которые сделали модель понятной и применимой.</p></div>
+    <div class="os-authors">
+      <article class="os-au">
+        <header><b>Клэр Грейвз</b><span lang="en">Clare W. Graves</span><small>1914–1986 · психолог, профессор Юнион-колледжа (Union College) в Скенектади, штат Нью-Йорк</small></header>
+        <p>Всё началось с вопроса студентов: какая из психологических теорий права, если они спорят друг с другом? Вместо того чтобы выбрать одну, Грейвз начал собственное исследование. Он просил студентов описать, каким бывает психологически зрелый, здоровый взрослый человек, а потом они обсуждали и критиковали описания друг друга.</p>
+        <p>С 1952 по 1959 год он собрал ответы около 1065 человек от 18 до 61 года и ещё двенадцать лет дополнял их. Ответы не сводились к одному «правильному» образу. Они складывались в ряд уровней, и каждый следующий вырастал из предыдущего, когда менялись условия жизни. Грейвз назвал это теорией уровней существования и был уверен, что у развития нет конечной точки.</p>
+      </article>
+      <article class="os-au">
+        <header><b>Дон Бек</b><span lang="en">Don Edward Beck</span><small>1937–2022 · профессор из Техаса, позже консультант по большим переменам в обществах и организациях</small></header>
+        <p>В 1974 году прочитал статью Грейвза в журнале «The Futurist», в 1975-м прилетел к нему в Нью-Йорк и с тех пор работал с ним, вместе с Кованом, до самой смерти Грейвза в 1986 году.</p>
+        <p>Применял модель там, где меняется целая страна: с 1981 по 1988 год больше 36 раз ездил в Южную Африку и помогал искать мирный выход из апартеида. Позже вместе с философом Кеном Уилбером развивал свою версию — интегральную спиральную динамику (Spiral Dynamics integral).</p>
+      </article>
+      <article class="os-au">
+        <header><b>Кристофер Кован</b><span lang="en">Christopher C. Cowan</span><small>коллега Бека по университету в Техасе, соавтор модели</small></header>
+        <p>В 1979 году вместе с Беком основал Национальный центр ценностей (National Values Center), а в 1996 году они выпустили книгу «Spiral Dynamics: Mastering Values, Leadership, and Change». Именно в ней у уровней появились цвета и названия, которые сегодня знают коучи и консультанты.</p>
+        <p>В 1999 году Бек и Кован пошли разными путями. Кован вместе с Наташей Тодорович продолжил линию самого Грейвза: они собрали его рукописи и записи семинаров и в 2005 году издали книгу «The Never Ending Quest» («Бесконечный поиск»).</p>
+      </article>
+    </div>
+    <blockquote class="os-quote"><p>«Психология зрелого человека — это разворачивающийся, возникающий, колеблющийся, спиралевидный процесс. По мере того как меняются жизненные задачи человека, старые, более простые системы поведения уступают первенство новым, более сложным».</p><footer>Клэр Грейвз, «The Futurist», 1974</footer></blockquote>
+  </section>
+
+  <section id="spiral" aria-labelledby="h-sp">
+    <div class="sec-head"><div class="eyebrow">Как устроена спираль</div><h2 id="h-sp">Условия, ответ и ритм «я — мы»</h2></div>
+    <div class="os-how">
+      <div><h3>Условия и ответ</h3><p>Каждый уровень — это пара: условия жизни и способ мышления, который на них отвечает. Сам Грейвз не пользовался цветами. Он записывал уровни парами букв: A–N, B–O, C–P и дальше. Первая буква — условия жизни, вторая — способ с ними справляться. Новый способ просыпается, когда появляются задачи, которые старый уже не решает.</p></div>
+      <div><h3>Я — мы — я — мы</h3><p>Уровни чередуются. На нечётных человек выражает себя: выжить, заявить о себе, добиться, быть собой. На чётных он отдаёт часть себя ради общего: семьи, порядка, людей, мира. В спиральной динамике первые окрашены в тёплые цвета, вторые — в холодные. Поэтому после «я смогла» всегда приходит «с кем и для чего».</p></div>
+      <div><h3>Два яруса</h3><p>Первые шесть уровней Грейвз называл уровнями выживания и налаживания жизни: каждый из них считает свой взгляд единственно верным. С седьмого начинается то, что он назвал огромным скачком: человек видит, что каждый уровень по-своему нужен, и может опираться на любой по ситуации. Бек и Кован назвали это первым и вторым ярусом.</p></div>
+      <div><h3>Центр тяжести</h3><p>У человека нет одного уровня на всё. В работе можно стоять на одной ступени, в семье на другой, а после переезда опираться на третью. Поэтому говорят о центре тяжести: где ты чаще всего думаешь и решаешь. И у каждого уровня есть здоровое лицо и лицо, когда его становится слишком много.</p></div>
+    </div>
+  </section>
+
+  <section id="urovni" class="os-levels" aria-labelledby="h-ur">
+    <div class="sec-head"><div class="eyebrow">Восемь уровней</div><h2 id="h-ur">Что нужно и что ценно на каждом уровне</h2><p>Читай снизу вверх. У каждого уровня свой цвет в спиральной динамике, своя карта-акварель в моём методе и свои ступени на трёх путях: в жизни в новой стране, в своём деле и в отношениях.</p></div>
+    <nav class="os-lnav" aria-label="Уровни"><a href="#uroven-1" style="--c:var(--l1)"><i></i>1 · Выжить и согреться</a><a href="#uroven-2" style="--c:var(--l2)"><i></i>2 · Быть среди своих</a><a href="#uroven-3" style="--c:var(--l3)"><i></i>3 · Своя сила</a><a href="#uroven-4" style="--c:var(--l4)"><i></i>4 · Порядок и смысл</a><a href="#uroven-5" style="--c:var(--l5)"><i></i>5 · Свой успех</a><a href="#uroven-6" style="--c:var(--l6)"><i></i>6 · Люди и близость</a><a href="#uroven-7" style="--c:var(--l7)"><i></i>7 · Жизнь целиком</a><a href="#uroven-8" style="--c:var(--l8)"><i></i>8 · Одно целое</a></nav>
+    <div class="os-lvls">
+    <article class="os-lvl" id="uroven-1" style="--c:var(--l1);--s:var(--l1s)" aria-labelledby="ul1">
+      <figure class="os-card" style="--cd:#8E8470"><picture><source srcset="img/01-koster.webp" type="image/webp"><img src="img/01-koster.jpg" width="900" height="1204" loading="lazy" alt="Акварельная карта «Огонь, который греет»"></picture></figure>
+      <div class="os-lvl-body">
+        <div class="os-lh"><span class="os-num">1</span><div><div class="os-eb">Уровень 1 · бежевый · A–N · про «я»</div><h3 id="ul1">Выжить и согреться</h3></div></div>
+        <p class="os-ess">Всё внимание уходит на тело: еду, тепло, сон и безопасность. Думать о будущем и о смысле пока некогда, и это правильно: сначала нужно выжить и сохранить силы.</p>
+        <p class="os-sd">У Бека и Кована — <i lang="en">SurvivalSense</i>, «чутьё выжить».</p>
+        <div class="os-f">
+          <div><h4>Когда включается</h4><p>Так живут в первые дни жизни, при тяжёлой болезни, в глубокой старости, после катастрофы, войны или бегства, при крайнем истощении. Ненадолго сюда попадают и после переезда, пока нет жилья, денег, сна и понятных опор.</p></div>
+          <div><h4>Что нужно</h4><p>Еда, тепло, крыша над головой, сон, безопасность, отдых для тела и кто-то рядом, кто позаботится о самом простом.</p></div>
+          <div class="os-wide"><h4>Что ценно</h4><p class="os-vals"><span>тело</span><span>тепло</span><span>безопасность</span><span>отдых</span><span>здесь и сейчас</span></p></div>
+          <div><h4>Сила уровня</h4><p>Инстинкт, который выводит из самой трудной ситуации. Умение беречь силы и замечать главное.</p></div>
+          <div><h4>Когда его слишком много</h4><p>Жизнь сужается до выживания даже тогда, когда опасность уже позади: «некогда жить, надо продержаться».</p></div>
+          <div class="os-wide"><h4>Как это звучит у моих клиенток</h4><p class="os-voice"><q>У меня ни на что нет сил</q><q>Я держусь на нервах и не высыпаюсь</q></p></div>
+        </div>
+        <p class="os-next"><b>Что открывает путь дальше.</b> Когда тело в безопасности и силы вернулись, хочется не только выжить, но и быть с кем-то. Появляется вопрос «кто мои?».</p>
+        <div class="os-in"><h4>Эта ступень в моём методе</h4><div class="os-in-l"><a href="../put/#stupen-1"><small>Жизнь в новой стране</small><b>Разбитая чаша →</b></a><a href="../delo/#stupen-1"><small>Своё дело</small><b>С нуля →</b></a><a href="../otnosheniya/#stupen-1"><small>Отношения</small><b>Рядом безопасно →</b></a></div></div>
+      </div>
+    </article>
+    <article class="os-lvl" id="uroven-2" style="--c:var(--l2);--s:var(--l2s)" aria-labelledby="ul2">
+      <figure class="os-card" style="--cd:#6A5FB8"><picture><source srcset="img/02-gnezdo.webp" type="image/webp"><img src="img/02-gnezdo.jpg" width="900" height="1204" loading="lazy" alt="Акварельная карта «Гнездо»"></picture></figure>
+      <div class="os-lvl-body">
+        <div class="os-lh"><span class="os-num">2</span><div><div class="os-eb">Уровень 2 · фиолетовый · B–O · про «мы»</div><h3 id="ul2">Быть среди своих</h3></div></div>
+        <p class="os-ess">Безопасность приходит через принадлежность: семья, род, община, свои обычаи. Здесь рождаются ритуалы, приметы, праздники и тёплое чувство «мы вместе».</p>
+        <p class="os-sd">У Бека и Кована — <i lang="en">KinSpirits</i>, «дух рода».</p>
+        <div class="os-f">
+          <div><h4>Когда включается</h4><p>Мир кажется большим и непредсказуемым, а в одиночку в нём не выжить. Опора — свои: старшие, семья, община, привычный уклад.</p></div>
+          <div><h4>Что нужно</h4><p>Свои люди рядом, тепло семьи, общие традиции и праздники, место, где тебя знают по имени, и старшие, которым можно доверять.</p></div>
+          <div class="os-wide"><h4>Что ценно</h4><p class="os-vals"><span>семья и род</span><span>верность своим</span><span>традиции</span><span>память о предках</span><span>дом</span></p></div>
+          <div><h4>Сила уровня</h4><p>Тепло, забота и чувство корней. Умение держаться вместе и передавать опыт поколений.</p></div>
+          <div><h4>Когда его слишком много</h4><p>Страх выйти за пределы своих, «что люди скажут», жизнь по приметам вместо собственных решений, растворение в семье.</p></div>
+          <div class="os-wide"><h4>Как это звучит у моих клиенток</h4><p class="os-voice"><q>Мне здесь не с кем поговорить</q><q>Живу звонками домой</q></p></div>
+        </div>
+        <p class="os-next"><b>Что открывает путь дальше.</b> Когда круг надёжен, внутри просыпается своё «я хочу». Тесно жить только по правилам рода, хочется своей силы и своего голоса.</p>
+        <div class="os-in"><h4>Эта ступень в моём методе</h4><div class="os-in-l"><a href="../put/#stupen-2"><small>Жизнь в новой стране</small><b>Свой круг →</b></a><a href="../delo/#stupen-2"><small>Своё дело</small><b>Круг доверия →</b></a><a href="../otnosheniya/#stupen-2"><small>Отношения</small><b>Наш дом →</b></a></div></div>
+      </div>
+    </article>
+    <article class="os-lvl" id="uroven-3" style="--c:var(--l3);--s:var(--l3s)" aria-labelledby="ul3">
+      <figure class="os-card" style="--cd:#C25468"><picture><source srcset="img/03-mak.webp" type="image/webp"><img src="img/03-mak.jpg" width="900" height="1204" loading="lazy" alt="Акварельная карта «Мак сквозь камень»"></picture></figure>
+      <div class="os-lvl-body">
+        <div class="os-lh"><span class="os-num">3</span><div><div class="os-eb">Уровень 3 · красный · C–P · про «я»</div><h3 id="ul3">Своя сила</h3></div></div>
+        <p class="os-ess">Человек отделяется от рода и говорит: «я есть, и я могу». Здесь энергия, смелость, напор, желание получить своё сейчас и уважение к себе.</p>
+        <p class="os-sd">У Бека и Кована — <i lang="en">PowerGods</i>, «сила».</p>
+        <div class="os-f">
+          <div><h4>Когда включается</h4><p>Мир похож на джунгли: побеждает сильный, ждать некогда, пробиваться приходится самой.</p></div>
+          <div><h4>Что нужно</h4><p>Свобода действовать, уважение, право сказать «нет», признание своей силы и быстрый результат, который видно.</p></div>
+          <div class="os-wide"><h4>Что ценно</h4><p class="os-vals"><span>сила</span><span>смелость</span><span>свобода</span><span>уважение</span><span>честь</span></p></div>
+          <div><h4>Сила уровня</h4><p>Смелость начать, пробиться, защитить себя и своих. Энергия, на которой держатся первые шаги.</p></div>
+          <div><h4>Когда его слишком много</h4><p>Грубость и давление, борьба за власть, «всё и сразу», нежелание считаться с другими и с последствиями.</p></div>
+          <div class="os-wide"><h4>Как это звучит у моих клиенток</h4><p class="os-voice"><q>Не могу сказать «нет»</q><q>За меня всё решают</q></p></div>
+        </div>
+        <p class="os-next"><b>Что открывает путь дальше.</b> Когда силу уже некому доказывать, хочется порядка: понятных правил, смысла и уверенности, что усилия не пропадут.</p>
+        <div class="os-in"><h4>Эта ступень в моём методе</h4><div class="os-in-l"><a href="../put/#stupen-3"><small>Жизнь в новой стране</small><b>Я могу сама →</b></a><a href="../delo/#stupen-3"><small>Своё дело</small><b>Заявляю о себе →</b></a><a href="../otnosheniya/#stupen-3"><small>Отношения</small><b>Мой голос в паре →</b></a></div></div>
+      </div>
+    </article>
+    <article class="os-lvl" id="uroven-4" style="--c:var(--l4);--s:var(--l4s)" aria-labelledby="ul4">
+      <figure class="os-card" style="--cd:#3F6FBF"><picture><source srcset="img/04-kompas.webp" type="image/webp"><img src="img/04-kompas.jpg" width="900" height="1204" loading="lazy" alt="Акварельная карта «Компас»"></picture></figure>
+      <div class="os-lvl-body">
+        <div class="os-lh"><span class="os-num">4</span><div><div class="os-eb">Уровень 4 · синий · D–Q · про «мы»</div><h3 id="ul4">Порядок и смысл</h3></div></div>
+        <p class="os-ess">Есть правильный путь, правила и долг. Человек готов потерпеть сейчас ради надёжного будущего и ради того, что правильно.</p>
+        <p class="os-sd">У Бека и Кована — <i lang="en">TruthForce</i>, «сила истины».</p>
+        <div class="os-f">
+          <div><h4>Когда включается</h4><p>Жизнь кажется хаотичной, и её хочется упорядочить. Опора — правила, закон, вера и порядок, одинаковый для всех.</p></div>
+          <div><h4>Что нужно</h4><p>Понятные правила, предсказуемость, стабильность, ясные роли и обязанности и чувство, что ты поступаешь правильно.</p></div>
+          <div class="os-wide"><h4>Что ценно</h4><p class="os-vals"><span>порядок</span><span>долг</span><span>честность</span><span>дисциплина</span><span>справедливость</span><span>верность слову</span></p></div>
+          <div><h4>Сила уровня</h4><p>Надёжность и стабильность. Умение держать слово, соблюдать сроки и строить то, что переживёт тебя. Многое в Швейцарии — сроки, письма, порядок в доме — говорит языком этого уровня.</p></div>
+          <div><h4>Когда его слишком много</h4><p>Чёрно-белый мир, жёсткость, вина за любую ошибку и «так положено» вместо живого решения.</p></div>
+          <div class="os-wide"><h4>Как это звучит у моих клиенток</h4><p class="os-voice"><q>Каждое письмо — и сердце колотится</q><q>Боюсь ошибиться и получить штраф</q></p></div>
+        </div>
+        <p class="os-next"><b>Что открывает путь дальше.</b> Когда порядок стал своим, хочется большего, чем просто «правильно»: своих целей, своего успеха, своего пути.</p>
+        <div class="os-in"><h4>Эта ступень в моём методе</h4><div class="os-in-l"><a href="../put/#stupen-4"><small>Жизнь в новой стране</small><b>Понятные правила →</b></a><a href="../delo/#stupen-4"><small>Своё дело</small><b>Порядок в деле →</b></a><a href="../otnosheniya/#stupen-4"><small>Отношения</small><b>Наши договорённости →</b></a></div></div>
+      </div>
+    </article>
+    <article class="os-lvl" id="uroven-5" style="--c:var(--l5);--s:var(--l5s)" aria-labelledby="ul5">
+      <figure class="os-card" style="--cd:#C97E52"><picture><source srcset="img/05-shar.webp" type="image/webp"><img src="img/05-shar.jpg" width="900" height="1204" loading="lazy" alt="Акварельная карта «Воздушный шар»"></picture></figure>
+      <div class="os-lvl-body">
+        <div class="os-lh"><span class="os-num">5</span><div><div class="os-eb">Уровень 5 · оранжевый · E–R · про «я»</div><h3 id="ul5">Свой успех</h3></div></div>
+        <p class="os-ess">Человек верит, что может улучшить свою жизнь сам: ставит цели, ищет лучший способ, пробует, считает и растёт.</p>
+        <p class="os-sd">У Бека и Кована — <i lang="en">StriveDrive</i>, «стремление к успеху».</p>
+        <div class="os-f">
+          <div><h4>Когда включается</h4><p>Мир полон возможностей, и их можно использовать. Выигрывает тот, кто думает, учится и действует с умом.</p></div>
+          <div><h4>Что нужно</h4><p>Цель, свобода выбора, результат и признание, деньги как мера успеха, развитие и новые возможности.</p></div>
+          <div class="os-wide"><h4>Что ценно</h4><p class="os-vals"><span>успех</span><span>достижения</span><span>независимость</span><span>рост</span><span>знание</span><span>прогресс</span></p></div>
+          <div><h4>Сила уровня</h4><p>Предприимчивость, смелость пробовать новое, умение ставить цели и доводить дело до результата.</p></div>
+          <div><h4>Когда его слишком много</h4><p>Гонка без остановки, выгорание, люди как ресурс и мысль «я стою столько, сколько добилась».</p></div>
+          <div class="os-wide"><h4>Как это звучит у моих клиенток</h4><p class="os-voice"><q>Мой диплом здесь ничего не значит</q><q>Хочу, но не делаю</q></p></div>
+        </div>
+        <p class="os-next"><b>Что открывает путь дальше.</b> Когда успех есть, а радости нет, внимание поворачивается к людям: к близости, к чувствам и к тому, ради кого всё это.</p>
+        <div class="os-in"><h4>Эта ступень в моём методе</h4><div class="os-in-l"><a href="../put/#stupen-5"><small>Жизнь в новой стране</small><b>Своё дело →</b></a><a href="../delo/#stupen-5"><small>Своё дело</small><b>Дело растёт →</b></a><a href="../otnosheniya/#stupen-5"><small>Отношения</small><b>Растём оба →</b></a></div></div>
+      </div>
+    </article>
+    <article class="os-lvl" id="uroven-6" style="--c:var(--l6);--s:var(--l6s)" aria-labelledby="ul6">
+      <figure class="os-card" style="--cd:#4E9A70"><picture><source srcset="img/06-venok.webp" type="image/webp"><img src="img/06-venok.jpg" width="900" height="1204" loading="lazy" alt="Акварельная карта «Венок из полевых цветов»"></picture></figure>
+      <div class="os-lvl-body">
+        <div class="os-lh"><span class="os-num">6</span><div><div class="os-eb">Уровень 6 · зелёный · F–S · про «мы»</div><h3 id="ul6">Люди и близость</h3></div></div>
+        <p class="os-ess">Важно, что чувствуют другие, быть принятой, слышать и быть услышанной. Все разные, и все равны.</p>
+        <p class="os-sd">У Бека и Кована — <i lang="en">HumanBond</i>, «человеческая связь».</p>
+        <div class="os-f">
+          <div><h4>Когда включается</h4><p>Достаток уже есть, а внутри пусто. Гонка за успехом многое дала, но разделила людей. Хочется вернуть тепло, равенство и заботу друг о друге и о земле.</p></div>
+          <div><h4>Что нужно</h4><p>Принятие, близость, сообщество единомышленников, возможность помогать, гармония и решения, которые учитывают всех.</p></div>
+          <div class="os-wide"><h4>Что ценно</h4><p class="os-vals"><span>люди</span><span>чувства</span><span>равенство</span><span>сотрудничество</span><span>забота</span><span>природа</span></p></div>
+          <div><h4>Сила уровня</h4><p>Эмпатия, умение объединять людей, слышать каждого и строить сообщество.</p></div>
+          <div><h4>Когда его слишком много</h4><p>Бесконечные согласования, страх кого-то обидеть и растворение в чужих нуждах: «помогаю всем и опустошаюсь».</p></div>
+          <div class="os-wide"><h4>Как это звучит у моих клиенток</h4><p class="os-voice"><q>Добилась, а радости нет</q><q>Помогаю всем и опустошаюсь</q></p></div>
+        </div>
+        <p class="os-next"><b>Что открывает путь дальше.</b> Когда понимаешь, что каждый прав по-своему, хочется увидеть целое: как всё связано и что действительно важно именно сейчас.</p>
+        <div class="os-in"><h4>Эта ступень в моём методе</h4><div class="os-in-l"><a href="../put/#stupen-6"><small>Жизнь в новой стране</small><b>Мой вклад →</b></a><a href="../delo/#stupen-6"><small>Своё дело</small><b>Команда и смысл →</b></a><a href="../otnosheniya/#stupen-6"><small>Отношения</small><b>Слышим друг друга →</b></a></div></div>
+      </div>
+    </article>
+    <article class="os-lvl" id="uroven-7" style="--c:var(--l7);--s:var(--l7s)" aria-labelledby="ul7">
+      <figure class="os-card" style="--cd:#A99A2E"><picture><source srcset="img/07-nautilus.webp" type="image/webp"><img src="img/07-nautilus.jpg" width="900" height="1204" loading="lazy" alt="Акварельная карта «Раковина наутилуса»"></picture></figure>
+      <div class="os-lvl-body">
+        <div class="os-lh"><span class="os-num">7</span><div><div class="os-eb">Уровень 7 · жёлтый · G–T · про «я»</div><h3 id="ul7">Жизнь целиком</h3></div></div>
+        <p class="os-ess">Человек видит, как всё связано, и не держится за один правильный способ. В одной ситуации нужен порядок, в другой — смелость, в третьей — забота, и он может опереться на любой из них.</p>
+        <p class="os-sd">У Бека и Кована — <i lang="en">FlexFlow</i>, «гибкий поток».</p>
+        <div class="os-f">
+          <div><h4>Когда включается</h4><p>Мир сложный и быстро меняется. Готовых ответов нет, зато знаний и свободы больше, чем когда-либо.</p></div>
+          <div><h4>Что нужно</h4><p>Свобода быть собой без вреда другим, знания, смысл, время для главного и возможность делать то, что получается лучше всего.</p></div>
+          <div class="os-wide"><h4>Что ценно</h4><p class="os-vals"><span>свобода</span><span>знание</span><span>гибкость</span><span>целостность</span><span>ответственность за себя</span></p></div>
+          <div><h4>Сила уровня</h4><p>Спокойствие перед сложностью, умение видеть систему, гибко менять курс и опираться на любой уровень по ситуации.</p></div>
+          <div><h4>Когда его слишком много</h4><p>Отстранённость: всё понимаю, но ни с кем не делю и живу словно над жизнью.</p></div>
+          <div class="os-wide"><h4>Как это звучит у моих клиенток</h4><p class="os-voice"><q>Жду, когда начнётся настоящая жизнь</q><q>А что, если бы мы не уехали</q></p></div>
+        </div>
+        <p class="os-next"><b>Что открывает путь дальше.</b> Когда своя жизнь сложилась в целое, она становится частью большего: детей, людей, мира.</p>
+        <div class="os-in"><h4>Эта ступень в моём методе</h4><div class="os-in-l"><a href="../put/#stupen-7"><small>Жизнь в новой стране</small><b>Моя жизнь целиком →</b></a><a href="../delo/#stupen-7"><small>Своё дело</small><b>Система и свобода →</b></a><a href="../otnosheniya/#stupen-7"><small>Отношения</small><b>Вместе по выбору →</b></a></div></div>
+      </div>
+    </article>
+    <article class="os-lvl" id="uroven-8" style="--c:var(--l8);--s:var(--l8s)" aria-labelledby="ul8">
+      <figure class="os-card" style="--cd:#2894A0"><picture><source srcset="img/08-kaplya.webp" type="image/webp"><img src="img/08-kaplya.jpg" width="900" height="1204" loading="lazy" alt="Акварельная карта «Мир в капле росы»"></picture></figure>
+      <div class="os-lvl-body">
+        <div class="os-lh"><span class="os-num">8</span><div><div class="os-eb">Уровень 8 · бирюзовый · H–U · про «мы»</div><h3 id="ul8">Одно целое</h3></div></div>
+        <p class="os-ess">Человек чувствует себя частью большего: людей, природы, поколений. Важно то, что останется после тебя.</p>
+        <p class="os-sd">У Бека и Кована — <i lang="en">GlobalView</i>, «взгляд на целое».</p>
+        <div class="os-f">
+          <div><h4>Когда включается</h4><p>Мир взаимосвязан: то, что происходит в одном месте, отзывается везде. Решения нужны для всех, а не для одной группы.</p></div>
+          <div><h4>Что нужно</h4><p>Чувство единства, смысл больше себя, возможность передать опыт и служить жизни, тишина и благодарность.</p></div>
+          <div class="os-wide"><h4>Что ценно</h4><p class="os-vals"><span>единство</span><span>служение</span><span>мудрость</span><span>бережность к миру</span><span>наследие</span></p></div>
+          <div><h4>Сила уровня</h4><p>Широкий взгляд и мудрость. Умение соединять то, что кажется несовместимым: «здесь» и «там», прошлое и будущее.</p></div>
+          <div><h4>Когда его слишком много</h4><p>Уход в высокое и далёкое, когда обычная жизнь и близкие остаются в стороне.</p></div>
+          <div class="os-wide"><h4>Как это звучит у моих клиенток</h4><p class="os-voice"><q>Я между двумя мирами</q><q>Хочу, чтобы после меня что-то осталось</q></p></div>
+        </div>
+        <p class="os-next"><b>Что открывает путь дальше.</b> Грейвз считал, что спираль не заканчивается: за восьмым уровнем придёт девятый (Бек и Кован дали ему коралловый цвет), а за ним следующие. Поэтому главная книга о его работе и называется «Бесконечный поиск».</p>
+        <div class="os-in"><h4>Эта ступень в моём методе</h4><div class="os-in-l"><a href="../put/#stupen-8"><small>Жизнь в новой стране</small><b>Здесь и там — одна жизнь →</b></a><a href="../delo/#stupen-8"><small>Своё дело</small><b>Дело больше меня →</b></a><a href="../otnosheniya/#stupen-8"><small>Отношения</small><b>Любовь больше нас →</b></a></div></div>
+      </div>
+    </article></div>
+  </section>
+
+  <section id="perehod" class="os-band" aria-labelledby="h-pe">
+    <div class="sec-head"><div class="eyebrow">Как происходит переход</div><h2 id="h-pe">Как человек переходит на следующий уровень</h2><p>Новый уровень нельзя выучить или назначить себе. Он вырастает сам, когда старые способы перестают справляться с новыми условиями. Грейвз, а потом Бек и Кован описали, что для этого нужно и через что человек проходит.</p></div>
+
+    <h3 class="os-h3">Шесть условий перемены</h3>
+    <ol class="os-cond">
+      <li><b>Открытость</b><p>Готовность меняться. Бек и Кован различали три состояния. Открытое мышление готово к новому, когда меняются условия. Застрявшее держит барьер, но если его убрать, движение возможно. Закрытое сейчас не может меняться, и давить на него бесполезно.</p></li>
+      <li><b>Решённые задачи</b><p>Нижние вопросы в основном решены, и силы освобождаются. Пока нет сна и крыши, на смысл жизни их не хватит. Это не лень, а порядок.</p></li>
+      <li><b>Несоответствие</b><p>Появляется что-то, что старым способом не решить: «так больше не работает», «мне тесно». Чувство неприятное, но именно оно двигает дальше.</p></li>
+      <li><b>Названный барьер</b><p>То, что держит, увидено и названо: страх, обстоятельства, люди рядом, убеждение «мне нельзя». Названный барьер можно обойти или убрать.</p></li>
+      <li><b>Понимание</b><p>Видно, почему старое не работает и куда можно пойти. Появляется другой вариант, которого раньше не было видно.</p></li>
+      <li><b>Поддержка</b><p>Рядом есть люди, ритм и маленькие шаги, пока новое ещё непривычно. Без поддержки легко вернуться к старому.</p></li>
+    </ol>
+
+    <h3 class="os-h3">Пять состояний на пути</h3>
+    <ol class="os-states">
+      <li><small>альфа</small><b>Равновесие</b><p>Жизнь и то, что тебе нужно, совпадают. Всё работает.</p><em>в методе — «Стою твёрдо»</em></li>
+      <li><small>бета</small><b>Беспокойство</b><p>Что-то не так, но непонятно что. Пробуешь старое, только сильнее.</p><em>начало «Тянусь выше»</em></li>
+      <li class="hot"><small>гамма</small><b>Тупик</b><p>Уже ясно, что не так, но кажется, что выхода нет. Злость, бессилие, «хочу, но не делаю».</p><em>«Тянусь выше» — здесь приходят к коучу</em></li>
+      <li><small>дельта</small><b>Прорыв</b><p>Барьер назван, появляется путь, становится легко, много сил.</p><em>«Тянусь выше»</em></li>
+      <li><small>новая альфа</small><b>Новое равновесие</b><p>Новый способ закрепляется и становится своим, уже на витке выше.</p><em>«Ставлю ногу» на следующей ступени</em></li>
+    </ol>
+    <p class="os-note">Тупик — не провал. Это знак, что старое уже тесно, а новое ещё не открылось. Здесь особенно нужна поддержка: назвать барьер, увидеть выход и сделать первый шаг.</p>
+
+    <h3 class="os-h3">Два вида перемен</h3>
+    <div class="os-two">
+      <div><b>Внутри своей ступени</b><p>Настроить, улучшить, расширить то, что уже есть: новый навык, другой порядок дня, ещё один клиент. Бек и Кован называли это переменой первого порядка.</p></div>
+      <div><b>На новую ступень</b><p>Меняется сам способ смотреть на жизнь: что важно, ради чего и как. Это перемена второго порядка. Она занимает время, и её не ускорить давлением.</p></div>
+    </div>
+
+    <h3 class="os-h3">Что ещё важно знать о переходе</h3>
+    <ul class="os-ul">
+      <li>Перешагнуть нельзя. Каждый уровень вырастает из предыдущего и опирается на него. Пройти можно быстрее, пропустить нельзя.</li>
+      <li>Прежнее не исчезает. Новый уровень не выбрасывает старые, а ведёт их за собой. Поэтому в трудную минуту человек снова на них опирается.</li>
+      <li>Вниз — тоже движение. Переезд, болезнь, развод, потеря работы меняют условия, и человек на время возвращается к более ранним способам. Это способ выстоять. Когда условия выравниваются, путь вверх открывается снова.</li>
+      <li>У каждого уровня есть вход, расцвет и выход. Сначала уровень только осваивается, потом работает в полную силу, а потом становится тесным. Из этого выросли три шага внутри каждой ступени моего метода.</li>
+      <li>Перемена идёт не по прямой, а волной: равновесие, беспокойство, тупик, прорыв и новое равновесие, уже на витке выше.</li>
+    </ul>
+  </section>
+
+  <section id="metod" aria-labelledby="h-me">
+    <div class="sec-head"><div class="eyebrow">Спираль в моём методе</div><h2 id="h-me">Как спираль живёт в методе «Ступени»</h2></div>
+    <div class="os-prose">
+      <p>Метод «Ступени. Твой путь в новой стране» — моя авторская адаптация спиральной динамики для жизни после переезда, своего дела и отношений. Из модели я взяла карту восьми уровней и то, как человек переходит с уровня на уровень. А ступени назвала простыми словами — о том, что человеку нужно. Образ метода — кинцуги, японское искусство чинить разбитую чашу золотом: трещины не прячут, они становятся историей.</p>
+    </div>
+    <div class="os-steps">
+      <div><small>вход</small><b>Ставлю ногу</b><p>«Я только учусь, всё требует сил». Нужны информация и опора.</p></div>
+      <div><small>расцвет · альфа</small><b>Стою твёрдо</b><p>«Это у меня получается». Ступень работает, силы освобождаются.</p></div>
+      <div><small>выход · бета, гамма, дельта</small><b>Тянусь выше</b><p>«Мне этого уже мало». Беспокойство, тупик и прорыв. Здесь работает коучинг.</p></div>
+    </div>
+    <div class="os-tblw"><table class="os-tbl">
+      <caption>Один уровень — три ступени на трёх путях. Нажми на ступень, чтобы открыть её.</caption>
+      <thead><tr><th scope="col">Уровень</th><th scope="col">Жизнь в новой стране</th><th scope="col">Своё дело</th><th scope="col">Отношения</th></tr></thead>
+      <tbody><tr style="--c:var(--l1)"><th scope="row"><i></i><span>1 · Выжить и согреться<small>бежевый</small></span></th><td><a href="../put/#stupen-1">Разбитая чаша</a></td><td><a href="../delo/#stupen-1">С нуля</a></td><td><a href="../otnosheniya/#stupen-1">Рядом безопасно</a></td></tr><tr style="--c:var(--l2)"><th scope="row"><i></i><span>2 · Быть среди своих<small>фиолетовый</small></span></th><td><a href="../put/#stupen-2">Свой круг</a></td><td><a href="../delo/#stupen-2">Круг доверия</a></td><td><a href="../otnosheniya/#stupen-2">Наш дом</a></td></tr><tr style="--c:var(--l3)"><th scope="row"><i></i><span>3 · Своя сила<small>красный</small></span></th><td><a href="../put/#stupen-3">Я могу сама</a></td><td><a href="../delo/#stupen-3">Заявляю о себе</a></td><td><a href="../otnosheniya/#stupen-3">Мой голос в паре</a></td></tr><tr style="--c:var(--l4)"><th scope="row"><i></i><span>4 · Порядок и смысл<small>синий</small></span></th><td><a href="../put/#stupen-4">Понятные правила</a></td><td><a href="../delo/#stupen-4">Порядок в деле</a></td><td><a href="../otnosheniya/#stupen-4">Наши договорённости</a></td></tr><tr style="--c:var(--l5)"><th scope="row"><i></i><span>5 · Свой успех<small>оранжевый</small></span></th><td><a href="../put/#stupen-5">Своё дело</a></td><td><a href="../delo/#stupen-5">Дело растёт</a></td><td><a href="../otnosheniya/#stupen-5">Растём оба</a></td></tr><tr style="--c:var(--l6)"><th scope="row"><i></i><span>6 · Люди и близость<small>зелёный</small></span></th><td><a href="../put/#stupen-6">Мой вклад</a></td><td><a href="../delo/#stupen-6">Команда и смысл</a></td><td><a href="../otnosheniya/#stupen-6">Слышим друг друга</a></td></tr><tr style="--c:var(--l7)"><th scope="row"><i></i><span>7 · Жизнь целиком<small>жёлтый</small></span></th><td><a href="../put/#stupen-7">Моя жизнь целиком</a></td><td><a href="../delo/#stupen-7">Система и свобода</a></td><td><a href="../otnosheniya/#stupen-7">Вместе по выбору</a></td></tr><tr style="--c:var(--l8)"><th scope="row"><i></i><span>8 · Одно целое<small>бирюзовый</small></span></th><td><a href="../put/#stupen-8">Здесь и там — одна жизнь</a></td><td><a href="../delo/#stupen-8">Дело больше меня</a></td><td><a href="../otnosheniya/#stupen-8">Любовь больше нас</a></td></tr></tbody>
+    </table></div>
+    <div class="os-cta">
+      <div><b>Где ты на своей спирали сейчас?</b><p>Тест «Ступени устойчивости» покажет, какие ступени держат тебя, а какие поскрипывают. А на знакомстве мы вместе посмотрим, что поможет сделать следующий шаг.</p></div>
+      <div class="hero-actions"><a class="btn" href="../stupeni/">Пройти тест</a><a class="btn ghost" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">Знакомство</a></div>
+    </div>
+  </section>
+
+  <section id="chestno" class="os-band" aria-labelledby="h-ch">
+    <div class="sec-head"><div class="eyebrow">Честно о модели</div><h2 id="h-ch">Карта, а не диагноз</h2></div>
+    <ul class="os-ul">
+      <li>Спиральную динамику широко используют в коучинге, консультировании и работе с организациями. Но это не общепризнанная научная теория: в академической психологии её проверяли мало, и у неё есть критики.</li>
+      <li>Исходные данные Грейвз собрал в основном у своих студентов, при жизни не опубликовал теорию целиком, а первичные записи не сохранились. Первые два уровня он описал по трудам антропологов.</li>
+      <li>Уровни выше восьмого никто не исследовал. Грейвз только предсказал девятый по логике спирали, Бек и Кован дали ему коралловый цвет, но описывать не стали. Всё, что пишут о нём и о следующих уровнях, — догадки, а не результат исследований. Уровни выше бирюзового у философа Кена Уилбера, со своими цветами, — его собственная карта, во многом из духовных традиций, а не продолжение работы Грейвза.</li>
+      <li>Цвета — удобный язык, а не ярлык. Нельзя сказать «она синяя» или «он красный»: у человека в разных сферах разные уровни, и сам он больше любой модели.</li>
+      <li>Я использую модель как карту для самопознания и коучинга, а не как психологическую диагностику. Ни тест, ни ступени не ставят оценок и не заменяют помощь врача или психотерапевта.</li>
+    </ul>
+  </section>
+
+  <section id="istochniki" aria-labelledby="h-is">
+    <div class="sec-head"><div class="eyebrow">Источники</div><h2 id="h-is">Что почитать</h2></div>
+    <ul class="os-src">
+      <li>Clare W. Graves. <i>Levels of Existence: An Open System Theory of Values.</i> Journal of Humanistic Psychology, 1970, 10 (2).</li>
+      <li>Clare W. Graves. <i>Human Nature Prepares for a Momentous Leap.</i> The Futurist, апрель 1974.</li>
+      <li>Clare W. Graves. <i>Levels of Human Existence</i> (семинар 1971 года). Ред. William R. Lee, Christopher C. Cowan, Natasha Todorovic. ECLET Publishing, 2002.</li>
+      <li>Clare W. Graves. <i>The Never Ending Quest.</i> Ред. Christopher C. Cowan, Natasha Todorovic. ECLET Publishing, 2005.</li>
+      <li>Don E. Beck, Christopher C. Cowan. <i>Spiral Dynamics: Mastering Values, Leadership, and Change.</i> Blackwell, 1996.</li>
+      <li><a href="https://www.clarewgraves.com/background_content/CWG_bio_data.html" target="_blank" rel="noopener">Биография Клэра Грейвза</a> на сайте его архива.</li>
+      <li>Обзоры в Википедии (англ.): <a href="https://en.wikipedia.org/wiki/Spiral_Dynamics" target="_blank" rel="noopener">Spiral Dynamics</a>, <a href="https://en.wikipedia.org/wiki/Graves%27s_emergent_cyclical_levels_of_existence" target="_blank" rel="noopener">теория Грейвза</a>, <a href="https://en.wikipedia.org/wiki/Don_Edward_Beck" target="_blank" rel="noopener">Дон Бек</a> — там же критика модели.</li>
+    </ul>
+  </section>
+
+  <div class="share-slot" data-url="https://voznesenskaya.ch/osnova/" data-lead="Знаешь кого-то, кому интересно, как растут люди? Перешли страницу, сообщение уже готово." data-text="Привет! Тут понятно и подробно о спиральной динамике: восемь уровней, что важно человеку на каждом и как он переходит на следующий. Мне было интересно, посмотри."></div>
+
+  <footer>
+    <span>© 2026 Ирина Вознесенская · коуч, ментор, автор метода «Ступени. Твой путь в новой стране»</span>
+    <span><a href="../">Главная</a> · <a href="../put/">Твой путь</a> · <a href="../testy/">Все тесты</a> · <a href="../usloviya/">Условия работы</a> · <a href="../privacy/">Политика конфиденциальности</a> · <a href="../impressum/#otvetstvennost">Ограничение ответственности</a> · <a href="../impressum/">Выходные данные</a></span>
+  </footer>
+</main>
+
+<script src="../assets/share.js" defer></script>
+<script src="/assets/samesite.js"></script>
+</body>
+</html>

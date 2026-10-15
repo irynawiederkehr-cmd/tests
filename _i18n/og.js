@@ -36,6 +36,15 @@ const CARDS = [
     uk: ['Умови <em>роботи зі мною</em>', 'Як записатися, коли платити, як перенести зустріч і що буде, якщо ти вирішиш зупинитися.'],
     de: ['Bedingungen der <em>Zusammenarbeit</em>', 'Wie du einen Termin vereinbarst, wann du bezahlst, wie du verschiebst und was passiert, wenn du aufhören möchtest.'],
     en: ['Terms of <em>working with me</em>', 'How to book, when to pay, how to reschedule and what happens if you decide to stop.'] },
+  { out: 'delo/og-image',
+    art: () => fullBowl(),
+    ru: ['Своё дело — <em>с&nbsp;нуля и&nbsp;до&nbsp;вершины</em>', 'Восемь ступеней, по которым растёт своё дело в новой стране. Посмотри, где ты сейчас и что поможет дальше.'] },   // КОПИЯ 13.10.2026; uk/de/en — после «переводи»
+  { out: 'osnova/og-image',
+    art: () => koster(),
+    ru: ['Спиральная динамика&nbsp;— <em>основа метода</em>', 'Кто её создал, что важно человеку на каждом из восьми уровней и как он переходит на следующий.'] },
+  { out: 'otnosheniya/og-image',
+    art: () => twoBowls(),
+    ru: ['Мужчина и&nbsp;женщина&nbsp;— <em>ступень за&nbsp;ступенью</em>', 'Восемь ступеней, по которым растут отношения: от «рядом безопасно» до любви, которая больше вас двоих.'] },   // КОПИЯ 14.10.2026; uk/de/en — после «переводи»
 ];
 // эдельвейс из логотипа (favicon.svg)
 const OUT = 'M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z', INN = 'M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z';
@@ -65,6 +74,15 @@ function steps() {   // главная: акварель «Ступени», б�
 }
 function bowls() {   // «Путь»: акварель «Золотые швы», белая бумага сливается с фоном (multiply)
   return `<image href="file://${ROOT}/put/img/07-zolotye-shvy.jpg" x="650" y="-150" width="560" height="750" preserveAspectRatio="xMidYMid slice" style="mix-blend-mode:multiply"/>`;
+}
+function fullBowl() {   // «Своё дело»: акварель «Полная чаша», белая бумага сливается с фоном (multiply)
+  return `<image href="file://${ROOT}/put/img/05-polnaya-chasha.jpg" x="650" y="-150" width="560" height="750" preserveAspectRatio="xMidYMid slice" style="mix-blend-mode:multiply"/>`;
+}
+function koster() {   // «Основа метода»: акварель уровня 1 «Огонь, который греет» (карты уровней, 15.10.2026), белая бумага сливается с фоном (multiply)
+  return `<image href="file://${ROOT}/osnova/img/01-koster.jpg" x="650" y="-120" width="560" height="750" preserveAspectRatio="xMidYMid slice" style="mix-blend-mode:multiply"/>`;
+}
+function twoBowls() {   // «Отношения»: акварель «Свои чаши» (пока нет своей колоды), белая бумага сливается с фоном (multiply)
+  return `<image href="file://${ROOT}/put/img/02-svoi-chashi.jpg" x="650" y="-150" width="560" height="750" preserveAspectRatio="xMidYMid slice" style="mix-blend-mode:multiply"/>`;
 }
 function trail() {   // «Путь»: тропа из восьми стоянок, восьмая — эдельвейс
   const pts = [[650, 600], [745, 560], [870, 575], [985, 520], [930, 450], [800, 430], [840, 360], [960, 330], [1040, 250]];
@@ -100,7 +118,7 @@ function check() {
   const b = await chromium.launch(exe ? { executablePath: exe } : {});
   const pg = await (await b.newContext({ viewport: { width: 1200, height: 630 } })).newPage();
   const tmp = path.join(ROOT, '_i18n', '.og_tmp.html');
-  for (const c of CARDS.filter(c => !process.argv[2] || c.out === (process.argv[2] === 'put' ? 'put/og-image' : process.argv[2]))) for (const l of ['ru', 'uk', 'de', 'en']) {
+  for (const c of CARDS.filter(c => !process.argv[2] || c.out === (process.argv[2] === 'put' ? 'put/og-image' : process.argv[2]))) for (const l of ['ru', 'uk', 'de', 'en'].filter(l => c[l])) {
     const out = c.out + (l === 'ru' ? '.jpg' : `.${l}.jpg`);
     fs.writeFileSync(tmp, html(EB[l], c[l][0], c[l][1], c.art || art)); await pg.goto('file://' + tmp); await pg.evaluate(() => document.fonts.ready); await pg.waitForTimeout(300);
     await pg.screenshot({ path: path.join(ROOT, out), type: 'jpeg', quality: 88 }); console.log('ok', out);
