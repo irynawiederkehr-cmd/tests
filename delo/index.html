@@ -299,7 +299,7 @@ footer a{color:var(--muted)}
 .p-hero img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:900/1205}
 /* картинки чаш (акварель на белой бумаге): белое сливается с фоном страницы */
 .bowl{display:block}.bowl img{display:block;width:100%;height:auto;mix-blend-mode:multiply}
-.card .bowl{margin:-8px -6px 0;aspect-ratio:4/3;overflow:hidden}.card .bowl img{height:100%;object-fit:cover;object-position:50% 78%}  /* чаша — главное на картинке: показываем её целиком (10.10.2026) */
+.card .bowl{margin:-8px -6px 0;aspect-ratio:4/3;overflow:hidden}.card .bowl img{height:100%;object-fit:cover;object-position:50% var(--pos,78%)}  /* чаша — главное на картинке: показываем её целиком (10.10.2026) */
 .qm-pic{flex:none;width:clamp(96px,16vw,150px)}
 @media (max-width:640px){.qm-pic{display:none}}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bowl img{mix-blend-mode:normal;border-radius:16px;opacity:.92}}
@@ -322,6 +322,8 @@ footer a{color:var(--muted)}
 .stop .node{grid-column:2;grid-row:1;justify-self:center;position:relative;z-index:1}
 .node{width:84px;height:84px;border-radius:50%;background:var(--paper);display:grid;place-items:center;border:2.5px solid var(--lc);box-shadow:0 6px 16px -8px color-mix(in srgb,var(--lc) 60%,transparent)}
 .node i{position:absolute;top:-6px;right:-6px;font-style:normal;width:30px;height:30px;border-radius:50%;background:var(--lc);color:#fff;font-weight:700;font-size:.85rem;display:grid;place-items:center}
+/* стоянки тропы — акварель карты в золотом ободке цвета ступени, номер внутри (15.10.2026, Ирина: «для вот таких стоянок давай сделаем в этом же стиле с золотым ободком по цветам стоянок и с номерами внутри») */
+.node.pic{padding:4px;border:0;background:conic-gradient(from 200deg,#C9971F,#F3D98A,var(--lc),#B07A12,#F3D98A,#C9971F)}.node.pic b{display:block;width:100%;height:100%;border-radius:50%;background:#fff var(--img) var(--bx) var(--by)/var(--bz) auto no-repeat;box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--lc) 55%,#fff)}.node.pic i{top:auto;right:auto;left:50%;bottom:2px;transform:translateX(-50%);width:auto;min-width:24px;height:22px;padding:0 6px;border-radius:999px;font-size:.78rem;line-height:22px;box-shadow:0 0 0 2px #E9C766}@media (max-width:640px){.node.pic{padding:3px}.node.pic i{min-width:19px;height:19px;padding:0 4px;font-size:.68rem;line-height:19px;top:auto;right:auto;bottom:0}}
 .between{min-height:110px}
 .trail-start,.trail-end,#trail{position:relative;z-index:1}
 .road-svg{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;overflow:visible}
@@ -441,7 +443,7 @@ footer a{color:var(--muted)}
       <p class="lead">Своё дело в новой стране почти всегда начинается с нуля. Прежний диплом здесь признают не сразу, клиентов пока нет, твоего имени никто не знает, а деньги на жизнь нужны уже сейчас. И всё равно внутри живёт мысль: «а что, если своё?» Дело растёт так же, как жизнь после переезда, — снизу вверх, ступень за ступенью. Как чаша в японском искусстве кинцуги: прежний опыт не пропадает, он становится золотыми швами твоего нового дела.</p>
       <p class="lead">Вот как обычно растёт своё дело. Восемь ступеней — от первой мысли до дела, которое живёт и помогает другим. На каждой ступени свои трудности, свои вопросы и то, что помогает идти дальше. Нажми на ступень, чтобы узнать о ней больше.</p>
     </div>
-    <picture class="bowl hero-bowl"><source srcset="/put/img/05-polnaya-chasha.webp" type="image/webp"><img src="/put/img/05-polnaya-chasha.jpg" width="900" height="1205" alt="Акварель: светлая чаша с золотыми швами, полная тёплого чая, на нежно-персиковом фоне"></picture>
+    <picture class="bowl hero-bowl"><source srcset="/delo/img/05-delo-rastet.webp" type="image/webp"><img src="/delo/img/05-delo-rastet.jpg" width="900" height="1205" alt="Акварель: ветка с тремя золотыми яблоками на нежно-персиковом фоне"></picture>
   </section>
 
   <section id="triBand"></section>
@@ -576,9 +578,49 @@ const ICONS_CHASHA = (() => {
   };
 })();
 Object.assign(ICONS, ICONS_CHASHA);
-const ICN = ['razbita', 'svoi', 'sobirayu', 'ryad', 'polnaya', 'krug', 'shvy', 'zoloto'];
-const IMG = ['01-razbitaya-chasha', '02-svoi-chashi', '03-sobirayu-sebya', '04-v-odnom-ryadu', '05-polnaya-chasha', '06-chasha-po-krugu', '07-zolotye-shvy', '08-zoloto-dlya-novoj'];
-const bowl = (k, cls) => `<picture class="bowl${cls ? ' ' + cls : ''}"><source srcset="/put/img/${IMG[k]}.webp" type="image/webp"><img src="/put/img/${IMG[k]}.jpg" width="900" height="1205" loading="lazy" alt=""></picture>`;
+/* значки карт пути «Своё дело» (15.10.2026, как у «Отношений»): глина на круге, корзинка яблок, фонарь над дверью, инструменты по местам, ветка с яблоками, лодка с гребцами, мельничное колесо, маяк. Сетка 24×24, золото — #C9971F */
+const ICONS_DELO = (() => {
+  const G = '#C9971F';
+  return {
+    d1: (c, f, s) => `<path d="M3 17.6h18" fill="none" stroke="${c}" ${s}/><path d="M4.6 17.6c0 1.6 3.3 2.6 7.4 2.6s7.4-1 7.4-2.6" fill="${f}" stroke="${c}" ${s}/>`
+      + `<path d="M8.6 17.4c-.4-2.8-.2-5.4.6-7.4h5.6c.8 2 1 4.6.6 7.4z" fill="${f}" stroke="${c}" ${s}/><path d="M12 10.4v6.6" fill="none" stroke="${G}" stroke-width="1.6" stroke-linecap="round"/>`
+      + `<path d="M5.4 11.6c1.2-.4 2.4.1 3.3 1.2M18.6 11.6c-1.2-.4-2.4.1-3.3 1.2" fill="none" stroke="${c}" ${s}/>`,
+    d2: (c, f, s) => `<circle cx="9" cy="9.4" r="2.2" fill="${f}" stroke="${c}" ${s}/><circle cx="13.4" cy="8.6" r="2.2" fill="${f}" stroke="${c}" ${s}/><circle cx="16" cy="10.6" r="1.9" fill="${f}" stroke="${c}" ${s}/>`
+      + `<path d="M9 7.2V5.8M13.4 6.4V5M16 8.7V7.6" fill="none" stroke="${G}" stroke-width="1.5" stroke-linecap="round"/>`
+      + `<path d="M5.8 11.4h12.4l-1.2 6.2c-.2.8-.8 1.2-1.6 1.2H8.6c-.8 0-1.4-.4-1.6-1.2z" fill="${f}" stroke="${c}" ${s}/><path d="M7 14.2h10M7.6 16.6h8.8" fill="none" stroke="${c}" stroke-width="1" stroke-linecap="round"/>`
+      + `<path d="M1.6 16.6l4.8-2M22.4 16.6l-4.8-2" fill="none" stroke="${c}" ${s}/>`,
+    d3: (c, f, s) => `<path d="M5.4 21V10.6h9.2V21" fill="${f}" stroke="${c}" ${s}/><path d="M7.6 21v-8.2h4.8V21" fill="${G}" fill-opacity=".35" stroke="${c}" ${s}/><path d="M12.4 12.8l3.6 1.6V21" fill="${f}" stroke="${c}" ${s}/>`
+      + `<path d="M3.6 21h16.8M10 10.6V8.4h7.6V10" fill="none" stroke="${c}" ${s}/><path d="M16.6 10h2v3.2h-2z" fill="${G}" stroke="${c}" stroke-width="1.1" stroke-linejoin="round"/>`
+      + `<path d="M17.6 4.4v1.2M20.6 6l-.8.8M14.6 6l.8.8" fill="none" stroke="${G}" stroke-width="1.4" stroke-linecap="round"/>`,
+    d4: (c, f, s) => `<rect x="3.4" y="3.6" width="17.2" height="8.6" rx="1" fill="${f}" stroke="${c}" ${s}/>`
+      + `<circle cx="6.4" cy="5.6" r=".8" fill="${G}"/><circle cx="10" cy="5.6" r=".8" fill="${G}"/><circle cx="14" cy="5.6" r=".8" fill="${G}"/><circle cx="17.6" cy="5.6" r=".8" fill="${G}"/>`
+      + `<path d="M6.4 6.4v4.6M5.2 6.6h2.4M10 6.4v4.6M14 6.4v4M17.6 6.4l-1 4.2M17.6 6.4l1 4.2" fill="none" stroke="${c}" ${s}/>`
+      + `<path d="M2.6 14.6h18.8v2H2.6zM4.4 16.6v4.2M19.6 16.6v4.2" fill="${f}" stroke="${c}" ${s}/>`,
+    d5: (c, f, s) => `<path d="M3 4.6c3.6.4 6.6 1.8 9 4.2 1.6 1.6 2.8 3.4 3.6 5.4" fill="none" stroke="${c}" stroke-width="1.9" stroke-linecap="round"/>`
+      + `<path d="M5.6 4.2c.8-1.6 2.6-2.2 4.2-1.6-.8 1.6-2.6 2.2-4.2 1.6z" fill="${f}" stroke="${c}" ${s}/>`
+      + `<path d="M8 7v3.4M12.4 9.6v4.2M15.6 14.2v.6" fill="none" stroke="${c}" ${s}/>`
+      + `<circle cx="8" cy="13" r="2.8" fill="${G}" stroke="${c}" ${s}/><circle cx="12.4" cy="16.8" r="3" fill="${G}" stroke="${c}" ${s}/><circle cx="17.6" cy="17.4" r="2.6" fill="${G}" stroke="${c}" ${s}/>`,
+    d6: (c, f, s) => `<path d="M2.4 14.2h19.2c-.8 2-2.6 3-5 3H7.4c-2.4 0-4.2-1-5-3z" fill="${f}" stroke="${c}" ${s}/>`
+      + `<circle cx="7" cy="8.4" r="1.6" fill="${f}" stroke="${c}" ${s}/><circle cx="12" cy="8.4" r="1.6" fill="${f}" stroke="${c}" ${s}/><circle cx="17" cy="8.4" r="1.6" fill="${f}" stroke="${c}" ${s}/>`
+      + `<path d="M7 10v4.2M12 10v4.2M17 10v4.2" fill="none" stroke="${c}" stroke-width="2.4" stroke-linecap="round"/>`
+      + `<path d="M8.2 11.6L4.4 20.4M13.2 11.6l-3.8 8.8M18.2 11.6l-3.8 8.8" fill="none" stroke="${c}" ${s}/>`
+      + `<path d="M2.6 21.4c.8-.5 1.6-.5 2.4 0M7.6 21.4c.8-.5 1.6-.5 2.4 0M12.6 21.4c.8-.5 1.6-.5 2.4 0" fill="none" stroke="${G}" stroke-width="1.6" stroke-linecap="round"/>`,
+    d7: (c, f, s) => `<circle cx="10.4" cy="11.6" r="7.4" fill="${f}" stroke="${c}" ${s}/><circle cx="10.4" cy="11.6" r="1.8" fill="${f}" stroke="${c}" ${s}/>`
+      + `<path d="M10.4 4.2v15M3 11.6h14.8M5.2 6.4l10.4 10.4M15.6 6.4L5.2 16.8" fill="none" stroke="${c}" stroke-width="1.1" stroke-linecap="round"/>`
+      + `<path d="M17.4 8.4c1.4 1.6 2.2 3.8 2 6.4-.1 2.4-.8 4.4-.4 6.6M20.4 9.6c.8 1.4 1.4 3.6 1.2 5.6" fill="none" stroke="${G}" stroke-width="1.6" stroke-linecap="round"/>`
+      + `<path d="M2 21.2c2-.8 4-.8 6 0s4 .8 6 0" fill="none" stroke="${c}" ${s}/>`,
+    d8: (c, f, s) => `<path d="M6.4 20.2l1.6-11.4h4l1.6 11.4z" fill="${f}" stroke="${c}" ${s}/><path d="M7.4 6.2h5.2v2.6H7.4z" fill="${G}" stroke="${c}" stroke-width="1.2" stroke-linejoin="round"/><path d="M7 6.2L10 3.6l3 2.6" fill="${f}" stroke="${c}" ${s}/>`
+      + `<path d="M12.8 6.4l9.4-2.2v6l-9.4-2.4" fill="${G}" fill-opacity=".45" stroke="none"/><path d="M7.4 13.4l5.2-.6M7 17l6-.6" fill="none" stroke="${c}" stroke-width="1" stroke-linecap="round"/>`
+      + `<path d="M2 20.2h20" fill="none" stroke="${c}" ${s}/><path d="M17 17.8h4l-.8 1.4h-2.4zM19 17.8v-2.6l1.4 1.8" fill="${f}" stroke="${c}" stroke-width="1.1" stroke-linejoin="round"/>`
+  };
+})();
+Object.assign(ICONS, ICONS_DELO);
+/* Карты пути «Своё дело» (15.10.2026, Ирина: «сейчас давай разработаем для пути свое дело» — символы ступеней без чаш, как у «Отношений») */
+const ICN = ['d1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8'];
+const IMG = ['01-s-nulya', '02-krug-doveriya', '03-zayavlyayu', '04-poryadok', '05-delo-rastet', '06-komanda', '07-sistema-i-svoboda', '08-delo-bolshe-menya'];
+const NODE = [[210, 48, 86], [231, 43, 83], [239, 49, 81], [195, 49, 84], [116, 55, 86], [227, 46, 91], [120, 24, 90], [174, 42, 93]];   // стоянка тропы: увеличение, x, y акварели в круге
+const POS = [78, 78, 78, 78, 88, 78, 88, 78];   // окно кадра в карточке тропы: сюжет целиком
+const bowl = (k, cls) => `<picture class="bowl${cls ? ' ' + cls : ''}" style="--pos:${POS[k]}%"><source srcset="/delo/img/${IMG[k]}.webp" type="image/webp"><img src="/delo/img/${IMG[k]}.jpg" width="900" height="1205" loading="lazy" alt=""></picture>`;
 
 const STEPS = [
  {
@@ -1040,7 +1082,7 @@ const WIG = ['M70 0 C 70 40, 120 50, 110 70 S 70 90, 70 110', 'M70 0 C 70 40, 20
 document.getElementById('trail').innerHTML = STEPS.map((s, k) => {
   const side = k % 2 ? 'r' : 'l';
   const stop = `<div class="stop ${side}" style="${vars(k)}">
-    <span class="node">${ico(ICN[k], COL[k][0], COL[k][1], 36)}<i>${k + 1}</i></span>
+    <span class="node pic" style="--img:url(/delo/img/${IMG[k]}.webp);--bz:${NODE[k][0]}%;--bx:${NODE[k][1]}%;--by:${NODE[k][2]}%"><b></b><i>${k + 1}</i></span>
     <button class="card" type="button" data-k="${k}" aria-haspopup="dialog">
       ${bowl(k)}
       <span class="sub">${k + 1} · ${esc(s.sub)}</span><h3>${esc(s.name)}</h3><span class="teaser">${esc(s.teaser)}</span>
