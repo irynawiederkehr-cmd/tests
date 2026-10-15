@@ -49,11 +49,13 @@
       otn: ['тесты «Быть рядом и быть собой» и «Роза любви»', '../blizost/', 'бесплатно'] }
   ];
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
-  var pic = function (n, cls) { return '<picture class="' + cls + '"><source srcset="/put/img/' + n + '.webp" type="image/webp"><img src="/put/img/' + n + '.jpg" width="900" height="1205" loading="lazy" alt=""></picture>'; };
+  var pic = function (n, cls, dir, eager) { dir = dir || '/put/img/'; return '<picture class="' + cls + '"><source srcset="' + dir + n + '.webp" type="image/webp"><img src="' + dir + n + '.jpg" width="900" height="1205"' + (eager ? '' : ' loading="lazy"') + ' alt=""></picture>'; };
   var CSS = '.tri-band,.tri-tools{margin-top:34px}'
-    + '.tri-tabs{display:flex;gap:8px;padding-top:18px;margin-bottom:-6px}.tri-tabs a{flex:1 1 0;min-width:0;display:flex;align-items:center;justify-content:center;gap:8px;text-align:center;padding:10px 12px;border-radius:12px;border:1.5px solid color-mix(in srgb,var(--brown) 25%,transparent);background:var(--paper);color:var(--ink);font:700 .9rem/1.25 var(--body,system-ui);text-decoration:none;-webkit-tap-highlight-color:transparent}'
-    + '.tri-tabs a:hover{border-color:var(--brown)}.tri-tabs a[aria-current]{background:var(--brown);border-color:var(--brown);color:var(--paper)}'
-    + '@media (max-width:640px){.tri-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.tri-tabs a{font-size:.84rem;padding:9px 8px}}'
+    + '@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tri-bowl img{mix-blend-mode:normal;opacity:.92}}:root[data-theme="dark"] .tri-bowl img{mix-blend-mode:normal;opacity:.92}'
+    + '.tri-top{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding-top:18px}'
+    + '.tri-top .tri-card{grid-template-columns:72px minmax(0,1fr);padding:14px;-webkit-tap-highlight-color:transparent}.tri-top .tri-bowl{width:72px}.tri-top .tri-t b{font-size:1.3rem}'
+    + '@media (max-width:640px){.tri-top{gap:8px;padding-top:14px}.tri-top .tri-card{grid-template-columns:42px minmax(0,1fr);align-items:center;gap:0 10px;padding:9px 10px;border-radius:14px}.tri-top .tri-bowl{width:42px;grid-row:auto;border-radius:8px}'
+    + '.tri-top .tri-t span,.tri-top .tri-go{display:none}.tri-top .tri-t small{font-size:.62rem;letter-spacing:.08em}.tri-top .tri-t b{font-size:1rem;line-height:1.15}}'
     + '.tri-head h2{font-size:clamp(1.5rem,3.2vw,2rem)}.tri-head p{color:var(--muted);max-width:66ch;margin-top:6px}.tri-osn{display:inline-block;margin-top:8px;font-weight:700;font-size:.92rem;color:var(--brown);text-underline-offset:4px}'
     + '.tri-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}'
     + '.tri-card{display:grid;grid-template-columns:62px minmax(0,1fr);gap:4px 14px;align-items:start;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:12px 14px;text-decoration:none;color:var(--ink);transition:border-color .15s}'
@@ -79,13 +81,7 @@
   function band() {
     var el = document.getElementById('triBand'); if (!el) return;
     el.className = 'tri-band'; el.setAttribute('aria-labelledby', 'tri-h');
-    el.innerHTML = '<div class="tri-head"><h2 id="tri-h">Три пути — один метод</h2><p>Жизнь в новой стране, своё дело и отношения растут по одним и тем же восьми ступеням — снизу вверх, от опоры к целому. На каждом пути свои трудности, а инструменты одни. Выбери, о чём ты сейчас.</p><a class="tri-osn" href="../osnova/">На чём стоит метод — спиральная динамика →</a></div>'
-      + '<div class="tri-cards">' + P.map(function (p, i) {
-        var cur = p.k === here, tag = cur ? 'div' : 'a';
-        return '<' + tag + ' class="tri-card' + (cur ? ' here' : '') + '"' + (cur ? ' aria-current="page"' : ' href="' + p.h + '"') + '>' + pic(p.img, 'tri-bowl')
-          + '<span class="tri-t"><small>Путь ' + (i + 1) + '</small><b>' + esc(p.n) + '</b><span>' + esc(p.d) + '</span></span>'
-          + '<span class="tri-go">' + (cur ? 'Ты здесь' : 'Открыть путь →') + '</span></' + tag + '>';
-      }).join('') + '</div>';
+    el.innerHTML = '<div class="tri-head"><h2 id="tri-h">Три пути — один метод</h2><p>Жизнь в новой стране, своё дело и отношения растут по одним и тем же восьми ступеням — снизу вверх, от опоры к целому. На каждом пути свои трудности, а инструменты одни.</p><a class="tri-osn" href="../osnova/">На чём стоит метод — спиральная динамика →</a></div>';
   }
   function cell(c, row, p) {
     var link = c[1] === 1 ? '../#p-' + row.p : c[1], m = c[2];
@@ -151,13 +147,20 @@
     here: here,
     coach: coach,
   };
-  /* Вкладки наверху «Твоего пути» (Ирина, 15.10.2026: вариант 2 — «Жизнь в новой стране · Своё дело · Отношения · Основа метода»).
-     Стоят на put/, delo/, otnosheniya/ и osnova/ (там скрипт подключён с data-path="osnova"). */
-  function tabsBar() {
-    var main = document.querySelector('main.page'); if (!main || document.querySelector('.tri-tabs')) return;
-    var T = P.map(function (p) { return { k: p.k, h: p.h, n: p.n }; }).concat([{ k: 'osnova', h: '../osnova/', n: 'Основа метода' }]);
-    var nav = document.createElement('nav'); nav.className = 'tri-tabs'; nav.setAttribute('aria-label', 'Твой путь');
-    nav.innerHTML = T.map(function (t) { return '<a href="' + t.h + '"' + (t.k === here ? ' aria-current="page"' : '') + '>' + esc(t.n) + '</a>'; }).join('');
+  /* Блоки наверху «Твоего пути» (Ирина, 15.10.2026: сначала вкладки «Жизнь в новой стране · Своё дело · Отношения · Основа метода»,
+     в 16:30 — «мне больше нравится в таком виде с блоками»): картинка, «Путь N», название, строка о пути; текущий — «Ты здесь».
+     Стоят на put/, delo/, otnosheniya/ и osnova/ (там скрипт подключён с data-path="osnova"). На телефоне — 2×2, только картинка и название. */
+  function topBlocks() {
+    var main = document.querySelector('main.page'); if (!main || document.querySelector('.tri-top')) return;
+    var B = P.map(function (p, i) { return { k: p.k, h: p.h, e: 'Путь ' + (i + 1), n: p.n, d: p.d, img: p.img }; })
+      .concat([{ k: 'osnova', h: '../osnova/', e: 'Основа метода', n: 'Спиральная динамика', d: 'Авторы, восемь уровней, что нужно и что ценно на каждом и как человек переходит на следующий.', img: '01-koster', dir: '/osnova/img/' }]);
+    var nav = document.createElement('div'); nav.className = 'tri-top'; nav.setAttribute('role', 'navigation'); nav.setAttribute('aria-label', 'Твой путь');   // не <nav>: у страниц свои правила для nav a (без переноса строк)
+    nav.innerHTML = B.map(function (b) {
+      var cur = b.k === here, tag = cur ? 'div' : 'a';
+      return '<' + tag + ' class="tri-card' + (cur ? ' here' : '') + '"' + (cur ? ' aria-current="page"' : ' href="' + b.h + '"') + '>' + pic(b.img, 'tri-bowl', b.dir, true)
+        + '<span class="tri-t"><small>' + esc(b.e) + '</small><b>' + esc(b.n) + '</b><span>' + esc(b.d) + '</span></span>'
+        + '<span class="tri-go">' + (cur ? 'Ты здесь' : 'Открыть →') + '</span></' + tag + '>';
+    }).join('');
     main.insertBefore(nav, main.firstElementChild);
   }
   function fromHash() {
@@ -166,7 +169,7 @@
   }
   function run() {
     var st = document.createElement('style'); st.id = 'tri-css'; st.textContent = CSS; document.head.appendChild(st);
-    tabsBar(); band(); tools(); fromHash();
+    topBlocks(); band(); tools(); fromHash();
     window.addEventListener('hashchange', fromHash);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
