@@ -51,6 +51,9 @@
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
   var pic = function (n, cls) { return '<picture class="' + cls + '"><source srcset="/put/img/' + n + '.webp" type="image/webp"><img src="/put/img/' + n + '.jpg" width="900" height="1205" loading="lazy" alt=""></picture>'; };
   var CSS = '.tri-band,.tri-tools{margin-top:34px}'
+    + '.tri-tabs{display:flex;gap:8px;padding-top:18px;margin-bottom:-6px}.tri-tabs a{flex:1 1 0;min-width:0;display:flex;align-items:center;justify-content:center;gap:8px;text-align:center;padding:10px 12px;border-radius:12px;border:1.5px solid color-mix(in srgb,var(--brown) 25%,transparent);background:var(--paper);color:var(--ink);font:700 .9rem/1.25 var(--body,system-ui);text-decoration:none;-webkit-tap-highlight-color:transparent}'
+    + '.tri-tabs a:hover{border-color:var(--brown)}.tri-tabs a[aria-current]{background:var(--brown);border-color:var(--brown);color:var(--paper)}'
+    + '@media (max-width:640px){.tri-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.tri-tabs a{font-size:.84rem;padding:9px 8px}}'
     + '.tri-head h2{font-size:clamp(1.5rem,3.2vw,2rem)}.tri-head p{color:var(--muted);max-width:66ch;margin-top:6px}.tri-osn{display:inline-block;margin-top:8px;font-weight:700;font-size:.92rem;color:var(--brown);text-underline-offset:4px}'
     + '.tri-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}'
     + '.tri-card{display:grid;grid-template-columns:62px minmax(0,1fr);gap:4px 14px;align-items:start;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:12px 14px;text-decoration:none;color:var(--ink);transition:border-color .15s}'
@@ -146,13 +149,22 @@
     here: here,
     coach: coach,
   };
+  /* Вкладки наверху «Твоего пути» (Ирина, 15.10.2026: вариант 2 — «Жизнь в новой стране · Своё дело · Отношения · Основа метода»).
+     Стоят на put/, delo/, otnosheniya/ и osnova/ (там скрипт подключён с data-path="osnova"). */
+  function tabsBar() {
+    var main = document.querySelector('main.page'); if (!main || document.querySelector('.tri-tabs')) return;
+    var T = P.map(function (p) { return { k: p.k, h: p.h, n: p.n }; }).concat([{ k: 'osnova', h: '../osnova/', n: 'Основа метода' }]);
+    var nav = document.createElement('nav'); nav.className = 'tri-tabs'; nav.setAttribute('aria-label', 'Твой путь');
+    nav.innerHTML = T.map(function (t) { return '<a href="' + t.h + '"' + (t.k === here ? ' aria-current="page"' : '') + '>' + esc(t.n) + '</a>'; }).join('');
+    main.insertBefore(nav, main.firstElementChild);
+  }
   function fromHash() {
     var m = /^#stupen-([1-8])$/.exec(location.hash || ''); if (!m) return;
     var b = document.querySelector('#trail [data-k="' + (m[1] - 1) + '"]'); if (b) b.click();
   }
   function run() {
     var st = document.createElement('style'); st.id = 'tri-css'; st.textContent = CSS; document.head.appendChild(st);
-    band(); tools(); fromHash();
+    tabsBar(); band(); tools(); fromHash();
     window.addEventListener('hashchange', fromHash);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
