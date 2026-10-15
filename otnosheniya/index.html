@@ -1073,7 +1073,6 @@ function openStep(k){
     </div>
     ${k === 0 || k === 2 ? `<p class="warnline" style="margin-top:14px"><span class="wi"></span>Если рядом с ним страшно — он угрожает, бьёт, запирает, забирает деньги или документы, — это не ступень и не тема для коучинга. При опасности звони в полицию, 117. Номер 142 — помощь пострадавшим от насилия, бесплатно и круглосуточно, сначала можно анонимно.</p>` : ''}
     ${window.TRI ? TRI.coach(k, COACH[k], vars(k), STEPS[k].name) : ''}
-    ${window.TRI ? TRI.cross(k) : ''}
     <div class="qm-foot"><p class="next">${s.note ? esc(s.note) : `<b>Дальше.</b> ${esc(s.next)}`}</p>
       <p class="notme"><button type="button" data-step="${k - 1}" ${k ? '' : 'hidden'}>← Ступень ${k}</button> ${k < 7 ? `<button type="button" data-step="${k + 1}">Ступень ${k + 2} →</button>` : ''}</p></div>`;
   if (!qm.open){ if (typeof qm.showModal === 'function'){ try { qm.showModal(); } catch (e) { qm.setAttribute('open', ''); } } else qm.setAttribute('open', ''); }

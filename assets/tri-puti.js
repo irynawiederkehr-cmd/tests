@@ -3,8 +3,7 @@
    между мужчиной и женщиной. В каждом из этих путей будут переплетаться одни и те же инструменты, просто адаптироваться под тему».
    Один файл на три страницы: put/ (жизнь в новой стране), delo/ (своё дело), otnosheniya/ (отношения).
    Подключение: <script src="/assets/tri-puti.js" data-path="put|delo|otn" defer></script>
-   Рисует: полосу «Три пути» (#triBand), «Одни инструменты на трёх путях» (#triTools), в окне ступени — «Эта ступень
-   на других путях» (TRI.cross(k)); открывает ступень по ссылке …/#stupen-N. Модель и цвета ступеней клиентке не называем. */
+   Рисует: полосу «Три пути» (#triBand), «Одни инструменты на трёх путях» (#triTools), в окне ступени — работа со мной (TRI.coach); открывает ступень по ссылке …/#stupen-N. Модель и цвета ступеней клиентке не называем. */
 (function () {
   var me = document.currentScript, here = (me && me.dataset.path) || 'put';
   var P = [
@@ -71,11 +70,7 @@
     + '.tt-c em.free{background:color-mix(in srgb,var(--sage) 30%,transparent)}.tt-c i{display:none;font-style:normal;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted)}'
     + '@media (max-width:760px){.tt-hd{display:none!important}.tt-row{display:flex;flex-direction:column}.tt-row>div+div{border-left:none;border-top:1px dashed var(--line)}.tt-c i{display:block}.tt-row>div.here{order:-1}.tt-row>.tt-n{order:-2;background:var(--bg)}.tt-row>div:not(.here):not(.tt-n){font-size:.84rem}}'
     + '.tt-all{margin-top:10px;font:700 .9rem/1 var(--body,system-ui);color:var(--ink);background:var(--paper);border:1.5px solid color-mix(in srgb,var(--brown) 35%,transparent);border-radius:12px;padding:10px 14px;cursor:pointer}.tt-all:hover{border-color:var(--brown)}'
-    + '.tt-note{color:var(--muted);font-size:.9rem;margin-top:10px;max-width:72ch}'
-    + '.tri-x{margin-top:18px;border-top:1px solid var(--line);padding-top:14px}.tri-x h3{font-size:1.15rem}.tri-x p{color:var(--muted);font-size:.9rem;margin:4px 0 10px}'
-    + '.tri-x-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media (max-width:560px){.tri-x-grid{grid-template-columns:1fr}}'
-    + '.tri-x a{display:flex;flex-direction:column;gap:2px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:11px 14px;text-decoration:none;color:var(--ink)}.tri-x a:hover{border-color:var(--brown)}'
-    + '.tri-x small{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted)}.tri-x b{font-size:.98rem}';
+    + '.tt-note{color:var(--muted);font-size:.9rem;margin-top:10px;max-width:72ch}';
 
   function band() {
     var el = document.getElementById('triBand'); if (!el) return;
@@ -150,11 +145,6 @@
   window.TRI = {
     here: here,
     coach: coach,
-    cross: function (k) {
-      var o = P.filter(function (p) { return p.k !== here; });
-      return '<div class="tri-x"><h3>Эта ступень на других путях</h3><p>Ступень с тем же номером на другом пути отвечает на тот же вопрос, только о другой части жизни.</p><div class="tri-x-grid">'
-        + o.map(function (p) { return '<a href="' + p.h + '#stupen-' + (k + 1) + '"><small>' + esc(p.n) + ' · ступень ' + (k + 1) + '</small><b>' + esc(S[p.k][k]) + ' →</b></a>'; }).join('') + '</div></div>';
-    }
   };
   function fromHash() {
     var m = /^#stupen-([1-8])$/.exec(location.hash || ''); if (!m) return;
