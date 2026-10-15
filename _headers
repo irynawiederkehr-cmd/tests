@@ -1,0 +1,9 @@
+# Заголовки безопасности для показа сайта на Cloudflare (подготовлено 15.10.2026, действуют после переезда; на GitHub Pages не действуют).
+# Cloudflare берёт его из корня сайта.
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()
+  Strict-Transport-Security: max-age=31536000
+  Content-Security-Policy: frame-ancestors 'self'; base-uri 'self'; object-src 'none'

@@ -1,0 +1,8 @@
+# Не выкладывать на сайт при показе через Cloudflare: служебные файлы и инструменты перевода (на GitHub Pages их скрывает Jekyll)
+.git
+.github
+_i18n
+wrangler.jsonc
+.assetsignore
+.nojekyll
+CNAME
