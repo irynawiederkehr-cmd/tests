@@ -347,6 +347,8 @@ a.bot:hover{color:#B98324}
 @media (max-width:640px){.pillar.pl-method{flex-direction:column;align-items:stretch}.plm-pic{width:120px;align-self:center}.plm-pic img{width:120px}}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) :is(.hero-pic,.plm-pic,.who-pic) img{mix-blend-mode:normal;border-radius:14px}}
 :root[data-theme="dark"] :is(.hero-pic,.plm-pic,.who-pic) img{mix-blend-mode:normal;border-radius:14px}
+/* края акварелей главной растворяются в фоне (15.10.2026, 20:14, Ирина: «края на них нужно размыть») */
+.hero-pic img,.who-pic img{-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent),linear-gradient(180deg,transparent,#000 9%,#000 91%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent),linear-gradient(180deg,transparent,#000 9%,#000 91%,transparent);mask-composite:intersect}
 
 .w-hero h1 em{font-style:normal;color:var(--brown)}
 .w-hero .lead{font-size:1.14rem;max-width:58ch}
