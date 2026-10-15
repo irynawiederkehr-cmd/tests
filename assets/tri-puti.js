@@ -17,48 +17,37 @@
     delo: ['С нуля', 'Круг доверия', 'Заявляю о себе', 'Порядок в деле', 'Дело растёт', 'Команда и смысл', 'Система и свобода', 'Дело больше меня'],
     otn: ['Рядом безопасно', 'Наш дом', 'Мой голос в паре', 'Наши договорённости', 'Растём оба', 'Слышим друг друга', 'Вместе по выбору', 'Любовь больше нас']
   };
-  /* Одни инструменты — на каждом пути о своём. m — пометка как на главной: бесплатно, новое, цена. */
+  /* Работа со мной на трёх путях (15.10.2026, Ирина: «больше показывать, что я как коуч могу дать, с чем со мной можно поработать»;
+     «не нужно добавлять всё, что есть»). Только форматы работы со мной и одна строка «для себя между встречами». m — пометка как на главной. */
   var T = [
-    { n: 'Где я сейчас', w: 'тест на 15–20 минут',
-      put: ['«Ступени устойчивости» — какая ступень жизни держит, а какая поскрипывает', '../stupeni/', 'бесплатно'],
-      delo: ['«Ступени своего дела» — где поскрипывает дело', '', 'новое'],
-      otn: ['«Быть рядом и быть собой» и «Роза любви» — на чём держится ваша пара', '../blizost/', 'бесплатно'] },
-    { n: '«Карта опор»', w: 'рабочий лист на 10–15 минут',
-      put: ['что держит тебя на каждой ступени жизни и какую опору укрепить первой', '../karta-opor/', 'бесплатно'],
-      delo: ['опоры дела — подушка, первые клиенты, цена, порядок, люди', '', 'новое'],
-      otn: ['опоры пары — безопасность, «мы», договорённости, близость', '', 'новое'] },
-    { n: '«Мой круг»', w: 'рабочий лист', p: 'krug',
-      put: ['кто рядом здесь и там и кому можно позвонить ночью', 1, 'новое'],
-      delo: ['круг доверия — первые клиенты, наставница, партнёры', 1, 'новое'],
-      otn: ['круг вашей пары — с кем хорошо вам обоим и кто поддержит вас двоих', 1, 'новое'] },
-    { n: '«Мои границы»', w: 'рабочий лист', p: 'granicy',
-      put: ['где тебе нужно сказать «нет»', 1, 'новое'],
-      delo: ['твоё время, твоя цена и клиенты, которые хотят слишком много', 1, 'новое'],
-      otn: ['моё, его и наше — сказать «нет» и не поссориться', 1, 'новое'] },
-    { n: '«Мой багаж»', w: 'рабочий лист', p: 'bagazh',
-      put: ['что ты умеешь и что привезла с собой', 1, 'новое'],
-      delo: ['опыт, из которого рождается твоё предложение', 1, 'новое'],
-      otn: ['что ты принесла в пару из своей семьи — привычки, ожидания, сценарии', 1, 'новое'] },
-    { n: '«Знаю, додумываю, боюсь»', w: 'рабочий лист', p: 'gde',
-      put: ['твоя жизнь здесь — факты отдельно от страхов', 1, 'новое'],
-      delo: ['цифры дела вместо тревоги', 1, 'новое'],
-      otn: ['что ты знаешь о нём точно, а что додумываешь', 1, 'новое'] },
-    { n: '«Хочу, но не делаю»', w: 'рабочий лист', p: 'hochu',
-      put: ['что удерживает тебя от шага', 1, 'новое'],
-      delo: ['хочу своё, но не начинаю', 1, 'новое'],
-      otn: ['хочу сказать, но молчу', 1, 'новое'] },
-    { n: 'Трекер «Мои маленькие шаги»', w: 'онлайн и PDF', p: 'tracker',
-      put: ['один шаг в неделю для твоей жизни здесь', 1, 'новое'],
-      delo: ['один шаг в неделю для твоего дела', 1, 'новое'],
-      otn: ['один шаг в неделю для вас двоих', 1, 'новое'] },
+    { n: '«Знакомство»', w: '30 минут, онлайн', p: '',
+      put: ['понять, какая ступень твоей жизни здесь поскрипывает и с чего начать', 'https://t.me/IrynaNeuroCoach', 'бесплатно'],
+      delo: ['понять, на какой ступени твоё дело и какой шаг первый', 'https://t.me/IrynaNeuroCoach', 'бесплатно'],
+      otn: ['понять, на какой ступени вы сейчас и что можешь сделать ты', 'https://t.me/IrynaNeuroCoach', 'бесплатно'] },
+    { n: 'Личная сессия', w: '60 минут, можно несколько подряд', p: 'sess',
+      put: ['один вопрос о жизни здесь — и твой следующий шаг', 1, '150 CHF · новое'],
+      delo: ['один вопрос о деле — цена, клиенты, страх заявить о себе', 1, '150 CHF · новое'],
+      otn: ['один вопрос о тебе в паре — голос, границы, договорённости', 1, '150 CHF · новое'] },
+    { n: '«Разговор с картами»', w: '60–75 минут', p: 'kartami',
+      put: ['увидеть свою ситуацию через образ чаши, которая собирается заново', 1, '150 CHF · новое'],
+      delo: ['увидеть своё дело через образ — от глины к чаше', 1, '150 CHF · новое'],
+      otn: ['увидеть вашу пару через образ двух чаш', 1, '150 CHF · новое'] },
     { n: '«Мой фундамент»', w: 'личная работа, 3 часа', p: 'fund',
-      put: ['твои ценности рядом с целью твоей жизни', 1, '249 CHF'],
-      delo: ['твои ценности рядом с целью твоего дела', 1, '249 CHF'],
+      put: ['твои ценности рядом с целью жизни — почему хочешь, но не делаешь', 1, '249 CHF'],
+      delo: ['твои ценности рядом с целью дела', 1, '249 CHF'],
       otn: ['твои ценности рядом с тем, чего ты хочешь в паре', 1, '249 CHF'] },
-    { n: '«Разговор с картами»', w: 'личная встреча', p: 'kartami',
-      put: ['колода «Чаша, которая собирается заново»', 1, 'новое · 150 CHF'],
-      delo: ['колода «От глины к чаше»', 1, 'новое · 150 CHF'],
-      otn: ['колода «Две чаши»', 1, 'новое · 150 CHF'] }
+    { n: '«Снимок жизни»', w: 'разбор по сферам, 3 часа', p: 'snimok',
+      put: ['на какой ступени каждая сфера твоей жизни', 1, '249 CHF · в разработке'],
+      delo: ['где твоё дело во всей твоей жизни — семья, силы, время', 1, '249 CHF · в разработке'],
+      otn: ['где пара во всей твоей жизни и что тянет вниз', 1, '249 CHF · в разработке'] },
+    { n: '«Моя цель — мой путь»', w: '10 личных встреч', p: 'flag',
+      put: ['путь к одной большой цели в жизни здесь', 1, 'в разработке'],
+      delo: ['путь к цели твоего дела, шаг за шагом', 1, 'в разработке'],
+      otn: ['путь к тем отношениям, которых ты хочешь', 1, 'в разработке'] },
+    { n: 'Для себя между встречами', w: 'бесплатно, в своём темпе', p: '',
+      put: ['«Карта опор» — что держит тебя и что укрепить первым', '../karta-opor/', 'бесплатно'],
+      delo: ['«Мой багаж» — что ты умеешь и что из этого нужно здесь', '../#p-bagazh', 'бесплатно · новое'],
+      otn: ['тесты «Быть рядом и быть собой» и «Роза любви»', '../blizost/', 'бесплатно'] }
   ];
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
   var pic = function (n, cls) { return '<picture class="' + cls + '"><source srcset="/put/img/' + n + '.webp" type="image/webp"><img src="/put/img/' + n + '.jpg" width="900" height="1205" loading="lazy" alt=""></picture>'; };
@@ -101,32 +90,66 @@
   }
   function cell(c, row, p) {
     var link = c[1] === 1 ? '../#p-' + row.p : c[1], m = c[2];
-    var inner = '<i>' + esc(p.n) + '</i><span class="tt-t">' + esc(c[0]) + '</span>' + (m ? ' <em' + (m === 'бесплатно' ? ' class="free"' : '') + '>' + esc(m) + '</em>' : '');
+    var inner = '<i>' + esc(p.n) + '</i><span class="tt-t">' + esc(c[0]) + '</span>' + (m ? ' <em' + (/^бесплатно/.test(m) ? ' class="free"' : '') + '>' + esc(m) + '</em>' : '');
     return '<div class="tt-c' + (p.k === here ? ' here' : '') + '">' + (link ? '<a href="' + link + '">' + inner + '</a>' : inner) + '</div>';
   }
-  var MORE = 5;   // сколько строк видно сразу, остальные — по кнопке (на телефоне таблица длинная)
+  var MORE = 4;   // сколько строк видно сразу, остальные — по кнопке (на телефоне таблица длинная)
   function tools() {
     var el = document.getElementById('triTools'); if (!el) return;
     el.className = 'tri-tools'; el.setAttribute('aria-labelledby', 'tt-h');
-    el.innerHTML = '<div class="tri-head"><h2 id="tt-h">Одни инструменты на трёх путях</h2><p>Метод один, поэтому и инструменты одни. Тест «где я сейчас», карта опор, мой круг, мои границы, маленькие шаги — на каждом пути они говорят о своём. Освоишь инструмент на одном пути — на другом он уже знаком.</p></div>'
-      + '<div class="tt" role="table" aria-label="Инструменты на трёх путях"><div class="tt-row tt-hd" role="row"><div role="columnheader">Инструмент</div>'
+    el.innerHTML = '<div class="tri-head"><h2 id="tt-h">Работа со мной на трёх путях</h2><p>Метод один, и работа со мной одна — меняется только тема. Вот с чем ты можешь прийти ко мне на каждом пути.</p></div>'
+      + '<div class="tt" role="table" aria-label="Работа со мной на трёх путях"><div class="tt-row tt-hd" role="row"><div role="columnheader">С чем прийти</div>'
       + P.map(function (p) { return '<div role="columnheader"' + (p.k === here ? ' class="here"' : '') + '>' + esc(p.n) + '</div>'; }).join('') + '</div>'
       + T.map(function (r, i) {
         return '<div class="tt-row" role="row"' + (i >= MORE ? ' data-more hidden' : '') + '><div class="tt-n" role="rowheader"><b>' + esc(r.n) + '</b><span>' + esc(r.w) + '</span></div>'
           + P.map(function (p) { return cell(r[p.k], r, p); }).join('') + '</div>';
       }).join('') + '</div>'
-      + '<button type="button" class="tt-all" aria-expanded="false">Показать все инструменты · ещё ' + (T.length - MORE) + '</button>'
-      + '<p class="tt-note">И ещё три вещи общие для всех путей. В окне каждой ступени есть «Проверь себя», три шага внутри ступени — «Ставлю ногу», «Стою твёрдо», «Тянусь выше» — и то, что поможет на каждом шаге. «Знакомство» на 30 минут, бесплатно, — на любом пути.</p>';
+      + '<button type="button" class="tt-all" aria-expanded="false">Показать всё · ещё ' + (T.length - MORE) + '</button>'
+      + '<p class="tt-note">Не знаешь, что выбрать, — начни со знакомства: за 30 минут станет понятно, на какой ты ступени и какой формат тебе подходит.</p>';
   }
   document.addEventListener('click', function (e) {
     var b = e.target.closest && e.target.closest('.tt-all'); if (!b) return;
     var open = b.getAttribute('aria-expanded') !== 'true';
     document.querySelectorAll('#triTools [data-more]').forEach(function (r) { r.hidden = !open; });
     b.setAttribute('aria-expanded', open ? 'true' : 'false');
-    b.textContent = open ? 'Свернуть' : 'Показать все инструменты · ещё ' + (T.length - MORE);
+    b.textContent = open ? 'Свернуть' : 'Показать всё · ещё ' + (T.length - MORE);
   });
+  /* Окно ступени — работа со мной (15.10.2026, Ирина: «больше показывать, что я как коуч могу дать… лишнего не надо…
+     для остального — всплывающее окошко «Свои люди»»). c = { t: [[тема, что меняется], …], f: формат со мной, me: инструмент для себя, sv: ссылки «Свои люди» }. */
+  var MEETB = 'https://t.me/IrynaNeuroCoach';
+  function coach(k, c, vars, name) {
+    if (!c) return '';
+    var sl = window.SvoiOkno ? SvoiOkno.button(c.sv || [], 'Практическое к ступени «' + name + '»') : '';
+    return '<div class="co" style="' + vars + '"><div class="co-main">'
+      + '<div class="co-head"><div class="eyebrow">Работа со мной</div><h3>Что мы можем проработать вместе</h3>'
+      + '<p>' + esc(c.lead || 'С такими вопросами ко мне приходят на этой ступени. Ты приносишь свою ситуацию, а я помогаю увидеть её целиком и найти твой следующий шаг.') + '</p></div>'
+      + '<ol class="co-themes">' + c.t.map(function (x) { return '<li><b>' + esc(x[0]) + '</b><span>' + esc(x[1]) + '</span></li>'; }).join('') + '</ol>'
+      + '<p class="co-how"><b>Как мы работаем.</b> Твои собственные слова и образы, метафорические карты и один маленький шаг до следующей встречи. Это коучинг для тебя: мы работаем с тем, что можешь изменить ты.</p>'
+      + '<div class="co-acts"><a class="co-btn free" href="' + MEETB + '" target="_blank" rel="noopener"><b>Знакомство, 30 минут</b><span>бесплатно · слово ВСТРЕЧА в Telegram</span></a>'
+      + (c.f ? '<a class="co-btn price" href="' + c.f.h + '"><b>' + esc(c.f.t) + '</b><span>' + esc(c.f.d) + ' · ' + esc(c.f.m) + '</span></a>' : '') + '</div></div>'
+      + '<div class="co-side">' + (c.me ? '<a class="co-card me" href="' + c.me.h + '"><small>Для себя между встречами</small><b>' + esc(c.me.t) + ' →</b><span>' + esc(c.me.d) + '</span><em>' + esc(c.me.m) + '</em></a>' : '')
+      + sl + '</div>'
+      + '<p class="co-steps">Только встаёшь на эту ступень — начни с практического. Уже стоишь твёрдо — поможет инструмент для себя. Стало тесно — время для работы со мной.</p></div>';
+  }
+  CSS += '.co{border:1.5px solid color-mix(in srgb,var(--lc) 55%,var(--line));border-radius:22px;padding:clamp(16px,2.6vw,28px);display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:16px 24px;background:color-mix(in srgb,var(--lf) 30%,var(--paper))}'
+    + '@media (max-width:820px){.co{grid-template-columns:1fr}}'
+    + '.co-main,.co-side{min-width:0}.co-head h3{font-size:clamp(1.35rem,2.6vw,1.75rem);margin-top:4px}.co-head p{color:var(--muted);margin-top:6px;font-size:.95rem;max-width:62ch}'
+    + '.co-themes{list-style:none;counter-reset:t;padding:0;margin:16px 0 0;display:grid;gap:12px}'
+    + '.co-themes li{counter-increment:t;display:grid;grid-template-columns:30px minmax(0,1fr);column-gap:12px;align-items:start}'
+    + '.co-themes li::before{content:counter(t);grid-row:span 2;width:28px;height:28px;border-radius:50%;background:var(--lc);color:var(--paper);display:grid;place-items:center;font-weight:700;font-size:.85rem}'
+    + '.co-themes b{font-size:1.02rem;line-height:1.35}.co-themes span{color:var(--muted);font-size:.92rem;line-height:1.5}'
+    + '.co-how{font-size:.9rem;color:var(--muted);margin-top:14px;max-width:66ch}.co-how b{color:var(--ink)}'
+    + '.co-acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}'
+    + '.co-btn{display:flex;flex-direction:column;gap:2px;text-decoration:none;border-radius:12px;padding:11px 16px;line-height:1.3;color:var(--paper);min-width:0;max-width:100%}'
+    + '.co-btn b{font-size:.95rem}.co-btn span{font-size:.8rem;opacity:.9}.co-btn.free{background:var(--sage)}.co-btn.price{background:var(--mustard)}.co-btn:hover{filter:brightness(1.06)}'
+    + '.co-side{display:flex;flex-direction:column;gap:10px}'
+    + '.co-card{display:flex;flex-direction:column;gap:3px;background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--mustard);border-radius:14px;padding:12px 14px;text-decoration:none;color:var(--ink)}'
+    + '.co-card:hover{border-color:var(--lc)}.co-card small{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted)}'
+    + '.co-card b{font-size:.98rem;line-height:1.35}.co-card span{font-size:.86rem;color:var(--muted)}.co-card em{font-style:normal;font-size:.78rem;font-weight:700;color:var(--mustard)}'
+    + '.co-steps{grid-column:1/-1;font-size:.86rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px;margin:0}';
   window.TRI = {
     here: here,
+    coach: coach,
     cross: function (k) {
       var o = P.filter(function (p) { return p.k !== here; });
       return '<div class="tri-x"><h3>Эта ступень на других путях</h3><p>Ступень с тем же номером на другом пути отвечает на тот же вопрос, только о другой части жизни.</p><div class="tri-x-grid">'
