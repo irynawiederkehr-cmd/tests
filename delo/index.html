@@ -322,8 +322,8 @@ footer a{color:var(--muted)}
 .stop .node{grid-column:2;grid-row:1;justify-self:center;position:relative;z-index:1}
 .node{width:84px;height:84px;border-radius:50%;background:var(--paper);display:grid;place-items:center;border:2.5px solid var(--lc);box-shadow:0 6px 16px -8px color-mix(in srgb,var(--lc) 60%,transparent)}
 .node i{position:absolute;top:-6px;right:-6px;font-style:normal;width:30px;height:30px;border-radius:50%;background:var(--lc);color:#fff;font-weight:700;font-size:.85rem;display:grid;place-items:center}
-/* стоянки тропы — акварель карты в золотом ободке цвета ступени, номер внутри (15.10.2026, Ирина: «для вот таких стоянок давай сделаем в этом же стиле с золотым ободком по цветам стоянок и с номерами внутри») */
-.node.pic{padding:4px;border:0;background:conic-gradient(from 200deg,#C9971F,#F3D98A,var(--lc),#B07A12,#F3D98A,#C9971F)}.node.pic b{display:block;width:100%;height:100%;border-radius:50%;background:#fff var(--img) var(--bx) var(--by)/var(--bz) auto no-repeat;box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--lc) 55%,#fff)}.node.pic i{top:auto;right:auto;left:50%;bottom:2px;transform:translateX(-50%);width:auto;min-width:24px;height:22px;padding:0 6px;border-radius:999px;font-size:.78rem;line-height:22px;box-shadow:0 0 0 2px #E9C766}@media (max-width:640px){.node.pic{padding:3px}.node.pic i{min-width:19px;height:19px;padding:0 4px;font-size:.68rem;line-height:19px;top:auto;right:auto;bottom:0}}
+/* стоянки тропы и значок ступени в окне — акварель карты в золотом ободке цвета ступени (15.10.2026, Ирина: «для вот таких стоянок давай сделаем в этом же стиле с золотым ободком по цветам стоянок»; 19:48 — «картинки внутри кружечков центрируй и уменьши»; 19:49 — «номерки поставь как и было раньше») */
+.node.pic,.medal{padding:4px;border:0;background:conic-gradient(from 200deg,#C9971F,#F3D98A,var(--lc),#B07A12,#F3D98A,#C9971F)}.node.pic b,.medal b{display:block;width:100%;height:100%;border-radius:50%;background:#fff var(--img) var(--bx) var(--by)/var(--bz) auto no-repeat;box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--lc) 55%,#fff)}.medal{display:block;border-radius:50%;box-shadow:0 6px 16px -8px color-mix(in srgb,var(--lc) 60%,transparent)}.qm-top .ic.medal{width:64px;height:64px;padding:3px}@media (max-width:640px){.node.pic{padding:3px}}.trail-start .ic.medal,.trail-end .ic.medal{width:84px;height:84px}@media (max-width:760px){.trail-start .ic.medal,.trail-end .ic.medal{width:64px;height:64px;padding:3px}}
 .between{min-height:110px}
 .trail-start,.trail-end,#trail{position:relative;z-index:1}
 .road-svg{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;overflow:visible}
@@ -457,9 +457,9 @@ footer a{color:var(--muted)}
 
   <section class="trail" id="trailWrap" aria-label="Восемь ступеней своего дела">
     <svg class="road-svg" id="road" aria-hidden="true"></svg>
-    <div class="trail-start"><span class="ic" data-ico="seed" data-c="#6E4F3C"></span><b>Есть только мысль</b><span>«А что, если своё?» — и, может быть, немного страшно. Отсюда начинается тропа.</span></div>
+    <div class="trail-start"><span class="ic medal" style="--lc:#6E4F3C;--img:url(/delo/img/start-mysl.webp);--bz:180%;--bx:58%;--by:88%"><b></b></span><b>Есть только мысль</b><span>«А что, если своё?» — и, может быть, немного страшно. Отсюда начинается тропа.</span></div>
     <div id="trail"></div>
-    <div class="trail-end"><span class="ic" data-ico="tree" data-c="#2894A0"></span><b>Дело больше тебя</b><span class="note" style="color:var(--muted);font-size:.9rem;max-width:40ch">Дело живёт, растёт и помогает тем, кто идёт следом.</span></div>
+    <div class="trail-end"><span class="ic medal" style="--lc:#2894A0;--img:url(/delo/img/end-zhelud.webp);--bz:172%;--bx:48%;--by:74%"><b></b></span><b>Дело больше тебя</b><span class="note" style="color:var(--muted);font-size:.9rem;max-width:40ch">Дело живёт, растёт и помогает тем, кто идёт следом.</span></div>
   </section>
 
   <section class="where" aria-labelledby="where-h">
@@ -618,7 +618,7 @@ Object.assign(ICONS, ICONS_DELO);
 /* Карты пути «Своё дело» (15.10.2026, Ирина: «сейчас давай разработаем для пути свое дело» — символы ступеней без чаш, как у «Отношений») */
 const ICN = ['d1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8'];
 const IMG = ['01-s-nulya', '02-krug-doveriya', '03-zayavlyayu', '04-poryadok', '05-delo-rastet', '06-komanda', '07-sistema-i-svoboda', '08-delo-bolshe-menya'];
-const NODE = [[210, 48, 86], [231, 43, 83], [239, 49, 81], [195, 49, 84], [116, 55, 86], [227, 46, 91], [120, 24, 90], [174, 42, 93]];   // стоянка тропы: увеличение, x, y акварели в круге
+const NODE = [[156, 47, 90], [171, 41, 86], [172, 49, 84], [144, 49, 89], [100, 50, 85], [168, 44, 96], [100, 50, 95], [129, 35, 100]];   // стоянка тропы: увеличение, x, y акварели в круге
 const POS = [78, 78, 78, 78, 88, 78, 88, 78];   // окно кадра в карточке тропы: сюжет целиком
 const bowl = (k, cls) => `<picture class="bowl${cls ? ' ' + cls : ''}" style="--pos:${POS[k]}%"><source srcset="/delo/img/${IMG[k]}.webp" type="image/webp"><img src="/delo/img/${IMG[k]}.jpg" width="900" height="1205" loading="lazy" alt=""></picture>`;
 
@@ -1099,7 +1099,7 @@ const qm = document.getElementById('qm'), qmCard = document.getElementById('qmCa
 function openStep(k){
   const s = STEPS[k];
   qmCard.innerHTML = `<div class="qm-top" style="${vars(k)}">
-      <span class="ic" style="--ic:${COL[k][0]}">${ico(ICN[k], COL[k][0], COL[k][1], 34)}</span>
+      <span class="ic medal" style="--lc:${COL[k][0]};--img:url(/delo/img/${IMG[k]}.webp);--bz:${NODE[k][0]}%;--bx:${NODE[k][1]}%;--by:${NODE[k][2]}%"><b></b></span>
       <div class="qm-head"><div class="eyebrow">Своё дело · ступень ${k + 1} из 8 · ${esc(s.sub)}</div><h2 class="qm-title" id="qmTitle">${esc(s.name)}</h2>
         <p class="inside"><small>Что ты собираешь в себе на этой ступени</small><q>${esc(s.inside)}</q></p></div>
       ${bowl(k, 'qm-pic')}
