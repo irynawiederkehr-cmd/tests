@@ -474,7 +474,8 @@ a.bot:hover{color:#B98324}
 @keyframes vipGlow{0%,100%{box-shadow:0 14px 30px -20px color-mix(in srgb,var(--mustard) 70%,transparent),0 0 0 0 color-mix(in srgb,var(--mustard) 0%,transparent)}50%{box-shadow:0 18px 36px -18px color-mix(in srgb,var(--mustard) 80%,transparent),0 0 0 6px color-mix(in srgb,var(--mustard) 22%,transparent)}}
 @keyframes vipShine{0%{background-position:130% 0}60%,100%{background-position:-30% 0}}
 @media (prefers-reduced-motion: reduce){.pblock,.pblock.main .pb-price,.pblock:hover::after{animation:none}}
-.pb-top{display:flex;justify-content:space-between;align-items:center}
+/* 15.10.2026, 20:46, Ирина: «и здесь» — в карточках программ, у видов помощи и у ступеней программ кружков нет */
+.pb-top{display:flex;justify-content:flex-start;align-items:center}
 .soon{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mustard);background:var(--mustard-soft);border-radius:999px;padding:3px 9px}
 .pblock b{font-family:var(--display);font-weight:400;font-size:1.3rem;line-height:1.15}
 .pb-slogan{font-size:.92rem;color:var(--brown);line-height:1.35}
@@ -628,7 +629,8 @@ section[id]{scroll-margin-top:96px}
 .sess-facts span{font-size:.85rem;font-weight:700;color:var(--sage);background:var(--sage-soft);border-radius:999px;padding:6px 13px}
 .sess-steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;position:relative}
 .sess-steps::before{content:"";position:absolute;left:49px;top:40px;bottom:40px;border-left:2px dashed color-mix(in srgb,var(--mustard) 55%,var(--line))}
-.sess-steps li{position:relative;display:grid;grid-template-columns:56px minmax(0,1fr);gap:18px;align-items:start;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:20px 22px}
+/* 15.10.2026, 20:46, Ирина: «и здесь. это не красиво» — у шагов первой встречи и у четырёх опор метода кружков нет */
+.sess-steps li{position:relative;display:grid;grid-template-columns:minmax(0,1fr);gap:18px;align-items:start;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:20px 22px}
 .sess-steps li:last-child{background:var(--mustard-soft);border-color:color-mix(in srgb,var(--mustard) 55%,var(--line))}
 .ss-ic{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--bg);border:1.5px solid var(--line)}
 .sess-steps li:last-child .ss-ic{background:var(--paper);border-color:var(--ic,var(--mustard))}
@@ -640,7 +642,7 @@ section[id]{scroll-margin-top:96px}
 .sess-steps h3{font-family:var(--display);font-weight:400;font-size:1.4rem;line-height:1.2;margin:0 0 6px}
 .sess-steps p{margin:0;font-size:.95rem;line-height:1.6;color:var(--muted)}
 @media (max-width:900px){.sess{grid-template-columns:1fr}.sess-intro{position:static}}
-@media (max-width:520px){.sess-steps li{grid-template-columns:44px minmax(0,1fr);gap:14px;padding:18px 16px}.ss-ic{width:44px;height:44px}.sess-steps::before{left:37px}.sess-intro .btn{width:100%;justify-content:center}}
+@media (max-width:520px){.sess-steps li{grid-template-columns:minmax(0,1fr);gap:14px;padding:18px 16px}.ss-ic{width:44px;height:44px}.sess-steps::before{left:37px}.sess-intro .btn{width:100%;justify-content:center}}
 /* окно продукта: развёрнутое описание, подарок, «Куда дальше» (05.10.2026) */
 .pd-about{margin:0;font-size:1rem;line-height:1.65;color:var(--ink)}
 .pd-bonus{background:var(--mustard-soft);border:1.5px solid color-mix(in srgb,var(--mustard) 50%,var(--line));border-radius:18px;padding:16px 18px;display:flex;flex-direction:column;gap:6px}
@@ -925,10 +927,10 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
     </div>
     <div class="pl-lead"><h3>Как мы идём по ступеням</h3><p>Метод показывает, где ты сейчас и какой шаг следующий. А идём мы с помощью того, чему я училась как коуч и нейрокоуч.</p></div>
     <div class="pillars">
-      <div class="pillar"><span class="pl-fl" data-medal="l6-6-serdce" data-s="60" data-c="#C97E52"></span><h3>Эмоциональный интеллект</h3><p>Ты учишься замечать, что чувствуешь, и понимать, о чём говорят твои чувства. Они подсказывают, где тебе сейчас нужна забота: усталость говорит о силах и сне, одиночество — о своём круге, тревога перед письмом из ведомства — о понятных правилах. Эмоции перестают управлять твоими решениями и начинают подсказывать.</p></div>
-      <div class="pillar"><span class="pl-fl" data-medal="n-kniga" data-s="60" data-c="#4E9A70"></span><h3>Чистый язык и метафоры</h3><p>Чистый язык — это вопросы твоими же словами, без моих подсказок и оценок. Ещё я работаю с метафорическими картами: на картинке каждая видит своё. Иногда легче сказать «я как разбитая чаша», чем объяснить всё по порядку. В твоём образе находится то, что трудно увидеть напрямую, и ты находишь свои слова для того, что с тобой происходит.</p></div>
-      <div class="pillar"><span class="pl-fl" data-medal="l7-3-sova" data-s="60" data-c="#C4973A"></span><h3>Мышление и фокус внимания</h3><p>Твоё мышление и твоё внимание — главный ресурс. Замечаем мысли, которые ходят по кругу, и направляем внимание туда, где есть решение, а не туда, где страшно. Смотрим не на всю гору, а на твою ступень и следующий шаг на ней. Меняется фокус — и сил у тебя становится больше.</p></div>
-      <div class="pillar"><span class="pl-fl" data-medal="n-tropinka" data-s="60" data-c="#4F7EC2"></span><h3>Как работает мозг</h3><p>Инсайт — только половина дела. Вторая половина — закрепить новое в твоей жизни. Мозгу для этого нужны повторение, телесный якорь и маленький выполнимый шаг между встречами. Так «Ставлю ногу» постепенно становится «Стою твёрдо», и новое держит тебя, как золотой шов держит чашу.</p></div>
+      <div class="pillar"><h3>Эмоциональный интеллект</h3><p>Ты учишься замечать, что чувствуешь, и понимать, о чём говорят твои чувства. Они подсказывают, где тебе сейчас нужна забота: усталость говорит о силах и сне, одиночество — о своём круге, тревога перед письмом из ведомства — о понятных правилах. Эмоции перестают управлять твоими решениями и начинают подсказывать.</p></div>
+      <div class="pillar"><h3>Чистый язык и метафоры</h3><p>Чистый язык — это вопросы твоими же словами, без моих подсказок и оценок. Ещё я работаю с метафорическими картами: на картинке каждая видит своё. Иногда легче сказать «я как разбитая чаша», чем объяснить всё по порядку. В твоём образе находится то, что трудно увидеть напрямую, и ты находишь свои слова для того, что с тобой происходит.</p></div>
+      <div class="pillar"><h3>Мышление и фокус внимания</h3><p>Твоё мышление и твоё внимание — главный ресурс. Замечаем мысли, которые ходят по кругу, и направляем внимание туда, где есть решение, а не туда, где страшно. Смотрим не на всю гору, а на твою ступень и следующий шаг на ней. Меняется фокус — и сил у тебя становится больше.</p></div>
+      <div class="pillar"><h3>Как работает мозг</h3><p>Инсайт — только половина дела. Вторая половина — закрепить новое в твоей жизни. Мозгу для этого нужны повторение, телесный якорь и маленький выполнимый шаг между встречами. Так «Ставлю ногу» постепенно становится «Стою твёрдо», и новое держит тебя, как золотой шов держит чашу.</p></div>
     </div>
 
   </section>
@@ -943,10 +945,10 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
       <a class="btn free" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">Написать «ВСТРЕЧА» в Telegram</a>
     </div>
     <ol class="sess-steps">
-      <li><span class="ss-ic" data-medal="n-samolet" data-c="#4F7EC2"></span><div><span class="ss-k">Шаг 1</span><h3>Ты пишешь мне</h3><p>Напиши в Telegram слово <span class="codeword">ВСТРЕЧА</span>. Можно добавить пару строк о себе и о том, что сейчас происходит. Красиво формулировать не нужно, это моя работа.</p></div></li>
-      <li><span class="ss-ic" data-medal="n-kresla" data-c="#5E8A6C"></span><div><span class="ss-k">Шаг 2</span><h3>Мы знакомимся</h3><p>Это 30 минут онлайн, и это бесплатно. Я задам несколько вопросов о тебе и честно скажу, смогу ли помочь. Если нет, подскажу, к кому лучше обратиться.</p></div></li>
-      <li><span class="ss-ic" data-medal="l6-1-zabotlivaya" data-c="#6E4F3C"></span><div><span class="ss-k">Шаг 3</span><h3>Сессия — время только для тебя</h3><p>Мы встречаемся по видеосвязи, и всё моё внимание принадлежит тебе. Готовиться и приносить ничего не нужно. Всё, что ты скажешь, остаётся между нами.</p></div></li>
-      <li><span class="ss-ic" data-medal="n-kamni" data-c="#C4973A"></span><div><span class="ss-k">Шаг 4</span><h3>Ты делаешь шаг для себя</h3><p>Каждая встреча заканчивается не только осознанием. В конце мы находим маленькое конкретное действие ради тебя, которое ты правда сделаешь до следующей встречи.</p></div></li>
+      <li><div><span class="ss-k">Шаг 1</span><h3>Ты пишешь мне</h3><p>Напиши в Telegram слово <span class="codeword">ВСТРЕЧА</span>. Можно добавить пару строк о себе и о том, что сейчас происходит. Красиво формулировать не нужно, это моя работа.</p></div></li>
+      <li><div><span class="ss-k">Шаг 2</span><h3>Мы знакомимся</h3><p>Это 30 минут онлайн, и это бесплатно. Я задам несколько вопросов о тебе и честно скажу, смогу ли помочь. Если нет, подскажу, к кому лучше обратиться.</p></div></li>
+      <li><div><span class="ss-k">Шаг 3</span><h3>Сессия — время только для тебя</h3><p>Мы встречаемся по видеосвязи, и всё моё внимание принадлежит тебе. Готовиться и приносить ничего не нужно. Всё, что ты скажешь, остаётся между нами.</p></div></li>
+      <li><div><span class="ss-k">Шаг 4</span><h3>Ты делаешь шаг для себя</h3><p>Каждая встреча заканчивается не только осознанием. В конце мы находим маленькое конкретное действие ради тебя, которое ты правда сделаешь до следующей встречи.</p></div></li>
     </ol>
   </section>
 </main>
@@ -962,9 +964,9 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
     <div id="pathBox" class="pv"></div>
     <p class="path-note">Всё онлайн и на русском. Где написано «цену уточняй лично», цена ещё утверждается, напиши мне, и я расскажу. Как записаться, оплатить и перенести встречу — в <a href="usloviya/">условиях работы</a>.</p>
     <div class="also" style="margin-top:28px">
-      <a class="mini" href="testy/"><span class="ic sm" data-medal="l7-7-celoe" data-c="#5E8A6C"></span><b>Все мои тесты</b><span>Четыре бесплатных теста, по 10–20 минут, с подробным разбором.</span></a>
-      <a class="mini" href="https://t.me/swisscompass_bot" target="_blank" rel="noopener"><span class="ic sm" data-medal="n-ukazatel" data-c="#6E4F3C"></span><b>Гайд по Швейцарии</b><span>Мой бесплатный Telegram-бот. Бумаги, страховка, школа и врачи по шагам и на русском.</span></a>
-      <a class="mini" href="https://t.me/IrynaNeuroCoach_channel" target="_blank" rel="noopener"><span class="ic sm" data-medal="n-samolet" data-c="#4F7EC2"></span><b>Мой Telegram-канал</b><span>Полезное для тебя о жизни в новой стране. И место, где можно найти своих.</span></a>
+      <a class="mini" href="testy/"><b>Все мои тесты</b><span>Четыре бесплатных теста, по 10–20 минут, с подробным разбором.</span></a>
+      <a class="mini" href="https://t.me/swisscompass_bot" target="_blank" rel="noopener"><b>Гайд по Швейцарии</b><span>Мой бесплатный Telegram-бот. Бумаги, страховка, школа и врачи по шагам и на русском.</span></a>
+      <a class="mini" href="https://t.me/IrynaNeuroCoach_channel" target="_blank" rel="noopener"><b>Мой Telegram-канал</b><span>Полезное для тебя о жизни в новой стране. И место, где можно найти своих.</span></a>
     </div>
   </div>
   <dialog class="qm" id="pdlg" aria-labelledby="pdlgTitle"><div class="qm-card" id="pdlgCard"></div></dialog>
@@ -978,12 +980,12 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
       <h2 id="re-h">Что меняется для тебя</h2>
     </div>
     <ul class="results">
-      <li><span class="ic sm" data-medal="put-7" data-c="#C4973A"></span>Трещины переезда становятся золотыми швами — твой опыт становится твоей силой</li>
-      <li><span class="ic sm" data-medal="n-zerkalo" data-c="#5E8A6C"></span>На вопрос «Кто я здесь?» появляется твой ответ, а не чужой совет</li>
-      <li><span class="ic sm" data-medal="l3-6-strela" data-c="#C4973A"></span>Решение, которое ты откладывала месяцами, становится сделанным</li>
-      <li><span class="ic sm" data-medal="l1-2-ogon" data-c="#C4973A"></span>Возвращается твоя энергия — ты перестаёшь тратить её на внутренний спор</li>
-      <li><span class="ic sm" data-medal="l5-6-zvezda" data-c="#6E4F3C"></span>Появляется твоё «зачем» в новой стране, а не только «надо»</li>
-      <li><span class="ic sm" data-medal="stupeni" data-c="#4F7EC2"></span>Ты видишь свою ступень и следующий шаг на ней, а не всю гору целиком</li>
+      <li>Трещины переезда становятся золотыми швами — твой опыт становится твоей силой</li>
+      <li>На вопрос «Кто я здесь?» появляется твой ответ, а не чужой совет</li>
+      <li>Решение, которое ты откладывала месяцами, становится сделанным</li>
+      <li>Возвращается твоя энергия — ты перестаёшь тратить её на внутренний спор</li>
+      <li>Появляется твоё «зачем» в новой стране, а не только «надо»</li>
+      <li>Ты видишь свою ступень и следующий шаг на ней, а не всю гору целиком</li>
     </ul>
     <p class="note">Коучинг — это партнёрская работа. Результат появляется, когда мы работаем вместе, ты и я.</p>
   </section>
@@ -1039,7 +1041,7 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
   <!-- ГРАНИЦА -->
   <section aria-labelledby="lim-h">
     <div class="limits">
-      <div class="l-top"><span class="pl-fl lim-fl" data-medal="l4-7-ruka-na-serdce" data-s="64" data-c="#6E4F3C"></span><h2 id="lim-h">Когда коучинг не подходит</h2></div>
+      <div class="l-top"><h2 id="lim-h">Когда коучинг не подходит</h2></div>
       <div class="lim-body">
         <p>Коучинг работает, когда у тебя есть силы двигаться. Бывают состояния, когда тебе нужнее врач или психотерапевт, — и я скажу об этом прямо, потому что твоё благополучие важнее.</p>
         <ul>
@@ -1739,7 +1741,7 @@ function pathInit(){
   /* cs — ступени для цвета цветка (во «По ступеням» — выбранная ступень), иначе ступени карточки */
   const card = (id, ss, note, cs) => { const x = it(id); if (!x) return ''; const c = flStep(cs || ss);
     return `<button class="pblock${x.st === 'new' ? ' st-new' : ''}" data-p="${id}"${c ? ` data-cs="${c}"` : ''} aria-haspopup="dialog">
-        <span class="pb-top"><span class="pb-fl">${picon(id, 48, cs || ss)}</span><span class="pb-tags">${lvBadge(x.lv)}${stTag(x)}</span></span>
+        <span class="pb-top"><span class="pb-tags">${lvBadge(x.lv)}${stTag(x)}</span></span>
         <b>${esc2(x.name)}</b>${x.slogan ? `<span class="pb-slogan">${esc2(x.slogan)}</span>` : ''}<span class="pb-line">${esc2(x.line)}</span>${note ? `<span class="pb-note">${esc2(cap(note))}</span>` : ''}
         ${ss ? `<span class="pb-steps">${pdotsS(ss)}<span>${esc2(stepsText(ss))}</span></span>` : ''}
         <span class="pb-foot"><span class="pb-price${isFreeP(x.price) ? ' free' : /\d/.test(x.price) ? ' paid' : ' soonp'}">${isFreeP(x.price) ? '<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 3l2.3 5.6 6 .5-4.6 3.9 1.4 5.9L12 15.8 6.9 18.9l1.4-5.9L3.7 9.1l6-.5z" fill="currentColor"/></svg>' : ''}${esc2(x.price)}</span><span class="pb-more" aria-hidden="true">→</span></span></button>`; };
@@ -1761,12 +1763,12 @@ function pathInit(){
   ];
   const coll = (j, l) => { const m = new Map(); LINE.forEach((st, s) => (st[j][l] || []).forEach(e => { const id = eid(e); if (!m.has(id)) m.set(id, []); m.get(id).push(s + 1); })); return [...m]; };
   const lvRow = (l, inner, d) => `<div class="lvrow" data-lv="${l}"><div class="lvrow-h">${lvBadge(l)}<span>${esc2(d || LV[l].d)}</span></div>${inner}</div>`;
-  const theme = (ti, h, q, sub, rows, extra = '') => `<div class="theme"><div class="theme-h"><span class="theme-n md-host${ti ? '' : ' where'}">${medal(['stupeni', 'l2-2-zemlya', 'l4-2-reka', 'l5-3-orel'][ti], 0, ['#6E4F3C', '#C97E52', '#4E9A70', '#6A5FB8'][ti])}</span><div><h3>${esc2(h)}</h3>${q ? `<p class="theme-q">${esc2(q)}</p>` : ''}<p>${esc2(sub)}</p></div></div>${rows}${extra}</div>`;
+  const theme = (ti, h, q, sub, rows, extra = '') => `<div class="theme"><div class="theme-h"><div><h3>${esc2(h)}</h3>${q ? `<p class="theme-q">${esc2(q)}</p>` : ''}<p>${esc2(sub)}</p></div></div>${rows}${extra}</div>`;
   const whereHtml = theme(0, 'Где ты сейчас', '', 'Начни бесплатно. Тест покажет, на какой ты ступени и какая поскрипывает, а на знакомстве мы вместе выберем твой следующий шаг.',
       lvRow('sama', `<div class="pgrid">${['stupeni', 'kompas', 'karta'].map(id => card(id, ALL8)).join('')}</div>`)
       + lvRow('so', `<div class="pgrid">${card('meet', ALL8)}</div>`)
       + lvRow('sama', `<div class="pgrid">${PAIR.map(id => card(id, null)).join('')}</div>`, 'для пары — отдельно от ступеней'));
-  const thruHtml = `<div class="theme"><div class="theme-h"><span class="theme-n thru md-host">${medal('l8-6-mandala', 0, '#66704F')}</span><div><h3>На всех ступенях</h3><p>Это идёт с тобой по всему пути.</p></div></div>${LVK.map(l => { const a = THRU.filter(id => it(id).lv === l); return a.length ? lvRow(l, `<div class="pgrid">${a.map(id => card(id, ALL8)).join('')}</div>`) : ''; }).join('')}</div>`;
+  const thruHtml = `<div class="theme"><div class="theme-h"><div><h3>На всех ступенях</h3><p>Это идёт с тобой по всему пути.</p></div></div>${LVK.map(l => { const a = THRU.filter(id => it(id).lv === l); return a.length ? lvRow(l, `<div class="pgrid">${a.map(id => card(id, ALL8)).join('')}</div>`) : ''; }).join('')}</div>`;
   /* акварельные чаши ступеней — те же картины, что на «Твой путь» */
   const IMGS = ['01-razbitaya-chasha', '02-svoi-chashi', '03-sobirayu-sebya', '04-v-odnom-ryadu', '05-polnaya-chasha', '06-chasha-po-krugu', '07-zolotye-shvy', '08-zoloto-dlya-novoj'];
   const bowlPic = k => `<picture><source srcset="/put/img/${IMGS[k]}.webp" type="image/webp"><img src="/put/img/${IMGS[k]}.jpg" width="900" height="1205" loading="lazy" alt=""></picture>`;
@@ -1796,7 +1798,7 @@ function pathInit(){
   box.innerHTML = `<div class="pv-ctl"><div class="pv-sw" role="group" aria-label="Как показать программы">
       <button type="button" data-v="steps" aria-pressed="false">${ico('hill', 'currentColor', 'none', 18)}По ступеням</button>
       <button type="button" data-v="subs" aria-pressed="false">${SUBBARS(3).replace(/#FFFCF8/g, 'currentColor').replace(/rgba\(255,252,248,\.35\)/g, 'currentColor')}По шагам</button></div></div>
-    <div class="lv-keys" role="group" aria-label="Вид помощи">${LVK.map(l => `<button type="button" class="lvk lv-${l}" data-k="${l}" aria-pressed="false"><span class="lvr md-host">${medal(LVM[l], 0, 'var(--ci,var(--c))')}</span><span><b>${LV[l].n}</b><small>${esc2(LV[l].k)}</small></span></button>`).join('')}</div>
+    <div class="lv-keys" role="group" aria-label="Вид помощи">${LVK.map(l => `<button type="button" class="lvk lv-${l}" data-k="${l}" aria-pressed="false"><span><b>${LV[l].n}</b><small>${esc2(LV[l].k)}</small></span></button>`).join('')}</div>
     <p class="lv-hint">Нажми на вид помощи, чтобы оставить только его. Нажми ещё раз — снова видно всё.</p>
     <div class="pv-steps">${stepsHtml}</div>
     <div class="pv-subs themes">${subsHtml}</div>`;
@@ -1851,7 +1853,7 @@ function pathInit(){
   function nextBox(p){
     if (!p.next) return '';
     return `<div class="pd-next"><span class="pd-lbl">Куда дальше</span><div class="pd-next-grid">` + p.next.map(n => {
-      if (Array.isArray(n)){ const q = PR[n[0]]; return `<button type="button" class="pd-nx" data-p="${n[0]}"><span class="pd-nx-fl">${picon(n[0], 34)}</span><span><b>${esc2(q.name)}</b><span>${esc2(n[1])}</span><em>${esc2(cap(q.price))}</em></span></button>`; }
+      if (Array.isArray(n)){ const q = PR[n[0]]; return `<button type="button" class="pd-nx" data-p="${n[0]}"><span><b>${esc2(q.name)}</b><span>${esc2(n[1])}</span><em>${esc2(cap(q.price))}</em></span></button>`; }
       return `<a class="pd-nx" href="${n.h}" target="_blank" rel="noopener"><span class="pd-nx-fl pd-nx-sv" aria-hidden="true">↗</span><span><b>${esc2(n.b)}</b><span>${esc2(n.t)}</span></span></a>`;
     }).join('') + `</div></div>`;
   }
