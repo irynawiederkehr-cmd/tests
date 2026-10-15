@@ -712,6 +712,12 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
 .rv-more{margin-top:0!important}
 /* края акварельных карт мягко растворяются в фоне (15.10.2026, 20:19, Ирина: «на сайте на фоне немножко края карточек замыливай») */
 .pb-bowl img,.plm-pic img,.sp-img img,.sp-bowl img{-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent),linear-gradient(180deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent),linear-gradient(180deg,transparent,#000 10%,#000 90%,transparent);mask-composite:intersect}
+/* медальоны-акварели вместо старых значков и эдельвейсов (15.10.2026, 20:17, Ирина: «давай уберем старые иконки все и сделаем как новые наши») */
+.md{display:block;flex:none;box-sizing:border-box;border-radius:50%;padding:3px;background:conic-gradient(from 200deg,#C9971F,#F3D98A,var(--lc,#B98324),#B07A12,#F3D98A,#C9971F);box-shadow:0 5px 14px -8px color-mix(in srgb,var(--lc,#B98324) 60%,transparent)}
+.md img{display:block;width:100%;height:100%;box-sizing:border-box;border-radius:50%;object-fit:cover;background:#fff;border:1.5px solid color-mix(in srgb,var(--lc,#B98324) 45%,#fff)}
+.md-host{background:none!important;border:0!important;box-shadow:none!important;padding:0!important;display:block!important}
+.md-host>.md{width:100%;height:100%}
+.rq:hover .rq-m{transform:scale(1.06)}
 </style><meta name="theme-color" content="#6E4F3C"><style id="lineyka">/* ===== Линейка по ступеням: два вида и три уровня помощи (копия 11.10.2026) ===== */
 .sl-one{margin:6px 0 2px}.sl-one .svoi-btn{max-width:640px}
 .lv-sl{--c:#5E6B45;--f:#E3E8D3;--ci:#5E8A6C}.lv-sama{--c:#9A6C1A;--f:#F6E7C6;--ci:#C4973A}.lv-so{--c:#6E4F3C;--f:#EADFCF;--ci:#6E4F3C}
@@ -798,7 +804,7 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
 <header class="top">
   <div class="page">
     <a class="mark" href="https://voznesenskaya.ch/" aria-label="Ирина Вознесенская — на главную">
-      <span class="mono av"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#FFFCF8" stroke="#6E4F3C" stroke-width="3"/><g transform="rotate(22.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(67.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(112.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(157.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(202.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(247.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(292.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(337.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(0.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(45.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(90.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(135.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(180.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(225.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(270.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(315.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><circle cx="50" cy="50" r="7" fill="#B98324"/></svg></span>
+      <span class="mono av"><svg viewBox="0 0 100 100" aria-hidden="true"><image href="/img/logo.webp" width="100" height="100"/></svg></span>
       <span><b>Ирина Вознесенская</b><small>коуч, ментор, автор метода «Ступени. Твой путь в новой стране»</small></span>
     </a>
     <nav aria-label="Разделы">
@@ -841,9 +847,9 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
         <p>Поэтому в нашей работе в центре всегда ты. Твоя жизнь, твои силы и твоё благополучие.</p>
         <p class="who-bowl">Всё, что я знаю об этом пути, я собрала в метод «Ступени. Твой путь в новой стране». Это восемь ступеней, по которым жизнь после переезда собирается заново, как разбитую чашу собирают золотом. Трещины на этом пути не нужно прятать. Со временем они становятся золотыми швами, и твой опыт переезда становится твоей силой.</p>
         <div class="who-ways">
-          <div class="way"><span class="ic" data-ico="sprout" data-c="#5E8A6C"></span><div><h3>Мы идём глубже советов</h3><p>Мы не ограничимся планом на бумаге. Главный вопрос после переезда звучит так: «Кто я здесь?» Мы бережно посмотрим туда, где живут твои привычные реакции, страхи и старые правила. Дома они помогали, а здесь перестали работать. Когда ты собираешь себя заново и понимаешь, что важно тебе сейчас, решения снаружи начинают находиться сами.</p></div></div>
-          <div class="way"><span class="ic" data-ico="lantern" data-c="#4F7EC2"></span><div><h3>Ты перестаёшь винить себя</h3><p>После переезда почти все опускаются на нижние ступени, даже те, кто дома стоял высоко. Силы быстро кончаются, а простое письмо из ведомства кажется горой. Я понимаю, как мозг реагирует на перемены и незнакомую среду. Это не слабость. Так жизнь собирается заново: сначала нижние ступени, потом верхние. Одно это понимание снимает с твоих плеч много лишней вины.</p></div></div>
-          <div class="way"><span class="ic" data-ico="explore" data-c="#C4973A"></span><div><h3>Твоё внимание возвращается к тебе</h3><p>После переезда всё внимание уходит наружу: бумаги, сроки, чужой язык, заботы семьи. На себя почти ничего не остаётся. Вместе мы возвращаем внимание к тебе и к твоей ступени: что тебе нужно сейчас и какой маленький шаг ты можешь сделать для себя уже сегодня. Тогда в голове становится тише, и появляется место для твоих решений.</p></div></div>
+          <div class="way"><span class="ic" data-medal="l2-4-rodovoe-derevo" data-c="#5E8A6C"></span><div><h3>Мы идём глубже советов</h3><p>Мы не ограничимся планом на бумаге. Главный вопрос после переезда звучит так: «Кто я здесь?» Мы бережно посмотрим туда, где живут твои привычные реакции, страхи и старые правила. Дома они помогали, а здесь перестали работать. Когда ты собираешь себя заново и понимаешь, что важно тебе сейчас, решения снаружи начинают находиться сами.</p></div></div>
+          <div class="way"><span class="ic" data-medal="l4-7-ruka-na-serdce" data-c="#4F7EC2"></span><div><h3>Ты перестаёшь винить себя</h3><p>После переезда почти все опускаются на нижние ступени, даже те, кто дома стоял высоко. Силы быстро кончаются, а простое письмо из ведомства кажется горой. Я понимаю, как мозг реагирует на перемены и незнакомую среду. Это не слабость. Так жизнь собирается заново: сначала нижние ступени, потом верхние. Одно это понимание снимает с твоих плеч много лишней вины.</p></div></div>
+          <div class="way"><span class="ic" data-medal="l1-7-ladoni-u-ognya" data-c="#C4973A"></span><div><h3>Твоё внимание возвращается к тебе</h3><p>После переезда всё внимание уходит наружу: бумаги, сроки, чужой язык, заботы семьи. На себя почти ничего не остаётся. Вместе мы возвращаем внимание к тебе и к твоей ступени: что тебе нужно сейчас и какой маленький шаг ты можешь сделать для себя уже сегодня. Тогда в голове становится тише, и появляется место для твоих решений.</p></div></div>
         </div>
         <blockquote class="who-quote">Я не тороплю и не тяну за руку. Иду рядом — в твоём темпе и ради тебя.<span>Ирина</span></blockquote>
       </div>
@@ -918,10 +924,10 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
     </div>
     <div class="pl-lead"><h3>Как мы идём по ступеням</h3><p>Метод показывает, где ты сейчас и какой шаг следующий. А идём мы с помощью того, чему я училась как коуч и нейрокоуч.</p></div>
     <div class="pillars">
-      <div class="pillar"><span class="pl-fl" data-mandala="0"></span><h3>Эмоциональный интеллект</h3><p>Ты учишься замечать, что чувствуешь, и понимать, о чём говорят твои чувства. Они подсказывают, где тебе сейчас нужна забота: усталость говорит о силах и сне, одиночество — о своём круге, тревога перед письмом из ведомства — о понятных правилах. Эмоции перестают управлять твоими решениями и начинают подсказывать.</p></div>
-      <div class="pillar"><span class="pl-fl" data-mandala="1"></span><h3>Чистый язык и метафоры</h3><p>Чистый язык — это вопросы твоими же словами, без моих подсказок и оценок. Ещё я работаю с метафорическими картами: на картинке каждая видит своё. Иногда легче сказать «я как разбитая чаша», чем объяснить всё по порядку. В твоём образе находится то, что трудно увидеть напрямую, и ты находишь свои слова для того, что с тобой происходит.</p></div>
-      <div class="pillar"><span class="pl-fl" data-mandala="5"></span><h3>Мышление и фокус внимания</h3><p>Твоё мышление и твоё внимание — главный ресурс. Замечаем мысли, которые ходят по кругу, и направляем внимание туда, где есть решение, а не туда, где страшно. Смотрим не на всю гору, а на твою ступень и следующий шаг на ней. Меняется фокус — и сил у тебя становится больше.</p></div>
-      <div class="pillar"><span class="pl-fl" data-mandala="2"></span><h3>Как работает мозг</h3><p>Инсайт — только половина дела. Вторая половина — закрепить новое в твоей жизни. Мозгу для этого нужны повторение, телесный якорь и маленький выполнимый шаг между встречами. Так «Ставлю ногу» постепенно становится «Стою твёрдо», и новое держит тебя, как золотой шов держит чашу.</p></div>
+      <div class="pillar"><span class="pl-fl" data-medal="l6-6-serdce" data-s="60" data-c="#C97E52"></span><h3>Эмоциональный интеллект</h3><p>Ты учишься замечать, что чувствуешь, и понимать, о чём говорят твои чувства. Они подсказывают, где тебе сейчас нужна забота: усталость говорит о силах и сне, одиночество — о своём круге, тревога перед письмом из ведомства — о понятных правилах. Эмоции перестают управлять твоими решениями и начинают подсказывать.</p></div>
+      <div class="pillar"><span class="pl-fl" data-medal="n-kniga" data-s="60" data-c="#4E9A70"></span><h3>Чистый язык и метафоры</h3><p>Чистый язык — это вопросы твоими же словами, без моих подсказок и оценок. Ещё я работаю с метафорическими картами: на картинке каждая видит своё. Иногда легче сказать «я как разбитая чаша», чем объяснить всё по порядку. В твоём образе находится то, что трудно увидеть напрямую, и ты находишь свои слова для того, что с тобой происходит.</p></div>
+      <div class="pillar"><span class="pl-fl" data-medal="l7-3-sova" data-s="60" data-c="#C4973A"></span><h3>Мышление и фокус внимания</h3><p>Твоё мышление и твоё внимание — главный ресурс. Замечаем мысли, которые ходят по кругу, и направляем внимание туда, где есть решение, а не туда, где страшно. Смотрим не на всю гору, а на твою ступень и следующий шаг на ней. Меняется фокус — и сил у тебя становится больше.</p></div>
+      <div class="pillar"><span class="pl-fl" data-medal="n-tropinka" data-s="60" data-c="#4F7EC2"></span><h3>Как работает мозг</h3><p>Инсайт — только половина дела. Вторая половина — закрепить новое в твоей жизни. Мозгу для этого нужны повторение, телесный якорь и маленький выполнимый шаг между встречами. Так «Ставлю ногу» постепенно становится «Стою твёрдо», и новое держит тебя, как золотой шов держит чашу.</p></div>
     </div>
 
   </section>
@@ -936,10 +942,10 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
       <a class="btn free" href="https://t.me/IrynaNeuroCoach" target="_blank" rel="noopener">Написать «ВСТРЕЧА» в Telegram</a>
     </div>
     <ol class="sess-steps">
-      <li><span class="ss-ic" data-ico="telegram" data-c="#4F7EC2"></span><div><span class="ss-k">Шаг 1</span><h3>Ты пишешь мне</h3><p>Напиши в Telegram слово <span class="codeword">ВСТРЕЧА</span>. Можно добавить пару строк о себе и о том, что сейчас происходит. Красиво формулировать не нужно, это моя работа.</p></div></li>
-      <li><span class="ss-ic" data-ico="speech" data-c="#5E8A6C"></span><div><span class="ss-k">Шаг 2</span><h3>Мы знакомимся</h3><p>Это 30 минут онлайн, и это бесплатно. Я задам несколько вопросов о тебе и честно скажу, смогу ли помочь. Если нет, подскажу, к кому лучше обратиться.</p></div></li>
-      <li><span class="ss-ic" data-ico="cup" data-c="#6E4F3C"></span><div><span class="ss-k">Шаг 3</span><h3>Сессия — время только для тебя</h3><p>Мы встречаемся по видеосвязи, и всё моё внимание принадлежит тебе. Готовиться и приносить ничего не нужно. Всё, что ты скажешь, остаётся между нами.</p></div></li>
-      <li><span class="ss-ic" data-ico="sprout" data-c="#C4973A"></span><div><span class="ss-k">Шаг 4</span><h3>Ты делаешь шаг для себя</h3><p>Каждая встреча заканчивается не только осознанием. В конце мы находим маленькое конкретное действие ради тебя, которое ты правда сделаешь до следующей встречи.</p></div></li>
+      <li><span class="ss-ic" data-medal="n-samolet" data-c="#4F7EC2"></span><div><span class="ss-k">Шаг 1</span><h3>Ты пишешь мне</h3><p>Напиши в Telegram слово <span class="codeword">ВСТРЕЧА</span>. Можно добавить пару строк о себе и о том, что сейчас происходит. Красиво формулировать не нужно, это моя работа.</p></div></li>
+      <li><span class="ss-ic" data-medal="n-kresla" data-c="#5E8A6C"></span><div><span class="ss-k">Шаг 2</span><h3>Мы знакомимся</h3><p>Это 30 минут онлайн, и это бесплатно. Я задам несколько вопросов о тебе и честно скажу, смогу ли помочь. Если нет, подскажу, к кому лучше обратиться.</p></div></li>
+      <li><span class="ss-ic" data-medal="l6-1-zabotlivaya" data-c="#6E4F3C"></span><div><span class="ss-k">Шаг 3</span><h3>Сессия — время только для тебя</h3><p>Мы встречаемся по видеосвязи, и всё моё внимание принадлежит тебе. Готовиться и приносить ничего не нужно. Всё, что ты скажешь, остаётся между нами.</p></div></li>
+      <li><span class="ss-ic" data-medal="n-kamni" data-c="#C4973A"></span><div><span class="ss-k">Шаг 4</span><h3>Ты делаешь шаг для себя</h3><p>Каждая встреча заканчивается не только осознанием. В конце мы находим маленькое конкретное действие ради тебя, которое ты правда сделаешь до следующей встречи.</p></div></li>
     </ol>
   </section>
 </main>
@@ -955,9 +961,9 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
     <div id="pathBox" class="pv"></div>
     <p class="path-note">Всё онлайн и на русском. Где написано «цену уточняй лично», цена ещё утверждается, напиши мне, и я расскажу. Как записаться, оплатить и перенести встречу — в <a href="usloviya/">условиях работы</a>.</p>
     <div class="also" style="margin-top:28px">
-      <a class="mini" href="testy/"><span class="ic sm" data-ico="compass" data-c="#5E8A6C"></span><b>Все мои тесты</b><span>Четыре бесплатных теста, по 10–20 минут, с подробным разбором.</span></a>
-      <a class="mini" href="https://t.me/swisscompass_bot" target="_blank" rel="noopener"><span class="ic sm" data-ico="swissguide" data-c="#6E4F3C"></span><b>Гайд по Швейцарии</b><span>Мой бесплатный Telegram-бот. Бумаги, страховка, школа и врачи по шагам и на русском.</span></a>
-      <a class="mini" href="https://t.me/IrynaNeuroCoach_channel" target="_blank" rel="noopener"><span class="ic sm" data-ico="megaphone" data-c="#4F7EC2"></span><b>Мой Telegram-канал</b><span>Полезное для тебя о жизни в новой стране. И место, где можно найти своих.</span></a>
+      <a class="mini" href="testy/"><span class="ic sm" data-medal="l7-7-celoe" data-c="#5E8A6C"></span><b>Все мои тесты</b><span>Четыре бесплатных теста, по 10–20 минут, с подробным разбором.</span></a>
+      <a class="mini" href="https://t.me/swisscompass_bot" target="_blank" rel="noopener"><span class="ic sm" data-medal="n-ukazatel" data-c="#6E4F3C"></span><b>Гайд по Швейцарии</b><span>Мой бесплатный Telegram-бот. Бумаги, страховка, школа и врачи по шагам и на русском.</span></a>
+      <a class="mini" href="https://t.me/IrynaNeuroCoach_channel" target="_blank" rel="noopener"><span class="ic sm" data-medal="n-samolet" data-c="#4F7EC2"></span><b>Мой Telegram-канал</b><span>Полезное для тебя о жизни в новой стране. И место, где можно найти своих.</span></a>
     </div>
   </div>
   <dialog class="qm" id="pdlg" aria-labelledby="pdlgTitle"><div class="qm-card" id="pdlgCard"></div></dialog>
@@ -971,12 +977,12 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
       <h2 id="re-h">Что меняется для тебя</h2>
     </div>
     <ul class="results">
-      <li><span class="ic sm" data-ico="sprout" data-c="#C4973A"></span>Трещины переезда становятся золотыми швами — твой опыт становится твоей силой</li>
-      <li><span class="ic sm" data-ico="sprout" data-c="#5E8A6C"></span>На вопрос «Кто я здесь?» появляется твой ответ, а не чужой совет</li>
-      <li><span class="ic sm" data-ico="key" data-c="#C4973A"></span>Решение, которое ты откладывала месяцами, становится сделанным</li>
-      <li><span class="ic sm" data-ico="sun" data-c="#C4973A"></span>Возвращается твоя энергия — ты перестаёшь тратить её на внутренний спор</li>
-      <li><span class="ic sm" data-ico="compass" data-c="#6E4F3C"></span>Появляется твоё «зачем» в новой стране, а не только «надо»</li>
-      <li><span class="ic sm" data-ico="signpost" data-c="#4F7EC2"></span>Ты видишь свою ступень и следующий шаг на ней, а не всю гору целиком</li>
+      <li><span class="ic sm" data-medal="put-7" data-c="#C4973A"></span>Трещины переезда становятся золотыми швами — твой опыт становится твоей силой</li>
+      <li><span class="ic sm" data-medal="n-zerkalo" data-c="#5E8A6C"></span>На вопрос «Кто я здесь?» появляется твой ответ, а не чужой совет</li>
+      <li><span class="ic sm" data-medal="l3-6-strela" data-c="#C4973A"></span>Решение, которое ты откладывала месяцами, становится сделанным</li>
+      <li><span class="ic sm" data-medal="l1-2-ogon" data-c="#C4973A"></span>Возвращается твоя энергия — ты перестаёшь тратить её на внутренний спор</li>
+      <li><span class="ic sm" data-medal="l5-6-zvezda" data-c="#6E4F3C"></span>Появляется твоё «зачем» в новой стране, а не только «надо»</li>
+      <li><span class="ic sm" data-medal="stupeni" data-c="#4F7EC2"></span>Ты видишь свою ступень и следующий шаг на ней, а не всю гору целиком</li>
     </ul>
     <p class="note">Коучинг — это партнёрская работа. Результат появляется, когда мы работаем вместе, ты и я.</p>
   </section>
@@ -1032,7 +1038,7 @@ span.rv-prod:hover{background:var(--sage-soft);color:var(--sage)}
   <!-- ГРАНИЦА -->
   <section aria-labelledby="lim-h">
     <div class="limits">
-      <div class="l-top"><span class="pl-fl lim-fl"><svg viewBox="0 0 100 100" width="64" height="64" aria-hidden="true">  <circle cx="50" cy="50" r="46" fill="#FFFCF8" stroke="#6E4F3C" stroke-width="3"/>  <path d="M50 78 V52" stroke="#66704F" stroke-width="2.4" stroke-linecap="round"/>  <path d="M50 76 C34 76 20 66 18 46 C30 46 44 54 50 70" fill="#E3E6D6" stroke="#66704F" stroke-width="2.2" stroke-linejoin="round"/>  <path d="M50 76 C66 76 80 66 82 46 C70 46 56 54 50 70" fill="#E3E6D6" stroke="#66704F" stroke-width="2.2" stroke-linejoin="round"/>  <path d="M28 52 C36 58 42 63 47 70 M72 52 C64 58 58 63 53 70" fill="none" stroke="#A7B484" stroke-width="1.5" stroke-linecap="round"/>  <path d="M50 54 C40 52 36 42 38 30 C42 34 46 34 50 24 C54 34 58 34 62 30 C64 42 60 52 50 54Z" fill="#F5DDD3" stroke="#A0523D" stroke-width="2.2" stroke-linejoin="round"/>  <path d="M50 54 C46 46 46 38 50 30 C54 38 54 46 50 54Z" fill="#D99A84" stroke="#A0523D" stroke-width="1.6" stroke-linejoin="round"/>  <circle cx="50" cy="20" r="2" fill="#B98324"/><circle cx="41" cy="24" r="1.4" fill="#B98324"/><circle cx="59" cy="24" r="1.4" fill="#B98324"/></svg></span><h2 id="lim-h">Когда коучинг не подходит</h2></div>
+      <div class="l-top"><span class="pl-fl lim-fl" data-medal="l4-7-ruka-na-serdce" data-s="64" data-c="#6E4F3C"></span><h2 id="lim-h">Когда коучинг не подходит</h2></div>
       <div class="lim-body">
         <p>Коучинг работает, когда у тебя есть силы двигаться. Бывают состояния, когда тебе нужнее врач или психотерапевт, — и я скажу об этом прямо, потому что твоё благополучие важнее.</p>
         <ul>
@@ -1162,7 +1168,7 @@ function ico(name, line = '#2E5A88', fill, size = 24){
 }
 
 /* знак-аватар Ирины: цветок-мандала (с 03.10.2026) */
-const AVATAR_SVG = '<svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#FFFCF8" stroke="#6E4F3C" stroke-width="3"/><g transform="rotate(22.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(67.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(112.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(157.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(202.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(247.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(292.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(337.5 50 50)"><path d="M50 50 C42 40 43 24 50 15 C57 24 58 40 50 50Z" fill="#E3E6D6" stroke="#66704F" stroke-width="2"/></g><g transform="rotate(0.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(45.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(90.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(135.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(180.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(225.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(270.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><g transform="rotate(315.0 50 50)"><path d="M50 50 C45 43 45 32 50 26 C55 32 55 43 50 50Z" fill="#EADFCF" stroke="#6E4F3C" stroke-width="2"/></g><circle cx="50" cy="50" r="7" fill="#B98324"/></svg>';
+const AVATAR_SVG = '<svg viewBox="0 0 100 100" aria-hidden="true"><image href="/img/logo.webp" width="100" height="100"/></svg>';
 /* ===== Цветы-мандалы для запросов (в стиле аватара, 04.10.2026) ===== */
 /* оттенки подстроены под акварельные чаши ступеней (13.10.2026, Ирина: «цвета не меняй, только оттенки»): золото швов, шалфей, васильковый, тёплая глина */
 const MANDALAS = [
@@ -1173,6 +1179,19 @@ const MANDALAS = [
   {n:9,  outer:['#5E8A6C','#E0EFE4'], inner:['#8A6B52','#F2E8DC'], core:'#C4973A', w:6,  l:35, wi:4, li:22},
   {n:10, outer:['#C4973A','#F8ECCD'], inner:['#4F7EC2','#E4EEFB'], core:'#8A6B52', w:5.5,l:36, wi:4, li:24},
 ];
+/* ===== медальоны-акварели (15.10.2026, 20:17) — вместо цветков-эдельвейсов и линейных значков ===== */
+function medal(slug, size, lc){ return `<span class="md" style="${size ? `width:${size}px;height:${size}px;` : ''}--lc:${lc || '#B98324'}"><img src="/img/m/${slug}.webp" alt="" loading="lazy" decoding="async"></span>`; }
+const MDC = ['#8E8470','#6A5FB8','#C25468','#3F6FBF','#C97E52','#4E9A70','#A99A2E','#2894A0'];
+const RQM = ['put-1','put-2','put-3','put-4','put-5','put-6','put-7','put-8','l5-7-ruka-k-zvezde','n-razvilka','n-zerkalo'];
+const rqMedal = (i, s) => medal(RQM[i] || 'stupeni', s, MDC[i] || '#B98324');
+const LVM = { sl: 'l2-7-ruki-po-krugu', sama: 'n-bloknot', so: 'n-kresla' };
+const PMED = { kompas:'n-kompas', stupeni:'stupeni', blizost:'otn-5-rastem', roza:'n-roza', bot:'n-ukazatel', emo:'l6-6-serdce', karta:'l7-5-karta', meet:'n-kresla',
+  day:'l5-4-podsolnuh', year:'l7-6-spiral', budget:'l4-5-vesy', tax:'l4-3-pchela', mentor:'l7-1-fonar', m1:'l1-3-medved', enough:'l1-5-hleb', borders:'l3-5-shchit',
+  price5:'l4-4-kolos', exp:'l2-10-krug-doveriya', draft:'put-end-dom', snimok:'l7-7-celoe', fund:'l2-4-rodovoe-derevo', flag:'l3-6-strela', support:'l5-6-zvezda',
+  life:'l8-1-zvezdy', gift:'l6-3-delfiny', tyazhelo:'l8-7-ogonyok', tracker:'n-kamni', zima:'l7-2-svet', krug:'l2-7-ruki-po-krugu', odin:'otn-6-skamya',
+  granicy:'l3-7-stop', nemeckiy:'l3-9-golos', gde:'l5-5-truba', pochta:'n-pismo', hochu:'l5-7-ruka-k-zvezde', bagazh:'put-start-chemodan', deti:'l2-1-mat',
+  fokus:'l5-3-orel', komu:'l8-4-drevo', schastye:'l6-4-lug', chas:'l6-5-odeyalo', ostavila:'l2-3-zhuravli', odna:'otn-8-reki', pismo:'l8-5-svecha',
+  proverka:'l3-1-voitelnica', razobrat:'l4-10-poryadok', kartami:'l8-6-mandala', sess:'l1-7-ladoni-u-ognya', vstrecha:'l2-5-stol', razbor:'l7-10-sistema', nastav:'l8-3-kit' };
 function mandala(i, size){
   const m = MANDALAS[i % MANDALAS.length];
   const petal = (len, w) => `M50 50 C${50-w} ${50-len*0.35} ${50-w*0.9} ${50-len*0.8} 50 ${50-len} C${50+w*0.9} ${50-len*0.8} ${50+w} ${50-len*0.35} 50 50Z`;
@@ -1184,6 +1203,7 @@ function mandala(i, size){
 }
 document.querySelectorAll('[data-ico]').forEach(e => { e.innerHTML = ico(e.dataset.ico, e.dataset.c, null, e.classList.contains('sm') ? 26 : 32); if (e.dataset.c) e.style.setProperty('--ic', e.dataset.c); });
 document.querySelectorAll('[data-mandala]').forEach(e => { e.innerHTML = mandala(+e.dataset.mandala, 60); });
+document.querySelectorAll('[data-medal]').forEach(e => { e.classList.add('md-host'); if (e.dataset.s) e.style.width = e.style.height = e.dataset.s + 'px'; e.innerHTML = medal(e.dataset.medal, 0, e.dataset.c); });
 /* ===== «Узнаёшь себя в одной из этих фраз?» на языке метода «Ступени. Твой путь в новой стране» (11.10.2026, вопрос Ирины 17:47) =====
    с 11.10.2026, 21:05 (Ирина: «хочется иметь по боли на каждую ступень») — восемь фраз, по одной на ступень снизу вверх, и группа «На любой ступени» (any).
    У каждой фразы: подпись в списке (at, у ступеней — «Ступень N · название»), где это на пути — ступени (st) и шаг (sub: 0 Ставлю ногу · 1 Стою твёрдо · 2 Тянусь выше, -1 — без шага),
@@ -1267,7 +1287,7 @@ function rqInit(){
   const row = (x, i) => { const s = x.st[0];
     const n = x.any ? `<span class="n">${all8}</span>` : `<span class="n" style="color:${STEPC[s - 1][0]}">0${s}</span>`;
     const at = x.any ? `<span class="rq-dots" aria-hidden="true">${dots(x)}</span>${esc(x.at)}` : `Ступень ${s} · ${esc(STEPN[s - 1])}`;
-    return `<button class="rq" data-i="${i}" aria-haspopup="dialog">${n}<span class="rq-m">${mandala(i,46)}</span><span class="rq-t"><b>${esc(x.t)}</b><span class="rq-at">${at}</span></span><span class="arr" aria-hidden="true">→</span></button>`; };
+    return `<button class="rq" data-i="${i}" aria-haspopup="dialog">${n}<span class="rq-m">${rqMedal(i,46)}</span><span class="rq-t"><b>${esc(x.t)}</b><span class="rq-at">${at}</span></span><span class="arr" aria-hidden="true">→</span></button>`; };
   rqList.innerHTML = RQ.map((x, i) => x.any ? '' : row(x, i)).join('');
   document.getElementById('rqAny').innerHTML = RQ.map((x, i) => x.any ? row(x, i) : '').join('');
   const bars = n => `<svg viewBox="0 0 18 18" width="12" height="12" aria-hidden="true">${[0, 1, 2].map(k => `<rect x="${1 + k * 6}" y="${12 - k * 5}" width="4" height="${5 + k * 5}" rx="1.2" fill="${k <= n ? '#FFFCF8' : 'rgba(255,252,248,.45)'}"/>`).join('')}</svg>`;
@@ -1284,7 +1304,7 @@ function rqInit(){
   }).join('');
   function openRq(x){
     const c = x.st.length ? STEPC[x.st[0] - 1] : GOLD;
-    qmCard.innerHTML = `<div class="qm-top"><span class="rq-mm">${mandala(RQ.indexOf(x),64)}</span>
+    qmCard.innerHTML = `<div class="qm-top"><span class="rq-mm">${rqMedal(RQ.indexOf(x),64)}</span>
       <div class="qm-head"><div class="eyebrow">С чем ко мне приходят</div><h2 class="qm-title" id="qmTitle">«${esc(x.t)}»</h2></div>
       <button class="qm-close" type="button" data-close aria-label="Закрыть">✕</button></div>
       <div class="rq-where" style="--lc:${c[0]};--lf:${c[1]}"><span class="pd-lbl">Где это на пути</span>
@@ -1689,11 +1709,8 @@ const FLGOLD = { line: '#B98324', soft: '#F6E7C6', mid: '#E2B45C', core: '#6E4F3
 const flStep = ss => { const st = [...new Set(ss || [])]; return st.length && st.length < 8 ? Math.min(...st) : 0; };
 /* ss — ступени этой карточки; null — карточка вне ступеней; не задано («Куда дальше») — все ступени программы */
 function picon(id, size, ss){
-  const f = FLK[id] || [0, 0], base = LANES[f[0]];
   const s = flStep(ss === undefined ? (POS[id] || []).map(p => p[0]) : ss), c = s && STEPC[s - 1];
-  const col = c ? { line: c[0], soft: c[1], mid: FLMIX(c[0], c[1], .55), core: '#B98324' } : FLGOLD;
-  const key = 'c' + f[0] + '-' + col.line; LANES[key] = Object.assign({ flower: base.flower }, col);
-  return flower(key, f[1], size);
+  return medal(PMED[id] || (s ? 'put-' + s : 'stupeni'), size, c ? c[0] : '#B98324');
 }
 const pdotsS = s => `<span class="pdots" aria-hidden="true">${ALL8.map(n => `<i style="${s.includes(n) ? `background:${STEPC[n - 1][0]}` : ''}"></i>`).join('')}</span>`;
 const stepsText = s => s.length === 8 ? 'для всех восьми ступеней'
@@ -1742,12 +1759,12 @@ function pathInit(){
   ];
   const coll = (j, l) => { const m = new Map(); LINE.forEach((st, s) => (st[j][l] || []).forEach(e => { const id = eid(e); if (!m.has(id)) m.set(id, []); m.get(id).push(s + 1); })); return [...m]; };
   const lvRow = (l, inner, d) => `<div class="lvrow" data-lv="${l}"><div class="lvrow-h">${lvBadge(l)}<span>${esc2(d || LV[l].d)}</span></div>${inner}</div>`;
-  const theme = (ti, h, q, sub, rows, extra = '') => `<div class="theme"><div class="theme-h"><span class="theme-n${ti ? '' : ' where'}">${ti ? SUBBARS(ti) : ico('path', '#FFFCF8', 'rgba(255,252,248,.25)', 22)}</span><div><h3>${esc2(h)}</h3>${q ? `<p class="theme-q">${esc2(q)}</p>` : ''}<p>${esc2(sub)}</p></div></div>${rows}${extra}</div>`;
+  const theme = (ti, h, q, sub, rows, extra = '') => `<div class="theme"><div class="theme-h"><span class="theme-n md-host${ti ? '' : ' where'}">${medal(['stupeni', 'l2-2-zemlya', 'l4-2-reka', 'l5-3-orel'][ti], 0, ['#6E4F3C', '#C97E52', '#4E9A70', '#6A5FB8'][ti])}</span><div><h3>${esc2(h)}</h3>${q ? `<p class="theme-q">${esc2(q)}</p>` : ''}<p>${esc2(sub)}</p></div></div>${rows}${extra}</div>`;
   const whereHtml = theme(0, 'Где ты сейчас', '', 'Начни бесплатно. Тест покажет, на какой ты ступени и какая поскрипывает, а на знакомстве мы вместе выберем твой следующий шаг.',
       lvRow('sama', `<div class="pgrid">${['stupeni', 'kompas', 'karta'].map(id => card(id, ALL8)).join('')}</div>`)
       + lvRow('so', `<div class="pgrid">${card('meet', ALL8)}</div>`)
       + lvRow('sama', `<div class="pgrid">${PAIR.map(id => card(id, null)).join('')}</div>`, 'для пары — отдельно от ступеней'));
-  const thruHtml = `<div class="theme"><div class="theme-h"><span class="theme-n thru">${SUBBARS(3)}</span><div><h3>На всех ступенях</h3><p>Это идёт с тобой по всему пути.</p></div></div>${LVK.map(l => { const a = THRU.filter(id => it(id).lv === l); return a.length ? lvRow(l, `<div class="pgrid">${a.map(id => card(id, ALL8)).join('')}</div>`) : ''; }).join('')}</div>`;
+  const thruHtml = `<div class="theme"><div class="theme-h"><span class="theme-n thru md-host">${medal('l8-6-mandala', 0, '#66704F')}</span><div><h3>На всех ступенях</h3><p>Это идёт с тобой по всему пути.</p></div></div>${LVK.map(l => { const a = THRU.filter(id => it(id).lv === l); return a.length ? lvRow(l, `<div class="pgrid">${a.map(id => card(id, ALL8)).join('')}</div>`) : ''; }).join('')}</div>`;
   /* акварельные чаши ступеней — те же картины, что на «Твой путь» */
   const IMGS = ['01-razbitaya-chasha', '02-svoi-chashi', '03-sobirayu-sebya', '04-v-odnom-ryadu', '05-polnaya-chasha', '06-chasha-po-krugu', '07-zolotye-shvy', '08-zoloto-dlya-novoj'];
   const bowlPic = k => `<picture><source srcset="/put/img/${IMGS[k]}.webp" type="image/webp"><img src="/put/img/${IMGS[k]}.jpg" width="900" height="1205" loading="lazy" alt=""></picture>`;
@@ -1777,7 +1794,7 @@ function pathInit(){
   box.innerHTML = `<div class="pv-ctl"><div class="pv-sw" role="group" aria-label="Как показать программы">
       <button type="button" data-v="steps" aria-pressed="false">${ico('hill', 'currentColor', 'none', 18)}По ступеням</button>
       <button type="button" data-v="subs" aria-pressed="false">${SUBBARS(3).replace(/#FFFCF8/g, 'currentColor').replace(/rgba\(255,252,248,\.35\)/g, 'currentColor')}По шагам</button></div></div>
-    <div class="lv-keys" role="group" aria-label="Вид помощи">${LVK.map(l => `<button type="button" class="lvk lv-${l}" data-k="${l}" aria-pressed="false"><span class="lvr">${lvIco(l, 24)}</span><span><b>${LV[l].n}</b><small>${esc2(LV[l].k)}</small></span></button>`).join('')}</div>
+    <div class="lv-keys" role="group" aria-label="Вид помощи">${LVK.map(l => `<button type="button" class="lvk lv-${l}" data-k="${l}" aria-pressed="false"><span class="lvr md-host">${medal(LVM[l], 0, 'var(--ci,var(--c))')}</span><span><b>${LV[l].n}</b><small>${esc2(LV[l].k)}</small></span></button>`).join('')}</div>
     <p class="lv-hint">Нажми на вид помощи, чтобы оставить только его. Нажми ещё раз — снова видно всё.</p>
     <div class="pv-steps">${stepsHtml}</div>
     <div class="pv-subs themes">${subsHtml}</div>`;
@@ -1856,7 +1873,7 @@ function pathInit(){
   }
   function openX(id, cs){
     const x = it(id); if (!x) return;
-    pc.innerHTML = `<div class="qm-top"><span class="pd-fl">${x.lv === 'sl' ? `<span class="pd-lvbig lv-sl">${lvIco('sl', 40)}</span>` : picon(id, 68, cs ? [+cs] : undefined)}</span>
+    pc.innerHTML = `<div class="qm-top"><span class="pd-fl">${x.lv === 'sl' ? `<span class="pd-lvbig lv-sl md-host">${medal(LVM.sl, 0, 'var(--ci,var(--c))')}</span>` : picon(id, 68, cs ? [+cs] : undefined)}</span>
       <div class="qm-head"><div class="eyebrow">${esc2(x.line)}${x.st === 'dev' ? ' · в разработке' : x.st === 'new' ? ' · новое' : ''}</div><h2 class="qm-title" id="pdlgTitle">${esc2(x.name)}</h2>${x.slogan ? `<p class="pd-slogan">${esc2(x.slogan)}</p>` : ''}</div>
       <button class="qm-close" type="button" data-pclose aria-label="Закрыть">✕</button></div>
       ${x.about ? `<p class="pd-about">${esc2(x.about)}</p>` : ''}
