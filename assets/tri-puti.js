@@ -53,7 +53,7 @@
   var CSS = '.tri-band,.tri-tools{margin-top:34px}'
     + '@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tri-bowl img{mix-blend-mode:normal;opacity:.92}}:root[data-theme="dark"] .tri-bowl img{mix-blend-mode:normal;opacity:.92}'
     + '.tri-top{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding-top:18px}'
-    + '.tri-top .tri-card{grid-template-columns:72px minmax(0,1fr);padding:14px;-webkit-tap-highlight-color:transparent}.tri-top .tri-bowl{width:72px}.tri-top .tri-t b{font-size:1.3rem}'
+    + '.tri-top .tri-card{grid-template-columns:72px minmax(0,1fr);padding:14px;-webkit-tap-highlight-color:transparent}.tri-top .tri-bowl{width:72px}.tri-top .tri-card.wide{grid-column:1/-1}.tri-top .tri-t b{font-size:1.3rem}'
     + '@media (max-width:640px){.tri-top{gap:8px;padding-top:14px}.tri-top .tri-card{grid-template-columns:42px minmax(0,1fr);align-items:center;gap:0 10px;padding:9px 10px;border-radius:14px}.tri-top .tri-bowl{width:42px;grid-row:auto;border-radius:8px}'
     + '.tri-top .tri-t span,.tri-top .tri-go{display:none}.tri-top .tri-t small{font-size:.62rem;letter-spacing:.08em}.tri-top .tri-t b{font-size:1rem;line-height:1.15}}'
     + '.tri-head h2{font-size:clamp(1.5rem,3.2vw,2rem)}.tri-head p{color:var(--muted);max-width:66ch;margin-top:6px}.tri-osn{display:inline-block;margin-top:8px;font-weight:700;font-size:.92rem;color:var(--brown);text-underline-offset:4px}'
@@ -148,16 +148,17 @@
     coach: coach,
   };
   /* Блоки наверху «Твоего пути» (Ирина, 15.10.2026: сначала вкладки «Жизнь в новой стране · Своё дело · Отношения · Основа метода»,
-     в 16:30 — «мне больше нравится в таком виде с блоками»): картинка, «Путь N», название, строка о пути; текущий — «Ты здесь».
+     в 16:30 — «мне больше нравится в таком виде с блоками»; в 16:56 — «был еще длинный блок программы его тоже вставь»: широкий блок «Программы» → главная #path): картинка, «Путь N», название, строка о пути; текущий — «Ты здесь».
      Стоят на put/, delo/, otnosheniya/ и osnova/ (там скрипт подключён с data-path="osnova"). На телефоне — 2×2, только картинка и название. */
   function topBlocks() {
     var main = document.querySelector('main.page'); if (!main || document.querySelector('.tri-top')) return;
     var B = P.map(function (p, i) { return { k: p.k, h: p.h, e: 'Путь ' + (i + 1), n: p.n, d: p.d, img: p.img }; })
-      .concat([{ k: 'osnova', h: '../osnova/', e: 'Основа метода', n: 'Спиральная динамика', d: 'Авторы, восемь уровней, что нужно и что ценно на каждом и как человек переходит на следующий.', img: '01-koster', dir: '/osnova/img/' }]);
+      .concat([{ k: 'osnova', h: '../osnova/', e: 'Основа метода', n: 'Спиральная динамика', d: 'Авторы, восемь уровней, что нужно и что ценно на каждом и как человек переходит на следующий.', img: '01-koster', dir: '/osnova/img/' },
+        { k: 'prog', h: '../#path', e: 'Твой путь со мной', n: 'Программы', d: '«По ступеням» и «По шагам»: на каждом шаге — «Свои люди», «Сама» и «Со мной». Выбери свою ступень или посмотри всё по шагам.', img: '04-v-odnom-ryadu', wide: 1 }]);
     var nav = document.createElement('div'); nav.className = 'tri-top'; nav.setAttribute('role', 'navigation'); nav.setAttribute('aria-label', 'Твой путь');   // не <nav>: у страниц свои правила для nav a (без переноса строк)
     nav.innerHTML = B.map(function (b) {
       var cur = b.k === here, tag = cur ? 'div' : 'a';
-      return '<' + tag + ' class="tri-card' + (cur ? ' here' : '') + '"' + (cur ? ' aria-current="page"' : ' href="' + b.h + '"') + '>' + pic(b.img, 'tri-bowl', b.dir, true)
+      return '<' + tag + ' class="tri-card' + (b.wide ? ' wide' : '') + (cur ? ' here' : '') + '"' + (cur ? ' aria-current="page"' : ' href="' + b.h + '"') + '>' + pic(b.img, 'tri-bowl', b.dir, true)
         + '<span class="tri-t"><small>' + esc(b.e) + '</small><b>' + esc(b.n) + '</b><span>' + esc(b.d) + '</span></span>'
         + '<span class="tri-go">' + (cur ? 'Ты здесь' : 'Открыть →') + '</span></' + tag + '>';
     }).join('');
