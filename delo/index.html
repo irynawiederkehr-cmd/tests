@@ -333,6 +333,7 @@ footer a{color:var(--muted)}
 .road-svg .glow{fill:none;stroke:color-mix(in srgb,var(--brown) 14%,transparent);stroke-width:30;stroke-linecap:round}
 .road-svg .arr{opacity:.95}
 .trail-start .ic,.trail-end .ic{position:relative;z-index:1}
+/* начало и конец тропы — значки в кружке, как стоянки (16.10.2026, Ирина: «Начало и конец значками») */.trail-start .ic.ne,.trail-end .ic.ne{width:84px;height:84px;border-radius:50%;background:var(--paper);border:2.5px solid var(--lc);box-shadow:0 6px 16px -8px color-mix(in srgb,var(--lc) 60%,transparent)}.trail-start .ic.ne svg,.trail-end .ic.ne svg{width:44px;height:44px}@media (max-width:760px){.trail-start .ic.ne,.trail-end .ic.ne{width:64px;height:64px}.trail-start .ic.ne svg,.trail-end .ic.ne svg{width:34px;height:34px}}
 .between p{grid-row:1;font-size:.88rem;color:var(--muted);font-style:italic;max-width:34ch;line-height:1.45}
 .between.l p{grid-column:1;justify-self:end;text-align:right;padding-right:14px}
 .between.r p{grid-column:3;justify-self:start;padding-left:14px}
@@ -459,9 +460,9 @@ footer a{color:var(--muted)}
 
   <section class="trail" id="trailWrap" aria-label="Восемь ступеней своего дела">
     <svg class="road-svg" id="road" aria-hidden="true"></svg>
-    <div class="trail-start"><span class="ic medal" style="--lc:#6E4F3C;--img:url(/delo/img/start-mysl.webp);--bz:180%;--bx:58%;--by:88%"><b></b></span><b>Есть только мысль</b><span>«А что, если своё?» — и, может быть, немного страшно. Отсюда начинается тропа.</span></div>
+    <div class="trail-start"><span class="ic ne" data-ico="e_zerno" data-c="#6E4F3C" data-s="44" style="--lc:#6E4F3C"></span><b>Есть только мысль</b><span>«А что, если своё?» — и, может быть, немного страшно. Отсюда начинается тропа.</span></div>
     <div id="trail"></div>
-    <div class="trail-end"><span class="ic medal" style="--lc:#2894A0;--img:url(/delo/img/end-zhelud.webp);--bz:172%;--bx:48%;--by:74%"><b></b></span><b>Дело больше тебя</b><span class="note" style="color:var(--muted);font-size:.9rem;max-width:40ch">Дело живёт, растёт и помогает тем, кто идёт следом.</span></div>
+    <div class="trail-end"><span class="ic ne" data-ico="e_dub" data-c="#2894A0" data-s="44" style="--lc:#2894A0"></span><b>Дело больше тебя</b><span class="note" style="color:var(--muted);font-size:.9rem;max-width:40ch">Дело живёт, растёт и помогает тем, кто идёт следом.</span></div>
   </section>
 
   <section class="where" aria-labelledby="where-h">
@@ -655,6 +656,31 @@ const ICONS_U = (() => {
   };
 })();
 Object.assign(ICONS, ICONS_U);
+/* значки начала и конца тропы на трёх путях (16.10.2026, Ирина: «Начало и конец значками») — стиль ICONS_U: сетка 24×24, заливка светлым тоном, линия ≈1,6 px, золото — акцент */
+const ICONS_E = (() => {
+  const G = '#C9971F';
+  return {
+    /* жизнь в новой стране: начало — чемодан, конец — дом со светом в окне */
+    e_chemodan: (c, f, s) => `<path d="M9 7.6V5.3c0-.7.5-1.2 1.2-1.2h3.6c.7 0 1.2.5 1.2 1.2v2.3" fill="none" stroke="${c}" ${s}/>`
+      + `<rect x="3.4" y="7.6" width="17.2" height="12.6" rx="2.3" fill="${f}" stroke="${c}" ${s}/>`
+      + `<path d="M3.4 13.6h17.2" stroke="${G}" stroke-width="1.9"/><rect x="10.6" y="12.3" width="2.8" height="2.6" rx=".5" fill="${G}"/>`,
+    e_dom: (c, f, s) => `<path d="M3.5 11.2 12 4.2l8.5 7v9.3h-17z" fill="${f}" stroke="${c}" ${s}/>`
+      + `<path d="M16.3 7.7V4.6h2.2v4.9" fill="none" stroke="${c}" stroke-width="1.4" stroke-linejoin="round"/>`
+      + `<rect x="9.4" y="12.2" width="5.2" height="4.6" rx=".6" fill="${G}"/><path d="M12 12.2v4.6M9.4 14.5h5.2" stroke="#FFF6DD" stroke-width=".9"/>`,
+    /* своё дело: начало — зерно на ладони, конец — дуб с жёлудем */
+    e_zerno: (c, f, s) => `<path d="M2.6 14h2.6c1.6 0 2.6 1 4.1 1h3.6a1.5 1.5 0 0 1 0 3H9.7M12.9 18l5.5-2.5a1.5 1.5 0 0 1 1.3 2.7l-6.6 3.2H8l-2.6-1.2H2.6" fill="${f}" stroke="${c}" ${s}/>`
+      + `<path d="M12.6 12.4c-1.9 0-3.2-1.4-3.2-3.3 0-2.3 1.7-4.1 3.2-5.2 1.5 1.1 3.2 2.9 3.2 5.2 0 1.9-1.3 3.3-3.2 3.3z" fill="${G}"/><path d="M12.6 11.4V7.6" stroke="#FFF6DD" stroke-width=".9" stroke-linecap="round"/>`,
+    e_dub: (c, f, s) => `<path d="M10.6 13.6v6.6" fill="none" stroke="${c}" stroke-width="2.1" stroke-linecap="round"/><path d="M6.4 20.6h8.4" stroke="${c}" ${s}/>`
+      + `<path d="M5.2 12.4a3.5 3.5 0 0 1 .6-6.6 4.6 4.6 0 0 1 8.8-.4 3.5 3.5 0 0 1 1.6 6.9 3 3 0 0 1-3 1.8H8a3 3 0 0 1-2.8-1.7z" fill="${f}" stroke="${c}" ${s}/>`
+      + `<ellipse cx="18.6" cy="18.4" rx="2.1" ry="2.5" fill="${G}"/><path d="M16.3 17c.4-1.3 1.3-1.9 2.3-1.9s1.9.6 2.3 1.9z" fill="${c}"/><path d="M18.6 15.1v-1.2" stroke="${c}" stroke-width="1.2" stroke-linecap="round"/>`,
+    /* отношения: начало — два кольца, конец — шарик-сердце */
+    e_kolca: (c, f, s) => `<circle cx="9" cy="13" r="5.3" fill="none" stroke="${c}" stroke-width="2"/><circle cx="15" cy="13" r="5.3" fill="none" stroke="${G}" stroke-width="2"/>`
+      + `<path d="M15 4.6l1.1 1.5-1.1 1.5-1.1-1.5z" fill="${G}"/>`,
+    e_shar: (c, f, s) => `<path d="M12 16c-4.4-2.8-7.1-5.2-7.1-8.3a3.7 3.7 0 0 1 7.1-1.7 3.7 3.7 0 0 1 7.1 1.7c0 3.1-2.7 5.5-7.1 8.3z" fill="${f}" stroke="${c}" ${s}/>`
+      + `<path d="M11.2 16.9h1.6l-.8-.9z" fill="${c}"/><path d="M12 16.9c-.9 1.4.9 2.2 0 3.7-.4.7-.2 1.2.2 1.7" fill="none" stroke="${G}" stroke-width="1.5" stroke-linecap="round"/>`
+  };
+})();
+Object.assign(ICONS, ICONS_E);
 const ICN = ['u1', 'u2', 'u3', 'u4', 'u5', 'u6', 'u7', 'u8'];   // универсальные значки ступеней для всех путей: очаг, свой круг, щит, весы, вершина, сердце в ладонях, спираль, дерево
 const IMG = ['01-s-nulya', '02-krug-doveriya', '03-zayavlyayu', '04-poryadok', '05-delo-rastet', '06-komanda', '07-sistema-i-svoboda', '08-delo-bolshe-menya'];
 const NODE = [[156, 47, 90], [171, 41, 86], [172, 49, 84], [144, 49, 89], [100, 50, 85], [168, 44, 96], [100, 50, 95], [129, 35, 100]];   // стоянка тропы: увеличение, x, y акварели в круге
@@ -1163,7 +1189,7 @@ qm.addEventListener('click', e => {
   const st = e.target.closest('[data-step]'); if (st) openStep(+st.dataset.step);
 });
 document.getElementById('whereActs').innerHTML = actHtml(MEET) + actHtml(FUNDACT) + actHtml(PUTACT);
-document.querySelectorAll('[data-ico]').forEach(e => { e.innerHTML = ico(e.dataset.ico, e.dataset.c, null, 32); if (e.dataset.c) e.style.setProperty('--ic', e.dataset.c); });
+document.querySelectorAll('[data-ico]').forEach(e => { e.innerHTML = ico(e.dataset.ico, e.dataset.c, null, +(e.dataset.s || 32)); if (e.dataset.c) e.style.setProperty('--ic', e.dataset.c); });
 /* одна волнистая дорога через всю тропу: проходит через все стоянки, волны неравные */
 const WAVES = [[[0.42, 0.75]], [[0.3, -0.95], [0.72, 0.5]], [[0.55, -0.7]], [[0.25, 0.6], [0.62, -1]], [[0.48, 0.9]], [[0.35, -0.55], [0.8, 0.85]], [[0.6, -0.8]], [[0.28, 0.95], [0.68, -0.45]], [[0.5, 0.65]]];
 function drawRoad(){
