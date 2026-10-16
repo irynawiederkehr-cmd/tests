@@ -5,7 +5,7 @@ Run: python3 _i18n/shape.py ; check: python3 _i18n/shape.py check"""
 import os, re, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGES = ['index.html', 'put/index.html', '404.html', 'testy/index.html', 'kompas/index.html', 'stupeni/index.html',
-         'blizost/index.html', 'roza-lyubvi/index.html', 'privacy/index.html', 'impressum/index.html', 'karta-opor/index.html', 'dogovor/index.html', 'zapis/index.html', 'usloviya/index.html', 'delo/index.html', 'otnosheniya/index.html', 'osnova/index.html', 'moi-granicy/index.html']
+         'blizost/index.html', 'roza-lyubvi/index.html', 'privacy/index.html', 'impressum/index.html', 'karta-opor/index.html', 'dogovor/index.html', 'zapis/index.html', 'usloviya/index.html', 'delo/index.html', 'otnosheniya/index.html', 'osnova/index.html', 'moi-granicy/index.html', 'moi-bagazh/index.html']
 M = '<!--shape-->'
 CSS = (':is(.navcta,.btn,.jump a,.pb-price,.go-pill,.rv-prod,.rvs-btn,.shr-btn,.invite-links a,.share-btns button,.share-btns a,'
        '.inv-copy,.inv-btn,.sb-cta,.langbar,#langbar.langbar){border-radius:12px!important}'
