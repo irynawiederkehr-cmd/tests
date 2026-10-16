@@ -1274,6 +1274,8 @@ function openLight(src, alt){ closeLight(); const d = document.createElement('di
 function closeLight(){ const d = el('light'); if (d) d.remove(); }
 
 /* ---------- старт ---------- */
+/* ссылка с пути сразу выбирает путь: …/#zhizn, #delo, #para (окна ступеней на трёх путях) */
+(function(){ const h = location.hash.slice(1); if (PK.includes(h) && !started() && S.screen !== 'result'){ S.path = h; save(); } })();
 function boot(){
   if (S.screen === 'result' && S.maps.length){ renderResult(); show('sResult'); }
   else if (S.screen === 'fill' && started()){ renderFill(); show('sFill'); }
