@@ -40,7 +40,7 @@ const CARDS = [
     art: () => card('home/img/og/delo.jpg'),
     ru: ['Своё дело — <em>с&nbsp;нуля и&nbsp;до&nbsp;вершины</em>', 'Восемь ступеней, по которым растёт своё дело в новой стране. Посмотри, где ты сейчас и что поможет дальше.'] },   // КОПИЯ 13.10.2026; uk/de/en — после «переводи»
   { out: 'osnova/og-image',
-    art: () => koster(),
+    art: () => spiral(),
     ru: ['Спиральная динамика&nbsp;— <em>основа метода</em>', 'Кто её создал, что важно человеку на каждом из восьми уровней и как он переходит на следующий.'] },
   { out: 'otnosheniya/og-image',
     art: () => card('home/img/og/otnosheniya.jpg'),
@@ -87,6 +87,10 @@ function fullBowl() {   // «Своё дело»: акварель «Полна�
 }
 function koster() {   // «Основа метода»: акварель уровня 1 «Огонь, который греет» (карты уровней, 15.10.2026), белая бумага сливается с фоном (multiply)
   return `<image href="file://${ROOT}/osnova/img/01-koster.jpg" x="650" y="-120" width="560" height="750" preserveAspectRatio="xMidYMid slice" style="mix-blend-mode:multiply"/>`;
+}
+/* 16.10.2026, 09:08, Ирина: «4 поставь спираль» — превью «Основы метода»: ступени по спирали с главной */
+function spiral() {   // «Основа метода»: акварель «Ступени по спирали» (вид сверху), края растворены, белая бумага сливается с фоном (multiply)
+  return `<image href="file://${ROOT}/home/img/og/spiral.jpg" x="680" y="8" width="500" height="614" preserveAspectRatio="xMidYMid meet" style="mix-blend-mode:multiply"/>`;
 }
 function twoBowls() {   // «Отношения»: акварель «Свои чаши» (пока нет своей колоды), белая бумага сливается с фоном (multiply)
   return `<image href="file://${ROOT}/put/img/02-svoi-chashi.jpg" x="650" y="-150" width="560" height="750" preserveAspectRatio="xMidYMid slice" style="mix-blend-mode:multiply"/>`;
