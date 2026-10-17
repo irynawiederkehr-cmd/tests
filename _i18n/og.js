@@ -42,6 +42,10 @@ const CARDS = [
   { out: 'osnova/og-image',
     art: () => spiral(),
     ru: ['Спиральная динамика&nbsp;— <em>основа метода</em>', 'Кто её создал, что важно человеку на каждом из восьми уровней и как он переходит на следующий.'] },
+  /* 17.10.2026, Ирина: «выложи его на сайте отдельной вкладкой МАК Карты» — превью: веер рубашек четырёх колод. Пока только RU (переводы на паузе) */
+  { out: 'mak/og-image',
+    art: () => fan(),
+    ru: ['Стол для <em>МАК-карт</em>', 'Четыре авторские колоды, 313 карт и стол для онлайн-сессий: карты видно на общем экране в Zoom. Доступ по личной лицензии.'] },
   { out: 'otnosheniya/og-image',
     art: () => card('home/img/og/otnosheniya.jpg'),
     ru: ['Мужчина и&nbsp;женщина&nbsp;— <em>ступень за&nbsp;ступенью</em>', 'Восемь ступеней, по которым растут отношения: от «рядом безопасно» до любви, которая больше вас двоих.'] },   // КОПИЯ 14.10.2026; uk/de/en — после «переводи»
@@ -91,6 +95,12 @@ function koster() {   // «Основа метода»: акварель уро�
 /* 16.10.2026, 09:08, Ирина: «4 поставь спираль» — превью «Основы метода»: ступени по спирали с главной */
 function spiral() {   // «Основа метода»: акварель «Ступени по спирали» (вид сверху), края растворены, белая бумага сливается с фоном (multiply)
   return `<image href="file://${ROOT}/home/img/og/spiral.jpg" x="680" y="8" width="500" height="614" preserveAspectRatio="xMidYMid meet" style="mix-blend-mode:multiply"/>`;
+}
+function fan() {   // «МАК-карты»: веер рубашек четырёх колод (mak/img/rubashka-*.jpg, 420×?)
+  const f = ['simvoly', 'emocii', 'komanda', 'onaon'], ang = [-21, -7, 7, 21];
+  let g = '<defs><filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#2E1E10" flood-opacity=".22"/></filter></defs><circle cx="925" cy="330" r="250" fill="#EFE5D6"/>';
+  f.forEach((n, i) => { g += `<g transform="rotate(${ang[i]} 925 760)" filter="url(#sh)"><rect x="815" y="125" width="220" height="330" rx="14" fill="#FFFCF8"/><image href="file://${ROOT}/mak/img/rubashka-${n}.jpg" x="823" y="133" width="204" height="314" preserveAspectRatio="xMidYMid slice" clip-path="inset(0 round 10px)"/></g>`; });
+  return g;
 }
 function twoBowls() {   // «Отношения»: акварель «Свои чаши» (пока нет своей колоды), белая бумага сливается с фоном (multiply)
   return `<image href="file://${ROOT}/put/img/02-svoi-chashi.jpg" x="650" y="-150" width="560" height="750" preserveAspectRatio="xMidYMid slice" style="mix-blend-mode:multiply"/>`;

@@ -150,6 +150,7 @@
     more: '<svg viewBox="0 0 24 24"><circle cx="5.5" cy="12" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="18.5" cy="12" r="1.4"/></svg>',
     who: '<svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.7-3.8 3.4-6 7-6s6.3 2.2 7 6"/></svg>',
     prod: '<svg viewBox="0 0 24 24"><path d="M12 3.5 20.5 8 12 12.5 3.5 8z"/><path d="M3.5 12 12 16.5 20.5 12M3.5 16 12 20.5 20.5 16"/></svg>',
+    mak: '<svg viewBox="0 0 24 24"><rect x="3.5" y="6" width="9.5" height="13" rx="1.8" transform="rotate(-9 8.25 12.5)"/><rect x="11" y="5" width="9.5" height="13" rx="1.8" transform="rotate(9 15.75 11.5)"/><path d="M15.75 9.5v4M13.75 11.5h4"/></svg>',
     svoi: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.4"/><circle cx="12" cy="4.5" r="1.8"/><circle cx="12" cy="19.5" r="1.8"/><circle cx="5.5" cy="8.3" r="1.8"/><circle cx="18.5" cy="8.3" r="1.8"/><circle cx="5.5" cy="15.7" r="1.8"/><circle cx="18.5" cy="15.7" r="1.8"/></svg>',
     lock: '<svg viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></svg>',
     share: '<svg viewBox="0 0 24 24"><path d="M12 15V4M8 7.5 12 3.5l4 4"/><path d="M6 11H5.5A1.5 1.5 0 0 0 4 12.5v6A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5v-6a1.5 1.5 0 0 0-1.5-1.5H18"/></svg>',
@@ -186,6 +187,7 @@
     var h = '<div class="pa-back" role="dialog" aria-modal="true" aria-label="' + T.tabs[4] + '"><div class="pa-sheet"><div class="pa-grip"></div><h2>' + T.tabs[4] + '</h2>' +
       '<a href="' + P + '/#who">' + I.who + T.who + '</a>' +
       '<a href="' + P + '/#path">' + I.prod + T.prod + '</a>' +
+      (l === 'ru' ? '<a href="/mak/">' + I.mak + 'МАК-карты</a>' : '') + // вкладка «МАК-карты» (17.10.2026), пока только по-русски
       '<a href="https://svoiludi.ch/' + (l === 'uk' ? 'uk/' : '') + '">' + I.svoi + T.svoi + '</a>' +
       '<a href="/privacy/#lang=' + l + '">' + I.lock + T.privacy + '</a>' +
       '<button type="button" class="pa-row" data-a="share">' + I.share + T.share + '</button>' +
