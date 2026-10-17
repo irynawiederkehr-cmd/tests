@@ -6,3 +6,5 @@ wrangler.jsonc
 .assetsignore
 .nojekyll
 CNAME
+.wrangler
+.gitignore
