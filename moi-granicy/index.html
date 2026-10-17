@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="icon" href="../favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <title>Мои границы · Ирина Вознесенская</title>
-<meta name="description" content="Рабочий лист на 10–15 минут: где тебе трудно сказать «нет» — в новой стране, в своём деле или в паре, что мешает отказать и с какой фразы начать. Готовые фразы мягко и твёрдо, один маленький шаг на неделю и PDF, бесплатно.">
+<meta name="description" content="Рабочий лист на 15–20 минут: где тебе трудно сказать «нет» — в новой стране, в своём деле или в паре, что мешает отказать и с какой фразы начать. Готовые фразы мягко и твёрдо, один маленький шаг на неделю и PDF, бесплатно.">
 <link rel="canonical" href="https://voznesenskaya.ch/moi-granicy/">
 <meta property="og:type" content="website"><meta property="og:locale" content="ru_RU"><meta property="og:site_name" content="Ирина Вознесенская · коучинг">
-<meta property="og:title" content="Мои границы: где мне трудно сказать «нет» и как сказать его мягко и твёрдо"><meta property="og:description" content="Рабочий лист на 10–15 минут: где тебе трудно сказать «нет» — в новой стране, в своём деле или в паре, что мешает отказать и с какой фразы начать. Готовые фразы мягко и твёрдо, один маленький шаг на неделю и PDF, бесплатно.">
+<meta property="og:title" content="Мои границы: где мне трудно сказать «нет» и как сказать его мягко и твёрдо"><meta property="og:description" content="Рабочий лист на 15–20 минут: где тебе трудно сказать «нет» — в новой стране, в своём деле или в паре, что мешает отказать и с какой фразы начать. Готовые фразы мягко и твёрдо, один маленький шаг на неделю и PDF, бесплатно.">
 <meta property="og:url" content="https://voznesenskaya.ch/moi-granicy/"><meta property="og:image" content="https://voznesenskaya.ch/moi-granicy/og-image.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/fonts.css">
@@ -133,8 +133,8 @@ button{font:inherit;color:inherit}
 /* выбор */
 .field{display:flex;flex-direction:column;gap:6px;min-width:0}
 .field > label,.qlabel{font-weight:700;font-size:.98rem;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
-.field input[type=text]{font:inherit;border:1.5px solid var(--line);border-radius:var(--r);padding:11px 13px;background:var(--paper);color:var(--ink);width:100%;min-width:0}
-.field input[type=text]:focus{border-color:var(--brown);outline:none}
+.field input[type=text],.own input[type=text]{font:inherit;border:1.5px solid var(--line);border-radius:var(--r);padding:11px 13px;background:var(--paper);color:var(--ink);width:100%;min-width:0}
+.field input[type=text]:focus,.own input[type=text]:focus{border-color:var(--brown);outline:none}
 .seg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 @media (max-width:420px){.seg{grid-template-columns:minmax(0,1fr)}}
 .seg button,.opt{cursor:pointer;border:1.5px solid var(--line);background:var(--paper);border-radius:var(--r);padding:11px 12px;text-align:left;line-height:1.3;min-height:46px}
@@ -208,6 +208,19 @@ button{font:inherit;color:inherit}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
 .tags span{font-size:.84rem;border-radius:999px;padding:4px 10px;background:var(--soft)}
 .tags .tl{background:transparent;padding:4px 2px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+/* шкала 1–10 и разбор ситуации (17.10.2026) */
+.scale{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:4px}
+.scale button{min-height:42px;padding:0;border:1.5px solid var(--line);border-radius:10px;background:var(--paper);font:700 .95rem var(--body);color:var(--ink);cursor:pointer}
+.scale button[aria-pressed="true"]{background:var(--chip-c,var(--brown));border-color:var(--chip-c,var(--brown));color:#fff}
+.scale-l{display:flex;justify-content:space-between;gap:10px;font-size:.8rem;color:var(--muted);margin-top:4px}
+.sit{display:flex;flex-direction:column}
+.sit > div{display:grid;grid-template-columns:12em minmax(0,1fr);gap:4px 14px;padding:8px 0;border-top:1px dashed var(--line)}
+.sit > div:first-child{border-top:none}
+.sit .sl{font-weight:700;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;padding-top:2px}
+.sit .fr{display:flex;flex-direction:column;gap:2px}
+@media (max-width:560px){.sit > div{grid-template-columns:minmax(0,1fr);gap:2px}}
+.pdf-page .sit > div{grid-template-columns:12em minmax(0,1fr);padding:6px 0}
+.subq{font-family:var(--display);font-weight:400;font-size:1.15rem;line-height:1.2;margin-top:6px}
 .lines{display:flex;flex-direction:column}
 .lines > div{padding:10px 0;border-top:1px solid var(--line);display:flex;gap:10px;align-items:flex-start}
 .lines > div:first-child{border-top:none;padding-top:2px}
@@ -353,7 +366,7 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
     <div class="greet"><span class="av" data-avatar></span><div><b id="greetHead">Здравствуй! Я Ирина Вознесенская</b><p class="note">Коуч ICF в Швейцарии и психолог в Украине. <a href="../#who">Подробнее обо мне и о том, как я работаю →</a></p></div></div>
     <div class="tophead">
       <div class="stack" style="gap:10px">
-        <div class="eyebrow">Для себя · рабочий лист на 10–15 минут · бесплатно</div>
+        <div class="eyebrow">Для себя · рабочий лист на 15–20 минут · бесплатно</div>
         <h1>Мои границы</h1>
         <p class="slogan">Где тебе трудно сказать «нет» и как сказать его мягко и твёрдо</p>
       </div>
@@ -368,16 +381,16 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
     <div class="ab">
       <div class="a"><span class="ab-l">Точка А · с чем ты приходишь</span><p>Соглашаешься, когда хочешь отказать, а потом злишься на себя или чувствуешь вину. Сил и времени на своё не остаётся.</p></div>
       <div class="arr" aria-hidden="true"><svg viewBox="0 0 40 24" width="34" height="22"><path d="M2 12h32M26 4l8 8-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div class="b"><span class="ab-l">Точка Б · с чем ты уходишь</span><p>Карта шести сфер твоей жизни: где «нет» уже звучит, где пока молчит и что мешает. Одна граница, с которой можно начать, готовая фраза и маленький шаг на эту неделю.</p></div>
+      <div class="b"><span class="ab-l">Точка Б · с чем ты уходишь</span><p>Карта шести сфер твоей жизни: где «нет» уже звучит, где пока молчит, как ты обычно поступаешь и что мешает. Разбор одной настоящей ситуации, граница, с которой можно начать, готовая фраза и маленький шаг на эту неделю.</p></div>
     </div>
     <div class="ab-key"><b>Главное понимание</b><p>«Нет» другому часто означает «да» себе. Граница растёт, как мышца: начинать лучше не с самого трудного разговора, а с маленького «нет» там, где безопасно.</p></div>
 
     <div class="stack" style="gap:10px">
       <h2>Как это устроено</h2>
       <div class="how">
-        <div><span class="num">6</span><b>Шесть сфер по одной</b><span>Время, деньги, тело, чувства и другие. Про каждую отметь, как тебе там со своим «нет» и кто чаще заходит за границу.</span></div>
-        <div><span class="num">1</span><b>Карта границ на одном листе</b><span>Где «нет» звучит, где молчит, что ты чувствуешь после лишнего «да» и что мешает отказать.</span></div>
-        <div><span class="num">5′</span><b>Одна фраза и один шаг</b><span>Ты выбираешь границу, фразу — мягко, твёрдо или с паузой — и шаг на 5–15 минут на эту неделю.</span></div>
+        <div><span class="num">6</span><b>Шесть сфер по одной</b><span>Время, деньги, тело, чувства и другие. Про каждую отметь, как тебе там со своим «нет», кто чаще заходит за границу и как ты обычно поступаешь.</span></div>
+        <div><span class="num">1</span><b>Карта границ на одном листе</b><span>Где «нет» звучит, где молчит, что ты чувствуешь после лишнего «да» и где в теле, что оно тебе даёт и что мешает отказать.</span></div>
+        <div><span class="num">5′</span><b>Одна ситуация, фраза и шаг</b><span>Ты разбираешь один настоящий случай, выбираешь фразу — мягко, твёрдо или с паузой — и шаг на 5–15 минут на эту неделю.</span></div>
       </div>
     </div>
 
@@ -403,7 +416,7 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
       <div class="btns"><button type="button" class="btn green wide" id="goStart">Посмотреть мои границы →</button></div>
     </div>
 
-    <div class="share-slot" data-url="https://voznesenskaya.ch/moi-granicy/" data-lead="Знаешь, кому это пригодится? Перешли ссылку, сообщение уже готово." data-text="Посмотри, тут можно за 10–15 минут увидеть, где тебе трудно сказать «нет», и подобрать фразу, чтобы сказать его мягко и твёрдо. Бесплатно, ответы остаются только у тебя."></div>
+    <div class="share-slot" data-url="https://voznesenskaya.ch/moi-granicy/" data-lead="Знаешь, кому это пригодится? Перешли ссылку, сообщение уже готово." data-text="Посмотри, тут можно за 15–20 минут увидеть, где тебе трудно сказать «нет», и подобрать фразу, чтобы сказать его мягко и твёрдо. Бесплатно, ответы остаются только у тебя."></div>
   </section>
 
   <!-- 2. Шесть сфер -->
@@ -422,6 +435,8 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
       <h2>Что ты чувствуешь, когда соглашаешься, хотя хочешь отказать?</h2>
       <p>Отметь всё, что узнаёшь. Можно пропустить. <button type="button" class="qh" data-help="feel" aria-expanded="false" aria-label="Подсказка">?</button></p>
       <div class="chips" id="feelChips"></div>
+      <h3 class="subq">Где в теле ты это замечаешь? <button type="button" class="qh" data-help="body" aria-expanded="false" aria-label="Подсказка">?</button></h3>
+      <div class="chips" id="bodyChips"></div>
     </div>
     <div class="blk">
       <div class="eyebrow">Что мешает</div>
@@ -431,6 +446,12 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
       <div class="own"><input type="text" id="belOwn" maxlength="90" placeholder="Своя мысль, если хочется" aria-label="Своя мысль: что мешает сказать «нет»"></div>
       <p class="err" id="whyErr" role="alert" hidden></p>
     </div>
+    <div class="blk">
+      <div class="eyebrow">Что даёт «да»</div>
+      <h2>Что ты получаешь, когда соглашаешься?</h2>
+      <p>У каждого лишнего «да» есть своя выгода, иначе мы бы так не делали. Отметь всё, что узнаёшь. <button type="button" class="qh" data-help="gain" aria-expanded="false" aria-label="Подсказка">?</button></p>
+      <div class="chips" id="gainChips"></div>
+    </div>
     <div class="nav"><button type="button" class="btn ghost" id="wBack">← Назад</button><button type="button" class="btn" id="wNext">Дальше →</button></div>
   </section>
 
@@ -438,6 +459,7 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
   <section id="sChoose" class="stack" hidden>
     <div class="prog"><span class="eyebrow">Последний шаг</span><div class="bar"><i style="width:97%"></i></div></div>
     <div class="blk" id="chooseBlk"></div>
+    <div class="blk" id="sitBlk" hidden></div>
     <div class="blk" id="phraseBlk"></div>
     <div class="blk" id="stepBlk"></div>
     <p class="err" id="chooseErr" role="alert" hidden></p>
@@ -451,14 +473,14 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
     <div class="blk" id="actions">
       <div class="eyebrow">Сохранить лист</div>
       <h2>Скачай лист в PDF</h2>
-      <p>В файле твоя карта границ, твои слова, первая граница, фраза и маленький шаг. На последней странице бланк, чтобы четыре недели отмечать от руки, где ты сказала «нет».</p>
+      <p>В файле твоя карта границ, твои слова, разбор ситуации, первая граница, фраза и маленький шаг. В конце — бланк, чтобы четыре недели отмечать от руки, где ты сказала «нет».</p>
       <label class="check"><input type="checkbox" id="bw"> <span>Без цвета, для дешёвой печати</span></label>
       <div class="btns"><button type="button" class="btn green wide" id="pdfBtn">Скачать PDF</button></div>
       <div class="stack" id="calBox" style="gap:8px" hidden></div>
       <p class="status" id="pdfStatus" role="status"></p>
     </div>
 
-    <div class="share-slot" data-url="https://voznesenskaya.ch/moi-granicy/" data-lead="Кому из подруг сейчас тоже трудно сказать «нет»? Перешли ей лист, сообщение уже готово." data-text="«Мои границы»: где мне трудно сказать «нет» и как сказать его мягко и твёрдо. Шесть сфер, готовые фразы и один маленький шаг на неделю. Заполняется за 10–15 минут, бесплатно, ответы остаются только у тебя."></div>
+    <div class="share-slot" data-url="https://voznesenskaya.ch/moi-granicy/" data-lead="Кому из подруг сейчас тоже трудно сказать «нет»? Перешли ей лист, сообщение уже готово." data-text="«Мои границы»: где мне трудно сказать «нет» и как сказать его мягко и твёрдо. Шесть сфер, готовые фразы и один маленький шаг на неделю. Заполняется за 15–20 минут, бесплатно, ответы остаются только у тебя."></div>
 
     <div class="blk" id="histBlk"></div>
 
@@ -721,6 +743,41 @@ const BEL = [
   ['Если я скажу «нет», он уйдёт', 'Близость держится не на твоём согласии на всё. Пара, в которой можно сказать «нет», надёжнее.']
 ];
 const PH = ['Мягко', 'Твёрдо', 'Взять паузу'];
+/* как ты обычно поступаешь, когда заходят за границу (17.10.2026, Ирина: «немного расширь опросники») */
+const HOW = [
+  ['соглашаюсь сразу, не успев подумать', 'Быстрое «да» — привычка, а не решение. Ей помогает пауза: «я посмотрю и отвечу вечером».'],
+  ['соглашаюсь, а потом злюсь на себя', 'Злость после «да» — опоздавшее «нет». Её стоит услышать раньше, ещё до ответа.'],
+  ['долго объясняю и оправдываюсь', 'Длинное объяснение звучит как приглашение поспорить. Одна короткая фраза работает лучше.'],
+  ['тяну время и не отвечаю', 'Молчание тоже ответ, но оно забирает силы у тебя. Честная пауза с днём ответа бережнее для обоих.'],
+  ['терплю, а потом взрываюсь', 'Взрыв — это накопленные «нет». Когда говоришь маленькое «нет» вовремя, большой взрыв не нужен.'],
+  ['говорю «нет» спокойно', 'Это твой опыт. Посмотри, что помогает тебе здесь, и перенеси это туда, где пока трудно.']
+];
+/* где в теле слышно лишнее «да» (последний вариант — «не замечаю») */
+const BODY = ['сжимаются плечи', 'ком в горле', 'тяжесть в животе', 'сжимаю зубы', 'сбивается дыхание', 'болит голова', 'становится жарко', 'не замечаю, я привыкла'];
+const BODY_NONE = 7;
+/* что даёт «да» — и как получить это, не теряя себя */
+const GAIN = [
+  ['нет ссоры и напряжения', 'Мир ценой себя держится недолго. Спокойное «нет» тоже может сохранить мир, и ты в нём остаёшься.'],
+  ['меня считают доброй', 'Доброта не исчезает от одного «нет». Добрая — не значит удобная.'],
+  ['я чувствую себя нужной', 'Быть нужной можно и по своему выбору. Свободное «да» ценнее, чем «да» из страха.'],
+  ['не нужно ничего объяснять', 'Кажется, что «да» короче. Но короткое «нет» тоже не требует объяснений.'],
+  ['не боюсь кого-то потерять', 'Отношения, где можно отказать, надёжнее. Того, кто уходит из-за одного «нет», трудно удержать и согласием.'],
+  ['кажется, что так быстрее', 'Быстрое «да» потом забирает часы и силы. Минута паузы сейчас бережёт твою неделю.']
+];
+/* разбор одной ситуации: вопросы и примеры в полях */
+const SITQ = [
+  ['ask', 'Вспомни последний раз. Кто и о чём тебя попросил?', 'Ситуация'],
+  ['want', 'Чего ты хотела на самом деле?', 'Чего я хотела'],
+  ['fear', 'Чего ты боишься, если скажешь «нет»?', 'Чего я боюсь'],
+  ['real', 'А что, скорее всего, будет на самом деле?', 'Что, скорее всего, будет'],
+  ['win', 'Что ты получишь, если скажешь «нет»?', 'Что я получу']
+];
+const SIT = {
+  zhizn:{ ask:'Например: соседка попросила посидеть с её детьми в субботу', want:'Например: провести субботу с семьёй', fear:'Например: она обидится и перестанет здороваться', real:'Например: немного расстроится и попросит кого-то ещё', win:'Например: свободную субботу и уважение к себе' },
+  delo:{ ask:'Например: клиентка попросила скидку «по-дружески»', want:'Например: работать по своей цене', fear:'Например: она уйдёт к другому мастеру', real:'Например: подумает и придёт, а если уйдёт, это её выбор', win:'Например: честную цену и силы для тех, кто её ценит' },
+  para:{ ask:'Например: он решил, что выходные мы проведём у его родителей', want:'Например: один день провести вдвоём', fear:'Например: он обидится, и мы поссоримся', real:'Например: сначала удивится, а потом мы договоримся', win:'Например: своё место в наших решениях' }
+};
+const CONF_LOW = 6;
 const WHEN = ['Сегодня','Завтра','В выходные','До конца недели'];
 
 const HELP = {
@@ -728,6 +785,11 @@ const HELP = {
   country:'Чтобы подсказки и ссылки подходили к твоей стране. Например, практические инструменты «Своих людей» нужны тем, кто живёт в Швейцарии. Ответ остаётся только на этом устройстве.',
   rate:'Отвечай про последние 2–4 недели, а не про то, как «должно быть». Правильных ответов нет.',
   who:'Отметь, кто или что чаще всего заходит за эту границу. Это не обвинение, а карта: так видно, с кем и где нужна фраза. Можно ничего не отмечать.',
+  how:'Отметь одно-два: что ты обычно делаешь, когда в этой сфере просят лишнего. Так видно не только где, но и как теряется твоё «нет».',
+  body:'Тело замечает лишнее «да» раньше головы. Если знать свой сигнал, можно вовремя взять паузу и не согласиться по привычке.',
+  gain:'Это не упрёк себе. У каждой привычки есть польза. Когда её видно, можно найти другой способ получить то же самое и не терять себя.',
+  sit:'Один настоящий случай делает фразу и шаг точнее. Пиши коротко, своими словами. Можно заполнить не всё или пропустить.',
+  conf:'Отметь честно. Если уверенность 6 и ниже, сделай шаг ещё меньше: маленький шаг, который ты сделаешь, лучше большого, который отложишь.',
   feel:'То, что ты чувствуешь после «да», которое было не твоим, — сигнал границы. Когда его замечаешь, легче понять, где нужно «нет».',
   bel:'Это мысли, которые останавливают «нет» ещё до того, как оно прозвучало. Когда их видно, на них можно посмотреть по-новому.',
   first:'Граница растёт, как мышца. Лист подсказывает сферу, где «нет» уже иногда получается: там легче начать. Но ты знаешь свою жизнь лучше и можешь выбрать другую.',
@@ -739,12 +801,15 @@ const HELP = {
 };
 
 /* ---------- состояние ---------- */
-const blank = (p = '') => ({ path:p, r:Array(6).fill(-1), who:[[],[],[],[],[],[]], whoOwn:Array(6).fill(''), feel:[], bel:[], belOwn:'', first:-1, phrase:-1, phraseOwn:'', step:-1, stepOwn:'', when:-1 });
+const blank = (p = '') => ({ path:p, r:Array(6).fill(-1), who:[[],[],[],[],[],[]], whoOwn:Array(6).fill(''), how:[[],[],[],[],[],[]], feel:[], body:[], bel:[], belOwn:'', gain:[], first:-1, sit:{ ask:'', want:'', fear:'', real:'', win:'' }, phrase:-1, phraseOwn:'', step:-1, stepOwn:'', when:-1, conf:-1 });
+/* листы, сохранённые до 17.10.2026, получают новые поля пустыми */
+const norm = m => { if (!m || typeof m !== 'object') return m; const b = blank(m.path); Object.keys(b).forEach(k => { if (m[k] === undefined) m[k] = b[k]; }); m.sit = Object.assign(b.sit, m.sit || {}); return m; };
 const fresh = () => ({ v:1, path:'', country:'', name:'', cur:blank(), idx:0, screen:'start', maps:[], view:-1, bw:false, lastBackup:0, editing:-1 });
 let S = fresh();
 function load(){ try { const x = JSON.parse(localStorage.getItem(KEY) || 'null'); if (x && x.v === 1) S = Object.assign(S, x); } catch(e){} }
 function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch(e){} }
 load();
+norm(S.cur); (S.maps || []).forEach(norm);
 const P = m => PATHS[(m || S.cur).path] || PATHS.zhizn;   // путь листа
 const SPH = (m, i) => P(m).S[i];
 
@@ -752,6 +817,7 @@ const SPH = (m, i) => P(m).S[i];
 const el = id => document.getElementById(id);
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const QL = '«', QR = '»';
+const cap = t => t ? t.charAt(0).toUpperCase() + t.slice(1) : t;
 const q = (m, n) => QL + SPH(m, n).name + QR;
 const LOC = { ru:'ru-RU', uk:'uk-UA', de:'de-CH', en:'en-GB' }[LANG] || 'ru-RU';
 const fmtDate = t => new Date(t).toLocaleDateString(LOC, { day:'2-digit', month:'2-digit', year:'numeric' });
@@ -840,6 +906,8 @@ function renderFill(){
     <div class="field"><div class="qlabel">Кто или что чаще всего заходит за эту границу? ${qh('who')}</div>
       <div class="chips">${o.who.map((t, j) => `<button type="button" class="chip" data-j="${j}" aria-pressed="${c.who[n].includes(j) ? 'true' : 'false'}">${esc(t)}</button>`).join('')}</div>
       <div class="own"><input type="text" id="whoOwn" maxlength="80" value="${esc(c.whoOwn[n])}" placeholder="Своё, своими словами" aria-label="Своё: кто заходит за границу"></div></div>
+    <div class="field"><div class="qlabel">Как ты обычно поступаешь, когда сюда заходят? ${qh('how')}</div>
+      <div class="chips" id="howChips">${HOW.map(([t], j) => `<button type="button" class="chip" data-h="${j}" aria-pressed="${c.how[n].includes(j) ? 'true' : 'false'}">${esc(t)}</button>`).join('')}</div></div>
     ${o.safety && Z.safe ? `<p class="warnline"><span class="wi"></span>${SAFE_PARA}</p>` : ''}`;
   el('fBack').textContent = n === 0 ? '← К началу' : '← ' + SPH(c, n - 1).name;
   el('fNext').textContent = n === 5 ? 'Дальше →' : SPH(c, n + 1).name + ' →';
@@ -848,6 +916,9 @@ el('oCard').addEventListener('click', e => {
   const n = S.idx, c = S.cur;
   const r = e.target.closest('.opt');
   if (r){ c.r[n] = +r.dataset.r; save(); el('oCard').querySelectorAll('.opt').forEach(b => b.setAttribute('aria-pressed', b === r ? 'true' : 'false')); el('fillErr').hidden = true; return; }
+  const hb = e.target.closest('[data-h]');
+  if (hb){ const a = c.how[n], j = +hb.dataset.h, i = a.indexOf(j); if (i >= 0) a.splice(i, 1); else { if (a.length >= 2) a.shift(); a.push(j); }
+    el('howChips').querySelectorAll('[data-h]').forEach(b => b.setAttribute('aria-pressed', a.includes(+b.dataset.h) ? 'true' : 'false')); save(); return; }
   const ch = e.target.closest('.chip');
   if (ch){ const arr = c.who[n], j = +ch.dataset.j, i = arr.indexOf(j); if (i >= 0) arr.splice(i, 1); else arr.push(j); ch.setAttribute('aria-pressed', i >= 0 ? 'false' : 'true'); save(); }
 });
@@ -864,9 +935,17 @@ function renderWhy(){
   const c = S.cur, Z = P();
   el('feelChips').innerHTML = FEEL.map(([t], j) => `<button type="button" class="chip" data-j="${j}" aria-pressed="${c.feel.includes(j) ? 'true' : 'false'}">${esc(t)}</button>`).join('');
   el('belChips').innerHTML = Z.B.map(j => `<button type="button" class="chip" data-j="${j}" aria-pressed="${c.bel.includes(j) ? 'true' : 'false'}">${esc(BEL[j][0])}</button>`).join('');
+  el('bodyChips').innerHTML = BODY.map((t, j) => `<button type="button" class="chip" data-j="${j}" aria-pressed="${c.body.includes(j) ? 'true' : 'false'}">${esc(t)}</button>`).join('');
+  el('gainChips').innerHTML = GAIN.map(([t], j) => `<button type="button" class="chip" data-j="${j}" aria-pressed="${c.gain.includes(j) ? 'true' : 'false'}">${esc(t)}</button>`).join('');
   el('belOwn').value = c.belOwn || ''; el('whyErr').hidden = true;
-  [el('feelChips'), el('belChips')].forEach(x => { x.style.setProperty('--chip-c', AC); x.style.setProperty('--chip-bg', rgba(.18)); });
+  [el('feelChips'), el('bodyChips'), el('belChips'), el('gainChips')].forEach(x => { x.style.setProperty('--chip-c', AC); x.style.setProperty('--chip-bg', rgba(.18)); });
 }
+function toggleIn(box, key, j){ const a = S.cur[key], i = a.indexOf(j);
+  if (i >= 0) a.splice(i, 1); else { a.push(j);
+    if (key === 'body'){ if (j === BODY_NONE) a.splice(0, a.length, j); else { const k = a.indexOf(BODY_NONE); if (k >= 0) a.splice(k, 1); } } }
+  box.querySelectorAll('.chip').forEach(b => b.setAttribute('aria-pressed', a.includes(+b.dataset.j) ? 'true' : 'false')); save(); }
+el('bodyChips').addEventListener('click', e => { const ch = e.target.closest('.chip'); if (ch) toggleIn(el('bodyChips'), 'body', +ch.dataset.j); });
+el('gainChips').addEventListener('click', e => { const ch = e.target.closest('.chip'); if (ch) toggleIn(el('gainChips'), 'gain', +ch.dataset.j); });
 el('feelChips').addEventListener('click', e => { const ch = e.target.closest('.chip'); if (!ch) return; const a = S.cur.feel, j = +ch.dataset.j, i = a.indexOf(j); if (i >= 0) a.splice(i, 1); else a.push(j); ch.setAttribute('aria-pressed', i >= 0 ? 'false' : 'true'); save(); });
 el('belChips').addEventListener('click', e => {
   const ch = e.target.closest('.chip'); if (!ch) return;
@@ -895,8 +974,18 @@ function renderChoose(){
   el('chooseErr').hidden = true;
   el('chooseBlk').innerHTML = `<div class="eyebrow">С чего начать</div><h2>С какой границы начать? ${qh('first')}</h2><p>${sugWhy(c, sug)}</p>
     <div class="opts" id="firstOpts">${Z.S.map((o, i) => `<button type="button" class="opt" data-f="${i}" aria-pressed="${c.first === i ? 'true' : 'false'}" style="border-left:5px solid ${AC}"><b>${esc(o.name)}${i === sug ? ' · подсказка листа' : ''}</b><small>${o.sub} · ${R[c.r[i]] ? R[c.r[i]].t : ''}</small></button>`).join('')}</div>`;
-  renderPhrase(); renderStep();
+  renderSit(); renderPhrase(); renderStep();
 }
+function renderSit(){
+  const c = S.cur, n = c.first, b = el('sitBlk');
+  if (n < 0){ b.hidden = true; return; }
+  b.hidden = false;
+  const ex = SIT[c.path] || SIT.zhizn;
+  b.innerHTML = `<div class="eyebrow">Разберём одну ситуацию · по желанию</div><h2>Как это бывает в сфере ${q(c, n)}? ${qh('sit')}</h2>
+    <p class="note">Вспомни один настоящий случай. Пиши коротко, своими словами — так фраза и шаг станут точнее.</p>
+    ${SITQ.map(([k, t]) => `<div class="field"><label for="sit_${k}">${t}</label><input type="text" id="sit_${k}" data-sit="${k}" maxlength="120" value="${esc(c.sit[k])}" placeholder="${esc(ex[k])}"></div>`).join('')}`;
+}
+el('sitBlk').addEventListener('input', e => { const k = e.target.dataset && e.target.dataset.sit; if (!k) return; S.cur.sit[k] = e.target.value.slice(0, 120); save(); });
 function renderPhrase(){
   const c = S.cur, n = c.first, b = el('phraseBlk');
   if (n < 0){ b.innerHTML = `<div class="eyebrow">Моя фраза</div><p class="muted">Сначала выбери границу, и здесь появятся фразы для неё.</p>`; return; }
@@ -917,7 +1006,11 @@ function renderStep(){
       <button type="button" class="opt" data-s="-2" aria-pressed="${c.step === -2 ? 'true' : 'false'}"><b>Свой шаг</b><small>Напишу сама</small></button></div>
     <div class="field" id="stepOwnF" ${c.step === -2 ? '' : 'hidden'}><label for="stepOwn">Мой шаг своими словами</label><input type="text" id="stepOwn" maxlength="90" value="${esc(c.stepOwn)}" placeholder="Например, сказать маме, что звоню по воскресеньям"></div>
     <div class="field"><div class="qlabel">Когда сделаю? ${qh('when')}</div>
-      <div class="seg" id="whenSeg" style="grid-template-columns:repeat(2,minmax(0,1fr))">${WHEN.map((w, j) => `<button type="button" data-w="${j}" aria-pressed="${c.when === j ? 'true' : 'false'}">${w}</button>`).join('')}</div></div>`;
+      <div class="seg" id="whenSeg" style="grid-template-columns:repeat(2,minmax(0,1fr))">${WHEN.map((w, j) => `<button type="button" data-w="${j}" aria-pressed="${c.when === j ? 'true' : 'false'}">${w}</button>`).join('')}</div></div>
+    <div class="field"><div class="qlabel">Насколько ты уверена, что сделаешь этот шаг? ${qh('conf')}</div>
+      <div class="scale" id="confSeg">${[1,2,3,4,5,6,7,8,9,10].map(v => `<button type="button" data-c="${v}" aria-pressed="${c.conf === v ? 'true' : 'false'}" aria-label="${v} из 10">${v}</button>`).join('')}</div>
+      <div class="scale-l"><span>совсем не уверена</span><span>точно сделаю</span></div>
+      ${c.conf > 0 && c.conf <= CONF_LOW ? `<p class="note">Сделай шаг ещё меньше. Например, вместо разговора — только пауза: «Я посмотрю и отвечу завтра». Маленький шаг, который ты сделаешь, лучше большого, который отложишь.</p>` : c.conf > CONF_LOW ? `<p class="note">Хорошо. Выбери время и место, где тебе безопасно, и сделай шаг.</p>` : ''}</div>`;
 }
 el('chooseBlk').addEventListener('click', e => { const b = e.target.closest('[data-f]'); if (!b) return; const n = +b.dataset.f; if (S.cur.first !== n){ S.cur.first = n; S.cur.step = -1; S.cur.phrase = -1; } save(); renderChoose(); });
 el('phraseBlk').addEventListener('click', e => { const b = e.target.closest('[data-ph]'); if (!b) return; S.cur.phrase = +b.dataset.ph; save(); renderPhrase(); if (S.cur.phrase === -2){ const i = el('phrOwn'); if (i) i.focus(); } });
@@ -926,7 +1019,9 @@ el('stepBlk').addEventListener('click', e => {
   const b = e.target.closest('[data-s]');
   if (b){ S.cur.step = +b.dataset.s; save(); renderStep(); if (S.cur.step === -2){ const i = el('stepOwn'); if (i) i.focus(); } return; }
   const w = e.target.closest('[data-w]');
-  if (w){ S.cur.when = S.cur.when === +w.dataset.w ? -1 : +w.dataset.w; save(); renderStep(); }
+  if (w){ S.cur.when = S.cur.when === +w.dataset.w ? -1 : +w.dataset.w; save(); renderStep(); return; }
+  const cf = e.target.closest('[data-c]');
+  if (cf){ S.cur.conf = S.cur.conf === +cf.dataset.c ? -1 : +cf.dataset.c; save(); renderStep(); }
 });
 el('stepBlk').addEventListener('input', e => { if (e.target.id === 'stepOwn'){ S.cur.stepOwn = e.target.value.slice(0, 90); save(); } });
 el('cBack').addEventListener('click', () => goWhy());
@@ -946,6 +1041,11 @@ el('cDone').addEventListener('click', () => {
 const stepText = m => m.step === -2 ? m.stepOwn.trim() : (m.first >= 0 && m.step >= 0 ? SPH(m, m.first).steps[m.step] : '');
 const phraseText = m => m.phrase === -2 ? m.phraseOwn.trim() : (m.first >= 0 && m.phrase >= 0 ? SPH(m, m.first).phr[m.phrase] : '');
 const whoOf = (m, i) => m.who[i].map(j => SPH(m, i).who[j]).concat(m.whoOwn[i] && m.whoOwn[i].trim() ? [m.whoOwn[i].trim()] : []);
+const howOf = (m, i) => ((m.how || [])[i] || []).map(j => HOW[j][0]);
+const bodyOf = m => (m.body || []).filter(j => j !== BODY_NONE).map(j => BODY[j]);
+function sitHtml(m){ const s = m.sit || {}, rows = SITQ.filter(([k]) => s[k] && s[k].trim()); if (!rows.length) return '';
+  return `<h3>Разбор одной ситуации</h3><div class="sit">${rows.map(([k, , lab]) => `<div><span class="sl" style="color:${AC}">${lab}</span><span>${esc(s[k].trim())}</span></div>`).join('')}</div>`
+    + (s.fear && s.fear.trim() && s.real && s.real.trim() ? '<p class="note">Страх почти всегда рисует худший вариант. То, что скорее всего будет на самом деле, обычно гораздо спокойнее.</p>' : ''); }
 function shape(m){
   const r = m.r.map(x => Math.max(0, x)), avg = r.reduce((s, x) => s + x, 0) / r.length, n3 = r.filter(x => x === 3).length;
   if (n3 >= 5 && Math.min(...r) >= 2) return ['Крепкие границы', 'Почти везде твоё «нет» звучит спокойно. За этим большая работа, и её стоит признать. Теперь можно заняться тем, где ещё бывает трудно, и тем, чего ты хочешь сама, а не только тем, от чего отказываешься.'];
@@ -1035,22 +1135,35 @@ function buildBlocks(m, pdf){
     <div class="legend"><span>${dotsHtml(3,AC)} «нет», когда нужно</span><span>${dotsHtml(2,AC)} иногда получается</span><span>${dotsHtml(1,AC)} чаще соглашаюсь</span><span>${dotsHtml(0,AC)} почти не говорю «нет»</span>${prev ? '<span>↑ ↓ — по сравнению с прошлым листом</span>' : ''}</div>
     <p>${sh[1]}</p><p class="note">${esc(Z.why)}</p></div>` });
   const strong = r.map((x, i) => x >= 2 ? i : -1).filter(i => i >= 0), weak = r.map((x, i) => x <= 1 ? i : -1).filter(i => i >= 0);
-  const scard = i => { const o = SPH(m, i), w = whoOf(m, i);
+  const scard = i => { const o = SPH(m, i), w = whoOf(m, i), hw = howOf(m, i);
     return `<div class="ocard" style="border-color:${AC}"><div class="oh">${ico(o.ico, AC, AF, 24)}<b>${esc(o.name)}<small style="color:${AC}">${R[r[i]].t}</small></b></div>
-      ${w.length ? `<div class="tags"><span class="tl">чаще всего</span>${w.map(t => `<span>${esc(t)}</span>`).join('')}</div>` : '<p class="note">Здесь ты никого не отметила.</p>'}</div>`; };
+      ${w.length ? `<div class="tags"><span class="tl">чаще всего</span>${w.map(t => `<span>${esc(t)}</span>`).join('')}</div>` : '<p class="note">Здесь ты никого не отметила.</p>'}
+      ${hw.length ? `<div class="tags"><span class="tl">как я поступаю</span>${hw.map(t => `<span>${esc(t)}</span>`).join('')}</div>` : ''}</div>`; };
   if (strong.length) B.push({ html:`<div class="blk"><div class="eyebrow">Твой опыт</div><h2>Где «нет» уже звучит</h2><p>Здесь ты уже умеешь отказывать. Посмотри, что тебе помогает: кому и как ты говоришь «нет». Этот опыт можно перенести туда, где пока трудно.</p><div class="stack" style="gap:8px">${strong.map(scard).join('')}</div></div>` });
   if (weak.length) B.push({ html:`<div class="blk"><div class="eyebrow">Где пока трудно</div><h2>Где ты чаще соглашаешься</h2>
     <p>Это не слабость характера. Чаще всего это привычка, которая когда-то помогала: быть удобной, не рисковать, держаться за своих. Теперь её можно менять, по одной фразе.</p>
     <div class="stack" style="gap:8px">${weak.map(scard).join('')}</div></div>` });
-  if (m.feel.length) B.push({ html:`<div class="blk"><div class="eyebrow">Твои сигналы</div><h2>Что ты чувствуешь после лишнего «да»</h2>
-    <div class="lines">${m.feel.map(j => `<div><span class="lk">${ico('heart', AC, AF, 20)}</span><span><b>${esc(FEEL[j][0])}.</b> ${esc(FEEL[j][1])}</span></div>`).join('')}</div></div>`, float:true });
+  const hc = HOW.map((x, j) => [j, (m.how || []).reduce((t, a) => t + (a && a.includes(j) ? 1 : 0), 0)]).filter(x => x[1] > 0).sort((a, b) => b[1] - a[1]);
+  if (hc.length) B.push({ html:`<div class="blk"><div class="eyebrow">Твой способ</div><h2>Как ты обычно поступаешь</h2>
+    <div class="lines">${hc.map(([j, k]) => `<div><span class="lk">${ico('speech', AC, AF, 20)}</span><span><b>${esc(cap(HOW[j][0]))}</b> <span class="muted">· ${k} ${plural(k, 'сфера', 'сферы', 'сфер')}</span>. ${esc(HOW[j][1])}</span></div>`).join('')}</div>
+    <p class="note">Это привычки, а не характер. Привычку меняют не силой воли, а одной новой фразой там, где тебе безопасно.</p></div>`, float:true });
+  const bd = bodyOf(m), bNone = (m.body || []).includes(BODY_NONE);
+  const bodyLine = bd.length ? `<p><b>Твой сигнал в теле:</b> ${esc(joinRu(bd))}. Тело замечает лишнее «да» раньше головы. Когда почувствуешь это, возьми паузу: «Я посмотрю и отвечу».</p>`
+    : bNone ? '<p><b>Сигнал в теле ты пока не замечаешь.</b> Когда долго привыкаешь, сигналы становятся тихими. Начни с малого: после каждой просьбы на секунду спроси себя, как сейчас твоё тело.</p>' : '';
+  if (m.feel.length || bodyLine) B.push({ html:`<div class="blk"><div class="eyebrow">Твои сигналы</div><h2>Что ты чувствуешь после лишнего «да»</h2>
+    ${m.feel.length ? `<div class="lines">${m.feel.map(j => `<div><span class="lk">${ico('heart', AC, AF, 20)}</span><span><b>${esc(FEEL[j][0])}.</b> ${esc(FEEL[j][1])}</span></div>`).join('')}</div>` : ''}${bodyLine}</div>`, float:true });
   const bl = m.bel.map(j => BEL[j]).concat(m.belOwn && m.belOwn.trim() ? [[m.belOwn.trim(), 'Попробуй спросить себя: это правда всегда? Кто меня этому научил? Что будет, если я скажу «нет» один раз там, где мне безопасно?']] : []);
   if (bl.length) B.push({ html:`<div class="blk"><div class="eyebrow">Что мешает</div><h2>Мысли, которые останавливают «нет»</h2>
     <div class="lines">${bl.map(([t, a]) => `<div><span class="lk">${ico('palm', AC, AF, 20)}</span><span><b>«${esc(t)}».</b> ${esc(a)}</span></div>`).join('')}</div>
     <p class="note">Эти мысли не ошибка. Когда-то они помогали тебе. Теперь можно проверить, помогают ли они сейчас.</p></div>`, float:true });
+  const gl = (m.gain || []).map(j => GAIN[j]);
+  if (gl.length) B.push({ html:`<div class="blk"><div class="eyebrow">Что даёт «да»</div><h2>Что ты получаешь, когда соглашаешься</h2>
+    <div class="lines">${gl.map(([t, a]) => `<div><span class="lk">${ico('hand', AC, AF, 20)}</span><span><b>${esc(cap(t))}.</b> ${esc(a)}</span></div>`).join('')}</div>
+    <p class="note">Эта выгода настоящая, и её не нужно стыдиться. Вопрос в другом: как получить то же самое и не терять себя.</p></div>`, float:true });
   const others = of.phr.map((t, j) => [PH[j], t, j]).filter(x => x[2] !== m.phrase);
   B.push({ html:`<div class="blk" style="border-color:${AC};border-width:1.5px"><div class="eyebrow">С чего начать</div><h2>Первая граница — ${q(m, f)}</h2>
     <p>${f === suggestFirst(m.r) ? sugWhy(m, f).replace('Лист подсказывает начать', 'Ты начинаешь, как и подсказывал лист,').replace(/<\/?b>/g, '') : suggestFirst(m.r) >= 0 ? `Лист подсказывал начать со сферы ${q(m, suggestFirst(m.r))}. Ты выбрала ${q(m, f)}, и это твоё право: ты знаешь свою жизнь лучше. Начни с маленькой фразы и там, где тебе безопасно.` : 'Все границы держат, и ты выбрала, где хочется говорить «нет» ещё спокойнее.'}</p>
+    ${sitHtml(m)}
     <h3>Твоя фраза</h3><p class="stepbig">«${esc(phr)}»</p>
     ${m.phrase >= 0 && of.de ? `<p class="note">По-немецки: ${esc(of.de[m.phrase])}<br>По-французски: ${esc(of.fr[m.phrase])}</p>` : ''}
     ${others.length ? `<p class="note">${others.map(([k, t]) => `${k}: «${esc(t)}»`).join('<br>')}</p>` : ''}
@@ -1059,7 +1172,8 @@ function buildBlocks(m, pdf){
     ${linksHtml(m, S.country)}</div>` });
   if (Z.safe) B.push({ html:`<div class="blk" style="border-color:#D32F2F"><div class="eyebrow">Если рядом с ним страшно</div><p class="warnline"><span class="wi"></span>${SAFE_PARA}</p></div>`, float:true });
   B.push({ html:`<div class="blk" style="background:var(--soft);border:none"><div class="eyebrow">Мой маленький шаг на эту неделю</div><p class="stepbig">${esc(stp)}</p>
-    <p class="muted">${m.when >= 0 ? WHEN[m.when] + ' · ' : ''}5–15 минут · граница ${q(m, f)}</p>
+    <p class="muted">${m.when >= 0 ? WHEN[m.when] + ' · ' : ''}5–15 минут · граница ${q(m, f)}${m.conf > 0 ? ' · уверенность ' + m.conf + ' из 10' : ''}</p>
+    ${m.conf > 0 && m.conf <= CONF_LOW ? '<p class="note">Если шаг кажется большим, сделай его ещё меньше. Например, только пауза: «Я посмотрю и отвечу завтра». Главное — сделать.</p>' : ''}
     ${pdf ? '' : `<div class="noprint stack" style="gap:10px">
       <label class="check"><input type="checkbox" id="doneChk" ${m.done ? 'checked' : ''}> <span>${m.done ? 'Сделала ' + fmtDate(m.doneDate) + ' ✓' : 'Я сделала этот шаг'}</span></label></div>`}
     <p class="exp">${EXPERIMENT}</p></div>` });
@@ -1072,7 +1186,7 @@ function buildBlocks(m, pdf){
   B.push({ html:inviteHtml(m) });
   if (pdf){
     B.push({ newPage:true, html:`<div class="blk"><div class="eyebrow">Бланк для записей · ${N ? esc(N) + ' · ' : ''}${fmtDate(m.date)}</div><h2>Моё «нет» на 4 недели</h2>
-      <p>Граница, с которой я начинаю: <b>${q(m, f)}</b>. Моя фраза: «${esc(phr)}». Каждую неделю одно маленькое «нет» там, где мне безопасно. Отмечай от руки, где ты его сказала и что почувствовала.</p>
+      <p>Граница, с которой я начинаю: <b>${q(m, f)}</b>. Моя фраза: «${esc(phr)}». Каждую неделю одно маленькое «нет» там, где мне безопасно.${bd.length ? ' Мой сигнал в теле: ' + esc(joinRu(bd)) + ' — когда замечу его, беру паузу.' : ''} Отмечай от руки, где ты его сказала и что почувствовала.</p>
       <table class="wtbl"><thead><tr><th style="width:15%">Неделя и даты</th><th style="width:27%">Где и кому я сказала «нет»</th><th style="width:27%">Какой фразой</th><th>Что я почувствовала до и после</th></tr></thead><tbody>
       ${[1,2,3,4].map(w => `<tr><td>Неделя ${w}</td><td>${w === 1 ? esc(stp) : ''}</td><td>${w === 1 ? '«' + esc(phr) + '»' : ''}</td><td></td></tr>`).join('')}</tbody></table>
       <p class="exp">${EXPERIMENT}</p></div>` });
@@ -1114,7 +1228,7 @@ el('histBlk').addEventListener('click', e => { const b = e.target.closest('[data
 function startAgain(){
   const m = curMap() || S.maps[S.maps.length - 1];
   S.path = m ? m.path : S.path;
-  S.cur = m ? Object.assign(blank(m.path), JSON.parse(JSON.stringify({ r:m.r, who:m.who, whoOwn:m.whoOwn, feel:m.feel, bel:m.bel, belOwn:m.belOwn }))) : blank(S.path);
+  S.cur = m ? Object.assign(blank(m.path), JSON.parse(JSON.stringify({ r:m.r, who:m.who, whoOwn:m.whoOwn, how:m.how, feel:m.feel, body:m.body, bel:m.bel, belOwn:m.belOwn, gain:m.gain }))) : blank(S.path);
   S.editing = -1; S.idx = 0; save(); goFill(0);
   if (m) toast('Прошлые ответы уже стоят. Поменяй то, что изменилось.');
 }
@@ -1225,7 +1339,7 @@ function renderBackup(){
       if (!x || x.app !== 'moiGranicy' || !x.data || !Array.isArray(x.data.maps)){ ask.innerHTML = '<p>Это не резервная копия «Моих границ». Выбери файл, который ты сохраняла здесь.</p>'; return; }
       ask.innerHTML = `<p>В копии ${x.data.maps.length} ${plural(x.data.maps.length, 'лист', 'листа', 'листов')} от ${fmtDate(x.saved)}. Заменить ими всё, что сейчас на этом устройстве?</p><div class="row"><button type="button" class="btn small" id="bkYes">Да, заменить</button><button type="button" class="btn ghost small" id="bkNo">Нет</button></div>`;
       el('bkNo').onclick = () => { ask.hidden = true; };
-      el('bkYes').onclick = () => { S = Object.assign(fresh(), x.data); S.view = S.maps.length - 1; S.screen = S.maps.length ? 'result' : 'start'; save(); toast('Листы загружены'); boot(); };
+      el('bkYes').onclick = () => { S = Object.assign(fresh(), x.data); norm(S.cur); S.maps.forEach(norm); S.view = S.maps.length - 1; S.screen = S.maps.length ? 'result' : 'start'; save(); toast('Листы загружены'); boot(); };
     };
     rd.readAsText(f); el('bkFile').value = '';
   };
@@ -1242,11 +1356,11 @@ if (/Instagram|FBAN|FBAV|Telegram|WhatsApp|Line\//i.test(navigator.userAgent)) e
 /* ---------- веер «Так выглядит готовый файл» ---------- */
 const FAN = [
   ['Обложка и карта границ', 'Где твоё «нет» уже звучит, где пока молчит и кто чаще всего заходит за границу, твоими словами.'],
-  ['Сигналы и что мешает', 'Что ты чувствуешь после лишнего «да» и мысли, которые останавливают «нет», с новым взглядом на каждую.'],
-  ['С чего начать', 'Первая граница, твоя фраза — мягко, твёрдо или с паузой — и маленький шаг на неделю.'],
+  ['Сигналы и что мешает', 'Как ты обычно поступаешь, что чувствуешь после лишнего «да» и где в теле, что оно тебе даёт и мысли, которые останавливают «нет».'],
+  ['С чего начать', 'Первая граница, разбор одной ситуации, твоя фраза — мягко, твёрдо или с паузой — и маленький шаг на неделю.'],
   ['Бланк на 4 недели', 'Таблица для записей от руки и вопросы, чтобы через месяц увидеть, что изменилось.']
 ];
-const FAN_PAGES = 7;
+const FAN_PAGES = 8;
 (function fan(){
   const box = el('fan'); const n = FAN.length; let cur = 0, timer = null, touched = false;
   const src = i => '/moi-granicy/preview/' + (LANG === 'ru' ? '' : LANG + '/') + (i + 1) + '.jpg';

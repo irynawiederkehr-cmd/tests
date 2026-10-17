@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="icon" href="../favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <title>Мой багаж · Ирина Вознесенская</title>
-<meta name="description" content="Рабочий лист на 10–15 минут: что ты умеешь, что привезла с собой и что из этого достать первым — для жизни в новой стране, своего дела или пары. Шесть отделений, три козыря, один маленький шаг на неделю и PDF, бесплатно.">
+<meta name="description" content="Рабочий лист на 15–20 минут: что ты умеешь, что привезла с собой и что из этого достать первым — для жизни в новой стране, своего дела или пары. Шесть отделений, три козыря, один маленький шаг на неделю и PDF, бесплатно.">
 <link rel="canonical" href="https://voznesenskaya.ch/moi-bagazh/">
 <meta property="og:type" content="website"><meta property="og:locale" content="ru_RU"><meta property="og:site_name" content="Ирина Вознесенская · коучинг">
-<meta property="og:title" content="Мой багаж: что я умею, что привезла с собой и что достать первым"><meta property="og:description" content="Рабочий лист на 10–15 минут: что ты умеешь, что привезла с собой и что из этого достать первым — для жизни в новой стране, своего дела или пары. Шесть отделений, три козыря, один маленький шаг на неделю и PDF, бесплатно.">
+<meta property="og:title" content="Мой багаж: что я умею, что привезла с собой и что достать первым"><meta property="og:description" content="Рабочий лист на 15–20 минут: что ты умеешь, что привезла с собой и что из этого достать первым — для жизни в новой стране, своего дела или пары. Шесть отделений, три козыря, один маленький шаг на неделю и PDF, бесплатно.">
 <meta property="og:url" content="https://voznesenskaya.ch/moi-bagazh/"><meta property="og:image" content="https://voznesenskaya.ch/moi-bagazh/og-image.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/fonts.css">
@@ -133,8 +133,8 @@ button{font:inherit;color:inherit}
 /* выбор */
 .field{display:flex;flex-direction:column;gap:6px;min-width:0}
 .field > label,.qlabel{font-weight:700;font-size:.98rem;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
-.field input[type=text]{font:inherit;border:1.5px solid var(--line);border-radius:var(--r);padding:11px 13px;background:var(--paper);color:var(--ink);width:100%;min-width:0}
-.field input[type=text]:focus{border-color:var(--brown);outline:none}
+.field input[type=text],.own input[type=text]{font:inherit;border:1.5px solid var(--line);border-radius:var(--r);padding:11px 13px;background:var(--paper);color:var(--ink);width:100%;min-width:0}
+.field input[type=text]:focus,.own input[type=text]:focus{border-color:var(--brown);outline:none}
 .seg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 @media (max-width:420px){.seg{grid-template-columns:minmax(0,1fr)}}
 .seg button,.opt{cursor:pointer;border:1.5px solid var(--line);background:var(--paper);border-radius:var(--r);padding:11px 12px;text-align:left;line-height:1.3;min-height:46px}
@@ -208,6 +208,20 @@ button{font:inherit;color:inherit}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
 .tags span{font-size:.84rem;border-radius:999px;padding:4px 10px;background:var(--soft)}
 .tags .tl{background:transparent;padding:4px 2px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+/* шкала 1–10 и разбор отделения (17.10.2026) */
+.scale{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:4px}
+.scale button{min-height:42px;padding:0;border:1.5px solid var(--line);border-radius:10px;background:var(--paper);font:700 .95rem var(--body);color:var(--ink);cursor:pointer}
+.scale button[aria-pressed="true"]{background:var(--chip-c,var(--brown));border-color:var(--chip-c,var(--brown));color:#fff}
+.scale-l{display:flex;justify-content:space-between;gap:10px;font-size:.8rem;color:var(--muted);margin-top:4px}
+.sit{display:flex;flex-direction:column}
+.sit > div{display:grid;grid-template-columns:12em minmax(0,1fr);gap:4px 14px;padding:8px 0;border-top:1px dashed var(--line)}
+.sit > div:first-child{border-top:none}
+.sit .sl{font-weight:700;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;padding-top:2px}
+@media (max-width:560px){.sit > div{grid-template-columns:minmax(0,1fr);gap:2px}}
+.pdf-page .sit > div{grid-template-columns:12em minmax(0,1fr);padding:6px 0}
+.proof{border-left:3px solid currentColor;padding:6px 0 6px 12px}
+.proof span{color:var(--ink)}
+.need a{font-weight:700}
 .lines{display:flex;flex-direction:column}
 .lines > div{padding:10px 0;border-top:1px solid var(--line);display:flex;gap:10px;align-items:flex-start}
 .lines > div:first-child{border-top:none;padding-top:2px}
@@ -353,7 +367,7 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
     <div class="greet"><span class="av" data-avatar></span><div><b id="greetHead">Здравствуй! Я Ирина Вознесенская</b><p class="note">Коуч ICF в Швейцарии и психолог в Украине. <a href="../#who">Подробнее обо мне и о том, как я работаю →</a></p></div></div>
     <div class="tophead">
       <div class="stack" style="gap:10px">
-        <div class="eyebrow">Для себя · рабочий лист на 10–15 минут · бесплатно</div>
+        <div class="eyebrow">Для себя · рабочий лист на 15–20 минут · бесплатно</div>
         <h1>Мой багаж</h1>
         <p class="slogan">Что я умею, что привезла с собой и что из этого достать первым</p>
       </div>
@@ -368,16 +382,16 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
     <div class="ab">
       <div class="a"><span class="ab-l">Точка А · с чем ты приходишь</span><p>Кажется, что здесь ты начинаешь с нуля и твой опыт никому не нужен. Непонятно, на что опереться в работе, в деле или в паре.</p></div>
       <div class="arr" aria-hidden="true"><svg viewBox="0 0 40 24" width="34" height="22"><path d="M2 12h32M26 4l8 8-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div class="b"><span class="ab-l">Точка Б · с чем ты уходишь</span><p>Опись твоего багажа на одном листе: что уже работает, что лежит без дела, твои козыри и что мешает их достать. Одно отделение, с которого можно начать, и маленький шаг на эту неделю.</p></div>
+      <div class="b"><span class="ab-l">Точка Б · с чем ты уходишь</span><p>Опись твоего багажа на одном листе: что уже работает, что лежит без дела и где это может пригодиться, твои козыри, что мешает их достать и что для этого нужно. Одно отделение, с которого можно начать, и маленький шаг на эту неделю.</p></div>
     </div>
     <div class="ab-key"><b>Главное понимание</b><p>С нуля не начинает никто. Ты начинаешь с новой точки, но со всем, что умеешь и чем стала. Багаж не нужно собирать заново — его нужно открыть.</p></div>
 
     <div class="stack" style="gap:10px">
       <h2>Как это устроено</h2>
       <div class="how">
-        <div><span class="num">6</span><b>Шесть отделений по одному</b><span>Профессия, опыт, навыки из жизни, языки, люди и характер. Отметь, что у тебя есть и как ты этим пользуешься здесь.</span></div>
-        <div><span class="num">3</span><b>Три твоих козыря</b><span>Из всего багажа ты выбираешь самое ценное сейчас и видишь, что мешает это достать.</span></div>
-        <div><span class="num">5′</span><b>Один маленький шаг</b><span>Ты выбираешь отделение, с которого начнёшь, и шаг на 5–15 минут на эту неделю.</span></div>
+        <div><span class="num">6</span><b>Шесть отделений по одному</b><span>Профессия, опыт, навыки из жизни, языки, люди и характер. Отметь, что у тебя есть, как ты этим пользуешься и где это может пригодиться.</span></div>
+        <div><span class="num">3</span><b>Три твоих козыря</b><span>Из всего багажа ты выбираешь самое ценное сейчас, вспоминаешь случай, когда оно сработало, и видишь, что мешает его достать и что для этого нужно.</span></div>
+        <div><span class="num">5′</span><b>Одно отделение и один шаг</b><span>Ты разбираешь отделение, с которого начнёшь, и выбираешь шаг на 5–15 минут на эту неделю.</span></div>
       </div>
     </div>
 
@@ -403,7 +417,7 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
       <div class="btns"><button type="button" class="btn green wide" id="goStart">Открыть мой чемодан →</button></div>
     </div>
 
-    <div class="share-slot" data-url="https://voznesenskaya.ch/moi-bagazh/" data-lead="Знаешь, кому это пригодится? Перешли ссылку, сообщение уже готово." data-text="Посмотри, тут можно за 10–15 минут разобрать свой «багаж»: что я умею, что привезла с собой и что из этого достать первым. Бесплатно, ответы остаются только у тебя."></div>
+    <div class="share-slot" data-url="https://voznesenskaya.ch/moi-bagazh/" data-lead="Знаешь, кому это пригодится? Перешли ссылку, сообщение уже готово." data-text="Посмотри, тут можно за 15–20 минут разобрать свой «багаж»: что я умею, что привезла с собой и что из этого достать первым. Бесплатно, ответы остаются только у тебя."></div>
   </section>
 
   <!-- 2. Шесть отделений -->
@@ -423,6 +437,7 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
       <p>Отметь до трёх из того, что ты нашла в чемодане. <button type="button" class="qh" data-help="koz" aria-expanded="false" aria-label="Подсказка">?</button></p>
       <div class="chips" id="kozChips"></div>
       <p class="err" id="kozErr" role="alert" hidden></p>
+      <div class="field"><label for="proof" id="proofQ">Вспомни случай, когда твой козырь сработал</label><input type="text" id="proof" maxlength="160"></div>
     </div>
     <div class="blk">
       <div class="eyebrow">Что мешает</div>
@@ -432,6 +447,13 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
       <div class="own"><input type="text" id="belOwn" maxlength="90" placeholder="Своя мысль, если хочется" aria-label="Своя мысль: что мешает"></div>
       <p class="err" id="whyErr" role="alert" hidden></p>
     </div>
+    <div class="blk">
+      <div class="eyebrow">Что поможет</div>
+      <h2>Что тебе нужно, чтобы достать багаж?</h2>
+      <p>Отметь до трёх вещей, которых сейчас не хватает больше всего. <button type="button" class="qh" data-help="need" aria-expanded="false" aria-label="Подсказка">?</button></p>
+      <div class="chips" id="needChips"></div>
+      <p class="err" id="needErr" role="alert" hidden></p>
+    </div>
     <div class="nav"><button type="button" class="btn ghost" id="wBack">← Назад</button><button type="button" class="btn" id="wNext">Дальше →</button></div>
   </section>
 
@@ -439,6 +461,7 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
   <section id="sChoose" class="stack" hidden>
     <div class="prog"><span class="eyebrow">Последний шаг</span><div class="bar"><i style="width:97%"></i></div></div>
     <div class="blk" id="chooseBlk"></div>
+    <div class="blk" id="sitBlk" hidden></div>
     <div class="blk" id="offerBlk" hidden></div>
     <div class="blk" id="stepBlk"></div>
     <p class="err" id="chooseErr" role="alert" hidden></p>
@@ -452,14 +475,14 @@ footer.copy nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
     <div class="blk" id="actions">
       <div class="eyebrow">Сохранить лист</div>
       <h2>Скачай лист в PDF</h2>
-      <p>В файле опись твоего багажа, твои козыри, отделение, с которого ты начинаешь, и маленький шаг. На последней странице бланк, чтобы четыре недели отмечать от руки, что ты достала из чемодана.</p>
+      <p>В файле опись твоего багажа, твои козыри, что поможет их достать, разбор отделения, с которого ты начинаешь, и маленький шаг. В конце — бланк, чтобы четыре недели отмечать от руки, что ты достала из чемодана.</p>
       <label class="check"><input type="checkbox" id="bw"> <span>Без цвета, для дешёвой печати</span></label>
       <div class="btns"><button type="button" class="btn green wide" id="pdfBtn">Скачать PDF</button></div>
       <div class="stack" id="calBox" style="gap:8px" hidden></div>
       <p class="status" id="pdfStatus" role="status"></p>
     </div>
 
-    <div class="share-slot" data-url="https://voznesenskaya.ch/moi-bagazh/" data-lead="Кому из подруг сейчас кажется, что она начинает с нуля? Перешли ей лист, сообщение уже готово." data-text="«Мой багаж»: что я умею, что привезла с собой и что из этого достать первым. Шесть отделений, три козыря и один маленький шаг на неделю. Заполняется за 10–15 минут, бесплатно, ответы остаются только у тебя."></div>
+    <div class="share-slot" data-url="https://voznesenskaya.ch/moi-bagazh/" data-lead="Кому из подруг сейчас кажется, что она начинает с нуля? Перешли ей лист, сообщение уже готово." data-text="«Мой багаж»: что я умею, что привезла с собой и что из этого достать первым. Шесть отделений, три козыря и один маленький шаг на неделю. Заполняется за 15–20 минут, бесплатно, ответы остаются только у тебя."></div>
 
     <div class="blk" id="histBlk"></div>
 
@@ -691,6 +714,52 @@ const PATHS = {
   next:[['sess','Личная сессия','Одна встреча для одного вопроса: о тебе в паре — что ты принесла с собой и что хочешь изменить сама.',true],['roza','Тест «Роза любви»','Чтобы снова услышать друг друга и вернуть в пару тепло.',true,'roza-lyubvi']] }
 };
 const PK = ['zhizn', 'delo', 'para'];
+/* 17.10.2026, Ирина: «немного расширь опросники» — по каждому отделению «где пригодится», случай-доказательство, что нужно, разбор отделения */
+Object.assign(PATHS.zhizn, {
+  U:{ q:'Где это может пригодиться здесь?', tl:'где пригодится', help:'Отметь одно-два места, где это может работать здесь. Даже если пока это только мысль.',
+      o:['в работе по профессии','в соседней профессии','в своём деле','в учёбе или новой профессии','своим, кто приехал позже','в семье и в доме'] },
+  proofQ:'Вспомни случай, когда твой козырь тебе помог — здесь или там', proofPh:'Например: перевела соседке письмо из общины, и она вовремя ответила',
+  N:[ ['время только для себя', 'Начни с часа в неделю. Запиши его в календарь, как встречу, — так его легче защитить.'],
+      ['язык кантона', 'Язык растёт в работе и в разговоре. Узнай свой уровень и выбери курс рядом.', ['Тест fide: уровни языка', 'https://svoiludi.ch/shveycariya/fide/']],
+      ['признание диплома', 'Признание — отдельный шаг, и путь бывает короче, чем кажется. Начни со схемы на одном листе.', ['Как признать иностранный диплом', 'https://svoiludi.ch/instrumenty/diplomy-shema/']],
+      ['поддержка близких', 'Поддержку легче получить, когда просишь конкретно: что, когда и сколько.'],
+      ['человек, который подскажет путь', 'Спроси тех, кто прошёл похожий путь здесь. Свои люди часто подсказывают больше, чем объявления.', ['Справочник «Свои люди»', 'https://svoiludi.ch/']],
+      ['деньги на первые шаги', 'Посчитай, сколько нужно на первый шаг. Часто это меньше, чем кажется.', ['«Мой бюджет»', 'https://svoiludi.ch/instrumenty/moj-budget/']],
+      ['смелость начать', 'Смелость приходит после шага, а не до него. Начни с самого маленького.'] ],
+  Q:[ ['what', 'Что именно ты достанешь первым?', 'Например: опыт бухгалтера', 'Что достану первым'],
+      ['where', 'Кому или где это нужно здесь?', 'Например: соотечественникам с маленьким бизнесом', 'Кому или где это нужно'],
+      ['win', 'Что изменится, когда это заработает?', 'Например: я снова почувствую, что я профессионал', 'Что изменится'] ]
+});
+Object.assign(PATHS.delo, {
+  U:{ q:'Как клиенты узнают об этом?', tl:'как это видят клиенты', help:'Отметь, где клиенты уже видят это. «Пока никак не показываю» — тоже честный ответ: значит, здесь есть что показать.',
+      o:['в описании услуги','в отзывах и историях клиентов','в моей цене','в соцсетях и постах','в разговоре при знакомстве','пока никак не показываю'] },
+  proofQ:'Вспомни клиента, которому твой козырь помог', proofPh:'Например: клиентка впервые разобралась в налогах и сказала, что теперь спит спокойно',
+  N:[ ['клиенты, которые обо мне узнают', 'Первые клиенты приходят через людей. Расскажи о себе там, где тебя уже знают.', ['Как разместиться в «Своих людях»', 'https://svoiludi.ch/join/']],
+      ['понятная цена', 'Цена — часть предложения. Запиши её один раз и называй без извинений.'],
+      ['время без дома и семьи', 'Договорись дома о двух часах работы без перерывов. Рабочее время дома такое же настоящее, как в офисе.'],
+      ['регистрация и бумаги', 'ИП, AHV и страховки проще, чем кажутся, если идти по шагам.', ['Как открыть ИП в Швейцарии', 'https://svoiludi.ch/shveycariya/samozanyatost/']],
+      ['деньги на старт', 'Посчитай подушку и реши, нужна ли работа рядом с делом.', ['Книга доходов и расходов', 'https://svoiludi.ch/instrumenty/dohody-rashody/']],
+      ['партнёр или наставница', 'Смежные специалисты — не конкуренты, а партнёры: фотограф и визажист, бухгалтер и юрист.', ['Ищу партнёра', 'https://svoiludi.ch/vakansii/']],
+      ['смелость рассказать о себе', 'Начни с одной фразы о том, чем ты помогаешь. Её можно сказать вслух уже на этой неделе.'] ],
+  Q:[ ['what', 'Что именно ты покажешь клиентам первым?', 'Например: истории «было — стало» трёх клиенток', 'Что покажу первым'],
+      ['where', 'Кому из клиентов это нужно больше всего?', 'Например: мамам в декрете, которые хотят своё дело', 'Кому это нужнее всего'],
+      ['win', 'Что изменится, когда это заработает?', 'Например: клиенты начнут приходить по рекомендации', 'Что изменится'] ]
+});
+Object.assign(PATHS.para, {
+  U:{ q:'Что ты хочешь с этим сделать?', tl:'что я хочу сделать', help:'Отметь, что ты хочешь с этим сделать в вашей паре. Для разных отделений ответ может быть разным.',
+      o:['беречь, как есть','рассказать ему, почему это важно','спросить, как было у него','договориться по-новому','с благодарностью оставить в прошлом'] },
+  proofQ:'Вспомни момент, когда это помогло вам', proofPh:'Например: мы помирились, когда я предложила погулять вместо спора',
+  N:[ ['спокойный разговор с ним', 'Выберите время, когда оба не устали. Начни с того, что для тебя важно, а не с упрёка.'],
+      ['время вдвоём', 'Даже час в неделю без телефонов и дел — уже ваше время.'],
+      ['время для себя', 'Своё время — не против него, а для тебя. Пара, где у каждого есть своё, живее.'],
+      ['поддержка подруг', 'Свои люди вне пары — опора и для тебя, и для пары.', ['События и курсы', 'https://svoiludi.ch/events/']],
+      ['пример других пар', 'Посмотри на пары, где тепло. Спроси, как они договариваются.'],
+      ['смелость сказать, что для меня важно', 'Говори о себе: «Мне важно…», а не «Ты никогда…». Так легче услышать.'] ],
+  Q:[ ['what', 'Что именно ты хочешь принести в вашу пару?', 'Например: воскресный обед, как у нас дома', 'Что принесу в пару'],
+      ['where', 'Как ты расскажешь ему об этом?', 'Например: за ужином, начну с того, что это для меня значит', 'Как расскажу ему'],
+      ['win', 'Что изменится, когда это получится?', 'Например: в доме станет теплее, и он узнает меня лучше', 'Что изменится'] ]
+});
+const CONF_LOW = 6;
 
 /* что мешает достать багаж и как на это можно посмотреть */
 const BEL = [
@@ -723,6 +792,9 @@ const HELP = {
   rateP:'Отвечай про то, как это сейчас в вашей паре. «Хочу пересмотреть» — не упрёк семье, а твой выбор.',
   have:'Отметь всё, что у тебя есть в этом отделении, даже если здесь ты этим пока не пользуешься. Можно дописать своё.',
   koz:'Козырь — то, что даёт тебе преимущество. Не самое громкое, а то, на что можно опереться прямо сейчас.',
+  need:'Это не список того, чего у тебя нет. Это то, что поможет багажу заработать. К каждому пункту лист подскажет, с чего начать.',
+  sit:'Разбор одного отделения делает шаг точнее. Пиши коротко, своими словами. Можно заполнить не всё или пропустить.',
+  conf:'Отметь честно. Если уверенность 6 и ниже, сделай шаг ещё меньше: маленький шаг, который ты сделаешь, лучше большого, который отложишь.',
   bel:'Это мысли, которые держат чемодан закрытым. Когда их видно, на них можно посмотреть по-новому.',
   first:'Лист подсказывает отделение, где у тебя многое есть, а пользуешься ты этим мало: там багаж быстрее всего заработает. Но ты знаешь свою жизнь лучше и можешь выбрать другое.',
   firstP:'Лист подсказывает то, что ты хочешь пересмотреть или что пока лежит без дела. Начинать лучше с одного разговора. Но ты знаешь вашу пару лучше и можешь выбрать другое.',
@@ -734,12 +806,15 @@ const HELP = {
 };
 
 /* ---------- состояние ---------- */
-const blank = (p = '') => ({ path:p, r:Array(6).fill(-1), have:[[],[],[],[],[],[]], haveOwn:Array(6).fill(''), koz:[], bel:[], belOwn:'', first:-1, step:-1, stepOwn:'', when:-1, komu:[], komuOwn:'', chem:'' });
+const blank = (p = '') => ({ path:p, r:Array(6).fill(-1), have:[[],[],[],[],[],[]], haveOwn:Array(6).fill(''), use:[[],[],[],[],[],[]], koz:[], proof:'', bel:[], belOwn:'', need:[], first:-1, sit:{ what:'', where:'', win:'' }, step:-1, stepOwn:'', when:-1, conf:-1, komu:[], komuOwn:'', chem:'' });
+/* листы, сохранённые до 17.10.2026, получают новые поля пустыми */
+const norm = m => { if (!m || typeof m !== 'object') return m; const b = blank(m.path); Object.keys(b).forEach(k => { if (m[k] === undefined) m[k] = b[k]; }); m.sit = Object.assign(b.sit, m.sit || {}); return m; };
 const fresh = () => ({ v:1, path:'', country:'', name:'', cur:blank(), idx:0, screen:'start', maps:[], view:-1, bw:false, lastBackup:0, editing:-1 });
 let S = fresh();
 function load(){ try { const x = JSON.parse(localStorage.getItem(KEY) || 'null'); if (x && x.v === 1) S = Object.assign(S, x); } catch(e){} }
 function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch(e){} }
 load();
+norm(S.cur); (S.maps || []).forEach(norm);
 const P = m => PATHS[(m || S.cur).path] || PATHS.zhizn;
 const SPH = (m, i) => P(m).S[i];
 const RR = m => P(m).R;
@@ -748,6 +823,7 @@ const RR = m => P(m).R;
 const el = id => document.getElementById(id);
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const QL = '«', QR = '»';
+const cap = t => t ? t.charAt(0).toUpperCase() + t.slice(1) : t;
 const q = (m, n) => QL + SPH(m, n).name + QR;
 const LOC = { ru:'ru-RU', uk:'uk-UA', de:'de-CH', en:'en-GB' }[LANG] || 'ru-RU';
 const fmtDate = t => new Date(t).toLocaleDateString(LOC, { day:'2-digit', month:'2-digit', year:'numeric' });
@@ -768,7 +844,7 @@ document.addEventListener('click', e => {
     if (!open){
       b.setAttribute('aria-expanded', 'true');
       const bub = document.createElement('div'); bub.className = 'hbub'; bub.setAttribute('role', 'note');
-      bub.innerHTML = esc(HELP[b.dataset.help] || '') + '<button type="button" class="x" aria-label="Закрыть">✕</button>';
+      bub.innerHTML = esc(b.dataset.help === 'use' ? P().U.help : (HELP[b.dataset.help] || '')) + '<button type="button" class="x" aria-label="Закрыть">✕</button>';
       const host = b.closest('.qlabel, p, .field, label, .eyebrow, h2, h3') || b.parentElement;
       host.insertAdjacentElement('afterend', bub);
     }
@@ -835,7 +911,9 @@ function renderFill(){
       <div class="chips">${o.items.map((t, j) => `<button type="button" class="chip" data-j="${j}" aria-pressed="${c.have[n].includes(j) ? 'true' : 'false'}">${esc(t)}</button>`).join('')}</div>
       <div class="own"><input type="text" id="haveOwn" maxlength="80" value="${esc(c.haveOwn[n])}" placeholder="Своё, своими словами" aria-label="Своё: что есть в этом отделении"></div></div>
     <div class="field"><div class="qlabel">${Z.safe ? 'Как это сейчас в вашей паре?' : c.path === 'delo' ? 'Как это сейчас в твоём деле?' : 'Как ты пользуешься этим здесь?'} ${qh(Z.safe ? 'rateP' : 'rate')}</div>
-      <div class="opts" id="rates">${[3,2,1,0].map(k => `<button type="button" class="opt" data-r="${k}" aria-pressed="${c.r[n] === k ? 'true' : 'false'}">${dotsHtml(k, Z.c)}<b>${R[k].t}</b><small>${R[k].d}</small></button>`).join('')}</div></div>`;
+      <div class="opts" id="rates">${[3,2,1,0].map(k => `<button type="button" class="opt" data-r="${k}" aria-pressed="${c.r[n] === k ? 'true' : 'false'}">${dotsHtml(k, Z.c)}<b>${R[k].t}</b><small>${R[k].d}</small></button>`).join('')}</div></div>
+    <div class="field"><div class="qlabel">${Z.U.q} ${qh('use')}</div>
+      <div class="chips" id="useChips">${Z.U.o.map((t, j) => `<button type="button" class="chip" data-u="${j}" aria-pressed="${c.use[n].includes(j) ? 'true' : 'false'}">${esc(t)}</button>`).join('')}</div></div>`;
   el('fBack').textContent = n === 0 ? '← К началу' : '← ' + SPH(c, n - 1).name;
   el('fNext').textContent = n === 5 ? 'Дальше →' : SPH(c, n + 1).name + ' →';
 }
@@ -843,6 +921,9 @@ el('oCard').addEventListener('click', e => {
   const n = S.idx, c = S.cur;
   const r = e.target.closest('.opt');
   if (r){ c.r[n] = +r.dataset.r; save(); el('oCard').querySelectorAll('.opt').forEach(b => b.setAttribute('aria-pressed', b === r ? 'true' : 'false')); el('fillErr').hidden = true; return; }
+  const ub = e.target.closest('[data-u]');
+  if (ub){ const a = c.use[n], j = +ub.dataset.u, i = a.indexOf(j); if (i >= 0) a.splice(i, 1); else { if (a.length >= 2) a.shift(); a.push(j); }
+    el('useChips').querySelectorAll('[data-u]').forEach(b => b.setAttribute('aria-pressed', a.includes(+b.dataset.u) ? 'true' : 'false')); save(); return; }
   const ch = e.target.closest('.chip');
   if (ch){ const arr = c.have[n], j = +ch.dataset.j, i = arr.indexOf(j); if (i >= 0) arr.splice(i, 1); else arr.push(j); ch.setAttribute('aria-pressed', i >= 0 ? 'false' : 'true'); save(); }
 });
@@ -864,9 +945,20 @@ function renderWhy(){
   el('kozH').textContent = Z.kozQ;
   el('kozChips').innerHTML = all.length ? all.map(([k, t]) => `<button type="button" class="chip" data-k="${k}" aria-pressed="${c.koz.includes(k) ? 'true' : 'false'}">${esc(t)}</button>`).join('') : '<p class="note">В отделениях ничего не отмечено. Можно вернуться назад и отметить хотя бы одну вещь — она станет твоим первым козырем.</p>';
   el('belChips').innerHTML = Z.B.map(j => `<button type="button" class="chip" data-j="${j}" aria-pressed="${c.bel.includes(j) ? 'true' : 'false'}">${esc(BEL[j][0])}</button>`).join('');
-  el('belOwn').value = c.belOwn || ''; el('whyErr').hidden = true; el('kozErr').hidden = true;
-  [el('kozChips'), el('belChips')].forEach(x => { x.style.setProperty('--chip-c', Z.c); x.style.setProperty('--chip-bg', rgba(c, .18)); });
+  el('belOwn').value = c.belOwn || ''; el('whyErr').hidden = true; el('kozErr').hidden = true; el('needErr').hidden = true;
+  el('proofQ').textContent = Z.proofQ; el('proof').placeholder = Z.proofPh; el('proof').value = c.proof || '';
+  el('needChips').innerHTML = Z.N.map(([t], j) => `<button type="button" class="chip" data-j="${j}" aria-pressed="${c.need.includes(j) ? 'true' : 'false'}">${esc(t)}</button>`).join('');
+  [el('kozChips'), el('belChips'), el('needChips')].forEach(x => { x.style.setProperty('--chip-c', Z.c); x.style.setProperty('--chip-bg', rgba(c, .18)); });
 }
+el('proof').addEventListener('input', () => { S.cur.proof = el('proof').value.slice(0, 160); save(); });
+el('needChips').addEventListener('click', e => {
+  const ch = e.target.closest('.chip'); if (!ch) return;
+  const j = +ch.dataset.j, a = S.cur.need, i = a.indexOf(j);
+  if (i >= 0){ a.splice(i, 1); ch.setAttribute('aria-pressed', 'false'); el('needErr').hidden = true; }
+  else if (a.length >= 3){ const er = el('needErr'); er.textContent = 'Можно отметить до трёх. Сними одну отметку, чтобы выбрать другую.'; er.hidden = false; }
+  else { a.push(j); ch.setAttribute('aria-pressed', 'true'); }
+  save();
+});
 el('kozChips').addEventListener('click', e => {
   const ch = e.target.closest('.chip'); if (!ch) return;
   const k = ch.dataset.k, a = S.cur.koz, i = a.indexOf(k);
@@ -913,8 +1005,17 @@ function renderChoose(){
   el('chooseErr').hidden = true;
   el('chooseBlk').innerHTML = `<div class="eyebrow">С чего начать</div><h2>Какое отделение открыть первым? ${qh(Z.safe ? 'firstP' : 'first')}</h2><p>${sugWhy(c, sug)}</p>
     <div class="opts" id="firstOpts">${Z.S.map((o, i) => `<button type="button" class="opt" data-f="${i}" aria-pressed="${c.first === i ? 'true' : 'false'}" style="border-left:5px solid ${Z.c}"><b>${esc(o.name)}${i === sug ? ' · подсказка листа' : ''}</b><small>${R[c.r[i]] ? R[c.r[i]].t : ''} · ${cnt(c, i)} ${plural(cnt(c, i), 'вещь', 'вещи', 'вещей')}</small></button>`).join('')}</div>`;
-  renderOffer(); renderStep();
+  renderSit(); renderOffer(); renderStep();
 }
+function renderSit(){
+  const c = S.cur, n = c.first, b = el('sitBlk'), Z = P();
+  if (n < 0){ b.hidden = true; return; }
+  b.hidden = false;
+  b.innerHTML = `<div class="eyebrow">Разберём это отделение · по желанию</div><h2>Что ты достанешь из отделения ${q(c, n)}? ${qh('sit')}</h2>
+    <p class="note">Пиши коротко, своими словами. Так шаг станет точнее.</p>
+    ${Z.Q.map(([k, t, ph]) => `<div class="field"><label for="sit_${k}">${t}</label><input type="text" id="sit_${k}" data-sit="${k}" maxlength="120" value="${esc(c.sit[k])}" placeholder="${esc(ph)}"></div>`).join('')}`;
+}
+el('sitBlk').addEventListener('input', e => { const k = e.target.dataset && e.target.dataset.sit; if (!k) return; S.cur.sit[k] = e.target.value.slice(0, 120); save(); });
 function offerText(m){
   const komu = m.komu.map(j => KOMU[j]).concat(m.komuOwn && m.komuOwn.trim() ? [m.komuOwn.trim()] : []);
   const chem = (m.chem || '').trim(), kz = kozOf(m).map(x => x[1]);
@@ -944,14 +1045,20 @@ function renderStep(){
       <button type="button" class="opt" data-s="-2" aria-pressed="${c.step === -2 ? 'true' : 'false'}"><b>Свой шаг</b><small>Напишу сама</small></button></div>
     <div class="field" id="stepOwnF" ${c.step === -2 ? '' : 'hidden'}><label for="stepOwn">Мой шаг своими словами</label><input type="text" id="stepOwn" maxlength="90" value="${esc(c.stepOwn)}" placeholder="Например, позвонить бывшей коллеге в четверг"></div>
     <div class="field"><div class="qlabel">Когда сделаю? ${qh('when')}</div>
-      <div class="seg" id="whenSeg" style="grid-template-columns:repeat(2,minmax(0,1fr))">${WHEN.map((w, j) => `<button type="button" data-w="${j}" aria-pressed="${c.when === j ? 'true' : 'false'}">${w}</button>`).join('')}</div></div>`;
+      <div class="seg" id="whenSeg" style="grid-template-columns:repeat(2,minmax(0,1fr))">${WHEN.map((w, j) => `<button type="button" data-w="${j}" aria-pressed="${c.when === j ? 'true' : 'false'}">${w}</button>`).join('')}</div></div>
+    <div class="field"><div class="qlabel">Насколько ты уверена, что сделаешь этот шаг? ${qh('conf')}</div>
+      <div class="scale" id="confSeg">${[1,2,3,4,5,6,7,8,9,10].map(v => `<button type="button" data-c="${v}" aria-pressed="${c.conf === v ? 'true' : 'false'}" aria-label="${v} из 10">${v}</button>`).join('')}</div>
+      <div class="scale-l"><span>совсем не уверена</span><span>точно сделаю</span></div>
+      ${c.conf > 0 && c.conf <= CONF_LOW ? `<p class="note">Сделай шаг ещё меньше. Например, вместо целого дела — только первые 5 минут: найти, записать, спросить одного человека. Маленький шаг, который ты сделаешь, лучше большого, который отложишь.</p>` : c.conf > CONF_LOW ? `<p class="note">Хорошо. Выбери день и время и сделай шаг.</p>` : ''}</div>`;
 }
 el('chooseBlk').addEventListener('click', e => { const b = e.target.closest('[data-f]'); if (!b) return; const n = +b.dataset.f; if (S.cur.first !== n){ S.cur.first = n; S.cur.step = -1; } save(); renderChoose(); });
 el('stepBlk').addEventListener('click', e => {
   const b = e.target.closest('[data-s]');
   if (b){ S.cur.step = +b.dataset.s; save(); renderStep(); if (S.cur.step === -2){ const i = el('stepOwn'); if (i) i.focus(); } return; }
   const w = e.target.closest('[data-w]');
-  if (w){ S.cur.when = S.cur.when === +w.dataset.w ? -1 : +w.dataset.w; save(); renderStep(); }
+  if (w){ S.cur.when = S.cur.when === +w.dataset.w ? -1 : +w.dataset.w; save(); renderStep(); return; }
+  const cf = e.target.closest('[data-c]');
+  if (cf){ S.cur.conf = S.cur.conf === +cf.dataset.c ? -1 : +cf.dataset.c; save(); renderStep(); }
 });
 el('stepBlk').addEventListener('input', e => { if (e.target.id === 'stepOwn'){ S.cur.stepOwn = e.target.value.slice(0, 90); save(); } });
 el('cBack').addEventListener('click', () => goWhy());
@@ -968,6 +1075,12 @@ el('cDone').addEventListener('click', () => {
 
 /* ---------- толкование ---------- */
 const stepText = m => m.step === -2 ? m.stepOwn.trim() : (m.first >= 0 && m.step >= 0 ? SPH(m, m.first).steps[m.step] : '');
+const useOf = (m, i) => ((m.use || [])[i] || []).map(j => P(m).U.o[j]).filter(Boolean);
+function sitHtml(m){ const s = m.sit || {}, Z = P(m), rows = Z.Q.filter(([k]) => s[k] && s[k].trim()); if (!rows.length) return '';
+  return `<h3>Разбор отделения</h3><div class="sit">${rows.map(([k, , , lab]) => `<div><span class="sl" style="color:${Z.c}">${lab}</span><span>${esc(s[k].trim())}</span></div>`).join('')}</div>`; }
+function needHtml(m, country){ const Z = P(m), items = (m.need || []).map(j => Z.N[j]).filter(Boolean); if (!items.length) return '';
+  const lk = country && country !== 'ch' ? false : true;
+  return `<div class="lines need">${items.map(([t, a, l]) => `<div><span class="lk">${ico('seed', Z.c, Z.f, 20)}</span><span><b>${esc(cap(t))}.</b> ${esc(a)}${l && lk ? ` <a href="${SVL(l[1])}" target="_blank" rel="noopener">${esc(l[0])} →</a>` : ''}</span></div>`).join('')}</div>`; }
 function shape(m){
   const r = m.r.map(x => Math.max(0, x)), avg = r.reduce((s, x) => s + x, 0) / r.length, n3 = r.filter(x => x === 3).length, n0 = r.filter(x => x === 0).length;
   if (P(m).safe){
@@ -1072,10 +1185,12 @@ function buildBlocks(m, pdf){
     <div class="legend">${[3,2,1,0].map(k => `<span>${dotsHtml(k, Z.c)} ${R[k].t.toLowerCase()}</span>`).join('')}${prev ? '<span>↑ ↓ — по сравнению с прошлым листом</span>' : ''}</div>
     <p>${sh[1]}</p><p class="note">${esc(Z.why)}</p></div>` });
   if (kz.length) B.push({ html:`<div class="blk" style="border-color:${Z.c};border-width:1.5px"><div class="eyebrow">Твои козыри</div><h2>${kz.length === 1 ? 'Твой козырь' : 'Твои ' + kz.length + ' козыря'}</h2>
-    <div class="lines">${kz.map(([k, t, i]) => `<div><span class="lk">${ico('star', Z.c, Z.f, 20)}</span><span><b>${esc(t)}</b> <span class="muted">· ${esc(SPH(m, i).name)}</span></span></div>`).join('')}</div><p>${esc(Z.kozT)}</p></div>` });
-  const card = i => { const o = SPH(m, i), h = haveOf(m, i);
+    <div class="lines">${kz.map(([k, t, i]) => `<div><span class="lk">${ico('star', Z.c, Z.f, 20)}</span><span><b>${esc(t)}</b> <span class="muted">· ${esc(SPH(m, i).name)}</span></span></div>`).join('')}</div><p>${esc(Z.kozT)}</p>
+    ${m.proof && m.proof.trim() ? `<p class="proof" style="color:${Z.c}"><b>Это уже сработало.</b> <span>${esc(m.proof.trim())}</span></p><p class="note">Запомни этот случай. Его можно рассказать на собеседовании, в описании своего дела или ему — это лучшее доказательство, что твой багаж работает.</p>` : ''}</div>` });
+  const card = i => { const o = SPH(m, i), h = haveOf(m, i), u = useOf(m, i);
     return `<div class="ocard" style="border-color:${Z.c}"><div class="oh">${ico(o.ico, Z.c, Z.f, 24)}<b>${esc(o.name)}<small style="color:${Z.c}">${R[r[i]].t}</small></b></div>
-      ${h.length ? `<div class="tags">${h.map(t => `<span>${esc(t)}</span>`).join('')}</div>` : '<p class="note">Здесь ты пока ничего не отметила.</p>'}</div>`; };
+      ${h.length ? `<div class="tags">${h.map(t => `<span>${esc(t)}</span>`).join('')}</div>` : '<p class="note">Здесь ты пока ничего не отметила.</p>'}
+      ${u.length ? `<div class="tags"><span class="tl">${Z.U.tl}</span>${u.map(t => `<span>${esc(t)}</span>`).join('')}</div>` : ''}</div>`; };
   const strong = r.map((x, i) => x >= 2 ? i : -1).filter(i => i >= 0);
   if (strong.length) B.push({ html:`<div class="blk"><div class="eyebrow">Твоя опора</div><h2>${Z.safe ? 'Что помогает вашей паре' : 'Что уже работает'}</h2><p>${Z.safe ? 'Это то, что ты принесла с собой и что делает вашу пару крепче. Береги это и рассказывай ему, почему это для тебя важно.' : 'Это то, на что ты уже опираешься здесь. Отсюда легче всего сделать следующий шаг.'}</p><div class="stack" style="gap:8px">${strong.map(card).join('')}</div></div>` });
   if (Z.safe){
@@ -1090,16 +1205,21 @@ function buildBlocks(m, pdf){
   if (bl.length) B.push({ html:`<div class="blk"><div class="eyebrow">Что мешает</div><h2>Мысли, которые держат чемодан закрытым</h2>
     <div class="lines">${bl.map(([t, a]) => `<div><span class="lk">${ico('briefcase', Z.c, Z.f, 20)}</span><span><b>«${esc(t)}».</b> ${esc(a)}</span></div>`).join('')}</div>
     <p class="note">Эти мысли не ошибка. Когда-то они помогали тебе. Теперь можно проверить, помогают ли они сейчас.</p></div>`, float:true });
+  const nd = needHtml(m, S.country);
+  if (nd) B.push({ html:`<div class="blk"><div class="eyebrow">Что поможет</div><h2>Что нужно, чтобы достать багаж</h2>${nd}
+    <p class="note">Не нужно решать всё сразу. Выбери одно и сделай первый маленький шаг.</p></div>`, float:true });
   const sg = suggestFirst(m);
   B.push({ html:`<div class="blk" style="border-color:${Z.c};border-width:1.5px"><div class="eyebrow">С чего начать</div><h2>Открыть первым — ${q(m, f)}</h2>
     <p>${f === sg ? sugWhy(m, f).replace(/^Лист подсказывает начать/, 'Ты начинаешь, как и подсказывал лист,').replace(/<\/?b>/g, '') : sg >= 0 ? `Лист подсказывал отделение ${q(m, sg)}. Ты выбрала ${q(m, f)}, и это твоё право: ты знаешь свою жизнь лучше.` : 'Почти всё уже работает, и ты выбрала, где хочется расти дальше.'}</p>
     <p class="note">${esc(of.about)}</p>
+    ${sitHtml(m)}
     <h3>Что помогает</h3><div class="lines">${of.helps.map(t => `<div><span class="lk">${ico('seed', Z.c, Z.f, 20)}</span><span>${esc(t)}</span></div>`).join('')}</div>
     ${linksHtml(m, S.country)}</div>` });
   const ot = Z.offer ? offerText(m) : '';
   if (ot) B.push({ html:`<div class="blk"><div class="eyebrow">Моё предложение одной фразой</div><p class="stepbig">${esc(ot)}</p><p class="note">Скажи эту фразу вслух при знакомстве, напиши в профиле или в описании своей карточки. Через месяц её можно сделать точнее.</p></div>`, float:true });
   B.push({ html:`<div class="blk" style="background:var(--soft);border:none"><div class="eyebrow">Мой маленький шаг на эту неделю</div><p class="stepbig">${esc(stp)}</p>
-    <p class="muted">${m.when >= 0 ? WHEN[m.when] + ' · ' : ''}5–15 минут · отделение ${q(m, f)}</p>
+    <p class="muted">${m.when >= 0 ? WHEN[m.when] + ' · ' : ''}5–15 минут · отделение ${q(m, f)}${m.conf > 0 ? ' · уверенность ' + m.conf + ' из 10' : ''}</p>
+    ${m.conf > 0 && m.conf <= CONF_LOW ? '<p class="note">Если шаг кажется большим, сделай его ещё меньше: только первые 5 минут. Главное — сделать.</p>' : ''}
     ${pdf ? '' : `<div class="noprint stack" style="gap:10px">
       <label class="check"><input type="checkbox" id="doneChk" ${m.done ? 'checked' : ''}> <span>${m.done ? 'Сделала ' + fmtDate(m.doneDate) + ' ✓' : 'Я сделала этот шаг'}</span></label></div>`}
     <p class="exp">${EXPERIMENT}</p></div>` });
@@ -1156,7 +1276,7 @@ el('histBlk').addEventListener('click', e => { const b = e.target.closest('[data
 function startAgain(){
   const m = curMap() || S.maps[S.maps.length - 1];
   S.path = m ? m.path : S.path;
-  S.cur = m ? Object.assign(blank(m.path), JSON.parse(JSON.stringify({ r:m.r, have:m.have, haveOwn:m.haveOwn, koz:m.koz, bel:m.bel, belOwn:m.belOwn, komu:m.komu, komuOwn:m.komuOwn, chem:m.chem }))) : blank(S.path);
+  S.cur = m ? Object.assign(blank(m.path), JSON.parse(JSON.stringify({ r:m.r, have:m.have, haveOwn:m.haveOwn, use:m.use, koz:m.koz, proof:m.proof, bel:m.bel, belOwn:m.belOwn, need:m.need, komu:m.komu, komuOwn:m.komuOwn, chem:m.chem }))) : blank(S.path);
   S.editing = -1; S.idx = 0; save(); goFill(0);
   if (m) toast('Прошлые ответы уже стоят. Поменяй то, что изменилось.');
 }
@@ -1266,7 +1386,7 @@ function renderBackup(){
       if (!x || x.app !== 'moiBagazh' || !x.data || !Array.isArray(x.data.maps)){ ask.innerHTML = '<p>Это не резервная копия «Моего багажа». Выбери файл, который ты сохраняла здесь.</p>'; return; }
       ask.innerHTML = `<p>В копии ${x.data.maps.length} ${plural(x.data.maps.length, 'лист', 'листа', 'листов')} от ${fmtDate(x.saved)}. Заменить ими всё, что сейчас на этом устройстве?</p><div class="row"><button type="button" class="btn small" id="bkYes">Да, заменить</button><button type="button" class="btn ghost small" id="bkNo">Нет</button></div>`;
       el('bkNo').onclick = () => { ask.hidden = true; };
-      el('bkYes').onclick = () => { S = Object.assign(fresh(), x.data); S.view = S.maps.length - 1; S.screen = S.maps.length ? 'result' : 'start'; save(); toast('Листы загружены'); boot(); };
+      el('bkYes').onclick = () => { S = Object.assign(fresh(), x.data); norm(S.cur); S.maps.forEach(norm); S.view = S.maps.length - 1; S.screen = S.maps.length ? 'result' : 'start'; save(); toast('Листы загружены'); boot(); };
     };
     rd.readAsText(f); el('bkFile').value = '';
   };
@@ -1283,11 +1403,11 @@ if (/Instagram|FBAN|FBAV|Telegram|WhatsApp|Line\//i.test(navigator.userAgent)) e
 /* ---------- веер «Так выглядит готовый файл» ---------- */
 const FAN = [
   ['Обложка и опись багажа', 'Шесть отделений твоего чемодана: что уже работает, что иногда пригождается и что лежит без дела.'],
-  ['Козыри и что мешает', 'Твои козыри и мысли, которые держат чемодан закрытым, с новым взглядом на каждую.'],
-  ['С чего начать', 'Отделение, которое ты открываешь первым, что помогает и маленький шаг на неделю.'],
+  ['Козыри и что мешает', 'Твои козыри и случай, когда они сработали, мысли, которые держат чемодан закрытым, и что поможет его открыть.'],
+  ['С чего начать', 'Отделение, которое ты открываешь первым, его разбор, что помогает и маленький шаг на неделю.'],
   ['Бланк на 4 недели', 'Таблица для записей от руки и вопросы, чтобы через месяц увидеть, что изменилось.']
 ];
-const FAN_PAGES = 7;
+const FAN_PAGES = 8;
 (function fan(){
   const box = el('fan'); const n = FAN.length; let cur = 0, timer = null, touched = false;
   const src = i => '/moi-bagazh/preview/' + (LANG === 'ru' ? '' : LANG + '/') + (i + 1) + '.jpg';
