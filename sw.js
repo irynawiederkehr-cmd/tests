@@ -3,9 +3,10 @@
    Файлы (стили, скрипты, шрифты, картинки): сразу из памяти, в фоне обновляются.
    Личные записи людей здесь не хранятся: они остаются в localStorage браузера, как раньше.
    При изменении этого файла поднять VERSION — старая память удалится. */
-const VERSION = 'v53-2026-10-17';
+const VERSION = 'v54-2026-10-17';
 const CACHE = 'vz-' + VERSION;
-const CORE = ['/offline.html', '/assets/vz-app.js', '/icon-192.png', '/favicon.svg'];
+const CORE = ['/offline',   // без .html: Cloudflare отдаёт страницы без .html (17.10.2026)
+              '/assets/vz-app.js', '/icon-192.png', '/favicon.svg'];
 const MAX = 160;
 
 self.addEventListener('install', e => {
@@ -25,6 +26,8 @@ async function put(req, res){
   if (!res || !res.ok || res.type === 'opaque') return;
   const c = await caches.open(CACHE); await c.put(req, res); trim();
 }
+// Ответ, пришедший через переадресацию, браузер не принимает для открытия страницы — отдаём его копию без пометки (17.10.2026)
+function clean(r){ return r && r.redirected ? new Response(r.body, { status: r.status, statusText: r.statusText, headers: r.headers }) : r; }
 function timeout(ms){ return new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), ms)); }
 
 async function page(req){
@@ -34,7 +37,7 @@ async function page(req){
     put(key, res.clone());
     return res;
   } catch (e) {
-    return (await caches.match(key)) || (await caches.match('/offline.html')) || Response.error();
+    return clean(await caches.match(key)) || clean(await caches.match('/offline')) || Response.error();
   }
 }
 async function file(req, ev){

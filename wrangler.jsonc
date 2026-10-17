@@ -1,0 +1,14 @@
+// Настройки показа сайта на Cloudflare (с 17.10.2026). Сайт — обычные файлы, сборки нет.
+// Cloudflare берёт файлы из этой папки при каждом изменении ветки main в GitHub.
+// Служебные файлы и папку _i18n на сайт не пускает .assetsignore.
+{
+  "name": "tests",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": true,
+  "preview_urls": false,
+  "assets": {
+    "directory": ".",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}
